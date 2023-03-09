@@ -1,0 +1,70 @@
+﻿<UserControl
+    x:Class="ICSStudio.UIServicesPackage.AxisVirtualProperties.Panel.Units"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:util="clr-namespace:ICSStudio.Gui.Controls;assembly=ICSStudio.Gui"
+    xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+    Width="650"
+    Height="350"
+    d:DesignHeight="300"
+    d:DesignWidth="300"
+    Loaded="Units_OnLoaded"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="170" Width="Auto"/>
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="0"
+            Text="{DynamicResource Position Units:}" />
+        <TextBox
+            x:Name="NameBox"
+            Grid.Row="0"
+            Grid.Column="1"
+            Width="212"
+            Height="23"
+            HorizontalAlignment="Left"
+            IsEnabled="{Binding IsEnable}"
+            Text="{Binding PositionUnits, UpdateSourceTrigger=PropertyChanged, Delay=30}" />
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="0"
+            Text="{DynamicResource Average Velocity Timebase:}" />
+        <util:SingleUpDownExtensions
+            Grid.Row="1"
+            Grid.Column="1"
+            Width="100"
+            Height="23"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            AllowSpin="False"
+            MaxLength="16"
+            ShowButtonSpinner="False"
+            TextAlignment="Left"
+            Value="{Binding AverageVelocityTimebase, UpdateSourceTrigger=PropertyChanged, Delay=30}" />
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="1"
+            Text="{DynamicResource Seconds}">
+            <TextBlock.Margin>
+                <Thickness Left="110" />
+            </TextBlock.Margin>
+        </TextBlock>
+
+    </Grid>
+</UserControl>

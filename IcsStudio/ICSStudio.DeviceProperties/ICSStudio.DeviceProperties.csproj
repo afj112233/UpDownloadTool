@@ -1,0 +1,612 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{088F2E1F-91E2-4D20-8DB0-F5A0C72218A0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICSStudio.DeviceProperties</RootNamespace>
+    <AssemblyName>ICSStudio.DeviceProperties</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>$(SolutionDir)\build\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>$(SolutionDir)\build\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>ICSStudio.DeviceProperties.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CommonServiceLocator.2.0.4\lib\net45\CommonServiceLocator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.4.1.0, Culture=neutral, PublicKeyToken=0ffbc31322e9d308, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmLightLibsStd10.5.4.1.1\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmLightLibsStd10.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Imaging, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Imaging.14.3.25407\lib\net45\Microsoft.VisualStudio.Imaging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.OLE.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.OLE.Interop.7.10.6070\lib\Microsoft.VisualStudio.OLE.Interop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.14.0, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Shell.14.0.14.3.25407\lib\Microsoft.VisualStudio.Shell.14.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Immutable.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Shell.Immutable.10.0.10.0.30319\lib\net40\Microsoft.VisualStudio.Shell.Immutable.10.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Immutable.11.0, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Shell.Immutable.11.0.11.0.50727\lib\net45\Microsoft.VisualStudio.Shell.Immutable.11.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Immutable.12.0, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Shell.Immutable.12.0.12.0.21003\lib\net45\Microsoft.VisualStudio.Shell.Immutable.12.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Immutable.14.0, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Shell.Immutable.14.0.14.3.25407\lib\net45\Microsoft.VisualStudio.Shell.Immutable.14.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Shell.Interop.7.10.6071\lib\Microsoft.VisualStudio.Shell.Interop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Shell.Interop.10.0.10.0.30319\lib\Microsoft.VisualStudio.Shell.Interop.10.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.11.0, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Shell.Interop.11.0.11.0.61030\lib\Microsoft.VisualStudio.Shell.Interop.11.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.12.0, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Shell.Interop.12.0.12.0.30110\lib\Microsoft.VisualStudio.Shell.Interop.12.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Shell.Interop.8.0.8.0.50727\lib\Microsoft.VisualStudio.Shell.Interop.8.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Shell.Interop.9.0.9.0.30729\lib\Microsoft.VisualStudio.Shell.Interop.9.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.TextManager.Interop.7.10.6070\lib\Microsoft.VisualStudio.TextManager.Interop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.TextManager.Interop.8.0.8.0.50727\lib\Microsoft.VisualStudio.TextManager.Interop.8.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Threading, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Threading.14.1.111\lib\net45\Microsoft.VisualStudio.Threading.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Utilities, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Utilities.14.3.25407\lib\net45\Microsoft.VisualStudio.Utilities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Validation, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Validation.14.1.111\lib\net45\Microsoft.VisualStudio.Validation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmLightLibsStd10.5.4.1.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Extended.Wpf.Toolkit.4.2.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Extended.Wpf.Toolkit.4.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Extended.Wpf.Toolkit.4.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Extended.Wpf.Toolkit.4.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Extended.Wpf.Toolkit.4.2.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adapters\DIOEnetAdapterViewModel.cs" />
+    <Compile Include="Adapters\ModifiedDIOEnetAdapter.cs" />
+    <Compile Include="Adapters\Panel\ChassisSizePanel.xaml.cs">
+      <DependentUpon>ChassisSizePanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Adapters\Panel\ChassisSizeViewModel.cs" />
+    <Compile Include="Adapters\Panel\ConnectionPanel.xaml.cs">
+      <DependentUpon>ConnectionPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Adapters\Panel\ConnectionViewModel.cs" />
+    <Compile Include="Adapters\Panel\GeneralPanel.xaml.cs">
+      <DependentUpon>GeneralPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Adapters\Panel\GeneralViewModel.cs" />
+    <Compile Include="Adapters\Panel\InternetProtocolPanel.xaml.cs">
+      <DependentUpon>InternetProtocolPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Adapters\Panel\InternetProtocolViewModel.cs" />
+    <Compile Include="Adapters\Panel\ModuleInfoPanel.xaml.cs">
+      <DependentUpon>ModuleInfoPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Adapters\Panel\ModuleInfoViewModel.cs" />
+    <Compile Include="Adapters\Panel\NetworkPanel.xaml.cs">
+      <DependentUpon>NetworkPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Adapters\Panel\NetworkViewModel.cs" />
+    <Compile Include="Adapters\Panel\PortConfigurationPanel.xaml.cs">
+      <DependentUpon>PortConfigurationPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Adapters\Panel\PortConfigurationViewModel.cs" />
+    <Compile Include="AdvancedUserLimits\AdvancedUserLimits.cs" />
+    <Compile Include="AdvancedUserLimits\AdvancedUserLimitsDialog.xaml.cs">
+      <DependentUpon>AdvancedUserLimitsDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdvancedUserLimits\AdvancedUserLimitsViewModel.cs" />
+    <Compile Include="AnalogIOs\DIOAnalogViewModel.cs" />
+    <Compile Include="AnalogIOs\ModifiedAnalogIO.cs" />
+    <Compile Include="AnalogIOs\Panel\AlarmConfigPanel.xaml.cs">
+      <DependentUpon>AlarmConfigPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AnalogIOs\Panel\AlarmConfigViewModel.cs" />
+    <Compile Include="AnalogIOs\Panel\CalibrationPanel.xaml.cs">
+      <DependentUpon>CalibrationPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AnalogIOs\Panel\CalibrationViewModel.cs" />
+    <Compile Include="AnalogIOs\Panel\ConnectionPanel.xaml.cs">
+      <DependentUpon>ConnectionPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AnalogIOs\Panel\ConnectionViewModel.cs" />
+    <Compile Include="AnalogIOs\Panel\FaultProgramActionPanel.xaml.cs">
+      <DependentUpon>FaultProgramActionPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AnalogIOs\Panel\FaultProgramActionViewModel.cs" />
+    <Compile Include="AnalogIOs\Panel\GeneralPanel.xaml.cs">
+      <DependentUpon>GeneralPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AnalogIOs\Panel\GeneralViewModel.cs" />
+    <Compile Include="AnalogIOs\Panel\IFConfigPanel.xaml.cs">
+      <DependentUpon>IFConfigPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AnalogIOs\Panel\IFConfigViewModel.cs" />
+    <Compile Include="AnalogIOs\Panel\IRConfigPanel.xaml.cs">
+      <DependentUpon>IRConfigPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AnalogIOs\Panel\IRConfigViewModel.cs" />
+    <Compile Include="AnalogIOs\Panel\LimitsConfigPanel.xaml.cs">
+      <DependentUpon>LimitsConfigPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AnalogIOs\Panel\LimitsConfigViewModel.cs" />
+    <Compile Include="AnalogIOs\Panel\ModuleInfoPanel.xaml.cs">
+      <DependentUpon>ModuleInfoPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AnalogIOs\Panel\ModuleInfoViewModel.cs" />
+    <Compile Include="AnalogIOs\Panel\OutputConfigPanel.xaml.cs">
+      <DependentUpon>OutputConfigPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AnalogIOs\Panel\OutputConfigViewModel.cs" />
+    <Compile Include="Checking.cs" />
+    <Compile Include="Common\DeviceOptionPanel.cs" />
+    <Compile Include="Common\DeviceOptionPanelNode.cs" />
+    <Compile Include="Common\IOptionPanel.cs" />
+    <Compile Include="Common\IOptionPanelNode.cs" />
+    <Compile Include="Common\ModifiedDIOModule.cs" />
+    <Compile Include="Controls\IsCheckedConverter.cs" />
+    <Compile Include="DevicePropertiesControl.xaml.cs">
+      <DependentUpon>DevicePropertiesControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DevicePropertiesViewModelBase.cs" />
+    <Compile Include="Dialogs\DeviceModuleRefreshing.cs" />
+    <Compile Include="Dialogs\DeviceModuleResetting.cs" />
+    <Compile Include="Dialogs\IOModuleRefreshing.cs" />
+    <Compile Include="Dialogs\IOModuleResetting.cs" />
+    <Compile Include="Dialogs\RefreshingDialog.xaml.cs">
+      <DependentUpon>RefreshingDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\RefreshingViewModel.cs" />
+    <Compile Include="Dialogs\ResettingDialog.xaml.cs">
+      <DependentUpon>ResettingDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ResettingViewModel.cs" />
+    <Compile Include="DiscreteIOs\DIODiscreteViewModel.cs" />
+    <Compile Include="DiscreteIOs\ModifiedDiscreteIO.cs" />
+    <Compile Include="DiscreteIOs\Panel\ConnectionPanel.xaml.cs">
+      <DependentUpon>ConnectionPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DiscreteIOs\Panel\ConnectionViewModel.cs" />
+    <Compile Include="DiscreteIOs\Panel\FaultProgramActionPanel.xaml.cs">
+      <DependentUpon>FaultProgramActionPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DiscreteIOs\Panel\FaultProgramActionViewModel.cs" />
+    <Compile Include="DiscreteIOs\Panel\GeneralPanel.xaml.cs">
+      <DependentUpon>GeneralPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DiscreteIOs\Panel\GeneralViewModel.cs" />
+    <Compile Include="DiscreteIOs\Panel\InputFilterTimeConfigPanel.xaml.cs">
+      <DependentUpon>InputFilterTimeConfigPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DiscreteIOs\Panel\InputFilterTimeConfigViewModel.cs" />
+    <Compile Include="DiscreteIOs\Panel\ModuleInfoPanel.xaml.cs">
+      <DependentUpon>ModuleInfoPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DiscreteIOs\Panel\ModuleInfoViewModel.cs" />
+    <Compile Include="Generic\GenericEnetViewModel.cs" />
+    <Compile Include="Generic\ModifiedGeneralEthernet.cs" />
+    <Compile Include="Generic\Panel\ConnectionPanel.xaml.cs">
+      <DependentUpon>ConnectionPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Generic\Panel\ConnectionViewModel.cs" />
+    <Compile Include="Generic\Panel\GeneralPanel.xaml.cs">
+      <DependentUpon>GeneralPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Generic\Panel\GeneralViewModel.cs" />
+    <Compile Include="Generic\Panel\ModuleInfoPanel.xaml.cs">
+      <DependentUpon>ModuleInfoPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Generic\Panel\ModuleInfoViewModel.cs" />
+    <Compile Include="IDevicePropertiesViewModel.cs" />
+    <Compile Include="ModuleDefinition\DIOModuleDefinitionDialog.xaml.cs">
+      <DependentUpon>DIOModuleDefinitionDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleDefinition\DIOModuleDefinitionViewModel.cs" />
+    <Compile Include="ModuleDefinition\DIOEnetAdapterDefinitionDialog.xaml.cs">
+      <DependentUpon>DIOEnetAdapterDefinitionDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleDefinition\DIOEnetAdapterDefinitionViewModel.cs" />
+    <Compile Include="ModuleDefinition\ServoDriveDefinitionDialog.xaml.cs">
+      <DependentUpon>ServoDriveDefinitionDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleDefinition\ServoDriveDefinitionViewModel.cs" />
+    <Compile Include="NullDeviceViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServoDrives\ModifiedMotionDrive.cs" />
+    <Compile Include="ServoDrives\Panel\AssociatedAxesPanel.xaml.cs">
+      <DependentUpon>AssociatedAxesPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ServoDrives\Panel\AssociatedAxesViewModel.cs" />
+    <Compile Include="ServoDrives\Panel\ConnectionPanel.xaml.cs">
+      <DependentUpon>ConnectionPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ServoDrives\Panel\ConnectionViewModel.cs" />
+    <Compile Include="ServoDrives\Panel\DiagnosticsPanel.xaml.cs">
+      <DependentUpon>DiagnosticsPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ServoDrives\Panel\DiagnosticsViewModel.cs" />
+    <Compile Include="ServoDrives\Panel\DigitalInputPanel.xaml.cs">
+      <DependentUpon>DigitalInputPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ServoDrives\Panel\DigitalInputViewModel.cs" />
+    <Compile Include="ServoDrives\Panel\GeneralPanel.xaml.cs">
+      <DependentUpon>GeneralPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ServoDrives\Panel\GeneralViewModel.cs" />
+    <Compile Include="ServoDrives\Panel\InternetProtocolPanel.xaml.cs">
+      <DependentUpon>InternetProtocolPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ServoDrives\Panel\InternetProtocolViewModel.cs" />
+    <Compile Include="ServoDrives\Panel\ModuleInfoPanel.xaml.cs">
+      <DependentUpon>ModuleInfoPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ServoDrives\Panel\ModuleInfoViewModel.cs" />
+    <Compile Include="ServoDrives\Panel\NetworkPanel.xaml.cs">
+      <DependentUpon>NetworkPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ServoDrives\Panel\NetworkViewModel.cs" />
+    <Compile Include="ServoDrives\Panel\PortConfigurationPanel.xaml.cs">
+      <DependentUpon>PortConfigurationPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ServoDrives\Panel\PortConfigurationViewModel.cs" />
+    <Compile Include="ServoDrives\Panel\PowerPanel.xaml.cs">
+      <DependentUpon>PowerPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ServoDrives\Panel\PowerViewModel.cs" />
+    <Compile Include="ServoDrives\Panel\TimeSyncPanel.xaml.cs">
+      <DependentUpon>TimeSyncPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ServoDrives\Panel\TimeSyncViewModel.cs" />
+    <Compile Include="ServoDrives\ServoDrivesViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="icon.pfx" />
+    <None Include="ICSStudio.DeviceProperties.snk" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Page Include="Adapters\Panel\ChassisSizePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Adapters\Panel\ConnectionPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Adapters\Panel\GeneralPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Adapters\Panel\InternetProtocolPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Adapters\Panel\ModuleInfoPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Adapters\Panel\NetworkPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Adapters\Panel\PortConfigurationPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AdvancedUserLimits\AdvancedUserLimitsDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AnalogIOs\Panel\AlarmConfigPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AnalogIOs\Panel\CalibrationPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AnalogIOs\Panel\ConnectionPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AnalogIOs\Panel\FaultProgramActionPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AnalogIOs\Panel\GeneralPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AnalogIOs\Panel\IFConfigPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AnalogIOs\Panel\IRConfigPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AnalogIOs\Panel\LimitsConfigPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AnalogIOs\Panel\ModuleInfoPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AnalogIOs\Panel\OutputConfigPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DevicePropertiesControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\RefreshingDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\ResettingDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DiscreteIOs\Panel\ConnectionPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DiscreteIOs\Panel\FaultProgramActionPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DiscreteIOs\Panel\GeneralPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DiscreteIOs\Panel\InputFilterTimeConfigPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DiscreteIOs\Panel\ModuleInfoPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Generic\Panel\ConnectionPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Generic\Panel\GeneralPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Generic\Panel\ModuleInfoPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ModuleDefinition\DIOModuleDefinitionDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ModuleDefinition\DIOEnetAdapterDefinitionDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ModuleDefinition\ServoDriveDefinitionDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ServoDrives\Panel\AssociatedAxesPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ServoDrives\Panel\ConnectionPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ServoDrives\Panel\DiagnosticsPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ServoDrives\Panel\DigitalInputPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ServoDrives\Panel\GeneralPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ServoDrives\Panel\InternetProtocolPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ServoDrives\Panel\ModuleInfoPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ServoDrives\Panel\NetworkPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ServoDrives\Panel\PortConfigurationPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ServoDrives\Panel\PowerPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ServoDrives\Panel\TimeSyncPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ICSStudio.CipConnection\ICSStudio.CipConnection.csproj">
+      <Project>{203372f2-17e7-490e-8ae3-104005887b05}</Project>
+      <Name>ICSStudio.CipConnection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.Cip\ICSStudio.Cip.csproj">
+      <Project>{3D36BED6-C812-43F2-8753-88961CD2C41E}</Project>
+      <Name>ICSStudio.Cip</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.Components\ICSStudio.Components.csproj">
+      <Project>{d44093ae-669c-43e7-9676-c1661d8e6dea}</Project>
+      <Name>ICSStudio.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.Database\ICSStudio.Database.csproj">
+      <Project>{803BED88-CD02-4760-87BB-E86DD19374CA}</Project>
+      <Name>ICSStudio.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.Descriptor\ICSStudio.Descriptor.csproj">
+      <Project>{fd1bb486-c2fd-47ab-9911-5a2b8ab3bf7c}</Project>
+      <Name>ICSStudio.Descriptor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.DeviceProfiles\ICSStudio.DeviceProfiles.csproj">
+      <Project>{6D244B3B-3525-49D3-A4C2-EDC4ED0DEC48}</Project>
+      <Name>ICSStudio.DeviceProfiles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.Dialogs\ICSStudio.Dialogs.csproj">
+      <Project>{C9AB4DF1-DEDD-4011-B408-91B6FDCF6814}</Project>
+      <Name>ICSStudio.Dialogs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.Gui\ICSStudio.Gui.csproj">
+      <Project>{4576440d-1a48-487a-8dfa-f94751abae38}</Project>
+      <Name>ICSStudio.Gui</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.Interfaces\ICSStudio.Interfaces.csproj">
+      <Project>{2E7D4256-92D6-4E0E-A1A1-D819D4D71667}</Project>
+      <Name>ICSStudio.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.MultiLanguage\ICSStudio.MultiLanguage.csproj">
+      <Project>{06AFD655-2AAC-4268-B609-64A649A3746D}</Project>
+      <Name>ICSStudio.MultiLanguage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.SimpleServices\ICSStudio.SimpleServices.csproj">
+      <Project>{DAC846E0-39E9-46EA-86B5-A5B89571831E}</Project>
+      <Name>ICSStudio.SimpleServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.UIInterfaces\ICSStudio.UIInterfaces.csproj">
+      <Project>{1AE2B658-CF74-48EA-B88E-B2511FA4B041}</Project>
+      <Name>ICSStudio.UIInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.Utils\ICSStudio.Utils.csproj">
+      <Project>{f880d2c5-68d6-4b83-a89e-b3958a75428d}</Project>
+      <Name>ICSStudio.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

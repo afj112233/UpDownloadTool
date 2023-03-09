@@ -1,0 +1,96 @@
+﻿<UserControl x:Class="ICSStudio.UIServicesPackage.AxisCIPDriveProperties.Panel.MotorPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:controls="clr-namespace:ICSStudio.UIServicesPackage.AxisCIPDriveProperties.Controls"
+             mc:Ignorable="d"
+             d:DesignHeight="600" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!--1.-->
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="130" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0"
+                   Content="{DynamicResource Data Source:}" />
+            <Label Grid.Row="1" Grid.Column="0"
+                   IsEnabled="{Binding CatalogNumberEnabled}"
+                   Visibility="{Binding CatalogNumberVisibility}"
+                   Content="{DynamicResource Catalog Number:}" />
+            <Label Grid.Row="2" Grid.Column="0"
+                   Visibility="{Binding MotorTypeVisibility}"
+                   Content="{DynamicResource Motor Type:}" />
+            <Label Grid.Row="3" Grid.Column="0"
+                   Content="{DynamicResource Units:}" />
+
+            <ComboBox Grid.Row="0" Grid.Column="1" x:Name="CmbMotorDataSource"
+                      ItemsSource="{Binding MotorDataSources}"
+                      SelectedValuePath="Value"
+                      DisplayMemberPath="DisplayName"
+                      SelectedValue="{Binding MotorDataSource}"
+                      IsEnabled="{Binding MotorDataSourceEnabled}" />
+            <TextBox Grid.Row="1" Grid.Column="1"
+                     Text="{Binding MotorCatalogNumber}"
+                     IsEnabled="False"
+                     Visibility="{Binding CatalogNumberVisibility}" />
+            <ComboBox Grid.Row="2" Grid.Column="1" x:Name="CmbMotorType"
+                      Visibility="{Binding MotorTypeVisibility}"
+                      IsEnabled="{Binding MotorTypeEnabled}"
+                      ItemsSource="{Binding MotorTypeSource}"
+                      SelectedValuePath="Value"
+                      DisplayMemberPath="DisplayName"
+                      SelectedValue="{Binding MotorType}" />
+            <ComboBox Grid.Row="3" Grid.Column="1" x:Name="CmbMotorUnit"
+                      IsEnabled="{Binding MotorUnitEnabled}"
+                      ItemsSource="{Binding MotorUnitSource}"
+                      SelectedValuePath="Value"
+                      DisplayMemberPath="DisplayName"
+                      SelectedValue="{Binding MotorUnit}" />
+
+            <Button Grid.Row="1" Grid.Column="2"
+                    IsEnabled="{Binding ChangeCatalogEnabled}"
+                    Visibility="{Binding CatalogNumberVisibility}"
+                    Command="{Binding ChangeCatalogNumberCommand}"
+                    Content="{DynamicResource Change Catalog...}"></Button>
+
+            <Button Grid.Row="0" Grid.Column="3"
+                    Content="{DynamicResource Parameters...}"
+                    Command="{Binding ParametersCommand}" />
+
+        </Grid>
+
+        <controls:RotaryPMParameters Grid.Row="1"
+                                     Visibility="{Binding RotaryPMParametersVisibility, FallbackValue=Visible}" />
+        <controls:LinearPMParameters Grid.Row="2"
+                                     Visibility="{Binding LinearPMParametersVisibility, FallbackValue=Collapsed}" />
+        <controls:RotaryInductionParameters Grid.Row="3"
+                                            Visibility="{Binding RotaryInductionParametersVisibility,FallbackValue=Collapsed}" />
+
+    </Grid>
+</UserControl>

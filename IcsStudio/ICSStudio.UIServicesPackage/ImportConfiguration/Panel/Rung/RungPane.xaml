@@ -1,0 +1,126 @@
+﻿<UserControl
+    x:Class="ICSStudio.UIServicesPackage.ImportConfiguration.Panel.Rung.RungPane"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ICSStudio.UIServicesPackage.ImportConfiguration.Panel.Rung"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="400"
+    d:DesignWidth="400"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="0.8*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MinHeight="30" />
+            <RowDefinition Height="Auto" MinHeight="30" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" MinHeight="30" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" MinHeight="30" />
+            <RowDefinition Height="Auto" MinHeight="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="{DynamicResource Imported Rungs:}" />
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="1"
+            Text="{Binding ImportedRungs, Mode=OneWay}" />
+
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="0"
+            Text="{DynamicResource Operation:}" />
+        <ComboBox
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="0,5"
+            ItemsSource="{Binding Operations}"
+            SelectedItem="{Binding SelectedOperation}" />
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="2"
+            Grid.ColumnSpan="2"
+            Text="{Binding OperationTip, Mode=OneWay}" />
+
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="1"
+            Grid.ColumnSpan="3"
+            Foreground="#FF577FDE"
+            Text="{DynamicResource Reference will be imported configured in the References folders}" />
+
+        <TextBlock
+            Grid.Row="3"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            FontWeight="Black"
+            Text="{DynamicResource Routine Properties}" />
+
+        <TextBlock
+            Grid.Row="4"
+            Grid.Column="0"
+            Margin="15,0,0,0"
+            Text="{DynamicResource Name:}" />
+        <TextBlock
+            Grid.Row="4"
+            Grid.Column="1"
+            Text="{Binding RoutineName, Mode=OneWay}" />
+
+        <TextBlock
+            Grid.Row="5"
+            Grid.Column="0"
+            Margin="15,0,0,0"
+            VerticalAlignment="Top"
+            Text="{DynamicResource Description:}" />
+        <RichTextBox
+            Grid.Row="5"
+            Grid.Column="1"
+            Height="80"
+            Margin="0,5"
+            Background="#FFF0F0F0"
+            IsReadOnly="True"
+            VerticalScrollBarVisibility="Visible">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="{Binding RoutineDescription, Mode=OneWay}" />
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+        <TextBlock
+            Grid.Row="6"
+            Grid.Column="0"
+            Margin="15,0,0,0"
+            Text="{DynamicResource Type:}" />
+        <TextBlock
+            Grid.Row="6"
+            Grid.Column="1"
+            Text="{Binding RoutineType, Mode=OneWay}" />
+
+        <TextBlock
+            Grid.Row="7"
+            Grid.Column="0"
+            Margin="15,0,0,0"
+            Text="{DynamicResource In Program:}" />
+        <TextBlock
+            Grid.Row="7"
+            Grid.Column="1"
+            Text="{Binding InProgram, Mode=OneWay}" />
+
+    </Grid>
+</UserControl>

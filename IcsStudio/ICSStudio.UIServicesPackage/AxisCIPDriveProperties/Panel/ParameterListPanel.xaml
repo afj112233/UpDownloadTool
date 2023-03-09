@@ -1,0 +1,234 @@
+﻿<UserControl x:Class="ICSStudio.UIServicesPackage.AxisCIPDriveProperties.Panel.ParameterListPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:converters="clr-namespace:ICSStudio.Gui.Converters;assembly=ICSStudio.Gui"
+             xmlns:controls="clr-namespace:ICSStudio.UIServicesPackage.AxisCIPDriveProperties.Controls"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:util="clr-namespace:ICSStudio.Gui.Controls;assembly=ICSStudio.Gui"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d"
+             d:DesignHeight="800" d:DesignWidth="600">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <converters:IsChangedConverter x:Key="IsChangedConverter" />
+            <converters:EnumToDisplayNameConverter x:Key="EnumToDisplayNameConverter" />
+            <converters:UInt16ToIntegerConverter x:Key="UInt16ToIntegerConverter" />
+            <converters:UInt32ToLongConverter x:Key="UInt32ToLongConverter" />
+
+            <ResourceDictionary x:Key="Resources.Templates">
+                <!-- ReSharper disable Xaml.RedundantResource -->
+                <!-- ReSharper disable Xaml.BindingWithContextNotResolved -->
+
+                <DataTemplate x:Key="{x:Type system:Boolean}">
+                    <CheckBox
+                        HorizontalAlignment="Right" VerticalAlignment="Center"
+                        IsChecked="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                </DataTemplate>
+
+                <DataTemplate x:Key="{x:Type system:Single}">
+                    <util:SingleUpDownExtensions
+                        HorizontalAlignment="Stretch" 
+                        AllowSpin="False" ShowButtonSpinner="False"
+                        Value="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Margin="-1" Foreground="Black"/>
+                </DataTemplate>
+
+                <DataTemplate x:Key="{x:Type system:UInt16 }">
+                    <xctk:IntegerUpDown
+                        HorizontalAlignment="Stretch"
+                        AllowSpin="False" ShowButtonSpinner="False"
+                        Minimum="0"
+                        Value="{Binding Value, Mode=TwoWay,Converter={StaticResource UInt16ToIntegerConverter},UpdateSourceTrigger=PropertyChanged}"
+                        Margin="-1" Foreground="Black" />
+                </DataTemplate>
+                <DataTemplate x:Key="{x:Type system:UInt32 }">
+                    <xctk:LongUpDown
+                        HorizontalAlignment="Stretch"
+                        AllowSpin="False" ShowButtonSpinner="False"
+                        Minimum="0"
+                        Value="{Binding Value, Mode=TwoWay,Converter={StaticResource UInt32ToLongConverter},UpdateSourceTrigger=PropertyChanged}"
+                        Margin="-1" Foreground="Black" />
+                </DataTemplate>
+
+                <DataTemplate x:Key="{x:Type system:Int32}">
+                    <xctk:IntegerUpDown HorizontalAlignment="Stretch"
+                                        AllowSpin="False" ShowButtonSpinner="False"
+                                        Value="{Binding Value, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                        Margin="-1" Foreground="Black" />
+                </DataTemplate>
+
+                <DataTemplate x:Key="{x:Type system:String}">
+                    <TextBox
+                        HorizontalAlignment="Stretch"
+                        Text="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        TextAlignment="Right"
+                        MinWidth="50"
+                        Margin="-1" Foreground="Black" />
+                </DataTemplate>
+
+                <DataTemplate x:Key="{x:Type system:Enum}">
+                    <ComboBox
+                        ItemsSource="{Binding EnumSource,Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                        SelectedValue="{Binding Value,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                        VirtualizingPanel.IsVirtualizing="True"
+                        VirtualizingPanel.VirtualizationMode="Recycling"
+                        HorizontalAlignment="Stretch"
+                        Margin="0"
+                        HorizontalContentAlignment="Right"
+                        Foreground="Black">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock
+                                    Text="{Binding Mode=OneWay,Converter={StaticResource EnumToDisplayNameConverter}}" />
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </DataTemplate>
+
+
+                <!--<DataTemplate x:Key="ReadOnly">
+                    <TextBlock Text="{Binding Value, Mode=OneWay}"
+                               TextAlignment="Right"
+                               Foreground="Black" Background="LightGray"
+                               Margin="-1" Padding="0 0 3 0"/>
+                </DataTemplate>-->
+
+                <!-- ReSharper restore Xaml.BindingWithContextNotResolved -->
+                <!-- ReSharper restore Xaml.RedundantResource -->
+            </ResourceDictionary>
+
+            <DataTemplate x:Key="ValueTemplate">
+                <ContentControl Content="{Binding}">
+                    <ContentControl.ContentTemplateSelector>
+                        <controls:ValueTemplateSelector Resources="{StaticResource Resources.Templates}" />
+                    </ContentControl.ContentTemplateSelector>
+                </ContentControl>
+            </DataTemplate>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="395" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="165" />
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="{DynamicResource Parameter Group:}"></TextBlock>
+            <ComboBox Grid.Column="1" x:Name="CmbHomeMode" Grid.ColumnSpan="2" Width="165"
+                      HorizontalAlignment="Left"
+                      ItemsSource="{Binding ParameterGroupSource}"
+                      SelectedValuePath="Value"
+                      DisplayMemberPath="DisplayName"
+                      SelectedValue="{Binding ParameterGroup}" />
+
+            <Button Grid.Column="3" Width="200" Command="{Binding AssociatedPageCommand}" Content="{DynamicResource Associated Page...}"></Button>
+
+        </Grid>
+
+        <DataGrid Grid.Row="1"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  ItemsSource="{Binding Collection,IsAsync=True}"
+                  CanUserResizeRows="False"
+                  SelectionMode="Single"
+                  VirtualizingStackPanel.IsVirtualizing="true"
+                  VirtualizingStackPanel.VirtualizationMode="Recycling">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridRowHeader}">
+                    <Setter Property="Width" Value="15" />
+                    <Setter Property="MinWidth" Value="15" />
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.RowStyle>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <Setter Property="Visibility" Value="{Binding Visibility, Mode=OneWay}" />
+                    <Setter Property="IsEnabled" Value="{Binding IsEnabled, Mode=OneWay}" />
+                    <Setter Property="Height" Value="22" />
+                </Style>
+            </DataGrid.RowStyle>
+            <DataGrid.Columns>
+                <!--Name-->
+                <DataGridTextColumn SortMemberPath="Name"
+                                    MinWidth="235"
+                                    Binding="{Binding Name, Mode=OneWay}">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate >
+                            <TextBlock Text="{DynamicResource Name}"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="ToolTip"
+                                    Value="{Binding Text,Mode=OneWay,RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Setter Property="FontSize" Value="11"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="Margin" Value="-1" />
+                            <Setter Property="Padding" Value="3 5 0 5" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+
+
+                <!--Value-->
+                <DataGridTemplateColumn MinWidth="200" CellTemplate="{StaticResource ValueTemplate}" >
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate >
+                            <TextBlock Text="{DynamicResource Value}"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                </DataGridTemplateColumn>
+                <!--Unit-->
+                <DataGridTextColumn MinWidth="220"
+                                    Binding="{Binding Unit, Mode=OneWay}" CanUserSort="False">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate >
+                            <TextBlock Text="{DynamicResource Unit}"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="ToolTip"
+                                    Value="{Binding Text,Mode=OneWay,RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="FontSize" Value="11"/>
+                            <Setter Property="Foreground" Value="Black" />
+                            <Setter Property="Margin" Value="-1" />
+                            <Setter Property="Padding" Value="3 5 0 5" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+
+            </DataGrid.Columns>
+            <DataGrid.RowHeaderTemplate>
+                <DataTemplate>
+                    <!-- ReSharper disable once Xaml.BindingWithContextNotResolved -->
+                    <TextBlock
+                        Text="{Binding DataContext.IsChanged,
+                                        Mode=OneWay,
+                                        RelativeSource={RelativeSource AncestorType=DataGridRow},
+                                        Converter={StaticResource IsChangedConverter},
+                                        UpdateSourceTrigger=PropertyChanged}"
+                        VerticalAlignment="Center" />
+                </DataTemplate>
+            </DataGrid.RowHeaderTemplate>
+        </DataGrid>
+
+    </Grid>
+</UserControl>

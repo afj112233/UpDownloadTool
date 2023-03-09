@@ -1,0 +1,960 @@
+<?xml version="1.0"?>
+<!--Copyright 2014 Rockwell Automation -->
+
+<AOPModuleTypes>
+	<!--
+	Modules in this file :								    
+	********************************************************************************************
+	A : ConfigID of Data Connection type.
+	B : ConfigID of Listen Only Connection type.
+	C : ConfigID of Enhanced Rack Optimization type.
+
+	X : Instance
+	I : InputCxnPoint 
+	O : OutputCxnPoint	
+	
+	T : Driver Type
+	M : Module Definition ID
+			
+	Config ID range:
+	1734 : n00  n01		
+	n = Category Number
+
+	Category   : 4 Channel Output   	A	B		C			X	    I		 O       T	    M	      										    	
+	1734-OE4C							400	65540	67108875	123		101		102     2050	1734_OE4C   
+	-->
+	
+	<!-- ****************************************************************************** 
+							Category   :    4 Channel Output  : Begin
+		 ****************************************************************************** -->	
+		 
+	<!-- ******************************* 1734-OE4C ************************************ --> 
+	<ModuleType VendorID="5" ProductType="115" ProductCode="211">
+		<Variant MajorRev="1" ModuleID="1734_OE4C" ModuleDefinitionID="1734_OE4C" Default="True"></Variant>
+		<Extensions>
+			<Extension CLSID="{51112070-926C-415B-BB95-AA38F046DAE7}"/>
+			<Extension CLSID="{C461A9A6-E410-4C30-B98F-EF7362353E48}" CIPObjectID="OutputCalibration"/>
+			<Extension CLSID="{8F0A9A2C-4B0C-4AE7-A770-3106D465C979}" CIPObjectID="OutputResetLatchedStatusBits"/>
+			<Extension CLSID="{E795F82C-1ADF-4395-9D36-C6F2DDC6A8A2}"/>
+			<Extension CLSID="{C60BC85D-3487-4DBB-AACC-DAB767A17330}" 
+						CIPObjectID="DeviceInfo" 
+						CIPObjectSpecificFile=
+						"RSLogix 5000 Module Profiles\Rockwell Software\DIO Common\PSCommonDIOCIPObjects.xml"/>
+		</Extensions>
+	</ModuleType>
+	<Module ID="1734_OE4C" SupportsReset="True" NumberOfInputs="0" NumberOfOutputs="4" DriverType="2050" 
+			CIPObjectDefinesID="CIPObjects"></Module>			
+
+    <!-- ************************************************************************** -->
+    <ModuleDefinition ID="1734_OE4C"		StringsID="ModuleDefinitionStrings">
+		<Selections>
+			<Field ID="Connection"			StringID="1">
+				<Choice ID="Data"			StringID="9"></Choice>
+				<Choice ID="Listen_Only"	StringID="6"></Choice>
+				<Choice ID="Enhanced_Rack_Optimization" StringID="10"></Choice>
+			</Field> 
+			<Field ID="DataFormat"			StringID="3">
+				<Choice ID="Integer"		StringID="8"></Choice>
+			</Field>
+		</Selections>
+		<SelectionTree>
+			<Choice ChoiceID="Data"			>
+				<Choice ChoiceID="Integer"	CommMethod="536870913" ConfigID="400"></Choice>
+			</Choice> 
+			<Choice ChoiceID="Listen_Only">
+				<Choice ChoiceID="Integer"	CommMethod="671088642" ConfigID="65540"></Choice>
+			</Choice> 
+			<Choice ChoiceID="Enhanced_Rack_Optimization">
+				<Choice ChoiceID="Integer" ConfigID="67108875"/> 
+			</Choice>
+		</SelectionTree>
+	</ModuleDefinition>
+	
+    <!-- ************************************************************************** -->
+    <!-- Contruction-->
+    
+	<!-- Current Data Connection -->
+	<Construction ConfigID="400">
+		<ConfigTag CLSID="{34B63725-CA55-42DE-91D5-9F87E1CB6BD5}" 
+					ExtensionCLSID="{E1E2F7DA-85DC-4D2B-9301-982CABA7021D}" 
+					ValueID="AB:1734_OE4:C:0_CURRNET" Instance="123">
+			<DataType Name="AB:1734_OE4:C:0"/>			
+			<Enum EnumID="ChannelOutputCurrentRangeType"/>
+			<Enum EnumID="ChannelFaultMode"/>
+			<Enum EnumID="ChannelProgramMode"/>			
+		</ConfigTag>
+		<Connections>
+			<Connection ConnectionID="1734_AOUT4_DATA" 
+			CLSID="{3DB9EEC3-C915-41B6-A706-86F7A1E319F0}"></Connection>
+		</Connections>
+	</Construction>
+	
+	<!-- Listen Only Data Connection -->
+	<Construction ConfigID="65540">
+		<ConfigTag CLSID="{34B63725-CA55-42DE-91D5-9F87E1CB6BD5}" 
+					ValueID="AB:1734_ANLO:C:0" Instance="123">
+			<DataType Name="AB:1734_ANLO:C:0"/>			
+		</ConfigTag>
+		<Connections>
+			<Connection ConnectionID="1734_AOUT4_LO_DATA" 
+						CLSID="{3DB9EEC3-C915-41B6-A706-86F7A1E319F0}"></Connection>
+		</Connections>
+	</Construction>	
+	
+	<!-- Enhanced Rack Optimization Connection -->
+	<Construction ConfigID="67108875">
+		<ConfigTag CLSID="{34B63725-CA55-42DE-91D5-9F87E1CB6BD5}" 
+					ExtensionCLSID="{E1E2F7DA-85DC-4D2B-9301-982CABA7021D}" 
+					ValueID="AB:1734_OE4_ERACK:C:0_CURRNET" Instance="123">
+			<DataType Name="AB:1734_OE4_ERACK:C:0"/>			
+			<Enum EnumID="ChannelOutputCurrentRangeType"/>
+			<Enum EnumID="ChannelFaultMode"/>
+			<Enum EnumID="ChannelProgramMode"/>			
+		</ConfigTag>
+		<Connections>
+			<Connection ConnectionID="1734_AOUT4_ERACK" 
+			CLSID="{C2185BBB-6B0B-457E-AB70-4849FEED611E}"></Connection>
+		</Connections>
+	</Construction>
+	<!-- ************************************************************************** -->
+	<!-- Connection -->
+	
+	<!-- Input Data -->
+	<Connection ID="1734_AOUT4_DATA" Name="OutputData" Type="Output" 
+				MinRPI="4000" MaxRPI="750000" RPI="80000" 
+				InputCxnPoint="101" OutputCxnPoint="102">
+		<InputTag CLSID="{34B63725-CA55-42DE-91D5-9F87E1CB6BD5}">    
+				<DataType Name="AB:1734_OE4:I:0"></DataType>   		 	
+		</InputTag>
+		
+		<OutputTag CLSID="{34B63725-CA55-42DE-91D5-9F87E1CB6BD5}">
+			<DataType Name="AB:1734_OE4:O:0"/>
+		</OutputTag>
+	</Connection>
+	
+	<!-- Listen Only Input Data -->
+	<Connection ID="1734_AOUT4_LO_DATA" Name="ListenOnlyData" Type="Input" 
+				MinRPI="4000" MaxRPI="750000" RPI="80000" 
+				InputCxnPoint="101" OutputCxnPoint="191">				
+		<InputTag CLSID="{34B63725-CA55-42DE-91D5-9F87E1CB6BD5}">
+			<DataType Name="AB:1734_OE4:I:0"/>
+		</InputTag>		
+	</Connection>
+
+	<!-- Enhanced Rack Optimization -->
+	<Connection ID="1734_AOUT4_ERACK" Name="Enhanced_Rack_Optimization" 
+				InputCxnPoint="101" OutputCxnPoint="102">
+		<InputTag CLSID="{34B63725-CA55-42DE-91D5-9F87E1CB6BD5}">    
+				<DataType Name="AB:1734_OE4_ERACK:I:0"></DataType>   		 	
+		</InputTag>
+		
+		<OutputTag CLSID="{34B63725-CA55-42DE-91D5-9F87E1CB6BD5}">
+			<DataType Name="AB:1734_OE4:O:0"/>
+		</OutputTag>
+	</Connection>
+
+	<!-- ************************************************************************** -->
+	<!-- Data & Listen Only Configuration DataType -->
+	<!-- Module : 1734-OE4C --> 
+	<DataType Name="AB:1734_OE4:C:0" Class="IO">
+		<Members>
+			<Member Name="CfgSize"				DataType="DINT" Hidden="True"/>
+			<Member Name="CfgIDNum"				DataType="DINT" Hidden="True"/>
+			<Member Name="Reserved"				DataType="DINT" Hidden="True"/>	
+			<!-- Channel 0 -->		
+			<Member Name="Ch0FaultValue"		DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch0ProgValue"			DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch0LowEngineering"	DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch0HighEngineering"	DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch0LowLimit"			DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch0HighLimit"			DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch0RangeType"			DataType="SINT"> </Member>
+				<Member Name="Ch0RangeCurrent"	DataType="BITFIELD" LowBit="0" HiBit="7" Enum="ChannelOutputCurrentRangeType" Target="Ch0RangeType"></Member>									
+			<Member Name="Ch0FaultMode"			DataType="SINT" Radix="Decimal" Enum="ChannelFaultMode">  </Member>
+			<Member Name="Ch0ProgMode"			DataType="SINT" Radix="Decimal" Enum="ChannelProgramMode"></Member>
+			<Member Name="Ch0LimitAlarmLatch"	DataType="SINT" Radix="Decimal">						  </Member>
+			<Member Name="Ch0AlarmDisable"		DataType="SINT" Radix="Decimal">						  </Member>
+			<Member Name="Pad0"					DataType="SINT" Hidden="True">							  </Member>
+			<!-- Channel 1 -->		
+			<Member Name="Ch1FaultValue"		DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch1ProgValue"			DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch1LowEngineering"	DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch1HighEngineering"	DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch1LowLimit"			DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch1HighLimit"			DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch1RangeType"			DataType="SINT" Radix="Decimal">						  </Member>
+				<Member Name="Ch1RangeCurrent"	DataType="BITFIELD" LowBit="0" HiBit="7" Enum="ChannelOutputCurrentRangeType" Target="Ch1RangeType"></Member>							
+			<Member Name="Ch1FaultMode"			DataType="SINT" Radix="Decimal" Enum="ChannelFaultMode">  </Member>
+			<Member Name="Ch1ProgMode"			DataType="SINT" Radix="Decimal" Enum="ChannelProgramMode"></Member>
+			<Member Name="Ch1LimitAlarmLatch"	DataType="SINT" Radix="Decimal">						  </Member>
+			<Member Name="Ch1AlarmDisable"		DataType="SINT" Radix="Decimal">						  </Member>
+			<Member Name="Pad1"					DataType="SINT" Hidden="True">							  </Member>
+			<!-- Channel 2 -->		
+			<Member Name="Ch2FaultValue"		DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch2ProgValue"			DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch2LowEngineering"	DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch2HighEngineering"	DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch2LowLimit"			DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch2HighLimit"			DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch2RangeType"			DataType="SINT"> </Member>
+				<Member Name="Ch2RangeCurrent"	DataType="BITFIELD" LowBit="0" HiBit="7" Enum="ChannelOutputCurrentRangeType" Target="Ch2RangeType"></Member>									
+			<Member Name="Ch2FaultMode"			DataType="SINT" Radix="Decimal" Enum="ChannelFaultMode">  </Member>
+			<Member Name="Ch2ProgMode"			DataType="SINT" Radix="Decimal" Enum="ChannelProgramMode"></Member>
+			<Member Name="Ch2LimitAlarmLatch"	DataType="SINT" Radix="Decimal">						  </Member>
+			<Member Name="Ch2AlarmDisable"		DataType="SINT" Radix="Decimal">						  </Member>
+			<Member Name="Pad2"					DataType="SINT" Hidden="True">							  </Member>
+			<!-- Channel 3 -->		
+			<Member Name="Ch3FaultValue"		DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch3ProgValue"			DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch3LowEngineering"	DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch3HighEngineering"	DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch3LowLimit"			DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch3HighLimit"			DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch3RangeType"			DataType="SINT" Radix="Decimal">						  </Member>
+				<Member Name="Ch3RangeCurrent"	DataType="BITFIELD" LowBit="0" HiBit="7" Enum="ChannelOutputCurrentRangeType" Target="Ch3RangeType"></Member>							
+			<Member Name="Ch3FaultMode"			DataType="SINT" Radix="Decimal" Enum="ChannelFaultMode">  </Member>
+			<Member Name="Ch3ProgMode"			DataType="SINT" Radix="Decimal" Enum="ChannelProgramMode"></Member>
+			<Member Name="Ch3LimitAlarmLatch"	DataType="SINT" Radix="Decimal">						  </Member>
+			<Member Name="Ch3AlarmDisable"		DataType="SINT" Radix="Decimal">						  </Member>
+			<Member Name="Pad3"					DataType="SINT" Hidden="True">							  </Member>
+		</Members>
+	</DataType>
+
+	<Value ID="AB:1734_OE4:C:0_CURRNET">
+   		00,00,00,00,	
+		00,00,00,00,	
+		01,00,00,00,	
+		<!-- Channel 0 -->		
+		00,00,	
+		00,00,	
+		66,06,
+		ff,1f,		
+		00,80,  
+		ff,7f,	
+		00,		
+		01,		
+		01,		
+		00,		
+		00,		
+		00,		
+		<!-- Channel 1 -->		
+		00,00,	
+		00,00,	
+		66,06,
+		ff,1f,	
+		00,80,  
+		ff,7f,	
+		00,		
+		01,		
+		01,		
+		00,		
+		00,		
+		00,		
+		<!-- Channel 2 -->		
+		00,00,	
+		00,00,	
+		66,06,
+		ff,1f,	
+		00,80,  
+		ff,7f,	
+		00,		
+		01,		
+		01,		
+		00,		
+		00,		
+		00,		
+		<!-- Channel 3 -->		
+		00,00,	
+		00,00,	
+		66,06,
+		ff,1f,	
+		00,80,  
+		ff,7f,	
+		00,		
+		01,		
+		01,		
+		00,		
+		00,		
+		00		
+	</Value>		
+	
+
+	<!-- Enhanced Rack Optimization Configuration Data type -->
+	<DataType Name="AB:1734_OE4_ERACK:C:0" Class="IO">
+		<Members>
+			<Member Name="CfgSize"				DataType="DINT" Hidden="True"/>
+			<Member Name="CfgIDNum"				DataType="DINT" Hidden="True"/>
+			 <Member Name="EnProdDataOffset" DataType="INT" Hidden="True"></Member>
+            <Member Name="EnProdConnPt" DataType="INT" Hidden="True"></Member>
+            <Member Name="EnProdSize" DataType="INT" Hidden="True"></Member>
+            <Member Name="EnConsDataOffset" DataType="INT" Hidden="True"></Member>
+            <Member Name="EnConsConnPt" DataType="INT" Hidden="True"></Member>
+            <Member Name="EnConsSize" DataType="INT" Hidden="True"></Member>
+			<Member Name="Reserved"				DataType="DINT" Hidden="True"/>	
+			<!-- Channel 0 -->		
+			<Member Name="Ch0FaultValue"		DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch0ProgValue"			DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch0LowEngineering"	DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch0HighEngineering"	DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch0LowLimit"			DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch0HighLimit"			DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch0RangeType"			DataType="SINT"> </Member>
+				<Member Name="Ch0RangeCurrent"	DataType="BITFIELD" LowBit="0" HiBit="7" Enum="ChannelOutputCurrentRangeType" Target="Ch0RangeType"></Member>									
+			<Member Name="Ch0FaultMode"			DataType="SINT" Radix="Decimal" Enum="ChannelFaultMode">  </Member>
+			<Member Name="Ch0ProgMode"			DataType="SINT" Radix="Decimal" Enum="ChannelProgramMode"></Member>
+			<Member Name="Ch0LimitAlarmLatch"	DataType="SINT" Radix="Decimal">						  </Member>
+			<Member Name="Ch0AlarmDisable"		DataType="SINT" Radix="Decimal">						  </Member>
+			<Member Name="Pad0"					DataType="SINT" Hidden="True">							  </Member>
+			<!-- Channel 1 -->		
+			<Member Name="Ch1FaultValue"		DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch1ProgValue"			DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch1LowEngineering"	DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch1HighEngineering"	DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch1LowLimit"			DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch1HighLimit"			DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch1RangeType"			DataType="SINT" Radix="Decimal">						  </Member>
+				<Member Name="Ch1RangeCurrent"	DataType="BITFIELD" LowBit="0" HiBit="7" Enum="ChannelOutputCurrentRangeType" Target="Ch1RangeType"></Member>							
+			<Member Name="Ch1FaultMode"			DataType="SINT" Radix="Decimal" Enum="ChannelFaultMode">  </Member>
+			<Member Name="Ch1ProgMode"			DataType="SINT" Radix="Decimal" Enum="ChannelProgramMode"></Member>
+			<Member Name="Ch1LimitAlarmLatch"	DataType="SINT" Radix="Decimal">						  </Member>
+			<Member Name="Ch1AlarmDisable"		DataType="SINT" Radix="Decimal">						  </Member>
+			<Member Name="Pad1"					DataType="SINT" Hidden="True">							  </Member>
+			<!-- Channel 2 -->		
+			<Member Name="Ch2FaultValue"		DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch2ProgValue"			DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch2LowEngineering"	DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch2HighEngineering"	DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch2LowLimit"			DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch2HighLimit"			DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch2RangeType"			DataType="SINT"> </Member>
+				<Member Name="Ch2RangeCurrent"	DataType="BITFIELD" LowBit="0" HiBit="7" Enum="ChannelOutputCurrentRangeType" Target="Ch2RangeType"></Member>									
+			<Member Name="Ch2FaultMode"			DataType="SINT" Radix="Decimal" Enum="ChannelFaultMode">  </Member>
+			<Member Name="Ch2ProgMode"			DataType="SINT" Radix="Decimal" Enum="ChannelProgramMode"></Member>
+			<Member Name="Ch2LimitAlarmLatch"	DataType="SINT" Radix="Decimal">						  </Member>
+			<Member Name="Ch2AlarmDisable"		DataType="SINT" Radix="Decimal">						  </Member>
+			<Member Name="Pad2"					DataType="SINT" Hidden="True">							  </Member>
+			<!-- Channel 3 -->		
+			<Member Name="Ch3FaultValue"		DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch3ProgValue"			DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch3LowEngineering"	DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch3HighEngineering"	DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch3LowLimit"			DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch3HighLimit"			DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch3RangeType"			DataType="SINT" Radix="Decimal">						  </Member>
+				<Member Name="Ch3RangeCurrent"	DataType="BITFIELD" LowBit="0" HiBit="7" Enum="ChannelOutputCurrentRangeType" Target="Ch3RangeType"></Member>							
+			<Member Name="Ch3FaultMode"			DataType="SINT" Radix="Decimal" Enum="ChannelFaultMode">  </Member>
+			<Member Name="Ch3ProgMode"			DataType="SINT" Radix="Decimal" Enum="ChannelProgramMode"></Member>
+			<Member Name="Ch3LimitAlarmLatch"	DataType="SINT" Radix="Decimal">						  </Member>
+			<Member Name="Ch3AlarmDisable"		DataType="SINT" Radix="Decimal">						  </Member>
+			<Member Name="Pad3"					DataType="SINT" Hidden="True">							  </Member>
+		</Members>
+	</DataType>
+
+	<Value ID="AB:1734_OE4_ERACK:C:0_CURRNET">
+   		00,00,00,00,	
+		00,00,00,00,
+		00,00,00,00,00,00,00,00,00,00,00,00,
+		01,00,00,00,	
+		<!-- Channel 0 -->		
+		00,00,	
+		00,00,	
+		66,06,
+		ff,1f,		
+		00,80,  
+		ff,7f,	
+		00,		
+		01,		
+		01,		
+		00,		
+		00,		
+		00,		
+		<!-- Channel 1 -->		
+		00,00,	
+		00,00,	
+		66,06,
+		ff,1f,	
+		00,80,  
+		ff,7f,	
+		00,		
+		01,		
+		01,		
+		00,		
+		00,		
+		00,		
+		<!-- Channel 2 -->		
+		00,00,	
+		00,00,	
+		66,06,
+		ff,1f,	
+		00,80,  
+		ff,7f,	
+		00,		
+		01,		
+		01,		
+		00,		
+		00,		
+		00,		
+		<!-- Channel 3 -->		
+		00,00,	
+		00,00,	
+		66,06,
+		ff,1f,	
+		00,80,  
+		ff,7f,	
+		00,		
+		01,		
+		01,		
+		00,		
+		00,		
+		00		
+	</Value>		
+	<!-- Input DataType -->                                 
+	<DataType Name="AB:1734_OE4:I:0" Class="IO">
+		<Members>
+			<Member Name="Fault"				DataType="DINT" Radix="Binary"/>	
+			<!-- Channel 0 -->		
+			<Member Name="Ch0Status"			DataType="SINT" Radix="Binary"/>
+				<Member Name="Ch0Fault"			DataType="BIT" BitNumber="0" Target="Ch0Status"/>
+				<Member Name="Ch0Calibration"	DataType="BIT" BitNumber="1" Target="Ch0Status"/>
+				<Member Name="Ch0LAlarm"		DataType="BIT" BitNumber="2" Target="Ch0Status"/>
+				<Member Name="Ch0HAlarm"		DataType="BIT" BitNumber="3" Target="Ch0Status"/>
+			<!-- Channel 1 -->			
+			<Member Name="Ch1Status"			DataType="SINT" Radix="Binary"/>
+				<Member Name="Ch1Fault"			DataType="BIT" BitNumber="0" Target="Ch1Status"/>
+				<Member Name="Ch1Calibration"	DataType="BIT" BitNumber="1" Target="Ch1Status"/>
+				<Member Name="Ch1LAlarm"		DataType="BIT" BitNumber="2" Target="Ch1Status"/>
+				<Member Name="Ch1HAlarm"		DataType="BIT" BitNumber="3" Target="Ch1Status"/>
+			<!-- Channel 2 -->		
+			<Member Name="Ch2Status"			DataType="SINT" Radix="Binary"/>
+				<Member Name="Ch2Fault"			DataType="BIT" BitNumber="0" Target="Ch2Status"/>
+				<Member Name="Ch2Calibration"	DataType="BIT" BitNumber="1" Target="Ch2Status"/>
+				<Member Name="Ch2LAlarm"		DataType="BIT" BitNumber="2" Target="Ch2Status"/>
+				<Member Name="Ch2HAlarm"		DataType="BIT" BitNumber="3" Target="Ch2Status"/>
+			<!-- Channel 3 -->			
+			<Member Name="Ch3Status"			DataType="SINT" Radix="Binary"/>
+				<Member Name="Ch3Fault"			DataType="BIT" BitNumber="0" Target="Ch3Status"/>
+				<Member Name="Ch3Calibration"	DataType="BIT" BitNumber="1" Target="Ch3Status"/>
+				<Member Name="Ch3LAlarm"		DataType="BIT" BitNumber="2" Target="Ch3Status"/>
+				<Member Name="Ch3HAlarm"		DataType="BIT" BitNumber="3" Target="Ch3Status"/>
+		</Members>
+	</DataType>
+
+	<Value ID="AB:1734_OE4:I:0">
+		00,00,00,00,		
+		00,
+		00,
+		00,
+		00
+	</Value>
+	
+	<!-- Enhanced Rack Optimization Input Data Type -->
+	<DataType Name="AB:1734_OE4_ERACK:I:0" Class="IO">
+		<Members>	
+			<!-- Channel 0 -->		
+			<Member Name="Ch0Status"			DataType="SINT" Radix="Binary"/>
+				<Member Name="Ch0Fault"			DataType="BIT" BitNumber="0" Target="Ch0Status"/>
+				<Member Name="Ch0Calibration"	DataType="BIT" BitNumber="1" Target="Ch0Status"/>
+				<Member Name="Ch0LAlarm"		DataType="BIT" BitNumber="2" Target="Ch0Status"/>
+				<Member Name="Ch0HAlarm"		DataType="BIT" BitNumber="3" Target="Ch0Status"/>
+			<!-- Channel 1 -->			
+			<Member Name="Ch1Status"			DataType="SINT" Radix="Binary"/>
+				<Member Name="Ch1Fault"			DataType="BIT" BitNumber="0" Target="Ch1Status"/>
+				<Member Name="Ch1Calibration"	DataType="BIT" BitNumber="1" Target="Ch1Status"/>
+				<Member Name="Ch1LAlarm"		DataType="BIT" BitNumber="2" Target="Ch1Status"/>
+				<Member Name="Ch1HAlarm"		DataType="BIT" BitNumber="3" Target="Ch1Status"/>
+			<!-- Channel 2 -->		
+			<Member Name="Ch2Status"			DataType="SINT" Radix="Binary"/>
+				<Member Name="Ch2Fault"			DataType="BIT" BitNumber="0" Target="Ch2Status"/>
+				<Member Name="Ch2Calibration"	DataType="BIT" BitNumber="1" Target="Ch2Status"/>
+				<Member Name="Ch2LAlarm"		DataType="BIT" BitNumber="2" Target="Ch2Status"/>
+				<Member Name="Ch2HAlarm"		DataType="BIT" BitNumber="3" Target="Ch2Status"/>
+			<!-- Channel 3 -->			
+			<Member Name="Ch3Status"			DataType="SINT" Radix="Binary"/>
+				<Member Name="Ch3Fault"			DataType="BIT" BitNumber="0" Target="Ch3Status"/>
+				<Member Name="Ch3Calibration"	DataType="BIT" BitNumber="1" Target="Ch3Status"/>
+				<Member Name="Ch3LAlarm"		DataType="BIT" BitNumber="2" Target="Ch3Status"/>
+				<Member Name="Ch3HAlarm"		DataType="BIT" BitNumber="3" Target="Ch3Status"/>
+		</Members>
+	</DataType>
+
+	<Value ID="AB:1734_OE4_ERACK:I:0">		
+		00,
+		00,
+		00,
+		00
+	</Value>
+	<!-- Output DataType -->                                 
+	<DataType Name="AB:1734_OE4:O:0" Class="IO">
+		<Members>
+			<Member Name="Ch0Data"		DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch1Data"		DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch2Data"		DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+			<Member Name="Ch3Data"		DataType="INT" Radix="Decimal" Min="-32768" Max="32767"></Member>
+		</Members>
+	</DataType>
+
+	<Value ID="AB:1734_OE4:O:0">
+		00,00,
+		00,00,
+		00,00,
+		00,00
+	</Value>
+	
+	<!-- ****************************************************************************** 
+							Category   :    4 Channel Output  : End
+		****************************************************************************** -->	
+	
+	<!--
+	 ***************************************************************************************** 
+     **** Common Unsupported CIPObject Attribute ,Calibration services and UnlatchService ****
+	 *****************************************************************************************
+     -->
+	<CIPObjectDefines ID="CIPObjects">
+		<UnsupportedAttributes>
+			<DeviceInfo Name="Internal State"/>
+		</UnsupportedAttributes>
+	</CIPObjectDefines>
+
+	<!-- Calibration for OE4C --> 
+	<CIPObject ID="OutputCalibration" TimeOut="8000"> 
+		<!-- Supported Services --> 
+		<Services> 
+            <Service Name="StartCalibration"> 
+                <MessageStream> 
+                    <ByteData>32,02,20,21,24,01</ByteData> 
+                </MessageStream>                         
+            </Service> 
+            <Service Name="GenerateLowCalibration"> 
+                <MessageStream> 
+                    <ByteData>33,02,20,21,24,01</ByteData> 
+                    <Insert DataType="USINT"/> 
+                </MessageStream>                         
+            </Service> 
+            <Service Name="GenerateHighCalibration"> 
+                <MessageStream> 
+                    <ByteData>34,02,20,21,24,01</ByteData> 
+                    <Insert DataType="USINT"/> 
+                </MessageStream>                         
+            </Service> 
+            <Service Name="FinishCalibration"> 
+                <MessageStream> 
+                    <ByteData>35,02,20,21,24,01</ByteData> 
+                    <Insert DataType="USINT"/> 
+                    <Insert DataType="DINT"/>	
+                    <Insert DataType="DINT"/>
+                </MessageStream>                         
+            </Service> 
+            <Service Name="AbortCalibration"> 
+                <MessageStream> 
+                    <ByteData>36,02,20,21,24,01</ByteData> 
+                </MessageStream>                         
+            </Service> 
+  		</Services> 
+    </CIPObject> 
+    	
+	<!-- Unlatch service --> 
+	<CIPObject ID="OutputResetLatchedStatusBits" TimeOut="8000"> 
+		<!-- Supported Services --> 
+		<Services> 
+            <Service Name="UnlatchAll"> 
+                <MessageStream> 
+                    <ByteData>32,02,20,0b,24</ByteData>
+					<Insert DataType="USINT"/> 
+                </MessageStream>                         
+            </Service> 
+            <Service Name="Unlatch"> 
+                <MessageStream> 
+					<ByteData>32,03,20,0b,24</ByteData> 
+					<Insert DataType="USINT"/> 
+					<ByteData>30</ByteData> 
+					<Insert DataType="USINT"/> 
+                </MessageStream>                         
+            </Service> 
+        </Services> 
+    </CIPObject> 
+    	
+    <CIPDataType> 
+        <CIPData DataType="UDINT"	Bytes="4" SignDesignation="Unsigned"/> 
+        <CIPData DataType="DINT"	Bytes="4" SignDesignation="Signed"/> 
+        <CIPData DataType="DWORD"	Bytes="4" SignDesignation="Unsigned"/> 
+        <CIPData DataType="WORD"	Bytes="2" SignDesignation="Unsigned"/> 
+        <CIPData DataType="UINT"	Bytes="2" SignDesignation="Unsigned"/> 
+        <CIPData DataType="INT"		Bytes="2" SignDesignation="Signed"/> 
+        <CIPData DataType="USINT"	Bytes="1" SignDesignation="Unsigned"/> 
+        <CIPData DataType="SHORT_STRING" Bytes="1"/> 
+        <CIPData DataType="BITFIELD"/> 
+        <CIPData DataType="BIT"/> 
+        <CIPData DataType="OCTET"	Bytes="1" NeedsDimension="True"/> 
+        <CIPData DataType="STRUCT"	Bytes="1" NeedsDimension="True"/> 
+    </CIPDataType> 
+    
+	<!--
+	 *****************************************************************************
+     ******** Common Connection Data Types ********
+	 *****************************************************************************
+    -->
+
+    <!-- Listen Only Data Connection DataType -->   
+    <DataType Name="AB:1734_ANLO:C:0" Class="IO" HiddenDataType="INT">
+		<Members>
+			<Member Name="CfgSize"	DataType="DINT" Hidden="True"></Member>
+			<Member Name="CfgIDNum" DataType="DINT" Hidden="True"></Member>
+			<Member Name="Data"		DataType="INT" Dimension="11" Hidden="True"></Member>
+		</Members>
+	</DataType>
+
+    <Value ID="AB:1734_ANLO:C:0">
+        00,00,00,00,
+		00,00,00,00,
+		00,00,
+		00,00,
+		00,00,
+		00,00,
+		00,00,
+		00,00,
+		00,00,
+		00,00,
+		00,00,
+		00,00,
+		00,00
+    </Value>    
+	
+	<!--
+	 ****************************************************************
+     ******************* Common Strings and Enums  ******************
+	 ****************************************************************
+    -->
+    
+	<Enum ID="ChannelCurrentRangeType" StringsID="ChannelCurrentRangeTypeStrings">
+		<Value StringID="1">3</Value>
+		<Value StringID="2">8</Value>
+		<Value StringID="3">0</Value>
+		<Value StringID="4">2</Value>
+	</Enum>
+
+	<Strings ID="ChannelCurrentRangeTypeStrings">
+		<String ID="1">
+			<Text LCID="1033">4-20 mA</Text>
+			<Text LCID="1036">4-20 mA</Text>
+			<Text LCID="1031">4 bis 20 mA</Text>
+			<Text LCID="1034">4-20 mA</Text>
+			<Text LCID="1046">4 a 20 mA</Text>
+			<Text LCID="1040">4-20 mA</Text>
+			<Text LCID="1041">4～20 mA</Text>
+			<Text LCID="1042">4-20 mA</Text>
+			<Text LCID="2052">4-20 mA</Text>			
+		</String>
+		<String ID="2">
+			<Text LCID="1033">0-20 mA</Text>
+			<Text LCID="1036">0-20 mA</Text>
+			<Text LCID="1031">0 bis 20 mA</Text>
+			<Text LCID="1034">0-20 mA</Text>
+			<Text LCID="1046">0 a 20 mA</Text>
+			<Text LCID="1040">0-20 mA</Text>
+			<Text LCID="1041">0～20 mA</Text>
+			<Text LCID="1042">0-20 mA</Text>
+			<Text LCID="2052">0-20 毫安</Text>	
+     	</String>
+     	<String ID="3">
+			<Text LCID="1033">-10 to 10 V</Text>
+			<Text LCID="1036">-10 à 10 V</Text>
+			<Text LCID="1031">-10 bis 10&amp;nbsp;V</Text>
+			<Text LCID="1034">De -10 a 10 V</Text>
+			<Text LCID="1046">-10 a 10 V</Text>
+			<Text LCID="1040">da -10 a 10 V</Text>
+			<Text LCID="1041">-10～10 V</Text>
+			<Text LCID="1042">-10V ~ 10V</Text>
+			<Text LCID="2052">-10 到 10 V</Text>			
+		</String>
+		<String ID="4">
+			<Text LCID="1033">0 to 10 V</Text>
+			<Text LCID="1036">0 à 10 V</Text>
+			<Text LCID="1031">0 bis 10&amp;nbsp;V</Text>
+			<Text LCID="1034">De 0 a 10 V</Text>
+			<Text LCID="1046">0 a 10 V</Text>
+			<Text LCID="1040">da 0 a 10 V</Text>
+			<Text LCID="1041">0～10 V</Text>
+			<Text LCID="1042">0V ~ 10V</Text>
+			<Text LCID="2052">0 到 10 V</Text>	
+     	</String>
+	</Strings>
+	
+	<Enum ID="ChannelOutputCurrentRangeType" StringsID="ChannelOutputCurrentRangeTypeStrings">
+		<Value StringID="1">0</Value>
+		<Value StringID="2">2</Value>
+		<Value StringID="3">1</Value>
+		<Value StringID="4">3</Value>
+	</Enum>
+
+	<Strings ID="ChannelOutputCurrentRangeTypeStrings">
+		<String ID="1">
+			<Text LCID="1033">4-20 mA</Text>
+			<Text LCID="1036">4-20 mA</Text>
+			<Text LCID="1031">4 bis 20 mA</Text>
+			<Text LCID="1034">4-20 mA</Text>
+			<Text LCID="1046">4 a 20 mA</Text>
+			<Text LCID="1040">4-20 mA</Text>
+			<Text LCID="1041">4～20 mA</Text>
+			<Text LCID="1042">4-20 mA</Text>
+			<Text LCID="2052">4-20 毫安</Text>			
+		</String>
+		<String ID="2">
+			<Text LCID="1033">0-20 mA</Text>
+			<Text LCID="1036">0-20 mA</Text>
+			<Text LCID="1031">0 bis 20 mA</Text>
+			<Text LCID="1034">0-20 mA</Text>
+			<Text LCID="1046">0 a 20 mA</Text>
+			<Text LCID="1040">0-20 mA</Text>
+			<Text LCID="1041">0～20 mA</Text>
+			<Text LCID="1042">0-20 mA</Text>
+			<Text LCID="2052">0-20 毫安</Text>	
+     	</String>
+
+     	<String ID="3">
+			<Text LCID="1033">0 to 10 V</Text>
+			<Text LCID="1036">0 à 10 V</Text>
+			<Text LCID="1031">0 bis 10&amp;nbsp;V</Text>
+			<Text LCID="1034">De 0 a 10 V</Text>
+			<Text LCID="1046">0 a 10 V</Text>
+			<Text LCID="1040">da 0 a 10 V</Text>
+			<Text LCID="1041">0～10 V</Text>
+			<Text LCID="1042">0V ~ 10V</Text>
+			<Text LCID="2052">0 到 10 V</Text>	
+     	</String>
+		<String ID="4">
+			<Text LCID="1033">-10 to 10 V</Text>
+			<Text LCID="1036">-10 à 10 V</Text>
+			<Text LCID="1031">-10 bis 10&amp;nbsp;V</Text>
+			<Text LCID="1034">De -10 a 10 V</Text>
+			<Text LCID="1046">-10 a 10 V</Text>
+			<Text LCID="1040">da -10 a 10 V</Text>
+			<Text LCID="1041">-10～10 V</Text>
+			<Text LCID="1042">-10V ~ 10V</Text>
+			<Text LCID="2052">-10 到 10 V</Text>			
+		</String>     	
+
+	</Strings>
+		
+	<Enum ID="ChannelFaultMode" StringsID="ChannelFaultModeStrings">
+		<Value StringID="1">0</Value>
+		<Value StringID="2">1</Value>
+		<Value StringID="3">2</Value>
+		<Value StringID="4">3</Value>
+	</Enum>
+	
+	<Enum ID="ChannelProgramMode" StringsID="ChannelProgramModeStrings">
+		<Value StringID="1">0</Value>
+		<Value StringID="2">1</Value>
+		<Value StringID="3">2</Value>
+		<Value StringID="4">3</Value>
+	</Enum>
+	
+	<Strings ID="ChannelFaultModeStrings">
+		<String ID="1">
+			<Text LCID="1033">Hold Last State</Text>
+			<Text LCID="1036">Maintien du dernier état</Text>
+			<Text LCID="1031">Letzten Zustand halten</Text>
+			<Text LCID="1034">Retener último estado</Text>
+			<Text LCID="1046">Manter último estado</Text>
+			<Text LCID="1040">Mantieni ultimo stato</Text>
+			<Text LCID="1041">最後の状態を保持</Text>
+			<Text LCID="1042">마지막 상태 유지</Text>
+			<Text LCID="2052">保持上一状态</Text>			
+		</String>
+		<String ID="2">
+			<Text LCID="1033">Go to Low Clamp</Text>
+			<Text LCID="1036">Aller au verrouillage bas</Text>
+			<Text LCID="1031">Gehe zu unterer Ausgangsbegrenzung</Text>
+			<Text LCID="1034">Ir a fijación baja</Text>
+			<Text LCID="1046">Ir para grampo baixo</Text>
+			<Text LCID="1040">Vai a morsetto con soglia bassa</Text>
+			<Text LCID="1041">クランプ下限に移動</Text>
+			<Text LCID="1042">낮음 고정으로 이동</Text>
+			<Text LCID="2052">转至低钳位</Text>	
+     	</String>
+		<String ID="3">
+			<Text LCID="1033">Go to High Clamp</Text>
+			<Text LCID="1036">Aller au verrouillage haut</Text>
+			<Text LCID="1031">Gehe zu oberer Ausgangsbegrenzung</Text>
+			<Text LCID="1034">Ir a fijación alta</Text>
+			<Text LCID="1046">Ir para grampo alto</Text>
+			<Text LCID="1040">Vai a morsetto con soglia alta</Text>
+			<Text LCID="1041">クランプ上限に移動</Text>
+			<Text LCID="1042">높음 고정으로 이동</Text>
+			<Text LCID="2052">转至高钳位</Text>	
+     	</String>
+		<String ID="4">
+			<Text LCID="1033">Use Fault Value</Text>
+			<Text LCID="1036">Utiliser la valeur de défaut</Text>
+			<Text LCID="1031">Fehlerwert verwenden</Text>
+			<Text LCID="1034">Usar valor de fallo</Text>
+			<Text LCID="1046">Usar valor de Fault</Text>
+			<Text LCID="1040">Usa valore di errore</Text>
+			<Text LCID="1041">フォルト値を使用</Text>
+			<Text LCID="1042">오류 값 사용</Text>
+			<Text LCID="2052">使用故障值</Text>	
+     	</String>
+	</Strings>
+	
+	<Strings ID="ChannelProgramModeStrings">
+		<String ID="1">
+			<Text LCID="1033">Hold Last State</Text>
+			<Text LCID="1036">Maintien du dernier état</Text>
+			<Text LCID="1031">Letzten Zustand halten</Text>
+			<Text LCID="1034">Retener último estado</Text>
+			<Text LCID="1046">Manter último estado</Text>
+			<Text LCID="1040">Mantieni ultimo stato</Text>
+			<Text LCID="1041">最後の状態を保持</Text>
+			<Text LCID="1042">마지막 상태 유지</Text>
+			<Text LCID="2052">保持上一状态</Text>			
+		</String>
+		<String ID="2">
+			<Text LCID="1033">Go to Low Clamp</Text>
+			<Text LCID="1036">Aller au verrouillage bas</Text>
+			<Text LCID="1031">Gehe zu unterer Ausgangsbegrenzung</Text>
+			<Text LCID="1034">Ir a fijación baja</Text>
+			<Text LCID="1046">Ir para grampo baixo</Text>
+			<Text LCID="1040">Vai a morsetto con soglia bassa</Text>
+			<Text LCID="1041">クランプ下限に移動</Text>
+			<Text LCID="1042">낮음 고정으로 이동</Text>
+			<Text LCID="2052">转至低钳位</Text>	
+     	</String>
+		<String ID="3">
+			<Text LCID="1033">Go to High Clamp</Text>
+			<Text LCID="1036">Aller au verrouillage haut</Text>
+			<Text LCID="1031">Gehe zu oberer Ausgangsbegrenzung</Text>
+			<Text LCID="1034">Ir a fijación alta</Text>
+			<Text LCID="1046">Ir para grampo alto</Text>
+			<Text LCID="1040">Vai a morsetto con soglia alta</Text>
+			<Text LCID="1041">クランプ上限に移動</Text>
+			<Text LCID="1042">높음 고정으로 이동</Text>
+			<Text LCID="2052">转至高钳位</Text>	
+     	</String>
+		<String ID="4">
+			<Text LCID="1033">Use Program Value</Text>
+			<Text LCID="1036">Utiliser la valeur Program</Text>
+			<Text LCID="1031">Program-Wert verwenden</Text>
+			<Text LCID="1034">Usar valor de Program</Text>
+			<Text LCID="1046">Usar valor de Program</Text>
+			<Text LCID="1040">Usa valore Program</Text>
+			<Text LCID="1041">Program 値を使用</Text>
+			<Text LCID="1042">Program 값 사용</Text>
+			<Text LCID="2052">使用 Program 值</Text>	
+     	</String>
+	</Strings>	
+			
+	<Strings ID="ModuleDefinitionStrings">
+		<String ID="1">
+			<Text LCID="1033">Connection</Text>
+			<Text LCID="1036">Connexion</Text>
+			<Text LCID="1031">Verbindung</Text>
+			<Text LCID="1034">Conexión</Text>
+			<Text LCID="1046">Conexão</Text>
+			<Text LCID="1040">Collegamento</Text>
+			<Text LCID="1041">接続</Text>
+			<Text LCID="1042">연결</Text>
+			<Text LCID="2052">连接</Text>	
+		</String>
+		<String ID="2">
+			<Text LCID="1033">Mode</Text>
+			<Text LCID="1036">Mode</Text>
+			<Text LCID="1031">Modus</Text>
+			<Text LCID="1034">Modo</Text>
+			<Text LCID="1046">Modo</Text>
+			<Text LCID="1040">Modalità</Text>
+			<Text LCID="1041">モード</Text>
+			<Text LCID="1042">모드</Text>
+			<Text LCID="2052">模式</Text>	
+		</String>
+		<String ID="3">
+ 			<Text LCID="1033">Data Format</Text>
+			<Text LCID="1036">Format des données</Text>
+			<Text LCID="1031">Datenformat</Text>
+			<Text LCID="1034">Formato de datos</Text>
+			<Text LCID="1046">Formato de dados</Text>
+			<Text LCID="1040">Formato di dati</Text>
+			<Text LCID="1041">データ形式</Text>
+			<Text LCID="1042">데이터 형식</Text>
+			<Text LCID="2052">数据格式</Text>	
+		</String>
+		<String ID="4">
+ 			<Text LCID="1033">Output</Text>
+			<Text LCID="1036">Sortie</Text>
+			<Text LCID="1031">Ausgang</Text>
+			<Text LCID="1034">Salida</Text>
+			<Text LCID="1046">Saída</Text>
+			<Text LCID="1040">Uscita</Text>
+			<Text LCID="1041">出力</Text>
+			<Text LCID="1042">출력</Text>
+			<Text LCID="2052">输出</Text>	
+		</String>
+		<String ID="5">
+ 			<Text LCID="1033">Input</Text>
+			<Text LCID="1036">Entrée</Text>
+			<Text LCID="1031">Eingang</Text>
+			<Text LCID="1034">Entrada</Text>
+			<Text LCID="1046">Entrada</Text>
+			<Text LCID="1040">Ingresso</Text>
+			<Text LCID="1041">入力</Text>
+			<Text LCID="1042">입력</Text>
+			<Text LCID="2052">输入</Text>	
+		</String>
+		<String ID="6">
+ 			<Text LCID="1033">Listen Only</Text>
+			<Text LCID="1036">Écoute seule</Text>
+			<Text LCID="1031">Nur-Lesen</Text>
+			<Text LCID="1034">Sólo recepción</Text>
+			<Text LCID="1046">Somente escuta</Text>
+			<Text LCID="1040">Solo ascolto</Text>
+			<Text LCID="1041">リッスン専用</Text>
+			<Text LCID="1042">수신 전용</Text>
+			<Text LCID="2052">只听</Text>	
+		</String>
+		<String ID="7">
+ 			<Text LCID="1033"></Text>
+			<Text LCID="1036"/>
+			<Text LCID="1031"/>
+			<Text LCID="1034"/>
+			<Text LCID="1046"/>
+			<Text LCID="1040"/>
+			<Text LCID="1041"/>
+ 			<Text LCID="1042"/>
+ 			<Text LCID="2052"/>
+		</String>
+		<String ID="8">
+ 			<Text LCID="1033">Integer</Text>
+			<Text LCID="1036">Entier</Text>
+			<Text LCID="1031">Ganzzahl</Text>
+			<Text LCID="1034">Entero</Text>
+			<Text LCID="1046">Inteiro</Text>
+			<Text LCID="1040">Numero intero</Text>
+			<Text LCID="1041">整数</Text>
+			<Text LCID="1042">정수</Text>
+			<Text LCID="2052">整型</Text>	
+		</String>	
+		<String ID="9">
+ 			<Text LCID="1033">Data</Text>
+	 		<Text LCID="1036">Données</Text>
+	 		<Text LCID="1031">Daten</Text>
+ 			<Text LCID="1034">Datos</Text>
+ 			<Text LCID="1046">Dados</Text>
+ 			<Text LCID="1040">Dati</Text>
+ 			<Text LCID="1041">データ</Text>
+			<Text LCID="1042">데이터</Text>
+			<Text LCID="2052">数据</Text>	
+		</String>
+
+		<String ID="10">
+ 			<Text LCID="1033">Enhanced Rack Optimization</Text>
+	 		<Text LCID="1036">Optimisation du rack</Text>
+ 			<Text LCID="1031">Rack-Optimierung</Text>
+ 			<Text LCID="1034">Optimización de rack</Text>
+ 			<Text LCID="1046">Otimização de gaveta</Text>
+ 			<Text LCID="1040">Ottimizzazione rack</Text>
+			<Text LCID="1041">ラック最適化</Text>
+ 			<Text LCID="1042">랙 최적화</Text>
+			<Text LCID="2052">机架优化</Text> 			
+		</String>
+	</Strings>
+	
+</AOPModuleTypes>

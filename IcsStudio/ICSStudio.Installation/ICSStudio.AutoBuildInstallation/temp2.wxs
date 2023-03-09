@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:bal="http://schemas.microsoft.com/wix/BalExtension"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+  <Bundle Name="ICSStudio" Version="1.0.0.0" Manufacturer="ICON" UpgradeCode="ab473edf-6b18-4663-a430-22b457c94485" Compressed="yes">
+    <BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense" >
+      <bal:WixStandardBootstrapperApplication LicenseFile="{2}" />
+    </BootstrapperApplicationRef>
+
+		<Chain>
+      
+		  <!-- TODO: Define the list of chained packages. -->
+			<!-- <MsiPackage SourceFile="path\to\your.msi" /> -->
+      <!--<ExePackage SourceFile="File\vs_isoshell.exe" InstallCondition="ISOSHELL = 1"></ExePackage>-->
+      <PackageGroupRef Id="ISOSHELLFULL"/>
+      <MsiPackage Id="Setup" SourceFile="{0}" DisplayInternalUI="yes"></MsiPackage>
+		</Chain>
+	</Bundle>
+  <Fragment>
+    <util:RegistrySearch Variable="ISOSHELL" Key="SOFTWARE\WOW6432Node\Microsoft\DevDiv\vs\Servicing\14.0" Id="ISOSHELL2015" 
+                         Result="exists" Root="HKLM" Format="raw"/>
+    <util:RegistrySearch Variable="ISOSHELL32" Key="SOFTWARE\Microsoft\DevDiv\vs\Servicing\14.0" Id="ISOSHELL322015"
+                         Result="exists" Root="HKLM" Format="raw"/>
+    <PackageGroup Id="ISOSHELLFULL">
+      <ExePackage SourceFile="{1}"
+                  Id="ISOSHELLEXE"
+                  Cache="no"
+                  InstallCondition="ISOSHELL = 0 and ISOSHELL32 = 0"></ExePackage>
+    </PackageGroup>
+  </Fragment>
+</Wix>

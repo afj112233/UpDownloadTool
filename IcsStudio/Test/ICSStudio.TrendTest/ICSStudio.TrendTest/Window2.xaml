@@ -1,0 +1,32 @@
+﻿<Window x:Class="ICSStudio.TrendTest.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ICSStudio.TrendTest"
+        xmlns:oxy="http://oxyplot.org/wpf"
+        mc:Ignorable="d"
+        Title="Window2" Height="600" Width="600">
+    <Grid>
+        <ItemsControl ItemsSource="{Binding PlotModels}" Loaded="FrameworkElement_OnLoaded2" x:Name="Trends">
+            <ItemsControl.Template>
+                <ControlTemplate>
+                    <ScrollViewer Padding="0" Focusable="False">
+                        <ItemsPresenter SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                    </ScrollViewer>
+                </ControlTemplate>
+            </ItemsControl.Template>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <oxy:PlotTrendView Model="{Binding}"  Loaded="FrameworkElement_OnLoaded" BorderBrush="White" BorderThickness="1"
+                                       Height="200"></oxy:PlotTrendView>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical"></StackPanel>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+    </Grid>
+</Window>

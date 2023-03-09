@@ -1,0 +1,32 @@
+{
+    "VendorID": 5,
+    "ProductType": 115,
+    "ProductCode": 211,
+    "CatalogNumber": "ICD-OF4",
+    "Descriptions": [
+        {
+            "LCID": 1033,
+            "Text": "4 Channel Analog Output"
+        },
+        {
+            "LCID": 2052,
+            "Text": "4 通道模拟电流输出"
+        }
+    ],
+    "MajorRevs": [
+        {
+            "MajorRev": 1,
+            "Series": "A"
+        }
+    ],
+    "Ports": [
+        {
+            "Number": 1,
+            "Type": "PointIO",
+            "Label": "Chassis",
+            "Width": 1,
+            "ConnectorOffset": 0
+        }
+    ],
+    "PSFile": "ICON_PS1734CO_Analog.json"
+}

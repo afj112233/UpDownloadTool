@@ -1,0 +1,326 @@
+﻿<!-- ReSharper disable InconsistentNaming -->
+<!-- ReSharper disable Xaml.BindingWithContextNotResolved -->
+<!-- ReSharper disable Xaml.RedundantResource -->
+<UserControl x:Class="ICSStudio.Gui.Controls.ExtendedPropertyGrid.ExtendedPropertyGrid"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:common="http://imagin.tech/imagin/common"
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:extendedPropertyGrid="clr-namespace:ICSStudio.Gui.Controls.ExtendedPropertyGrid"
+             xmlns:converters="clr-namespace:ICSStudio.Gui.Converters"
+             mc:Ignorable="d"
+             x:Name="PART_ExtendedPropertyGrid">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="Brush.Image" Color="#BBB"/>
+
+        <common:BindingProxy x:Key="BindingProxy"  Data="{Binding RelativeSource={RelativeSource AncestorType={x:Type extendedPropertyGrid:ExtendedPropertyGrid}}}"/>
+        <!-- convert -->
+        <common:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
+        <common:StartsWithToVisibilityMultiValueConverter x:Key="StartsWithToVisibilityMultiValueConverter"/>
+        <common:StringToCamelCaseConverter x:Key="StringToCamelCaseConverter"/>
+        <common:EnumToCamelCaseConverter x:Key="EnumToCamelCaseConverter"/>
+        <converters:IsChangedConverter x:Key="IsChangedConverter"/>
+        <converters:EnumToDisplayNameConverter x:Key="EnumToDisplayNameConverter"/>
+        <converters:UInt16ToIntegerConverter x:Key="UInt16ToIntegerConverter"/>
+        <converters:UInt32ToLongConverter x:Key="UInt32ToLongConverter"/>
+        <!-- style -->
+        
+        <Style
+            x:Key="Style:Cell"
+            TargetType="{x:Type DataGridCell}">
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Foreground"  Value="Black"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+        </Style>
+
+        <Style x:Key="Style.DataGrid.Row" TargetType="{x:Type DataGridRow}">
+            <Setter Property="TextElement.Foreground" Value="{Binding Foreground, ElementName=PART_ExtendedPropertyGrid}" />
+            <Setter Property="Visibility">
+                <Setter.Value>
+                    <MultiBinding Converter="{StaticResource StartsWithToVisibilityMultiValueConverter}" BindingGroupName="{x:Null}">
+                        <Binding Path="Name" Converter="{StaticResource StringToCamelCaseConverter}"/>
+                        <Binding Path="SearchQuery" RelativeSource="{RelativeSource AncestorType={x:Type extendedPropertyGrid:ExtendedPropertyGrid}}"/>
+                    </MultiBinding>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsSelected" Value="False" />
+                        <Condition Property="IsMouseOver" Value="True" />
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Background" Value="Transparent"/>
+                </MultiTrigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsSelected" Value="True" />
+                        <Condition Property="IsMouseOver" Value="True" />
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Background" Value="Transparent"/>
+                </MultiTrigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsSelected" Value="True" />
+                        <Condition Property="Selector.IsSelectionActive" Value="False" />
+                        <Condition Property="IsMouseOver" Value="False" />
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Background" Value="Transparent"/>
+                </MultiTrigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsSelected" Value="True" />
+                        <Condition Property="Selector.IsSelectionActive" Value="True" />
+                        <Condition Property="IsMouseOver" Value="False" />
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Background" Value="Transparent"/>
+                </MultiTrigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsSelected" Value="False" />
+                        <Condition Property="ItemsControl.AlternationIndex" Value="0" />
+                        <Condition Property="IsMouseOver" Value="False" />
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Background" Value="Transparent"/>
+                </MultiTrigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsSelected" Value="False" />
+                        <Condition Property="ItemsControl.AlternationIndex" Value="1" />
+                        <Condition Property="IsMouseOver" Value="False" />
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Background" Value="Transparent"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="Style.SingleUpDown" TargetType="{x:Type xctk:SingleUpDown}">
+            <Style.Triggers>
+                <Trigger Property="IsReadOnly" Value="True">
+                    <Setter Property="Background" Value="LightGray"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="Style.LongUpDown" TargetType="{x:Type xctk:LongUpDown}">
+            <Style.Triggers>
+                <Trigger Property="IsReadOnly" Value="True">
+                    <Setter Property="Background" Value="LightGray"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="Style.IntegerUpDown" TargetType="{x:Type xctk:IntegerUpDown}">
+            <Style.Triggers>
+                <Trigger Property="IsReadOnly" Value="True">
+                    <Setter Property="Background" Value="LightGray"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="Style.TextBox" TargetType="{x:Type TextBox}">
+            <Style.Triggers>
+                <Trigger Property="IsReadOnly" Value="True">
+                    <Setter Property="Background" Value="LightGray"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <!-- resource dictionary -->
+
+        <ResourceDictionary x:Key="Resources.Templates">
+            <DataTemplate x:Key="{x:Type System:Boolean}">
+                <CheckBox 
+                    HorizontalAlignment="Right" VerticalAlignment="Center"
+                    IsChecked="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                    IsEnabled="{Binding IsReadOnly, Converter={StaticResource InverseBooleanConverter}, Mode=OneWay}"
+                    />
+            </DataTemplate>
+            
+            <DataTemplate x:Key="{x:Type System:Double}">
+                <xctk:DoubleUpDown 
+                    HorizontalAlignment="Stretch"
+                    AllowSpin="False" ShowButtonSpinner="False"
+                    IsReadOnly="{Binding IsReadOnly, Mode=OneWay}"
+                    Maximum="{Binding Maximum}"
+                    Minimum="{Binding Minimum}"
+                    Value="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    />
+            </DataTemplate>
+            
+            <DataTemplate x:Key="{x:Type System:Single}">
+                <xctk:SingleUpDown
+                    HorizontalAlignment="Stretch"
+                    AllowSpin="False" ShowButtonSpinner="False"
+                    IsReadOnly="{Binding IsReadOnly, Mode=OneWay}"
+                    Maximum="{Binding Maximum}"
+                    Minimum="{Binding Minimum}"
+                    Value="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    FormatString="######0.0######"
+                    Style="{StaticResource Style.SingleUpDown}"/>
+            </DataTemplate>
+            
+            <DataTemplate x:Key="{x:Type System:UInt16 }">
+                <xctk:IntegerUpDown
+                    HorizontalAlignment="Stretch"
+                    AllowSpin="False" ShowButtonSpinner="False"
+                    IsReadOnly="{Binding IsReadOnly, Mode=OneWay}"
+                    Maximum="{Binding Maximum,Converter={StaticResource UInt16ToIntegerConverter}}"
+                    Minimum="{Binding Minimum,Converter={StaticResource UInt16ToIntegerConverter}}"
+                    Value="{Binding Value, Mode=TwoWay,Converter={StaticResource UInt16ToIntegerConverter},UpdateSourceTrigger=PropertyChanged}"
+                    Style="{StaticResource Style.IntegerUpDown}"/>
+            </DataTemplate>
+            <DataTemplate x:Key="{x:Type System:UInt32 }">
+                <xctk:LongUpDown HorizontalAlignment="Stretch"
+                    AllowSpin="False" ShowButtonSpinner="False"
+                    IsReadOnly="{Binding IsReadOnly, Mode=OneWay}"
+                    Maximum="{Binding Maximum,Converter={StaticResource UInt32ToLongConverter}}"
+                    Minimum="{Binding Minimum,Converter={StaticResource UInt32ToLongConverter}}"
+                    Value="{Binding Value, Mode=TwoWay,Converter={StaticResource UInt32ToLongConverter},UpdateSourceTrigger=PropertyChanged}"
+                    Style="{StaticResource Style.LongUpDown}"/>
+            </DataTemplate>
+            <DataTemplate x:Key="{x:Type System:Int32}">
+                <xctk:IntegerUpDown HorizontalAlignment="Stretch"
+                    AllowSpin="False" ShowButtonSpinner="False"
+                    IsReadOnly="{Binding IsReadOnly, Mode=OneWay}"
+                    Maximum="{Binding Maximum}"
+                    Minimum="{Binding Minimum}"
+                    Value="{Binding Value, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+            </DataTemplate>
+            
+            <DataTemplate x:Key="{x:Type System:String}">
+                <ContentControl
+                    x:Name="PART_Content"
+                    Content="{Binding Mode=OneWay}">
+                    <ContentControl.ContentTemplate>
+                        <DataTemplate>
+                            <TextBox
+                                HorizontalAlignment="Stretch"
+                                IsReadOnly="{Binding IsReadOnly, Mode=OneWay}" 
+                                Text="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                TextAlignment="Right"
+                                MinWidth="50"
+                                Margin="0"
+                                Style="{StaticResource Style.TextBox}"/>
+                        </DataTemplate>
+                    </ContentControl.ContentTemplate>
+                 </ContentControl>
+            </DataTemplate>
+            
+            <DataTemplate x:Key="{x:Type System:Enum}">
+                <ComboBox
+                    IsEnabled="{Binding IsReadOnly,Converter={StaticResource InverseBooleanConverter},Mode=OneWay}"
+                    ItemsSource="{Binding EnumSource,Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                    SelectedValue="{Binding Value,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                    VirtualizingPanel.IsVirtualizing="True" 
+                    VirtualizingPanel.VirtualizationMode="Recycling"
+                    HorizontalAlignment="Stretch"
+                    Margin="0"
+                    HorizontalContentAlignment="Right">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock
+                               Text="{Binding Mode=OneWay,Converter={StaticResource EnumToDisplayNameConverter}}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </DataTemplate>
+            
+        </ResourceDictionary>
+
+        <DataTemplate x:Key="PropertyModelTemplate">
+            <ContentControl Content="{Binding}">
+                <ContentControl.ContentTemplateSelector>
+                    <extendedPropertyGrid:ExtendedPropertyTemplateSelector Resources="{StaticResource Resources.Templates}"/>
+                </ContentControl.ContentTemplateSelector>
+            </ContentControl>
+        </DataTemplate>
+
+    </UserControl.Resources>
+    
+    <Grid DataContext="{Binding ElementName=PART_ExtendedPropertyGrid}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0"
+            Background="Gray"
+            BorderBrush="Black"
+            BorderThickness="1">
+            <DataGrid
+                AutoGenerateColumns="False"
+                CanUserAddRows="False"
+                CanUserDeleteRows="False"
+                CellStyle="{StaticResource Style:Cell}"
+                ItemsSource="{Binding ListCollectionView,IsAsync=True}"
+                ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                ScrollViewer.VerticalScrollBarVisibility="Auto"
+                SelectedValue="{Binding Properties.ActiveProperty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                SelectionMode="Single">
+                <DataGrid.Columns>
+                    <!--IsChanged-->
+                    <DataGridTemplateColumn
+                        Header=""
+                        Width="5">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock
+                                    Text="{Binding IsChanged,Mode=OneWay,Converter={StaticResource IsChangedConverter},UpdateSourceTrigger=PropertyChanged}"
+                                    VerticalAlignment="Center"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    
+                    <!--Name-->
+                    <DataGridTemplateColumn
+                        Header="Name"
+                        SortMemberPath="Name"
+                        Width="{Binding Data.PropertyColumnWidth,Source={StaticResource BindingProxy}}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock
+                                    Text="{Binding Name,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"
+                                    TextTrimming="CharacterEllipsis"
+                                    ToolTip="{Binding Text,Mode=OneWay,RelativeSource={RelativeSource Self}}"
+                                    VerticalAlignment="Stretch"
+                                    HorizontalAlignment="Stretch"
+                                    Background="LightGray"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    
+                    <!--Value-->
+                    <DataGridTemplateColumn
+                        CellTemplate="{StaticResource PropertyModelTemplate}"
+                        Header="Value"
+                        Width="{Binding Data.ValueColumnWidth,Source={StaticResource BindingProxy}}">
+                    </DataGridTemplateColumn>
+                    
+                    <!--Unit-->
+                    <DataGridTemplateColumn
+                        Header="Unit"
+                        Width="{Binding Data.UnitColumnWidth,Source={StaticResource BindingProxy}}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock
+                                    Text="{Binding Unit,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"
+                                    TextTrimming="CharacterEllipsis"
+                                    ToolTip="{Binding Text,Mode=OneWay,RelativeSource={RelativeSource Self}}"
+                                    VerticalAlignment="Stretch"
+                                    HorizontalAlignment="Stretch"
+                                    Background="LightGray"
+                                    />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+                
+            </DataGrid>
+            
+        </Border>
+
+    </Grid>
+</UserControl>

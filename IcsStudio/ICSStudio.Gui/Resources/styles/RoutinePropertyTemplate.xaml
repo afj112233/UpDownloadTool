@@ -1,0 +1,58 @@
+﻿<FlowDocument
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    ColumnWidth="800" FontSize="10" FontFamily="Times New Roman"
+        TextOptions.TextFormattingMode="Display">
+    <Table FontFamily="Times New Roman" FontSize="10" CellSpacing="0">
+        <Table.Columns>
+            <TableColumn Width="200"/>
+            <TableColumn Width="200"/>
+            <TableColumn Width="200"/>
+            <TableColumn Width="200"/>
+        </Table.Columns>
+        <TableRowGroup Name="Configuration" >
+            <TableRow>
+                <TableCell ColumnSpan="4">
+                    <Paragraph Background="DarkGray">
+                        <Bold>
+                            <Run Text="General"></Run>
+                        </Bold>
+                    </Paragraph>
+                </TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell>
+                    <Paragraph>
+                        <Run Text="Type:"></Run>
+                    </Paragraph>
+                </TableCell>
+                <TableCell>
+                    <Paragraph>
+                        <Run Text="{Binding Type}"></Run>
+                    </Paragraph>
+                </TableCell>
+                <TableCell>
+                    <Paragraph>
+                        <Run Text="Number of Lines:"></Run>
+                    </Paragraph>
+                </TableCell>
+                <TableCell>
+                    <Paragraph>
+                        <Run Text="{Binding NumberOfLines}"></Run>
+                    </Paragraph>
+                </TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell>
+                    <Paragraph>
+                        <Run Text="{Binding InWhere}"></Run>
+                    </Paragraph>
+                </TableCell>
+                <TableCell>
+                    <Paragraph>
+                        <Run Text="{Binding InWho}"></Run>
+                    </Paragraph>
+                </TableCell>
+            </TableRow>
+        </TableRowGroup>
+    </Table>
+</FlowDocument>

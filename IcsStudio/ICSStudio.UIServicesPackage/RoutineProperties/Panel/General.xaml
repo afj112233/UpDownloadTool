@@ -1,0 +1,98 @@
+﻿<UserControl
+    x:Class="ICSStudio.UIServicesPackage.RoutineProperties.Panel.General"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:ICSStudio.Components.Controls;assembly=ICSStudio.Components"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="380"
+    Height="250"
+    d:DesignHeight="250"
+    d:DesignWidth="380"
+    IsEnabled="{Binding IsOnlineEnabled}"
+    Loaded="OnLoaded"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <Style TargetType="RowDefinition">
+                <Setter Property="Height" Value="30" />
+            </Style>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="0"
+            Text="{DynamicResource Name}" />
+        <controls:ValidateNameControl
+            x:Name="NameBox1"
+            Grid.Row="0"
+            Grid.Column="1"
+            Width="190"
+            Height="20"
+            IsEnabled="{Binding NameIsEnabled}"
+            Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
+            Visibility="{Binding Visible1}" />
+        <controls:ValidateNameControl
+            x:Name="NameBox2"
+            Grid.Row="0"
+            Grid.Column="1"
+            IsEnabled="{Binding NameIsEnabled}"
+            Text="{Binding Name}"
+            Visibility="{Binding Visible2}" />
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="0"
+            VerticalAlignment="Top"
+            Text="{DynamicResource Description}" />
+        <TextBox
+            x:Name="Description"
+            Grid.Row="1"
+            Grid.Column="1"
+            Width="190"
+            Height="80"
+            AcceptsReturn="True"
+            IsEnabled="{Binding IsEnabled}"
+            Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}"
+            TextWrapping="Wrap"
+            VerticalScrollBarVisibility="Visible" />
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="0"
+            Text="{DynamicResource Type}" />
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="1"
+            Text="{Binding Type}" />
+        <TextBlock
+            Grid.Row="3"
+            Grid.Column="0"
+            Text="{Binding Row4Name}" />
+        <TextBlock
+            Grid.Row="3"
+            Grid.Column="1"
+            Text="{Binding InProgram}" />
+        <TextBlock
+            Grid.Row="4"
+            Grid.Column="0"
+            Text="{Binding Row5Name}" />
+        <TextBlock
+            Grid.Row="4"
+            Grid.Column="1"
+            Text="{Binding NumberOfRungs}" />
+    </Grid>
+</UserControl>

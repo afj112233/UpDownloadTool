@@ -1,0 +1,172 @@
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\database.db
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\DIO Analog\ICD-IF4.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\DIO Analog\ICD-IR4.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\DIO Analog\ICD-OF4.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\DIO Analog\ICON_PS1734CO_Analog.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\DIO Analog\ICON_PS1734HD_Analog.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\DIO Analog\ICON_PS1734_Analog.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\DIO Discrete\1734-IB4.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\DIO Discrete\1734-IB8.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\DIO Discrete\1734-OB4.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\DIO Discrete\1734-OB8.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\DIO Discrete\1734-OB8E.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\DIO Discrete\Embedded-IQ16.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\DIO Discrete\Embedded-OB16.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\DIO Discrete\ICD-IB16.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\DIO Discrete\ICD-IQ16.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\DIO Discrete\ICD-OB16.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\DIO Discrete\ICD-OV16.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\DIO Discrete\PS1734_Discrete.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\DIO Discrete\PSICD_Discrete.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\DIO Discrete\PSICD_Embedded.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\DIO Enet Adapter\1734-AENTR.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\DIO Enet Adapter\ICD-AENTR.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\Embedded\Embedded_DiscreteIO.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\Embedded\PS1769_L1YEmbedded.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\Generic\ETHERNET-MODULE.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\motion.db
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\2198-D006-ERS3.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\2198-D012-ERS3.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\2198-D020-ERS3.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\2198-D032-ERS3.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\2198-D057-ERS3.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\2198-H003-ERS.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\2198-H003-ERS2.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\2198-H008-ERS.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\2198-H008-ERS2.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\2198-H015-ERS.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\2198-H015-ERS2.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\2198-H025-ERS.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\2198-H025-ERS2.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\2198-H040-ERS.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\2198-H040-ERS2.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\2198-H070-ERS.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\2198-H070-ERS2.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\2198-S086-ERS3.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\ICM-D1S11.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\ICM-D1S15.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\ICM-D1S18.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\ICM-D1S30.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\ICM-D1S70.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\ICM-D3D05.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\ICM-D3D08.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\ICM-D3D11.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\ICM-D3D18.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\ICM-D3D28.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\ICM-D3D38.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\ICM-D5D03.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\ICM-D5D05.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\ICM-D5D08.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\ICM-D5D11.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\ICM-D5D18.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\ICM-D5D28.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\ICM-D5D38.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\ICM-D5S08.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\ICM-D5S100.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\ICM-D5S130.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\ICM-D5S160.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\ICM-D5S50.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\ICM-D5S70.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\PSICM-D5.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ModuleProfiles\MotionDrive\PSKinetix5500Drive.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\Toolchains\include\ivmbytecodeimpl.h
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\Toolchains\include\ivmexport.h
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\Toolchains\include\module.aarch64.lds
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\Toolchains\include\module.lds
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\Toolchains\include\module.x64.lds
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ICSStudio.DeviceProperties.dll.config
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ICSStudio.DeviceProperties.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ICSStudio.DeviceProperties.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ICSStudio.DeviceProperties.csprojResolveAssemblyReference.cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\Adapters\Panel\ChassisSizePanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\Adapters\Panel\ConnectionPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\Adapters\Panel\GeneralPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\Adapters\Panel\InternetProtocolPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\Adapters\Panel\ModuleInfoPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\Adapters\Panel\NetworkPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\Adapters\Panel\PortConfigurationPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\AdvancedUserLimits\AdvancedUserLimitsDialog.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\AnalogIOs\Panel\CalibrationPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\AnalogIOs\Panel\ConnectionPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\AnalogIOs\Panel\FaultProgramActionPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\AnalogIOs\Panel\GeneralPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\AnalogIOs\Panel\IFConfigPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\AnalogIOs\Panel\ModuleInfoPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\DevicePropertiesControl.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\Dialogs\RefreshingDialog.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\Dialogs\ResettingDialog.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\DiscreteIOs\Panel\ConnectionPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\DiscreteIOs\Panel\FaultProgramActionPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\DiscreteIOs\Panel\GeneralPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\DiscreteIOs\Panel\InputFilterTimeConfigPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\DiscreteIOs\Panel\ModuleInfoPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\Generic\Panel\ConnectionPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\Generic\Panel\GeneralPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\Generic\Panel\ModuleInfoPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ModuleDefinition\DIOModuleDefinitionDialog.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ModuleDefinition\DIOEnetAdapterDefinitionDialog.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ModuleDefinition\ServoDriveDefinitionDialog.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ServoDrives\Panel\AssociatedAxesPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ServoDrives\Panel\ConnectionPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ServoDrives\Panel\DiagnosticsPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ServoDrives\Panel\DigitalInputPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ServoDrives\Panel\GeneralPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ServoDrives\Panel\InternetProtocolPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ServoDrives\Panel\ModuleInfoPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ServoDrives\Panel\NetworkPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ServoDrives\Panel\PortConfigurationPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ServoDrives\Panel\PowerPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ServoDrives\Panel\TimeSyncPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\Adapters\Panel\ChassisSizePanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\Adapters\Panel\ConnectionPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\Adapters\Panel\GeneralPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\Adapters\Panel\InternetProtocolPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\Adapters\Panel\ModuleInfoPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\Adapters\Panel\NetworkPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\Adapters\Panel\PortConfigurationPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\AdvancedUserLimits\AdvancedUserLimitsDialog.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\AnalogIOs\Panel\AlarmConfigPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\AnalogIOs\Panel\CalibrationPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\AnalogIOs\Panel\ConnectionPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\AnalogIOs\Panel\FaultProgramActionPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\AnalogIOs\Panel\GeneralPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\AnalogIOs\Panel\IFConfigPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\AnalogIOs\Panel\IRConfigPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\AnalogIOs\Panel\LimitsConfigPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\AnalogIOs\Panel\ModuleInfoPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\AnalogIOs\Panel\OutputConfigPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\DevicePropertiesControl.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\Dialogs\RefreshingDialog.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\Dialogs\ResettingDialog.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\DiscreteIOs\Panel\ConnectionPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\DiscreteIOs\Panel\FaultProgramActionPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\DiscreteIOs\Panel\GeneralPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\DiscreteIOs\Panel\InputFilterTimeConfigPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\DiscreteIOs\Panel\ModuleInfoPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\Generic\Panel\ConnectionPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\Generic\Panel\GeneralPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\Generic\Panel\ModuleInfoPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ModuleDefinition\DIOModuleDefinitionDialog.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ModuleDefinition\DIOEnetAdapterDefinitionDialog.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ModuleDefinition\ServoDriveDefinitionDialog.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ServoDrives\Panel\AssociatedAxesPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ServoDrives\Panel\ConnectionPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ServoDrives\Panel\DiagnosticsPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ServoDrives\Panel\DigitalInputPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ServoDrives\Panel\GeneralPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ServoDrives\Panel\InternetProtocolPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ServoDrives\Panel\ModuleInfoPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ServoDrives\Panel\NetworkPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ServoDrives\Panel\PortConfigurationPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ServoDrives\Panel\PowerPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ServoDrives\Panel\TimeSyncPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ICSStudio.DeviceProperties_MarkupCompile.cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ICSStudio.DeviceProperties_MarkupCompile.lref
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\AnalogIOs\Panel\AlarmConfigPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\AnalogIOs\Panel\IRConfigPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\AnalogIOs\Panel\LimitsConfigPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\AnalogIOs\Panel\OutputConfigPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ICSStudio.DeviceProperties.g.resources
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ICSStudio.DeviceProperties.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.DeviceProperties\obj\Release\ICSStudio.DeviceProperties.pdb

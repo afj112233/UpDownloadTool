@@ -1,0 +1,11 @@
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\\ICSStudio.exe.config
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\\ICSStudio.winprf
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\\ICSStudio.pkgundef
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\\ICSStudio.pkgdef
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\\Splash.bmp
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\\DebuggerProxy.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\\DebuggerProxy.dll.manifest
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\\Icon64-64.3.ico
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\\ReleaseNotes.txt
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\\Profiles\General.vssettings
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\\Extensions\Application\ICSStudio.Application.pkgdef

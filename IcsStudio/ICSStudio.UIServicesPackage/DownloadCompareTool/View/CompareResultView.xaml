@@ -1,0 +1,125 @@
+﻿<Window
+    x:Class="ICSStudio.UIServicesPackage.DownloadCompareTool.View.CompareResultView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:diffplex="clr-namespace:DiffPlex.Wpf.Controls;assembly=DiffPlex.Wpf"
+    xmlns:gui="clr-namespace:ICSStudio.Gui;assembly=ICSStudio.Gui"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="clr-namespace:ICSStudio.UIServicesPackage.DownloadCompareTool.ViewModel.Item"
+    x:Name="MainWindow"
+    Width="1000"
+    Height="700"
+    d:DesignHeight="300"
+    d:DesignWidth="300"
+    gui:DialogCloser.DialogResult="{Binding DialogResult}"
+    ResizeMode="CanResizeWithGrip"
+    WindowStartupLocation="CenterOwner"
+    WindowStyle="ToolWindow"
+    mc:Ignorable="d">
+    <Grid Margin="7">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300" MinWidth="300" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TreeView Grid.Column="0" ItemsSource="{Binding ItemsSource}">
+                <TreeView.Resources>
+                    <HierarchicalDataTemplate DataType="{x:Type viewModel:CompareItem}" ItemsSource="{Binding Children}">
+                        <TextBlock Text="{Binding Title}">
+                            <TextBlock.InputBindings>
+                                <MouseBinding
+                                    Command="{Binding DataContext.ShowResultCommand, ElementName=MainWindow}"
+                                    CommandParameter="{Binding}"
+                                    MouseAction="LeftDoubleClick" />
+                            </TextBlock.InputBindings>
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ItemType}">
+                                            <DataTrigger.Value>
+                                                <viewModel:CompareItemType>Deleted</viewModel:CompareItemType>
+                                            </DataTrigger.Value>
+                                            <Setter Property="Foreground" Value="#FF640000" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding ItemType}">
+                                            <DataTrigger.Value>
+                                                <viewModel:CompareItemType>Added</viewModel:CompareItemType>
+                                            </DataTrigger.Value>
+                                            <Setter Property="Foreground" Value="#FF640064" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding ItemType}">
+                                            <DataTrigger.Value>
+                                                <viewModel:CompareItemType>Modified</viewModel:CompareItemType>
+                                            </DataTrigger.Value>
+                                            <Setter Property="Foreground" Value="#FF0032A0" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </HierarchicalDataTemplate>
+                </TreeView.Resources>
+            </TreeView>
+
+            <GridSplitter Grid.Column="0" Width="5" />
+
+            <diffplex:DiffViewer
+                Grid.Column="1"
+                HeaderForeground="#808080"
+                IgnoreUnchanged="False"
+                LinesContext="2"
+                NewText="{Binding NewText}"
+                NewTextHeader="From ICS Studio"
+                OldText="{Binding OldText}"
+                OldTextHeader="From Controller" />
+
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="7">
+            <DockPanel>
+                <FrameworkElement.Resources>
+                    <Style x:Key="ButtonStyle" TargetType="{x:Type Button}">
+                        <Setter Property="Margin" Value="6,0,0,0" />
+                        <Setter Property="Width" Value="75" />
+                        <Setter Property="Height" Value="23" />
+                    </Style>
+                </FrameworkElement.Resources>
+
+                <CheckBox
+                    VerticalAlignment="Center"
+                    Content="Download Axis Parameters"
+                    DockPanel.Dock="Left"
+                    IsChecked="{Binding IsDownloadAxisParameters}" />
+
+                <Button
+                    Command="{Binding CancelCommand}"
+                    Content="Cancel"
+                    DockPanel.Dock="Right"
+                    Style="{StaticResource ButtonStyle}" />
+
+                <Button
+                    Command="{Binding DownloadCommand}"
+                    Content="Download"
+                    DockPanel.Dock="Right"
+                    Style="{StaticResource ButtonStyle}" />
+
+                <Button
+                    Content="Save File"
+                    DockPanel.Dock="Right"
+                    Style="{StaticResource ButtonStyle}"
+                    Visibility="Collapsed" />
+
+                <TextBlock />
+
+            </DockPanel>
+        </Grid>
+
+    </Grid>
+</Window>

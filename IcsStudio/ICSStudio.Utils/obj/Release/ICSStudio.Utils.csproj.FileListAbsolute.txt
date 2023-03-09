@@ -1,0 +1,10 @@
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ICSStudio.Utils.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ICSStudio.Utils.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.Utils\obj\Release\ICSStudio.Utils.csprojResolveAssemblyReference.cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.Utils\obj\Release\ICSStudio.Utils.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.Utils\obj\Release\ICSStudio.Utils.pdb
+C:\Users\11584\Documents\Visual Studio 2015\Projects\DownUpload\build\Release\ICSStudio.Utils.dll
+C:\Users\11584\Documents\Visual Studio 2015\Projects\DownUpload\build\Release\ICSStudio.Utils.pdb
+C:\Users\11584\Documents\Visual Studio 2015\Projects\DownUpload\IcsStudio\ICSStudio.Utils\obj\Release\ICSStudio.Utils.csprojResolveAssemblyReference.cache
+C:\Users\11584\Documents\Visual Studio 2015\Projects\DownUpload\IcsStudio\ICSStudio.Utils\obj\Release\ICSStudio.Utils.dll
+C:\Users\11584\Documents\Visual Studio 2015\Projects\DownUpload\IcsStudio\ICSStudio.Utils\obj\Release\ICSStudio.Utils.pdb

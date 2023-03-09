@@ -1,0 +1,226 @@
+﻿<UserControl
+    x:Class="ICSStudio.UIServicesPackage.PLCProperties.Panel.PortConfiguration"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ICSStudio.UIServicesPackage.PLCProperties.Panel"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    IsEnabled="False"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="HorizontalAlignment" Value="Center" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="TextAlignment" Value="Center"/>
+            </Style>
+            <Style TargetType="{x:Type Border}">
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="BorderBrush" Value="Black" />
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1.6*"/>
+            <ColumnDefinition Width="2.5*"/>
+            <ColumnDefinition Width="1.9*"/>
+            <ColumnDefinition Width="2.2*"/>
+            <ColumnDefinition Width="2.2*"/>
+            <ColumnDefinition Width="2.2*"/>
+            <ColumnDefinition Width="2.2*"/>
+            <ColumnDefinition Width="2.5*"/>
+        </Grid.ColumnDefinitions>
+        <!--  header  -->
+        <TextBlock
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            Grid.Column="0"
+            HorizontalAlignment="Center"
+            Text="{DynamicResource Port}" />
+        <Border
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            Grid.Column="0" />
+
+        <TextBlock
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            Grid.Column="1"
+            Text="{DynamicResource Enable}" />
+        <Border
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            Grid.Column="1" />
+
+        <TextBlock
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            Grid.Column="2"
+            Text="{DynamicResource Link Status}" />
+        <Border
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            Grid.Column="2" />
+
+        <TextBlock
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            Grid.Column="3"
+            TextWrapping="Wrap">
+            <Run Text="{DynamicResource Auto}"></Run>
+            <Run Text="{DynamicResource Negotiate}"></Run>
+        </TextBlock>
+        <Border
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            Grid.Column="3" />
+
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="4"
+            Grid.ColumnSpan="2"
+            Text="{DynamicResource Speed}" />
+        <Border
+            Grid.Row="0"
+            Grid.Column="4"
+            Grid.ColumnSpan="2" />
+
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="4"
+            Text="{DynamicResource Selected}" />
+        <Border Grid.Row="1" Grid.Column="4" />
+
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="5"
+            Text="{DynamicResource Current}" />
+        <Border Grid.Row="1" Grid.Column="5" />
+
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="6"
+            Grid.ColumnSpan="2"
+            Text="{DynamicResource Duplex}" />
+        <Border
+            Grid.Row="0"
+            Grid.Column="6"
+            Grid.ColumnSpan="2" />
+
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="6"
+            Text="{DynamicResource Selected}" />
+        <Border Grid.Row="1" Grid.Column="6" />
+
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="7"
+            Text="{DynamicResource Current}" />
+        <Border Grid.Row="1" Grid.Column="7" />
+
+        <TextBlock
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            Grid.Column="8">
+            <Run Text="{DynamicResource Port}"/>
+            <LineBreak/>
+            <Run Text="{DynamicResource Diagnostics}"/>
+        </TextBlock>
+        <Border
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            Grid.Column="8" />
+        <!--  body  -->
+        <ItemsControl
+            Grid.Row="2"
+            Grid.Column="0"
+            Grid.ColumnSpan="9"
+            ItemsSource="{Binding Ports}">
+            <ItemsControl.ItemTemplate>
+                <ItemContainerTemplate>
+                    <Grid>
+                        <Grid.Resources>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                                <Setter Property="VerticalAlignment" Value="Center" />
+                            </Style>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="BorderThickness" Value="1" />
+                                <Setter Property="BorderBrush" Value="Black" />
+                            </Style>
+                        </Grid.Resources>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="1.6*"/>
+                            <ColumnDefinition Width="2.5*"/>
+                            <ColumnDefinition Width="1.9*"/>
+                            <ColumnDefinition Width="2.2*"/>
+                            <ColumnDefinition Width="2.2*"/>
+                            <ColumnDefinition Width="2.2*"/>
+                            <ColumnDefinition Width="2.2*"/>
+                            <ColumnDefinition Width="2.5*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="{Binding Name}" />
+
+                        <Border Grid.Column="1" />
+                        <CheckBox
+                            Grid.Column="1"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            IsChecked="{Binding IsEnabled,Mode=OneWay}" />
+
+                        <Border Grid.Column="2" />
+                        <TextBlock Grid.Column="2" Text="{Binding Status}" />
+
+                        <Border Grid.Column="3" />
+                        <CheckBox
+                            Grid.Column="3"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            IsChecked="{Binding AutoNegotiate}" />
+
+                        <Border Grid.Column="4" />
+                        <ComboBox Grid.Column="4" />
+
+                        <Border Grid.Column="5" />
+                        <TextBlock Grid.Column="5" Text="{Binding Speed}" />
+
+                        <Border Grid.Column="6" />
+                        <ComboBox Grid.Column="6" />
+
+                        <Border Grid.Column="7" />
+                        <TextBlock Grid.Column="7" Text="{Binding Duplex}" />
+
+                        <Border Grid.Column="8" />
+                        <Button
+                            Grid.Column="8"
+                            Width="20"
+                            HorizontalAlignment="Center"
+                            Command="{Binding Command}">
+                            ...
+                        </Button>
+                    </Grid>
+                </ItemContainerTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+</UserControl>

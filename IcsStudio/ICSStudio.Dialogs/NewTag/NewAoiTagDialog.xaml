@@ -1,0 +1,176 @@
+﻿<Window x:Class="ICSStudio.Dialogs.NewTag.NewAoiTagDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:gui="clr-namespace:ICSStudio.Gui;assembly=ICSStudio.Gui"
+        xmlns:control="clr-namespace:ICSStudio.Components.Controls;assembly=ICSStudio.Components"
+        mc:Ignorable="d"
+        d:DesignHeight="300" d:DesignWidth="300"
+        Background="{DynamicResource VsBrush.Window}"
+        Foreground="{DynamicResource VsBrush.WindowText}"
+        Title="{Binding Title}"
+        Width="457" Height="435"
+        FontSize="11"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False" WindowStartupLocation="CenterOwner"
+        gui:DialogCloser.DialogResult="{Binding DialogResult}"
+        FocusManager.FocusedElement="{Binding ElementName=NameBox}">
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style TargetType="TextBox">
+                <Setter Property="HorizontalAlignment" Value="Left" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="Width" Value="250" />
+                <Setter Property="Height" Value="21" />
+            </Style>
+            <Style TargetType="ComboBox">
+                <Setter Property="HorizontalAlignment" Value="Left" />
+                <Setter Property="Width" Value="250" />
+                <Setter Property="Height" Value="21" />
+            </Style>
+
+            <Style TargetType="TextBlock">
+                <Setter Property="HorizontalAlignment" Value="Left" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+            </Style>
+
+            <Style TargetType="Button">
+                <Setter Property="Height" Value="21" />
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="15"/>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="92" />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="60" />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition Height="30"/>
+                <RowDefinition />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition  Height="5"/>
+                <RowDefinition Height="25" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="260"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="{DynamicResource New Tag Name:}"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="{DynamicResource New Tag Description:}" VerticalAlignment="Top" />
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="{DynamicResource Usage:}" />
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="{DynamicResource New Tag Type:}" />
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="{DynamicResource Alias For:}" />
+            <TextBlock Grid.Row="5" Grid.Column="0" Text="{DynamicResource Data Type:}" />
+            <TextBlock Grid.Row="6" Grid.Column="0" Text="{DynamicResource Instruction:}"
+                       TextWrapping="Wrap" />
+            <TextBlock Grid.Row="7" Grid.Column="0" Text="{DynamicResource External Access:}"
+                       Height="30"
+                       TextWrapping="Wrap" />
+            <TextBlock Grid.Row="8" Grid.Column="0" Text="{DynamicResource Style:}" />
+
+            <control:ValidateNameControl Grid.Row="0" Grid.Column="1" Height="21" Width="250" HorizontalAlignment="Left"
+                     x:Name="NameBox" Text="{Binding Name,UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox Grid.Row="1" Grid.Column="1" Height="60" Width="250"
+                     Text="{Binding Description,UpdateSourceTrigger=PropertyChanged,Delay=30}"
+                     VerticalScrollBarVisibility="Visible"
+                     TextWrapping="Wrap" AcceptsReturn="True" />
+            <ComboBox Grid.Row="2" Grid.Column="1"
+                      ItemsSource="{Binding Usages}"
+                      SelectedValuePath="Value"
+                      DisplayMemberPath="DisplayName"
+                      SelectedValue="{Binding Usage}" />
+            <ComboBox Grid.Row="3" Grid.Column="1" ItemsSource="{Binding TagTypes}" 
+                      SelectedItem="{Binding TagType}" IsEnabled="{Binding IsTagTypeEnabled}" />
+            <ComboBox Grid.Row="4" Grid.Column="1" IsEnabled="{Binding IsAliasForEnabled}" />
+            <DockPanel Grid.Row="5" Grid.Column="1" Width="250" HorizontalAlignment="Left">
+                <control:FastAutoCompleteTextBox Width="220" Height="21" HorizontalAlignment="Left"
+                                          ItemsSource="{Binding AllDataTypeNames}"
+                                          IsTextCompletionEnabled="True" MaxDropDownHeight="0" 
+                                          IsEnabled="{Binding IsDataTypeEnabled}"
+                                          Text="{Binding DataType, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay,Delay=30}" />
+                <Button Content="..." MinWidth="22" Width="25" Height="21"
+                        HorizontalAlignment="Right"
+                        Command="{Binding SelectDataTypeCommand}" />
+            </DockPanel>
+            <Grid  Grid.Row="6" Grid.Column="1" Height="22">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="2"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                
+                <Image Grid.Column="0" Width="17" Height="19" VerticalAlignment="Bottom" />
+                <TextBlock Grid.Column="2" Text="{Binding AoiCollectionContainer,UpdateSourceTrigger=PropertyChanged}"
+                           VerticalAlignment="Top"/>
+            
+            </Grid>
+            <ComboBox Grid.Row="7" Grid.Column="1"
+                      ItemsSource="{Binding ExternalAccessSource}"
+                      SelectedValuePath="Value"
+                      IsEnabled="{Binding IsExternalAccessEnabled}"
+                      DisplayMemberPath="DisplayName"
+                      SelectedValue="{Binding ExternalAccess}" />
+            <ComboBox Grid.Row="8" Grid.Column="1"
+                      IsEnabled="{Binding IsDisplayStyleEnabled}"
+                      ItemsSource="{Binding DisplayStyleSource}"
+                      SelectedValuePath="Value"
+                      DisplayMemberPath="DisplayName"
+                      SelectedValue="{Binding DisplayStyle}" />
+            <CheckBox Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2"
+                      Content="{DynamicResource Required}" 
+                      VerticalAlignment="Center" 
+                      IsEnabled="{Binding IsRequiredEnabled}"
+                      IsChecked="{Binding IsRequiredChecked,UpdateSourceTrigger=PropertyChanged}"/>
+            <CheckBox Grid.Row="9" Grid.Column="1"
+                      Content="{DynamicResource Required}" 
+                      VerticalAlignment="Center" 
+                      IsEnabled="{Binding IsVisibleEnabled}"
+                      IsChecked="{Binding IsVisibleChecked}"/>
+            <CheckBox Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2"
+                      Content="{DynamicResource New AoiTag Constant}" 
+                      VerticalAlignment="Center"
+                      IsEnabled="{Binding IsConstantEnabled}" 
+                      IsChecked="{Binding IsConstantChecked}"/>
+            <Separator Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top" />
+            <CheckBox Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2"
+                      Content="{Binding ConfigurationContent}"
+                      VerticalAlignment="Center"
+                      IsChecked="{Binding IsOpenConfigurationChecked}"
+                      IsEnabled="{Binding IsOpenConfigurationEnabled}"/>
+        </Grid>
+
+        <StackPanel Grid.Column="2" Orientation="Vertical" VerticalAlignment="Top">
+            <Grid Width="88">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="88"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" Width="80">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="21"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="21"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="21"/>
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="1" Width="75" Height="21" Content="{DynamicResource OK}" Command="{Binding OKCommand}" IsDefault="True" HorizontalAlignment="Left"/>
+                    <Button Grid.Row="3" Width="75" Height="21" Content="{DynamicResource Cancel}" Command="{Binding CancelCommand}" IsCancel="True" HorizontalAlignment="Left"/>
+                    <Button Grid.Row="5" Width="75" Height="21" Content="{DynamicResource Help}" Command="{Binding HelpCommand}" HorizontalAlignment="Left"/>
+                </Grid>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>

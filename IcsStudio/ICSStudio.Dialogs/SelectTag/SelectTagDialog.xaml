@@ -1,0 +1,74 @@
+﻿<Window
+    x:Class="ICSStudio.Dialogs.SelectTag.SelectTagDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
+    xmlns:controls1="clr-namespace:ICSStudio.Components.Controls;assembly=ICSStudio.Components"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:filter="clr-namespace:ICSStudio.Dialogs.Filter"
+    xmlns:gui="clr-namespace:ICSStudio.Gui;assembly=ICSStudio.Gui"
+    xmlns:local="clr-namespace:ICSStudio.Dialogs.SelectTag"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="590"
+    Height="380"
+    MinWidth="590"
+    MinHeight="380"
+    Title="Select Tag"
+    gui:DialogCloser.DialogResult="{Binding DialogResult}"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Selection:" />
+            <controls1:FastAutoCompleteTextBox
+                Grid.Column="1"
+                Height="23"
+                IsDropDownOpen="False"
+                MaxDropDownHeight="0"
+                IsTextCompletionEnabled="True"
+                ItemsSource="{Binding FilterViewModel.NameList}"
+                Text="{Binding FilterViewModel.Name, UpdateSourceTrigger=LostFocus,Mode=TwoWay}" />
+        </Grid>
+        <filter:FilterView
+            Grid.Row="1"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Width="auto"
+            Height="auto"
+            DataContext="{Binding FilterViewModel}" />
+        <Grid
+            Grid.Row="1"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="85" />
+                <ColumnDefinition Width="85" />
+            </Grid.ColumnDefinitions>
+            <Button
+                Width="77"
+                Height="23"
+                Command="{Binding OkCommand}"
+                Content="OK" />
+            <Button
+                Grid.Column="1"
+                Width="77"
+                Height="23"
+                Command="{Binding CancelCommand}"
+                Content="Cancel" />
+        </Grid>
+    </Grid>
+</Window>

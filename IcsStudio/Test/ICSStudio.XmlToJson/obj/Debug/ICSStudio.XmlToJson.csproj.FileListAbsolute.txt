@@ -1,0 +1,13 @@
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\DIO Analog\ICON_PS1734CO_Analog.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\DIO Analog\ICON_PS1734HD_Analog.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\DIO Analog\ICON_PS1734_Analog.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\DIO Discrete\ICON_PS1734_Discrete.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\DIO Discrete\PS1734_Discrete.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\DIO Discrete\PS1769_L1YEmbedded.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\DIO Discrete\PS1769_L2YEmbedded.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.XmlToJson.exe.config
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.XmlToJson.exe
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.XmlToJson.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\ICSStudio\Test\ICSStudio.XmlToJson\obj\Debug\ICSStudio.XmlToJson.csprojResolveAssemblyReference.cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\ICSStudio\Test\ICSStudio.XmlToJson\obj\Debug\ICSStudio.XmlToJson.exe
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\ICSStudio\Test\ICSStudio.XmlToJson\obj\Debug\ICSStudio.XmlToJson.pdb

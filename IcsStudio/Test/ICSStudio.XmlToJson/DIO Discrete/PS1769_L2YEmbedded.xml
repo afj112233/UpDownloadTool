@@ -1,0 +1,2684 @@
+﻿<?xml version="1.0" encoding ="utf-8"?>
+<!--Copyright 2010 Rockwell Automation-->
+
+<AOPModuleTypes>
+
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+  <!--          This is the order that the modules appear in this file                  -->
+  <!--                                                                                  -->
+  <!-- Module Types	                            						                            -->
+  <!-- Embedded DiscreteIO      : 16 Point  24V DC Sink Input /16 Point 24V DC Source Output  -->
+  <!-- Embedded AnalogIO       	: 4 Channel Analog Input/2 Channel Analog Output              -->
+  <!-- Embedded HSC       	: 4 Channel High Speed Counter                                -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+  <!--**********************************************************************************-->
+  <!-- Embedded DiscreteIO : 16 Point  24V DC Sink Input /16 Point 24V DC Source Output  -->
+  <!--**********************************************************************************-->
+  <ModuleType VendorID="1" ProductType="7" ProductCode="64">
+    <Variant MajorRev="3" ModuleID="Embedded_DiscreteIO1" ModuleDefinitionID="L2Y_Embedded_DiscreteIO1" Default="True"></Variant>
+  </ModuleType>
+
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- ModuleID	                                                                 -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <Module ID="Embedded_DiscreteIO1"  NumberOfInputs="16" NumberOfOutputs="16"
+        MajorFault="True" SupportsReset="True" FixedUserName="True" BusID="CmpctDiscrete" DriverType="257"></Module>
+
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Module Definition -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <ModuleDefinition ID="L2Y_Embedded_DiscreteIO1" StringsID="ModuleDefinitionStrings">
+    <Selections>
+      <Field ID="Connection" StringID="1">
+        <Choice ID="Data" StringID="6"></Choice>
+      </Field>
+      <Field ID="DataFormat" StringID="3">
+        <Choice ID="Integer" StringID="4"></Choice>
+      </Field>
+    </Selections>
+    <SelectionTree>
+      <Choice ChoiceID="Data">
+        <Choice ChoiceID="Integer" ConfigID="100"></Choice>
+      </Choice>
+    </SelectionTree>
+  </ModuleDefinition>
+
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Bus Restrictions (Embedded Discrete can only be in slot 1)                -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <Bus ID="CmpctDiscrete">
+    <Upstream>
+        <Exclusions>
+            <ExcludeAddressRange MinAddress="2" MaxAddress="31"/>
+        </Exclusions>
+    </Upstream>
+  </Bus>
+
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Construction-->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <Construction ConfigID="100">
+    <ConfigTag CLSID="{34B63725-CA55-42DE-91D5-9F87E1CB6BD5}"
+		           ValueID="AB:Embedded_DiscreteIO1:C:0" Instance="102">
+      <DataType Name="AB:Embedded_DiscreteIO1:C:0"></DataType>
+      <Enum EnumID="EnumDiscreteIO1_Filter" />
+    </ConfigTag>
+    <Connections>
+      <Connection ConnectionID="Embedded_DiscreteIO1" CLSID="{3DB9EEC3-C915-41B6-A706-86F7A1E319F0}"></Connection>
+    </Connections>
+  </Construction>
+
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Connection -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <Connection ID="Embedded_DiscreteIO1" Name="Output" Type="Output" MinRPI="500" MaxRPI="750000" RPI="20000" InputCxnPoint="101" OutputCxnPoint="100">
+    <InputTag CLSID="{34B63725-CA55-42DE-91D5-9F87E1CB6BD5}">
+      <DataType Name="AB:Embedded_DiscreteIO1:I:0"></DataType>
+    </InputTag>
+    <OutputTag CLSID="{34B63725-CA55-42DE-91D5-9F87E1CB6BD5}">
+      <DataType Name="AB:Embedded_DiscreteIO1:O:0"></DataType>
+    </OutputTag>
+  </Connection>
+
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Data Types                                                                -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Configuration DataType -->
+  <DataType Name="AB:Embedded_DiscreteIO1:C:0" Class="IO">
+    <Members>
+      <Member Name="CfgSize"  DataType="DINT" Hidden="True" />
+      <Member Name="CfgIDNum" DataType="DINT" Hidden="True" />
+      <Member Name="Reserved" DataType="DINT" Hidden="True" />
+      <Member Name="Pad" DataType="INT" Radix="Binary" Default ="0"  Hidden = "True"/>
+      <Member Name="Pad1" DataType="INT" Radix="Binary" Default ="0" Hidden = "True"/>
+      <Member Name="Pad2" DataType="INT" Radix="Binary" Default ="0" Hidden = "True"/>
+      <Member Name="Pad3" DataType="INT" Radix="Binary" Default ="0" Hidden = "True"/>
+      <Member Name="Pad4" DataType="INT" Radix="Binary" Default ="0" Hidden = "True"/>
+      <!-- Group 0 Off To On Filter - Inputs 0 through 7 -->
+      <Member Name="FilterGroup0" DataType="SINT" Radix="Binary" Default ="0" Hidden = "True"/>
+      <Member Name="Filter0OffOn_0" DataType="BIT" BitNumber="0" Target="FilterGroup0"/>
+      <Member Name="Filter0OffOn_1" DataType="BIT" BitNumber="1" Target="FilterGroup0"/>
+      <Member Name="Filter0OffOn_2" DataType="BIT" BitNumber="2" Target="FilterGroup0"/>
+      <Member Name="Filter0OffOn_3" DataType="BIT" BitNumber="3" Target="FilterGroup0"/>
+      <Member Name="Filter0OffOn"   DataType="BITFIELD" LowBit="0" HiBit="3" Enum="EnumDiscreteIO1_Filter" Target="FilterGroup0" Hidden="True"></Member>
+      <!-- Group 0 On To Off Filter - Inputs 0 through 7 -->
+      <Member Name="Filter0OnOff_4" DataType="BIT" BitNumber="4" Target="FilterGroup0"/>
+      <Member Name="Filter0OnOff_5" DataType="BIT" BitNumber="5" Target="FilterGroup0"/>
+      <Member Name="Filter0OnOff_6" DataType="BIT" BitNumber="6" Target="FilterGroup0"/>
+      <Member Name="Filter0OnOff_7" DataType="BIT" BitNumber="7" Target="FilterGroup0"/>
+      <Member Name="Filter0OnOff"   DataType="BITFIELD" LowBit="4" HiBit="7" Enum="EnumDiscreteIO1_Filter" Target="FilterGroup0" Hidden="True"></Member>
+
+      <Member Name="FilterGroup1" DataType="SINT" Radix="Binary" Default ="0" Hidden = "True"/>
+      <!-- Group 1 Off To On Filter - Inputs 8 through 15 -->
+      <Member Name="Filter1OffOn_0" DataType="BIT" BitNumber="0" Target="FilterGroup1"/>
+      <Member Name="Filter1OffOn_1" DataType="BIT" BitNumber="1" Target="FilterGroup1"/>
+      <Member Name="Filter1OffOn_2" DataType="BIT" BitNumber="2" Target="FilterGroup1"/>
+      <Member Name="Filter1OffOn_3" DataType="BIT" BitNumber="3" Target="FilterGroup1"/>
+      <Member Name="Filter1OffOn"   DataType="BITFIELD" LowBit="0" HiBit="3" Enum="EnumDiscreteIO1_Filter" Target="FilterGroup1" Hidden="True"></Member>
+      <!-- Group 1 On to Off Filter - Inputs 8 through 15 -->
+      <Member Name="Filter1OnOff_4" DataType="BIT" BitNumber="4" Target="FilterGroup1"/>
+      <Member Name="Filter1OnOff_5" DataType="BIT" BitNumber="5" Target="FilterGroup1"/>
+      <Member Name="Filter1OnOff_6" DataType="BIT" BitNumber="6" Target="FilterGroup1"/>
+      <Member Name="Filter1OnOff_7" DataType="BIT" BitNumber="7" Target="FilterGroup1"/>
+      <Member Name="Filter1OnOff"   DataType="BITFIELD" LowBit="4" HiBit="7" Enum="EnumDiscreteIO1_Filter" Target="FilterGroup1" Hidden="True"></Member>
+
+      <Member Name="Pad5" DataType="INT" Hidden="True" Default ="0"/>
+      <Member Name="Pad6" DataType="INT" Hidden="True" Default ="0"/>
+    </Members>
+  </DataType>
+
+  <Value ID="AB:Embedded_DiscreteIO1:C:0">
+    <!--CfgSize-->
+    00,00,00,00,
+    <!--CfgIDNum-->
+    00,00,00,00,
+    <!--Reserved-->
+    01,00,00,00,
+    <!--Pad-->
+    00,00,
+    <!--Pad1-->
+    00,00,
+    <!--Pad2-->
+    00,00,
+    <!--Pad3-->
+    00,00,
+    <!--Pad4-->
+    00,00,
+    <!--FilterGroup0-->
+    00,
+    <!--FilterGroup1-->
+    00,
+    <!--Pad5-->
+    00,00,
+    <!--Pad6-->
+    00,00,
+  </Value>
+
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Input DataType -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <DataType Name="AB:Embedded_DiscreteIO1:I:0" Class="IO">
+    <Members>
+      <Member Name="Fault" DataType="DINT" Radix="Binary" />
+      <Member Name="Data" DataType="INT" Radix="Binary" />
+      <Member Name="Readback" DataType="INT" Radix="Binary" />
+    </Members>
+  </DataType>
+  <Value ID="AB:Embedded_DiscreteIO1:I:0">
+    <!--Fault-->
+    00,00,00,00,
+    <!--Data-->
+    00,00,
+    <!--Readback-->
+    00,00
+  </Value>
+
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Output DataType -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <DataType Name="AB:Embedded_DiscreteIO1:O:0" Class="IO">
+    <Members>
+      <Member Name="Data" DataType="INT" Radix="Binary" />
+    </Members>
+  </DataType>
+  <Value ID="AB:Embedded_Discrete_Combo:O:0">
+    <!--Data-->
+    00,00
+  </Value>
+
+  <!--*********************************************************************-->
+  <!-- Embedded AnalogIO   : 4 Channel Analog Input/2 Channel Analog Output -->
+  <!--*********************************************************************-->
+  <ModuleType VendorID="1" ProductType="10" ProductCode="164">
+    <Variant MajorRev="1" ModuleID="Embedded_AnalogIO1" ModuleDefinitionID="L2Y_AnalogIO1" Default="True"></Variant>
+  </ModuleType>
+
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- ModuleID	                                                                 -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <Module ID="Embedded_AnalogIO1"  NumberOfInputs="4" NumberOfOutputs="2"
+        MajorFault="True" SupportsReset="True" FixedUserName="True" BusID="CmpctAnalog" DriverType="257"></Module>
+
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Module Definition -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <ModuleDefinition ID="L2Y_AnalogIO1" StringsID="ModuleDefinitionStrings">
+    <Selections>
+      <Field ID="Connection" StringID="1">
+        <Choice ID="Output" StringID="2"></Choice>
+      </Field>
+      <Field ID="DataFormat" StringID="3">
+        <Choice ID="Integer" StringID="4"></Choice>
+      </Field>
+    </Selections>
+    <SelectionTree>
+      <Choice ChoiceID="Output" Default="True">
+        <Choice ChoiceID="Integer" ConfigID="101"></Choice>
+      </Choice>
+    </SelectionTree>
+  </ModuleDefinition>
+
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Bus Restrictions (Embedded Analog can only be in slot 2)                     -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <Bus ID="CmpctAnalog">
+    <Upstream>
+        <Exclusions>
+            <ExcludeAddressRange MinAddress="3" MaxAddress="31"/>
+        </Exclusions>
+    </Upstream>
+  </Bus>
+
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Construction-->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <Construction ConfigID="101">
+    <ConfigTag CLSID="{34B63725-CA55-42DE-91D5-9F87E1CB6BD5}" 
+			ExtensionCLSID="{4C710A74-8092-48A8-98D7-33038F571A50}" 
+		           ValueID="AB:Embedded_AnalogIO1:C:0" Instance="102">
+      <DataType Name="AB:Embedded_AnalogIO1:C:0"></DataType>      
+      <Enum EnumID="EnumAnalogIO1_InputRange"></Enum>
+      <Enum EnumID="EnumAnalogIO1_InputRange_CH1_CH3"></Enum>
+      <Enum EnumID="EnumAnalogIO1_Units"></Enum>
+      <Enum EnumID="EnumAnalogIO1_InputFilter"></Enum>
+      <Enum EnumID="EnumAnalogIO1_InputDataFormat"></Enum>
+      <Enum EnumID="EnumAnalogIO1_OpenCircuitResponse"></Enum>
+      <Enum EnumID="EnumAnalogIO1_OutputRange"></Enum>
+      <Enum EnumID="EnumAnalogIO1_OutputDataFormat"></Enum>
+	   <Enum EnumID="EnumAnalogIO1_MeasurementType"></Enum>
+    </ConfigTag>
+    <Connections>
+      <Connection ConnectionID="Embedded_AnalogIO1" CLSID="{3DB9EEC3-C915-41B6-A706-86F7A1E319F0}"></Connection>
+    </Connections>
+  </Construction>
+
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Connection -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <Connection ID="Embedded_AnalogIO1" Name="Output" Type="Output" MinRPI="500" MaxRPI="750000" RPI="80000" InputCxnPoint="101" OutputCxnPoint="100">
+    <InputTag CLSID="{34B63725-CA55-42DE-91D5-9F87E1CB6BD5}">
+      <DataType Name="AB:Embedded_AnalogIO1:I:0"></DataType>
+    </InputTag>
+    <OutputTag CLSID="{34B63725-CA55-42DE-91D5-9F87E1CB6BD5}">
+      <DataType Name="AB:Embedded_AnalogIO1:O:0"></DataType>
+    </OutputTag>
+  </Connection>
+
+
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Data Types                                                                -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Configuration DataType -->
+  <DataType Name="AB:Embedded_AnalogIO1:C:0" Class="IO">
+    <Members>
+       <Member Name="CfgSize"  DataType="DINT" Hidden="True" />
+      <Member Name="CfgIDNum" DataType="DINT" Hidden="True" />
+      <Member Name="Reserved" DataType="DINT" Hidden="True" />
+     <Member Name="RealTimeSample" DataType="INT" Radix="Decimal" InhibitValidation="True" Min="0" Max="5000" />
+
+      <Member Name="Config" DataType="INT" Radix="Binary" Hidden="True" />
+      <Member Name="TimestampEn" DataType="BIT" BitNumber="15" Target="Config" />
+
+      <Member Name="Ch0InputConfig0" DataType="INT" Radix="Binary" Hidden="True" />
+      <Member Name="Ch0InputFilter_0" DataType="BIT" BitNumber="0" Target="Ch0InputConfig0" />
+      <Member Name="Ch0InputFilter_1" DataType="BIT" BitNumber="1" Target="Ch0InputConfig0" />
+      <Member Name="Ch0InputFilter_2" DataType="BIT" BitNumber="2" Target="Ch0InputConfig0" />
+      <Member Name="Ch0InputFilter_3" DataType="BIT" BitNumber="3" Target="Ch0InputConfig0" />
+      <Member Name="Ch0InputFilter" DataType="BITFIELD" LowBit="0" HiBit="3" Enum="EnumAnalogIO1_InputFilter" Target="Ch0InputConfig0" />
+      <Member Name="Ch0DisableCJCompensation" DataType="BIT" BitNumber="4" Target="Ch0InputConfig0" />
+      <Member Name="Ch0OpenWire_5" DataType="BIT" BitNumber="5" Target="Ch0InputConfig0" />
+      <Member Name="Ch0OpenWire_6" DataType="BIT" BitNumber="6" Target="Ch0InputConfig0" />
+      <Member Name="Ch0OpenWire" DataType="BITFIELD" LowBit="5" HiBit="6" Enum="EnumAnalogIO1_OpenCircuitResponse" Target="Ch0InputConfig0" />
+      <Member Name="Ch0OpenWireEn" DataType="BIT" BitNumber="7" Enum="EnumAnalogIO1_OpenCircuitResponse" Target="Ch0InputConfig0" />
+      <Member Name="Ch0AlarmLatchEn" DataType="BIT" BitNumber="9" Target="Ch0InputConfig0" />
+      <Member Name="Ch0AlarmEn" DataType="BIT" BitNumber="10" Target="Ch0InputConfig0" />
+      <Member Name="Ch0InputEn" DataType="BIT" BitNumber="15" Target="Ch0InputConfig0" />
+
+      <Member Name="Ch0InputRange" DataType="SINT" Radix="Decimal" Enum="EnumAnalogIO1_InputRange"/>
+
+      <Member Name="Ch0InputConfig1" DataType="SINT" Radix="Decimal" Hidden="True" />
+      <Member Name="Ch0InputDataFormat_0" DataType="BIT" BitNumber="0" Target="Ch0InputConfig1" />
+      <Member Name="Ch0InputDataFormat_1" DataType="BIT" BitNumber="1" Target="Ch0InputConfig1" />
+      <Member Name="Ch0InputDataFormat_2" DataType="BIT" BitNumber="2" Target="Ch0InputConfig1" />
+      <Member Name="Ch0InputDataFormat" DataType="BITFIELD" LowBit="0" HiBit="2" Enum="EnumAnalogIO1_InputDataFormat" Target="Ch0InputConfig1" />
+      <Member Name="Ch0TempUnits" DataType="BIT" BitNumber="5" Enum="EnumAnalogIO1_Units" Target="Ch0InputConfig1" />   
+	  <Member Name="Ch0RTD_ResistanceMeasType_6" DataType="BIT" BitNumber="6" Target="Ch0InputConfig1" />
+      <Member Name="Ch0RTD_ResistanceMeasType_7" DataType="BIT" BitNumber="7" Target="Ch0InputConfig1" />
+      <Member Name="Ch0RTD_ResistanceMeasType" DataType="BITFIELD" LowBit="6" HiBit="7" Enum="EnumAnalogIO1_MeasurementType" Target="Ch0InputConfig1" />
+
+      <Member Name="Ch0HAlarmLimit" DataType="INT" Radix="Decimal" />
+      <Member Name="Ch0LAlarmLimit" DataType="INT" Radix="Decimal" />
+      <Member Name="Ch0AlarmDeadband" DataType="INT" Radix="Decimal" />
+      <Member Name="PadWord0" DataType="INT" Hidden="True" />
+
+      <Member Name="Ch1InputConfig0" DataType="INT" Radix="Binary" Hidden="True" />
+      <Member Name="Ch1InputFilter_0" DataType="BIT" BitNumber="0" Target="Ch1InputConfig0" />
+      <Member Name="Ch1InputFilter_1" DataType="BIT" BitNumber="1" Target="Ch1InputConfig0" />
+      <Member Name="Ch1InputFilter_2" DataType="BIT" BitNumber="2" Target="Ch1InputConfig0" />
+      <Member Name="Ch1InputFilter_3" DataType="BIT" BitNumber="3" Target="Ch1InputConfig0" />
+      <Member Name="Ch1InputFilter" DataType="BITFIELD" LowBit="0" HiBit="3" Enum="EnumAnalogIO1_InputFilter" Target="Ch1InputConfig0" />
+      <Member Name="Ch1DisableCJCompensation" DataType="BIT" BitNumber="4" Target="Ch1InputConfig0" />
+      <Member Name="Ch1OpenWire_5" DataType="BIT" BitNumber="5" Target="Ch1InputConfig0" />
+      <Member Name="Ch1OpenWire_6" DataType="BIT" BitNumber="6" Target="Ch1InputConfig0" />
+      <Member Name="Ch1OpenWire" DataType="BITFIELD" LowBit="5" HiBit="6" Enum="EnumAnalogIO1_OpenCircuitResponse" Target="Ch1InputConfig0" />
+      <Member Name="Ch1OpenWireEn" DataType="BIT" BitNumber="7" Enum="EnumAnalogIO1_OpenCircuitResponse" Target="Ch1InputConfig0" />
+      <Member Name="Ch1AlarmLatchEn" DataType="BIT" BitNumber="9" Target="Ch1InputConfig0" />
+      <Member Name="Ch1AlarmEn" DataType="BIT" BitNumber="10" Target="Ch1InputConfig0" />
+      <Member Name="Ch1InputEn" DataType="BIT" BitNumber="15" Target="Ch1InputConfig0" />
+
+      <Member Name="Ch1InputRange" DataType="SINT" Radix="Decimal" Enum="EnumAnalogIO1_InputRange_CH1_CH3"/>
+
+      <Member Name="Ch1InputConfig1" DataType="SINT" Radix="Decimal" Hidden="True" />
+      <Member Name="Ch1InputDataFormat_0" DataType="BIT" BitNumber="0" Target="Ch1InputConfig1" />
+      <Member Name="Ch1InputDataFormat_1" DataType="BIT" BitNumber="1" Target="Ch1InputConfig1" />
+      <Member Name="Ch1InputDataFormat_2" DataType="BIT" BitNumber="2" Target="Ch1InputConfig1" />
+      <Member Name="Ch1InputDataFormat" DataType="BITFIELD" LowBit="0" HiBit="2" Enum="EnumAnalogIO1_InputDataFormat" Target="Ch1InputConfig1" />
+      <Member Name="Ch1TempUnits" DataType="BIT" BitNumber="5" Enum="EnumAnalogIO1_Units" Target="Ch1InputConfig1" />   
+	  
+      <Member Name="Ch1HAlarmLimit" DataType="INT" Radix="Decimal" />
+      <Member Name="Ch1LAlarmLimit" DataType="INT" Radix="Decimal" />
+      <Member Name="Ch1AlarmDeadband" DataType="INT" Radix="Decimal" />
+      <Member Name="PadWord1" DataType="INT" Hidden="True" />
+
+      <Member Name="Ch2InputConfig0" DataType="INT" Radix="Binary" Hidden="True" />
+      <Member Name="Ch2InputFilter_0" DataType="BIT" BitNumber="0" Target="Ch2InputConfig0" />
+      <Member Name="Ch2InputFilter_1" DataType="BIT" BitNumber="1" Target="Ch2InputConfig0" />
+      <Member Name="Ch2InputFilter_2" DataType="BIT" BitNumber="2"  Target="Ch2InputConfig0" />
+      <Member Name="Ch2InputFilter_3" DataType="BIT" BitNumber="3" Target="Ch2InputConfig0" />
+      <Member Name="Ch2InputFilter" DataType="BITFIELD" LowBit="0" HiBit="3" Enum="EnumAnalogIO1_InputFilter" Target="Ch2InputConfig0" />
+      <Member Name="Ch2DisableCJCompensation" DataType="BIT" BitNumber="4" Target="Ch2InputConfig0" />
+      <Member Name="Ch2OpenWire_5" DataType="BIT" BitNumber="5" Target="Ch2InputConfig0" />
+      <Member Name="Ch2OpenWire_6" DataType="BIT" BitNumber="6" Target="Ch2InputConfig0" />
+      <Member Name="Ch2OpenWire" DataType="BITFIELD" LowBit="5" HiBit="6" Enum="EnumAnalogIO1_OpenCircuitResponse" Target="Ch2InputConfig0" />
+      <Member Name="Ch2OpenWireEn" DataType="BIT" BitNumber="7" Enum="EnumAnalogIO1_OpenCircuitResponse" Target="Ch2InputConfig0" />
+      <Member Name="Ch2AlarmLatchEn" DataType="BIT" BitNumber="9" Target="Ch2InputConfig0" />
+      <Member Name="Ch2AlarmEn" DataType="BIT" BitNumber="10" Target="Ch2InputConfig0" />
+      <Member Name="Ch2InputEn" DataType="BIT" BitNumber="15" Target="Ch2InputConfig0" />
+
+     <Member Name="Ch2InputRange" DataType="SINT" Radix="Decimal" Enum="EnumAnalogIO1_InputRange"/> 
+
+      <Member Name="Ch2InputConfig1" DataType="SINT" Radix="Decimal" Hidden="True" />
+      <Member Name="Ch2InputDataFormat_0" DataType="BIT" BitNumber="0" Target="Ch2InputConfig1" />
+      <Member Name="Ch2InputDataFormat_1" DataType="BIT" BitNumber="1" Target="Ch2InputConfig1" />
+      <Member Name="Ch2InputDataFormat_2" DataType="BIT" BitNumber="2" Target="Ch2InputConfig1" />
+      <Member Name="Ch2InputDataFormat" DataType="BITFIELD" LowBit="0" HiBit="2" Enum="EnumAnalogIO1_InputDataFormat" Target="Ch2InputConfig1" />
+      <Member Name="Ch2TempUnits" DataType="BIT" BitNumber="5" Enum="EnumAnalogIO1_Units" Target="Ch2InputConfig1" />   
+	  <Member Name="Ch2RTD_ResistanceMeasType_6" DataType="BIT" BitNumber="6" Target="Ch2InputConfig1" />
+      <Member Name="Ch2RTD_ResistanceMeasType_7" DataType="BIT" BitNumber="7" Target="Ch2InputConfig1" />
+      <Member Name="Ch2RTD_ResistanceMeasType" DataType="BITFIELD" LowBit="6" HiBit="7" Enum="EnumAnalogIO1_MeasurementType" Target="Ch2InputConfig1" />
+ 
+      <Member Name="Ch2HAlarmLimit" DataType="INT" Radix="Decimal" />
+      <Member Name="Ch2LAlarmLimit" DataType="INT" Radix="Decimal" />
+      <Member Name="Ch2AlarmDeadband" DataType="INT" Radix="Decimal" />
+      <Member Name="PadWord2" DataType="INT" Hidden="True" />
+
+      <Member Name="Ch3InputConfig0" DataType="INT" Radix="Binary" Hidden="True" />
+      <Member Name="Ch3InputFilter_0" DataType="BIT" BitNumber="0" Target="Ch3InputConfig0" />
+      <Member Name="Ch3InputFilter_1" DataType="BIT" BitNumber="1" Target="Ch3InputConfig0" />
+      <Member Name="Ch3InputFilter_2" DataType="BIT" BitNumber="2" Target="Ch3InputConfig0" />
+      <Member Name="Ch3InputFilter_3" DataType="BIT" BitNumber="3" Target="Ch3InputConfig0" />
+      <Member Name="Ch3InputFilter" DataType="BITFIELD" LowBit="0" HiBit="3" Enum="EnumAnalogIO1_InputFilter" Target="Ch3InputConfig0" />
+      <Member Name="Ch3DisableCJCompensation" DataType="BIT" BitNumber="4" Target="Ch3InputConfig0" />
+      <Member Name="Ch3OpenWire_5" DataType="BIT" BitNumber="5" Target="Ch3InputConfig0" />
+      <Member Name="Ch3OpenWire_6" DataType="BIT" BitNumber="6" Target="Ch3InputConfig0" />
+      <Member Name="Ch3OpenWire" DataType="BITFIELD" LowBit="5" HiBit="6" Enum="EnumAnalogIO1_OpenCircuitResponse" Target="Ch3InputConfig0" />
+      <Member Name="Ch3OpenWireEn" DataType="BIT" BitNumber="7" Enum="EnumAnalogIO1_OpenCircuitResponse" Target="Ch3InputConfig0" />
+      <Member Name="Ch3AlarmLatchEn" DataType="BIT" BitNumber="9" Target="Ch3InputConfig0" />
+      <Member Name="Ch3AlarmEn" DataType="BIT" BitNumber="10" Target="Ch3InputConfig0" />
+      <Member Name="Ch3InputEn" DataType="BIT" BitNumber="15" Target="Ch3InputConfig0" />
+
+      <Member Name="Ch3InputRange" DataType="SINT" Radix="Decimal" Enum="EnumAnalogIO1_InputRange_CH1_CH3"/>
+
+      <Member Name="Ch3InputConfig1" DataType="SINT" Radix="Decimal" Hidden="True" />
+      <Member Name="Ch3InputDataFormat_0" DataType="BIT" BitNumber="0" Target="Ch3InputConfig1" />
+      <Member Name="Ch3InputDataFormat_1" DataType="BIT" BitNumber="1" Target="Ch3InputConfig1" />
+      <Member Name="Ch3InputDataFormat_2" DataType="BIT" BitNumber="2" Target="Ch3InputConfig1" />
+      <Member Name="Ch3InputDataFormat" DataType="BITFIELD" LowBit="0" HiBit="2" Enum="EnumAnalogIO1_InputDataFormat" Target="Ch3InputConfig1" />
+      <Member Name="Ch3TempUnits" DataType="BIT" BitNumber="5" Enum="EnumAnalogIO1_Units" Target="Ch3InputConfig1" />   
+	  
+      <Member Name="Ch3HAlarmLimit" DataType="INT" Radix="Decimal" />
+      <Member Name="Ch3LAlarmLimit" DataType="INT" Radix="Decimal" />
+      <Member Name="Ch3AlarmDeadband" DataType="INT" Radix="Decimal" />
+      <Member Name="PadWord3" DataType="INT" Hidden="True" />
+
+      <Member Name="Config1" DataType="INT" Radix="Binary" Hidden="True" />
+      <Member Name="CJTempUnits" DataType="BIT" BitNumber="0" Target="Config1" />
+      <Member Name="CJWeightedProfile" DataType="BIT" BitNumber="12" Target="Config1" />
+   
+      <Member Name="CyclicCalibrationEn" DataType="BIT" BitNumber="14" Target="Config1" />
+      <Member Name="UpdateCJCompensationEn" DataType="BIT" BitNumber="15" Target="Config1" />
+	  
+	  <Member Name="PadWord4" DataType="INT" Hidden="True" />
+      
+	  <Member Name="OutCh0Config" DataType="INT" Radix="Binary" Hidden="True" />
+      <Member Name="Ch0LimitAlarmLatchEn" DataType="BIT" BitNumber="5" Target="OutCh0Config"/>
+      <Member Name="Ch0OutputEn" DataType="BIT" BitNumber="15" Target="OutCh0Config"/>
+
+      <Member Name="Ch0OutputRangeType" DataType="SINT" Radix="Decimal" Enum ="EnumAnalogIO1_OutputRange"/>
+      <Member Name="Ch0OutputDataFormat" DataType="SINT" Radix="Decimal" Enum ="EnumAnalogIO1_OutputDataFormat"/>
+      <Member Name="PadWord5" DataType="INT" Hidden="True" />
+      <Member Name="PadWord6" DataType="INT" Hidden="True" />
+      <Member Name="Ch0HClampValue" DataType="INT" Radix="Decimal" />
+      <Member Name="Ch0LClampValue" DataType="INT" Radix="Decimal" />
+      <Member Name="PadWord7" DataType="INT" Hidden="True" />
+      <Member Name="PadWord8" DataType="INT" Hidden="True" />
+
+      <Member Name="OutCh1Config" DataType="INT" Radix="Binary" Hidden="True" />
+      <Member Name="Ch1LimitAlarmLatchEn" DataType="BIT" BitNumber="5" Target="OutCh1Config"/>
+      <Member Name="Ch1OutputEn" DataType="BIT" BitNumber="15" Target="OutCh1Config" />
+
+      <Member Name="Ch1OutputRangeType" DataType="SINT" Radix="Decimal" Enum ="EnumAnalogIO1_OutputRange"/>
+      <Member Name="Ch1OutputDataFormat" DataType="SINT" Radix="Decimal" Enum ="EnumAnalogIO1_OutputDataFormat"/>
+      <Member Name="PadWord9" DataType="INT" Hidden="True" />
+      <Member Name="PadWord10" DataType="INT" Hidden="True" />
+      <Member Name="Ch1HClampValue" DataType="INT" Radix="Decimal" />
+      <Member Name="Ch1LClampValue" DataType="INT" Radix="Decimal" />
+      <Member Name="PadWord11" DataType="INT" Hidden="True" />
+ 
+    </Members>
+  </DataType>
+
+  <Value ID="AB:Embedded_AnalogIO1:C:0">
+     <!--CfgSize-->
+    00,00,00,00,
+    <!--CfgIDNum-->
+    00,00,00,00,
+    <!--Reserved-->
+    01,00,00,00,
+   <!--RealTimeSample-->
+    00,00,
+    <!--Config-->
+    00,00,
+    <!--Ch0InputConfig0-->
+    01,00,
+    <!--Ch0InputConfig1-->
+    00,00,
+    <!--Ch0HAlarmLimit-->
+    00,00,
+    <!--Ch0LAlarmLimit-->
+    00,00,
+    <!--Ch0AlarmDeadband-->
+    00,00,
+    <!--PadWord0-->
+    00,00,
+    <!--Ch1InputConfig0-->
+    01,00,
+    <!--Ch1InputConfig1-->
+    00,00,
+    <!--Ch1InputDataFormat-->
+    <!--00,-->
+    <!--Ch1HAlarmLimit-->
+    00,00,
+    <!--Ch1LAlarmLimit-->
+    00,00,
+    <!--Ch1AlarmDeadband-->
+    00,00,
+    <!--PadWord1-->
+    00,00,
+    <!--Ch2InputConfig0-->
+    01,00,
+    <!--Ch2InputConfig1-->
+    00,00,
+    <!--Ch2InputDataFormat-->
+    <!--00,-->
+    <!--Ch2HAlarmLimit-->
+    00,00,
+    <!--Ch2LAlarmLimit-->
+    00,00,
+    <!--Ch2AlarmDeadband-->
+    00,00,
+    <!--PadWord2-->
+    00,00,
+    <!--Ch3InputConfig0-->
+    01,00,
+    <!--Ch3InputConfig1-->
+    00,00,
+    <!--Ch3InputDataFormat-->
+    <!--00,-->
+    <!--Ch3HAlarmLimit-->
+    00,00,
+    <!--Ch3LAlarmLimit-->
+    00,00,
+    <!--Ch3AlarmDeadband-->
+    00,00,
+    <!--PadWord3-->
+    00,00,
+    <!--Config1-->
+    00,00,
+    <!--OutCh0Config-->
+    00,00,
+    <!--Ch0OutputRangeType-->
+    00,
+    <!--Ch0OutputDataFormat-->
+    00,
+    <!--PadWord4-->
+    00,00,
+    <!--PadWord5-->
+    00,00,
+    <!--Ch0HClampValue-->
+    FC,7F,
+    <!--Ch0LClampValue-->
+    04,80,
+    <!--PadWord6-->
+    00,00,
+    <!--PadWord7-->
+    00,00,
+    <!--OutCh1Config-->
+    00,00,
+    <!--Ch1OutputRangeType-->
+    00,
+    <!--Ch1OutputDataFormat-->
+    00,
+    <!--PadWord8-->
+    00,00,
+    <!--PadWord9-->
+    00,00,
+    <!--Ch1HClampValue-->
+    FC,7F,
+    <!--Ch1LClampValue-->
+    04,80,
+    <!--PadWord10-->
+    00,00,
+    <!--PadWord11-->
+    00,00,
+  </Value>
+
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Input DataType -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <DataType Name="AB:Embedded_AnalogIO1:I:0" Class="IO">
+    <Members>
+      <Member Name="Fault" DataType="DINT" Radix="Binary" />
+      <Member Name="Ch0Data" DataType="INT" Radix="Binary" />
+      <Member Name="Ch1Data" DataType="INT" Radix="Binary" />
+      <Member Name="Ch2Data" DataType="INT" Radix="Binary" />
+      <Member Name="Ch3Data" DataType="INT" Radix="Binary" />
+      <Member Name="RealTimeSample" DataType="INT" Radix="Binary" />
+
+      <Member Name="InputErrors" DataType="INT" Radix="Binary" Hidden="True" />
+      <Member Name="Ch0InputError" DataType="BIT" BitNumber="0" Target="InputErrors" />
+      <Member Name="Ch1InputError" DataType="BIT" BitNumber="1" Target="InputErrors" />
+      <Member Name="Ch2InputError" DataType="BIT" BitNumber="2" Target="InputErrors" />
+      <Member Name="Ch3InputError" DataType="BIT" BitNumber="3" Target="InputErrors" />
+      <Member Name="CJCError" DataType="BIT" BitNumber="4" Target="InputErrors" />
+      <Member Name="Ch0InputOpenWire" DataType="BIT" BitNumber="8" Target="InputErrors" />
+      <Member Name="Ch1InputOpenWire" DataType="BIT" BitNumber="9" Target="InputErrors" />
+      <Member Name="Ch2InputOpenWire" DataType="BIT" BitNumber="10" Target="InputErrors" />
+      <Member Name="Ch3InputOpenWire" DataType="BIT" BitNumber="11" Target="InputErrors" />
+      <Member Name="CJCOpenWire" DataType="BIT" BitNumber="12" Target="InputErrors" />
+      <Member Name="CJCOverrange" DataType="BIT" BitNumber="13" Target="InputErrors" />
+      <Member Name="CJCUnderrange" DataType="BIT" BitNumber="14" Target="InputErrors" />
+
+      <Member Name="InputStatus" DataType="INT" Radix="Binary" Hidden="True" />
+      <Member Name="Ch0InputOverrange" DataType="BIT" BitNumber="0" Target="InputStatus" />
+      <Member Name="Ch0InputUnderrange" DataType="BIT" BitNumber="1" Target="InputStatus" />
+      <Member Name="Ch0HAlarm" DataType="BIT" BitNumber="2" Target="InputStatus" />
+      <Member Name="Ch0LAlarm" DataType="BIT" BitNumber="3" Target="InputStatus" />
+      <Member Name="Ch1InputOverrange" DataType="BIT" BitNumber="4" Target="InputStatus" />
+      <Member Name="Ch1InputUnderrange" DataType="BIT" BitNumber="5" Target="InputStatus" />
+      <Member Name="Ch1HAlarm" DataType="BIT" BitNumber="6" Target="InputStatus" />
+      <Member Name="Ch1LAlarm" DataType="BIT" BitNumber="7" Target="InputStatus" />
+      <Member Name="Ch2InputOverrange" DataType="BIT" BitNumber="8" Target="InputStatus" />
+      <Member Name="Ch2InputUnderrange" DataType="BIT" BitNumber="9" Target="InputStatus" />
+      <Member Name="Ch2HAlarm" DataType="BIT" BitNumber="10" Target="InputStatus" />
+      <Member Name="Ch2LAlarm" DataType="BIT" BitNumber="11" Target="InputStatus" />
+      <Member Name="Ch3InputOverrange" DataType="BIT" BitNumber="12" Target="InputStatus" />
+      <Member Name="Ch3InputUnderrange" DataType="BIT" BitNumber="13" Target="InputStatus" />
+      <Member Name="Ch3HAlarm" DataType="BIT" BitNumber="14" Target="InputStatus" />
+      <Member Name="Ch3LAlarm" DataType="BIT" BitNumber="15" Target="InputStatus" />
+
+      <Member Name="CJData" DataType="INT" Radix="Binary" />
+
+      <Member Name="Ch0Readback" DataType="INT" Radix="Binary" />
+      <Member Name="Ch1Readback" DataType="INT" Radix="Binary" />
+
+      <Member Name="OutputStatus" DataType="SINT" Radix="Binary" Hidden="True" />
+      <Member Name="Ch0OutputFault" DataType="BIT" BitNumber="0" Target="OutputStatus"/>
+      <Member Name="Ch1OutputFault" DataType="BIT" BitNumber="1" Target="OutputStatus"/>
+
+      <Member Name="OutputRange" DataType="SINT" Radix="Binary" Hidden="True" />
+      <Member Name="Ch0OutputOverrange" DataType="BIT" BitNumber="0" Target="OutputRange" />
+      <Member Name="Ch0OutputUnderrange" DataType="BIT" BitNumber="1" Target="OutputRange" />
+      <Member Name="Ch1OutputOverrange" DataType="BIT" BitNumber="4" Target="OutputRange" />
+      <Member Name="Ch1OutputUnderrange" DataType="BIT" BitNumber="5" Target="OutputRange" />
+
+    </Members>
+  </DataType>
+  <Value ID="AB:Embedded_AnalogIO1:I:0">
+    <!-- Fault-->
+    00,00,00,00,
+    <!-- Ch0Data-->
+    00,00,
+    <!--Ch1Data-->
+    00,00,
+    <!--Ch2Data-->
+    00,00,
+    <!--Ch3Data-->
+    00,00,
+    <!--RealTimeSample-->
+    00,00,
+    <!--InputErrors-->
+    00,00,
+    <!--InputStatus-->
+    00,00,
+    <!--CJData-->
+    00,00,
+    <!--CJStatus-->
+    00,00,
+    <!--Ch0Readback-->
+    00,00,
+    <!--Ch1Readback-->
+    00,00,
+    <!--OutputStatus-->
+    00,
+    <!--Outputrange-->
+    00
+  </Value>
+
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Output DataType -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <DataType Name="AB:Embedded_AnalogIO1:O:0" Class="IO">
+    <Members>
+      <Member Name="Ch0Data" DataType="INT" Radix="Decimal" />
+      <Member Name="Ch1Data" DataType="INT" Radix="Decimal" />
+
+      <Member Name="AlarmUnlatch" DataType="INT" Radix="Binary" Hidden="True" />
+      <Member Name="Ch0HAlarmUnlatch" DataType="BIT" BitNumber="0" Target="AlarmUnlatch" />
+      <Member Name="Ch0LAlarmUnlatch" DataType="BIT" BitNumber="1" Target="AlarmUnlatch" />
+      <Member Name="Ch1HAlarmUnlatch" DataType="BIT" BitNumber="2" Target="AlarmUnlatch" />
+      <Member Name="Ch1LAlarmUnlatch" DataType="BIT" BitNumber="3" Target="AlarmUnlatch" />
+      <Member Name="Ch2HAlarmUnlatch" DataType="BIT" BitNumber="4" Target="AlarmUnlatch" />
+      <Member Name="Ch2LAlarmUnlatch" DataType="BIT" BitNumber="5" Target="AlarmUnlatch" />
+      <Member Name="Ch3HAlarmUnlatch" DataType="BIT" BitNumber="6" Target="AlarmUnlatch" />
+      <Member Name="Ch3LAlarmUnlatch" DataType="BIT" BitNumber="7" Target="AlarmUnlatch" />
+
+      <Member Name="LimitUnlatch" DataType="INT" Radix="Binary" Hidden="True" />
+      <Member Name="Ch0HLimitUnlatch" DataType="BIT" BitNumber="0" Target="LimitUnlatch" />
+      <Member Name="Ch0LLimitUnlatch" DataType="BIT" BitNumber="1" Target="LimitUnlatch" />
+      <Member Name="Ch1HLimitUnlatch" DataType="BIT" BitNumber="2" Target="LimitUnlatch" />
+      <Member Name="Ch1LLimitUnlatch" DataType="BIT" BitNumber="3" Target="LimitUnlatch" />
+
+    </Members>
+  </DataType>
+  <Value ID="AB:Embedded_AnalogIO1:O:0">
+    <!--Ch0Data-->
+    00,00,
+    <!--Ch1Data-->
+    00,00,
+    <!--AlarmUnlatch-->
+    00,00,
+    <!--LimitUnlatch-->
+    00,00
+  </Value>
+
+  <!--***********************************-->
+  <!-- Embedded HSC : High Speed Counter -->
+  <!--***********************************-->
+  <ModuleType VendorID="1" ProductType="109" ProductCode="71">
+    <Variant MajorRev="1" ModuleID="Embedded_HSC1" ModuleDefinitionID="L2Y_EmbeddedHSC1" Default="True"></Variant>
+  </ModuleType>
+
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- ModuleID	                                                                 -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <Module ID="Embedded_HSC1" NumberOfInputs="0" NumberOfOutputs="0"
+        MajorFault="True" SupportsReset="True" FixedUserName="True" BusID="CmpctHSC" DriverType="257"></Module>
+
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Module Definition -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <ModuleDefinition ID="L2Y_EmbeddedHSC1" StringsID="ModuleDefinitionStrings">
+    <Selections>
+      <Field ID="Connection" StringID="1">
+        <Choice ID="Output" StringID="2"></Choice>
+      </Field>
+      <Field ID="DataFormat" StringID="3">
+        <Choice ID="Integer" StringID="4"></Choice>
+      </Field>
+    </Selections>
+    <SelectionTree>
+      <Choice ChoiceID="Output" Default="True">
+        <Choice ChoiceID="Integer" ConfigID="102"></Choice>
+      </Choice>
+    </SelectionTree>
+  </ModuleDefinition>
+
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Bus Restrictions (Embedded HSC can only be in slot 3)                     -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <Bus ID="CmpctHSC">
+    <Upstream>
+        <Exclusions>
+            <ExcludeAddressRange MinAddress="4" MaxAddress="31"/>
+        </Exclusions>
+    </Upstream>
+  </Bus>
+
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Construction-->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <Construction ConfigID="102">
+    <ConfigTag CLSID="{34B63725-CA55-42DE-91D5-9F87E1CB6BD5}"
+               ExtensionCLSID="{63E50E4D-F87E-4BE5-8F28-1AE49D739C2B}"
+               ValueID="AB:Embedded_HSC1:C:0" Instance="102">
+      <DataType Name="AB:1769_HSC1_Range:C:0"></DataType>
+      <DataType Name="AB:Embedded_HSC1:C:0"></DataType>
+      <Enum EnumID="EnumHSC1Filter"/>
+      <Enum EnumID="EnumHSC1CounterID"/>
+      <Enum EnumID="EnumHSC1OperationMode"/>
+      <Enum EnumID="EnumHSC1Type"></Enum>
+      <Enum EnumID="EnumHSC1ThisCounterID"></Enum>
+    </ConfigTag>
+    <Connections>
+      <Connection ConnectionID="Embedded_HSC1" CLSID="{3DB9EEC3-C915-41B6-A706-86F7A1E319F0}"></Connection>
+    </Connections>
+  </Construction>
+
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Connection -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <Connection ID="Embedded_HSC1" Name="Output" Type="Output" MinRPI="500" MaxRPI="750000" RPI="2000" InputCxnPoint="101" OutputCxnPoint="100">
+    <InputTag CLSID="{34B63725-CA55-42DE-91D5-9F87E1CB6BD5}">
+      <DataType Name="AB:Embedded_HSC1:I:0"></DataType>
+    </InputTag>
+    <OutputTag CLSID="{34B63725-CA55-42DE-91D5-9F87E1CB6BD5}">
+      <DataType Name="AB:Embedded_HSC1_STRUCT_OUT1:O:0"></DataType>
+      <DataType Name="AB:Embedded_HSC1:O:0"></DataType>      
+    </OutputTag>
+  </Connection>
+
+
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Data Types                                                                -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Configuration DataType -->
+  <DataType Name="AB:1769_HSC1_Range:C:0" Class="IO">
+    <Members>
+      <Member Name="HighLimit"      DataType="DINT"   Radix="Decimal" />
+      <Member Name="LowLimit"       DataType="DINT"   Radix="Decimal" />
+      <Member Name="OutputControl"  DataType="INT"    Radix="Binary" />
+
+      <Member Name="RangeConfig" DataType="INT" Radix="Binary" />
+        <Member Name="ToThisCounter_0" DataType="BIT" BitNumber="0" Target="RangeConfig" />
+        <Member Name="ToThisCounter_1" DataType="BIT" BitNumber="1" Target="RangeConfig" />
+        <Member Name="ToThisCounter" DataType="BITFIELD" LowBit="0" HiBit="1" Enum="EnumHSC1ThisCounterID" Target="RangeConfig"/>
+
+      <Member Name="Type" DataType="BIT" BitNumber="4" Enum="EnumHSC1Type" Target="RangeConfig" />
+        <Member Name="Invert" DataType="BIT" BitNumber="8" Target="RangeConfig" />
+    </Members>
+  </DataType>
+
+  <DataType Name="AB:Embedded_HSC1:C:0" Class="IO">
+    <Members>
+      <Member Name="CfgSize" DataType="DINT" Hidden="True" />
+      <Member Name="CfgIDNum" DataType="DINT" Hidden="True" />
+      <Member Name="Reserved" DataType="DINT" Hidden="True" />
+
+      <Member Name="Config0" DataType="INT" Radix="Binary" />
+          <Member Name="OverCurrentLatchOff" DataType="BIT" BitNumber="0" Target="Config0" />
+          <Member Name="CtrReset" DataType="BIT" BitNumber="1" Target="Config0" />
+          <Member Name="ProgToFaultEn" DataType="BIT" BitNumber="4" Target="Config0" />
+          <Member Name="NumberOfCounters_0" DataType="BIT" BitNumber="8" Target="Config0" />
+          <Member Name="NumberOfCounters_1" DataType="BIT" BitNumber="9" Target="Config0" />
+          <Member Name="NumberOfCounters" DataType="BITFIELD" LowBit="8" HiBit="9" Enum="EnumHSC1CounterID" Target="Config0"/>
+	  
+	  <!-- Bits 10 and 11 are set to 0 -->
+	  <Member Name="Ctr0ResetEn" DataType="BIT" BitNumber="12" Target="Config0"></Member>
+	  <Member Name="Ctr1ResetEn" DataType="BIT" BitNumber="13" Target="Config0"></Member>
+	  <Member Name="Ctr2ResetEn" DataType="BIT" BitNumber="14" Target="Config0"></Member>
+	  <Member Name="Ctr3ResetEn" DataType="BIT" BitNumber="15" Target="Config0"></Member>
+
+      <Member Name="Filter" DataType="INT" Radix="Binary" />
+          <Member Name="FilterA0_0" DataType="BIT" BitNumber="0" Target="Filter" />
+          <Member Name="FilterA0_1" DataType="BIT" BitNumber="1" Target="Filter" />
+          <Member Name="FilterA0"   DataType="BITFIELD" LowBit="0" HiBit="1" Enum="EnumHSC1Filter" Target="Filter"></Member>
+
+          <Member Name="FilterB0_0" DataType="BIT" BitNumber="3" Target="Filter" />
+          <Member Name="FilterB0_1" DataType="BIT" BitNumber="4" Target="Filter" />
+          <Member Name="FilterB0"   DataType="BITFIELD" LowBit="3" HiBit="4" Enum="EnumHSC1Filter" Target="Filter"></Member>
+
+          <Member Name="FilterZ0_0" DataType="BIT" BitNumber="6" Target="Filter" />
+          <Member Name="FilterZ0_1" DataType="BIT" BitNumber="7" Target="Filter" />
+          <Member Name="FilterZ0"   DataType="BITFIELD" LowBit="6" HiBit="7" Enum="EnumHSC1Filter" Target="Filter"/>
+
+          <Member Name="FilterA1_0" DataType="BIT" BitNumber="8" Target="Filter" />
+          <Member Name="FilterA1_1" DataType="BIT" BitNumber="9" Target="Filter" />
+          <Member Name="FilterA1"   DataType="BITFIELD" LowBit="8" HiBit="9" Enum="EnumHSC1Filter" Target="Filter"/>
+
+          <Member Name="FilterB1_0" DataType="BIT" BitNumber="11" Target="Filter" />
+          <Member Name="FilterB1_1" DataType="BIT" BitNumber="12" Target="Filter" />
+          <Member Name="FilterB1"   DataType="BITFIELD" LowBit="11" HiBit="12" Enum="EnumHSC1Filter" Target="Filter"/>
+
+          <Member Name="FilterZ1_0" DataType="BIT" BitNumber="14" Target="Filter" />
+          <Member Name="FilterZ1_1" DataType="BIT" BitNumber="15" Target="Filter" />
+          <Member Name="FilterZ1"   DataType="BITFIELD" LowBit="14" HiBit="15" Enum="EnumHSC1Filter" Target="Filter"/>
+
+      <Member Name="Pad1" DataType="INT" Radix="Binary" Hidden="True" />
+      <Member Name="Pad2" DataType="INT" Radix="Binary" Hidden="True" />
+      <Member Name="Pad3" DataType="INT" Radix="Binary" Hidden="True" />
+      <Member Name="Pad4" DataType="INT" Radix="Binary" Hidden="True" />
+
+      <Member Name="Ctr0MaxCount" DataType="DINT" Radix="Decimal" />
+      <Member Name="Ctr0MinCount" DataType="DINT" Radix="Decimal" />
+      <Member Name="Ctr0Preset" DataType="DINT" Radix="Decimal" />
+      <Member Name="Ctr0Hysteresis" DataType="INT" Radix="Decimal" Min="0" Max="32767"/>
+     
+      <Member Name="Ctr0Scaler" DataType="INT" Radix="Decimal" Min="1" Max="32767"/>
+      <Member Name="Ctr0Scalar" DataType="BITFIELD" LowBit="0" HiBit="15" Radix="Decimal" Min="1" Max="32767" Target="Ctr0Scaler"/>
+
+      <Member Name="Ctr0CyclicRateUpdateTime" DataType="INT" Radix="Decimal" Min="1" Max="32767"/>
+
+      <Member Name="Ctr0Config" DataType="SINT" Radix="Binary" Enum="EnumHSC1OperationMode" />
+         <Member Name="Ctr0OperationMode_0" DataType="BIT" BitNumber="0" Target="Ctr0Config"/>
+         <Member Name="Ctr0OperationMode_1" DataType="BIT" BitNumber="1" Target="Ctr0Config"/>
+         <Member Name="Ctr0OperationMode_2" DataType="BIT" BitNumber="2" Target="Ctr0Config"/>
+	 
+	 <Member Name="Ctr0OperationMode" DataType="BITFIELD" LowBit="0" HiBit="7" Enum="EnumHSC1OperationMode" Target="Ctr0Config"/>				
+
+      <Member Name="Ctr0Config1" DataType="SINT" Radix="Binary" Hidden="True" />
+         <Member Name="Ctr0StoreOnRisingZ" DataType="BIT" BitNumber="0" Target="Ctr0Config1"/>
+         <Member Name="Ctr0StorageMode_0" DataType="BIT" BitNumber="0" Target="Ctr0Config1" Hidden="True"/>
+
+         <Member Name="Ctr0HoldOnZ" DataType="BIT" BitNumber="1" Target="Ctr0Config1"/>
+          <Member Name="Ctr0StorageMode_1" DataType="BIT" BitNumber="1" Target="Ctr0Config1" Hidden="True"/>
+
+          <Member Name="Ctr0PresetOnRisingZ" DataType="BIT" BitNumber="2" Target="Ctr0Config1"/>
+          <Member Name="Ctr0StorageMode_2" DataType="BIT" BitNumber="2" Target="Ctr0Config1" Hidden="True"/>
+
+          <Member Name="Ctr0Linear" DataType="BIT" BitNumber="4" Target="Ctr0Config1"/>
+
+      <Member Name="Ctr1MaxCount" DataType="DINT" Radix="Decimal" />
+      <Member Name="Ctr1MinCount" DataType="DINT" Radix="Decimal" />
+      <Member Name="Ctr1Preset" DataType="DINT" Radix="Decimal" />
+      <Member Name="Ctr1Hysteresis" DataType="INT" Radix="Decimal" Min="0" Max="32767"/>
+      
+      <Member Name="Ctr1Scaler" DataType="INT" Radix="Decimal" Min="1" Max="32767"/>
+      <Member Name="Ctr1Scalar" DataType="BITFIELD" LowBit="0" HiBit="15" Radix="Decimal" Min="1" Max="32767" Target="Ctr1Scaler"/>
+
+      <Member Name="Ctr1CyclicRateUpdateTime" DataType="INT" Radix="Decimal" Min="1" Max="32767"/>
+
+       <Member Name="Ctr1Config" DataType="SINT" Radix="Binary" Enum="EnumHSC1OperationMode" />
+         <Member Name="Ctr1OperationMode_0" DataType="BIT" BitNumber="0" Target="Ctr1Config"/>
+         <Member Name="Ctr1OperationMode_1" DataType="BIT" BitNumber="1" Target="Ctr1Config"/>
+         <Member Name="Ctr1OperationMode_2" DataType="BIT" BitNumber="2" Target="Ctr1Config"/>
+	 
+	 <Member Name="Ctr1OperationMode" DataType="BITFIELD" LowBit="0" HiBit="7" Enum="EnumHSC1OperationMode" Target="Ctr1Config"/>	
+			
+    <Member Name="Ctr1Config1" DataType="SINT" Radix="Binary" Hidden="True" />
+          <Member Name="Ctr1StoreOnRisingZ" DataType="BIT" BitNumber="0" Target="Ctr1Config1"/>
+          <Member Name="Ctr1StorageMode_0" DataType="BIT" BitNumber="0" Target="Ctr1Config1" Hidden="True"/>
+
+          <Member Name="Ctr1HoldOnZ" DataType="BIT" BitNumber="1" Target="Ctr1Config1"/>
+          <Member Name="Ctr1StorageMode_1" DataType="BIT" BitNumber="1" Target="Ctr1Config1" Hidden="True"/>
+
+          <Member Name="Ctr1PresetOnRisingZ" DataType="BIT" BitNumber="2" Target="Ctr1Config1"/>
+          <Member Name="Ctr1StorageMode_2" DataType="BIT" BitNumber="2" Target="Ctr1Config1" Hidden="True"/>
+
+          <Member Name="Ctr1Linear" DataType="BIT" BitNumber="4" Target="Ctr1Config1"/>
+
+      <Member Name="Ctr2MaxCount" DataType="DINT" Radix="Decimal"/>
+      <Member Name="Ctr2MinCount" DataType="DINT" Radix="Decimal"/>
+      <Member Name="Ctr2Preset" DataType="DINT" Radix="Decimal"/>
+      <Member Name="Ctr2Hysteresis" DataType="INT" Radix="Decimal" Min="0" Max="32767"/>
+      
+      <Member Name="Ctr2Scaler" DataType="INT" Radix="Decimal" Min="1" Max="32767"/>
+      <Member Name="Ctr2Scalar" DataType="BITFIELD" LowBit="0" HiBit="15" Radix="Decimal" Min="1" Max="32767" Target="Ctr2Scaler"/>
+
+      <Member Name="Ctr2CyclicRateUpdateTime" DataType="INT" Radix="Decimal" Min="1" Max="32767"/>
+
+      <Member Name="Ctr2Config" DataType="INT" Radix="Binary" Hidden="True"/>
+          <Member Name="Ctr2Linear" DataType="BIT" BitNumber="12" Target="Ctr2Config"/>
+
+      <Member Name="Ctr3MaxCount" DataType="DINT" Radix="Decimal"/>
+      <Member Name="Ctr3MinCount" DataType="DINT" Radix="Decimal"/>
+      <Member Name="Ctr3Preset" DataType="DINT" Radix="Decimal"/>
+      <Member Name="Ctr3Hysteresis" DataType="INT" Radix="Decimal" Min="0" Max="32767"/>
+      
+      <Member Name="Ctr3Scaler" DataType="INT" Radix="Decimal" Min="1" Max="32767"/>
+      <Member Name="Ctr3Scalar" DataType="BITFIELD" LowBit="0" HiBit="15" Radix="Decimal" Min="1" Max="32767" Target="Ctr3Scaler"/>
+
+      <Member Name="Ctr3CyclicRateUpdateTime" DataType="INT" Radix="Decimal" Min="1" Max="32767"/>
+
+      <Member Name="Ctr3Config" DataType="INT" Radix="Binary" Hidden="True"/>
+          <Member Name="Ctr3Linear" DataType="BIT" BitNumber="12" Target="Ctr3Config"/>
+
+      <Member Name="Range0To11" DataType="AB:1769_HSC1_Range:C:0" Dimension="12"/>
+    </Members>
+  </DataType>
+
+  <Value ID="AB:Embedded_HSC1:C:0">
+    <!--CfgSize-->
+    00,00,00,00,
+    <!--CfgIDNum-->
+    00,00,00,00,
+    <!--Reserved-->
+    01,00,00,00,
+    <!-- Config0-->
+    00,01,
+    <!-- Filter-->
+    00,00,
+    <!-- Pad1-->
+    00,00,
+    <!-- Pad2-->
+    00,00,
+    <!--Pad3-->
+    00,00,
+    <!--Pad4-->
+    00,00,
+    <!-- Ctr0MaxCount-->
+    FF,FF,FF,7F,
+    <!-- Ctr0MinCount-->
+    00,00,00,80,
+    <!-- Ctr0Preset-->
+    00,00,00,00,
+    <!-- Ctr0Hysteresis-->
+    00,00,
+    <!-- Ctr0Scalar-->
+    01,00,
+    <!-- Ctr0CyclicRateUpdateTime-->
+    0A,00,
+    <!-- Ctr0OperationMode-->
+    00,
+    <!-- Ctr0Config1-->
+    00,
+    <!-- Ctr1MaxCount-->
+    FF,FF,FF,7F,
+    <!-- Ctr1MinCount-->
+    00,00,00,80,
+    <!-- Ctr1Preset-->
+    00,00,00,00,
+    <!-- Ctr1Hysteresis-->
+    00,00,
+    <!-- Ctr1Scalar-->
+    01,00,
+    <!-- Ctr1CyclicRateUpdateTime-->
+    0A,00,
+    <!--Ctr1OperationMode-->
+    00,
+    <!-- Ctr1Config1-->
+    00,
+    <!-- Ctr2MaxCount-->
+    00,00,00,00,
+    <!-- Ctr2MinCount-->
+    00,00,00,00,
+    <!-- Ctr2Preset-->
+    00,00,00,00,
+    <!-- Ctr2Hysteresis-->
+    00,00,
+    <!-- Ctr2Scalar-->
+    00,00,
+    <!-- Ctr2CyclicRateUpdateTime-->
+    00,00,
+    <!-- Ctr2Config-->
+    00,00,
+    <!-- Ctr3MaxCount-->
+    00,00,00,00,
+    <!-- Ctr3MinCount-->
+    00,00,00,00,
+    <!-- Ctr3Preset-->
+    00,00,00,00,
+    <!-- Ctr3Hysteresis-->
+    00,00,
+    <!-- Ctr3Scalar-->
+    00,00,
+    <!-- Ctr3CyclicRateUpdateTime-->
+    00,00,
+    <!-- Ctr3Config-->
+    00,00,
+    <!--Range0 HighLimit-->
+    00,00,00,00,
+    <!--Range0 LowLimit-->
+    00,00,00,00,
+    <!--Range0 OutputControl-->
+    00,00,
+    <!--Range0 RangeConfig-->
+    00,00
+    <!--Range1 HighLimit-->
+    00,00,00,00,
+    <!--Range1 LowLimit-->
+    00,00,00,00,
+    <!--Range1 OutputControl-->
+    00,00,
+    <!--Range1 RangeConfig-->
+    00,00
+    <!--Range2 HighLimit-->
+    00,00,00,00,
+    <!--Range2 LowLimit-->
+    00,00,00,00,
+    <!--Range2 OutputControl-->
+    00,00,
+    <!--Range2 RangeConfig-->
+    00,00
+    <!--Range3 HighLimit-->
+    00,00,00,00,
+    <!--Range3 LowLimit-->
+    00,00,00,00,
+    <!--Range3 OutputControl-->
+    00,00,
+    <!--Range3 RangeConfig-->
+    00,00
+    <!--Range4 HighLimit-->
+    00,00,00,00,
+    <!--Range4 LowLimit-->
+    00,00,00,00,
+    <!--Range4 OutputControl-->
+    00,00,
+    <!--Range4 RangeConfig-->
+    00,00
+    <!--Range5 HighLimit-->
+    00,00,00,00,
+    <!--Range5 LowLimit-->
+    00,00,00,00,
+    <!--Range5 OutputControl-->
+    00,00,
+    <!--Range5 RangeConfig-->
+    00,00
+    <!--Range6 HighLimit-->
+    00,00,00,00,
+    <!--Range6 LowLimit-->
+    00,00,00,00,
+    <!--Range6 OutputControl-->
+    00,00,
+    <!--Range6 RangeConfig-->
+    00,00
+    <!--Range7 HighLimit-->
+    00,00,00,00,
+    <!--Range7 LowLimit-->
+    00,00,00,00,
+    <!--Range7 OutputControl-->
+    00,00,
+    <!--Range7 RangeConfig-->
+    00,00
+    <!--Range8 HighLimit-->
+    00,00,00,00,
+    <!--Range8 LowLimit-->
+    00,00,00,00,
+    <!--Range8 OutputControl-->
+    00,00,
+    <!--Range8 RangeConfig-->
+    00,00
+    <!--Range9 HighLimit-->
+    00,00,00,00,
+    <!--Range9 LowLimit-->
+    00,00,00,00,
+    <!--Range9 OutputControl-->
+    00,00,
+    <!--Range9 RangeConfig-->
+    00,00
+    <!--Range10 HighLimit-->
+    00,00,00,00,
+    <!--Range10 LowLimit-->
+    00,00,00,00,
+    <!--Range10 OutputControl-->
+    00,00,
+    <!--Range10 RangeConfig-->
+    00,00
+    <!--Range11 HighLimit-->
+    00,00,00,00,
+    <!--Range11 LowLimit-->
+    00,00,00,00,
+    <!--Range11 OutputControl-->
+    00,00,
+    <!--Range11 RangeConfig-->
+    00,00
+  </Value>
+
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Input DataType -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <DataType Name="AB:Embedded_HSC1:I:0" Class="IO">
+    <Members>
+      <Member Name="Fault" DataType="DINT" Radix="Binary" />
+
+      <Member Name="InputState" DataType="SINT" Radix="Binary" />
+        <Member Name="InputStateA0" DataType="BIT" BitNumber="0" Target="InputState" />
+        <Member Name="InputStateB0" DataType="BIT" BitNumber="1" Target="InputState" />
+        <Member Name="InputStateZ0" DataType="BIT" BitNumber="2" Target="InputState" />
+        <Member Name="InputStateA1" DataType="BIT" BitNumber="3" Target="InputState" />
+        <Member Name="InputStateB1" DataType="BIT" BitNumber="4" Target="InputState" />
+        <Member Name="InputStateZ1" DataType="BIT" BitNumber="5" Target="InputState" />
+
+      <Member Name="Pad" DataType="SINT" Hidden="True" />
+      <Member Name="Readback" DataType="INT" Radix="Binary" />
+
+      <Member Name="Status" DataType="INT" Radix="Binary"/>
+        <Member Name="Out0OverCurrent" DataType="BIT" BitNumber="0" Target="Status" />
+        <Member Name="Out1OverCurrent" DataType="BIT" BitNumber="1" Target="Status" />
+        <Member Name="Out2OverCurrent" DataType="BIT" BitNumber="2" Target="Status" />
+        <Member Name="Out3OverCurrent" DataType="BIT" BitNumber="3" Target="Status" />
+        <Member Name="ModConfig" DataType="BIT" BitNumber="5" Target="Status" />
+        <Member Name="InvalidOutput" DataType="BIT" BitNumber="6" Target="Status" />
+        <Member Name="GenError" DataType="BIT" BitNumber="7" Target="Status" />
+        <Member Name="InvalidCtrAssignToRange12" DataType="BIT" BitNumber="8" Target="Status" />
+        <Member Name="InvalidCtrAssignToRange13" DataType="BIT" BitNumber="9" Target="Status" />
+        <Member Name="InvalidCtrAssignToRange14" DataType="BIT" BitNumber="10" Target="Status" />
+        <Member Name="InvalidCtrAssignToRange15" DataType="BIT" BitNumber="11" Target="Status" />
+        <Member Name="InvalidRangeLimit12" DataType="BIT" BitNumber="12" Target="Status" />
+        <Member Name="InvalidRangeLimit13" DataType="BIT" BitNumber="13" Target="Status" />
+        <Member Name="InvalidRangeLimit14" DataType="BIT" BitNumber="14" Target="Status" />
+        <Member Name="InvalidRangeLimit15" DataType="BIT" BitNumber="15" Target="Status" />
+
+      <Member Name="RangeActive" DataType="INT" Radix="Binary"/>
+
+      <Member Name="Ctr0CurrentCount" DataType="DINT" Radix="Decimal" />
+      <Member Name="Ctr0StoredCount" DataType="DINT" Radix="Decimal" />
+      <Member Name="Ctr0CurrentRate" DataType="DINT" Radix="Decimal" />
+      <Member Name="Ctr0PulseInterval" DataType="DINT" Radix="Decimal" />
+
+      <Member Name="Ctr0Status" DataType="INT" Radix="Binary"/>
+        <Member Name="Ctr0Overflow" DataType="BIT" BitNumber="0" Target="Ctr0Status" />
+        <Member Name="Ctr0Underflow" DataType="BIT" BitNumber="1" Target="Ctr0Status" />
+        <Member Name="Ctr0RisingEdgeZ" DataType="BIT" BitNumber="2" Target="Ctr0Status" />
+        <Member Name="Ctr0InvalidDirectWrite" DataType="BIT" BitNumber="3" Target="Ctr0Status" />
+        <Member Name="Ctr0RateValid" DataType="BIT" BitNumber="5" Target="Ctr0Status" />
+        <Member Name="Ctr0PresetWarning" DataType="BIT" BitNumber="6" Target="Ctr0Status" />
+
+      <Member Name="Pad1" DataType="INT" Hidden="True" />
+      <Member Name="Ctr1CurrentCount" DataType="DINT" Radix="Decimal" />
+      <Member Name="Ctr1StoredCount" DataType="DINT" Radix="Decimal" />
+      <Member Name="Ctr1CurrentRate" DataType="DINT" Radix="Decimal" />
+      <Member Name="Ctr1PulseInterval" DataType="DINT" Radix="Decimal" />
+
+      <Member Name="Ctr1Status" DataType="INT" Radix="Binary" />
+        <Member Name="Ctr1Overflow" DataType="BIT" BitNumber="0" Target="Ctr1Status" />
+        <Member Name="Ctr1Underflow" DataType="BIT" BitNumber="1" Target="Ctr1Status" />
+        <Member Name="Ctr1RisingEdgeZ" DataType="BIT" BitNumber="2" Target="Ctr1Status" />
+        <Member Name="Ctr1InvalidDirectWrite" DataType="BIT" BitNumber="3" Target="Ctr1Status" />
+        <Member Name="Ctr1InvalidCounter" DataType="BIT" BitNumber="4" Target="Ctr1Status" />
+        <Member Name="Ctr1RateValid" DataType="BIT" BitNumber="5" Target="Ctr1Status" />
+        <Member Name="Ctr1PresetWarning" DataType="BIT" BitNumber="6" Target="Ctr1Status" />
+
+      <Member Name="Pad2" DataType="INT" Hidden="True" />
+      <Member Name="Ctr2CurrentCount" DataType="DINT" Radix="Decimal" />
+      <Member Name="Ctr2CurrentRate" DataType="DINT" Radix="Decimal" />
+
+      <Member Name="Ctr2Status" DataType="INT" Radix="Binary"/>
+        <Member Name="Ctr2Overflow" DataType="BIT" BitNumber="0" Target="Ctr2Status" />
+        <Member Name="Ctr2Underflow" DataType="BIT" BitNumber="1" Target="Ctr2Status" />
+        <Member Name="Ctr2InvalidDirectWrite" DataType="BIT" BitNumber="3" Target="Ctr2Status" />
+        <Member Name="Ctr2InvalidCounter" DataType="BIT" BitNumber="4" Target="Ctr2Status" />
+        <Member Name="Ctr2RateValid" DataType="BIT" BitNumber="5" Target="Ctr2Status" />
+        <Member Name="Ctr2PresetWarning" DataType="BIT" BitNumber="6" Target="Ctr2Status" />
+
+      <Member Name="Pad3" DataType="INT" Hidden="True" />
+      <Member Name="Ctr3CurrentCount" DataType="DINT" Radix="Decimal" />
+      <Member Name="Ctr3CurrentRate" DataType="DINT" Radix="Decimal" />
+
+      <Member Name="Ctr3Status" DataType="INT" Radix="Binary" />
+        <Member Name="Ctr3Overflow" DataType="BIT" BitNumber="0" Target="Ctr3Status" />
+        <Member Name="Ctr3Underflow" DataType="BIT" BitNumber="1" Target="Ctr3Status" />
+        <Member Name="Ctr3InvalidDirectWrite" DataType="BIT" BitNumber="3" Target="Ctr3Status" />
+        <Member Name="Ctr3InvalidCounter" DataType="BIT" BitNumber="4" Target="Ctr3Status" />
+        <Member Name="Ctr3RateValid" DataType="BIT" BitNumber="5" Target="Ctr3Status" />
+        <Member Name="Ctr3PresetWarning" DataType="BIT" BitNumber="6" Target="Ctr3Status" />
+    </Members>
+  </DataType>
+  <Value ID="AB:Embedded_HSC1:I:0">
+    <!-- Fault-->
+    00,00,00,00,
+    <!-- InputState-->
+    00,
+    <!-- Pad-->
+    00,
+    <!-- Readback-->
+    00,00,
+    <!-- Status-->
+    00,00,
+    <!-- RangeActive-->
+    00,00,
+    <!-- Ctr0CurrentCount-->
+    00,00,00,00,
+    <!-- Ctr0StoredCount-->
+    00,00,00,00,
+    <!-- Ctr0CurrentRate-->
+    00,00,00,00,
+    <!-- Ctr0PulseInterval-->
+    00,00,00,00,
+    <!-- Ctr0Status-->
+    00,00,
+    <!-- Pad1-->
+    00,00,
+    <!-- Ctr1CurrentCount-->
+    00,00,00,00,
+    <!--Ctr1StoredCount-->
+    00,00,00,00,
+    <!-- Ctr1CurrentRate-->
+    00,00,00,00,
+    <!-- Ctr1PulseInterval-->
+    00,00,00,00,
+    <!-- Ctr1Status-->
+    00,00,
+    <!-- Pad2-->
+    00,00,
+    <!-- Ctr2CurrentCount-->
+    00,00,00,00,
+    <!-- Ctr2CurrentRate-->
+    00,00,00,00,
+    <!-- Ctr2Status-->
+    00,00,
+    <!-- Pad3-->
+    00,00,
+    <!-- Ctr3CurrentCount-->
+    00,00,00,00,
+    <!-- Ctr3CurrentRate-->
+    00,00,00,00,
+    <!-- Ctr3Status-->
+    00,00
+  </Value>
+
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Output DataType -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <DataType Name="AB:Embedded_HSC1_STRUCT_OUT1:O:0" Class="IO">
+    <Members>
+      <Member Name="HiLimOrDirWr" DataType="DINT" Radix="Decimal" />
+      <Member Name="LowLimit" DataType="DINT" Radix="Decimal" />
+      <Member Name="OutputControl" DataType="INT" Radix="Binary" />
+
+      <Member Name="Config" DataType="INT" Radix="Binary" />
+      <Member Name="ToThisCounter_0" DataType="BIT" BitNumber="0" Target="Config" />
+      <Member Name="ToThisCounter_1" DataType="BIT" BitNumber="1" Target="Config" />
+      <Member Name="LoadDirectWrite" DataType="BIT" BitNumber="5" Target="Config" />
+      <Member Name="Invert" DataType="BIT" BitNumber="8" Target="Config" />
+    </Members>
+  </DataType>
+  
+  <DataType Name="AB:Embedded_HSC1:O:0" Class="IO">
+    <Members>
+      <Member Name="OutputOnMask" DataType="INT" Radix="Binary" />
+      <Member Name="OutputOffMask" DataType="INT" Radix="Binary" />
+      <Member Name="RangeEn" DataType="INT" Radix="Binary" />
+      <Member Name="Reserved" DataType="INT" Hidden="True" />
+
+      <Member Name="OutputControl1" DataType="INT" Hidden="True" />
+      <Member Name="ResetBlownFuse" DataType="BIT" BitNumber="7" Target="OutputControl1" />
+
+      <Member Name="Ctr0" DataType="INT" Radix="Binary" />
+      <Member Name="Ctr0En" DataType="BIT" BitNumber="0" Target="Ctr0"/>
+      <Member Name="Ctr0SoftPreset" DataType="BIT" BitNumber="1" Target="Ctr0"/>
+      <Member Name="Ctr0ResetCountOverflow" DataType="BIT" BitNumber="2" Target="Ctr0"/>
+      <Member Name="Ctr0ResetCountUnderflow" DataType="BIT" BitNumber="3" Target="Ctr0"/>
+      <Member Name="Ctr0DirectionInvert" DataType="BIT" BitNumber="4" Target="Ctr0"/>
+      <Member Name="Ctr0DirectionInhibit" DataType="BIT" BitNumber="5" Target="Ctr0"/>
+      <Member Name="Ctr0ZInvert" DataType="BIT" BitNumber="6" Target="Ctr0"/>
+      <Member Name="Ctr0ZInhibit" DataType="BIT" BitNumber="7" Target="Ctr0"/>
+      <Member Name="Ctr0ResetRisingEdgeZ" DataType="BIT" BitNumber="8" Target="Ctr0"/>
+      <Member Name="Ctr0ResetCtrPresetWarning" DataType="BIT" BitNumber="9" Target="Ctr0"/>
+
+      <Member Name="Ctr1" DataType="INT" Radix="Binary" />
+      <Member Name="Ctr1En" DataType="BIT" BitNumber="0" Target="Ctr1"/>
+      <Member Name="Ctr1SoftPreset" DataType="BIT" BitNumber="1" Target="Ctr1"/>
+      <Member Name="Ctr1ResetCountOverflow" DataType="BIT" BitNumber="2" Target="Ctr1"/>
+      <Member Name="Ctr1ResetCountUnderflow" DataType="BIT" BitNumber="3" Target="Ctr1"/>
+      <Member Name="Ctr1DirectionInvert" DataType="BIT" BitNumber="4" Target="Ctr1"/>
+      <Member Name="Ctr1DirectionInhibit" DataType="BIT" BitNumber="5" Target="Ctr1"/>
+      <Member Name="Ctr1ZInvert" DataType="BIT" BitNumber="6" Target="Ctr1"/>
+      <Member Name="Ctr1ZInhibit" DataType="BIT" BitNumber="7" Target="Ctr1"/>
+      <Member Name="Ctr1ResetRisingEdgeZ" DataType="BIT" BitNumber="8" Target="Ctr1"/>
+      <Member Name="Ctr1ResetCtrPresetWarning" DataType="BIT" BitNumber="9" Target="Ctr1"/>
+
+      <Member Name="Ctr2" DataType="INT" Radix="Binary" />
+      <Member Name="Ctr2En" DataType="BIT" BitNumber="0" Target="Ctr2" />
+      <Member Name="Ctr2SoftPreset" DataType="BIT" BitNumber="1" Target="Ctr2" />
+      <Member Name="Ctr2ResetCountOverflow" DataType="BIT" BitNumber="2" Target="Ctr2" />
+      <Member Name="Ctr2ResetCountUnderflow" DataType="BIT" BitNumber="3" Target="Ctr2" />
+      <Member Name="Ctr2DirectionInvert" DataType="BIT" BitNumber="4" Target="Ctr2" />
+      <Member Name="Ctr2ResetCtrPresetWarning" DataType="BIT" BitNumber="9" Target="Ctr2" />
+
+      <Member Name="Ctr3" DataType="INT" Radix="Binary" />
+      <Member Name="Ctr3En" DataType="BIT" BitNumber="0" Target="Ctr3" />
+      <Member Name="Ctr3SoftPreset" DataType="BIT" BitNumber="1" Target="Ctr3" />
+      <Member Name="Ctr3ResetCountOverflow" DataType="BIT" BitNumber="2" Target="Ctr3" />
+      <Member Name="Ctr3ResetCountUnderflow" DataType="BIT" BitNumber="3" Target="Ctr3" />
+      <Member Name="Ctr3DirectionInvert" DataType="BIT" BitNumber="4" Target="Ctr3" />
+      <Member Name="Ctr3ResetCtrPresetWarning" DataType="BIT" BitNumber="9" Target="Ctr3" />
+
+      <Member Name="Pad" DataType="INT" Hidden="True" />
+
+      <Member Name="Range12To15" DataType="AB:Embedded_HSC1_STRUCT_OUT1:O:0" Dimension="4"/>      
+    </Members>
+  </DataType>
+
+  <Value ID="AB:Embedded_HSC1:O:0">
+    <!-- OutputOnMask-->
+    00,00,
+    <!-- OutputOffMask-->
+    00,00,
+    <!-- RangeEn-->
+    00,00,
+    <!-- Reserved-->
+    00,00,
+    <!-- OutputControl1-->
+    00,00,
+    <!-- Ctr0-->
+    00,00,
+    <!-- Ctr1-->
+    00,00,
+    <!-- Ctr2-->
+    00,00,
+    <!-- Ctr3-->
+    00,00,
+    <!-- Pad -->
+    00,00,
+    <!--Range12 HiLimOrDirWr-->
+    00,00,00,00,
+    <!--Range12 LowLimit-->
+    00,00,00,00,
+    <!--Range12 OutputControl-->
+    00,00,
+    <!--Range12 Config-->
+    00,00
+    <!--Range13 HiLimOrDirWr-->
+    00,00,00,00,
+    <!--Range13 LowLimit-->
+    00,00,00,00,
+    <!--Range13 OutputControl-->
+    00,00,
+    <!--Range13 Config-->
+    00,00
+    <!--Range14 HiLimOrDirWr-->
+    00,00,00,00,
+    <!--Range14 LowLimit-->
+    00,00,00,00,
+    <!--Range14 OutputControl-->
+    00,00,
+    <!--Range14 Config-->
+    00,00
+    <!--Range15 HiLimOrDirWr-->
+    00,00,00,00,
+    <!--Range15 LowLimit-->
+    00,00,00,00,
+    <!--Range15 OutputControl-->
+    00,00,
+    <!--Range15 Config-->
+    00,00    
+  </Value>
+
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Enums & Strings                                                           -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <Enum ID="EnumDiscreteIO1_Filter" StringsID="EnumDiscreteIO1_FilterStrings">
+    <Value StringID="1">0</Value>
+    <Value StringID="2">1</Value>
+    <Value StringID="3">2</Value>
+    <Value StringID="4">3</Value>
+    <Value StringID="5">4</Value>
+    <Value StringID="6">5</Value>
+    <Value StringID="7">6</Value>
+  </Enum>
+
+  <Strings ID="EnumDiscreteIO1_FilterStrings">
+    <String ID="1">
+      <Text LCID="1033">8.0 ms</Text>
+      <Text LCID="1036">8.0 ms</Text>
+      <Text LCID="1040">8.0 ms</Text>
+      <Text LCID="1041">8.0 ms</Text>
+      <Text LCID="1042">8.0 ms</Text>
+      <Text LCID="2052">8.0 ms</Text>
+      <Text LCID="1031">8.0 ms</Text>
+      <Text LCID="1034">8.0 ms</Text>
+      <Text LCID="1046">8.0 ms</Text>
+    </String>
+
+    <String ID="2">
+      <Text LCID="1033">4.0 ms</Text>
+      <Text LCID="1036">4.0 ms</Text>
+      <Text LCID="1040">4.0 ms</Text>
+      <Text LCID="1041">4.0 ms</Text>
+      <Text LCID="1042">4.0 ms</Text>
+      <Text LCID="2052">4.0 ms</Text>
+      <Text LCID="1031">4.0 ms</Text>
+      <Text LCID="1034">4.0 ms</Text>
+      <Text LCID="1046">4.0 ms</Text>
+    </String>
+
+    <String ID="3">
+      <Text LCID="1033">2.0 ms</Text>
+      <Text LCID="1036">2.0 ms</Text>
+      <Text LCID="1040">2.0 ms</Text>
+      <Text LCID="1041">2.0 ms</Text>
+      <Text LCID="1042">2.0 ms</Text>
+      <Text LCID="2052">2.0 ms</Text>
+      <Text LCID="1031">2.0 ms</Text>
+      <Text LCID="1034">2.0 ms</Text>
+      <Text LCID="1046">2.0 ms</Text>
+    </String>
+
+    <String ID="4">
+      <Text LCID="1033">1.0 ms</Text>
+      <Text LCID="1036">1.0 ms</Text>
+      <Text LCID="1040">1.0 ms</Text>
+      <Text LCID="1041">1.0 ms</Text>
+      <Text LCID="1042">1.0 ms</Text>
+      <Text LCID="2052">1.0 ms</Text>
+      <Text LCID="1031">1.0 ms</Text>
+      <Text LCID="1034">1.0 ms</Text>
+      <Text LCID="1046">1.0 ms</Text>
+    </String>
+
+    <String ID="5">
+      <Text LCID="1033">0.5 ms</Text>
+      <Text LCID="1036">0.5 ms</Text>
+      <Text LCID="1040">0.5 ms</Text>
+      <Text LCID="1041">0.5 ms</Text>
+      <Text LCID="1042">0.5 ms</Text>
+      <Text LCID="2052">0.5 ms</Text>
+      <Text LCID="1031">0.5 ms</Text>
+      <Text LCID="1034">0.5 ms</Text>
+      <Text LCID="1046">0.5 ms</Text>
+    </String>
+
+    <String ID="6">
+      <Text LCID="1033">0.1 ms</Text>
+      <Text LCID="1036">0.1 ms</Text>
+      <Text LCID="1040">0.1 ms</Text>
+      <Text LCID="1041">0.1 ms</Text>
+      <Text LCID="1042">0.1 ms</Text>
+      <Text LCID="2052">0.1 ms</Text>
+      <Text LCID="1031">0.1 ms</Text>
+      <Text LCID="1034">0.1 ms</Text>
+      <Text LCID="1046">0.1 ms</Text>
+    </String>
+
+    <String ID="7">
+      <Text LCID="1033">0.0 ms</Text>
+      <Text LCID="1036">0.0 ms</Text>
+      <Text LCID="1040">0.0 ms</Text>
+      <Text LCID="1041">0.0 ms</Text>
+      <Text LCID="1042">0.0 ms</Text>
+      <Text LCID="2052">0.0 ms</Text>
+      <Text LCID="1031">0.0 ms</Text>
+      <Text LCID="1034">0.0 ms</Text>
+      <Text LCID="1046">0.0 ms</Text>
+    </String>
+  </Strings>
+
+  <Enum ID="EnumAnalogIO1_InputRange" StringsID="EnumAnalogIO1_InputRangeStrings">
+    <Value StringID="1">0</Value>
+    <Value StringID="2">1</Value>
+    <Value StringID="3">2</Value>
+    <Value StringID="4">3</Value>
+    <Value StringID="5">4</Value>
+    <Value StringID="6">5</Value>
+    <Value StringID="7">6</Value>
+    <Value StringID="8">7</Value>
+    <Value StringID="9">8</Value>
+    <Value StringID="10">9</Value>
+    <Value StringID="11">10</Value>
+    <Value StringID="12">11</Value>
+    <Value StringID="13">12</Value>
+    <Value StringID="14">13</Value>
+    <Value StringID="15">14</Value>
+    <Value StringID="16">15</Value>
+    <Value StringID="17">16</Value>
+    <Value StringID="18">17</Value>
+    <Value StringID="19">18</Value>
+    <Value StringID="20">19</Value>
+    <Value StringID="21">20</Value>
+    <Value StringID="22">21</Value>
+    <Value StringID="23">22</Value>
+    <Value StringID="24">23</Value>
+    <Value StringID="25">24</Value>
+    <Value StringID="26">25</Value>
+    <Value StringID="27">26</Value>
+    <Value StringID="28">27</Value>
+    <Value StringID="29">28</Value>
+    <Value StringID="30">29</Value>
+    <Value StringID="31">30</Value>
+    <Value StringID="32">31</Value>
+	<Value StringID="33">32</Value>
+  </Enum>
+
+ <Enum ID="EnumAnalogIO1_InputRange_CH1_CH3" StringsID="EnumAnalogIO1_InputRangeStrings">
+    <Value StringID="1">0</Value>
+    <Value StringID="2">1</Value>
+    <Value StringID="3">2</Value>
+    <Value StringID="4">3</Value>
+    <Value StringID="5">4</Value>
+    <Value StringID="6">5</Value>
+    <Value StringID="7">6</Value>
+    <Value StringID="8">7</Value>
+    <Value StringID="9">8</Value>
+    <Value StringID="10">9</Value>
+    <Value StringID="11">10</Value>
+    <Value StringID="12">11</Value>
+    <Value StringID="13">12</Value>
+    <Value StringID="14">13</Value>
+    <Value StringID="15">14</Value>
+    <Value StringID="16">15</Value>
+    <Value StringID="17">16</Value>
+  </Enum>
+
+
+  <Strings ID="EnumAnalogIO1_InputRangeStrings">
+    <String ID="1">
+      <Text LCID="1033">-10V to 10V</Text>
+      <Text LCID="1036">-10 V à 10 V</Text>
+      <Text LCID="1040">Da -10V a 10V</Text>
+      <Text LCID="1041">-10V～10V</Text>
+      <Text LCID="1042">-10V ~ 10V</Text>
+      <Text LCID="2052">-10V 至 10V</Text>
+      <Text LCID="1031">-10V bis 10V</Text>
+      <Text LCID="1034">-10V a 10V</Text>
+      <Text LCID="1046">-10V a 10V</Text>
+    </String>
+    <String ID="2">
+      <Text LCID="1033">0V to 5V</Text>
+      <Text LCID="1036">0 V à 5 V</Text>
+      <Text LCID="1040">Da 0V a 5V</Text>
+      <Text LCID="1041">0V～5V</Text>
+      <Text LCID="1042">0V ~ 5V</Text>
+      <Text LCID="2052">0V 至 5V</Text>
+      <Text LCID="1031">0V bis 5V</Text>
+      <Text LCID="1034">0V a 5V</Text>
+      <Text LCID="1046">0V a 5V</Text>
+    </String>
+    <String ID="3">
+      <Text LCID="1033">0V to 10V</Text>
+      <Text LCID="1036">0 V à 10 V</Text>
+      <Text LCID="1040">Da 0V a 10V</Text>
+      <Text LCID="1041">0V～10V</Text>
+      <Text LCID="1042">0V ~ 10V</Text>
+      <Text LCID="2052">0V 至 10V</Text>
+      <Text LCID="1031">0V bis 10V</Text>
+      <Text LCID="1034">0V a 10V</Text>
+      <Text LCID="1046">0V a 10V</Text>
+    </String>
+    <String ID="4">
+      <Text LCID="1033">4mA to 20mA</Text>
+      <Text LCID="1036">4 mA à 20 mA</Text>
+      <Text LCID="1040">Da 4mA a 20 mA</Text>
+      <Text LCID="1041">4mA～20mA</Text>
+      <Text LCID="1042">4mA ~ 20mA</Text>
+      <Text LCID="2052">4mA 至 20mA</Text>
+      <Text LCID="1031">4mA bis 20 mA</Text>
+      <Text LCID="1034">4mA a 20 mA</Text>
+      <Text LCID="1046">4mA a 20mA</Text>
+    </String>
+    <String ID="5">
+      <Text LCID="1033">1V to 5V</Text>
+      <Text LCID="1036">1 V à 5 V</Text>
+      <Text LCID="1040">Da 1V a 5V</Text>
+      <Text LCID="1041">1V～5V</Text>
+      <Text LCID="1042">1V ~ 5V</Text>
+      <Text LCID="2052">1V 至 5V</Text>
+      <Text LCID="1031">1V bis 5V</Text>
+      <Text LCID="1034">1V a 5V</Text>
+      <Text LCID="1046">1V a 5V</Text>
+    </String>
+	 <String ID="6">
+      <Text LCID="1033">0mA to 20mA</Text>
+      <Text LCID="1036">0 mA à 20 mA</Text>
+      <Text LCID="1040">Da 0 mA a 20 mA</Text>
+      <Text LCID="1041">0mA～20mA</Text>
+      <Text LCID="1042">0mA ~ 20mA</Text>
+      <Text LCID="2052">0mA 至 20mA</Text>
+      <Text LCID="1031">0 mA bis 20 mA</Text>
+      <Text LCID="1034">0 mA a 20 mA</Text>
+      <Text LCID="1046">0mA a 20mA</Text>
+    </String>
+    <String ID="7">
+      <Text LCID="1033">Type -50mV to 50mV</Text>
+      <Text LCID="1036">Type -50 mV à 50 mV</Text>
+      <Text LCID="1040">Tipo - da 50mV a 50mV</Text>
+      <Text LCID="1041">タイプ -50mV から 50mV</Text>
+      <Text LCID="1042">유형 -50mV ~ 50mV</Text>
+      <Text LCID="2052">类型 -50mV 至 50mV</Text>
+      <Text LCID="1031">Typ -50mV bis 50mV</Text>
+      <Text LCID="1034">Tipo -50mV a 50mV</Text>
+      <Text LCID="1046">Tipo -50mV a 50mV</Text>
+    </String>
+    <String ID="8">
+      <Text LCID="1033">Type -100mV to 100mV</Text>
+      <Text LCID="1036">Type -100 mV to 100 mV</Text>
+      <Text LCID="1040">Tipo -100mV to 100mV</Text>
+      <Text LCID="1041">タイプ -100mV から 100mV</Text>
+      <Text LCID="1042">유형 -100mV ~ 100mV</Text>
+      <Text LCID="2052">类型 -100mV 至 100mV</Text>
+      <Text LCID="1031">Typ -100mV bis 100mV</Text>
+      <Text LCID="1034">Tipo -100mV a 100mV</Text>
+      <Text LCID="1046">Tipo -100mV a 100mV</Text>
+    </String>
+    <String ID="9">
+      <Text LCID="1033">Type J</Text>
+      <Text LCID="1036">Type J</Text>
+      <Text LCID="1040">Tipo J</Text>
+      <Text LCID="1041">タイプ J</Text>
+      <Text LCID="1042">유형 J</Text>
+      <Text LCID="2052">J 型</Text>
+      <Text LCID="1031">Typ J</Text>
+      <Text LCID="1034">Tipo J</Text>
+      <Text LCID="1046">Tipo J</Text>
+    </String>
+    <String ID="10">
+      <Text LCID="1033">Type K</Text>
+      <Text LCID="1036">Type K</Text>
+      <Text LCID="1040">Tipo K</Text>
+      <Text LCID="1041">タイプ K</Text>
+      <Text LCID="1042">유형 K</Text>
+      <Text LCID="2052">K 型</Text>
+      <Text LCID="1031">Typ K</Text>
+      <Text LCID="1034">Tipo K</Text>
+      <Text LCID="1046">Tipo K</Text>
+    </String>
+    <String ID="11">
+      <Text LCID="1033">Type T</Text>
+      <Text LCID="1036">Type T</Text>
+      <Text LCID="1040">Tipo T</Text>
+      <Text LCID="1041">タイプ T</Text>
+      <Text LCID="1042">유형 T</Text>
+      <Text LCID="2052">T 型</Text>
+      <Text LCID="1031">Typ T</Text>
+      <Text LCID="1034">Tipo T</Text>
+      <Text LCID="1046">Tipo T</Text>
+    </String>
+    <String ID="12">
+      <Text LCID="1033">Type E</Text>
+      <Text LCID="1036">Type E</Text>
+      <Text LCID="1040">Tipo E</Text>
+      <Text LCID="1041">タイプ E</Text>
+      <Text LCID="1042">유형 E</Text>
+      <Text LCID="2052">E 型</Text>
+      <Text LCID="1031">Typ E</Text>
+      <Text LCID="1034">Tipo E</Text>
+      <Text LCID="1046">Tipo E</Text>
+    </String>
+    <String ID="13">
+      <Text LCID="1033">Type R</Text>
+      <Text LCID="1036">Type R</Text>
+      <Text LCID="1040">Tipo R</Text>
+      <Text LCID="1041">タイプ R</Text>
+      <Text LCID="1042">유형 R</Text>
+      <Text LCID="2052">R 型</Text>
+      <Text LCID="1031">Typ R</Text>
+      <Text LCID="1034">Tipo R</Text>
+      <Text LCID="1046">Tipo R</Text>
+    </String>
+    <String ID="14">
+      <Text LCID="1033">Type S</Text>
+      <Text LCID="1036">Type S</Text>
+      <Text LCID="1040">Tipo S</Text>
+      <Text LCID="1041">タイプ S</Text>
+      <Text LCID="1042">유형 S</Text>
+      <Text LCID="2052">S 型</Text>
+      <Text LCID="1031">Typ S</Text>
+      <Text LCID="1034">Tipo S</Text>
+      <Text LCID="1046">Tipo S</Text>
+    </String>
+    <String ID="15">
+      <Text LCID="1033">Type B</Text>
+      <Text LCID="1036">Type B</Text>
+      <Text LCID="1040">Tipo B</Text>
+      <Text LCID="1041">タイプ B</Text>
+      <Text LCID="1042">유형 B</Text>
+      <Text LCID="2052">B 型</Text>
+      <Text LCID="1031">Typ B</Text>
+      <Text LCID="1034">Tipo B</Text>
+      <Text LCID="1046">Tipo B</Text>
+    </String>
+    <String ID="16">
+      <Text LCID="1033">Type N</Text>
+      <Text LCID="1036">Type N</Text>
+      <Text LCID="1040">Tipo N</Text>
+      <Text LCID="1041">タイプ N</Text>
+      <Text LCID="1042">유형 N</Text>
+      <Text LCID="2052">N 型</Text>
+      <Text LCID="1031">Typ N</Text>
+      <Text LCID="1034">Tipo N</Text>
+      <Text LCID="1046">Tipo N</Text>
+    </String>
+    <String ID="17">
+      <Text LCID="1033">Type C</Text>
+      <Text LCID="1036">Type C</Text>
+      <Text LCID="1040">Tipo C</Text>
+      <Text LCID="1041">タイプ C</Text>
+      <Text LCID="1042">유형 C</Text>
+      <Text LCID="2052">C 型</Text>
+      <Text LCID="1031">Typ C</Text>
+      <Text LCID="1034">Tipo C</Text>
+      <Text LCID="1046">Tipo C</Text>
+    </String>
+    <String ID="18">
+      <Text LCID="1033">100 ohm Pt 385</Text>
+      <Text LCID="1036">100 ohms Pt 385</Text>
+      <Text LCID="1040">100 ohm Pt 385</Text>
+      <Text LCID="1041">100Ω Pt 385</Text>
+      <Text LCID="1042">100ohm Pt 385</Text>
+      <Text LCID="2052">100 ohm Pt 385</Text>
+      <Text LCID="1031">100 Ohm Pt 385</Text>
+      <Text LCID="1034">100 ohms Pt 385</Text>
+      <Text LCID="1046">100 ohm Pt 385</Text>
+    </String>
+    <String ID="19">
+      <Text LCID="1033">200 ohm Pt 385</Text>
+      <Text LCID="1036">200 ohms Pt 385</Text>
+      <Text LCID="1040">200 ohm Pt 385</Text>
+      <Text LCID="1041">200Ω Pt 385</Text>
+      <Text LCID="1042">200ohm Pt 385</Text>
+      <Text LCID="2052">200 ohm Pt 385</Text>
+      <Text LCID="1031">200 Ohm Pt 385</Text>
+      <Text LCID="1034">200 ohms Pt 385</Text>
+      <Text LCID="1046">200 ohm Pt 385</Text>
+    </String>
+    <String ID="20">
+      <Text LCID="1033">500 ohm Pt 385</Text>
+      <Text LCID="1036">500 ohms Pt 385</Text>
+      <Text LCID="1040">500 ohm Pt 385</Text>
+      <Text LCID="1041">500Ω Pt 385</Text>
+      <Text LCID="1042">500ohm Pt 385</Text>
+      <Text LCID="2052">500 ohm Pt 385</Text>
+      <Text LCID="1031">500 Ohm Pt 385</Text>
+      <Text LCID="1034">500 ohms Pt 385</Text>
+      <Text LCID="1046">500 ohm Pt 385</Text>
+    </String>
+    <String ID="21">
+      <Text LCID="1033">1000 ohm Pt 385</Text>
+      <Text LCID="1036">1,000 ohms Pt 385</Text>
+      <Text LCID="1040">1000 ohm Pt 385</Text>
+      <Text LCID="1041">1000Ω Pt 385</Text>
+      <Text LCID="1042">1000ohm Pt 385</Text>
+      <Text LCID="2052">1000 ohm Pt 385</Text>
+      <Text LCID="1031">1000 Ohm Pt 385</Text>
+      <Text LCID="1034">1000 ohms Pt 385</Text>
+      <Text LCID="1046">1000 ohm Pt 385</Text>
+    </String>
+    <String ID="22">
+      <Text LCID="1033">100 ohm Pt 3916</Text>
+      <Text LCID="1036">100 ohms Pt 3,916</Text>
+      <Text LCID="1040">100 ohm Pt 3916</Text>
+      <Text LCID="1041">100Ω Pt 3916</Text>
+      <Text LCID="1042">100ohm Pt 3916</Text>
+      <Text LCID="2052">100 ohm Pt 3916</Text>
+      <Text LCID="1031">100 Ohm Pt 3916</Text>
+      <Text LCID="1034">100 ohms Pt 3916</Text>
+      <Text LCID="1046">100 ohm Pt 3916</Text>
+    </String>
+    <String ID="23">
+      <Text LCID="1033">200 ohm Pt 3916</Text>
+      <Text LCID="1036">200 ohms Pt 3,916</Text>
+      <Text LCID="1040">200 ohm Pt 3916</Text>
+      <Text LCID="1041">200Ω Pt 3916</Text>
+      <Text LCID="1042">200ohm Pt 3916</Text>
+      <Text LCID="2052">200 ohm Pt 3916</Text>
+      <Text LCID="1031">200 Ohm Pt 3916</Text>
+      <Text LCID="1034">200 ohms Pt 3916</Text>
+      <Text LCID="1046">200 ohm Pt 3916</Text>
+    </String>
+    <String ID="24">
+      <Text LCID="1033">500 ohm Pt 3916</Text>
+      <Text LCID="1036">500 ohms Pt 3,916</Text>
+      <Text LCID="1040">500 ohm Pt 3916</Text>
+      <Text LCID="1041">500Ω Pt 3916</Text>
+      <Text LCID="1042">500ohm Pt 3916</Text>
+      <Text LCID="2052">500 ohm Pt 3916</Text>
+      <Text LCID="1031">500 Ohm Pt 3916</Text>
+      <Text LCID="1034">500 ohms Pt 3916</Text>
+      <Text LCID="1046">500 ohm Pt 3916</Text>
+    </String>
+    <String ID="25">
+      <Text LCID="1033">1000 ohm Pt 3916</Text>
+      <Text LCID="1036">1,000 ohms Pt 3,916</Text>
+      <Text LCID="1040">1000 ohm Pt 3916</Text>
+      <Text LCID="1041">1000Ω Pt 3916</Text>
+      <Text LCID="1042">1000ohm Pt 3916</Text>
+      <Text LCID="2052">1000 ohm Pt 3916</Text>
+      <Text LCID="1031">1000 Ohm Pt 3916</Text>
+      <Text LCID="1034">1000 ohms Pt 3916</Text>
+      <Text LCID="1046">1000 ohm Pt 3916</Text>
+    </String>
+    <String ID="26">
+      <Text LCID="1033">10 ohm Cu 426</Text>
+      <Text LCID="1036">10 ohms Cu 426</Text>
+      <Text LCID="1040">10 ohm Cu 426</Text>
+      <Text LCID="1041">10Ω Cu 426</Text>
+      <Text LCID="1042">10ohm Cu 426</Text>
+      <Text LCID="2052">10 ohm Cu 426</Text>
+      <Text LCID="1031">10 Ohm Cu 426</Text>
+      <Text LCID="1034">10 ohms Cu 426</Text>
+      <Text LCID="1046">10 ohm Cu 426</Text>
+    </String>
+    <String ID="27">
+      <Text LCID="1033">120 ohm Ni 618</Text>
+      <Text LCID="1036">120 ohms Ni 618</Text>
+      <Text LCID="1040">120 ohm Ni 618</Text>
+      <Text LCID="1041">120Ω Ni 618</Text>
+      <Text LCID="1042">120ohm Ni 618</Text>
+      <Text LCID="2052">120 ohm Ni 618</Text>
+      <Text LCID="1031">120 Ohm Ni 618</Text>
+      <Text LCID="1034">120 ohms Ni 618</Text>
+      <Text LCID="1046">120 ohm Ni 618</Text>
+    </String>
+    <String ID="28">
+      <Text LCID="1033">120 ohm Ni 672</Text>
+      <Text LCID="1036">120 ohms Ni 672</Text>
+      <Text LCID="1040">120 ohm Ni 672</Text>
+      <Text LCID="1041">120Ω Ni 672</Text>
+      <Text LCID="1042">120ohm Ni 672</Text>
+      <Text LCID="2052">120 ohm Ni 672</Text>
+      <Text LCID="1031">120 Ohm Ni 672</Text>
+      <Text LCID="1034">120 ohms Ni 672</Text>
+      <Text LCID="1046">120 ohm Ni 672</Text>
+    </String>
+    <String ID="29">
+      <Text LCID="1033">604 ohm NiFe 518</Text>
+      <Text LCID="1036">604 ohms NiFe 518</Text>
+      <Text LCID="1040">604 ohm NiFe 518</Text>
+      <Text LCID="1041">604Ω NiFe 518</Text>
+      <Text LCID="1042">604ohm NiFe 518</Text>
+      <Text LCID="2052">604 ohm NiFe 518</Text>
+      <Text LCID="1031">604 Ohm NiFe 518</Text>
+      <Text LCID="1034">604 ohms NiFe 518</Text>
+      <Text LCID="1046">604 ohm NiFe 518</Text>
+    </String>
+    <String ID="30">
+      <Text LCID="1033">150 ohm</Text>
+      <Text LCID="1036">150 ohms</Text>
+      <Text LCID="1040">150 ohm</Text>
+      <Text LCID="1041">150Ω</Text>
+      <Text LCID="1042">150ohm</Text>
+      <Text LCID="2052">150 ohm</Text>
+      <Text LCID="1031">150 Ohm</Text>
+      <Text LCID="1034">150 ohms</Text>
+      <Text LCID="1046">150 ohm</Text>
+    </String>
+    <String ID="31">
+      <Text LCID="1033">500 ohm</Text>
+      <Text LCID="1036">500 ohms</Text>
+      <Text LCID="1040">500 ohm</Text>
+      <Text LCID="1041">500Ω</Text>
+      <Text LCID="1042">500ohm</Text>
+      <Text LCID="2052">500 ohm</Text>
+      <Text LCID="1031">500 Ohm</Text>
+      <Text LCID="1034">500 ohms</Text>
+      <Text LCID="1046">500 ohm</Text>
+    </String>
+    <String ID="32">
+      <Text LCID="1033">1000 ohm</Text>
+      <Text LCID="1036">1,000 ohms</Text>
+      <Text LCID="1040">1000 ohm</Text>
+      <Text LCID="1041">1000Ω</Text>
+      <Text LCID="1042">1000ohm</Text>
+      <Text LCID="2052">1000 ohm</Text>
+      <Text LCID="1031">1000 Ohm</Text>
+      <Text LCID="1034">1000 ohms</Text>
+      <Text LCID="1046">1000 ohm</Text>
+    </String>
+    <String ID="33">
+      <Text LCID="1033">3000 ohm</Text>
+      <Text LCID="1036">3,000 ohms</Text>
+      <Text LCID="1040">3000 ohm</Text>
+      <Text LCID="1041">3000Ω</Text>
+      <Text LCID="1042">3000ohm</Text>
+      <Text LCID="2052">3000 ohm</Text>
+      <Text LCID="1031">3000 Ohm</Text>
+      <Text LCID="1034">3000 ohms</Text>
+      <Text LCID="1046">3000 ohm</Text>
+    </String>
+  </Strings>
+
+  <Enum ID="EnumAnalogIO1_Units" StringsID="EnumAnalogIO1_UnitsStrings">
+    <Value StringID="1">0</Value>
+    <Value StringID="2">1</Value>    
+  </Enum>
+  <Strings ID="EnumAnalogIO1_UnitsStrings">
+    <String ID="1">
+      <Text LCID="1033">C</Text>
+      <Text LCID="1036">C</Text>
+      <Text LCID="1040">C</Text>
+      <Text LCID="1041">C</Text>
+      <Text LCID="1042">C</Text>
+      <Text LCID="2052">C</Text>
+      <Text LCID="1031">C</Text>
+      <Text LCID="1034">C</Text>
+      <Text LCID="1046">C</Text>
+    </String>
+    <String ID="2">
+      <Text LCID="1033">F</Text>
+      <Text LCID="1036">F</Text>
+      <Text LCID="1040">F</Text>
+      <Text LCID="1041">F</Text>
+      <Text LCID="1042">F</Text>
+      <Text LCID="2052">F</Text>
+      <Text LCID="1031">F</Text>
+      <Text LCID="1034">F</Text>
+      <Text LCID="1046">F</Text>
+    </String>
+  </Strings>
+
+  
+  
+    <Enum ID="EnumAnalogIO1_MeasurementType" StringsID="EnumAnalogIO1_MeasurementTypeStrings">
+    <Value StringID="1">0</Value>
+    <Value StringID="2">1</Value>  
+    <Value StringID="3">2</Value> 
+    <Value StringID="4">3</Value>  
+  </Enum>
+  <Strings ID="EnumAnalogIO1_MeasurementTypeStrings">
+    <String ID="1">
+      <Text LCID="1033">3-Wire Lead Compensated</Text>
+      <Text LCID="1036">3 fils avec compensation de longueur</Text>
+      <Text LCID="1040">Conduttore compensato a 3 fili</Text>
+      <Text LCID="1041">3 線式補償導線</Text>
+      <Text LCID="1042">3와이어 리드 보상</Text>
+      <Text LCID="2052">3 线超前补偿</Text>
+      <Text LCID="1031">3-Draht - Durch Lead kompensiert</Text>
+      <Text LCID="1034">Compensación de avance de 3 cables</Text>
+      <Text LCID="1046">3-fios condutores compensados</Text>
+    </String>
+    <String ID="2">
+      <Text LCID="1033">3-Wire</Text>
+      <Text LCID="1036">3-fils</Text>
+      <Text LCID="1040">3-fili</Text>
+      <Text LCID="1041">3 線式</Text>
+      <Text LCID="1042">3와이어</Text>
+      <Text LCID="2052">3 线</Text>
+      <Text LCID="1031">3-Draht</Text>
+      <Text LCID="1034">3-cables</Text>
+      <Text LCID="1046">3-fios</Text>
+    </String>
+	<String ID="3">
+      <Text LCID="1033">2-Wire</Text>
+      <Text LCID="1036">2-fils</Text>
+      <Text LCID="1040">2-fili</Text>
+      <Text LCID="1041">2 線式</Text>
+      <Text LCID="1042">2와이어</Text>
+      <Text LCID="2052">2 线</Text>
+      <Text LCID="1031">2-Draht</Text>
+      <Text LCID="1034">2-cables</Text>
+      <Text LCID="1046">2-fios</Text>
+    </String>
+	<String ID="4">
+      <Text LCID="1033">4-Wire</Text>
+      <Text LCID="1036">4-fils</Text>
+      <Text LCID="1040">4-fili</Text>
+      <Text LCID="1041">4 線式</Text>
+      <Text LCID="1042">4와이어</Text>
+      <Text LCID="2052">4 线</Text>
+      <Text LCID="1031">4-Draht</Text>
+      <Text LCID="1034">4-cables</Text>
+      <Text LCID="1046">4-fios</Text>
+    </String>
+  </Strings>
+  
+  
+  
+  <Enum ID="EnumAnalogIO1_InputFilter" StringsID="EnumAnalogIO1_InputFilterStrings">
+    <Value StringID="1">0</Value>
+    <Value StringID="2">1</Value>
+    <Value StringID="3">2</Value>
+    <Value StringID="4">3</Value>
+    <Value StringID="5">4</Value>
+    <Value StringID="6">5</Value>
+  </Enum>
+  <Strings ID="EnumAnalogIO1_InputFilterStrings">
+    <String ID="1">
+      <Text LCID="1033">60Hz</Text>
+      <Text LCID="1036">60 Hz</Text>
+      <Text LCID="1040">60Hz</Text>
+      <Text LCID="1041">60Hz</Text>
+      <Text LCID="1042">60Hz</Text>
+      <Text LCID="2052">60Hz</Text>
+      <Text LCID="1031">60Hz</Text>
+      <Text LCID="1034">60Hz</Text>
+      <Text LCID="1046">60Hz</Text>
+    </String>
+    <String ID="2">
+      <Text LCID="1033">50Hz</Text>
+      <Text LCID="1036">50 Hz</Text>
+      <Text LCID="1040">50Hz</Text>
+      <Text LCID="1041">50Hz</Text>
+      <Text LCID="1042">50Hz</Text>
+      <Text LCID="2052">50Hz</Text>
+      <Text LCID="1031">50Hz</Text>
+      <Text LCID="1034">50Hz</Text>
+      <Text LCID="1046">50Hz</Text>
+    </String>
+    <String ID="3">
+      <Text LCID="1033">10Hz</Text>
+      <Text LCID="1036">10 Hz</Text>
+      <Text LCID="1040">10Hz</Text>
+      <Text LCID="1041">10Hz</Text>
+      <Text LCID="1042">10Hz</Text>
+      <Text LCID="2052">10Hz</Text>
+      <Text LCID="1031">10Hz</Text>
+      <Text LCID="1034">10Hz</Text>
+      <Text LCID="1046">10Hz</Text>
+    </String>
+    <String ID="4">
+      <Text LCID="1033">250Hz</Text>
+      <Text LCID="1036">250 Hz</Text>
+      <Text LCID="1040">250Hz</Text>
+      <Text LCID="1041">250Hz</Text>
+      <Text LCID="1042">250Hz</Text>
+      <Text LCID="2052">250Hz</Text>
+      <Text LCID="1031">250Hz</Text>
+      <Text LCID="1034">250Hz</Text>
+      <Text LCID="1046">250Hz</Text>
+    </String>
+    <String ID="5">
+      <Text LCID="1033">500Hz</Text>
+      <Text LCID="1036">500 Hz</Text>
+      <Text LCID="1040">500Hz</Text>
+      <Text LCID="1041">500Hz</Text>
+      <Text LCID="1042">500Hz</Text>
+      <Text LCID="2052">500Hz</Text>
+      <Text LCID="1031">500Hz</Text>
+      <Text LCID="1034">500Hz</Text>
+      <Text LCID="1046">500Hz</Text>
+    </String>
+    <String ID="6">
+      <Text LCID="1033">1kHz</Text>
+      <Text LCID="1036">1 kHz</Text>
+      <Text LCID="1040">1kHz</Text>
+      <Text LCID="1041">1kHz</Text>
+      <Text LCID="1042">1kHz</Text>
+      <Text LCID="2052">1kHz</Text>
+      <Text LCID="1031">1kHz</Text>
+      <Text LCID="1034">1kHz</Text>
+      <Text LCID="1046">1kHz</Text>
+    </String>
+  </Strings>
+
+  <Enum ID="EnumAnalogIO1_InputDataFormat" StringsID="EnumAnalogIO1_InputDataFormatStrings">
+    <Value StringID="1">0</Value>
+    <Value StringID="2">1</Value>
+    <Value StringID="3">2</Value>
+    <Value StringID="4">3</Value>
+    <Value StringID="5">4</Value>
+  </Enum>
+
+  <Strings ID="EnumAnalogIO1_InputDataFormatStrings">
+    <String ID="1">
+      <Text LCID="1033">Raw/Proportional</Text>
+      <Text LCID="1036">Brut/proportionnel</Text>
+      <Text LCID="1040">Originali/proporzionali</Text>
+      <Text LCID="1041">生/比例</Text>
+      <Text LCID="1042">원시/비례</Text>
+      <Text LCID="2052">原始/比例</Text>
+      <Text LCID="1031">Roh/Proportional</Text>
+      <Text LCID="1034">No procesados/proporcionales</Text>
+      <Text LCID="1046">Brutos/proporcionais</Text>
+    </String>
+    <String ID="2">
+      <Text LCID="1033">Engineering Units</Text>
+      <Text LCID="1036">Unités de procédé</Text>
+      <Text LCID="1040">Unità ingegneristiche</Text>
+      <Text LCID="1041">工学単位</Text>
+      <Text LCID="1042">엔지니어링 단위</Text>
+      <Text LCID="2052">工程单位</Text>
+      <Text LCID="1031">Technische Einheiten</Text>
+      <Text LCID="1034">Unidades de ingeniería</Text>
+      <Text LCID="1046">Unidades de engenharia</Text>
+    </String>
+    <String ID="3">
+      <Text LCID="1033">Engineering Units X 10</Text>
+      <Text LCID="1036">Unités procédé X 10</Text>
+      <Text LCID="1040">Unità ingegneristiche X 10</Text>
+      <Text LCID="1041">工学単位 X 10</Text>
+      <Text LCID="1042">엔지니어링 단위 X 10</Text>
+      <Text LCID="2052">工程单位 X 10</Text>
+      <Text LCID="1031">Technische Einheiten X 10</Text>
+      <Text LCID="1034">Unidades de ingeniería X 10</Text>
+      <Text LCID="1046">Unidades de engenharia X 10</Text>
+    </String>
+    <String ID="4">
+      <Text LCID="1033">Scaled for PID</Text>
+      <Text LCID="1036">Mis à l'échelle pour PID</Text>
+      <Text LCID="1040">In scala per PID</Text>
+      <Text LCID="1041">PID に対してスケーリング</Text>
+      <Text LCID="1042">PID에 맞게 배율 조정</Text>
+      <Text LCID="2052">PID 比例</Text>
+      <Text LCID="1031">Für PID skaliert</Text>
+      <Text LCID="1034">Escalado para PID</Text>
+      <Text LCID="1046">Colocado em escala para PID</Text>
+    </String>
+    <String ID="5">
+      <Text LCID="1033">Percent Range</Text>
+      <Text LCID="1036">Plage en pourcentage</Text>
+      <Text LCID="1040">Gamma percentuale</Text>
+      <Text LCID="1041">パーセント範囲</Text>
+      <Text LCID="1042">퍼센트 범위</Text>
+      <Text LCID="2052">百分比范围</Text>
+      <Text LCID="1031">Prozentbereich</Text>
+      <Text LCID="1034">Rango porcentual</Text>
+      <Text LCID="1046">Faixa percentual</Text>
+    </String>
+  </Strings >
+
+  <Enum ID="EnumAnalogIO1_OpenCircuitResponse" StringsID="EnumAnalogIO1_OpenCircuitResponseStrings">
+    <Value StringID="1">0</Value>
+    <Value StringID="2">1</Value>
+    <Value StringID="3">2</Value>
+    <Value StringID="4">3</Value>
+    <Value StringID="5">4</Value>
+  </Enum>
+
+  <Strings ID="EnumAnalogIO1_OpenCircuitResponseStrings">
+    <String ID="1">
+      <Text LCID="1033">Disable</Text>
+      <Text LCID="1036">Désactiver</Text>
+      <Text LCID="1040">Disattiva</Text>
+      <Text LCID="1041">無効</Text>
+      <Text LCID="1042">사용 안 함</Text>
+      <Text LCID="2052">禁用</Text>
+      <Text LCID="1031">Deaktivieren</Text>
+      <Text LCID="1034">Inhabilitar</Text>
+      <Text LCID="1046">Desativar</Text>
+    </String>
+    <String ID="2">
+      <Text LCID="1033">Upscale</Text>
+      <Text LCID="1036">Positive</Text>
+      <Text LCID="1040">Fondo scala superiore</Text>
+      <Text LCID="1041">拡大</Text>
+      <Text LCID="1042">업스케일</Text>
+      <Text LCID="2052">上刻度</Text>
+      <Text LCID="1031">Ob. Skalenwert</Text>
+      <Text LCID="1034">Escala superior</Text>
+      <Text LCID="1046">Escala superior</Text>
+    </String>
+    <String ID="3">
+      <Text LCID="1033">Downscale</Text>
+      <Text LCID="1036">Négative</Text>
+      <Text LCID="1040">Fondo scala inferiore</Text>
+      <Text LCID="1041">縮小</Text>
+      <Text LCID="1042">다운스케일</Text>
+      <Text LCID="2052">下刻度</Text>
+      <Text LCID="1031">Unt. Skalenwert</Text>
+      <Text LCID="1034">Escala inferior</Text>
+      <Text LCID="1046">Escala inferior</Text>
+    </String>
+    <String ID="4">
+      <Text LCID="1033">Last State</Text>
+      <Text LCID="1036">Dernier état</Text>
+      <Text LCID="1040">Ultimo stato</Text>
+      <Text LCID="1041">最後の状態</Text>
+      <Text LCID="1042">마지막 상태</Text>
+      <Text LCID="2052">上一状态</Text>
+      <Text LCID="1031">Letzter Zustand</Text>
+      <Text LCID="1034">Último estado</Text>
+      <Text LCID="1046">Último estado</Text>
+    </String>
+    <String ID="5">
+      <Text LCID="1033">Zero</Text>
+      <Text LCID="1036">Zéro</Text>
+      <Text LCID="1040">Zero</Text>
+      <Text LCID="1041">ゼロ</Text>
+      <Text LCID="1042">0</Text>
+      <Text LCID="2052">零</Text>
+      <Text LCID="1031">Null</Text>
+      <Text LCID="1034">Cero</Text>
+      <Text LCID="1046">Zero</Text>
+    </String>
+  </Strings >
+  
+  <Enum ID="EnumAnalogIO1_OutputRange" StringsID="EnumAnalogIO1_OutputRangeStrings">
+    <Value StringID="1">0</Value>
+    <Value StringID="2">1</Value>
+    <Value StringID="3">2</Value>
+    <Value StringID="4">3</Value>
+    <Value StringID="5">4</Value>
+    <Value StringID="6">5</Value>
+  </Enum>
+  <Strings ID="EnumAnalogIO1_OutputRangeStrings">
+    <String ID="1">
+      <Text LCID="1033">-10V to 10V</Text>
+      <Text LCID="1036">-10 V à 10 V</Text>
+      <Text LCID="1040">Da -10V a 10V</Text>
+      <Text LCID="1041">-10V～10V</Text>
+      <Text LCID="1042">-10V ~ 10V</Text>
+      <Text LCID="2052">-10V 至 10V</Text>
+      <Text LCID="1031">-10V bis 10V</Text>
+      <Text LCID="1034">-10V a 10V</Text>
+      <Text LCID="1046">-10V a 10V</Text>
+    </String>
+    <String ID="2">
+      <Text LCID="1033">0V to 5V</Text>
+      <Text LCID="1036">0 V à 5 V</Text>
+      <Text LCID="1040">Da 0V a 5V</Text>
+      <Text LCID="1041">0V～5V</Text>
+      <Text LCID="1042">0V ~ 5V</Text>
+      <Text LCID="2052">0V 至 5V</Text>
+      <Text LCID="1031">0V bis 5V</Text>
+      <Text LCID="1034">0V a 5V</Text>
+      <Text LCID="1046">0V a 5V</Text>
+    </String>
+    <String ID="3">
+      <Text LCID="1033">0V to 10V</Text>
+      <Text LCID="1036">0 V à 10 V</Text>
+      <Text LCID="1040">Da 0V a 10V</Text>
+      <Text LCID="1041">0V～10V</Text>
+      <Text LCID="1042">0V ~ 10V</Text>
+      <Text LCID="2052">0V 至 10V</Text>
+      <Text LCID="1031">0V bis 10V</Text>
+      <Text LCID="1034">0V a 10V</Text>
+      <Text LCID="1046">0V a 10V</Text>
+    </String>
+    <String ID="4">
+      <Text LCID="1033">4mA to 20mA</Text>
+      <Text LCID="1036">4 mA à 20 mA</Text>
+      <Text LCID="1040">Da 4mA a 20 mA</Text>
+      <Text LCID="1041">4mA～20mA</Text>
+      <Text LCID="1042">4mA ~ 20mA</Text>
+      <Text LCID="2052">4mA 至 20mA</Text>
+      <Text LCID="1031">4mA bis 20 mA</Text>
+      <Text LCID="1034">4mA a 20 mA</Text>
+      <Text LCID="1046">4mA a 20mA</Text>
+    </String>
+    <String ID="5">
+      <Text LCID="1033">1V to 5V</Text>
+      <Text LCID="1036">1 V à 5 V</Text>
+      <Text LCID="1040">Da 1V a 5V</Text>
+      <Text LCID="1041">1V～5V</Text>
+      <Text LCID="1042">1V ~ 5V</Text>
+      <Text LCID="2052">1V 至 5V</Text>
+      <Text LCID="1031">1V bis 5V</Text>
+      <Text LCID="1034">1V a 5V</Text>
+      <Text LCID="1046">1V a 5V</Text>
+    </String>
+    <String ID="6">
+      <Text LCID="1033">0mA to 20mA</Text>
+      <Text LCID="1036">0 mA à 20 mA</Text>
+      <Text LCID="1040">Da 0 mA a 20 mA</Text>
+      <Text LCID="1041">0mA～20mA</Text>
+      <Text LCID="1042">0mA ~ 20mA</Text>
+      <Text LCID="2052">0mA 至 20mA</Text>
+      <Text LCID="1031">0 mA bis 20 mA</Text>
+      <Text LCID="1034">0 mA a 20 mA</Text>
+      <Text LCID="1046">0mA a 20mA</Text>
+    </String>
+  </Strings>
+
+  <Enum ID="EnumAnalogIO1_OutputDataFormat" StringsID="EnumAnalogIO1_OutputDataFormatStrings">
+    <Value StringID="1">0</Value>
+    <Value StringID="2">1</Value>
+    <Value StringID="3">2</Value>
+    <Value StringID="4">3</Value>
+  </Enum>
+
+  <Strings ID="EnumAnalogIO1_OutputDataFormatStrings">
+    <String ID="1">
+      <Text LCID="1033">Raw/Proportional</Text>
+      <Text LCID="1036">Brut/proportionnel</Text>
+      <Text LCID="1040">Originali/proporzionali</Text>
+      <Text LCID="1041">生/比例</Text>
+      <Text LCID="1042">원시/비례</Text>
+      <Text LCID="2052">原始/比例</Text>
+      <Text LCID="1031">Roh/Proportional</Text>
+      <Text LCID="1034">No procesados/proporcionales</Text>
+      <Text LCID="1046">Brutos/proporcionais</Text>
+    </String>
+    <String ID="2">
+      <Text LCID="1033">Engineering Units</Text>
+      <Text LCID="1036">Unités de procédé</Text>
+      <Text LCID="1040">Unità ingegneristiche</Text>
+      <Text LCID="1041">工学単位</Text>
+      <Text LCID="1042">엔지니어링 단위</Text>
+      <Text LCID="2052">工程单位</Text>
+      <Text LCID="1031">Technische Einheiten</Text>
+      <Text LCID="1034">Unidades de ingeniería</Text>
+      <Text LCID="1046">Unidades de engenharia</Text>
+    </String>
+    <String ID="3">
+      <Text LCID="1033">Scaled for PID</Text>
+      <Text LCID="1036">Mis à l'échelle pour PID</Text>
+      <Text LCID="1040">In scala per PID</Text>
+      <Text LCID="1041">PID に対してスケーリング</Text>
+      <Text LCID="1042">PID에 맞게 배율 조정</Text>
+      <Text LCID="2052">PID 比例</Text>
+      <Text LCID="1031">Für PID skaliert</Text>
+      <Text LCID="1034">Escalado para PID</Text>
+      <Text LCID="1046">Colocado em escala para PID</Text>
+    </String>
+    <String ID="4">
+      <Text LCID="1033">Percent Range</Text>
+      <Text LCID="1036">Plage en pourcentage</Text>
+      <Text LCID="1040">Gamma percentuale</Text>
+      <Text LCID="1041">パーセント範囲</Text>
+      <Text LCID="1042">퍼센트 범위</Text>
+      <Text LCID="2052">百分比范围</Text>
+      <Text LCID="1031">Prozentbereich</Text>
+      <Text LCID="1034">Rango porcentual</Text>
+      <Text LCID="1046">Faixa percentual</Text>
+    </String>
+  </Strings >
+  <Enum ID="HSC1ProgFaultMode" StringsID="HSC1ProgFaultModeStrings">
+    <Value StringID="1">0</Value>
+    <Value StringID="2">1</Value>
+    <Value StringID="3">2</Value>
+    <Value StringID="4">3</Value>
+  </Enum>
+  <Strings ID="HSC1ProgFaultModeStrings">
+    <String ID="1">
+      <Text LCID="1033">Off</Text>
+      <Text LCID="1036">Désactivé</Text>
+      <Text LCID="1040">Disattivato</Text>
+      <Text LCID="1041">オフ</Text>
+      <Text LCID="1042">꺼짐</Text>
+      <Text LCID="2052">关闭</Text>
+      <Text LCID="1031">Aus</Text>
+      <Text LCID="1034">Desactivado</Text>
+      <Text LCID="1046">Desativado</Text>
+    </String>
+    <String ID="2">
+      <Text LCID="1033">On</Text>
+      <Text LCID="1036">Activé</Text>
+      <Text LCID="1040">Attivato</Text>
+      <Text LCID="1041">オン</Text>
+      <Text LCID="1042">켜짐</Text>
+      <Text LCID="2052">开启</Text>
+      <Text LCID="1031">Ein</Text>
+      <Text LCID="1034">Activado</Text>
+      <Text LCID="1046">Ativado</Text>
+    </String>
+    <String ID="3">
+      <Text LCID="1033">Hold</Text>
+      <Text LCID="1036">Maintenu</Text>
+      <Text LCID="1040">Mantieni</Text>
+      <Text LCID="1041">保留</Text>
+      <Text LCID="1042">보류</Text>
+      <Text LCID="2052">保持</Text>
+      <Text LCID="1031">Halten</Text>
+      <Text LCID="1034">Retener</Text>
+      <Text LCID="1046">Demora</Text>
+    </String>
+    <String ID="4">
+      <Text LCID="1033">Active</Text>
+      <Text LCID="1036">Actif</Text>
+      <Text LCID="1040">Attivo</Text>
+      <Text LCID="1041">アクティブ</Text>
+      <Text LCID="1042">활성</Text>
+      <Text LCID="2052">活动</Text>
+      <Text LCID="1031">Aktiv</Text>
+      <Text LCID="1034">Activo</Text>
+      <Text LCID="1046">Ativo</Text>
+    </String>
+  </Strings>
+
+  <Enum ID="EnumHSC1CounterID" StringsID="EnumHSC1CounterIDStrings">
+    <Value StringID="1">0</Value>
+    <Value StringID="2">1</Value>
+    <Value StringID="3">2</Value>
+    <Value StringID="4">3</Value>
+  </Enum>
+
+  <Strings ID="EnumHSC1CounterIDStrings">
+    <String ID="1">
+      <Text LCID="1033">1</Text>
+      <Text LCID="1036">1</Text>
+      <Text LCID="1040">1</Text>
+      <Text LCID="1041">1</Text>
+      <Text LCID="1042">1</Text>
+      <Text LCID="2052">1</Text>
+      <Text LCID="1031">1</Text>
+      <Text LCID="1034">1</Text>
+      <Text LCID="1046">1 </Text>
+    </String>
+    <String ID="2">
+      <Text LCID="1033">2</Text>
+      <Text LCID="1036">2</Text>
+      <Text LCID="1040">2</Text>
+      <Text LCID="1041">2</Text>
+      <Text LCID="1042">2</Text>
+      <Text LCID="2052">2</Text>
+      <Text LCID="1031">2</Text>
+      <Text LCID="1034">2</Text>
+      <Text LCID="1046">2</Text>
+    </String>
+    <String ID="3">
+      <Text LCID="1033">3</Text>
+      <Text LCID="1036">3</Text>
+      <Text LCID="1040">3</Text>
+      <Text LCID="1041">3</Text>
+      <Text LCID="1042">3</Text>
+      <Text LCID="2052">3</Text>
+      <Text LCID="1031">3</Text>
+      <Text LCID="1034">3</Text>
+      <Text LCID="1046">3</Text>
+    </String>
+    <String ID="4">
+      <Text LCID="1033">4</Text>
+      <Text LCID="1036">4</Text>
+      <Text LCID="1040">4</Text>
+      <Text LCID="1041">4</Text>
+      <Text LCID="1042">4</Text>
+      <Text LCID="2052">4</Text>
+      <Text LCID="1031">4</Text>
+      <Text LCID="1034">4</Text>
+      <Text LCID="1046">4</Text>
+    </String>
+  </Strings>
+
+  <Enum ID="EnumHSC1Filter" StringsID="EnumHSC1FilterStrings">
+    <Value StringID="1">0</Value>
+    <Value StringID="2">1</Value>
+    <Value StringID="3">2</Value>
+    <Value StringID="4">3</Value>
+  </Enum>
+
+  <Strings ID="EnumHSC1FilterStrings">
+    <String ID="1">
+      <Text LCID="1033">None</Text>
+      <Text LCID="1036">Aucun</Text>
+      <Text LCID="1040">Nessuno</Text>
+      <Text LCID="1041">なし</Text>
+      <Text LCID="1042">없음</Text>
+      <Text LCID="2052">无</Text>
+      <Text LCID="1031">Keine</Text>
+      <Text LCID="1034">Ninguno</Text>
+      <Text LCID="1046">Nenhum</Text>
+    </String>
+    <String ID="2">
+      <Text LCID="1033">0.2 ms</Text>
+      <Text LCID="1036">0.2 ms</Text>
+      <Text LCID="1040">0.2 ms</Text>
+      <Text LCID="1041">0.2 ms</Text>
+      <Text LCID="1042">0.2 ms</Text>
+      <Text LCID="2052">0.2 ms</Text>
+      <Text LCID="1031">0.2 ms</Text>
+      <Text LCID="1034">0.2 ms</Text>
+      <Text LCID="1046">0.2 ms</Text>
+    </String>
+    <String ID="3">
+      <Text LCID="1033">0.7 ms</Text>
+      <Text LCID="1036">0.7 ms</Text>
+      <Text LCID="1040">0.7 ms</Text>
+      <Text LCID="1041">0.7 ms</Text>
+      <Text LCID="1042">0.7 ms</Text>
+      <Text LCID="2052">0.7 ms</Text>
+      <Text LCID="1031">0.7 ms</Text>
+      <Text LCID="1034">0.7 ms</Text>
+      <Text LCID="1046">0.7 ms</Text>
+    </String>
+    <String ID="4">
+      <Text LCID="1033">7 ms</Text>
+      <Text LCID="1036">7 ms</Text>
+      <Text LCID="1040">7 ms</Text>
+      <Text LCID="1041">7 ms</Text>
+      <Text LCID="1042">7 ms</Text>
+      <Text LCID="2052">7 ms</Text>
+      <Text LCID="1031">7 ms</Text>
+      <Text LCID="1034">7 ms</Text>
+      <Text LCID="1046">7 ms</Text>
+    </String>
+  </Strings>
+
+  <Enum ID="EnumHSC1OperationMode" StringsID="EnumHSC1OperationModeStrings">
+    <Value StringID="1">0</Value>
+    <Value StringID="2">1</Value>
+    <Value StringID="3">2</Value>
+    <Value StringID="4">4</Value>
+    <Value StringID="5">5</Value>
+    <Value StringID="6">6</Value>
+  </Enum>
+
+  <Strings ID="EnumHSC1OperationModeStrings">
+    <String ID="1">
+      <Text LCID="1033">Pulse Internal Direction</Text>
+      <Text LCID="1036">Direction interne d'impulsion</Text>
+      <Text LCID="1040">Direzione interna degli impulsi</Text>
+      <Text LCID="1041">パルス内部方向</Text>
+      <Text LCID="1042">펄스 내부 방향</Text>
+      <Text LCID="2052">脉冲内部方向</Text>
+      <Text LCID="1031">Impuls, interne Richtung</Text>
+      <Text LCID="1034">Dirección interna de impulsos</Text>
+      <Text LCID="1046">Direção interna do pulso</Text>
+    </String>
+    <String ID="2">
+      <Text LCID="1033">Pulse External Direction</Text>
+      <Text LCID="1036">Direction externe d'impulsion</Text>
+      <Text LCID="1040">Direzione esterna degli impulsi</Text>
+      <Text LCID="1041">パルス外部方向</Text>
+      <Text LCID="1042">펄스 외부 방향</Text>
+      <Text LCID="2052">脉冲外部方向</Text>
+      <Text LCID="1031">Impuls, externe Richtung</Text>
+      <Text LCID="1034">Dirección externa de impulsos</Text>
+      <Text LCID="1046">Direção externa do pulso</Text>
+    </String>
+    <String ID="3">
+      <Text LCID="1033">Up/Down</Text>
+      <Text LCID="1036">Incrément/Décrément</Text>
+      <Text LCID="1040">Su/Giù</Text>
+      <Text LCID="1041">アップ/ダウン</Text>
+      <Text LCID="1042">위로/아래로</Text>
+      <Text LCID="2052">上/下</Text>
+      <Text LCID="1031">Auf/Ab</Text>
+      <Text LCID="1034">Arriba/Abajo</Text>
+      <Text LCID="1046">Para cima/Para baixo</Text>
+    </String>
+    <String ID="4">
+      <Text LCID="1033">Encoder X1</Text>
+      <Text LCID="1036">Codeur X1</Text>
+      <Text LCID="1040">Encoder X1</Text>
+      <Text LCID="1041">エンコーダX1</Text>
+      <Text LCID="1042">인코더 X1</Text>
+      <Text LCID="2052">编码器 X1</Text>
+      <Text LCID="1031">Encoder X1</Text>
+      <Text LCID="1034">Encoder X1</Text>
+      <Text LCID="1046">Codificador X1</Text>
+    </String>
+    <String ID="5">
+      <Text LCID="1033">Encoder X2</Text>
+      <Text LCID="1036">Codeur X2</Text>
+      <Text LCID="1040">Encoder X2</Text>
+      <Text LCID="1041">エンコーダX2</Text>
+      <Text LCID="1042">인코더 X2</Text>
+      <Text LCID="2052">编码器 X2</Text>
+      <Text LCID="1031">Encoder X2</Text>
+      <Text LCID="1034">Encoder X2</Text>
+      <Text LCID="1046">Codificador X2</Text>
+    </String>
+    <String ID="6">
+      <Text LCID="1033">Encoder X4</Text>
+      <Text LCID="1036">Codeur X4</Text>
+      <Text LCID="1040">Encoder X4</Text>
+      <Text LCID="1041">エンコーダX4</Text>
+      <Text LCID="1042">인코더 X4</Text>
+      <Text LCID="2052">编码器 X4</Text>
+      <Text LCID="1031">Encoder X4</Text>
+      <Text LCID="1034">Encoder X4</Text>
+      <Text LCID="1046">Codificador X4</Text>
+    </String>
+  </Strings>
+
+  <Enum ID="EnumHSC1Type" StringsID="EnumHSC1TypeStrings">
+    <Value StringID="1">0</Value>
+    <Value StringID="2">1</Value>
+  </Enum>
+  <Strings ID="EnumHSC1TypeStrings">
+    <String ID="1">
+      <Text LCID="1033">Count Value</Text>
+      <Text LCID="1036">Valeur de compte</Text>
+      <Text LCID="1040">Valore di conteggio</Text>
+      <Text LCID="1041">カウント値</Text>
+      <Text LCID="1042">카운트 값</Text>
+      <Text LCID="2052">计数值</Text>
+      <Text LCID="1031">Zählwert</Text>
+      <Text LCID="1034">Valor de conteo</Text>
+      <Text LCID="1046">Valor de contagem</Text>
+    </String>
+    <String ID="2">
+      <Text LCID="1033">Rate Value</Text>
+      <Text LCID="1036">Valeur de fréquence</Text>
+      <Text LCID="1040">Valore di frequenza</Text>
+      <Text LCID="1041">レート値</Text>
+      <Text LCID="1042">속도 값</Text>
+      <Text LCID="2052">速率值</Text>
+      <Text LCID="1031">Ratenwert</Text>
+      <Text LCID="1034">Valor de régimen</Text>
+      <Text LCID="1046">Valor de taxa</Text>
+    </String>
+  </Strings>
+
+  <Enum ID="EnumHSC1ThisCounterID" StringsID="EnumHSC1ThisCounterIDStrings">
+    <Value StringID="0">0</Value>
+    <Value StringID="1">1</Value>
+    <Value StringID="2">2</Value>
+    <Value StringID="3">3</Value>
+  </Enum>
+  <Strings ID="EnumHSC1ThisCounterIDStrings">
+    <String ID="0">
+      <Text LCID="1033">0</Text>
+      <Text LCID="1036">0</Text>
+      <Text LCID="1040">0</Text>
+      <Text LCID="1041">0</Text>
+      <Text LCID="1042">0</Text>
+      <Text LCID="2052">0</Text>
+      <Text LCID="1031">0</Text>
+      <Text LCID="1034">0</Text>
+      <Text LCID="1046">0</Text>
+    </String>
+    <String ID="1">
+      <Text LCID="1033">1</Text>
+      <Text LCID="1036">1</Text>
+      <Text LCID="1040">1</Text>
+      <Text LCID="1041">1</Text>
+      <Text LCID="1042">1</Text>
+      <Text LCID="2052">1</Text>
+      <Text LCID="1031">1</Text>
+      <Text LCID="1034">1</Text>
+      <Text LCID="1046">1 </Text>
+    </String>
+    <String ID="2">
+      <Text LCID="1033">2</Text>
+      <Text LCID="1036">2</Text>
+      <Text LCID="1040">2</Text>
+      <Text LCID="1041">2</Text>
+      <Text LCID="1042">2</Text>
+      <Text LCID="2052">2</Text>
+      <Text LCID="1031">2</Text>
+      <Text LCID="1034">2</Text>
+      <Text LCID="1046">2</Text>
+    </String>
+    <String ID="3">
+      <Text LCID="1033">3</Text>
+      <Text LCID="1036">3</Text>
+      <Text LCID="1040">3</Text>
+      <Text LCID="1041">3</Text>
+      <Text LCID="1042">3</Text>
+      <Text LCID="2052">3</Text>
+      <Text LCID="1031">3</Text>
+      <Text LCID="1034">3</Text>
+      <Text LCID="1046">3</Text>
+    </String>
+  </Strings>
+
+  <Strings ID="ModuleDefinitionStrings">
+    <String ID="1">
+      <Text LCID="1033">Connection</Text>
+      <Text LCID="1036">Connexion</Text>
+      <Text LCID="1040">Collegamento</Text>
+      <Text LCID="1041">接続</Text>
+      <Text LCID="1042">연결</Text>
+      <Text LCID="2052">连接</Text>
+      <Text LCID="1031">Verbindung</Text>
+      <Text LCID="1034">Conexión</Text>
+      <Text LCID="1046">Conexão</Text>
+    </String>
+    <String ID="2">
+      <Text LCID="1033">Output</Text>
+      <Text LCID="1036">Sortie</Text>
+      <Text LCID="1040">Uscita</Text>
+      <Text LCID="1041">出力</Text>
+      <Text LCID="1042">출력</Text>
+      <Text LCID="2052">输出</Text>
+      <Text LCID="1031">Ausgang</Text>
+      <Text LCID="1034">Salida</Text>
+      <Text LCID="1046">Saída</Text>
+    </String>
+    <String ID="3">
+      <Text LCID="1033">Data Format</Text>
+      <Text LCID="1036">Format de données</Text>
+      <Text LCID="1040">Formato di dati</Text>
+      <Text LCID="1041">データ形式</Text>
+      <Text LCID="1042">데이터 형식</Text>
+      <Text LCID="2052">数据格式</Text>
+      <Text LCID="1031">Datenformat</Text>
+      <Text LCID="1034">Formato de datos</Text>
+      <Text LCID="1046">Formato de dados</Text>
+    </String>
+    <String ID="4">
+      <Text LCID="1033">Integer</Text>
+      <Text LCID="1036">Entier</Text>
+      <Text LCID="1040">Numero intero</Text>
+      <Text LCID="1041">整数</Text>
+      <Text LCID="1042">정수</Text>
+      <Text LCID="2052">整型</Text>
+      <Text LCID="1031">Ganzzahl</Text>
+      <Text LCID="1034">Entero</Text>
+      <Text LCID="1046">Inteiro</Text>
+    </String>
+    <String ID="6">
+      <Text LCID="1033">Data</Text>
+      <Text LCID="1036">Données</Text>
+      <Text LCID="1040">Dati</Text>
+      <Text LCID="1041">データ</Text>
+      <Text LCID="1042">데이터</Text>
+      <Text LCID="2052">数据</Text>
+      <Text LCID="1031">Daten</Text>
+      <Text LCID="1034">Datos</Text>
+      <Text LCID="1046">Dados</Text>
+    </String>
+  </Strings >
+</AOPModuleTypes>

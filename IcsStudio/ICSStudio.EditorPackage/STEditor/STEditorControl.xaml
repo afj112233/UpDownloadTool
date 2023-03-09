@@ -1,0 +1,1252 @@
+﻿<UserControl
+    x:Class="ICSStudio.EditorPackage.STEditor.STEditorControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:view="clr-namespace:ICSStudio.StxEditor.View;assembly=ICSStudio.StxEditor"
+    d:DesignHeight="300"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style TargetType="Image">
+            <Setter Property="UseLayoutRounding" Value="True" />
+            <Setter Property="RenderOptions.BitmapScalingMode" Value="Fant" />
+            <Setter Property="Width" Value="24" />
+            <Setter Property="Height" Value="24" />
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="0" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <ToolBar Visibility="{Binding OnlineToolbarVisibility}">
+                <ToolBar.Resources>
+                    <Style x:Key="StartPendingStyle" TargetType="Button">
+                        <Style.Triggers>
+                            <Trigger Property="IsEnabled" Value="True">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/StartPendingActived.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/StartPending.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                        <Setter Property="ToolTip">
+                            <Setter.Value>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Image
+                                        Width="15"
+                                        Height="15"
+                                        Margin="0,0,5,0"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Source="Icon/StartPendingActived.png" />
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        FontWeight="Black"
+                                        Text="{DynamicResource StartPendingRoutineEditsCtrlShiftS}" />
+                                    <TextBlock
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Text="{DynamicResource StartPendingRoutineEdits}" />
+                                </Grid>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+                    <Style x:Key="AcceptPendingStyle" TargetType="Button">
+                        <Style.Triggers>
+                            <Trigger Property="IsEnabled" Value="True">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/AcceptedPendingActived.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/AcceptedPending.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                        <Setter Property="ToolTip">
+                            <Setter.Value>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Image
+                                        Width="15"
+                                        Height="15"
+                                        Margin="0,0,5,0"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Source="Icon/AcceptedPendingActived.png" />
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        FontWeight="Black"
+                                        Text="{DynamicResource AcceptPendingRoutineEdits}" />
+                                    <TextBlock
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Text="{DynamicResource AcceptAllPendingEditsInTheRoutine}" />
+                                </Grid>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+                    <Style x:Key="CancelPendingStyle" TargetType="Button">
+                        <Style.Triggers>
+                            <Trigger Property="IsEnabled" Value="True">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/CancelAcceptedPendingActived.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/CancelAcceptedPending.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                        <Setter Property="ToolTip">
+                            <Setter.Value>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Image
+                                        Width="15"
+                                        Height="15"
+                                        Margin="0,0,5,0"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Source="Icon/CancelAcceptedPendingActived.png" />
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        FontWeight="Black"
+                                        Text="{DynamicResource CancelPendingRoutineEdits}" />
+                                    <TextBlock
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Text="{DynamicResource CancelAllPendingEditsInTheRoutine}" />
+                                </Grid>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+                    <Style x:Key="AssembledAcceptedRoutineStyle" TargetType="Button">
+                        <Style.Triggers>
+                            <Trigger Property="IsEnabled" Value="True">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/AssembledAcceptedPendingActived.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/AssembledAcceptedPending.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                        <Setter Property="ToolTip">
+                            <Setter.Value>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Image
+                                        Width="15"
+                                        Height="15"
+                                        Margin="0,0,5,0"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Source="Icon/AssembledAcceptedPendingActived.png" />
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        FontWeight="Black"
+                                        Text="{DynamicResource AssembleAcceptedRoutineEditsOfflineOnly}" />
+                                    <TextBlock
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Text="{DynamicResource AssembleAllAcceptedEditsInTheRoutineOfflineOnly}" />
+                                </Grid>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+                    <Style x:Key="CancelAcceptedRoutineStyle" TargetType="Button">
+                        <Style.Triggers>
+                            <Trigger Property="IsEnabled" Value="True">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/CancelAcceptedPendingEditActived.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/CancelAcceptedPendingEdit.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                        <Setter Property="ToolTip">
+                            <Setter.Value>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Image
+                                        Width="15"
+                                        Height="15"
+                                        Margin="0,0,5,0"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Source="Icon/CancelAcceptedPendingEditActived.png" />
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        FontWeight="Black"
+                                        Text="{DynamicResource CancelAcceptedRoutineEditsOfflineOnly}" />
+                                    <TextBlock
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Text="{DynamicResource CancelAllAcceptedEditsInTheRoutineOfflineOnly}" />
+                                </Grid>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+                    <Style x:Key="AcceptProgramStyle" TargetType="Button">
+                        <Style.Triggers>
+                            <Trigger Property="IsEnabled" Value="True">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/AcceptedPendingProgramActived.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/AcceptedPendingProgram.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                        <Setter Property="ToolTip">
+                            <Setter.Value>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Image
+                                        Width="15"
+                                        Height="15"
+                                        Margin="0,0,5,0"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Source="Icon/AcceptedPendingProgramActived.png" />
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        FontWeight="Black"
+                                        Text="{DynamicResource AcceptPendingProgramEdits}" />
+                                    <TextBlock
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Text="{DynamicResource AcceptAllPendingEditsInTheProgram}" />
+                                </Grid>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+                    <Style x:Key="CancelProgramStyle" TargetType="Button">
+                        <Style.Triggers>
+                            <Trigger Property="IsEnabled" Value="True">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/CancelPendingProgramActived.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/CancelPendingProgram.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                        <Setter Property="ToolTip">
+                            <Setter.Value>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Image
+                                        Width="15"
+                                        Height="15"
+                                        Margin="0,0,5,0"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Source="Icon/CancelPendingProgramActived.png" />
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        FontWeight="Black"
+                                        Text="{DynamicResource CancelPendingProgramEdits}" />
+                                    <TextBlock
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Text="{DynamicResource CancelAllPendingEditsInTheProgram}" />
+                                </Grid>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+                    <Style x:Key="TestAcceptProgramStyle" TargetType="Button">
+                        <Style.Triggers>
+                            <Trigger Property="IsEnabled" Value="True">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/TestProgramActived.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/TestProgram.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                        <Setter Property="ToolTip">
+                            <Setter.Value>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Image
+                                        Width="15"
+                                        Height="15"
+                                        Margin="0,0,5,0"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Source="Icon/TestProgramActived.png" />
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        FontWeight="Black"
+                                        Text="{DynamicResource TestAcceptedProgramEdits}" />
+                                    <TextBlock
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Text="{DynamicResource TestAllEditsInTheProgram}" />
+                                </Grid>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+                    <Style x:Key="UnTestCancelProgramStyle" TargetType="Button">
+                        <Style.Triggers>
+                            <Trigger Property="IsEnabled" Value="True">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/UnTestActived.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/UnTest.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                        <Setter Property="ToolTip">
+                            <Setter.Value>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Image
+                                        Width="15"
+                                        Height="15"
+                                        Margin="0,0,5,0"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Source="Icon/UnTestActived.png" />
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        FontWeight="Black"
+                                        Text="{DynamicResource UntestAcceptedProgramEdits}" />
+                                    <TextBlock
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Text="{DynamicResource UntestAllEditsInTheProgram}" />
+                                </Grid>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+                    <Style x:Key="AssembleAcceptedProgramStyle" TargetType="Button">
+                        <Style.Triggers>
+                            <Trigger Property="IsEnabled" Value="True">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/AssembledAcceptedProgramAvtived.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/AssembledAcceptedProgram.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                        <Setter Property="ToolTip">
+                            <Setter.Value>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Image
+                                        Width="15"
+                                        Height="15"
+                                        Margin="0,0,5,0"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Source="Icon/AssembledAcceptedProgramAvtived.png" />
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        FontWeight="Black"
+                                        Text="{DynamicResource AssembleAcceptedProgramEdits}" />
+                                    <TextBlock
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Text="{DynamicResource AssembleAllAcceptedEditsInTheProgram}" />
+                                </Grid>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+                    <Style x:Key="CancelAcceptedProgramStyle" TargetType="Button">
+                        <Style.Triggers>
+                            <Trigger Property="IsEnabled" Value="True">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/CancelAcceptedProgramActived.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/CancelAcceptedProgram.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                        <Setter Property="ToolTip">
+                            <Setter.Value>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Image
+                                        Width="15"
+                                        Height="15"
+                                        Margin="0,0,5,0"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Source="Icon/CancelAcceptedProgramActived.png" />
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        FontWeight="Black"
+                                        Text="{DynamicResource CancelAcceptedProgramEdits}" />
+                                    <TextBlock
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Text="{DynamicResource CancelAllAcceptedEditsInTheProgram}" />
+                                </Grid>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+                    <Style x:Key="FinalizeStyle" TargetType="Button">
+                        <Style.Triggers>
+                            <Trigger Property="IsEnabled" Value="True">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/FinalizeActived.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/Finalize.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                        <Setter Property="ToolTip">
+                            <Setter.Value>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Image
+                                        Width="15"
+                                        Height="15"
+                                        Margin="0,0,5,0"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Source="Icon/FinalizeActived.png" />
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        FontWeight="Black"
+                                        Text="{DynamicResource FinalizeAllEditsInProgramCtrlShiftF}" />
+                                    <TextBlock
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Text="{DynamicResource FinalizeAllEditsInTheProgram}" />
+                                </Grid>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ToolBar.Resources>
+                <Button
+                    Command="{Binding StartPendingRoutineCommand}"
+                    Style="{StaticResource StartPendingStyle}"
+                    ToolTipService.ShowOnDisabled="true" />
+                <Button
+                    Command="{Binding AcceptPendingRoutineCommand}"
+                    Style="{StaticResource AcceptPendingStyle}"
+                    ToolTipService.ShowOnDisabled="true" />
+                <Button
+                    Command="{Binding CancelPendingRoutineCommand}"
+                    Style="{StaticResource CancelPendingStyle}"
+                    ToolTipService.ShowOnDisabled="true" />
+                <Separator />
+                <Button
+                    Command="{Binding AssembledAcceptPendingRoutineCommand}"
+                    Style="{StaticResource AssembledAcceptedRoutineStyle}"
+                    ToolTipService.ShowOnDisabled="true"
+                    Visibility="Collapsed" />
+                <Button
+                    Command="{Binding CancelAcceptedPendingRoutineCommand}"
+                    Style="{StaticResource CancelAcceptedRoutineStyle}"
+                    ToolTipService.ShowOnDisabled="true"
+                    Visibility="Collapsed" />
+                <Separator Visibility="Collapsed" />
+                <Button
+                    Command="{Binding AcceptPendingProgramCommand}"
+                    Style="{StaticResource AcceptProgramStyle}"
+                    ToolTipService.ShowOnDisabled="true"
+                    Visibility="Collapsed" />
+                <Button
+                    Command="{Binding CancelPendingProgramCommand}"
+                    Style="{StaticResource CancelProgramStyle}"
+                    ToolTipService.ShowOnDisabled="true"
+                    Visibility="Collapsed" />
+                <Separator Visibility="Collapsed" />
+                <Button
+                    Command="{Binding TestAcceptedProgramCommand}"
+                    Style="{StaticResource TestAcceptProgramStyle}"
+                    ToolTipService.ShowOnDisabled="true"
+                    Visibility="Collapsed" />
+                <Button
+                    Command="{Binding UnTestAcceptedProgramCommand}"
+                    Style="{StaticResource UnTestCancelProgramStyle}"
+                    ToolTipService.ShowOnDisabled="true"
+                    Visibility="Collapsed" />
+                <Separator Visibility="Collapsed" />
+                <Button
+                    Command="{Binding AssembledAcceptedProgramCommand}"
+                    Style="{StaticResource AssembleAcceptedProgramStyle}"
+                    ToolTipService.ShowOnDisabled="true"
+                    Visibility="Collapsed" />
+                <Button
+                    Command="{Binding CancelAcceptedProgramCommand}"
+                    Style="{StaticResource CancelAcceptedProgramStyle}"
+                    ToolTipService.ShowOnDisabled="true"
+                    Visibility="Collapsed" />
+                <Separator Visibility="Collapsed" />
+                <Button
+                    Command="{Binding FinalizeCommand}"
+                    Style="{StaticResource FinalizeStyle}"
+                    ToolTipService.ShowOnDisabled="true" />
+            </ToolBar>
+
+            <ToolBar>
+                <ToolBar.Resources>
+                    <Style x:Key="OriginalStyle" TargetType="ToggleButton">
+                        <Style.Triggers>
+                            <Trigger Property="IsEnabled" Value="True">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/OriginalActived.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/Original.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                        <Setter Property="ToolTip">
+                            <Setter.Value>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Image
+                                        Width="15"
+                                        Height="15"
+                                        Margin="0,0,5,0"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Source="Icon/OriginalActived.png" />
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        FontWeight="Black"
+                                        Text="{DynamicResource OriginalViewCtrl1}" />
+                                    <TextBlock
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Text="{DynamicResource SelectOriginalOnlineEditView}" />
+                                </Grid>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+                    <Style x:Key="TestStyle" TargetType="ToggleButton">
+                        <Style.Triggers>
+                            <Trigger Property="IsEnabled" Value="True">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/TestActived.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/Test.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                        <Setter Property="ToolTip">
+                            <Setter.Value>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Image
+                                        Width="15"
+                                        Height="15"
+                                        Margin="0,0,5,0"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Source="Icon/TestActived.png" />
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        FontWeight="Black"
+                                        Text="{DynamicResource TestEditsViewCtrl3}" />
+                                    <TextBlock
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Text="{DynamicResource SelectTestEditsView}" />
+                                </Grid>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+                    <Style x:Key="PendingStyle" TargetType="ToggleButton">
+                        <Style.Triggers>
+                            <Trigger Property="IsEnabled" Value="True">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/PendingActived.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/Pending.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                        <Setter Property="ToolTip">
+                            <Setter.Value>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Image
+                                        Width="15"
+                                        Height="15"
+                                        Margin="0,0,5,0"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Source="Icon/PendingActived.png" />
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        FontWeight="Black"
+                                        Text="{DynamicResource PendingEditsViewCtrl2}" />
+                                    <TextBlock
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Text="{DynamicResource SelectPendingEditsView}" />
+                                </Grid>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+                    <Style x:Key="IncreaseStyle" TargetType="Button">
+                        <Style.Triggers>
+                            <Trigger Property="IsEnabled" Value="True">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/IncreaseActived.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/Increase.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                        <Setter Property="ToolTip">
+                            <Setter.Value>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Image
+                                        Width="15"
+                                        Height="15"
+                                        Margin="0,0,5,0"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Source="Icon/IncreaseActived.png" />
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        FontWeight="Black"
+                                        Text="{DynamicResource IncreaseIndentTab}" />
+                                    <TextBlock
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Text="{DynamicResource IncreaseIndent}" />
+                                </Grid>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+                    <Style x:Key="DecreaseStyle" TargetType="Button">
+                        <Style.Triggers>
+                            <Trigger Property="IsEnabled" Value="True">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/DecreaseActived.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/Decrease.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                        <Setter Property="ToolTip">
+                            <Setter.Value>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Image
+                                        Width="15"
+                                        Height="15"
+                                        Margin="0,0,5,0"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Source="Icon/DecreaseActived.png" />
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        FontWeight="Black"
+                                        Text="{DynamicResource DecreaseIndentShiftTab}" />
+                                    <TextBlock
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Text="{DynamicResource DecreaseIndent}" />
+                                </Grid>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+                    <Style x:Key="UncommentStyle" TargetType="Button">
+                        <Style.Triggers>
+                            <Trigger Property="IsEnabled" Value="True">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/UncommentActived.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/Uncomment.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                        <Setter Property="ToolTip">
+                            <Setter.Value>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Image
+                                        Width="15"
+                                        Height="15"
+                                        Margin="0,0,5,0"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Source="Icon/UncommentActived.png" />
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        FontWeight="Black"
+                                        Text="{DynamicResource UncommentTextBlock}" />
+                                    <TextBlock
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Text="{DynamicResource UncommentTheSelectedText}" />
+                                </Grid>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+                    <Style x:Key="CommentStyle" TargetType="Button">
+                        <Style.Triggers>
+                            <Trigger Property="IsEnabled" Value="True">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/CommentActived.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/Comment.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                        <Setter Property="ToolTip">
+                            <Setter.Value>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Image
+                                        Width="15"
+                                        Height="15"
+                                        Margin="0,0,5,0"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Source="Icon/CommentActived.png" />
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        FontWeight="Black"
+                                        Text="{DynamicResource CommentTextBlock}" />
+                                    <TextBlock
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Text="{DynamicResource AddCommentBasedOnCaretTheSelectedText}" />
+                                </Grid>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+                    <Style x:Key="ZoomInStyle" TargetType="Button">
+                        <Style.Triggers>
+                            <Trigger Property="IsEnabled" Value="True">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/ZoomIn.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/ZoomInUnactived.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                        <Setter Property="ToolTip">
+                            <Setter.Value>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Image
+                                        Width="15"
+                                        Height="15"
+                                        Margin="0,0,5,0"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Source="Icon/ZoomIn.png" />
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        FontWeight="Black"
+                                        Text="{DynamicResource ZoomInShiftAltZ}" />
+                                    <TextBlock
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Text="{DynamicResource MakeObjectsInTheViewLarger}" />
+                                </Grid>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+                    <Style x:Key="ZoomOutStyle" TargetType="Button">
+                        <Style.Triggers>
+                            <Trigger Property="IsEnabled" Value="True">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/ZoomOut.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="Icon/ZoomOutUnactived.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                        <Setter Property="ToolTip">
+                            <Setter.Value>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Image
+                                        Width="15"
+                                        Height="15"
+                                        Margin="0,0,5,0"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Source="Icon/ZoomOut.png" />
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        FontWeight="Black"
+                                        Text="{DynamicResource ZoomOutAltZ}" />
+                                    <TextBlock
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Text="{DynamicResource MakeObjectsInTheViewSmaller}" />
+                                </Grid>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ToolBar.Resources>
+                <Button
+                    Command="{x:Static view:StxEditorViewCommands.IncreaseZoom}"
+                    Style="{StaticResource ZoomInStyle}"
+                    ToolTipService.ShowOnDisabled="true" />
+                <Button
+                    Command="{x:Static view:StxEditorViewCommands.DecreaseZoom}"
+                    Style="{StaticResource ZoomOutStyle}"
+                    ToolTipService.ShowOnDisabled="true" />
+                <Separator />
+                <ToggleButton
+                    Command="{x:Static view:StxEditorViewCommands.OriginalCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource Self}}"
+                    IsChecked="{Binding OriginalCommandCheck}"
+                    Style="{StaticResource OriginalStyle}"
+                    ToolTipService.ShowOnDisabled="true" />
+                <ToggleButton
+                    Command="{x:Static view:StxEditorViewCommands.PendingCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource Self}}"
+                    IsChecked="{Binding PendingCommandCheck}"
+                    Style="{StaticResource PendingStyle}"
+                    ToolTipService.ShowOnDisabled="true" />
+                <ToggleButton
+                    Command="{x:Static view:StxEditorViewCommands.TestCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource Self}}"
+                    IsChecked="{Binding TestCommandCheck}"
+                    Style="{StaticResource TestStyle}"
+                    ToolTipService.ShowOnDisabled="true" />
+                <Separator />
+                <Button
+                    Command="{x:Static view:StxEditorViewCommands.IncreaseIndent}"
+                    Style="{StaticResource IncreaseStyle}"
+                    ToolTipService.ShowOnDisabled="true" />
+                <Button
+                    Command="{x:Static view:StxEditorViewCommands.DecreaseIndent}"
+                    Style="{StaticResource DecreaseStyle}"
+                    ToolTipService.ShowOnDisabled="true" />
+                <Separator />
+                <Button
+                    Command="{x:Static view:StxEditorViewCommands.Comment}"
+                    Style="{StaticResource CommentStyle}"
+                    ToolTipService.ShowOnDisabled="true" />
+                <Button
+                    Command="{x:Static view:StxEditorViewCommands.Uncomment}"
+                    Style="{StaticResource UncommentStyle}"
+                    ToolTipService.ShowOnDisabled="true" />
+                <Separator />
+                <ToggleButton Command="{x:Static view:StxEditorViewCommands.ToggleWhite}" ToolTipService.ShowOnDisabled="true">
+                    <Image Source="Icon/ToggleTabs.png" />
+                    <ToggleButton.ToolTip>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Image
+                                Width="15"
+                                Height="15"
+                                Margin="0,0,5,0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Icon/ToggleTabs.png" />
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                FontWeight="Black"
+                                Text="{DynamicResource ToggleTabsWhitespace}" />
+                            <TextBlock
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Text="{DynamicResource ToggleTheTabAndWhiteSpaceDisplay}" />
+                        </Grid>
+                    </ToggleButton.ToolTip>
+                </ToggleButton>
+                <ToggleButton Command="{x:Static view:StxEditorViewCommands.ToggleValue}" ToolTipService.ShowOnDisabled="true">
+                    <Image Source="Icon/ToggleValue.png" />
+                    <ToggleButton.ToolTip>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Image
+                                Width="15"
+                                Height="15"
+                                Margin="0,0,5,0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Icon/ToggleValue.png" />
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                FontWeight="Black"
+                                Text="{DynamicResource ToggleInlineValueDisplay}" />
+                            <TextBlock
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Text="{DynamicResource ManuallyToggleTheInlineTagValueDisplay}" />
+                        </Grid>
+                    </ToggleButton.ToolTip>
+                </ToggleButton>
+            </ToolBar>
+            <ToolBar Visibility="{Binding AoiVisibility}">
+                <TextBlock VerticalAlignment="Center" Text="Data     " />
+                <ComboBox
+                    DisplayMemberPath="Title"
+                    ItemsSource="{Binding Reference}"
+                    SelectedItem="{Binding SelectedReference}" />
+                <Button
+                    Command="{Binding GoCommand}"
+                    Content="Go"
+                    ToolTip="{Binding GoTip}" />
+            </ToolBar>
+        </StackPanel>
+
+        <ContentPresenter Grid.Row="1" Content="{Binding TopControl}" />
+        <GridSplitter
+            Grid.Row="2"
+            Height="5"
+            HorizontalAlignment="Stretch" />
+        <ContentPresenter Grid.Row="3" Content="{Binding BottomControl}" />
+    </Grid>
+</UserControl>

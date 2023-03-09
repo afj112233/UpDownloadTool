@@ -1,0 +1,310 @@
+﻿<UserControl x:Class="ICSStudio.StxEditor.Menu.FilterView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:controls="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
+             xmlns:local="clr-namespace:ICSStudio.StxEditor.Menu"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:filter="clr-namespace:ICSStudio.StxEditor.Menu.Filter"
+             mc:Ignorable="d" 
+             Height="290" Width="auto" Background="LightSteelBlue" MaxWidth="750" MinWidth="570">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <DataTemplate x:Key="ServerDataTemplate">
+                <materialDesign:PackIcon Kind="DesktopTower"></materialDesign:PackIcon>
+            </DataTemplate>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.Resources>
+            <filter:LeftMarginConverter x:Key="LeftMarginConverter"></filter:LeftMarginConverter>
+            <filter:GridLeftMarginConverter x:Key="GridLeftMarginConverter"></filter:GridLeftMarginConverter>
+            <Style x:Key="ExpandCollapseToggleStyle" TargetType="ToggleButton">
+                <Setter Property="Focusable" Value="False"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ToggleButton">
+                            <Grid Width="15" Height="13" SnapsToDevicePixels="True">
+                                <!-- Rectangle 9x9 pixels -->
+                                <Rectangle Width="9" Height="9" Stroke="#919191" SnapsToDevicePixels="true">
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush EndPoint="0.5,2" StartPoint="0.5,0">
+                                            <GradientStop Color="White" Offset="0"/>
+                                            <GradientStop Color="Silver" Offset="0.5"/>
+                                            <GradientStop Color="LightGray" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                                <!-- 画一个垂直方向的直线 -->
+                                <Rectangle x:Name="ExpandPath" Width="1" Height="5" Stroke="Black" SnapsToDevicePixels="true"/>
+                                <!-- 画一个水平方向的直线 -->
+                                <Rectangle Width="5" Height="1" Stroke="Black" SnapsToDevicePixels="true"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <!-- 通过IsChecked判断折叠还是展开 -->
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter Property="Visibility" TargetName="ExpandPath" Value="Collapsed"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+
+            <filter:TreeViewLineConverter x:Key="LineConverter"/>
+            <!-- （通用）可视化树孩子样式 -->
+            <Style TargetType="{x:Type TreeViewItem}">
+                <EventSetter Event="RequestBringIntoView" Handler="EventSetter_OnHandler"></EventSetter>
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}"></Setter>
+                <!--<Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>-->
+                <!--<Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>-->
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="Padding" Value="2"/>
+                <Setter Property="Foreground" Value="#FF565656"/>
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="TabIndex" Value="{Binding Index}"></Setter>
+                <!--<Setter Property="FocusVisualStyle" Value="{StaticResource TreeViewItemFocusVisual}"/>-->
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type TreeViewItem}">
+                            <Grid Margin="{Binding Converter={StaticResource GridLeftMarginConverter},RelativeSource={RelativeSource FindAncestor,AncestorType=TreeViewItem}}"
+                                  >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20"></ColumnDefinition>
+                                    <ColumnDefinition MinWidth="19" Width="Auto"/>
+                                    <ColumnDefinition MinWidth="20" Width="Auto"/>
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" MinHeight="20"/>
+                                    <RowDefinition  />
+                                </Grid.RowDefinitions>
+                                <!-- Connecting Lines -->
+                                <!-- Horizontal line -->
+                                <filter:MultipleCheckBox Grid.Column="0" CanChooseAll="{Binding CanChooseAll}" 
+                                                            Margin="{Binding Converter={StaticResource LeftMarginConverter},RelativeSource={RelativeSource FindAncestor,AncestorType=TreeViewItem}}"
+                                                            CheckType="{Binding CheckType,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                                            Command="{Binding Command}">
+                                </filter:MultipleCheckBox>
+                                <Rectangle x:Name="HorLn" Margin="8,0,0,0" Height="1" Stroke="Black" Grid.Column="1"/>
+                                <!-- Vertical line -->
+                                <Rectangle x:Name="VerLn" Width="1" Stroke="Black" Margin="-1,-3,0,0" Grid.RowSpan="2" Grid.Column="1"/>
+                                <!--<ItemsPresenter x:Name="ItemsPresenter"></ItemsPresenter>-->
+                                <ToggleButton x:Name="Expander" 
+                                      Grid.Column="1" 
+                                      Grid.Row="0"  
+                                      ClickMode="Press"
+                                      IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}}"
+                                      Style="{StaticResource ExpandCollapseToggleStyle}"/>
+                                <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                Background="{TemplateBinding Background}" 
+                                CornerRadius="4"
+                                HorizontalAlignment="Left"
+                                Grid.Column="2"
+                                Margin="1"
+                                Padding="{TemplateBinding Padding}" 
+                                SnapsToDevicePixels="true">
+                                    <!--<ContentPresenter x:Name="PART_Header" 
+                                              ContentSource="Header" 
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>-->
+                                    <TextBlock Text="{Binding Name}" Width="145"></TextBlock>
+                                </Border>
+                                <ItemsPresenter x:Name="ItemsHost" 
+                                        Grid.ColumnSpan="2" 
+                                        Grid.Column="2" 
+                                        Grid.Row="1" />
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsExpanded" Value="false">
+                                    <Setter Property="Visibility" TargetName="ItemsHost" Value="Collapsed"/>
+                                </Trigger>
+                                <Trigger Property="HasItems" Value="false">
+                                    <Setter Property="Visibility" TargetName="Expander" Value="Hidden"/>
+                                </Trigger>
+
+                                <!-- 当前层最后一个元素不画下方垂直线 -->
+                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Converter={StaticResource LineConverter}}" Value="true">
+                                    <Setter TargetName="VerLn" Property="Height" Value="15"/>
+                                    <Setter TargetName="VerLn" Property="VerticalAlignment" Value="Top"/>
+                                </DataTrigger>
+                                <!-- Root第一个元素不显示上方垂直线 -->
+                                <Trigger Property="TabIndex" Value="1">
+                                    <Setter TargetName="VerLn" Property="Margin" Value="-1,12,0,0"/>
+                                    <Setter TargetName="VerLn" Property="Height" Value="Auto"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="VirtualizingStackPanel.IsVirtualizing" Value="true">
+                        <Setter Property="ItemsPanel">
+                            <Setter.Value>
+                                <ItemsPanelTemplate>
+                                    <VirtualizingStackPanel/>
+                                </ItemsPanelTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Trigger>
+                </Style.Triggers>
+
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+                <RowDefinition Height="25"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260"></ColumnDefinition>
+            <ColumnDefinition Width="300"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <!--<controls:AutoCompleteBox Padding="25,0,0,0" Grid.Row="0" Grid.Column="0" PreviewKeyDown="UIElement_OnPreviewKeyDown" ItemsSource="{Binding FilterList}"
+                                  IsTextCompletionEnabled="False" MaxDropDownHeight="0" Text="{Binding FilterName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></controls:AutoCompleteBox>-->
+        <TextBox Padding="25,0,0,0" Grid.Row="0" Grid.Column="0" PreviewKeyDown="UIElement_OnPreviewKeyDown"
+                 Text="{Binding FilterName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ></TextBox>
+        <Button Width="24" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" MinWidth="20" Click="ButtonBase_OnClick" Height="21" Margin="2,2,0,0" VerticalAlignment="Top">
+            <Button.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Filter on Name" IsChecked="True"></MenuItem>
+                    <MenuItem Header="Filter on Description"></MenuItem>
+                    <MenuItem Header="Filter on Both"></MenuItem>
+                </ContextMenu>
+            </Button.ContextMenu>
+            <Button.Content>
+                <Path Fill="Gray">
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathFigure IsClosed="True" StartPoint="0,0" IsFilled="True">
+                                <LineSegment Point="7,10"></LineSegment>
+                                <LineSegment Point="7,18"></LineSegment>
+                                <LineSegment Point="9,18"></LineSegment>
+                                <LineSegment Point="9,10"></LineSegment>
+                                <LineSegment Point="16,0"></LineSegment>
+                            </PathFigure>
+                            <PathFigure IsClosed="True" StartPoint="11,14" IsFilled="True">
+                                <LineSegment Point="14,17"></LineSegment>
+                                <LineSegment Point="17,14"></LineSegment>
+                            </PathFigure>
+                        </PathGeometry>
+
+                    </Path.Data>
+                </Path>
+            </Button.Content>
+        </Button>
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="Show:"></TextBlock>
+        <ComboBox Grid.Row="0" Grid.Column="1" Width="250" Height="25" HorizontalAlignment="Right" ItemsSource="{Binding ShowList}" 
+                  SelectedItem="{Binding SelectedShowItem}" SelectionChanged="Selector_OnSelectionChanged" DisplayMemberPath="Name">
+            <ComboBox.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.HeaderTemplate>
+                        <DataTemplate>
+                            <Grid Background="Black" Height="1"/>
+                        </DataTemplate>
+                    </GroupStyle.HeaderTemplate>
+                </GroupStyle>
+            </ComboBox.GroupStyle>
+            <ComboBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel></VirtualizingStackPanel>
+                </ItemsPanelTemplate>
+            </ComboBox.ItemsPanel>
+        </ComboBox>
+        <DataGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Height="140" AutoGenerateColumns="False"
+                  ItemsSource="{Binding TagItems}" LoadingRow="DataGrid_OnLoadingRow" x:Name="MainDataGrid" BorderThickness="0"
+                  GridLinesVisibility="None"  VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.IsVirtualizingWhenGrouping="True" ScrollViewer.CanContentScroll="True"
+                  SelectedItem="{Binding SelectedTag}" EnableColumnVirtualization="True" EnableRowVirtualization="True" VirtualizingStackPanel.ScrollUnit="Item"
+                  SelectionChanged="MainDataGrid_OnSelectionChanged" CanUserSortColumns="False">
+            <DataGrid.InputBindings>
+                <MouseBinding MouseAction="LeftDoubleClick" Command="{Binding DataGridDoubleClickCommand}"></MouseBinding>
+            </DataGrid.InputBindings>
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridCell}">
+                    <Setter Property="BorderThickness" Value="0"></Setter>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Name" Width="*" IsReadOnly="True">
+                   <DataGridTemplateColumn.CellTemplate>
+                       <DataTemplate>
+                            <VirtualizingStackPanel Orientation="Horizontal">
+                                <TextBlock Margin="{Binding Left}"></TextBlock>
+                                <Button x:Name="expendButton" MinWidth="15" Width="15"
+                                        Background="Transparent" BorderBrush="Transparent"
+                                        Command="{Binding ExpendCommand}" Visibility="{Binding ShowExpand}">
+                                    <Button.Content>
+                                        <Grid>
+                                            <Path x:Name="Collapsed"
+                                                  HorizontalAlignment="Left"
+                                                  VerticalAlignment="Center"
+                                                  Margin="1,1,1,1"
+                                                  Stroke="Black" StrokeThickness="1"
+                                                  Data="M 4 0 L 8 4 L 4 8 Z" Visibility="{Binding ExpanderVis,UpdateSourceTrigger=PropertyChanged}"/>
+                                            <Path x:Name="Expanded"
+                                                  HorizontalAlignment="Left"
+                                                  VerticalAlignment="Center"
+                                                  Margin="1,1,1,1"
+                                                  Data="M 8 0 L 8 8 L 0 8 Z"
+                                                  Visibility="{Binding ExpanderCloseVis,UpdateSourceTrigger=PropertyChanged}">
+                                                <Path.Fill>
+                                                    <SolidColorBrush Color="#FF444444" />
+                                                </Path.Fill>
+                                            </Path>
+                                        </Grid>
+                                    </Button.Content>
+                                </Button>
+                                <TextBlock Text="{Binding Name}"></TextBlock>
+                            </VirtualizingStackPanel>
+                        </DataTemplate>
+                   </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="DataType" Width="*" Binding="{Binding DataType}" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn Header="Usage" Width="*" Binding="{Binding Usage}" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn Header="Description" Width="*" Binding="{Binding Description}" IsReadOnly="True"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <CheckBox Grid.Row="2" Grid.Column="0" IsChecked="{Binding ShowController}" IsEnabled="{Binding CheckBoxEnable}" Visibility="{Binding ShowNormal}">Show controller tags</CheckBox>
+        <CheckBox Grid.Row="3" Grid.Column="0" IsChecked="{Binding ShowProgram}" IsEnabled="{Binding CheckBoxEnable}" Content="{Binding ProgramContent}" Visibility="{Binding ShowNormal}"></CheckBox>
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Show parameters from other program:" Visibility="{Binding ShowLastRow}"></TextBlock>
+        <ComboBox Grid.Row="5" Grid.Column="0" Height="25" ItemsSource="{Binding OtherProgramList}" SelectedValue="{Binding SelectedOther}" Visibility="{Binding ShowLastRow}"></ComboBox>
+        <Grid Grid.Row="0" Grid.Column="2" Visibility="{Binding VisibilityCol3}" Grid.RowSpan="6" Width="150">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="Filter On:" VerticalAlignment="Top" Width="150"></TextBlock>
+            <ComboBox Grid.Row="1" VerticalAlignment="Center" Height="25" ItemsSource="{Binding FilterOnList}" 
+                      DisplayMemberPath="DisplayName" SelectedValuePath="Value"
+                      SelectedValue="{Binding SelectedFilterOnType}"
+                      Width="148"></ComboBox>
+            <TreeView Grid.Row="2" VerticalAlignment="Top" Height="150" ItemsSource="{Binding DataTypeItems}" 
+                      Width="150" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.IsDeferredScrollingEnabled="True"
+                      VirtualizingPanel.IsVirtualizing="True">
+                <TreeView.ItemTemplate>
+                    <HierarchicalDataTemplate ItemsSource="{Binding Children}"></HierarchicalDataTemplate>
+                </TreeView.ItemTemplate>
+            </TreeView>
+        </Grid>
+        <CheckBox Grid.Row="2" Grid.Column="0" Visibility="{Binding ShowAOI}" IsChecked="{Binding Inputs}">Inputs</CheckBox>
+        <CheckBox Grid.Row="3" Grid.Column="0" Visibility="{Binding ShowAOI}" IsChecked="{Binding Outputs}">Outputs</CheckBox>
+        <CheckBox Grid.Row="2" Grid.Column="1" Visibility="{Binding ShowAOI}" IsChecked="{Binding InOuts}" HorizontalAlignment="Right" Margin="0,5,20,0">InOuts</CheckBox>
+        <CheckBox Grid.Row="3" Grid.Column="1" Visibility="{Binding ShowAOI}" IsChecked="{Binding Locals}" HorizontalAlignment="Right" Margin="0,5,23,0">Locals</CheckBox>
+    </Grid>
+</UserControl>

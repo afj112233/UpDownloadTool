@@ -1,0 +1,174 @@
+﻿<Window x:Class="ICSStudio.UIServicesPackage.View.AdvancedTimeSync"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ICSStudio.UIServicesPackage.View"
+             xmlns:gui="clr-namespace:ICSStudio.Gui;assembly=ICSStudio.Gui"
+             mc:Ignorable="d"  gui:DialogCloser.DialogResult="{Binding DialogResult}"
+             Width="675" Height="535" ResizeMode="NoResize" Title="Controller Properties - Advanced Time Sync">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="Margin" Value="5"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="CIP Sync Time Synchronization:"></TextBlock>
+
+            <TextBlock Grid.Column="1" Text="Enabled"></TextBlock>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="UTC System Time:"></TextBlock>
+        </Grid>
+        
+        <Grid Grid.Row="2" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+           
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Grandmaster Clock" FontWeight="Bold"></TextBlock>
+            <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="20,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="70"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Description:"></TextBlock>
+                <TextBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Width="236" Height="100" HorizontalAlignment="Left"></TextBox>
+                
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Identity:" VerticalAlignment="Bottom"></TextBlock>
+                
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Class:"></TextBlock>
+                
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="Accuracy:"></TextBlock>
+                
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="Variance:"></TextBlock>
+                
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="Source:"></TextBlock>
+                
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="Priority 1:"></TextBlock>
+                
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="Priority 2:"></TextBlock>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Local Clock" FontWeight="Bold"></TextBlock>
+            <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="20,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="70"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Description:"></TextBlock>
+                <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Height="100" HorizontalAlignment="Left">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto" MinWidth="50"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Synchronization Status:"></TextBlock>
+                    
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Offset from Master:"></TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="2" Text="ns"></TextBlock>
+                    
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Backpanel State:"></TextBlock>
+                    <TextBlock Grid.Row="2" Grid.Column="2" Text="(Port 1)"></TextBlock>
+
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="A1/A2,Ethernet State:"></TextBlock>
+                    <TextBlock Grid.Row="3" Grid.Column="2" Text="(Port 2)"></TextBlock>
+                </Grid>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Identity:" VerticalAlignment="Bottom"></TextBlock>
+
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Class:"></TextBlock>
+
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="Accuracy:"></TextBlock>
+
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="Variance:"></TextBlock>
+
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="Source:"></TextBlock>
+
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="Priority 1:"></TextBlock>
+
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="Priority 2:"></TextBlock>
+            </Grid>
+        </Grid>
+        
+        <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Ok" VerticalAlignment="Bottom" Command="{Binding OkCommand}" IsDefault="True"></Button>
+            <Button Content="Cancel" IsCancel="True" VerticalAlignment="Bottom" Command="{Binding CancelCommand}"></Button>
+            <Button Content="Apply" VerticalAlignment="Bottom"></Button>
+            <Button Content="Help" VerticalAlignment="Bottom"></Button>
+        </StackPanel>
+    </Grid>
+</Window>

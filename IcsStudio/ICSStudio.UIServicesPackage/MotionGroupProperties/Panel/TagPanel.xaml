@@ -1,0 +1,57 @@
+﻿<UserControl
+    x:Class="ICSStudio.UIServicesPackage.MotionGroupProperties.Panel.TagPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:ICSStudio.Components.Controls;assembly=ICSStudio.Components"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore"
+    d:DesignHeight="300"
+    d:DesignWidth="300"
+    IsEnabled="{Binding IsEnabled}"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="300" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="{DynamicResource Name:}"/>
+        <controls:ValidateNameControl
+            Grid.Row="0"
+            Grid.Column="1"
+            Margin="2"
+            MaxLength="40"
+            input:InputMethod.IsInputMethodEnabled="False"
+            Text="{Binding TagName, UpdateSourceTrigger=PropertyChanged}" />
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="{DynamicResource Description:}"/>
+        <TextBox
+            Grid.Row="1"
+            Grid.Column="1"
+            AcceptsReturn="True"
+            Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}"
+            TextWrapping="Wrap"
+            VerticalScrollBarVisibility="Visible" />
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="{DynamicResource Type:}"/>
+        <TextBlock Grid.Row="2" Grid.Column="1" Text="{DynamicResource Base}"/>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="{DynamicResource Data Type:}"></TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="1">MOTION_GROUP</TextBlock>
+
+    </Grid>
+</UserControl>

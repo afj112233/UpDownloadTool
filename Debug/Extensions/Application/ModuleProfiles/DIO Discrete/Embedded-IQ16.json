@@ -1,0 +1,32 @@
+{
+    "VendorID": 5,
+    "ProductType": 7,
+    "ProductCode": 217,
+    "CatalogNumber": "Embedded-IQ16",
+    "Descriptions": [
+        {
+            "LCID": 1033,
+            "Text": "Embedded 16 Point 10V-28V DC Input, Sink/Source"
+        },
+        {
+            "LCID": 2052,
+            "Text": "嵌入式16 点 10V-28V 直流输入，拉电流/灌电流"
+        }
+    ],
+    "MajorRevs": [
+        {
+            "MajorRev": 1,
+            "Series": "A"
+        }
+    ],
+    "Ports": [
+        {
+            "Number": 1,
+            "Type": "PointIO",
+            "Label": "Chassis",
+            "Width": 1,
+            "ConnectorOffset": 0
+        }
+    ],
+    "PSFile": "PSICD_Embedded.json"
+}

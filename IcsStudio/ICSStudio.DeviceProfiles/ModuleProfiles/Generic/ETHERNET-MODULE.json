@@ -1,0 +1,295 @@
+{
+    "VendorID": 1,
+    "ProductType": 0,
+    "ProductCode": 18,
+    "CatalogNumber": "ETHERNET-MODULE",
+    "Descriptions": [
+        {
+            "LCID": 1033,
+            "Text": "Generic Ethernet Module"
+        },
+        {
+            "LCID": 2052,
+            "Text": "常规以太网 Module"
+        }
+    ],
+    "MajorRevs": [
+        1
+    ],
+    "Ports": [
+        {
+            "Number": 2,
+            "Type": "Ethernet",
+            "Label": "ENet",
+            "Width": 1,
+            "ConnectorOffset": 0
+        }
+    ],
+    "ModuleProperties": [
+        {
+            "ID": "00",
+            "CatalogNumber": "ETHERNET-MODULE",
+            "DefaultUpdateRate": 10000,
+            "MinimumUpdateRate": 1000,
+            "MaximumUpdateRate": 12800000,
+            "DefaultCommMethod": "20000001",
+            "CommMethods": [
+                {
+                    "ID": "20000001",
+                    "Description": "Data - DINT",
+                    "InputTag": {
+                        "DataType": "AB:ETHERNET_MODULE_DINT_*Bytes:I:0"
+                    },
+                    "OutputTag": {
+                        "DataType": "AB:ETHERNET_MODULE_DINT_*Bytes:O:0"
+                    },
+                    "DefaultConfigOptionsID": "00800001",
+                    "ConfigOptions": [
+                        {
+                            "ID": "00800001",
+                            "Description": "Data",
+                            "ConfigID": "lnkOneConfigOption"
+                        }
+                    ],
+                    "PrimaryConnectionInputSize": {
+                        "Default": 125,
+                        "Multiplier": 4,
+                        "Min": 1,
+                        "Max": 125
+                    },
+                    "PrimaryConnectionOutputSize": {
+                        "Default": 124,
+                        "Multiplier": 4,
+                        "Min": 1,
+                        "Max": 124
+                    }
+                },
+                {
+                    "ID": "20000002",
+                    "Description": "Data - REAL",
+                    "InputTag": {
+                        "DataType": "AB:ETHERNET_MODULE_REAL_*Bytes:I:0"
+                    },
+                    "OutputTag": {
+                        "DataType": "AB:ETHERNET_MODULE_REAL_*Bytes:O:0"
+                    },
+                    "DefaultConfigOptionsID": "00800002",
+                    "ConfigOptions": [
+                        {
+                            "ID": "00800002",
+                            "Description": "Data",
+                            "ConfigID": "lnkOneConfigOption"
+                        }
+                    ],
+                    "PrimaryConnectionInputSize": {
+                        "Default": 125,
+                        "Multiplier": 4,
+                        "Min": 1,
+                        "Max": 125
+                    },
+                    "PrimaryConnectionOutputSize": {
+                        "Default": 124,
+                        "Multiplier": 4,
+                        "Min": 1,
+                        "Max": 124
+                    }
+                },
+                {
+                    "ID": "20000003",
+                    "Description": "Data - INT",
+                    "InputTag": {
+                        "DataType": "AB:ETHERNET_MODULE_INT_*Bytes:I:0"
+                    },
+                    "OutputTag": {
+                        "DataType": "AB:ETHERNET_MODULE_INT_*Bytes:O:0"
+                    },
+                    "DefaultConfigOptionsID": "00800003",
+                    "ConfigOptions": [
+                        {
+                            "ID": "00800003",
+                            "Description": "Data",
+                            "ConfigID": "lnkOneConfigOption"
+                        }
+                    ],
+                    "PrimaryConnectionInputSize": {
+                        "Default": 250,
+                        "Multiplier": 2,
+                        "Min": 1,
+                        "Max": 250
+                    },
+                    "PrimaryConnectionOutputSize": {
+                        "Default": 248,
+                        "Multiplier": 2,
+                        "Min": 1,
+                        "Max": 248
+                    }
+                },
+                {
+                    "ID": "20000004",
+                    "Description": "Data - SINT",
+                    "InputTag": {
+                        "DataType": "AB:ETHERNET_MODULE_SINT_*Bytes:I:0"
+                    },
+                    "OutputTag": {
+                        "DataType": "AB:ETHERNET_MODULE_SINT_*Bytes:O:0"
+                    },
+                    "DefaultConfigOptionsID": "00800004",
+                    "ConfigOptions": [
+                        {
+                            "ID": "00800004",
+                            "Description": "Data",
+                            "ConfigID": "lnkOneConfigOption"
+                        }
+                    ],
+                    "PrimaryConnectionInputSize": {
+                        "Default": 500,
+                        "Multiplier": 1,
+                        "Min": 1,
+                        "Max": 500
+                    },
+                    "PrimaryConnectionOutputSize": {
+                        "Default": 496,
+                        "Multiplier": 1,
+                        "Min": 1,
+                        "Max": 496
+                    }
+                }
+            ],
+            "Configs": [
+                {
+                    "ID": "lnkOneConfigOption",
+                    "Instance": 1,
+                    "Size": 400,
+                    "Data": "0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00",
+                    "DataType": "AB:ETHERNET_MODULE:C:0",
+                    "ConfigSize": {
+                        "Default": 0,
+                        "Multiplier": 1,
+                        "Min": 0,
+                        "Max": 400
+                    }
+                }
+            ],
+            "DataTypeDefinitions": [
+                {
+                    "Name": "AB:ETHERNET_MODULE:C:0",
+                    "Class": "IO",
+                    "Members": [
+                        {
+                            "Name": "CfgSize",
+                            "DataType": "DINT",
+                            "Hidden": true
+                        },
+                        {
+                            "Name": "CfgIDNum",
+                            "DataType": "DINT",
+                            "Hidden": true
+                        },
+                        {
+                            "Name": "Data",
+                            "DataType": "SINT",
+                            "Dimension": 400,
+                            "Radix": "Hex"
+                        }
+                    ]
+                },
+                {
+                    "Name": "AB:ETHERNET_MODULE_DINT_*Bytes:I:0",
+                    "Class": "IO",
+                    "Members": [
+                        {
+                            "Name": "Data",
+                            "DataType": "DINT",
+                            "Dimension": 125,
+                            "Radix": "Decimal"
+                        }
+                    ]
+                },
+                {
+                    "Name": "AB:ETHERNET_MODULE_DINT_*Bytes:O:0",
+                    "Class": "IO",
+                    "Members": [
+                        {
+                            "Name": "Data",
+                            "DataType": "DINT",
+                            "Dimension": 124,
+                            "Radix": "Decimal"
+                        }
+                    ]
+                },
+                {
+                    "Name": "AB:ETHERNET_MODULE_REAL_*Bytes:I:0",
+                    "Class": "IO",
+                    "Members": [
+                        {
+                            "Name": "Data",
+                            "DataType": "REAL",
+                            "Dimension": 125,
+                            "Radix": "Float"
+                        }
+                    ]
+                },
+                {
+                    "Name": "AB:ETHERNET_MODULE_REAL_*Bytes:O:0",
+                    "Class": "IO",
+                    "Members": [
+                        {
+                            "Name": "Data",
+                            "DataType": "REAL",
+                            "Dimension": 124,
+                            "Radix": "Float"
+                        }
+                    ]
+                },
+                {
+                    "Name": "AB:ETHERNET_MODULE_INT_*Bytes:I:0",
+                    "Class": "IO",
+                    "Members": [
+                        {
+                            "Name": "Data",
+                            "DataType": "INT",
+                            "Dimension": 250,
+                            "Radix": "Decimal"
+                        }
+                    ]
+                },
+                {
+                    "Name": "AB:ETHERNET_MODULE_INT_*Bytes:O:0",
+                    "Class": "IO",
+                    "Members": [
+                        {
+                            "Name": "Data",
+                            "DataType": "INT",
+                            "Dimension": 248,
+                            "Radix": "Decimal"
+                        }
+                    ]
+                },
+                {
+                    "Name": "AB:ETHERNET_MODULE_SINT_*Bytes:I:0",
+                    "Class": "IO",
+                    "Members": [
+                        {
+                            "Name": "Data",
+                            "DataType": "SINT",
+                            "Dimension": 500,
+                            "Radix": "Decimal"
+                        }
+                    ]
+                },
+                {
+                    "Name": "AB:ETHERNET_MODULE_SINT_*Bytes:O:0",
+                    "Class": "IO",
+                    "Members": [
+                        {
+                            "Name": "Data",
+                            "DataType": "SINT",
+                            "Dimension": 496,
+                            "Radix": "Decimal"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,137 @@
+﻿<FlowDocument
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    ColumnWidth="800" FontSize="10" FontFamily="Times New Roman"
+        TextOptions.TextFormattingMode="Display">
+    <Table FontFamily="Times New Roman" FontSize="10">
+            <Table.Columns>
+                <TableColumn Width="*"/>
+            </Table.Columns>
+            <TableRowGroup>
+                <TableRow>
+                    <TableCell>
+                        <Paragraph Background="DarkGray">
+                            <Bold>
+                                <Run Text="General"></Run>
+                            </Bold>
+                        </Paragraph>
+                        <Paragraph>
+                            <Run Text="{Binding Description}"></Run>
+                        </Paragraph>
+                    </TableCell>
+                </TableRow>
+            </TableRowGroup>
+        </Table>
+    <Table FontFamily="Times New Roman" FontSize="10" CellSpacing="0">
+            <Table.Columns>
+                <TableColumn Width="200"/>
+                <TableColumn Width="200"/>
+                <TableColumn Width="200"/>
+                <TableColumn Width="200"/>
+            </Table.Columns>
+            <TableRowGroup Name="Configuration" >
+                <TableRow>
+                    <TableCell ColumnSpan="4">
+                        <Paragraph Background="DarkGray">
+                            <Bold>
+                                <Run Text="Configuration"></Run>
+                            </Bold>
+                        </Paragraph>
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>
+                        <Paragraph>
+                            <Run Text="Main"></Run>
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph>
+                            <Run Text="{Binding ConfigurationData[0]}"></Run>
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph>
+                        <Run Text="Inhibit program:"></Run>
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph>
+                            <Run Text="{Binding ConfigurationData[1]}"></Run>
+                        </Paragraph>
+                    </TableCell>
+            </TableRow>
+                <TableRow>
+                    <TableCell>
+                        <Paragraph>
+                            <Run Text="Fault"></Run>
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph>
+                            <Run Text="{Binding ConfigurationData[2]}"></Run>
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph>
+                            <Run Text="{Binding ConfigurationData[3]}"></Run>
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph>
+                            <Run Text="{Binding ConfigurationData[4]}"></Run>
+                        </Paragraph>
+                    </TableCell>
+                </TableRow>
+            </TableRowGroup>
+        </Table>
+    <Table FontFamily="Times New Roman" FontSize="10">
+            <Table.Columns>
+                <TableColumn Width="200"/>
+                <TableColumn Width="200"/>
+                <TableColumn Width="200"/>
+                <TableColumn Width="200"/>
+            </Table.Columns>
+            <TableRowGroup>
+                <TableRow>
+                    <TableCell ColumnSpan="4">
+                        <Paragraph Background="DarkGray">
+                            <Bold>
+                                <Run Text="Monitor"></Run>
+                            </Bold>
+                        </Paragraph>
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell ColumnSpan="4">
+                        <Paragraph >
+                            <Bold>
+                                <Run Text="Scan Times(Execution Time)"></Run>
+                            </Bold>
+                        </Paragraph>
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>
+                        <Paragraph>
+                            <Run Text="Max:"></Run>
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph>
+                            <Run Text="{Binding ScanTimesMax}"></Run>
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph>
+                            <Run Text="Last:"></Run>
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph>
+                            <Run Text="{Binding ScanTimesLast}"></Run>
+                        </Paragraph>
+                    </TableCell>
+                </TableRow>
+            </TableRowGroup>
+        </Table>
+</FlowDocument>

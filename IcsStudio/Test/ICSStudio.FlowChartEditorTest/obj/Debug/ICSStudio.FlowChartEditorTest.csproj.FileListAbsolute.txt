@@ -1,0 +1,13 @@
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.FlowChartEditorTest.exe.config
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.FlowChartEditorTest.exe
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.FlowChartEditorTest.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.FlowChartEditorTest\obj\Debug\ICSStudio.FlowChartEditorTest.csprojResolveAssemblyReference.cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.FlowChartEditorTest\obj\Debug\MainWindow.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.FlowChartEditorTest\obj\Debug\MainWindow.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.FlowChartEditorTest\obj\Debug\App.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.FlowChartEditorTest\obj\Debug\ICSStudio.FlowChartEditorTest_MarkupCompile.cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.FlowChartEditorTest\obj\Debug\ICSStudio.FlowChartEditorTest.g.resources
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.FlowChartEditorTest\obj\Debug\ICSStudio.FlowChartEditorTest.Properties.Resources.resources
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.FlowChartEditorTest\obj\Debug\ICSStudio.FlowChartEditorTest.csproj.GenerateResource.Cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.FlowChartEditorTest\obj\Debug\ICSStudio.FlowChartEditorTest.exe
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.FlowChartEditorTest\obj\Debug\ICSStudio.FlowChartEditorTest.pdb

@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--Copyright 2010 Rockwell Automation -->
+
+<AOPModuleTypes>
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+  <!-- Module Types	                            						                                  -->
+  <!-- Embedded DiscreteIO : 16 Point 24V DC Sink Input, Sink and 16 Point 24V DC Source Output-->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+  <ModuleType VendorID="1" ProductType="7" ProductCode="1140">
+    <Variant MajorRev="20" MinLogixVersion="20" MaxLogixVersion="20" ModuleID="Embedded_DiscreteIO" ModuleDefinitionID="1769_L1Y" />
+    <Variant MajorRev="21" MinLogixVersion="21" MaxLogixVersion="21" ModuleID="Embedded_DiscreteIO" ModuleDefinitionID="1769_L1Y" />
+    <Variant MajorRev="23" MinLogixVersion="23" MaxLogixVersion="23" ModuleID="Embedded_DiscreteIO" ModuleDefinitionID="1769_L1Y" />
+    <!-- The following Min=24 and Max=25 is not a mistake.  It allows V25 to import an older L1y project (as V24) before morphing to a supported controller. -->
+    <Variant MajorRev="24" MinLogixVersion="24" MaxLogixVersion="25" ModuleID="Embedded_DiscreteIO" ModuleDefinitionID="1769_L1Y" />
+    <Variant MajorRev="25" MinLogixVersion="25" MaxLogixVersion="25" ModuleID="Embedded_DiscreteIO" ModuleDefinitionID="1769_L1Y" />
+    <Variant MajorRev="26" MinLogixVersion="26" MaxLogixVersion="26" ModuleID="Embedded_DiscreteIO" ModuleDefinitionID="1769_L1Y" />
+    <Variant MajorRev="27" MinLogixVersion="27" MaxLogixVersion="27" ModuleID="Embedded_DiscreteIO" ModuleDefinitionID="1769_L1Y" />
+    <Variant MajorRev="28" MinLogixVersion="28" MaxLogixVersion="28" ModuleID="Embedded_DiscreteIO" ModuleDefinitionID="1769_L1Y" />
+    <Variant MajorRev="29" MinLogixVersion="29" MaxLogixVersion="29" ModuleID="Embedded_DiscreteIO" ModuleDefinitionID="1769_L1Y" />
+    <Variant MajorRev="30" MinLogixVersion="30" MaxLogixVersion="30" ModuleID="Embedded_DiscreteIO" ModuleDefinitionID="1769_L1Y" />
+    <Variant MajorRev="31" MinLogixVersion="31" MaxLogixVersion="31" ModuleID="Embedded_DiscreteIO" ModuleDefinitionID="1769_L1Y" />
+    <Variant MajorRev="32" MinLogixVersion="32" MaxLogixVersion="32" ModuleID="Embedded_DiscreteIO" ModuleDefinitionID="1769_L1Y" />
+    <Variant MajorRev="33" MinLogixVersion="33" MaxLogixVersion="33" ModuleID="Embedded_DiscreteIO" ModuleDefinitionID="1769_L1Y" Default="True" />
+    <Extensions>
+      <!--  Identity Object Plugin  -->
+      <Extension CLSID="{C60BC85D-3487-4DBB-AACC-DAB767A17330}" CIPObjectID="DeviceInfo" CIPObjectSpecificFile="Rockwell Software\RSLogix 5000\Module Profiles\Core\PSCommonCIPObjects.xml"
+				Comment="Identity Object Plug-in" />
+    </Extensions>
+  </ModuleType>
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- ModuleID	                                                                 -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <Module ID="Embedded_DiscreteIO" NumberOfInputs="16" NumberOfOutputs="16" FixedUserName="True" BusID="CmpctDiscrete" DriverType="2050"
+		CIPObjectDefinesID="CIPObjects" />
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+  <!-- Module Definition                                                        -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+  <ModuleDefinition ID="1769_L1Y" StringsID="ModuleDefinitionStrings">
+    <Selections>
+      <Field ID="Connection" StringID="1">
+        <Choice ID="Data" StringID="2"></Choice>
+      </Field>
+    </Selections>
+    <SelectionTree>
+      <Choice ChoiceID="Data" Default="True" ConfigID="100"></Choice>
+    </SelectionTree>
+  </ModuleDefinition>
+
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Bus Restrictions                                                              -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <Bus ID="CmpctDiscrete">
+    <Upstream>
+        <Exclusions>
+            <ExcludeAddressRange MinAddress="2" MaxAddress="9"/>
+        </Exclusions>
+    </Upstream>
+  </Bus>
+
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Construction                                                              -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <Construction ConfigID="100">
+    <!-- ExtensionCLSID is the Validation Plugin  -->
+    <ConfigTag CLSID="{34B63725-CA55-42DE-91D5-9F87E1CB6BD5}"
+     ExtensionCLSID="{3DD2F87A-E4F6-4057-BA87-4FE10DA5D4E9}"
+      ValueID="AB:Embedded_DiscreteIO:C:0"
+			Instance="113">
+      <DataType Name="AB:Embedded_DiscreteIO:C:0"></DataType>
+      <Enum EnumID="FaultProgramEnum" />
+    </ConfigTag>
+    <Connections>
+      <Connection ConnectionID="Embedded_DiscreteIO" CLSID="{3DB9EEC3-C915-41B6-A706-86F7A1E319F0}"></Connection>
+    </Connections>
+  </Construction>
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Connection                                                                -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <Connection ID="Embedded_DiscreteIO" Name="Data" Type="Output" MinRPI="1000" MaxRPI="750000"
+		RPI="20000" InputCxnPoint="5" OutputCxnPoint="35">
+    <InputTag CLSID="{34B63725-CA55-42DE-91D5-9F87E1CB6BD5}">
+      <DataType Name="AB:Embedded_DiscreteIO:I:0"></DataType>
+    </InputTag>
+    <OutputTag CLSID="{34B63725-CA55-42DE-91D5-9F87E1CB6BD5}">
+      <DataType Name="AB:Embedded_DiscreteIO:O:0"></DataType>
+    </OutputTag>
+  </Connection>
+  <CIPObjectDefines ID="CIPObjects">
+    <UnsupportedAttributes>
+      <DeviceInfo Name="Internal State" />
+    </UnsupportedAttributes>
+  </CIPObjectDefines>
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Data Types                                                                -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Configuration DataType -->
+  <DataType Name="AB:Embedded_DiscreteIO:C:0" Class="IO">
+    <Members>
+      <Member Name="CfgSize"  DataType="DINT" Hidden="True" />
+      <Member Name="CfgIDNum" DataType="DINT" Hidden="True" />
+      <Member Name="Reserved" DataType="DINT" Hidden="True" />
+      <Member Name="Pt00FilterOffOn" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="Pt00FilterOnOff" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="Pt01FilterOffOn" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="Pt01FilterOnOff" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="Pt02FilterOffOn" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="Pt02FilterOnOff" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="Pt03FilterOffOn" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="Pt03FilterOnOff" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="Pt04FilterOffOn" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="Pt04FilterOnOff" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="Pt05FilterOffOn" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="Pt05FilterOnOff" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="Pt06FilterOffOn" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="Pt06FilterOnOff" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="Pt07FilterOffOn" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="Pt07FilterOnOff" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="Pt08FilterOffOn" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="Pt08FilterOnOff" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="Pt09FilterOffOn" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="Pt09FilterOnOff" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="Pt10FilterOffOn" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="Pt10FilterOnOff" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="Pt11FilterOffOn" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="Pt11FilterOnOff" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="Pt12FilterOffOn" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="Pt12FilterOnOff" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="Pt13FilterOffOn" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="Pt13FilterOnOff" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="Pt14FilterOffOn" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="Pt14FilterOnOff" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="Pt15FilterOffOn" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="Pt15FilterOnOff" DataType="INT" Radix="Decimal" Min="0" Max="65535" />
+      <Member Name="FaultMode" DataType="INT" Radix="Binary" />
+      <Member Name="Pt00FaultMode" DataType="BIT" BitNumber="0" Enum="FaultProgramEnum" Target="FaultMode"
+				Hidden="True" />
+      <Member Name="Pt01FaultMode" DataType="BIT" BitNumber="1" Enum="FaultProgramEnum" Target="FaultMode"
+				Hidden="True" />
+      <Member Name="Pt02FaultMode" DataType="BIT" BitNumber="2" Enum="FaultProgramEnum" Target="FaultMode"
+				Hidden="True" />
+      <Member Name="Pt03FaultMode" DataType="BIT" BitNumber="3" Enum="FaultProgramEnum" Target="FaultMode"
+				Hidden="True" />
+      <Member Name="Pt04FaultMode" DataType="BIT" BitNumber="4" Enum="FaultProgramEnum" Target="FaultMode"
+				Hidden="True" />
+      <Member Name="Pt05FaultMode" DataType="BIT" BitNumber="5" Enum="FaultProgramEnum" Target="FaultMode"
+				Hidden="True" />
+      <Member Name="Pt06FaultMode" DataType="BIT" BitNumber="6" Enum="FaultProgramEnum" Target="FaultMode"
+				Hidden="True" />
+      <Member Name="Pt07FaultMode" DataType="BIT" BitNumber="7" Enum="FaultProgramEnum" Target="FaultMode"
+				Hidden="True" />
+      <Member Name="Pt08FaultMode" DataType="BIT" BitNumber="8" Enum="FaultProgramEnum" Target="FaultMode"
+				Hidden="True" />
+      <Member Name="Pt09FaultMode" DataType="BIT" BitNumber="9" Enum="FaultProgramEnum" Target="FaultMode"
+				Hidden="True" />
+      <Member Name="Pt10FaultMode" DataType="BIT" BitNumber="10" Enum="FaultProgramEnum" Target="FaultMode"
+				Hidden="True" />
+      <Member Name="Pt11FaultMode" DataType="BIT" BitNumber="11" Enum="FaultProgramEnum" Target="FaultMode"
+				Hidden="True" />
+      <Member Name="Pt12FaultMode" DataType="BIT" BitNumber="12" Enum="FaultProgramEnum" Target="FaultMode"
+				Hidden="True" />
+      <Member Name="Pt13FaultMode" DataType="BIT" BitNumber="13" Enum="FaultProgramEnum" Target="FaultMode"
+				Hidden="True" />
+      <Member Name="Pt14FaultMode" DataType="BIT" BitNumber="14" Enum="FaultProgramEnum" Target="FaultMode"
+				Hidden="True" />
+      <Member Name="Pt15FaultMode" DataType="BIT" BitNumber="15" Enum="FaultProgramEnum" Target="FaultMode"
+				Hidden="True" />
+      <Member Name="FaultValue" DataType="INT" Radix="Binary" />
+      <Member Name="Pt00FaultValue" DataType="BIT" BitNumber="0" Enum="FaultProgramEnum" Target="FaultValue"
+				Hidden="True" />
+      <Member Name="Pt01FaultValue" DataType="BIT" BitNumber="1" Enum="FaultProgramEnum" Target="FaultValue"
+				Hidden="True" />
+      <Member Name="Pt02FaultValue" DataType="BIT" BitNumber="2" Enum="FaultProgramEnum" Target="FaultValue"
+				Hidden="True" />
+      <Member Name="Pt03FaultValue" DataType="BIT" BitNumber="3" Enum="FaultProgramEnum" Target="FaultValue"
+				Hidden="True" />
+      <Member Name="Pt04FaultValue" DataType="BIT" BitNumber="4" Enum="FaultProgramEnum" Target="FaultValue"
+				Hidden="True" />
+      <Member Name="Pt05FaultValue" DataType="BIT" BitNumber="5" Enum="FaultProgramEnum" Target="FaultValue"
+				Hidden="True" />
+      <Member Name="Pt06FaultValue" DataType="BIT" BitNumber="6" Enum="FaultProgramEnum" Target="FaultValue"
+				Hidden="True" />
+      <Member Name="Pt07FaultValue" DataType="BIT" BitNumber="7" Enum="FaultProgramEnum" Target="FaultValue"
+				Hidden="True" />
+      <Member Name="Pt08FaultValue" DataType="BIT" BitNumber="8" Enum="FaultProgramEnum" Target="FaultValue"
+				Hidden="True" />
+      <Member Name="Pt09FaultValue" DataType="BIT" BitNumber="9" Enum="FaultProgramEnum" Target="FaultValue"
+				Hidden="True" />
+      <Member Name="Pt10FaultValue" DataType="BIT" BitNumber="10" Enum="FaultProgramEnum" Target="FaultValue"
+				Hidden="True" />
+      <Member Name="Pt11FaultValue" DataType="BIT" BitNumber="11" Enum="FaultProgramEnum" Target="FaultValue"
+				Hidden="True" />
+      <Member Name="Pt12FaultValue" DataType="BIT" BitNumber="12" Enum="FaultProgramEnum" Target="FaultValue"
+				Hidden="True" />
+      <Member Name="Pt13FaultValue" DataType="BIT" BitNumber="13" Enum="FaultProgramEnum" Target="FaultValue"
+				Hidden="True" />
+      <Member Name="Pt14FaultValue" DataType="BIT" BitNumber="14" Enum="FaultProgramEnum" Target="FaultValue"
+				Hidden="True" />
+      <Member Name="Pt15FaultValue" DataType="BIT" BitNumber="15" Enum="FaultProgramEnum" Target="FaultValue"
+				Hidden="True" />
+      <Member Name="ProgMode" DataType="INT" Radix="Binary" />
+      <Member Name="Pt00ProgMode" DataType="BIT" BitNumber="0" Enum="FaultProgramEnum" Target="ProgMode"
+				Hidden="True" />
+      <Member Name="Pt01ProgMode" DataType="BIT" BitNumber="1" Enum="FaultProgramEnum" Target="ProgMode"
+				Hidden="True" />
+      <Member Name="Pt02ProgMode" DataType="BIT" BitNumber="2" Enum="FaultProgramEnum" Target="ProgMode"
+				Hidden="True" />
+      <Member Name="Pt03ProgMode" DataType="BIT" BitNumber="3" Enum="FaultProgramEnum" Target="ProgMode"
+				Hidden="True" />
+      <Member Name="Pt04ProgMode" DataType="BIT" BitNumber="4" Enum="FaultProgramEnum" Target="ProgMode"
+				Hidden="True" />
+      <Member Name="Pt05ProgMode" DataType="BIT" BitNumber="5" Enum="FaultProgramEnum" Target="ProgMode"
+				Hidden="True" />
+      <Member Name="Pt06ProgMode" DataType="BIT" BitNumber="6" Enum="FaultProgramEnum" Target="ProgMode"
+				Hidden="True" />
+      <Member Name="Pt07ProgMode" DataType="BIT" BitNumber="7" Enum="FaultProgramEnum" Target="ProgMode"
+				Hidden="True" />
+      <Member Name="Pt08ProgMode" DataType="BIT" BitNumber="8" Enum="FaultProgramEnum" Target="ProgMode"
+				Hidden="True" />
+      <Member Name="Pt09ProgMode" DataType="BIT" BitNumber="9" Enum="FaultProgramEnum" Target="ProgMode"
+				Hidden="True" />
+      <Member Name="Pt10ProgMode" DataType="BIT" BitNumber="10" Enum="FaultProgramEnum" Target="ProgMode"
+				Hidden="True" />
+      <Member Name="Pt11ProgMode" DataType="BIT" BitNumber="11" Enum="FaultProgramEnum" Target="ProgMode"
+				Hidden="True" />
+      <Member Name="Pt12ProgMode" DataType="BIT" BitNumber="12" Enum="FaultProgramEnum" Target="ProgMode"
+				Hidden="True" />
+      <Member Name="Pt13ProgMode" DataType="BIT" BitNumber="13" Enum="FaultProgramEnum" Target="ProgMode"
+				Hidden="True" />
+      <Member Name="Pt14ProgMode" DataType="BIT" BitNumber="14" Enum="FaultProgramEnum" Target="ProgMode"
+				Hidden="True" />
+      <Member Name="Pt15ProgMode" DataType="BIT" BitNumber="15" Enum="FaultProgramEnum" Target="ProgMode"
+				Hidden="True" />
+      <Member Name="ProgValue" DataType="INT" Radix="Binary" />
+      <Member Name="Pt00ProgValue" DataType="BIT" BitNumber="0" Enum="FaultProgramEnum" Target="ProgValue"
+				Hidden="True" />
+      <Member Name="Pt01ProgValue" DataType="BIT" BitNumber="1" Enum="FaultProgramEnum" Target="ProgValue"
+				Hidden="True" />
+      <Member Name="Pt02ProgValue" DataType="BIT" BitNumber="2" Enum="FaultProgramEnum" Target="ProgValue"
+				Hidden="True" />
+      <Member Name="Pt03ProgValue" DataType="BIT" BitNumber="3" Enum="FaultProgramEnum" Target="ProgValue"
+				Hidden="True" />
+      <Member Name="Pt04ProgValue" DataType="BIT" BitNumber="4" Enum="FaultProgramEnum" Target="ProgValue"
+				Hidden="True" />
+      <Member Name="Pt05ProgValue" DataType="BIT" BitNumber="5" Enum="FaultProgramEnum" Target="ProgValue"
+				Hidden="True" />
+      <Member Name="Pt06ProgValue" DataType="BIT" BitNumber="6" Enum="FaultProgramEnum" Target="ProgValue"
+				Hidden="True" />
+      <Member Name="Pt07ProgValue" DataType="BIT" BitNumber="7" Enum="FaultProgramEnum" Target="ProgValue"
+				Hidden="True" />
+      <Member Name="Pt08ProgValue" DataType="BIT" BitNumber="8" Enum="FaultProgramEnum" Target="ProgValue"
+				Hidden="True" />
+      <Member Name="Pt09ProgValue" DataType="BIT" BitNumber="9" Enum="FaultProgramEnum" Target="ProgValue"
+				Hidden="True" />
+      <Member Name="Pt10ProgValue" DataType="BIT" BitNumber="10" Enum="FaultProgramEnum" Target="ProgValue"
+				Hidden="True" />
+      <Member Name="Pt11ProgValue" DataType="BIT" BitNumber="11" Enum="FaultProgramEnum" Target="ProgValue"
+				Hidden="True" />
+      <Member Name="Pt12ProgValue" DataType="BIT" BitNumber="12" Enum="FaultProgramEnum" Target="ProgValue"
+				Hidden="True" />
+      <Member Name="Pt13ProgValue" DataType="BIT" BitNumber="13" Enum="FaultProgramEnum" Target="ProgValue"
+				Hidden="True" />
+      <Member Name="Pt14ProgValue" DataType="BIT" BitNumber="14" Enum="FaultProgramEnum" Target="ProgValue"
+				Hidden="True" />
+      <Member Name="Pt15ProgValue" DataType="BIT" BitNumber="15" Enum="FaultProgramEnum" Target="ProgValue"
+				Hidden="True" />
+      <Member Name="COSOnOffEn" DataType="INT" Radix="Binary" />
+      <Member Name="Pt00COSOnOffEn" DataType="BIT" BitNumber="0" Target="COSOnOffEn" Hidden="True" />
+      <Member Name="Pt01COSOnOffEn" DataType="BIT" BitNumber="1" Target="COSOnOffEn" Hidden="True" />
+      <Member Name="Pt02COSOnOffEn" DataType="BIT" BitNumber="2" Target="COSOnOffEn" Hidden="True" />
+      <Member Name="Pt03COSOnOffEn" DataType="BIT" BitNumber="3" Target="COSOnOffEn" Hidden="True" />
+      <Member Name="Pt04COSOnOffEn" DataType="BIT" BitNumber="4" Target="COSOnOffEn" Hidden="True" />
+      <Member Name="Pt05COSOnOffEn" DataType="BIT" BitNumber="5" Target="COSOnOffEn" Hidden="True" />
+      <Member Name="Pt06COSOnOffEn" DataType="BIT" BitNumber="6" Target="COSOnOffEn" Hidden="True" />
+      <Member Name="Pt07COSOnOffEn" DataType="BIT" BitNumber="7" Target="COSOnOffEn" Hidden="True" />
+      <Member Name="Pt08COSOnOffEn" DataType="BIT" BitNumber="8" Target="COSOnOffEn" Hidden="True" />
+      <Member Name="Pt09COSOnOffEn" DataType="BIT" BitNumber="9" Target="COSOnOffEn" Hidden="True" />
+      <Member Name="Pt10COSOnOffEn" DataType="BIT" BitNumber="10" Target="COSOnOffEn" Hidden="True" />
+      <Member Name="Pt11COSOnOffEn" DataType="BIT" BitNumber="11" Target="COSOnOffEn" Hidden="True" />
+      <Member Name="Pt12COSOnOffEn" DataType="BIT" BitNumber="12" Target="COSOnOffEn" Hidden="True" />
+      <Member Name="Pt13COSOnOffEn" DataType="BIT" BitNumber="13" Target="COSOnOffEn" Hidden="True" />
+      <Member Name="Pt14COSOnOffEn" DataType="BIT" BitNumber="14" Target="COSOnOffEn" Hidden="True" />
+      <Member Name="Pt15COSOnOffEn" DataType="BIT" BitNumber="15" Target="COSOnOffEn" Hidden="True" />
+      <Member Name="COSOffOnEn" DataType="INT" Radix="Binary" />
+      <Member Name="Pt00COSOffOnEn" DataType="BIT" BitNumber="0" Target="COSOffOnEn" Hidden="True" />
+      <Member Name="Pt01COSOffOnEn" DataType="BIT" BitNumber="1" Target="COSOffOnEn" Hidden="True" />
+      <Member Name="Pt02COSOffOnEn" DataType="BIT" BitNumber="2" Target="COSOffOnEn" Hidden="True" />
+      <Member Name="Pt03COSOffOnEn" DataType="BIT" BitNumber="3" Target="COSOffOnEn" Hidden="True" />
+      <Member Name="Pt04COSOffOnEn" DataType="BIT" BitNumber="4" Target="COSOffOnEn" Hidden="True" />
+      <Member Name="Pt05COSOffOnEn" DataType="BIT" BitNumber="5" Target="COSOffOnEn" Hidden="True" />
+      <Member Name="Pt06COSOffOnEn" DataType="BIT" BitNumber="6" Target="COSOffOnEn" Hidden="True" />
+      <Member Name="Pt07COSOffOnEn" DataType="BIT" BitNumber="7" Target="COSOffOnEn" Hidden="True" />
+      <Member Name="Pt08COSOffOnEn" DataType="BIT" BitNumber="8" Target="COSOffOnEn" Hidden="True" />
+      <Member Name="Pt09COSOffOnEn" DataType="BIT" BitNumber="9" Target="COSOffOnEn" Hidden="True" />
+      <Member Name="Pt10COSOffOnEn" DataType="BIT" BitNumber="10" Target="COSOffOnEn" Hidden="True" />
+      <Member Name="Pt11COSOffOnEn" DataType="BIT" BitNumber="11" Target="COSOffOnEn" Hidden="True" />
+      <Member Name="Pt12COSOffOnEn" DataType="BIT" BitNumber="12" Target="COSOffOnEn" Hidden="True" />
+      <Member Name="Pt13COSOffOnEn" DataType="BIT" BitNumber="13" Target="COSOffOnEn" Hidden="True" />
+      <Member Name="Pt14COSOffOnEn" DataType="BIT" BitNumber="14" Target="COSOffOnEn" Hidden="True" />
+      <Member Name="Pt15COSOffOnEn" DataType="BIT" BitNumber="15" Target="COSOffOnEn" Hidden="True" />
+    </Members>
+  </DataType>
+  <Value ID="AB:Embedded_DiscreteIO:C:0">
+    <!--Header-->
+    00,00,00,00,
+    00,00,00,00,
+    01,00,00,00,
+
+    <!--Filter On/Off & Off/On-->
+    E8,03,
+    E8,03,
+    E8,03,
+    E8,03,
+    E8,03,
+    E8,03,
+    E8,03,
+    E8,03,
+    E8,03,
+    E8,03,
+    E8,03,
+    E8,03,
+    E8,03,
+    E8,03,
+    E8,03,
+    E8,03,
+    E8,03,
+    E8,03,
+    E8,03,
+    E8,03,
+    E8,03,
+    E8,03,
+    E8,03,
+    E8,03,
+    E8,03,
+    E8,03,
+    E8,03,
+    E8,03,
+    E8,03,
+    E8,03,
+    E8,03,
+    E8,03,
+
+    <!--Fault Mode-->
+    00,00,
+    <!--Fault Value-->
+    00,00,
+    <!--Program Mode-->
+    00,00,
+    <!--Program Value-->
+    00,00,
+    <!--COSOnOff-->
+    00,00,
+    <!--COSOffOn-->
+    00,00
+
+  </Value>
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Input DataType                                                            -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <DataType Name="AB:Embedded_DiscreteIO:I:0" Class="IO">
+    <Members>
+      <Member Name="Fault" DataType="DINT" Radix="Binary"></Member>
+      <Member Name="Data" DataType="INT" Radix="Binary"></Member>
+    </Members>
+  </DataType>
+  <Value ID="AB:Embedded_DiscreteIO:I:0">
+    <!--Fault-->
+    00,00,00,00,
+    <!--Data-->
+    00,00
+  </Value>
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <!-- Output DataType                                                           -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+  <DataType Name="AB:Embedded_DiscreteIO:O:0" Class="IO">
+    <Members>
+      <Member Name="Data" DataType="INT" Radix="Binary"></Member>
+    </Members>
+  </DataType>
+  <Value ID="AB:Embedded_DiscreteIO:O:0">
+    <!--Data-->
+    00,00
+  </Value>
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+  <!-- Strings                                                                  -->
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+  <Enum ID="FaultProgramEnum" StringsID="FaultProgramEnumStrings">
+    <Value StringID="1">0</Value>
+    <Value StringID="2">1</Value>
+    <Value StringID="3">2</Value>
+  </Enum>
+  <Strings ID="FaultProgramEnumStrings">
+    <String ID="1">
+      <Text LCID="1033">Off</Text>
+      <Text LCID="1036">Désactivé</Text>
+      <Text LCID="1031">Aus</Text>
+      <Text LCID="1034">Desactivado</Text>
+      <Text LCID="1046">Desativado</Text>
+      <Text LCID="1040">Disattivato</Text>
+      <Text LCID="1041">オフ</Text>
+      <Text LCID="1042">꺼짐</Text>
+      <Text LCID="2052">关闭</Text>
+    </String>
+    <String ID="2">
+      <Text LCID="1033">On</Text>
+      <Text LCID="1036">Activé</Text>
+      <Text LCID="1031">Ein</Text>
+      <Text LCID="1034">Activado</Text>
+      <Text LCID="1046">Ativado</Text>
+      <Text LCID="1040">Attivato</Text>
+      <Text LCID="1041">オン</Text>
+      <Text LCID="1042">켜짐</Text>
+      <Text LCID="2052">开启</Text>
+    </String>
+    <String ID="3">
+      <Text LCID="1033">Hold</Text>
+      <Text LCID="1036">Maintenu</Text>
+      <Text LCID="1031">Halten</Text>
+      <Text LCID="1034">Retener</Text>
+      <Text LCID="1046">Demora</Text>
+      <Text LCID="1040">Mantieni</Text>
+      <Text LCID="1041">保留</Text>
+      <Text LCID="1042">보류</Text>
+      <Text LCID="2052">保持</Text>
+    </String>
+  </Strings>
+  <Strings ID="ModuleDefinitionStrings">
+    <String ID="1">
+      <Text LCID="1033">Connection</Text>
+      <Text LCID="1036">Connexion</Text>
+      <Text LCID="1040">Collegamento</Text>
+      <Text LCID="1041">接続</Text>
+      <Text LCID="1042">연결</Text>
+      <Text LCID="2052">连接</Text>
+      <Text LCID="1031">Verbindung</Text>
+      <Text LCID="1034">Conexión</Text>
+      <Text LCID="1046">Conexão</Text>
+    </String>
+    <String ID="2">
+      <Text LCID="1033">Data</Text>
+      <Text LCID="1036">Données</Text>
+      <Text LCID="1040">Dati</Text>
+      <Text LCID="1041">データ</Text>
+      <Text LCID="1042">데이터</Text>
+      <Text LCID="2052">数据</Text>
+      <Text LCID="1031">Daten</Text>
+      <Text LCID="1034">Datos</Text>
+      <Text LCID="1046">Dados</Text>
+    </String>
+  </Strings>
+</AOPModuleTypes>

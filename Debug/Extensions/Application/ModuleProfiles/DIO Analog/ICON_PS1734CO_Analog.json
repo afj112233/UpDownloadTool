@@ -1,0 +1,2278 @@
+{
+  "ModuleTypes": [
+    {
+      "VendorID": 5,
+      "ProductType": 115,
+      "ProductCode": 211,
+      "Variants": [
+        {
+          "MajorRev": 1,
+          "ModuleID": "1734_OE4C",
+          "ModuleDefinitionID": "1734_OE4C",
+          "Default": true
+        }
+      ]
+    }
+  ],
+  "Modules": [
+    {
+      "ID": "1734_OE4C",
+      "NumberOfInputs": 0,
+      "NumberOfOutputs": 4,
+      "DriverType": 2050,
+      "CIPObjectDefinesID": "CIPObjects",
+      "SupportsReset": true
+    }
+  ],
+  "ModuleDefinitions": [
+    {
+      "ID": "1734_OE4C",
+      "StringsID": "ModuleDefinitionStrings",
+      "Connection": {
+        "StringID": 1,
+        "Choices": [
+          {
+            "ID": "Data",
+            "StringID": 9,
+            "DataFormat": "Integer",
+            "ConfigID": 400,
+            "CommMethod": 536870913
+          },
+          {
+            "ID": "Listen_Only",
+            "StringID": 6,
+            "DataFormat": "Integer",
+            "ConfigID": 65540,
+            "CommMethod": 671088642
+          },
+          {
+            "ID": "Enhanced_Rack_Optimization",
+            "StringID": 10,
+            "DataFormat": "Integer",
+            "ConfigID": 67108875
+          }
+        ]
+      },
+      "DataFormat": {
+        "StringID": 3,
+        "Choices": [
+          {
+            "ID": "Integer",
+            "StringID": 8
+          }
+        ]
+      }
+    }
+  ],
+  "ConnectionConfigDefinitions": [
+    {
+      "ConfigID": 400,
+      "ConfigTag": {
+        "ValueID": "AB:1734_OE4:C:0_CURRNET",
+        "Instance": 123,
+        "DataType": "AB:1734_OE4:C:0"
+      },
+      "Connections": [
+        "1734_AOUT4_DATA"
+      ]
+    },
+    {
+      "ConfigID": 65540,
+      "ConfigTag": {
+        "ValueID": "AB:1734_ANLO:C:0",
+        "Instance": 123,
+        "DataType": "AB:1734_ANLO:C:0"
+      },
+      "Connections": [
+        "1734_AOUT4_LO_DATA"
+      ]
+    },
+    {
+      "ConfigID": 67108875,
+      "ConfigTag": {
+        "ValueID": "AB:1734_OE4_ERACK:C:0_CURRNET",
+        "Instance": 123,
+        "DataType": "AB:1734_OE4_ERACK:C:0"
+      },
+      "Connections": [
+        "1734_AOUT4_ERACK"
+      ]
+    }
+  ],
+  "ConnectionDefinitions": [
+    {
+      "ID": "1734_AOUT4_DATA",
+      "Name": "OutputData",
+      "Type": "Output",
+      "MinRPI": 4000,
+      "MaxRPI": 750000,
+      "RPI": 80000,
+      "InputCxnPoint": 101,
+      "OutputCxnPoint": 102,
+      "InputTag": {
+        "DataType": "AB:1734_OE4:I:0"
+      },
+      "OutputTag": {
+        "DataType": "AB:1734_OE4:O:0"
+      }
+    },
+    {
+      "ID": "1734_AOUT4_LO_DATA",
+      "Name": "ListenOnlyData",
+      "Type": "Input",
+      "MinRPI": 4000,
+      "MaxRPI": 750000,
+      "RPI": 80000,
+      "InputCxnPoint": 101,
+      "OutputCxnPoint": 191,
+      "InputTag": {
+        "DataType": "AB:1734_OE4:I:0"
+      }
+    },
+    {
+      "ID": "1734_AOUT4_ERACK",
+      "Name": "Enhanced_Rack_Optimization",
+      "InputCxnPoint": 101,
+      "OutputCxnPoint": 102,
+      "InputTag": {
+        "DataType": "AB:1734_OE4_ERACK:I:0"
+      },
+      "OutputTag": {
+        "DataType": "AB:1734_OE4:O:0"
+      }
+    }
+  ],
+  "DataTypeDefinitions": [
+    {
+      "Name": "AB:1734_OE4:C:0",
+      "Class": "IO",
+      "Members": [
+        {
+          "Name": "CfgSize",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "CfgIDNum",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "Reserved",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "Ch0FaultValue",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch0ProgValue",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch0LowEngineering",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch0HighEngineering",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch0LowLimit",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch0HighLimit",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch0RangeType",
+          "DataType": "SINT"
+        },
+        {
+          "Name": "Ch0RangeCurrent",
+          "DataType": "BITFIELD",
+          "Enum": "ChannelOutputCurrentRangeType",
+          "Target": "Ch0RangeType"
+        },
+        {
+          "Name": "Ch0FaultMode",
+          "DataType": "SINT",
+          "Radix": "Decimal",
+          "Enum": "ChannelFaultMode"
+        },
+        {
+          "Name": "Ch0ProgMode",
+          "DataType": "SINT",
+          "Radix": "Decimal",
+          "Enum": "ChannelProgramMode"
+        },
+        {
+          "Name": "Ch0LimitAlarmLatch",
+          "DataType": "SINT",
+          "Radix": "Decimal"
+        },
+        {
+          "Name": "Ch0AlarmDisable",
+          "DataType": "SINT",
+          "Radix": "Decimal"
+        },
+        {
+          "Name": "Pad0",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "Ch1FaultValue",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch1ProgValue",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch1LowEngineering",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch1HighEngineering",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch1LowLimit",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch1HighLimit",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch1RangeType",
+          "DataType": "SINT",
+          "Radix": "Decimal"
+        },
+        {
+          "Name": "Ch1RangeCurrent",
+          "DataType": "BITFIELD",
+          "Enum": "ChannelOutputCurrentRangeType",
+          "Target": "Ch1RangeType"
+        },
+        {
+          "Name": "Ch1FaultMode",
+          "DataType": "SINT",
+          "Radix": "Decimal",
+          "Enum": "ChannelFaultMode"
+        },
+        {
+          "Name": "Ch1ProgMode",
+          "DataType": "SINT",
+          "Radix": "Decimal",
+          "Enum": "ChannelProgramMode"
+        },
+        {
+          "Name": "Ch1LimitAlarmLatch",
+          "DataType": "SINT",
+          "Radix": "Decimal"
+        },
+        {
+          "Name": "Ch1AlarmDisable",
+          "DataType": "SINT",
+          "Radix": "Decimal"
+        },
+        {
+          "Name": "Pad1",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "Ch2FaultValue",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch2ProgValue",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch2LowEngineering",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch2HighEngineering",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch2LowLimit",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch2HighLimit",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch2RangeType",
+          "DataType": "SINT"
+        },
+        {
+          "Name": "Ch2RangeCurrent",
+          "DataType": "BITFIELD",
+          "Enum": "ChannelOutputCurrentRangeType",
+          "Target": "Ch2RangeType"
+        },
+        {
+          "Name": "Ch2FaultMode",
+          "DataType": "SINT",
+          "Radix": "Decimal",
+          "Enum": "ChannelFaultMode"
+        },
+        {
+          "Name": "Ch2ProgMode",
+          "DataType": "SINT",
+          "Radix": "Decimal",
+          "Enum": "ChannelProgramMode"
+        },
+        {
+          "Name": "Ch2LimitAlarmLatch",
+          "DataType": "SINT",
+          "Radix": "Decimal"
+        },
+        {
+          "Name": "Ch2AlarmDisable",
+          "DataType": "SINT",
+          "Radix": "Decimal"
+        },
+        {
+          "Name": "Pad2",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "Ch3FaultValue",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch3ProgValue",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch3LowEngineering",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch3HighEngineering",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch3LowLimit",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch3HighLimit",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch3RangeType",
+          "DataType": "SINT",
+          "Radix": "Decimal"
+        },
+        {
+          "Name": "Ch3RangeCurrent",
+          "DataType": "BITFIELD",
+          "Enum": "ChannelOutputCurrentRangeType",
+          "Target": "Ch3RangeType"
+        },
+        {
+          "Name": "Ch3FaultMode",
+          "DataType": "SINT",
+          "Radix": "Decimal",
+          "Enum": "ChannelFaultMode"
+        },
+        {
+          "Name": "Ch3ProgMode",
+          "DataType": "SINT",
+          "Radix": "Decimal",
+          "Enum": "ChannelProgramMode"
+        },
+        {
+          "Name": "Ch3LimitAlarmLatch",
+          "DataType": "SINT",
+          "Radix": "Decimal"
+        },
+        {
+          "Name": "Ch3AlarmDisable",
+          "DataType": "SINT",
+          "Radix": "Decimal"
+        },
+        {
+          "Name": "Pad3",
+          "DataType": "SINT",
+          "Hidden": true
+        }
+      ]
+    },
+    {
+      "Name": "AB:1734_OE4_ERACK:C:0",
+      "Class": "IO",
+      "Members": [
+        {
+          "Name": "CfgSize",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "CfgIDNum",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "EnProdDataOffset",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "EnProdConnPt",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "EnProdSize",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "EnConsDataOffset",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "EnConsConnPt",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "EnConsSize",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "Reserved",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "Ch0FaultValue",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch0ProgValue",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch0LowEngineering",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch0HighEngineering",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch0LowLimit",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch0HighLimit",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch0RangeType",
+          "DataType": "SINT"
+        },
+        {
+          "Name": "Ch0RangeCurrent",
+          "DataType": "BITFIELD",
+          "Enum": "ChannelOutputCurrentRangeType",
+          "Target": "Ch0RangeType"
+        },
+        {
+          "Name": "Ch0FaultMode",
+          "DataType": "SINT",
+          "Radix": "Decimal",
+          "Enum": "ChannelFaultMode"
+        },
+        {
+          "Name": "Ch0ProgMode",
+          "DataType": "SINT",
+          "Radix": "Decimal",
+          "Enum": "ChannelProgramMode"
+        },
+        {
+          "Name": "Ch0LimitAlarmLatch",
+          "DataType": "SINT",
+          "Radix": "Decimal"
+        },
+        {
+          "Name": "Ch0AlarmDisable",
+          "DataType": "SINT",
+          "Radix": "Decimal"
+        },
+        {
+          "Name": "Pad0",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "Ch1FaultValue",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch1ProgValue",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch1LowEngineering",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch1HighEngineering",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch1LowLimit",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch1HighLimit",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch1RangeType",
+          "DataType": "SINT",
+          "Radix": "Decimal"
+        },
+        {
+          "Name": "Ch1RangeCurrent",
+          "DataType": "BITFIELD",
+          "Enum": "ChannelOutputCurrentRangeType",
+          "Target": "Ch1RangeType"
+        },
+        {
+          "Name": "Ch1FaultMode",
+          "DataType": "SINT",
+          "Radix": "Decimal",
+          "Enum": "ChannelFaultMode"
+        },
+        {
+          "Name": "Ch1ProgMode",
+          "DataType": "SINT",
+          "Radix": "Decimal",
+          "Enum": "ChannelProgramMode"
+        },
+        {
+          "Name": "Ch1LimitAlarmLatch",
+          "DataType": "SINT",
+          "Radix": "Decimal"
+        },
+        {
+          "Name": "Ch1AlarmDisable",
+          "DataType": "SINT",
+          "Radix": "Decimal"
+        },
+        {
+          "Name": "Pad1",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "Ch2FaultValue",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch2ProgValue",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch2LowEngineering",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch2HighEngineering",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch2LowLimit",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch2HighLimit",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch2RangeType",
+          "DataType": "SINT"
+        },
+        {
+          "Name": "Ch2RangeCurrent",
+          "DataType": "BITFIELD",
+          "Enum": "ChannelOutputCurrentRangeType",
+          "Target": "Ch2RangeType"
+        },
+        {
+          "Name": "Ch2FaultMode",
+          "DataType": "SINT",
+          "Radix": "Decimal",
+          "Enum": "ChannelFaultMode"
+        },
+        {
+          "Name": "Ch2ProgMode",
+          "DataType": "SINT",
+          "Radix": "Decimal",
+          "Enum": "ChannelProgramMode"
+        },
+        {
+          "Name": "Ch2LimitAlarmLatch",
+          "DataType": "SINT",
+          "Radix": "Decimal"
+        },
+        {
+          "Name": "Ch2AlarmDisable",
+          "DataType": "SINT",
+          "Radix": "Decimal"
+        },
+        {
+          "Name": "Pad2",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "Ch3FaultValue",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch3ProgValue",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch3LowEngineering",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch3HighEngineering",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch3LowLimit",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch3HighLimit",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch3RangeType",
+          "DataType": "SINT",
+          "Radix": "Decimal"
+        },
+        {
+          "Name": "Ch3RangeCurrent",
+          "DataType": "BITFIELD",
+          "Enum": "ChannelOutputCurrentRangeType",
+          "Target": "Ch3RangeType"
+        },
+        {
+          "Name": "Ch3FaultMode",
+          "DataType": "SINT",
+          "Radix": "Decimal",
+          "Enum": "ChannelFaultMode"
+        },
+        {
+          "Name": "Ch3ProgMode",
+          "DataType": "SINT",
+          "Radix": "Decimal",
+          "Enum": "ChannelProgramMode"
+        },
+        {
+          "Name": "Ch3LimitAlarmLatch",
+          "DataType": "SINT",
+          "Radix": "Decimal"
+        },
+        {
+          "Name": "Ch3AlarmDisable",
+          "DataType": "SINT",
+          "Radix": "Decimal"
+        },
+        {
+          "Name": "Pad3",
+          "DataType": "SINT",
+          "Hidden": true
+        }
+      ]
+    },
+    {
+      "Name": "AB:1734_OE4:I:0",
+      "Class": "IO",
+      "Members": [
+        {
+          "Name": "Fault",
+          "DataType": "DINT",
+          "Radix": "Binary"
+        },
+        {
+          "Name": "Ch0Status",
+          "DataType": "SINT",
+          "Radix": "Binary"
+        },
+        {
+          "Name": "Ch0Fault",
+          "DataType": "BIT",
+          "BitNumber": 0,
+          "Target": "Ch0Status"
+        },
+        {
+          "Name": "Ch0Calibration",
+          "DataType": "BIT",
+          "BitNumber": 1,
+          "Target": "Ch0Status"
+        },
+        {
+          "Name": "Ch0LAlarm",
+          "DataType": "BIT",
+          "BitNumber": 2,
+          "Target": "Ch0Status"
+        },
+        {
+          "Name": "Ch0HAlarm",
+          "DataType": "BIT",
+          "BitNumber": 3,
+          "Target": "Ch0Status"
+        },
+        {
+          "Name": "Ch1Status",
+          "DataType": "SINT",
+          "Radix": "Binary"
+        },
+        {
+          "Name": "Ch1Fault",
+          "DataType": "BIT",
+          "BitNumber": 0,
+          "Target": "Ch1Status"
+        },
+        {
+          "Name": "Ch1Calibration",
+          "DataType": "BIT",
+          "BitNumber": 1,
+          "Target": "Ch1Status"
+        },
+        {
+          "Name": "Ch1LAlarm",
+          "DataType": "BIT",
+          "BitNumber": 2,
+          "Target": "Ch1Status"
+        },
+        {
+          "Name": "Ch1HAlarm",
+          "DataType": "BIT",
+          "BitNumber": 3,
+          "Target": "Ch1Status"
+        },
+        {
+          "Name": "Ch2Status",
+          "DataType": "SINT",
+          "Radix": "Binary"
+        },
+        {
+          "Name": "Ch2Fault",
+          "DataType": "BIT",
+          "BitNumber": 0,
+          "Target": "Ch2Status"
+        },
+        {
+          "Name": "Ch2Calibration",
+          "DataType": "BIT",
+          "BitNumber": 1,
+          "Target": "Ch2Status"
+        },
+        {
+          "Name": "Ch2LAlarm",
+          "DataType": "BIT",
+          "BitNumber": 2,
+          "Target": "Ch2Status"
+        },
+        {
+          "Name": "Ch2HAlarm",
+          "DataType": "BIT",
+          "BitNumber": 3,
+          "Target": "Ch2Status"
+        },
+        {
+          "Name": "Ch3Status",
+          "DataType": "SINT",
+          "Radix": "Binary"
+        },
+        {
+          "Name": "Ch3Fault",
+          "DataType": "BIT",
+          "BitNumber": 0,
+          "Target": "Ch3Status"
+        },
+        {
+          "Name": "Ch3Calibration",
+          "DataType": "BIT",
+          "BitNumber": 1,
+          "Target": "Ch3Status"
+        },
+        {
+          "Name": "Ch3LAlarm",
+          "DataType": "BIT",
+          "BitNumber": 2,
+          "Target": "Ch3Status"
+        },
+        {
+          "Name": "Ch3HAlarm",
+          "DataType": "BIT",
+          "BitNumber": 3,
+          "Target": "Ch3Status"
+        }
+      ]
+    },
+    {
+      "Name": "AB:1734_OE4_ERACK:I:0",
+      "Class": "IO",
+      "Members": [
+        {
+          "Name": "Ch0Status",
+          "DataType": "SINT",
+          "Radix": "Binary"
+        },
+        {
+          "Name": "Ch0Fault",
+          "DataType": "BIT",
+          "BitNumber": 0,
+          "Target": "Ch0Status"
+        },
+        {
+          "Name": "Ch0Calibration",
+          "DataType": "BIT",
+          "BitNumber": 1,
+          "Target": "Ch0Status"
+        },
+        {
+          "Name": "Ch0LAlarm",
+          "DataType": "BIT",
+          "BitNumber": 2,
+          "Target": "Ch0Status"
+        },
+        {
+          "Name": "Ch0HAlarm",
+          "DataType": "BIT",
+          "BitNumber": 3,
+          "Target": "Ch0Status"
+        },
+        {
+          "Name": "Ch1Status",
+          "DataType": "SINT",
+          "Radix": "Binary"
+        },
+        {
+          "Name": "Ch1Fault",
+          "DataType": "BIT",
+          "BitNumber": 0,
+          "Target": "Ch1Status"
+        },
+        {
+          "Name": "Ch1Calibration",
+          "DataType": "BIT",
+          "BitNumber": 1,
+          "Target": "Ch1Status"
+        },
+        {
+          "Name": "Ch1LAlarm",
+          "DataType": "BIT",
+          "BitNumber": 2,
+          "Target": "Ch1Status"
+        },
+        {
+          "Name": "Ch1HAlarm",
+          "DataType": "BIT",
+          "BitNumber": 3,
+          "Target": "Ch1Status"
+        },
+        {
+          "Name": "Ch2Status",
+          "DataType": "SINT",
+          "Radix": "Binary"
+        },
+        {
+          "Name": "Ch2Fault",
+          "DataType": "BIT",
+          "BitNumber": 0,
+          "Target": "Ch2Status"
+        },
+        {
+          "Name": "Ch2Calibration",
+          "DataType": "BIT",
+          "BitNumber": 1,
+          "Target": "Ch2Status"
+        },
+        {
+          "Name": "Ch2LAlarm",
+          "DataType": "BIT",
+          "BitNumber": 2,
+          "Target": "Ch2Status"
+        },
+        {
+          "Name": "Ch2HAlarm",
+          "DataType": "BIT",
+          "BitNumber": 3,
+          "Target": "Ch2Status"
+        },
+        {
+          "Name": "Ch3Status",
+          "DataType": "SINT",
+          "Radix": "Binary"
+        },
+        {
+          "Name": "Ch3Fault",
+          "DataType": "BIT",
+          "BitNumber": 0,
+          "Target": "Ch3Status"
+        },
+        {
+          "Name": "Ch3Calibration",
+          "DataType": "BIT",
+          "BitNumber": 1,
+          "Target": "Ch3Status"
+        },
+        {
+          "Name": "Ch3LAlarm",
+          "DataType": "BIT",
+          "BitNumber": 2,
+          "Target": "Ch3Status"
+        },
+        {
+          "Name": "Ch3HAlarm",
+          "DataType": "BIT",
+          "BitNumber": 3,
+          "Target": "Ch3Status"
+        }
+      ]
+    },
+    {
+      "Name": "AB:1734_OE4:O:0",
+      "Class": "IO",
+      "Members": [
+        {
+          "Name": "Ch0Data",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch1Data",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch2Data",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        },
+        {
+          "Name": "Ch3Data",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "-32768",
+          "Max": "32767"
+        }
+      ]
+    },
+    {
+      "Name": "AB:1734_ANLO:C:0",
+      "Class": "IO",
+      "Members": [
+        {
+          "Name": "CfgSize",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "CfgIDNum",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "Data",
+          "DataType": "INT",
+          "Hidden": true
+        }
+      ]
+    }
+  ],
+  "DataValueDefinitions": [
+    {
+      "ID": "AB:1734_OE4:C:0_CURRNET",
+      "Data": "00,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,66,06,ff,1f,00,80,ff,7f,00,01,01,00,00,00,00,00,00,00,66,06,ff,1f,00,80,ff,7f,00,01,01,00,00,00,00,00,00,00,66,06,ff,1f,00,80,ff,7f,00,01,01,00,00,00,00,00,00,00,66,06,ff,1f,00,80,ff,7f,00,01,01,00,00,00"
+    },
+    {
+      "ID": "AB:1734_OE4_ERACK:C:0_CURRNET",
+      "Data": "00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,66,06,ff,1f,00,80,ff,7f,00,01,01,00,00,00,00,00,00,00,66,06,ff,1f,00,80,ff,7f,00,01,01,00,00,00,00,00,00,00,66,06,ff,1f,00,80,ff,7f,00,01,01,00,00,00,00,00,00,00,66,06,ff,1f,00,80,ff,7f,00,01,01,00,00,00"
+    },
+    {
+      "ID": "AB:1734_OE4:I:0",
+      "Data": "00,00,00,00,00,00,00,00"
+    },
+    {
+      "ID": "AB:1734_OE4_ERACK:I:0",
+      "Data": "00,00,00,00"
+    },
+    {
+      "ID": "AB:1734_OE4:O:0",
+      "Data": "00,00,00,00,00,00,00,00"
+    },
+    {
+      "ID": "AB:1734_ANLO:C:0",
+      "Data": "00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00"
+    }
+  ],
+  "StringDefines": [
+    {
+      "ID": "ChannelCurrentRangeTypeStrings",
+      "Strings": [
+        {
+          "ID": 1,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "4-20 mA"
+            },
+            {
+              "LCID": 1036,
+              "Text": "4-20 mA"
+            },
+            {
+              "LCID": 1031,
+              "Text": "4 bis 20 mA"
+            },
+            {
+              "LCID": 1034,
+              "Text": "4-20 mA"
+            },
+            {
+              "LCID": 1046,
+              "Text": "4 a 20 mA"
+            },
+            {
+              "LCID": 1040,
+              "Text": "4-20 mA"
+            },
+            {
+              "LCID": 1041,
+              "Text": "4～20 mA"
+            },
+            {
+              "LCID": 1042,
+              "Text": "4-20 mA"
+            },
+            {
+              "LCID": 2052,
+              "Text": "4-20 mA"
+            }
+          ]
+        },
+        {
+          "ID": 2,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "0-20 mA"
+            },
+            {
+              "LCID": 1036,
+              "Text": "0-20 mA"
+            },
+            {
+              "LCID": 1031,
+              "Text": "0 bis 20 mA"
+            },
+            {
+              "LCID": 1034,
+              "Text": "0-20 mA"
+            },
+            {
+              "LCID": 1046,
+              "Text": "0 a 20 mA"
+            },
+            {
+              "LCID": 1040,
+              "Text": "0-20 mA"
+            },
+            {
+              "LCID": 1041,
+              "Text": "0～20 mA"
+            },
+            {
+              "LCID": 1042,
+              "Text": "0-20 mA"
+            },
+            {
+              "LCID": 2052,
+              "Text": "0-20 毫安"
+            }
+          ]
+        },
+        {
+          "ID": 3,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "-10 to 10 V"
+            },
+            {
+              "LCID": 1036,
+              "Text": "-10 à 10 V"
+            },
+            {
+              "LCID": 1031,
+              "Text": "-10 bis 10&nbsp;V"
+            },
+            {
+              "LCID": 1034,
+              "Text": "De -10 a 10 V"
+            },
+            {
+              "LCID": 1046,
+              "Text": "-10 a 10 V"
+            },
+            {
+              "LCID": 1040,
+              "Text": "da -10 a 10 V"
+            },
+            {
+              "LCID": 1041,
+              "Text": "-10～10 V"
+            },
+            {
+              "LCID": 1042,
+              "Text": "-10V ~ 10V"
+            },
+            {
+              "LCID": 2052,
+              "Text": "-10 到 10 V"
+            }
+          ]
+        },
+        {
+          "ID": 4,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "0 to 10 V"
+            },
+            {
+              "LCID": 1036,
+              "Text": "0 à 10 V"
+            },
+            {
+              "LCID": 1031,
+              "Text": "0 bis 10&nbsp;V"
+            },
+            {
+              "LCID": 1034,
+              "Text": "De 0 a 10 V"
+            },
+            {
+              "LCID": 1046,
+              "Text": "0 a 10 V"
+            },
+            {
+              "LCID": 1040,
+              "Text": "da 0 a 10 V"
+            },
+            {
+              "LCID": 1041,
+              "Text": "0～10 V"
+            },
+            {
+              "LCID": 1042,
+              "Text": "0V ~ 10V"
+            },
+            {
+              "LCID": 2052,
+              "Text": "0 到 10 V"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "ChannelOutputCurrentRangeTypeStrings",
+      "Strings": [
+        {
+          "ID": 1,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "4-20 mA"
+            },
+            {
+              "LCID": 1036,
+              "Text": "4-20 mA"
+            },
+            {
+              "LCID": 1031,
+              "Text": "4 bis 20 mA"
+            },
+            {
+              "LCID": 1034,
+              "Text": "4-20 mA"
+            },
+            {
+              "LCID": 1046,
+              "Text": "4 a 20 mA"
+            },
+            {
+              "LCID": 1040,
+              "Text": "4-20 mA"
+            },
+            {
+              "LCID": 1041,
+              "Text": "4～20 mA"
+            },
+            {
+              "LCID": 1042,
+              "Text": "4-20 mA"
+            },
+            {
+              "LCID": 2052,
+              "Text": "4-20 毫安"
+            }
+          ]
+        },
+        {
+          "ID": 2,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "0-20 mA"
+            },
+            {
+              "LCID": 1036,
+              "Text": "0-20 mA"
+            },
+            {
+              "LCID": 1031,
+              "Text": "0 bis 20 mA"
+            },
+            {
+              "LCID": 1034,
+              "Text": "0-20 mA"
+            },
+            {
+              "LCID": 1046,
+              "Text": "0 a 20 mA"
+            },
+            {
+              "LCID": 1040,
+              "Text": "0-20 mA"
+            },
+            {
+              "LCID": 1041,
+              "Text": "0～20 mA"
+            },
+            {
+              "LCID": 1042,
+              "Text": "0-20 mA"
+            },
+            {
+              "LCID": 2052,
+              "Text": "0-20 毫安"
+            }
+          ]
+        },
+        {
+          "ID": 3,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "0 to 10 V"
+            },
+            {
+              "LCID": 1036,
+              "Text": "0 à 10 V"
+            },
+            {
+              "LCID": 1031,
+              "Text": "0 bis 10&nbsp;V"
+            },
+            {
+              "LCID": 1034,
+              "Text": "De 0 a 10 V"
+            },
+            {
+              "LCID": 1046,
+              "Text": "0 a 10 V"
+            },
+            {
+              "LCID": 1040,
+              "Text": "da 0 a 10 V"
+            },
+            {
+              "LCID": 1041,
+              "Text": "0～10 V"
+            },
+            {
+              "LCID": 1042,
+              "Text": "0V ~ 10V"
+            },
+            {
+              "LCID": 2052,
+              "Text": "0 到 10 V"
+            }
+          ]
+        },
+        {
+          "ID": 4,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "-10 to 10 V"
+            },
+            {
+              "LCID": 1036,
+              "Text": "-10 à 10 V"
+            },
+            {
+              "LCID": 1031,
+              "Text": "-10 bis 10&nbsp;V"
+            },
+            {
+              "LCID": 1034,
+              "Text": "De -10 a 10 V"
+            },
+            {
+              "LCID": 1046,
+              "Text": "-10 a 10 V"
+            },
+            {
+              "LCID": 1040,
+              "Text": "da -10 a 10 V"
+            },
+            {
+              "LCID": 1041,
+              "Text": "-10～10 V"
+            },
+            {
+              "LCID": 1042,
+              "Text": "-10V ~ 10V"
+            },
+            {
+              "LCID": 2052,
+              "Text": "-10 到 10 V"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "ChannelFaultModeStrings",
+      "Strings": [
+        {
+          "ID": 1,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Hold Last State"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Maintien du dernier état"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Letzten Zustand halten"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Retener último estado"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Manter último estado"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Mantieni ultimo stato"
+            },
+            {
+              "LCID": 1041,
+              "Text": "最後の状態を保持"
+            },
+            {
+              "LCID": 1042,
+              "Text": "마지막 상태 유지"
+            },
+            {
+              "LCID": 2052,
+              "Text": "保持上一状态"
+            }
+          ]
+        },
+        {
+          "ID": 2,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Go to Low Clamp"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Aller au verrouillage bas"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Gehe zu unterer Ausgangsbegrenzung"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Ir a fijación baja"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Ir para grampo baixo"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Vai a morsetto con soglia bassa"
+            },
+            {
+              "LCID": 1041,
+              "Text": "クランプ下限に移動"
+            },
+            {
+              "LCID": 1042,
+              "Text": "낮음 고정으로 이동"
+            },
+            {
+              "LCID": 2052,
+              "Text": "转至低钳位"
+            }
+          ]
+        },
+        {
+          "ID": 3,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Go to High Clamp"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Aller au verrouillage haut"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Gehe zu oberer Ausgangsbegrenzung"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Ir a fijación alta"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Ir para grampo alto"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Vai a morsetto con soglia alta"
+            },
+            {
+              "LCID": 1041,
+              "Text": "クランプ上限に移動"
+            },
+            {
+              "LCID": 1042,
+              "Text": "높음 고정으로 이동"
+            },
+            {
+              "LCID": 2052,
+              "Text": "转至高钳位"
+            }
+          ]
+        },
+        {
+          "ID": 4,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Use Fault Value"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Utiliser la valeur de défaut"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Fehlerwert verwenden"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Usar valor de fallo"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Usar valor de Fault"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Usa valore di errore"
+            },
+            {
+              "LCID": 1041,
+              "Text": "フォルト値を使用"
+            },
+            {
+              "LCID": 1042,
+              "Text": "오류 값 사용"
+            },
+            {
+              "LCID": 2052,
+              "Text": "使用故障值"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "ChannelProgramModeStrings",
+      "Strings": [
+        {
+          "ID": 1,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Hold Last State"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Maintien du dernier état"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Letzten Zustand halten"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Retener último estado"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Manter último estado"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Mantieni ultimo stato"
+            },
+            {
+              "LCID": 1041,
+              "Text": "最後の状態を保持"
+            },
+            {
+              "LCID": 1042,
+              "Text": "마지막 상태 유지"
+            },
+            {
+              "LCID": 2052,
+              "Text": "保持上一状态"
+            }
+          ]
+        },
+        {
+          "ID": 2,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Go to Low Clamp"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Aller au verrouillage bas"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Gehe zu unterer Ausgangsbegrenzung"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Ir a fijación baja"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Ir para grampo baixo"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Vai a morsetto con soglia bassa"
+            },
+            {
+              "LCID": 1041,
+              "Text": "クランプ下限に移動"
+            },
+            {
+              "LCID": 1042,
+              "Text": "낮음 고정으로 이동"
+            },
+            {
+              "LCID": 2052,
+              "Text": "转至低钳位"
+            }
+          ]
+        },
+        {
+          "ID": 3,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Go to High Clamp"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Aller au verrouillage haut"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Gehe zu oberer Ausgangsbegrenzung"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Ir a fijación alta"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Ir para grampo alto"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Vai a morsetto con soglia alta"
+            },
+            {
+              "LCID": 1041,
+              "Text": "クランプ上限に移動"
+            },
+            {
+              "LCID": 1042,
+              "Text": "높음 고정으로 이동"
+            },
+            {
+              "LCID": 2052,
+              "Text": "转至高钳位"
+            }
+          ]
+        },
+        {
+          "ID": 4,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Use Program Value"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Utiliser la valeur Program"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Program-Wert verwenden"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Usar valor de Program"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Usar valor de Program"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Usa valore Program"
+            },
+            {
+              "LCID": 1041,
+              "Text": "Program 値を使用"
+            },
+            {
+              "LCID": 1042,
+              "Text": "Program 값 사용"
+            },
+            {
+              "LCID": 2052,
+              "Text": "使用 Program 值"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "ModuleDefinitionStrings",
+      "Strings": [
+        {
+          "ID": 1,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Connection"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Connexion"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Verbindung"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Conexión"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Conexão"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Collegamento"
+            },
+            {
+              "LCID": 1041,
+              "Text": "接続"
+            },
+            {
+              "LCID": 1042,
+              "Text": "연결"
+            },
+            {
+              "LCID": 2052,
+              "Text": "连接"
+            }
+          ]
+        },
+        {
+          "ID": 2,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Mode"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Mode"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Modus"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Modo"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Modo"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Modalità"
+            },
+            {
+              "LCID": 1041,
+              "Text": "モード"
+            },
+            {
+              "LCID": 1042,
+              "Text": "모드"
+            },
+            {
+              "LCID": 2052,
+              "Text": "模式"
+            }
+          ]
+        },
+        {
+          "ID": 3,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Data Format"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Format des données"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Datenformat"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Formato de datos"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Formato de dados"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Formato di dati"
+            },
+            {
+              "LCID": 1041,
+              "Text": "データ形式"
+            },
+            {
+              "LCID": 1042,
+              "Text": "데이터 형식"
+            },
+            {
+              "LCID": 2052,
+              "Text": "数据格式"
+            }
+          ]
+        },
+        {
+          "ID": 4,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Output"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Sortie"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Ausgang"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Salida"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Saída"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Uscita"
+            },
+            {
+              "LCID": 1041,
+              "Text": "出力"
+            },
+            {
+              "LCID": 1042,
+              "Text": "출력"
+            },
+            {
+              "LCID": 2052,
+              "Text": "输出"
+            }
+          ]
+        },
+        {
+          "ID": 5,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Input"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Entrée"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Eingang"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Entrada"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Entrada"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Ingresso"
+            },
+            {
+              "LCID": 1041,
+              "Text": "入力"
+            },
+            {
+              "LCID": 1042,
+              "Text": "입력"
+            },
+            {
+              "LCID": 2052,
+              "Text": "输入"
+            }
+          ]
+        },
+        {
+          "ID": 6,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Listen Only"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Écoute seule"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Nur-Lesen"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Sólo recepción"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Somente escuta"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Solo ascolto"
+            },
+            {
+              "LCID": 1041,
+              "Text": "リッスン専用"
+            },
+            {
+              "LCID": 1042,
+              "Text": "수신 전용"
+            },
+            {
+              "LCID": 2052,
+              "Text": "只听"
+            }
+          ]
+        },
+        {
+          "ID": 7,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": null
+            },
+            {
+              "LCID": 1036,
+              "Text": null
+            },
+            {
+              "LCID": 1031,
+              "Text": null
+            },
+            {
+              "LCID": 1034,
+              "Text": null
+            },
+            {
+              "LCID": 1046,
+              "Text": null
+            },
+            {
+              "LCID": 1040,
+              "Text": null
+            },
+            {
+              "LCID": 1041,
+              "Text": null
+            },
+            {
+              "LCID": 1042,
+              "Text": null
+            },
+            {
+              "LCID": 2052,
+              "Text": null
+            }
+          ]
+        },
+        {
+          "ID": 8,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Integer"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Entier"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Ganzzahl"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Entero"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Inteiro"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Numero intero"
+            },
+            {
+              "LCID": 1041,
+              "Text": "整数"
+            },
+            {
+              "LCID": 1042,
+              "Text": "정수"
+            },
+            {
+              "LCID": 2052,
+              "Text": "整型"
+            }
+          ]
+        },
+        {
+          "ID": 9,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Data"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Données"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Daten"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Datos"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Dados"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Dati"
+            },
+            {
+              "LCID": 1041,
+              "Text": "データ"
+            },
+            {
+              "LCID": 1042,
+              "Text": "데이터"
+            },
+            {
+              "LCID": 2052,
+              "Text": "数据"
+            }
+          ]
+        },
+        {
+          "ID": 10,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Enhanced Rack Optimization"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Optimisation du rack"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Rack-Optimierung"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Optimización de rack"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Otimização de gaveta"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Ottimizzazione rack"
+            },
+            {
+              "LCID": 1041,
+              "Text": "ラック最適化"
+            },
+            {
+              "LCID": 1042,
+              "Text": "랙 최적화"
+            },
+            {
+              "LCID": 2052,
+              "Text": "机架优化"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

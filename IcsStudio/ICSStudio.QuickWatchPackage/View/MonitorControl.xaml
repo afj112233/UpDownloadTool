@@ -1,0 +1,554 @@
+﻿<UserControl
+    x:Class="ICSStudio.QuickWatchPackage.View.MonitorControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:command="http://www.galasoft.ch/mvvmlight"
+    xmlns:controls="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
+    xmlns:controls1="clr-namespace:ICSStudio.Components.Controls;assembly=ICSStudio.Components"
+    xmlns:converters="clr-namespace:ICSStudio.Gui.Converters;assembly=ICSStudio.Gui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:local="clr-namespace:ICSStudio.QuickWatchPackage.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:ui="clr-namespace:ICSStudio.QuickWatchPackage.View.UI"
+    xmlns:view="clr-namespace:ICSStudio.Gui.View;assembly=ICSStudio.Gui"
+    d:DesignHeight="300"
+    d:DesignWidth="700"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Resources/Styles/ToggleStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <BitmapImage x:Key="PencilImage" UriSource="pack://application:,,,/ICSStudio.Gui;component/Resources/image/Pencil_16x16.png" />
+            <DataTemplate x:Key="AsteriskTemplate">
+                <TextBlock
+                    Width="11"
+                    Height="11"
+                    Margin="0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Text="*"
+                    ToolTip="New" />
+            </DataTemplate>
+
+            <DataTemplate x:Key="PencilTemplate">
+                <Image
+                    Width="11"
+                    Height="11"
+                    Margin="0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Source="{StaticResource PencilImage}" />
+            </DataTemplate>
+
+            <DataTemplate x:Key="InDataTemplate">
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="18"
+                    Text="I" />
+            </DataTemplate>
+
+            <DataTemplate x:Key="InOutDataTemplate">
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="18"
+                    Text="IO" />
+            </DataTemplate>
+
+            <DataTemplate x:Key="OutDataTemplate">
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="18"
+                    Text="O" />
+            </DataTemplate>
+            <view:BindingProxy x:Key="MainScopeProxy" Data="{Binding Scope}" />
+            <view:BindingProxy x:Key="MainControllerProxy" Data="{Binding Controller}" />
+            <view:BindingProxy x:Key="ContentProxy" Data="{Binding}" />
+            <converters:IsChangedConverter x:Key="IsChangedConverter" />
+            <converters:IsVisibleConverter x:Key="IsVisibleConverter" />
+            <ui:StringFormatConverter x:Key="StringFormatConverter" />
+            <!--<converters:EnumToDisplayNameConverter x:Key="EnumToDisplayNameConverter" />-->
+
+            <view:BindableCommand x:Key="CopyCommand" Command="{Binding CopyCommand}" />
+            <view:BindableCommand x:Key="CutCommand" Command="{Binding CutCommand}" />
+            <view:BindableCommand x:Key="PasteCommand" Command="{Binding PasteCommand}" />
+            <view:BindableCommand x:Key="DeleteCommand" Command="{Binding DeleteCommand}" />
+
+            <!--  For DataGrid  -->
+
+            <DataTemplate x:Key="ValueTemplate">
+                <Grid x:Name="ValueGrid" Margin="-1">
+                    <TextBlock
+                        x:Name="ValueTextBlock"
+                        HorizontalAlignment="Right"
+                        TextTrimming="CharacterEllipsis">
+                        <TextBlock.Text>
+                            <MultiBinding Converter="{StaticResource StringFormatConverter}">
+                                <Binding Path="Value" />
+                                <Binding Path="DisplayStyle" />
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </Grid>
+                <DataTemplate.Triggers>
+                    <DataTrigger Binding="{Binding IsValueEnabled}" Value="false">
+                        <Setter TargetName="ValueGrid" Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />
+                        <Setter TargetName="ValueTextBlock" Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+                    </DataTrigger>
+                </DataTemplate.Triggers>
+            </DataTemplate>
+
+            <ResourceDictionary x:Key="ValueEditing.Templates">
+                <DataTemplate x:Key="{x:Type ui:StructOrArrayValue}">
+                    <TextBlock HorizontalAlignment="Right">
+                        <TextBlock.Text>
+                            <MultiBinding Converter="{StaticResource StringFormatConverter}">
+                                <Binding Path="Value" />
+                                <Binding Path="DisplayStyle" />
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </DataTemplate>
+                <DataTemplate x:Key="{x:Type system:Boolean}">
+                    <TextBox HorizontalAlignment="Stretch" TextAlignment="Right">
+                        <TextBox.Text>
+                            <MultiBinding Converter="{StaticResource StringFormatConverter}">
+                                <Binding Path="EditValue" />
+                                <Binding Path="DisplayStyle" />
+                                <MultiBinding.ValidationRules>
+                                    <ui:BoolValidationRule />
+                                </MultiBinding.ValidationRules>
+                            </MultiBinding>
+                        </TextBox.Text>
+                    </TextBox>
+                </DataTemplate>
+                <DataTemplate x:Key="{x:Type system:Byte}">
+                    <TextBox HorizontalAlignment="Stretch" TextAlignment="Right">
+                        <TextBox.Resources>
+                            <view:BindingProxy x:Key="Proxy" Data="{Binding}" />
+                        </TextBox.Resources>
+                        <TextBox.Text>
+                            <MultiBinding Converter="{StaticResource StringFormatConverter}">
+                                <Binding Path="EditValue" />
+                                <Binding Path="DisplayStyle" />
+                                <MultiBinding.ValidationRules>
+                                    <ui:ByteValidationRule>
+                                        <ui:ByteValidationRule.Wrapper>
+                                            <ui:Wrapper DisplayStyle="{Binding Data.DisplayStyle, Source={StaticResource Proxy}}" />
+                                        </ui:ByteValidationRule.Wrapper>
+                                    </ui:ByteValidationRule>
+                                </MultiBinding.ValidationRules>
+                            </MultiBinding>
+                        </TextBox.Text>
+                    </TextBox>
+                </DataTemplate>
+                <DataTemplate x:Key="{x:Type system:SByte}">
+                    <TextBox HorizontalAlignment="Stretch" TextAlignment="Right">
+                        <TextBox.Resources>
+                            <view:BindingProxy x:Key="Proxy" Data="{Binding}" />
+                        </TextBox.Resources>
+                        <TextBox.Text>
+                            <MultiBinding Converter="{StaticResource StringFormatConverter}">
+                                <Binding Path="EditValue" />
+                                <Binding Path="DisplayStyle" />
+                                <MultiBinding.ValidationRules>
+                                    <ui:SByteValidationRule>
+                                        <ui:SByteValidationRule.Wrapper>
+                                            <ui:Wrapper DisplayStyle="{Binding Data.DisplayStyle, Source={StaticResource Proxy}}" />
+                                        </ui:SByteValidationRule.Wrapper>
+                                    </ui:SByteValidationRule>
+                                </MultiBinding.ValidationRules>
+                            </MultiBinding>
+                        </TextBox.Text>
+                    </TextBox>
+                </DataTemplate>
+                <DataTemplate x:Key="{x:Type system:Int16}">
+                    <TextBox HorizontalAlignment="Stretch" TextAlignment="Right">
+                        <TextBox.Resources>
+                            <view:BindingProxy x:Key="Proxy" Data="{Binding}" />
+                        </TextBox.Resources>
+                        <TextBox.Text>
+                            <MultiBinding Converter="{StaticResource StringFormatConverter}">
+                                <Binding Path="EditValue" />
+                                <Binding Path="DisplayStyle" />
+                                <MultiBinding.ValidationRules>
+                                    <ui:Int16ValidationRule>
+                                        <ui:Int16ValidationRule.Wrapper>
+                                            <ui:Wrapper DisplayStyle="{Binding Data.DisplayStyle, Source={StaticResource Proxy}}" />
+                                        </ui:Int16ValidationRule.Wrapper>
+                                    </ui:Int16ValidationRule>
+                                </MultiBinding.ValidationRules>
+                            </MultiBinding>
+                        </TextBox.Text>
+                    </TextBox>
+                </DataTemplate>
+                <DataTemplate x:Key="{x:Type system:Int32}">
+                    <TextBox HorizontalAlignment="Stretch" TextAlignment="Right">
+                        <TextBox.Resources>
+                            <view:BindingProxy x:Key="Proxy" Data="{Binding}" />
+                        </TextBox.Resources>
+                        <TextBox.Text>
+                            <MultiBinding Converter="{StaticResource StringFormatConverter}">
+                                <Binding Path="EditValue" />
+                                <Binding Path="DisplayStyle" />
+                                <MultiBinding.ValidationRules>
+                                    <ui:Int32ValidationRule>
+                                        <ui:Int32ValidationRule.Wrapper>
+                                            <ui:Wrapper DisplayStyle="{Binding Data.DisplayStyle, Source={StaticResource Proxy}}" />
+                                        </ui:Int32ValidationRule.Wrapper>
+                                    </ui:Int32ValidationRule>
+                                </MultiBinding.ValidationRules>
+                            </MultiBinding>
+                        </TextBox.Text>
+                    </TextBox>
+                </DataTemplate>
+                <DataTemplate x:Key="{x:Type system:Int64}">
+                    <TextBox HorizontalAlignment="Stretch" TextAlignment="Right">
+                        <TextBox.Resources>
+                            <view:BindingProxy x:Key="Proxy" Data="{Binding}" />
+                        </TextBox.Resources>
+                        <TextBox.Text>
+                            <MultiBinding Converter="{StaticResource StringFormatConverter}">
+                                <Binding Path="EditValue" />
+                                <Binding Path="DisplayStyle" />
+                                <MultiBinding.ValidationRules>
+                                    <ui:Int64ValidationRule>
+                                        <ui:Int64ValidationRule.Wrapper>
+                                            <ui:Wrapper DisplayStyle="{Binding Data.DisplayStyle, Source={StaticResource Proxy}}" />
+                                        </ui:Int64ValidationRule.Wrapper>
+                                    </ui:Int64ValidationRule>
+                                </MultiBinding.ValidationRules>
+                            </MultiBinding>
+                        </TextBox.Text>
+                    </TextBox>
+                </DataTemplate>
+                <DataTemplate x:Key="{x:Type system:Single}">
+                    <TextBox HorizontalAlignment="Stretch" TextAlignment="Right">
+                        <TextBox.Text>
+                            <MultiBinding Converter="{StaticResource StringFormatConverter}">
+                                <Binding Path="EditValue" />
+                                <Binding Path="DisplayStyle" />
+                                <MultiBinding.ValidationRules>
+                                    <ui:SingleValidationRule />
+                                </MultiBinding.ValidationRules>
+                            </MultiBinding>
+                        </TextBox.Text>
+                    </TextBox>
+                </DataTemplate>
+                <DataTemplate x:Key="{x:Type system:String}">
+                    <Grid>
+                        <Button
+                            Width="17"
+                            Height="15"
+                            MinWidth="17"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Panel.ZIndex="99"
+                            Command="{Binding StringBrowseCommand}"
+                            Content="..." />
+                        <TextBox
+                            Padding="16,0,0,0"
+                            HorizontalAlignment="Stretch"
+                            IsReadOnly="True"
+                            TextAlignment="Right">
+                            <TextBox.Resources>
+                                <view:BindingProxy x:Key="Proxy" Data="{Binding}" />
+                            </TextBox.Resources>
+                            <TextBox.Text>
+                                <MultiBinding Converter="{StaticResource StringFormatConverter}">
+                                    <Binding Path="EditValue" />
+                                    <Binding Path="DisplayStyle" />
+                                    <MultiBinding.ValidationRules>
+                                        <ui:StringValidationRule>
+                                            <ui:StringValidationRule.Params>
+                                                <ui:ValidationParams Data="{Binding Data.DataField, Source={StaticResource Proxy}}" />
+                                            </ui:StringValidationRule.Params>
+                                        </ui:StringValidationRule>
+                                    </MultiBinding.ValidationRules>
+                                </MultiBinding>
+                            </TextBox.Text>
+                        </TextBox>
+                    </Grid>
+                </DataTemplate>
+                <DataTemplate x:Key="ReadOnly">
+                    <TextBlock
+                        x:Name="ValueTextBlock"
+                        HorizontalAlignment="Stretch"
+                        Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"
+                        Foreground="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"
+                        TextAlignment="Right"
+                        TextTrimming="CharacterEllipsis">
+                        <TextBlock.Text>
+                            <MultiBinding Converter="{StaticResource StringFormatConverter}">
+                                <Binding Path="Value" />
+                                <Binding Path="DisplayStyle" />
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </DataTemplate>
+            </ResourceDictionary>
+
+            <DataTemplate x:Key="ValueEditingTemplate">
+                <ContentControl Content="{Binding}">
+                    <ContentControl.ContentTemplateSelector>
+                        <ui:ValueEditingTemplateSelector Resources="{StaticResource ValueEditing.Templates}" />
+                    </ContentControl.ContentTemplateSelector>
+                </ContentControl>
+            </DataTemplate>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <DataGrid
+            x:Name="MainDataGrid"
+            MaxWidth="2560"
+            MaxHeight="1600"
+            AddingNewItem="DataGrid_AddingNewItem"
+            AutoGenerateColumns="False"
+            BeginningEdit="DataGrid_OnBeginningEdit"
+            CanUserAddRows="{Binding CanUserAddRows}"
+            CanUserDeleteRows="{Binding CanUserAddRows}"
+            CanUserResizeRows="False"
+            CellEditEnding="MainDataGrid_OnCellEditEnding"
+            CurrentCellChanged="MainDataGrid_OnCurrentCellChanged"
+            InitializingNewItem="DataGrid_OnInitializingNewItem"
+            IsSynchronizedWithCurrentItem="True"
+            ItemsSource="{Binding MonitorTagCollection}"
+            LoadingRow="DataGrid_OnLoadingRow"
+            RowEditEnding="DataGrid_OnRowEditEnding"
+            ScrollViewer.ScrollChanged="MainDataGrid_OnScrollChanged"
+            SelectedItem="{Binding SelectedMonitorTagItem, TargetNullValue={x:Static CollectionView.NewItemPlaceholder}}"
+            SelectionMode="Extended"
+            UnloadingRow="DataGrid_OnUnloadingRow"
+            Validation.ErrorTemplate="{x:Null}"
+            VirtualizingStackPanel.IsVirtualizing="true"
+            VirtualizingStackPanel.VirtualizationMode="Recycling">
+            <DataGrid.Resources>
+                <!--  Name  -->
+                <DataTemplate x:Key="EmptyNameTemplate" />
+                <DataTemplate x:Key="ReadonlyNameTemplate">
+                    <StackPanel
+                        Margin="-1"
+                        Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"
+                        Orientation="Horizontal">
+                        <TextBlock Margin="0" Text="{Binding Placeholder, Mode=OneWay}" />
+                        <ToggleButton
+                            IsChecked="{Binding IsExpanded, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            Style="{StaticResource ExpandCollapseToggleStyle}"
+                            Visibility="{Binding HasChildren, Mode=OneWay, Converter={StaticResource IsVisibleConverter}, UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBlock
+                            Margin="2"
+                            VerticalAlignment="Center"
+                            Foreground="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"
+                            Text="{Binding Name, Mode=OneWay}" />
+                    </StackPanel>
+                </DataTemplate>
+                <DataTemplate x:Key="EditableNameTemplate">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="0" Text="{Binding Placeholder, Mode=OneWay}" />
+                        <!--<ToggleButton Style="{StaticResource ExpandCollapseToggleStyle}"
+                                  IsChecked="{Binding IsExpanded,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                  Visibility="{Binding HasChildren,Mode=OneWay,Converter={StaticResource IsVisibleConverter},UpdateSourceTrigger=PropertyChanged}" />-->
+                        <TextBlock
+                            Margin="2"
+                            VerticalAlignment="Center"
+                            Text="{Binding Name, Mode=OneWay}" />
+                    </StackPanel>
+                </DataTemplate>
+                <DataTemplate x:Key="EditingNameTemplate">
+                    <DockPanel>
+                        <TextBlock
+                            Margin="0"
+                            DockPanel.Dock="Left"
+                            Text="{Binding Placeholder, Mode=OneWay}" />
+                        <ToggleButton
+                            DockPanel.Dock="Left"
+                            IsChecked="{Binding IsExpanded, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            Style="{StaticResource ExpandCollapseToggleStyle}"
+                            Visibility="{Binding HasChildren, Mode=OneWay, Converter={StaticResource IsVisibleConverter}, UpdateSourceTrigger=PropertyChanged}" />
+                        <Grid>
+                            <controls1:FastAutoCompleteTextBox
+                                Margin="2,0,0,0"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Center"
+                                IsEnabled="{Binding IsEnabled}"
+                                IsTextCompletionEnabled="True"
+                                TextChanged="AutoCompleteBox_OnTextChanged"
+                                Data="{Binding Data.NameList, Source={StaticResource ContentProxy}}"
+                                MaxDropDownHeight="0">
+                                <controls:AutoCompleteBox.Resources>
+                                    <view:BindingProxy x:Key="Proxy" Data="{Binding}" />
+                                </controls:AutoCompleteBox.Resources>
+                                <controls:AutoCompleteBox.Text>
+                                    <Binding
+                                        Mode="TwoWay"
+                                        Path="Name"
+                                        UpdateSourceTrigger="LostFocus"
+                                        ValidatesOnDataErrors="True">
+                                        <Binding.ValidationRules>
+                                            <ExceptionValidationRule />
+                                            <ui:TagNameValidationRule>
+                                                <ui:TagNameValidationRule.Param>
+                                                    <ui:ValidationParam
+                                                        Controller="{Binding Data, Source={StaticResource MainControllerProxy}}"
+                                                        DataContent="{Binding Data, Source={StaticResource ContentProxy}}"
+                                                        Scope="{Binding Data, Source={StaticResource MainScopeProxy}}"
+                                                        TagItem="{Binding Data, Source={StaticResource Proxy}}" />
+                                                </ui:TagNameValidationRule.Param>
+                                            </ui:TagNameValidationRule>
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </controls:AutoCompleteBox.Text>
+                            </controls1:FastAutoCompleteTextBox>
+                            <Button
+                                Width="18"
+                                Height="18"
+                                MinWidth="18"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Top"
+                                Background="Transparent"
+                                BorderBrush="Transparent"
+                                Command="{Binding Data.NameFilterCommand, Source={StaticResource ContentProxy}}"
+                                CommandParameter="{Binding RelativeSource={RelativeSource Self}}">
+                                <Button.Content>
+                                    <Path Data="M0,4L5,9L10,4" Stroke="Black" />
+                                </Button.Content>
+                            </Button>
+                        </Grid>
+                    </DockPanel>
+                </DataTemplate>
+                <view:BindingProxy x:Key="Proxy" Data="{Binding}" />
+                <ContextMenu x:Key="NameHeaderMenu" DataContext="{Binding Data, Source={StaticResource Proxy}}">
+                    <MenuItem
+                        Command="{Binding SortCommand}"
+                        CommandParameter="Name"
+                        Header="{DynamicResource Sort Column}" />
+                    <MenuItem
+                        Command="{Binding SortIncludeTagMembersCommand}"
+                        CommandParameter="Name"
+                        Header="{DynamicResource Include Tag Members In Sorting}"
+                        IsChecked="{Binding IncludeTagMembersInSorting, Mode=OneWay}" />
+                </ContextMenu>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="FontWeight" Value="Bold" />
+                    <Style.Triggers>
+                        <Trigger Property="Content" Value="Name">
+                            <Setter Property="ContextMenu" Value="{StaticResource NameHeaderMenu}" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+                <ContextMenu x:Key="RowMenu" DataContext="{Binding Data, Source={StaticResource Proxy}}">
+                    <MenuItem Command="Cut" Header="{DynamicResource Cut}" />
+                    <MenuItem Command="Copy" Header="{DynamicResource Copy}" />
+                    <MenuItem Command="Paste" Header="{DynamicResource Paste}" />
+                    <MenuItem Command="Delete" Header="{DynamicResource Delete}" />
+                </ContextMenu>
+            </DataGrid.Resources>
+            <DataGrid.CommandBindings>
+                <view:RelayCommandBinding Command="{x:Static ApplicationCommands.Copy}" RelayCommand="{StaticResource CopyCommand}" />
+                <view:RelayCommandBinding Command="{x:Static ApplicationCommands.Cut}" RelayCommand="{StaticResource CutCommand}" />
+                <view:RelayCommandBinding Command="{x:Static ApplicationCommands.Paste}" RelayCommand="{StaticResource PasteCommand}" />
+                <view:RelayCommandBinding Command="{x:Static ApplicationCommands.Delete}" RelayCommand="{StaticResource DeleteCommand}" />
+
+            </DataGrid.CommandBindings>
+
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Setter Property="ContextMenu" Value="{StaticResource RowMenu}" />
+                </Style>
+            </DataGrid.RowStyle>
+            <DataGrid.Columns>
+                <!--  Name  -->
+                <DataGridTemplateColumn Width="250">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{DynamicResource Name}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplateSelector>
+                        <ui:NameSelector
+                            EditableTemplate="{StaticResource EditableNameTemplate}"
+                            NewItemPlaceholderTemplate="{StaticResource EmptyNameTemplate}"
+                            ReadonlyTemplate="{StaticResource ReadonlyNameTemplate}" />
+                    </DataGridTemplateColumn.CellTemplateSelector>
+                    <DataGridTemplateColumn.CellEditingTemplateSelector>
+                        <ui:NameSelector 
+                            EditableTemplate="{StaticResource EditingNameTemplate}" 
+                            ReadonlyTemplate="{StaticResource ReadonlyNameTemplate}" />
+                    </DataGridTemplateColumn.CellEditingTemplateSelector>
+                </DataGridTemplateColumn>
+
+                <!--  Scope  -->
+                <DataGridTemplateColumn IsReadOnly="True">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{DynamicResource Scope}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock 
+                                Text="{Binding Scope}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <!--  Value  -->
+                <DataGridTemplateColumn
+                    Width="280"
+                    CellEditingTemplate="{StaticResource ValueEditingTemplate}"
+                    CellTemplate="{StaticResource ValueTemplate}">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Data.ValueColumnName, Source={StaticResource Proxy}}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                </DataGridTemplateColumn>
+               
+                <!--  Force Mask  -->
+                <DataGridTemplateColumn Width="130" >
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{DynamicResource ForceMask}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="-1" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+              
+
+                <!--  Description  -->
+                <DataGridTemplateColumn
+                    Width="128"
+                    IsReadOnly="True">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{DynamicResource Description}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock VerticalAlignment="Center" Text="{Binding Description, Mode=OneWay}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+            <DataGrid.RowHeaderTemplate>
+                <DataTemplate>
+                    <TextBlock
+                        Width="10"
+                        VerticalAlignment="Center"
+                        Text="{Binding IsChanged, Mode=OneWay, Converter={StaticResource IsChangedConverter}, UpdateSourceTrigger=PropertyChanged}" />
+                </DataTemplate>
+            </DataGrid.RowHeaderTemplate>
+        </DataGrid>
+    </Grid>
+</UserControl>

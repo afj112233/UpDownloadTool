@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="ICSStudio.UIServicesPackage.ProgramProperties.Panel.ESGeneral"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ICSStudio.UIServicesPackage.ProgramProperties.Panel"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="560" d:DesignWidth="500">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <Style TargetType="xctk:SingleUpDown">
+                <Setter Property="Padding" Value="0,-2,0,0"></Setter>
+            </Style>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="{DynamicResource Name:}"></TextBlock>
+        <TextBox Grid.Row="0" Grid.Column="2"  Width="350" Text="{Binding Name,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{DynamicResource Description:}" VerticalAlignment="Top"></TextBlock>
+        <TextBox Grid.Row="1" Grid.Column="2" Width="350" Height="100"   TextWrapping="Wrap" AcceptsReturn="True"  VerticalScrollBarVisibility="Visible" Text="{Binding Description,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="{DynamicResource Parent:}"></TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="2" Text="{Binding Parent}"></TextBlock>
+
+        <TextBlock Grid.Column="0" Grid.Row="4" Text="{DynamicResource Schedule in:}" Grid.ColumnSpan="2">
+        </TextBlock>
+        <TextBlock Grid.Column="2" Grid.Row="4" Text="{Binding TaskName}">
+        </TextBlock>
+
+        <TextBlock Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" FontSize="10" HorizontalAlignment="Left" Visibility="{Binding Type3}" xml:space="preserve" Text="{DynamicResource Major}"></TextBlock>
+        <TextBlock Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" FontSize="10" HorizontalAlignment="Center" Visibility="{Binding Type3}" Text="{DynamicResource Minor}"></TextBlock>
+        <TextBlock Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" FontSize="10" HorizontalAlignment="Right" Visibility="{Binding Type3}" Text="{DynamicResource Extended text}" ></TextBlock>
+        <TextBlock Grid.Row="6" Grid.Column="0" Visibility="{Binding Type3}" Text="{DynamicResource Revision:}"></TextBlock>
+        <xctk:SingleUpDown  Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" VerticalContentAlignment="Center"
+                            AllowSpin="True" ShowButtonSpinner="True" Width="70" Height="20"
+                            Minimum="0" Maximum="65535"  Increment="1" Text="{Binding Major,UpdateSourceTrigger=PropertyChanged}"
+                            Visibility="{Binding Type3}" HorizontalAlignment="Left"/>
+        <xctk:SingleUpDown  Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalContentAlignment="Center"
+                            AllowSpin="True" ShowButtonSpinner="True" Width="70" Height="20" 
+                            Minimum="0" Maximum="65535" Increment="1"  Text="{Binding Minor,UpdateSourceTrigger=PropertyChanged}"
+                            Visibility="{Binding Type3}">
+            <xctk:SingleUpDown.Margin>
+                <Thickness Left="-8"></Thickness>
+            </xctk:SingleUpDown.Margin>
+        </xctk:SingleUpDown>
+        <TextBox Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Width="100" HorizontalAlignment="Right"  Visibility="{Binding Type3}" Text="{Binding ExtendedText,UpdateSourceTrigger=PropertyChanged}" VerticalContentAlignment="Center">
+            <TextBox.Margin>
+                <Thickness Right="3"></Thickness>
+            </TextBox.Margin>
+        </TextBox>
+        <TextBlock Grid.Row="7" Grid.Column="0" Visibility="{Binding Type3}" VerticalAlignment="Top" Text="{DynamicResource Revision note:}"></TextBlock>
+        <TextBox Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Visibility="{Binding Type3}" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" AcceptsReturn="True" Height="100" Text="{Binding RevisionNote,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+    </Grid>
+</UserControl>

@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D44093AE-669C-43E7-9676-C1661D8E6DEA}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICSStudio.Components</RootNamespace>
+    <AssemblyName>ICSStudio.Components</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>$(SolutionDir)\build\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>$(SolutionDir)\build\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>ICSStudio.Components.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CommonServiceLocator.2.0.4\lib\net45\CommonServiceLocator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DotNetProjects.Input.Toolkit, Version=6.1.91.0, Culture=neutral, PublicKeyToken=79778c5f2eed289b, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DotNetProjects.WpfToolkit.Input.6.1.91\lib\net40\DotNetProjects.Input.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.4.1.0, Culture=neutral, PublicKeyToken=0ffbc31322e9d308, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmLightLibsStd10.5.4.1.1\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmLightLibsStd10.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmLightLibsStd10.5.4.1.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Automation\Peers\WrappingTextBoxAutomationPeer.cs" />
+    <Compile Include="Controls\DataGridComboBox.cs" />
+    <Compile Include="Controls\DataTypeAutoCompleteControl.cs" />
+    <Compile Include="Controls\DataTypeSelectorAutoCompleteControl.xaml.cs">
+      <DependentUpon>DataTypeSelectorAutoCompleteControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EditableControlEvents.cs" />
+    <Compile Include="Controls\EditableWrappingTextBox.cs" />
+    <Compile Include="Controls\FastAutoCompleteTextBox.cs" />
+    <Compile Include="Controls\IEditableControl.cs" />
+    <Compile Include="Controls\PopupWithUIA.cs" />
+    <Compile Include="Controls\SingleClickEditControl.xaml.cs">
+      <DependentUpon>SingleClickEditControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TagAutoCompleteControl.cs" />
+    <Compile Include="Controls\TagSelectorAutoCompleteControl.xaml.cs">
+      <DependentUpon>TagSelectorAutoCompleteControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TranslationViewerCtrl.xaml.cs">
+      <DependentUpon>TranslationViewerCtrl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TreeListView.cs" />
+    <Compile Include="Controls\TreeListViewControl.xaml.cs">
+      <DependentUpon>TreeListViewControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TreeListViewItem.cs" />
+    <Compile Include="Controls\ValidateNameControl.cs" />
+    <Compile Include="Controls\WrappingTextBox.cs" />
+    <Compile Include="Converters\BooleanOrMultiConverter.cs" />
+    <Compile Include="Converters\BoolToAsteriskConverter.cs" />
+    <Compile Include="Converters\ClippedTextBoxTooltipConverter.cs" />
+    <Compile Include="Converters\ErrorLevelToImageSourceConverter.cs" />
+    <Compile Include="Converters\LevelToIndentConverter.cs" />
+    <Compile Include="Converters\SystemIconToImageSourceConverter.cs" />
+    <Compile Include="Language\ILanguageCollection.cs" />
+    <Compile Include="Language\LanguageVM.cs" />
+    <Compile Include="Model\ComponentLookupHelper.cs" />
+    <Compile Include="Model\ErrorLevel.cs" />
+    <Compile Include="Model\TagPathValidationType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="View\SystemIconType.cs" />
+    <Compile Include="View\TranslationViewer.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ICSStudio.Components.snk" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\DataTypeSelectorAutoCompleteControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SingleClickEditControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TagSelectorAutoCompleteControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TranslationViewerCtrl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\TreeListViewControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\CommonGridDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ImagesDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ICSStudio.Gui\ICSStudio.Gui.csproj">
+      <Project>{4576440d-1a48-487a-8dfa-f94751abae38}</Project>
+      <Name>ICSStudio.Gui</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.Interfaces\ICSStudio.Interfaces.csproj">
+      <Project>{2e7d4256-92d6-4e0e-a1a1-d819d4d71667}</Project>
+      <Name>ICSStudio.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.SimpleServices\ICSStudio.SimpleServices.csproj">
+      <Project>{dac846e0-39e9-46ea-86b5-a5b89571831e}</Project>
+      <Name>ICSStudio.SimpleServices</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

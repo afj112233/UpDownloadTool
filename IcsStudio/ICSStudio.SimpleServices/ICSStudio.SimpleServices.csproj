@@ -1,0 +1,616 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\xunit.core.2.4.1\build\xunit.core.props" Condition="Exists('..\..\packages\xunit.core.2.4.1\build\xunit.core.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DAC846E0-39E9-46EA-86B5-A5B89571831E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICSStudio.SimpleServices</RootNamespace>
+    <AssemblyName>ICSStudio.SimpleServices</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>$(SolutionDir)\build\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>$(SolutionDir)\build\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>ICSStudio.SimpleServices.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr4.Runtime.Standard, Version=4.7.1.0, Culture=neutral, PublicKeyToken=e78b2c5abd1fcb3f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Antlr4.Runtime.Standard.4.7.1.1\lib\net35\Antlr4.Runtime.Standard.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Portable.BouncyCastle.1.8.9\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.4.1.0, Culture=neutral, PublicKeyToken=0ffbc31322e9d308, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmLightLibsStd10.5.4.1.1\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmLightLibsStd10.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.3.3.11, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SharpZipLib.1.3.3\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MessagePack, Version=1.8.0.0, Culture=neutral, PublicKeyToken=b4a0369545f0a1be, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MessagePack.1.8.80\lib\net45\MessagePack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Threading, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Validation, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Validation.14.1.111\lib\net45\Microsoft.VisualStudio.Validation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NLog.4.7.10\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI, Version=2.5.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NPOI.2.5.6\lib\net45\NPOI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.5.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NPOI.2.5.6\lib\net45\NPOI.OOXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.5.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NPOI.2.5.6\lib\net45\NPOI.OpenXml4Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.5.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NPOI.2.5.6\lib\net45\NPOI.OpenXmlFormats.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Threading.Tasks.Extensions.4.5.3\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmLightLibsStd10.5.4.1.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\xunit.abstractions.2.0.3\lib\net35\xunit.abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="xunit.assert, Version=2.4.1.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\xunit.assert.2.4.1\lib\netstandard1.1\xunit.assert.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="xunit.core, Version=2.4.1.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\xunit.extensibility.core.2.4.1\lib\net452\xunit.core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="xunit.execution.desktop, Version=2.4.1.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\xunit.extensibility.execution.2.4.1\lib\net452\xunit.execution.desktop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Chart\Attachment.cs" />
+    <Compile Include="Chart\Branch.cs" />
+    <Compile Include="Chart\DirectedLink.cs" />
+    <Compile Include="Chart\IChart.cs" />
+    <Compile Include="Chart\IContent.cs" />
+    <Compile Include="Chart\ILink.cs" />
+    <Compile Include="Chart\STContent.cs" />
+    <Compile Include="Chart\Step.cs" />
+    <Compile Include="Chart\Stop.cs" />
+    <Compile Include="Chart\TextBox.cs" />
+    <Compile Include="Chart\Transition.cs" />
+    <Compile Include="CodeAnalysis\GSVHelper.cs" />
+    <Compile Include="CodeAnalysis\InstructionDefinition.cs" />
+    <Compile Include="CodeAnalysis\RLLAoiReferenceHelper.cs" />
+    <Compile Include="CodeAnalysis\RLLGrammarAnalysis.cs" />
+    <Compile Include="CodeAnalysis\RLLRoutineAnalysis.cs" />
+    <Compile Include="CodeAnalysis\RLLTagReferenceHelper.cs" />
+    <Compile Include="Common\AoiDataReference.cs" />
+    <Compile Include="Common\AoiDefinition.cs" />
+    <Compile Include="Common\AoiDefinitionCollection.cs" />
+    <Compile Include="Common\AoiDefinition_core.cs" />
+    <Compile Include="Common\BaseCommon.cs" />
+    <Compile Include="Common\BaseComponent.cs" />
+    <Compile Include="Common\BaseObject.cs" />
+    <Compile Include="Common\BaseRoutine.cs" />
+    <Compile Include="Common\CodeSynchronization.cs" />
+    <Compile Include="Common\ControllerConn.cs" />
+    <Compile Include="Common\ControllerStateManager.cs" />
+    <Compile Include="Common\Controller_json.cs" />
+    <Compile Include="Common\Controller_state.cs" />
+    <Compile Include="Common\DataOperand.cs" />
+    <Compile Include="Common\DataServer.cs" />
+    <Compile Include="Common\EncodedData.cs" />
+    <Compile Include="Common\FBDRoutine.cs" />
+    <Compile Include="Common\ParameterConnectionCollection.cs" />
+    <Compile Include="Common\Program.cs" />
+    <Compile Include="Common\ProgramCollection.cs" />
+    <Compile Include="Common\ProgramModule.cs" />
+    <Compile Include="Common\ProgramProperties.cs" />
+    <Compile Include="Common\RLLRoutine.cs" />
+    <Compile Include="Common\RoutineCodeTextExtension.cs" />
+    <Compile Include="Common\RoutineExtend.cs" />
+    <Compile Include="Common\SequenceRoutine.cs" />
+    <Compile Include="Common\SFCRoutine.cs" />
+    <Compile Include="Common\STRoutine.cs" />
+    <Compile Include="Common\RoutineCollection.cs" />
+    <Compile Include="Common\Task.cs" />
+    <Compile Include="Common\TaskCollection.cs" />
+    <Compile Include="Common\TimeSetting.cs" />
+    <Compile Include="Common\TrendCollection.cs" />
+    <Compile Include="Compiler\ByteCodeVerifier.cs" />
+    <Compile Include="Compiler\CCodeGenerator.cs" />
+    <Compile Include="Compiler\CompilerException.cs" />
+    <Compile Include="Compiler\ErrorStrategy.cs" />
+    <Compile Include="Compiler\FBDGrammarParser.cs" />
+    <Compile Include="Compiler\PendingCompileRoutine.cs" />
+    <Compile Include="Compiler\PrescanVisitor.cs" />
+    <Compile Include="Compiler\RLLGrammarParser.cs" />
+    <Compile Include="Compiler\RLLInstruction.cs" />
+    <Compile Include="Compiler\STASTGenVisitor.cs" />
+    <Compile Include="Compiler\ASTNode.cs" />
+    <Compile Include="Compiler\CodeGenVisitor.cs" />
+    <Compile Include="Compiler\IASTVisitor.cs" />
+    <Compile Include="Compiler\MacroAssembler.cs" />
+    <Compile Include="Compiler\Opcode.cs" />
+    <Compile Include="Compiler\STGrammarBaseVisitor.cs" />
+    <Compile Include="Compiler\STGrammarLexer.cs" />
+    <Compile Include="Compiler\STGrammarParser.cs" />
+    <Compile Include="Compiler\STGrammarVisitor.cs" />
+    <Compile Include="Compiler\TypeChecker.cs" />
+    <Compile Include="Compiler\Utils.cs" />
+    <Compile Include="Correlation\TransactionManager.cs" />
+    <Compile Include="Correlation\Transactions\AddAOITransaction.cs" />
+    <Compile Include="Correlation\Transactions\AddMDTypeTransaction.cs" />
+    <Compile Include="Correlation\Transactions\AddModuleTransaction.cs" />
+    <Compile Include="Correlation\Transactions\AddProgramTransaction.cs" />
+    <Compile Include="Correlation\Transactions\AddTagTransaction.cs" />
+    <Compile Include="Correlation\Transactions\AddTaskTransaction.cs" />
+    <Compile Include="Correlation\Transactions\AddTrendTransaction.cs" />
+    <Compile Include="Correlation\Transactions\AddUDTypeTransaction.cs" />
+    <Compile Include="Correlation\Transactions\ITransaction.cs" />
+    <Compile Include="Correlation\Transactions\ReplaceTransaction.cs" />
+    <Compile Include="Correlation\Transactions\SetInhibitTransaction.cs" />
+    <Compile Include="Correlation\Transactions\SetMajorFaultProgramTransaction.cs" />
+    <Compile Include="Correlation\Transactions\SetNameTransaction.cs" />
+    <Compile Include="Correlation\Transactions\SetNativeCodeTransaction.cs" />
+    <Compile Include="Correlation\Transactions\SetPeriodTransaction.cs" />
+    <Compile Include="Correlation\Transactions\SetPowerLossProgramTransaction.cs" />
+    <Compile Include="Correlation\Transactions\SetTimeSynchronizeTransaction.cs" />
+    <Compile Include="Correlation\Transactions\SetupTransaction.cs" />
+    <Compile Include="Correlation\Transactions\Transaction.cs" />
+    <Compile Include="Correlation\Transactions\UpdateTransaction.cs" />
+    <Compile Include="Correlation\UndoManager.cs" />
+    <Compile Include="DataType\AddOnInstruction.cs" />
+    <Compile Include="DataType\AOIDataType.cs" />
+    <Compile Include="DataType\AoiDataTypeMember.cs" />
+    <Compile Include="DataType\ArrayType.cs" />
+    <Compile Include="DataType\AssetDefinedDataType.cs" />
+    <Compile Include="DataType\ConstStringType.cs" />
+    <Compile Include="DataType\ConvertDefaultValue.cs" />
+    <Compile Include="DataType\DataTypeExtend.cs" />
+    <Compile Include="DataType\DataTypeMember.cs" />
+    <Compile Include="DataType\FieldType.cs" />
+    <Compile Include="DataType\FieldTypeExtensions.cs" />
+    <Compile Include="DataType\FormatOp.cs" />
+    <Compile Include="DataType\JTokenExtend.cs" />
+    <Compile Include="DataType\ModuleDefinedDataType.cs" />
+    <Compile Include="DataType\StringFieldExtensions.cs" />
+    <Compile Include="DataType\ToStringExtensions.cs" />
+    <Compile Include="DataType\TypeMemberComponentCollection.cs" />
+    <Compile Include="DataType\UserDefinedDataType.cs" />
+    <Compile Include="DataType\ValueConverter.cs" />
+    <Compile Include="DataWrapper\AxisCIPDrive.cs" />
+    <Compile Include="DataWrapper\AxisCIPDriveExtensions.cs" />
+    <Compile Include="DataWrapper\AxisCIPDriveParameters.cs" />
+    <Compile Include="DataWrapper\AxisVirtual.cs" />
+    <Compile Include="DataWrapper\AxisVirtualParameters.cs" />
+    <Compile Include="DataWrapper\MessageDataWrapper.cs" />
+    <Compile Include="DataWrapper\MessageParameters.cs" />
+    <Compile Include="DataWrapper\MotionGroup.cs" />
+    <Compile Include="DeviceModule\AnalogIO.cs" />
+    <Compile Include="DeviceModule\Bus.cs" />
+    <Compile Include="DeviceModule\CIPMotionDriveConfigData.cs" />
+    <Compile Include="DeviceModule\CommunicationsAdapter.cs" />
+    <Compile Include="DeviceModule\DeviceModuleFactory.cs" />
+    <Compile Include="DeviceModule\DiscreteIO.cs" />
+    <Compile Include="DeviceModule\GeneralEthernet.cs" />
+    <Compile Include="DeviceModule\LocalModule.cs" />
+    <Compile Include="DeviceModule\ModuleConnectionManager.cs" />
+    <Compile Include="DeviceModule\Port.cs" />
+    <Compile Include="Exceptions\ConverterException.cs" />
+    <Compile Include="Exceptions\LoadJsonException.cs" />
+    <Compile Include="Exceptions\ParserException.cs" />
+    <Compile Include="Instruction\FInstruction.cs" />
+    <Compile Include="Instruction\IInstruction.cs" />
+    <Compile Include="Instruction\InstrEnum.cs" />
+    <Compile Include="Instruction\InstructionException.cs" />
+    <Compile Include="Instruction\Instructions\AdvancedMath.cs" />
+    <Compile Include="Instruction\Instructions\Alarms.cs" />
+    <Compile Include="Instruction\Instructions\ASCIIConversion.cs" />
+    <Compile Include="Instruction\Instructions\ASCIIString.cs" />
+    <Compile Include="Instruction\Instructions\Bit.cs" />
+    <Compile Include="Instruction\Instructions\CheckInstrParamType.cs" />
+    <Compile Include="Instruction\Instructions\Compare.cs" />
+    <Compile Include="Instruction\Instructions\ComputeMath.cs" />
+    <Compile Include="Instruction\Instructions\Drives.cs" />
+    <Compile Include="Instruction\Instructions\EquipmentPhase.cs" />
+    <Compile Include="Instruction\Instructions\EquipmentSequence.cs" />
+    <Compile Include="Instruction\Instructions\FileMisc.cs" />
+    <Compile Include="Instruction\Instructions\FileShift.cs" />
+    <Compile Include="Instruction\Instructions\Filters.cs" />
+    <Compile Include="Instruction\Instructions\FORBREAK.cs" />
+    <Compile Include="Instruction\Instructions\HMI.cs" />
+    <Compile Include="Instruction\Instructions\InputOutput.cs" />
+    <Compile Include="Instruction\Instructions\MathConversions.cs" />
+    <Compile Include="Instruction\Instructions\MotionConfig.cs" />
+    <Compile Include="Instruction\Instructions\MotionCoordinated.cs" />
+    <Compile Include="Instruction\Instructions\MotionEvent.cs" />
+    <Compile Include="Instruction\Instructions\MotionGroup.cs" />
+    <Compile Include="Instruction\Instructions\MotionMove.cs" />
+    <Compile Include="Instruction\Instructions\MotionState.cs" />
+    <Compile Include="Instruction\Instructions\MoveLogical.cs" />
+    <Compile Include="Instruction\Instructions\Process.cs" />
+    <Compile Include="Instruction\Instructions\ProgramControl.cs" />
+    <Compile Include="Instruction\Instructions\SelectLimit.cs" />
+    <Compile Include="Instruction\Instructions\Special.cs" />
+    <Compile Include="Instruction\Instructions\Squencer.cs" />
+    <Compile Include="Instruction\Instructions\Statistical.cs" />
+    <Compile Include="Instruction\Instructions\TimerCounter.cs" />
+    <Compile Include="Instruction\Instructions\Trigonometry.cs" />
+    <Compile Include="Instruction\RLLCustomInstruction.cs" />
+    <Compile Include="Instruction\RTInstructionCollectionInit.cs" />
+    <Compile Include="Instruction\RTInstructionCollection.cs" />
+    <Compile Include="Instruction\RLLInstructionCollection.cs" />
+    <Compile Include="Instruction\FBDInstructionCollection.cs" />
+    <Compile Include="Instruction\STInstructionCollection.cs" />
+    <Compile Include="Instruction\RLLInstructionCollectionInit.cs" />
+    <Compile Include="Instruction\FBDInstructionCollectionInit.cs" />
+    <Compile Include="Instruction\STInstructionCollectionInit.cs" />
+    <Compile Include="Instruction\SystemAttribute.cs" />
+    <Compile Include="Instruction\Utils.cs" />
+    <Compile Include="Json\ShouldSerializeContractResolver.cs" />
+    <Compile Include="Notification\INotifiable.cs" />
+    <Compile Include="Notification\NotificationData.cs" />
+    <Compile Include="Notification\NotificationListener.cs" />
+    <Compile Include="Notification\Notifications.cs" />
+    <Compile Include="Notification\TagNotificationData.cs" />
+    <Compile Include="Offline\EditLogs\AddTagLog.cs" />
+    <Compile Include="Offline\EditLogs\ChangeAxisPropertyLog.cs" />
+    <Compile Include="Offline\EditLogs\EditLog.cs" />
+    <Compile Include="Offline\EditLogs\IEditLog.cs" />
+    <Compile Include="Offline\EditLogs\SetInhibitLog.cs" />
+    <Compile Include="Offline\EditLogs\ReplaceCodeLog.cs" />
+    <Compile Include="Offline\EditLogs\SetPeriodLog.cs" />
+    <Compile Include="Offline\OfflineEditManager.cs" />
+    <Compile Include="Online\AxisLogController.cs" />
+    <Compile Include="Online\MajorFaultHelper.cs" />
+    <Compile Include="Online\MajorFaultInfo.cs" />
+    <Compile Include="Online\OnlineEditHelper.cs" />
+    <Compile Include="Online\VersionHelper.cs" />
+    <Compile Include="PredefinedType\alarm.cs" />
+    <Compile Include="PredefinedType\alarm_analog.cs" />
+    <Compile Include="PredefinedType\alarm_digital.cs" />
+    <Compile Include="PredefinedType\aux_valve_control.cs" />
+    <Compile Include="PredefinedType\axis_cip_drive.cs" />
+    <Compile Include="PredefinedType\AXIS_COMMON.cs" />
+    <Compile Include="PredefinedType\axis_consumed.cs" />
+    <Compile Include="PredefinedType\axis_generic.cs" />
+    <Compile Include="PredefinedType\axis_generic_drive.cs" />
+    <Compile Include="PredefinedType\axis_servo.cs" />
+    <Compile Include="PredefinedType\axis_servo_drive.cs" />
+    <Compile Include="PredefinedType\axis_virtual.cs" />
+    <Compile Include="PredefinedType\BOOL.cs" />
+    <Compile Include="DataType\DataType.cs" />
+    <Compile Include="DataType\DataTypeCollection.cs" />
+    <Compile Include="DeviceModule\CIPMotionDrive.cs" />
+    <Compile Include="DeviceModule\DeviceModule.cs" />
+    <Compile Include="DeviceModule\DeviceModuleCollection.cs" />
+    <Compile Include="PredefinedType\cam.cs" />
+    <Compile Include="PredefinedType\camshaft_monitor.cs" />
+    <Compile Include="PredefinedType\cam_profile.cs" />
+    <Compile Include="PredefinedType\cb_continuous_mode.cs" />
+    <Compile Include="PredefinedType\cb_crankshaft_pos_monitor.cs" />
+    <Compile Include="PredefinedType\cb_inch_mode.cs" />
+    <Compile Include="PredefinedType\cb_single_stroke_mode.cs" />
+    <Compile Include="PredefinedType\cc.cs" />
+    <Compile Include="DataType\CompositiveType.cs" />
+    <Compile Include="PredefinedType\configurable_rout.cs" />
+    <Compile Include="PredefinedType\connection_status.cs" />
+    <Compile Include="PredefinedType\control.cs" />
+    <Compile Include="PredefinedType\coordinate_system.cs" />
+    <Compile Include="PredefinedType\counter.cs" />
+    <Compile Include="PredefinedType\datalog_instruction.cs" />
+    <Compile Include="PredefinedType\dcaf_input.cs" />
+    <Compile Include="PredefinedType\dca_input.cs" />
+    <Compile Include="PredefinedType\dci_monitor.cs" />
+    <Compile Include="PredefinedType\dci_start.cs" />
+    <Compile Include="PredefinedType\dci_stop.cs" />
+    <Compile Include="PredefinedType\dci_stop_test.cs" />
+    <Compile Include="PredefinedType\dci_stop_test_lock.cs" />
+    <Compile Include="PredefinedType\dci_stop_test_mute.cs" />
+    <Compile Include="PredefinedType\deadtime.cs" />
+    <Compile Include="PredefinedType\derivative.cs" />
+    <Compile Include="PredefinedType\energy_base.cs" />
+    <Compile Include="PredefinedType\energy_electrical.cs" />
+    <Compile Include="PredefinedType\LREAL.cs" />
+    <Compile Include="PredefinedType\PredefinedTypeDataConverter.cs" />
+    <Compile Include="PredefinedType\ULINT.cs" />
+    <Compile Include="PredefinedType\USINT.cs" />
+    <Compile Include="PredefinedType\UINT.cs" />
+    <Compile Include="PredefinedType\UDINT.cs" />
+    <Compile Include="PredefinedType\DINT.cs" />
+    <Compile Include="PredefinedType\discrete_2state.cs" />
+    <Compile Include="PredefinedType\discrete_3state.cs" />
+    <Compile Include="PredefinedType\diverse_input.cs" />
+    <Compile Include="PredefinedType\dominant_reset.cs" />
+    <Compile Include="PredefinedType\dominant_set.cs" />
+    <Compile Include="PredefinedType\dynamics_data.cs" />
+    <Compile Include="PredefinedType\eight_pos_mode_selector.cs" />
+    <Compile Include="PredefinedType\emergency_stop.cs" />
+    <Compile Include="PredefinedType\enable_pendant.cs" />
+    <Compile Include="PredefinedType\ext_routine_control.cs" />
+    <Compile Include="PredefinedType\ext_routine_parameters.cs" />
+    <Compile Include="PredefinedType\fbd_bit_field_distribute.cs" />
+    <Compile Include="PredefinedType\fbd_boolean_and.cs" />
+    <Compile Include="PredefinedType\fbd_boolean_not.cs" />
+    <Compile Include="PredefinedType\fbd_boolean_or.cs" />
+    <Compile Include="PredefinedType\fbd_boolean_xor.cs" />
+    <Compile Include="PredefinedType\fbd_compare.cs" />
+    <Compile Include="PredefinedType\fbd_convert.cs" />
+    <Compile Include="PredefinedType\fbd_counter.cs" />
+    <Compile Include="PredefinedType\fbd_limit.cs" />
+    <Compile Include="PredefinedType\fbd_logical.cs" />
+    <Compile Include="PredefinedType\fbd_masked_move.cs" />
+    <Compile Include="PredefinedType\fbd_mask_equal.cs" />
+    <Compile Include="PredefinedType\fbd_math.cs" />
+    <Compile Include="PredefinedType\fbd_math_advanced.cs" />
+    <Compile Include="PredefinedType\fbd_oneshot.cs" />
+    <Compile Include="PredefinedType\fbd_timer.cs" />
+    <Compile Include="PredefinedType\fbd_truncate.cs" />
+    <Compile Include="PredefinedType\filter_high_pass.cs" />
+    <Compile Include="PredefinedType\filter_low_pass.cs" />
+    <Compile Include="PredefinedType\filter_notch.cs" />
+    <Compile Include="PredefinedType\five_pos_mode_selector.cs" />
+    <Compile Include="PredefinedType\flip_flop_d.cs" />
+    <Compile Include="PredefinedType\flip_flop_jk.cs" />
+    <Compile Include="PredefinedType\function_generator.cs" />
+    <Compile Include="PredefinedType\hl_limit.cs" />
+    <Compile Include="PredefinedType\hmibc.cs" />
+    <Compile Include="PredefinedType\imc.cs" />
+    <Compile Include="PredefinedType\INT.cs" />
+    <Compile Include="PredefinedType\integrator.cs" />
+    <Compile Include="PredefinedType\lead_lag.cs" />
+    <Compile Include="PredefinedType\lead_lag_sec_order.cs" />
+    <Compile Include="PredefinedType\light_curtain.cs" />
+    <Compile Include="PredefinedType\LINT.cs" />
+    <Compile Include="PredefinedType\main_valve_control.cs" />
+    <Compile Include="PredefinedType\manual_valve_control.cs" />
+    <Compile Include="PredefinedType\maximum_capture.cs" />
+    <Compile Include="PredefinedType\message.cs" />
+    <Compile Include="PredefinedType\minimum_capture.cs" />
+    <Compile Include="PredefinedType\mmc.cs" />
+    <Compile Include="PredefinedType\motion_group.cs" />
+    <Compile Include="PredefinedType\motion_instruction.cs" />
+    <Compile Include="PredefinedType\moving_average.cs" />
+    <Compile Include="PredefinedType\moving_std_dev.cs" />
+    <Compile Include="PredefinedType\multiplexer.cs" />
+    <Compile Include="PredefinedType\muting_four_sensor_bidir.cs" />
+    <Compile Include="PredefinedType\muting_two_sensor_asym.cs" />
+    <Compile Include="PredefinedType\muting_two_sensor_sym.cs" />
+    <Compile Include="PredefinedType\NativeType.cs" />
+    <Compile Include="PredefinedType\odometer.cs" />
+    <Compile Include="PredefinedType\output_cam.cs" />
+    <Compile Include="PredefinedType\output_compensation.cs" />
+    <Compile Include="PredefinedType\path_data.cs" />
+    <Compile Include="PredefinedType\phase.cs" />
+    <Compile Include="PredefinedType\phase_instruction.cs" />
+    <Compile Include="PredefinedType\pid.cs" />
+    <Compile Include="PredefinedType\pide_autotune.cs" />
+    <Compile Include="PredefinedType\pid_enhanced.cs" />
+    <Compile Include="PredefinedType\position_data.cs" />
+    <Compile Include="PredefinedType\position_prop.cs" />
+    <Compile Include="PredefinedType\PredefinedTypeException.cs" />
+    <Compile Include="PredefinedType\prop_int.cs" />
+    <Compile Include="PredefinedType\pulse_multiplier.cs" />
+    <Compile Include="PredefinedType\ramp_soak.cs" />
+    <Compile Include="PredefinedType\rate_limiter.cs" />
+    <Compile Include="PredefinedType\REAL.cs" />
+    <Compile Include="PredefinedType\redundant_input.cs" />
+    <Compile Include="PredefinedType\redundant_output.cs" />
+    <Compile Include="PredefinedType\safely_limited_position.cs" />
+    <Compile Include="PredefinedType\safely_limited_speed.cs" />
+    <Compile Include="PredefinedType\safety_feedback_interface.cs" />
+    <Compile Include="PredefinedType\safety_mat.cs" />
+    <Compile Include="PredefinedType\safe_brake_control.cs" />
+    <Compile Include="PredefinedType\safe_direction.cs" />
+    <Compile Include="PredefinedType\safe_operating_stop.cs" />
+    <Compile Include="PredefinedType\safe_stop_1.cs" />
+    <Compile Include="PredefinedType\safe_stop_2.cs" />
+    <Compile Include="PredefinedType\scale.cs" />
+    <Compile Include="PredefinedType\sec_order_controller.cs" />
+    <Compile Include="PredefinedType\select.cs" />
+    <Compile Include="PredefinedType\selectable_negate.cs" />
+    <Compile Include="PredefinedType\selected_summer.cs" />
+    <Compile Include="PredefinedType\select_enhanced.cs" />
+    <Compile Include="PredefinedType\sequence.cs" />
+    <Compile Include="PredefinedType\seq_bool.cs" />
+    <Compile Include="PredefinedType\seq_dint.cs" />
+    <Compile Include="PredefinedType\seq_int.cs" />
+    <Compile Include="PredefinedType\seq_real.cs" />
+    <Compile Include="PredefinedType\seq_sint.cs" />
+    <Compile Include="PredefinedType\seq_step.cs" />
+    <Compile Include="PredefinedType\seq_string.cs" />
+    <Compile Include="PredefinedType\seq_transition.cs" />
+    <Compile Include="PredefinedType\serial_port_control.cs" />
+    <Compile Include="PredefinedType\sfc_action.cs" />
+    <Compile Include="PredefinedType\sfc_step.cs" />
+    <Compile Include="PredefinedType\sfc_stop.cs" />
+    <Compile Include="PredefinedType\signed_odometer.cs" />
+    <Compile Include="PredefinedType\SINT.cs" />
+    <Compile Include="PredefinedType\split_range.cs" />
+    <Compile Include="PredefinedType\string.cs" />
+    <Compile Include="PredefinedType\s_curve.cs" />
+    <Compile Include="PredefinedType\thrs_enhanced.cs" />
+    <Compile Include="PredefinedType\timer.cs" />
+    <Compile Include="PredefinedType\totalizer.cs" />
+    <Compile Include="PredefinedType\two_hand_run_station.cs" />
+    <Compile Include="PredefinedType\up_down_accum.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Common\Controller.cs" />
+    <Compile Include="DataWrapper\DataWrapper.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SourceProtection\SourceKeyProvider.cs" />
+    <Compile Include="SourceProtection\SourceProtectionManager.cs" />
+    <Compile Include="Tags\DataHelper.cs" />
+    <Compile Include="Tags\ObtainValue.cs" />
+    <Compile Include="Tags\Tag.cs" />
+    <Compile Include="Tags\TagCollection.cs" />
+    <Compile Include="Tags\TagsFactory.cs" />
+    <Compile Include="Tags\TagSyncController.cs" />
+    <Compile Include="Utilities\CIPControllerExtensions.cs" />
+    <Compile Include="Utilities\CompareNameConverter.cs" />
+    <Compile Include="Utilities\ResourceLimitExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ICSStudio.CipConnection\ICSStudio.CipConnection.csproj">
+      <Project>{203372f2-17e7-490e-8ae3-104005887b05}</Project>
+      <Name>ICSStudio.CipConnection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.Cip\ICSStudio.Cip.csproj">
+      <Project>{3D36BED6-C812-43F2-8753-88961CD2C41E}</Project>
+      <Name>ICSStudio.Cip</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.Database\ICSStudio.Database.csproj">
+      <Project>{803BED88-CD02-4760-87BB-E86DD19374CA}</Project>
+      <Name>ICSStudio.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.DeviceProfiles\ICSStudio.DeviceProfiles.csproj">
+      <Project>{6D244B3B-3525-49D3-A4C2-EDC4ED0DEC48}</Project>
+      <Name>ICSStudio.DeviceProfiles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.Gui\ICSStudio.Gui.csproj">
+      <Project>{4576440d-1a48-487a-8dfa-f94751abae38}</Project>
+      <Name>ICSStudio.Gui</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.Interfaces\ICSStudio.Interfaces.csproj">
+      <Project>{2E7D4256-92D6-4E0E-A1A1-D819D4D71667}</Project>
+      <Name>ICSStudio.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.Toolchains\ICSStudio.Toolchains.csproj">
+      <Project>{1fe0c97a-d731-45b5-91e0-b6b4a6e59ddc}</Project>
+      <Name>ICSStudio.Toolchains</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.SourceProtection\ICSStudio.SourceProtection.csproj">
+      <Project>{24f2f8d4-4ddc-408e-9220-8f0053061287}</Project>
+      <Name>ICSStudio.SourceProtection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.Utils\ICSStudio.Utils.csproj">
+      <Project>{f880d2c5-68d6-4b83-a89e-b3958a75428d}</Project>
+      <Name>ICSStudio.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="icon.pfx" />
+    <None Include="ICSStudio.SimpleServices.snk" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ParameterTable.xlsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\packages\xunit.analyzers.0.10.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\xunit.core.2.4.1\build\xunit.core.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\xunit.core.2.4.1\build\xunit.core.props'))" />
+    <Error Condition="!Exists('..\..\packages\xunit.core.2.4.1\build\xunit.core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\xunit.core.2.4.1\build\xunit.core.targets'))" />
+  </Target>
+  <Import Project="..\..\packages\xunit.core.2.4.1\build\xunit.core.targets" Condition="Exists('..\..\packages\xunit.core.2.4.1\build\xunit.core.targets')" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

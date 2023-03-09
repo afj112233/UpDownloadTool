@@ -1,0 +1,285 @@
+﻿<Window x:Class="ICSStudio.UIServicesPackage.View.NewProgramDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:gui="clr-namespace:ICSStudio.Gui;assembly=ICSStudio.Gui"
+             mc:Ignorable="d"  ShowInTaskbar="False"  ResizeMode="NoResize"
+             xmlns:control="clr-namespace:ICSStudio.Components.Controls;assembly=ICSStudio.Components"
+             xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore"
+             d:DesignHeight="410" d:DesignWidth="430" Title="{Binding Title}" 
+             gui:DialogCloser.DialogResult="{Binding DialogResult}"
+             FocusManager.FocusedElement="{Binding ElementName=NameBox}">
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button">
+                <Setter Property="Width" Value="75"/>
+                <Setter Property="Height" Value="23"/>
+            </Style>
+            <Style TargetType="TextBox">
+                <Setter Property="Width" Value="200"></Setter>
+                <Setter Property="Height" Value="20"></Setter>
+                <Setter Property="Margin" Value="5"></Setter>
+            </Style>
+            <Style TargetType="ComboBox">
+                <Setter Property="Width" Value="200"></Setter>
+                <Setter Property="Height" Value="23"></Setter>
+                <Setter Property="Margin" Value="5"></Setter>
+            </Style>
+            <Style TargetType="Grid">
+                <Setter Property="Margin" Value="10" />
+            </Style>
+            <Style TargetType="TextBlock">
+                <Setter Property="Margin" Value="5"></Setter>
+            </Style>
+            <Style TargetType="xctk:SingleUpDown">
+                <Setter Property="Padding" Value="0,-4,0,0"></Setter>
+            </Style>
+            <ResourceDictionary.MergedDictionaries>
+              
+                <ResourceDictionary
+                    Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    <Grid>
+           <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions> 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="90"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock 
+            Grid.Row="0" 
+            Grid.Column="0" 
+            Text="{DynamicResource Name:}"/>
+        <control:ValidateNameControl 
+            Grid.Row="0" Grid.Column="1" 
+            x:Name="NameBox" Text="{Binding Name,UpdateSourceTrigger=PropertyChanged}"
+            MaxLength="40"
+            input:InputMethod.IsInputMethodEnabled="False"
+            Width="200"/>
+        <Button 
+            Grid.Row="0" 
+            Grid.Column="2" 
+            Content="{DynamicResource OK}" 
+            Command="{Binding OKCommand}" 
+            IsDefault="True"/>
+        <TextBlock 
+            Grid.Row="1" 
+            Grid.Column="0" 
+            VerticalAlignment="Top" 
+            Text="{DynamicResource Description:}"/>
+        <TextBox 
+            Grid.Row="1" 
+            Grid.Column="1"  
+            VerticalScrollBarVisibility="Visible" 
+            TextWrapping="Wrap" 
+            AcceptsReturn="True" 
+            Height="47" 
+            Text="{Binding Description,UpdateSourceTrigger=PropertyChanged}"/>
+        <Button 
+            Grid.Row="1" 
+            Grid.Column="2" 
+            Content="{DynamicResource Cancel}" 
+            IsCancel="True" 
+            Command="{Binding CancelCommand}"/>
+        <TextBlock 
+            Grid.Row="2" 
+            Grid.Column="0" 
+            IsEnabled="{Binding Row34Enabled}"
+            Text="{DynamicResource Parent:}"/>
+        <ComboBox 
+            Grid.Row="2" 
+            Grid.Column="1" 
+            ItemsSource="{Binding ParentList}" 
+            SelectedItem="{Binding SelectParent}" 
+            IsEnabled="{Binding Row34Enabled}"/>
+        <Button 
+            Grid.Row="2" 
+            Grid.Column="2" 
+            Content="{DynamicResource Help}"/>
+        <CheckBox 
+            Grid.Row="3" 
+            Grid.Column="0" 
+            IsChecked="{Binding UseAsFloder}" 
+            Visibility="{Binding Type1}" 
+            HorizontalAlignment="Right" 
+            Width="97" 
+            IsEnabled="{Binding Row34Enabled}">
+            <CheckBox.Margin>
+                <Thickness Top="5"></Thickness>
+            </CheckBox.Margin>
+        </CheckBox>
+        <TextBlock 
+            Grid.Row="3" 
+            Grid.Column="0" 
+            Text="{DynamicResource  Use as folder}" 
+            Name="UseAsFolder" 
+            Grid.ColumnSpan="2" 
+            Visibility="{Binding Type1}" 
+            IsEnabledChanged="UIElement_OnIsEnabledChanged" 
+            IsEnabled="{Binding Row34Enabled}">
+            <TextBlock.Margin>
+                <Thickness Left="20" Top="5"></Thickness>
+            </TextBlock.Margin>
+        </TextBlock>
+        <TextBlock 
+            Grid.Row="4"
+            Grid.Column="0" 
+            xml:space="preserve" 
+            Text="{DynamicResource Schedule in:}"/>
+        <ComboBox 
+            Grid.Row="4" 
+            Grid.Column="1" 
+            ItemsSource="{Binding TasksList}" 
+            SelectedValue="{Binding SelectedTask}" 
+            IsEnabled="{Binding IsEnable}"/>
+        <TextBlock 
+            Grid.Row="5" 
+            Grid.Column="1" 
+            Margin="8.5 0 0 0"
+            FontSize="10" 
+            HorizontalAlignment="Left" 
+            Visibility="{Binding Type3}" 
+            xml:space="preserve" 
+            Text="{DynamicResource Major}"/>
+        <TextBlock 
+            Grid.Row="5" 
+            Grid.Column="1" 
+            FontSize="10"
+            HorizontalAlignment="Center" 
+            Visibility="{Binding Type3}" 
+            Text="{DynamicResource Minor}"/>
+        <TextBlock 
+            Grid.Row="5" 
+            Grid.Column="1" 
+            FontSize="10" 
+            HorizontalAlignment="Right"
+            Visibility="{Binding Type3}"
+            Margin="0,5,10,5"
+            Text="{DynamicResource Extended text}"/>
+        <TextBlock 
+            Grid.Row="6"
+            Grid.Column="0" 
+            Visibility="{Binding Type3}"
+            Text="{DynamicResource Revision:}"/>
+        <xctk:SingleUpDown  
+            Grid.Row="6" 
+            Grid.Column="1"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            AllowSpin="True" 
+            ShowButtonSpinner="True"
+            Width="60" 
+            Height="20"
+            Minimum="0" 
+            Maximum="65535"  
+            Increment="1" 
+            Margin="8.5,4,0,0" 
+            Text="{Binding Major}"
+            Visibility="{Binding Type3}">
+        </xctk:SingleUpDown>
+        <xctk:SingleUpDown  
+            Grid.Row="6" 
+            Grid.Column="1" 
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            AllowSpin="True" 
+            ShowButtonSpinner="True" 
+            Width="60" 
+            Height="20"
+            Minimum="0" 
+            Maximum="65535" 
+            Increment="1"
+            Margin="0,2,0,0" 
+            Text="{Binding Minor}"
+             Visibility="{Binding Type3}">
+        </xctk:SingleUpDown>
+        <TextBox 
+            Grid.Row="6" 
+            Grid.Column="1" 
+            Width="65" 
+            HorizontalAlignment="Right"
+            Visibility="{Binding Type3}" 
+            Margin="0,2,8,0" 
+            Text="{Binding ExtendedText}"
+            VerticalContentAlignment="Center" 
+            Padding="0,-4,0,0"/>
+        <TextBlock 
+            Grid.Row="7"
+            Grid.Column="0" 
+            Visibility="{Binding Type3}" 
+            Text="{DynamicResource Revision note:}"/>
+        <TextBox 
+            Grid.Row="7"
+            Grid.Column="1"
+            Visibility="{Binding Type3}"
+            VerticalScrollBarVisibility="Visible"
+            TextWrapping="Wrap" 
+            AcceptsReturn="True" 
+            Height="47" 
+            Text="{Binding RevisionNote}"/>
+        <CheckBox 
+            Grid.Row="8"
+            Grid.Column="0"
+            IsChecked="{Binding Inhibit}"
+            IsEnabled="{Binding IsEnable}"
+            Visibility="{Binding Type1}"
+            Content="{DynamicResource New Program.Inhibit program}"
+            Grid.ColumnSpan="3"/>
+
+        <CheckBox 
+            Grid.Row="8" 
+            Grid.Column="0" 
+            IsChecked="{Binding Inhibit}" 
+            IsEnabled="{Binding IsEnable}" 
+            Visibility="{Binding Type2}" 
+            Content="{DynamicResource Inhibit equipment phase}" 
+            Grid.ColumnSpan="3"/>
+
+        <CheckBox 
+            Grid.Row="8" 
+            Grid.Column="0" 
+            IsChecked="{Binding Inhibit}" 
+            IsEnabled="{Binding IsEnable}" 
+            Visibility="{Binding Type3}" 
+            Content="{DynamicResource Inhibit equipment sequence}" 
+            Grid.ColumnSpan="3"/>
+
+        <Separator 
+            Grid.Row="9" 
+            Grid.Column="0" 
+            VerticalAlignment="Top" 
+            Grid.ColumnSpan="2"/>
+
+        <CheckBox 
+            Grid.Row="9" 
+            Grid.Column="0" 
+            Visibility="{Binding Type3}" 
+            Content="{DynamicResource Open sequence diagram}" 
+            Grid.ColumnSpan="3"/>
+        <CheckBox 
+            Grid.Row="10" 
+            Grid.Column="0" 
+            IsChecked="{Binding IsOpen}" 
+            HorizontalAlignment="Left" 
+            Content="{DynamicResource Open properties}" 
+            Grid.ColumnSpan="3"/>
+    </Grid>
+</Window>

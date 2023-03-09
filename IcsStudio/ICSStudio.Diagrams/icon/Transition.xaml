@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="ICSStudio.Diagrams.icon.Transition"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ICSStudio.Diagrams.icon"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+          <Border Width="40" Height="30" Background="#0000">
+            <Grid>
+                <Line X1="0" X2="15" Stroke="Black" HorizontalAlignment="Center" VerticalAlignment="Center" StrokeThickness="1"></Line>
+                <Line Y1="0" Y2="15" Stroke="Black" HorizontalAlignment="Center" VerticalAlignment="Center" StrokeThickness="1"></Line>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

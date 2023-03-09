@@ -1,0 +1,40 @@
+{
+    "VendorID": 1,
+    "ProductType": 7,
+    "ProductCode": 1140,
+    "CatalogNumber": "Embedded",
+    "Descriptions": [
+        {
+            "LCID": 1033,
+            "Text": "16 Point 24V DC Sink Input / 16 Point 24V DC Source Output"
+        },
+        {
+            "LCID": 2052,
+            "Text": "16 点 24V 直流拉电流输入/16 点 24V 直流灌电流输出"
+        }
+    ],
+    "MajorRevs": [
+        {"MajorRev": 20},
+        {"MajorRev": 21},
+        {"MajorRev": 23},
+        {"MajorRev": 24},
+        {"MajorRev": 25},
+        {"MajorRev": 26},
+        {"MajorRev": 27},
+        {"MajorRev": 28},
+        {"MajorRev": 29},
+        {"MajorRev": 30},
+        {"MajorRev": 31},
+        {"MajorRev": 32}
+    ],
+    "Ports": [
+        {
+            "Number": 1,
+            "Type": "PointIO",
+            "Label": "Chassis",
+            "Width": 1,
+            "ConnectorOffset": 0
+        }
+    ],
+    "PSFile": "PS1769_L1YEmbedded.json"
+}

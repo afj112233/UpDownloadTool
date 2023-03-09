@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{77F312D1-2E01-425C-9F73-DC240B9384D0}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICSStudio.XmlToJson</RootNamespace>
+    <AssemblyName>ICSStudio.XmlToJson</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>$(SolutionDir)\build\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>$(SolutionDir)\build\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Converter\CIPDriveConverter.cs" />
+    <Compile Include="Converter\PS1734DiscreteConverter.cs" />
+    <Compile Include="Converter\PSDriveConverter.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DIO Analog\ICON_PS1734CO_Analog.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DIO Analog\ICON_PS1734HD_Analog.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DIO Analog\ICON_PS1734_Analog.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DIO Discrete\ICON_PS1734_Discrete.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DIO Discrete\PS1734_Discrete.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DIO Discrete\PS1769_L1YEmbedded.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DIO Discrete\PS1769_L2YEmbedded.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Motion Drive\I-CON\2198-D012-ERS3.xml" />
+    <Content Include="Motion Drive\I-CON\2198-S086-ERS3.xml" />
+    <Content Include="Motion Drive\I-CON\Drive.ico" />
+    <Content Include="Motion Drive\I-CON\ICM-D1S11.xml" />
+    <Content Include="Motion Drive\I-CON\ICM-D1S15.xml" />
+    <Content Include="Motion Drive\I-CON\ICM-D1S18.xml" />
+    <Content Include="Motion Drive\I-CON\ICM-D1S30.xml" />
+    <Content Include="Motion Drive\I-CON\ICM-D1S70.xml" />
+    <Content Include="Motion Drive\I-CON\ICM-D3D05.xml" />
+    <Content Include="Motion Drive\I-CON\ICM-D3D08.xml" />
+    <Content Include="Motion Drive\I-CON\ICM-D3D11.xml" />
+    <Content Include="Motion Drive\I-CON\ICM-D3D18.xml" />
+    <Content Include="Motion Drive\I-CON\ICM-D3D28.xml" />
+    <Content Include="Motion Drive\I-CON\ICM-D3D38.xml" />
+    <Content Include="Motion Drive\I-CON\ICM-D5D03.xml" />
+    <Content Include="Motion Drive\I-CON\ICM-D5D05.xml" />
+    <Content Include="Motion Drive\I-CON\ICM-D5D08.xml" />
+    <Content Include="Motion Drive\I-CON\ICM-D5D11.xml" />
+    <Content Include="Motion Drive\I-CON\ICM-D5D18.xml" />
+    <Content Include="Motion Drive\I-CON\ICM-D5D28.xml" />
+    <Content Include="Motion Drive\I-CON\ICM-D5D38.xml" />
+    <Content Include="Motion Drive\I-CON\ICM-D5S08.xml" />
+    <Content Include="Motion Drive\I-CON\ICM-D5S100.xml" />
+    <Content Include="Motion Drive\I-CON\ICM-D5S130.xml" />
+    <Content Include="Motion Drive\I-CON\ICM-D5S160.xml" />
+    <Content Include="Motion Drive\I-CON\ICM-D5S50.xml" />
+    <Content Include="Motion Drive\I-CON\ICM-D5S70.xml" />
+    <Content Include="Motion Drive\I-CON\PSICM-D5.xml" />
+    <Content Include="Motion Drive\I-CON\PVICM-D5.xml" />
+    <Content Include="Motion Drive\RA CIP Motion Kinetix\2094-EN02D-M01-S0.xml" />
+    <Content Include="Motion Drive\RA CIP Motion Kinetix\2094-EN02D-M01-S1.xml" />
+    <Content Include="Motion Drive\RA CIP Motion Kinetix\2198-D006-ERS3.xml" />
+    <Content Include="Motion Drive\RA CIP Motion Kinetix\2198-D012-ERS3.xml" />
+    <Content Include="Motion Drive\RA CIP Motion Kinetix\2198-D020-ERS3.xml" />
+    <Content Include="Motion Drive\RA CIP Motion Kinetix\2198-D032-ERS3.xml" />
+    <Content Include="Motion Drive\RA CIP Motion Kinetix\2198-D057-ERS3.xml" />
+    <Content Include="Motion Drive\RA CIP Motion Kinetix\2198-H003-ERS.xml" />
+    <Content Include="Motion Drive\RA CIP Motion Kinetix\2198-H003-ERS2.xml" />
+    <Content Include="Motion Drive\RA CIP Motion Kinetix\2198-H008-ERS.xml" />
+    <Content Include="Motion Drive\RA CIP Motion Kinetix\2198-H008-ERS2.xml" />
+    <Content Include="Motion Drive\RA CIP Motion Kinetix\2198-H015-ERS.xml" />
+    <Content Include="Motion Drive\RA CIP Motion Kinetix\2198-H015-ERS2.xml" />
+    <Content Include="Motion Drive\RA CIP Motion Kinetix\2198-H025-ERS.xml" />
+    <Content Include="Motion Drive\RA CIP Motion Kinetix\2198-H025-ERS2.xml" />
+    <Content Include="Motion Drive\RA CIP Motion Kinetix\2198-H040-ERS.xml" />
+    <Content Include="Motion Drive\RA CIP Motion Kinetix\2198-H040-ERS2.xml" />
+    <Content Include="Motion Drive\RA CIP Motion Kinetix\2198-H070-ERS.xml" />
+    <Content Include="Motion Drive\RA CIP Motion Kinetix\2198-H070-ERS2.xml" />
+    <Content Include="Motion Drive\RA CIP Motion Kinetix\2198-S086-ERS3.xml" />
+    <Content Include="Motion Drive\RA CIP Motion Kinetix\PSKinetix5500Drive.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,138 @@
+﻿<UserControl x:Class="ICSStudio.UIServicesPackage.AxisCIPDriveProperties.Controls.RotaryPMModel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:util="clr-namespace:ICSStudio.Gui.Controls;assembly=ICSStudio.Gui"
+             mc:Ignorable="d"
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid IsEnabled="{Binding MotorParameterEditEnabled}">
+        <Grid.Resources>
+            <ResourceDictionary>
+                <Style TargetType="util:SingleUpDownExtensions">
+                    <Setter Property="Margin" Value="0,3"></Setter>
+                </Style>
+            </ResourceDictionary>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <!--1.-->
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="240" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="180" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="{DynamicResource Torque Constant(Kt):}"></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="{DynamicResource Voltage Constant(Ke):}"></TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="{DynamicResource Resistance(Rs):}"></TextBlock>
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="{DynamicResource Inductance(Ls):}"></TextBlock>
+
+            <util:SingleUpDownExtensions Grid.Row="0" Grid.Column="1" AllowSpin="False" ShowButtonSpinner="False"
+                                         Minimum="0" Value="{Binding PMMotorTorqueConstant}"
+                                         TextAlignment="Left"/>
+            <util:SingleUpDownExtensions Grid.Row="1" Grid.Column="1" AllowSpin="False" ShowButtonSpinner="False"
+                                         Minimum="0" Value="{Binding PMMotorRotaryVoltageConstant}"
+                                         TextAlignment="Left"/>
+            <util:SingleUpDownExtensions Grid.Row="2" Grid.Column="1" AllowSpin="False" ShowButtonSpinner="False"
+                                         Minimum="0" Value="{Binding PMMotorResistance}"
+                                         TextAlignment="Left"/>
+            <util:SingleUpDownExtensions Grid.Row="3" Grid.Column="1" AllowSpin="False" ShowButtonSpinner="False"
+                                         Minimum="0" Value="{Binding PMMotorInductance}"
+                                         TextAlignment="Left"/>
+
+            <TextBlock Grid.Row="0" Grid.Column="2" Text="{DynamicResource N-m/Amps(RMS)}"></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="2" Text="{DynamicResource Volts(RMS)/KRPM}"></TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="2" Text="{DynamicResource Ohms}"></TextBlock>
+            <TextBlock Grid.Row="3" Grid.Column="2" Text="{DynamicResource Henries}"></TextBlock>
+
+        </Grid>
+
+        <!--2.-->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0"
+                       Text="{DynamicResource Flux Saturation Profile}" FontWeight="Bold" />
+            <Separator Grid.Row="0" Grid.Column="1" />
+        </Grid>
+
+        <!--3.-->
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="220" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="180" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="{DynamicResource Flux Saturation @ 12.5% of lp:}"></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="{DynamicResource Flux Saturation @ 25.0% of lp:}"></TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="1" Text="{DynamicResource Flux Saturation @ 37.5% of lp:}"></TextBlock>
+            <TextBlock Grid.Row="3" Grid.Column="1" Text="{DynamicResource Flux Saturation @ 50.0% of lp:}"></TextBlock>
+            <TextBlock Grid.Row="4" Grid.Column="1" Text="{DynamicResource Flux Saturation @ 62.5% of lp:}"></TextBlock>
+            <TextBlock Grid.Row="5" Grid.Column="1" Text="{DynamicResource Flux Saturation @ 75.0% of lp:}"></TextBlock>
+            <TextBlock Grid.Row="6" Grid.Column="1" Text="{DynamicResource Flux Saturation @ 87.5% of lp:}"></TextBlock>
+            <TextBlock Grid.Row="7" Grid.Column="1" Text="{DynamicResource Flux Saturation @ 100% of lp:}"></TextBlock>
+
+            <util:SingleUpDownExtensions Grid.Row="0" Grid.Column="2" AllowSpin="False" ShowButtonSpinner="False"
+                                         Value="{Binding PMMotorFluxSaturation0}"
+                                         TextAlignment="Left"/>
+            <util:SingleUpDownExtensions Grid.Row="1" Grid.Column="2" AllowSpin="False" ShowButtonSpinner="False"
+                                         TextAlignment="Left"
+                                         Value="{Binding PMMotorFluxSaturation1}"/>
+            <util:SingleUpDownExtensions Grid.Row="2" Grid.Column="2" AllowSpin="False" ShowButtonSpinner="False"
+                                         TextAlignment="Left"
+                                         Value="{Binding PMMotorFluxSaturation2}"/>
+            <util:SingleUpDownExtensions Grid.Row="3" Grid.Column="2" AllowSpin="False" ShowButtonSpinner="False"
+                                         TextAlignment="Left"
+                                         Value="{Binding PMMotorFluxSaturation3}"/>
+            <util:SingleUpDownExtensions Grid.Row="4" Grid.Column="2" AllowSpin="False" ShowButtonSpinner="False"
+                                         TextAlignment="Left"
+                                         Value="{Binding PMMotorFluxSaturation4}"/>
+            <util:SingleUpDownExtensions Grid.Row="5" Grid.Column="2" AllowSpin="False" ShowButtonSpinner="False"
+                                         TextAlignment="Left"
+                                         Value="{Binding PMMotorFluxSaturation5}"/>
+            <util:SingleUpDownExtensions Grid.Row="6" Grid.Column="2" AllowSpin="False" ShowButtonSpinner="False"
+                                         TextAlignment="Left"
+                                         Value="{Binding PMMotorFluxSaturation6}"/>
+            <util:SingleUpDownExtensions Grid.Row="7" Grid.Column="2" AllowSpin="False" ShowButtonSpinner="False"
+                                         TextAlignment="Left"
+                                         Value="{Binding PMMotorFluxSaturation7}"/>
+
+            <TextBlock Grid.Row="0" Grid.Column="3" Text="{DynamicResource % Nominal Inductance}"></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="3" Text="{DynamicResource % Nominal Inductance}"></TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="3" Text="{DynamicResource % Nominal Inductance}"></TextBlock>
+            <TextBlock Grid.Row="3" Grid.Column="3" Text="{DynamicResource % Nominal Inductance}"></TextBlock>
+            <TextBlock Grid.Row="4" Grid.Column="3" Text="{DynamicResource % Nominal Inductance}"></TextBlock>
+            <TextBlock Grid.Row="5" Grid.Column="3" Text="{DynamicResource % Nominal Inductance}"></TextBlock>
+            <TextBlock Grid.Row="6" Grid.Column="3" Text="{DynamicResource % Nominal Inductance}"></TextBlock>
+            <TextBlock Grid.Row="7" Grid.Column="3" Text="{DynamicResource % Nominal Inductance}"></TextBlock>
+
+        </Grid>
+    </Grid>
+</UserControl>

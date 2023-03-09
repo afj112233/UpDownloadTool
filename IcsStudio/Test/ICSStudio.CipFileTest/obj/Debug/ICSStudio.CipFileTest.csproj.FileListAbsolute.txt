@@ -1,0 +1,6 @@
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.CipFileTest.exe.config
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.CipFileTest.exe
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.CipFileTest.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\ICSStudio\Test\ICSStudio.CipFileTest\obj\Debug\ICSStudio.CipFileTest.csprojResolveAssemblyReference.cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\ICSStudio\Test\ICSStudio.CipFileTest\obj\Debug\ICSStudio.CipFileTest.exe
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\ICSStudio\Test\ICSStudio.CipFileTest\obj\Debug\ICSStudio.CipFileTest.pdb

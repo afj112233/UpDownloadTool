@@ -1,0 +1,130 @@
+﻿<UserControl x:Class="ICSStudio.UIServicesPackage.AxisCIPDriveProperties.Controls.RotaryInductionParameters"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:util="clr-namespace:ICSStudio.Gui.Controls;assembly=ICSStudio.Gui"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d"
+             d:DesignHeight="600" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="util:SingleUpDownExtensions">
+            <Setter Property="Margin" Value="2" />
+        </Style>
+        <Style TargetType="xctk:IntegerUpDown">
+            <Setter Property="Margin" Value="2"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0"
+                       Text="{DynamicResource NameplateDatasheetPhaseToPhaseParameters}" FontWeight="Bold" />
+            <Separator Grid.Row="0" Grid.Column="1" />
+        </Grid>
+
+        <!--3.-->
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="140" />
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <!--0-->
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="{DynamicResource Rated Power:}"/>
+            <util:SingleUpDownExtensions Grid.Row="0" Grid.Column="2"
+                                         AllowSpin="False" ShowButtonSpinner="False"
+                                         Minimum="0" TextAlignment="Left"
+                                         Value="{Binding MotorRatedOutputPower}"/>
+            <TextBlock Grid.Row="0" Grid.Column="3">kW</TextBlock>
+
+            <TextBlock Grid.Row="0" Grid.Column="4" Text="{DynamicResource Pole Count:}"/>
+            <xctk:IntegerUpDown Grid.Row="0" Grid.Column="5"
+                                AllowSpin="False" ShowButtonSpinner="False"
+                                Minimum="2" TextAlignment="Left"
+                                Value="{Binding RotaryMotorPoles}" />
+
+            <!--1-->
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="{DynamicResource Rated Voltage:}"/>
+            <util:SingleUpDownExtensions Grid.Row="1" Grid.Column="2"
+                                         AllowSpin="False" ShowButtonSpinner="False"
+                                         Minimum="0" TextAlignment="Left"
+                                         Value="{Binding MotorRatedVoltage}"/>
+            <TextBlock Grid.Row="1" Grid.Column="3" Text="{DynamicResource Volts(RMS)}"/>
+
+
+            <TextBlock Grid.Row="1" Grid.Column="4" Text="{DynamicResource Rated Frequency:}"/>
+            <util:SingleUpDownExtensions Grid.Row="1" Grid.Column="5"
+                                         AllowSpin="False" ShowButtonSpinner="False"
+                                         Minimum="0" TextAlignment="Left"
+                                         Value="{Binding InductionMotorRatedFrequency}"/>
+            <TextBlock Grid.Row="1" Grid.Column="6" Text="{DynamicResource Hertz}"/>
+
+            <!--2-->
+            <TextBlock Grid.Row="2" Grid.Column="1" Text="{DynamicResource Rated Speed:}"/>
+            <util:SingleUpDownExtensions Grid.Row="2" Grid.Column="2"
+                                         AllowSpin="False" ShowButtonSpinner="False"
+                                         Minimum="0" TextAlignment="Left"
+                                         Value="{Binding RotaryMotorRatedSpeed}"/>
+            <TextBlock Grid.Row="2" Grid.Column="3" Text="{DynamicResource RPM}"/>
+
+            <TextBlock Grid.Row="2" Grid.Column="4" Text="{DynamicResource Max Speed:}"/>
+            <util:SingleUpDownExtensions Grid.Row="2" Grid.Column="5" TextAlignment="Left"
+                                         AllowSpin="False" ShowButtonSpinner="False"
+                                         Minimum="{Binding RotaryMotorRatedSpeed}"
+                                         Value="{Binding RotaryMotorMaxSpeed}"/>
+            <TextBlock Grid.Row="2" Grid.Column="6" Text="{DynamicResource RPM}"/>
+
+            <!--3-->
+            <TextBlock Grid.Row="3" Grid.Column="1" Text="{DynamicResource Rated Current:}"/>
+            <util:SingleUpDownExtensions Grid.Row="3" Grid.Column="2"
+                                         AllowSpin="False" ShowButtonSpinner="False"
+                                         Minimum="0" TextAlignment="Left"
+                                         Value="{Binding MotorRatedContinuousCurrent}"/>
+            <TextBlock Grid.Row="3" Grid.Column="3" Text="{DynamicResource Amps(RMS)}"/>
+
+
+            <TextBlock Grid.Row="3" Grid.Column="4" Text="{DynamicResource Peak Current:}"
+                       Visibility="{Binding MotorRatedPeakCurrentVisibility}"/>
+            <util:SingleUpDownExtensions Grid.Row="3" Grid.Column="5"
+                                         AllowSpin="False" ShowButtonSpinner="False"
+                                         TextAlignment="Left"
+                                         Minimum="{Binding MotorRatedContinuousCurrent}" 
+                                         Value="{Binding MotorRatedPeakCurrent}"
+                                         Visibility="{Binding MotorRatedPeakCurrentVisibility}"/>
+            <TextBlock Grid.Row="3" Grid.Column="6" Text="{DynamicResource Amps(RMS)}"
+                       Visibility="{Binding MotorRatedPeakCurrentVisibility}"/>
+
+            <!--4-->
+            <TextBlock Grid.Row="4" Grid.Column="4" Text="{DynamicResource Motor Overload Limit:}"/>
+            <util:SingleUpDownExtensions Grid.Row="4" Grid.Column="5" TextAlignment="Left"
+                                         AllowSpin="False" ShowButtonSpinner="False"
+                                         Minimum="0" Maximum="200"
+                                         Value="{Binding MotorOverloadLimit}"/>
+            <TextBlock Grid.Row="4" Grid.Column="6" Text="{DynamicResource % Rated}"/>
+
+        </Grid>
+
+    </Grid>
+</UserControl>

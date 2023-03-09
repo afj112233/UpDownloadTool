@@ -1,0 +1,1241 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--Copyright 2008 Rockwell Automation -->
+<!--2094-EN02D-M01-S1:		Kinetix 6500 Single Axis Ethernet Safe Speed Monitoring Drive-->
+<ModuleTypeInstall>
+  <ModuleTypes>
+		<ModuleType CLSID="{FEC0A0F2-59DC-11d0-B749-080009D31CCC}"
+			Version="46"
+			MinLogixVersion="18"
+			MinAOPVersion="18"
+			MinICE2Version="28"
+			Style="Addon">
+      <Identity>
+        <CatalogNumber>2094-EN02D-M01-S1</CatalogNumber>
+        <Description LCID="1033">Kinetix 6500 Single Axis Ethernet Safe Speed Monitoring Drive</Description>
+        <Description LCID="1036">Variateur Kinetix 6500 avec surveillance de la vitesse, commande d'axe intégrée, via Ethernet</Description>
+        <Description LCID="1031">Kinetix 6500 Single Axis Ethernet-Antrieb mit Überwachung der Sicherheitsgeschwindigkeit</Description>
+        <Description LCID="1034">Variador Ethernet de eje simple con sistema de seguridad de monitoreo de velocidad Kinetix 6500</Description>
+        <Description LCID="1046">Drive de monitoramento de velocidade de segurança Ethernet de axis único Kinetix 6500</Description>
+        <Description LCID="1040">Azionamento Ethernet a singolo axis con monitoraggio sicurezza velocità Kinetix 6500</Description>
+        <Description LCID="1041">Kinetix 6500 シングル Axis イーサネット セーフ スピード モニタリング ドライブ</Description>
+        <Description LCID="1042">Kinetix 6500 단일 Axis 이더넷 안전 속도 모니터링 드라이브</Description>
+        <Description LCID="2052">Kinetix 6500 单轴 以太网安全速度监控驱动器</Description>
+        <VendorID>1</VendorID>
+        <ProductType>37</ProductType>
+        <ProductName ProductCode="2">CIPDrive</ProductName>
+        <Variant MajorRev="1" />
+        <Variant MajorRev="2" />
+        <Variant MajorRev="3" />
+      </Identity>
+      <Ports>
+        <Port Number="2">
+          <Type>Ethernet</Type>
+          <Label>ENet</Label>
+          <Width>1</Width>
+          <ConnectorOffset>0</ConnectorOffset>
+        </Port>
+      </Ports>
+      <Categories>
+        <Safety />
+        <Drive />
+        <Motion />
+      </Categories>
+      <ExtendedProperties>
+        <MsiUpgradeCode>{0880D5F9-4305-4FB1-9EDA-4C8C38D422AD}</MsiUpgradeCode>
+        <MsiFeatureName>_RAKinetixCIPSafetyMotion</MsiFeatureName>
+        <PSModuleSpecificFile>Rockwell Software\RSLogix 5000\Module Profiles\RA CIP Motion Kinetix\PSKinetixCIPDrive.xml</PSModuleSpecificFile>
+        <PVModuleSpecificFile>Rockwell Software\RSLogix 5000\Module Profiles\RA CIP Motion Kinetix\PVKinetixCIPDrive.xml</PVModuleSpecificFile>
+        <PVCLSID>{489BC54F-86B5-43AB-9A30-E41B312451F0}</PVCLSID>
+        <PSCLSID>{848B1A29-B8C1-4333-89EB-80C2EF30BDD9}</PSCLSID>
+        <UnicastOnly>18</UnicastOnly>
+	<MinICE2MajorRev>3</MinICE2MajorRev>
+      </ExtendedProperties>
+      <Schema>
+        <Drive>
+          <AxisType>AXIS_CIP_DRIVE</AxisType>
+          <TimeSync>
+            <HardSync />
+            <HighQuality />
+          </TimeSync>
+          <UpdateableFlash />
+          <Safety>
+            <AdvancedSafety />
+          </Safety>
+          <SupportedAttributes>
+            <ControllerUpdateDelayHighLimit />
+            <ControllerUpdateDelayLowLimit />
+            <SyncThreshold />
+            <ShuntRegulatorResistorType />
+            <ExternalShuntRegulatorID />
+            <ExternalBusCapacitance />
+            <ConverterThermalOverloadUserLimit />
+            <BusRegulatorThermalOverloadUserLimit />
+            <BusUndervoltageUserLimit />
+            <DigitalInputConfiguration />
+          </SupportedAttributes>
+          <PowerStructures>
+            <PowerStructure ID="1" Integrated="True" DutySelect="Normal" Voltage="High">
+              <CatalogNumber>
+                <Text LCID="1033">2094-AC05-MP5-M</Text>
+                <Text LCID="1036">2094-AC05-MP5-M</Text>
+                <Text LCID="1031">2094-AC05-MP5-M</Text>
+                <Text LCID="1034">2094-AC05-MP5-M</Text>
+                <Text LCID="1046">2094-AC05-MP5-M</Text>
+                <Text LCID="1040">2094-AC05-MP5-M</Text>
+                <Text LCID="1041">2094-AC05-MP5-M</Text>
+                <Text LCID="1042">2094-AC05-MP5-M</Text>
+                <Text LCID="2052">2094-AC05-MP5-M</Text>
+              </CatalogNumber>
+              <Description>
+                <Text LCID="1033">Kinetix 6500, 230V AC, IAM, 3kW PS, 3.7A</Text>
+                <Text LCID="1036">Kinetix 6500, 230V AC, IAM, 3kW PS, 3.7A</Text>
+                <Text LCID="1031">Kinetix 6500, 230V AC, IAM, 3kW PS, 3.7A</Text>
+                <Text LCID="1034">Kinetix 6500, 230V AC, IAM, 3kW PS, 3.7A</Text>
+                <Text LCID="1046">Kinetix 6500, 230V AC, IAM, 3kW PS, 3.7A</Text>
+                <Text LCID="1040">Kinetix 6500, 230V AC, IAM, 3kW PS, 3.7A</Text>
+                <Text LCID="1041">Kinetix 6500、230V AC、IAM、3kW PS、3.7A</Text>
+                <Text LCID="1042">Kinetix 6500, 230V AC, IAM, 3kW PS, 3.7A</Text>
+                <Text LCID="2052">Kinetix 6500，230V AC，IAM，3kW PS，3.7A</Text>
+              </Description>
+            </PowerStructure>
+            <PowerStructure ID="2" Integrated="True" DutySelect="Normal" Voltage="High">
+              <CatalogNumber>
+                <Text LCID="1033">2094-AC05-M01-M</Text>
+                <Text LCID="1036">2094-AC05-M01-M</Text>
+                <Text LCID="1031">2094-AC05-M01-M</Text>
+                <Text LCID="1034">2094-AC05-M01-M</Text>
+                <Text LCID="1046">2094-AC05-M01-M</Text>
+                <Text LCID="1040">2094-AC05-M01-M</Text>
+                <Text LCID="1041">2094-AC05-M01-M</Text>
+                <Text LCID="1042">2094-AC05-M01-M</Text>
+                <Text LCID="2052">2094-AC05-M01-M</Text>
+              </CatalogNumber>
+              <Description>
+                <Text LCID="1033">Kinetix 6500, 230V AC, IAM, 3kW PS, 6.0A</Text>
+                <Text LCID="1036">Kinetix 6500, 230V AC, IAM, 3kW PS, 6.0A</Text>
+                <Text LCID="1031">Kinetix 6500, 230V AC, IAM, 3kW PS, 6.0A</Text>
+                <Text LCID="1034">Kinetix 6500, 230V AC, IAM, 3kW PS, 6.0A</Text>
+                <Text LCID="1046">Kinetix 6500, 230V AC, IAM, 3kW PS, 6.0A</Text>
+                <Text LCID="1040">Kinetix 6500, 230V AC, IAM, 3kW PS, 6.0A</Text>
+                <Text LCID="1041">Kinetix 6500、230V AC、IAM、3kW PS、6.0A</Text>
+                <Text LCID="1042">Kinetix 6500, 230V AC, IAM, 3kW PS, 6.0A</Text>
+                <Text LCID="2052">Kinetix 6500，230V AC，IAM，3kW PS，6.0A</Text>
+              </Description>
+            </PowerStructure>
+            <PowerStructure ID="3" Integrated="True" DutySelect="Normal" Voltage="High">
+              <CatalogNumber>
+                <Text LCID="1033">2094-AC09-M02-M</Text>
+                <Text LCID="1036">2094-AC09-M02-M</Text>
+                <Text LCID="1031">2094-AC09-M02-M</Text>
+                <Text LCID="1034">2094-AC09-M02-M</Text>
+                <Text LCID="1046">2094-AC09-M02-M</Text>
+                <Text LCID="1040">2094-AC09-M02-M</Text>
+                <Text LCID="1041">2094-AC09-M02-M</Text>
+                <Text LCID="1042">2094-AC09-M02-M</Text>
+                <Text LCID="2052">2094-AC09-M02-M</Text>
+              </CatalogNumber>
+              <Description>
+                <Text LCID="1033">Kinetix 6500, 230V AC, IAM,  6kW PS, 10.6A</Text>
+                <Text LCID="1036">Kinetix 6500, 230V AC, IAM,  6kW PS, 10.6A</Text>
+                <Text LCID="1031">Kinetix 6500, 230V AC, IAM,  6kW PS, 10.6A</Text>
+                <Text LCID="1034">Kinetix 6500, 230V AC, IAM,  6kW PS, 10.6A</Text>
+                <Text LCID="1046">Kinetix 6500, 230V AC, IAM,  6kW PS, 10.6A</Text>
+                <Text LCID="1040">Kinetix 6500, 230V AC, IAM,  6kW PS, 10.6A</Text>
+                <Text LCID="1041">Kinetix 6500、230V AC、IAM、6kW PS、10.6A</Text>
+                <Text LCID="1042">Kinetix 6500, 230V AC, IAM,  6kW PS, 10.6A</Text>
+                <Text LCID="2052">Kinetix 6500，230V AC，IAM，6kW PS，10.6A</Text>
+              </Description>
+            </PowerStructure>
+            <PowerStructure ID="4" Integrated="True" DutySelect="Normal" Voltage="High">
+              <CatalogNumber>
+                <Text LCID="1033">2094-AC16-M03-M</Text>
+                <Text LCID="1036">2094-AC16-M03-M</Text>
+                <Text LCID="1031">2094-AC16-M03-M</Text>
+                <Text LCID="1034">2094-AC16-M03-M</Text>
+                <Text LCID="1046">2094-AC16-M03-M</Text>
+                <Text LCID="1040">2094-AC16-M03-M</Text>
+                <Text LCID="1041">2094-AC16-M03-M</Text>
+                <Text LCID="1042">2094-AC16-M03-M</Text>
+                <Text LCID="2052">2094-AC16-M03-M</Text>
+              </CatalogNumber>
+              <Description>
+                <Text LCID="1033">Kinetix 6500, 230V AC, IAM, 15kW PS, 17.3A</Text>
+                <Text LCID="1036">Kinetix 6500, 230V AC, IAM, 15kW PS, 17.3A</Text>
+                <Text LCID="1031">Kinetix 6500, 230V AC, IAM, 15kW PS, 17.3A</Text>
+                <Text LCID="1034">Kinetix 6500, 230V AC, IAM, 15kW PS, 17.3A</Text>
+                <Text LCID="1046">Kinetix 6500, 230V AC, IAM, 15kW PS, 17.3A</Text>
+                <Text LCID="1040">Kinetix 6500, 230V AC, IAM, 15kW PS, 17.3A</Text>
+                <Text LCID="1041">Kinetix 6500、230V AC、IAM、15kW PS、17.3A</Text>
+                <Text LCID="1042">Kinetix 6500, 230V AC, IAM, 15kW PS, 17.3A</Text>
+                <Text LCID="2052">Kinetix 6500，230V AC，IAM，15kW PS，17.3A</Text>
+              </Description>
+            </PowerStructure>
+            <PowerStructure ID="5" Integrated="True" DutySelect="Normal" Voltage="High">
+              <CatalogNumber>
+                <Text LCID="1033">2094-AC32-M05-M</Text>
+                <Text LCID="1036">2094-AC32-M05-M</Text>
+                <Text LCID="1031">2094-AC32-M05-M</Text>
+                <Text LCID="1034">2094-AC32-M05-M</Text>
+                <Text LCID="1046">2094-AC32-M05-M</Text>
+                <Text LCID="1040">2094-AC32-M05-M</Text>
+                <Text LCID="1041">2094-AC32-M05-M</Text>
+                <Text LCID="1042">2094-AC32-M05-M</Text>
+                <Text LCID="2052">2094-AC32-M05-M</Text>
+              </CatalogNumber>
+              <Description>
+                <Text LCID="1033">Kinetix 6500, 230V AC, IAM, 23kW PS, 34.5A</Text>
+                <Text LCID="1036">Kinetix 6500, 230V AC, IAM, 23kW PS, 34.5A</Text>
+                <Text LCID="1031">Kinetix 6500, 230V AC, IAM, 23kW PS, 34.5A</Text>
+                <Text LCID="1034">Kinetix 6500, 230V AC, IAM, 23kW PS, 34.5A</Text>
+                <Text LCID="1046">Kinetix 6500, 230V AC, IAM, 23kW PS, 34.5A</Text>
+                <Text LCID="1040">Kinetix 6500, 230V AC, IAM, 23kW PS, 34.5A</Text>
+                <Text LCID="1041">Kinetix 6500、230V AC、IAM、23kW PS、34.5A</Text>
+                <Text LCID="1042">Kinetix 6500, 230V AC, IAM, 23kW PS, 34.5A</Text>
+                <Text LCID="2052">Kinetix 6500，230V AC，IAM，23kW PS，34.5A</Text>
+              </Description>
+            </PowerStructure>
+            <PowerStructure ID="6" Integrated="True" DutySelect="Normal" Voltage="High">
+              <CatalogNumber>
+                <Text LCID="1033">2094-BC01-MP5-M</Text>
+                <Text LCID="1036">2094-BC01-MP5-M</Text>
+                <Text LCID="1031">2094-BC01-MP5-M</Text>
+                <Text LCID="1034">2094-BC01-MP5-M</Text>
+                <Text LCID="1046">2094-BC01-MP5-M</Text>
+                <Text LCID="1040">2094-BC01-MP5-M</Text>
+                <Text LCID="1041">2094-BC01-MP5-M</Text>
+                <Text LCID="1042">2094-BC01-MP5-M</Text>
+                <Text LCID="2052">2094-BC01-MP5-M</Text>
+              </CatalogNumber>
+              <Description>
+                <Text LCID="1033">Kinetix 6500, 460V AC, IAM, 6kW PS, 2.8A</Text>
+                <Text LCID="1036">Kinetix 6500, 460V AC, IAM, 6kW PS, 2.8A</Text>
+                <Text LCID="1031">Kinetix 6500, 460V AC, IAM, 6kW PS, 2.8A</Text>
+                <Text LCID="1034">Kinetix 6500, 460V AC, IAM, 6kW PS, 2.8A</Text>
+                <Text LCID="1046">Kinetix 6500, 460V AC, IAM, 6kW PS, 2.8A</Text>
+                <Text LCID="1040">Kinetix 6500, 460V AC, IAM, 6kW PS, 2.8A</Text>
+                <Text LCID="1041">Kinetix 6500、460V AC、IAM、6kW PS、2.8A</Text>
+                <Text LCID="1042">Kinetix 6500, 460V AC, IAM, 6kW PS, 2.8A</Text>
+                <Text LCID="2052">Kinetix 6500，460V AC，IAM，6kW PS，2.8A</Text>
+              </Description>
+            </PowerStructure>
+            <PowerStructure ID="7" Integrated="True" DutySelect="Normal" Voltage="High">
+              <CatalogNumber>
+                <Text LCID="1033">2094-BC01-M01-M</Text>
+                <Text LCID="1036">2094-BC01-M01-M</Text>
+                <Text LCID="1031">2094-BC01-M01-M</Text>
+                <Text LCID="1034">2094-BC01-M01-M</Text>
+                <Text LCID="1046">2094-BC01-M01-M</Text>
+                <Text LCID="1040">2094-BC01-M01-M</Text>
+                <Text LCID="1041">2094-BC01-M01-M</Text>
+                <Text LCID="1042">2094-BC01-M01-M</Text>
+                <Text LCID="2052">2094-BC01-M01-M</Text>
+              </CatalogNumber>
+              <Description>
+                <Text LCID="1033">Kinetix 6500, 460V AC, IAM, 6kW PS, 6.1A</Text>
+                <Text LCID="1036">Kinetix 6500, 460V AC, IAM, 6kW PS, 6.1A</Text>
+                <Text LCID="1031">Kinetix 6500, 460V AC, IAM, 6kW PS, 6.1A</Text>
+                <Text LCID="1034">Kinetix 6500, 460V AC, IAM, 6kW PS, 6.1A</Text>
+                <Text LCID="1046">Kinetix 6500, 460V AC, IAM, 6kW PS, 6.1A</Text>
+                <Text LCID="1040">Kinetix 6500, 460V AC, IAM, 6kW PS, 6.1A</Text>
+                <Text LCID="1041">Kinetix 6500、460V AC、IAM、6kW PS、6.1A</Text>
+                <Text LCID="1042">Kinetix 6500, 460V AC, IAM, 6kW PS, 6.1A</Text>
+                <Text LCID="2052">Kinetix 6500，460V AC，IAM，6kW PS，6.1A</Text>
+              </Description>
+            </PowerStructure>
+            <PowerStructure ID="8" Integrated="True" DutySelect="Normal" Voltage="High">
+              <CatalogNumber>
+                <Text LCID="1033">2094-BC02-M02-M</Text>
+                <Text LCID="1036">2094-BC02-M02-M</Text>
+                <Text LCID="1031">2094-BC02-M02-M</Text>
+                <Text LCID="1034">2094-BC02-M02-M</Text>
+                <Text LCID="1046">2094-BC02-M02-M</Text>
+                <Text LCID="1040">2094-BC02-M02-M</Text>
+                <Text LCID="1041">2094-BC02-M02-M</Text>
+                <Text LCID="1042">2094-BC02-M02-M</Text>
+                <Text LCID="2052">2094-BC02-M02-M</Text>
+              </CatalogNumber>
+              <Description>
+                <Text LCID="1033">Kinetix 6500, 460V AC, IAM, 15kW PS, 10.3A</Text>
+                <Text LCID="1036">Kinetix 6500, 460V AC, IAM, 15kW PS, 10.3A</Text>
+                <Text LCID="1031">Kinetix 6500, 460V AC, IAM, 15kW PS, 10.3A</Text>
+                <Text LCID="1034">Kinetix 6500, 460V AC, IAM, 15kW PS, 10.3A</Text>
+                <Text LCID="1046">Kinetix 6500, 460V AC, IAM, 15kW PS, 10.3A</Text>
+                <Text LCID="1040">Kinetix 6500, 460V AC, IAM, 15kW PS, 10.3A</Text>
+                <Text LCID="1041">Kinetix 6500、460V AC、IAM、15kW PS、10.3A</Text>
+                <Text LCID="1042">Kinetix 6500, 460V AC, IAM, 15kW PS, 10.3A</Text>
+                <Text LCID="2052">Kinetix 6500，460V AC，IAM，15kW PS，10.3A</Text>
+              </Description>
+            </PowerStructure>
+            <PowerStructure ID="9" Integrated="True" DutySelect="Normal" Voltage="High">
+              <CatalogNumber>
+                <Text LCID="1033">2094-BC04-M03-M</Text>
+                <Text LCID="1036">2094-BC04-M03-M</Text>
+                <Text LCID="1031">2094-BC04-M03-M</Text>
+                <Text LCID="1034">2094-BC04-M03-M</Text>
+                <Text LCID="1046">2094-BC04-M03-M</Text>
+                <Text LCID="1040">2094-BC04-M03-M</Text>
+                <Text LCID="1041">2094-BC04-M03-M</Text>
+                <Text LCID="1042">2094-BC04-M03-M</Text>
+                <Text LCID="2052">2094-BC04-M03-M</Text>
+              </CatalogNumber>
+              <Description>
+                <Text LCID="1033">Kinetix 6500, 460V AC, IAM, 28kW PS, 21.2A</Text>
+                <Text LCID="1036">Kinetix 6500, 460V AC, IAM, 28kW PS, 21.2A</Text>
+                <Text LCID="1031">Kinetix 6500, 460V AC, IAM, 28kW PS, 21.2A</Text>
+                <Text LCID="1034">Kinetix 6500, 460V AC, IAM, 28kW PS, 21.2A</Text>
+                <Text LCID="1046">Kinetix 6500, 460V AC, IAM, 28kW PS, 21.2A</Text>
+                <Text LCID="1040">Kinetix 6500, 460V AC, IAM, 28kW PS, 21.2A</Text>
+                <Text LCID="1041">Kinetix 6500、460V AC、IAM、28kW PS、21.2A</Text>
+                <Text LCID="1042">Kinetix 6500, 460V AC, IAM, 28kW PS, 21.2A</Text>
+                <Text LCID="2052">Kinetix 6500，460V AC，IAM，28kW PS，21.2A</Text>
+              </Description>
+            </PowerStructure>
+            <PowerStructure ID="10" Integrated="True" DutySelect="Normal" Voltage="High">
+              <CatalogNumber>
+                <Text LCID="1033">2094-BC07-M05-M</Text>
+                <Text LCID="1036">2094-BC07-M05-M</Text>
+                <Text LCID="1031">2094-BC07-M05-M</Text>
+                <Text LCID="1034">2094-BC07-M05-M</Text>
+                <Text LCID="1046">2094-BC07-M05-M</Text>
+                <Text LCID="1040">2094-BC07-M05-M</Text>
+                <Text LCID="1041">2094-BC07-M05-M</Text>
+                <Text LCID="1042">2094-BC07-M05-M</Text>
+                <Text LCID="2052">2094-BC07-M05-M</Text>
+              </CatalogNumber>
+              <Description>
+                <Text LCID="1033">Kinetix 6500, 460V AC, IAM, 45kW PS, 34.6A</Text>
+                <Text LCID="1036">Kinetix 6500, 460V AC, IAM, 45kW PS, 34.6A</Text>
+                <Text LCID="1031">Kinetix 6500, 460V AC, IAM, 45kW PS, 34.6A</Text>
+                <Text LCID="1034">Kinetix 6500, 460V AC, IAM, 45kW PS, 34.6A</Text>
+                <Text LCID="1046">Kinetix 6500, 460V AC, IAM, 45kW PS, 34.6A</Text>
+                <Text LCID="1040">Kinetix 6500, 460V AC, IAM, 45kW PS, 34.6A</Text>
+                <Text LCID="1041">Kinetix 6500、460V AC、IAM、45kW PS、34.6A</Text>
+                <Text LCID="1042">Kinetix 6500, 460V AC, IAM, 45kW PS, 34.6A</Text>
+                <Text LCID="2052">Kinetix 6500，460V AC，IAM，45kW PS，34.6A</Text>
+              </Description>
+            </PowerStructure>
+            <PowerStructure ID="11" Integrated="False" DutySelect="Normal" Voltage="High">
+              <CatalogNumber>
+                <Text LCID="1033">2094-AMP5-M</Text>
+                <Text LCID="1036">2094-AMP5-M</Text>
+                <Text LCID="1031">2094-AMP5-M</Text>
+                <Text LCID="1034">2094-AMP5-M</Text>
+                <Text LCID="1046">2094-AMP5-M</Text>
+                <Text LCID="1040">2094-AMP5-M</Text>
+                <Text LCID="1041">2094-AMP5-M</Text>
+                <Text LCID="1042">2094-AMP5-M</Text>
+                <Text LCID="2052">2094-AMP5-M</Text>
+              </CatalogNumber>
+              <Description>
+                <Text LCID="1033">Kinetix 6500, 230V AC, AM, 3.7A</Text>
+                <Text LCID="1036">Kinetix 6500, 230V AC, AM, 3.7A</Text>
+                <Text LCID="1031">Kinetix 6500, 230V AC, AM, 3.7A</Text>
+                <Text LCID="1034">Kinetix 6500, 230V AC, AM, 3.7A</Text>
+                <Text LCID="1046">Kinetix 6500, 230V AC, AM, 3.7A</Text>
+                <Text LCID="1040">Kinetix 6500, 230V AC, AM, 3.7A</Text>
+                <Text LCID="1041">Kinetix 6500、230V AC、AM、3.7A</Text>
+                <Text LCID="1042">Kinetix 6500, 230V AC, AM, 3.7A</Text>
+                <Text LCID="2052">Kinetix 6500，230V AC，AM，3.7A</Text>
+              </Description>
+            </PowerStructure>
+            <PowerStructure ID="12" Integrated="False" DutySelect="Normal" Voltage="High">
+              <CatalogNumber>
+                <Text LCID="1033">2094-AM01-M</Text>
+                <Text LCID="1036">2094-AM01-M</Text>
+                <Text LCID="1031">2094-AM01-M</Text>
+                <Text LCID="1034">2094-AM01-M</Text>
+                <Text LCID="1046">2094-AM01-M</Text>
+                <Text LCID="1040">2094-AM01-M</Text>
+                <Text LCID="1041">2094-AM01-M</Text>
+                <Text LCID="1042">2094-AM01-M</Text>
+                <Text LCID="2052">2094-AM01-M</Text>
+              </CatalogNumber>
+              <Description>
+                <Text LCID="1033">Kinetix 6500, 230V AC, AM, 6.0A</Text>
+                <Text LCID="1036">Kinetix 6500, 230V AC, AM, 6.0A</Text>
+                <Text LCID="1031">Kinetix 6500, 230V AC, AM, 6.0A</Text>
+                <Text LCID="1034">Kinetix 6500, 230V AC, AM, 6.0A</Text>
+                <Text LCID="1046">Kinetix 6500, 230V AC, AM, 6.0A</Text>
+                <Text LCID="1040">Kinetix 6500, 230V AC, AM, 6.0A</Text>
+                <Text LCID="1041">Kinetix 6500、230V AC、AM、6.0A</Text>
+                <Text LCID="1042">Kinetix 6500, 230V AC, AM, 6.0A</Text>
+                <Text LCID="2052">Kinetix 6500，230V AC，AM，6.0A</Text>
+              </Description>
+            </PowerStructure>
+            <PowerStructure ID="13" Integrated="False" DutySelect="Normal" Voltage="High">
+              <CatalogNumber>
+                <Text LCID="1033">2094-AM02-M</Text>
+                <Text LCID="1036">2094-AM02-M</Text>
+                <Text LCID="1031">2094-AM02-M</Text>
+                <Text LCID="1034">2094-AM02-M</Text>
+                <Text LCID="1046">2094-AM02-M</Text>
+                <Text LCID="1040">2094-AM02-M</Text>
+                <Text LCID="1041">2094-AM02-M</Text>
+                <Text LCID="1042">2094-AM02-M</Text>
+                <Text LCID="2052">2094-AM02-M</Text>
+              </CatalogNumber>
+              <Description>
+                <Text LCID="1033">Kinetix 6500, 230V AC, AM, 3kW PS, 6.0A</Text>
+                <Text LCID="1036">Kinetix 6500, 230 V AC, AM, 3 kW PS, 6.0 A</Text>
+                <Text LCID="1031">Kinetix 6500, 230V AC, AM, 3kW PS, 6.0A</Text>
+                <Text LCID="1034">Kinetix 6500, 230V AC, AM, 3kW PS, 6.0A</Text>
+                <Text LCID="1046">Kinetix 6500, 230V AC, AM, 3kW PS, 6.0A</Text>
+                <Text LCID="1040">Kinetix 6500, 230V CA, AM, 3kW PS, 6.0A</Text>
+                <Text LCID="1041">Kinetix 6500、230V AC、AM、3kW PS、6.0A</Text>
+                <Text LCID="1042">Kinetix 6500, 230V AC, AM, 3kW PS, 6.0A</Text>
+                <Text LCID="2052">Kinetix 6500，230V AC，AM，3kW PS，6.0A</Text>
+              </Description>
+            </PowerStructure>
+            <PowerStructure ID="14" Integrated="False" DutySelect="Normal" Voltage="High">
+              <CatalogNumber>
+                <Text LCID="1033">2094-AM03-M</Text>
+                <Text LCID="1036">2094-AM03-M</Text>
+                <Text LCID="1031">2094-AM03-M</Text>
+                <Text LCID="1034">2094-AM03-M</Text>
+                <Text LCID="1046">2094-AM03-M</Text>
+                <Text LCID="1040">2094-AM03-M</Text>
+                <Text LCID="1041">2094-AM03-M</Text>
+                <Text LCID="1042">2094-AM03-M</Text>
+                <Text LCID="2052">2094-AM03-M</Text>
+              </CatalogNumber>
+              <Description>
+                <Text LCID="1033">Kinetix 6500, 230V AC, AM, 17.3A</Text>
+                <Text LCID="1036">Kinetix 6500, 230V AC, AM, 17.3A</Text>
+                <Text LCID="1031">Kinetix 6500, 230V AC, AM, 17.3A</Text>
+                <Text LCID="1034">Kinetix 6500, 230V AC, AM, 17.3A</Text>
+                <Text LCID="1046">Kinetix 6500, 230V AC, AM, 17.3A</Text>
+                <Text LCID="1040">Kinetix 6500, 230V AC, AM, 17.3A</Text>
+                <Text LCID="1041">Kinetix 6500、230V AC、AM、17.3A</Text>
+                <Text LCID="1042">Kinetix 6500, 230V AC, AM, 17.3A</Text>
+                <Text LCID="2052">Kinetix 6500，230V AC，AM，17.3A</Text>
+              </Description>
+            </PowerStructure>
+            <PowerStructure ID="15" Integrated="False" DutySelect="Normal" Voltage="High">
+              <CatalogNumber>
+                <Text LCID="1033">2094-AM05-M</Text>
+                <Text LCID="1036">2094-AM05-M</Text>
+                <Text LCID="1031">2094-AM05-M</Text>
+                <Text LCID="1034">2094-AM05-M</Text>
+                <Text LCID="1046">2094-AM05-M</Text>
+                <Text LCID="1040">2094-AM05-M</Text>
+                <Text LCID="1041">2094-AM05-M</Text>
+                <Text LCID="1042">2094-AM05-M</Text>
+                <Text LCID="2052">2094-AM05-M</Text>
+              </CatalogNumber>
+              <Description>
+                <Text LCID="1033">Kinetix 6500, 230V AC, AM, 34.6A</Text>
+                <Text LCID="1036">Kinetix 6500, 230V AC, AM, 34.6A</Text>
+                <Text LCID="1031">Kinetix 6500, 230V AC, AM, 34.6A</Text>
+                <Text LCID="1034">Kinetix 6500, 230V AC, AM, 34.6A</Text>
+                <Text LCID="1046">Kinetix 6500, 230V AC, AM, 34.6A</Text>
+                <Text LCID="1040">Kinetix 6500, 230V AC, AM, 34.6A</Text>
+                <Text LCID="1041">Kinetix 6500、230V AC、AM、34.6A</Text>
+                <Text LCID="1042">Kinetix 6500, 230V AC, AM, 34.6A</Text>
+                <Text LCID="2052">Kinetix 6500，230V AC，AM，34.6A</Text>
+              </Description>
+            </PowerStructure>
+            <PowerStructure ID="16" Integrated="False" DutySelect="Normal" Voltage="High">
+              <CatalogNumber>
+                <Text LCID="1033">2094-BMP5-M</Text>
+                <Text LCID="1036">2094-BMP5-M</Text>
+                <Text LCID="1031">2094-BMP5-M</Text>
+                <Text LCID="1034">2094-BMP5-M</Text>
+                <Text LCID="1046">2094-BMP5-M</Text>
+                <Text LCID="1040">2094-BMP5-M</Text>
+                <Text LCID="1041">2094-BMP5-M</Text>
+                <Text LCID="1042">2094-BMP5-M</Text>
+                <Text LCID="2052">2094-BMP5-M</Text>
+              </CatalogNumber>
+              <Description>
+                <Text LCID="1033">Kinetix 6500, 460V AC, AM, 2.8A</Text>
+                <Text LCID="1036">Kinetix 6500, 460V AC, AM, 2.8A</Text>
+                <Text LCID="1031">Kinetix 6500, 460V AC, AM, 2.8A</Text>
+                <Text LCID="1034">Kinetix 6500, 460V AC, AM, 2.8A</Text>
+                <Text LCID="1046">Kinetix 6500, 460V AC, AM, 2.8A</Text>
+                <Text LCID="1040">Kinetix 6500, 460V AC, AM, 2.8A</Text>
+                <Text LCID="1041">Kinetix 6500、460V AC、AM、2.8A</Text>
+                <Text LCID="1042">Kinetix 6500, 460V AC, AM, 2.8A</Text>
+                <Text LCID="2052">Kinetix 6500，460V AC，AM，2.8A</Text>
+              </Description>
+            </PowerStructure>
+            <PowerStructure ID="17" Integrated="False" DutySelect="Normal" Voltage="High">
+              <CatalogNumber>
+                <Text LCID="1033">2094-BM01-M</Text>
+                <Text LCID="1036">2094-BM01-M</Text>
+                <Text LCID="1031">2094-BM01-M</Text>
+                <Text LCID="1034">2094-BM01-M</Text>
+                <Text LCID="1046">2094-BM01-M</Text>
+                <Text LCID="1040">2094-BM01-M</Text>
+                <Text LCID="1041">2094-BM01-M</Text>
+                <Text LCID="1042">2094-BM01-M</Text>
+                <Text LCID="2052">2094-BM01-M</Text>
+              </CatalogNumber>
+              <Description>
+                <Text LCID="1033">Kinetix 6500, 460V AC, AM, 6.1A</Text>
+                <Text LCID="1036">Kinetix 6500, 460V AC, AM, 6.1A</Text>
+                <Text LCID="1031">Kinetix 6500, 460V AC, AM, 6.1A</Text>
+                <Text LCID="1034">Kinetix 6500, 460V AC, AM, 6.1A</Text>
+                <Text LCID="1046">Kinetix 6500, 460V AC, AM, 6.1A</Text>
+                <Text LCID="1040">Kinetix 6500, 460V AC, AM, 6.1A</Text>
+                <Text LCID="1041">Kinetix 6500、460V AC、AM、6.1A</Text>
+                <Text LCID="1042">Kinetix 6500, 460V AC, AM, 6.1A</Text>
+                <Text LCID="2052">Kinetix 6500，460V AC，AM，6.1A</Text>
+              </Description>
+            </PowerStructure>
+            <PowerStructure ID="18" Integrated="False" DutySelect="Normal" Voltage="High">
+              <CatalogNumber>
+                <Text LCID="1033">2094-BM02-M</Text>
+                <Text LCID="1036">2094-BM02-M</Text>
+                <Text LCID="1031">2094-BM02-M</Text>
+                <Text LCID="1034">2094-BM02-M</Text>
+                <Text LCID="1046">2094-BM02-M</Text>
+                <Text LCID="1040">2094-BM02-M</Text>
+                <Text LCID="1041">2094-BM02-M</Text>
+                <Text LCID="1042">2094-BM02-M</Text>
+                <Text LCID="2052">2094-BM02-M</Text>
+              </CatalogNumber>
+              <Description>
+                <Text LCID="1033">Kinetix 6500, 460V AC, AM, 10.3A</Text>
+                <Text LCID="1036">Kinetix 6500, 460V AC, AM, 10.3A</Text>
+                <Text LCID="1031">Kinetix 6500, 460V AC, AM, 10.3A</Text>
+                <Text LCID="1034">Kinetix 6500, 460V AC, AM, 10.3A</Text>
+                <Text LCID="1046">Kinetix 6500, 460V AC, AM, 10.3A</Text>
+                <Text LCID="1040">Kinetix 6500, 460V AC, AM, 10.3A</Text>
+                <Text LCID="1041">Kinetix 6500、460V AC、AM、10.3A</Text>
+                <Text LCID="1042">Kinetix 6500, 460V AC, AM, 10.3A</Text>
+                <Text LCID="2052">Kinetix 6500，460V AC，AM，10.3A</Text>
+              </Description>
+            </PowerStructure>
+            <PowerStructure ID="19" Integrated="False" DutySelect="Normal" Voltage="High">
+              <CatalogNumber>
+                <Text LCID="1033">2094-BM03-M</Text>
+                <Text LCID="1036">2094-BM03-M</Text>
+                <Text LCID="1031">2094-BM03-M</Text>
+                <Text LCID="1034">2094-BM03-M</Text>
+                <Text LCID="1046">2094-BM03-M</Text>
+                <Text LCID="1040">2094-BM03-M</Text>
+                <Text LCID="1041">2094-BM03-M</Text>
+                <Text LCID="1042">2094-BM03-M</Text>
+                <Text LCID="2052">2094-BM03-M</Text>
+              </CatalogNumber>
+              <Description>
+                <Text LCID="1033">Kinetix 6500, 460V AC, AM, 21.2A</Text>
+                <Text LCID="1036">Kinetix 6500, 460V AC, AM, 21.2A</Text>
+                <Text LCID="1031">Kinetix 6500, 460V AC, AM, 21.2A</Text>
+                <Text LCID="1034">Kinetix 6500, 460V AC, AM, 21.2A</Text>
+                <Text LCID="1046">Kinetix 6500, 460V AC, AM, 21.2A</Text>
+                <Text LCID="1040">Kinetix 6500, 460V AC, AM, 21.2A</Text>
+                <Text LCID="1041">Kinetix 6500、460V AC、AM、21.2A</Text>
+                <Text LCID="1042">Kinetix 6500, 460V AC, AM, 21.2A</Text>
+                <Text LCID="2052">Kinetix 6500，460V AC，AM，21.2A</Text>
+              </Description>
+            </PowerStructure>
+            <PowerStructure ID="20" Integrated="False" DutySelect="Normal" Voltage="High">
+              <CatalogNumber>
+                <Text LCID="1033">2094-BM05-M</Text>
+                <Text LCID="1036">2094-BM05-M</Text>
+                <Text LCID="1031">2094-BM05-M</Text>
+                <Text LCID="1034">2094-BM05-M</Text>
+                <Text LCID="1046">2094-BM05-M</Text>
+                <Text LCID="1040">2094-BM05-M</Text>
+                <Text LCID="1041">2094-BM05-M</Text>
+                <Text LCID="1042">2094-BM05-M</Text>
+                <Text LCID="2052">2094-BM05-M</Text>
+              </CatalogNumber>
+              <Description>
+                <Text LCID="1033">Kinetix 6500, 460V AC, AM, 34.6A</Text>
+                <Text LCID="1036">Kinetix 6500, 460V AC, AM, 34.6A</Text>
+                <Text LCID="1031">Kinetix 6500, 460V AC, AM, 34.6A</Text>
+                <Text LCID="1034">Kinetix 6500, 460V AC, AM, 34.6A</Text>
+                <Text LCID="1046">Kinetix 6500, 460V AC, AM, 34.6A</Text>
+                <Text LCID="1040">Kinetix 6500, 460V AC, AM, 34.6A</Text>
+                <Text LCID="1041">Kinetix 6500、460V AC、AM、34.6A</Text>
+                <Text LCID="1042">Kinetix 6500, 460V AC, AM, 34.6A</Text>
+                <Text LCID="2052">Kinetix 6500，460V AC，AM，34.6A</Text>
+              </Description>
+            </PowerStructure>
+          </PowerStructures>
+          <Feedback>
+            <Ports>
+              <Port Number="1" Hidden="True">
+                <Description>
+                  <Text LCID="1033">Motor Feedback Port</Text>
+                  <Text LCID="1036">Port de retour du moteur</Text>
+                  <Text LCID="1031">Motorrückführungsanschluss</Text>
+                  <Text LCID="1034">Puerto de retroalimentación del motor</Text>
+                  <Text LCID="1046">Porta de realimentação do motor</Text>
+                  <Text LCID="1040">Porta feedback motore</Text>
+                  <Text LCID="1041">モータ フィードバック ポート</Text>
+                  <Text LCID="1042">모터 피드백 포트</Text>
+                  <Text LCID="2052">电机反馈端口</Text>
+                </Description>
+              </Port>
+              <Port Number="2">
+                <Description>
+                  <Text LCID="1033">Aux Feedback Port</Text>
+                  <Text LCID="1036">Port Retour aux</Text>
+                  <Text LCID="1031">Hilfsrückführungsanschluss</Text>
+                  <Text LCID="1034">Puerto de retroalimentación aux</Text>
+                  <Text LCID="1046">Porta de realimentação auxiliar</Text>
+                  <Text LCID="1040">Porta feedback aus</Text>
+                  <Text LCID="1041">補助フィードバック ポート</Text>
+                  <Text LCID="1042">보조 피드백 포트</Text>
+                  <Text LCID="2052">辅助反馈端口</Text>
+                </Description>
+              </Port>
+            </Ports>
+            <DevicePorts>
+              <DevicePort Number="1" FeedbackPortNumber="1" DefaultCardType="1" />
+              <DevicePort Number="2" FeedbackPortNumber="2" DefaultCardType="2" />
+            </DevicePorts>
+            <Devices>
+              <Device CardType="1" Channels="1">
+                <CatalogNumber>Motor Feedback Device</CatalogNumber>
+                <FeedbackTypes>
+                  <FeedbackType>
+                    <Value>Digital AqB</Value>
+                  </FeedbackType>
+                  <FeedbackType>
+                    <Value>Digital AqB with UVW</Value>
+                  </FeedbackType>
+                  <FeedbackType>
+                    <Value>Sine/Cosine</Value>
+                  </FeedbackType>
+                  <FeedbackType>
+                    <Value>Sine/Cosine with UVW</Value>
+                  </FeedbackType>
+                  <FeedbackType>
+                    <Value>Hiperface</Value>
+                  </FeedbackType>
+                  <FeedbackType>
+                    <Value MinMajorRev="2" MaxLogixVersion="27" MaxICE2Version="27">EnDat 2.1</Value>
+                    <Value MinMajorRev="2" MinLogixVersion="28" MinICE2Version="28">EnDat Sine/Cosine</Value>
+                  </FeedbackType>
+                  <FeedbackType>
+                    <Value MinMajorRev="2" MaxLogixVersion="27" MaxICE2Version="27">EnDat 2.2</Value>
+                    <Value MinMajorRev="2" MinLogixVersion="28" MinICE2Version="28">EnDat Digital</Value>
+                  </FeedbackType>
+                  <FeedbackType>
+                    <Value>Tamagawa Serial</Value>
+                  </FeedbackType>
+                </FeedbackTypes>
+                <RegistrationInputs>2</RegistrationInputs>
+                <AxisFeatures>
+                  <Value>Marker</Value>
+                  <Value>Home Switch</Value>
+                </AxisFeatures>
+                <HomeSequence>
+                  <Value>Switch</Value>
+                  <Value>Marker</Value>
+                  <Value>Switch-Marker</Value>
+                </HomeSequence>
+              </Device>
+              <Device CardType="2" Channels="1">
+                <CatalogNumber>Auxiliary Feedback Device</CatalogNumber>
+                <FeedbackTypes>
+                  <FeedbackType>
+                    <Value>Digital AqB</Value>
+                  </FeedbackType>
+                  <FeedbackType>
+                    <Value>Sine/Cosine</Value>
+                  </FeedbackType>
+                  <FeedbackType>
+                    <Value>Hiperface</Value>
+                  </FeedbackType>
+                  <FeedbackType>
+                    <Value MinMajorRev="2" MaxLogixVersion="27">EnDat 2.1</Value>
+                    <Value MinMajorRev="2" MinLogixVersion="28">EnDat Sine/Cosine</Value>
+                  </FeedbackType>
+                  <FeedbackType>
+                    <Value MinMajorRev="2" MaxLogixVersion="27">EnDat 2.2</Value>
+                    <Value MinMajorRev="2" MinLogixVersion="28">EnDat Digital</Value>
+                  </FeedbackType>
+                </FeedbackTypes>
+                <RegistrationInputs>2</RegistrationInputs>
+                <AxisFeatures>
+                  <Value>Marker</Value>
+                  <Value>Home Switch</Value>
+                </AxisFeatures>
+                <HomeSequence>
+                  <Value>Switch</Value>
+                  <Value>Marker</Value>
+                  <Value>Switch-Marker</Value>
+                </HomeSequence>
+              </Device>
+            </Devices>
+          </Feedback>
+          <Axes>
+            <Axis1>
+              <SupportedAxisConfigurations>
+                <Value>Position Loop</Value>
+                <Value>Velocity Loop</Value>
+                <Value>Torque Loop</Value>
+                <Value>Feedback Only</Value>
+                <DefaultAxisConfigurationValue>Position Loop</DefaultAxisConfigurationValue>
+              </SupportedAxisConfigurations>
+            </Axis1>
+            <Axis2>
+              <SupportedAxisConfigurations>
+                <Value>Feedback Only</Value>
+                <DefaultAxisConfigurationValue>Feedback Only</DefaultAxisConfigurationValue>
+              </SupportedAxisConfigurations>
+            </Axis2>
+          </Axes>
+          <Attributes>
+            <SupportedAttributes>
+              <PositionLoop>
+                <MotorCatalogNumber />
+                <MotorPolarity />
+                <MotorRatedPeakCurrent />
+                <MotorRatedOutputPower />
+                <MotorOverloadLimit />
+                <MotorIntegralThermalSwitch />
+                <MotorWindingToAmbientCapacitance />
+                <MotorWindingToAmbientResistance />
+                <PMMotorFluxSaturation />
+                <PMMotorRatedTorque />
+                <PMMotorTorqueConstant />
+                <PMMotorRatedForce />
+                <PMMotorForceConstant />
+                <RotaryMotorInertia />
+                <RotaryMotorMaxSpeed />
+                <LinearMotorMass />
+                <LinearMotorMaxSpeed />
+                <FeedbackUnitRatio />
+                <Feedback1SerialNumber />
+                <Feedback1Polarity />
+                <Feedback1VelocityFilterTaps />
+                <Feedback1AccelFilterTaps />
+                <Feedback1VelocityFilterBandwidth />
+                <Feedback1AccelFilterBandwidth />
+                <Feedback2SerialNumber />
+                <Feedback2Polarity />
+                <Feedback2VelocityFilterTaps />
+                <Feedback2AccelFilterTaps />
+                <Feedback2VelocityFilterBandwidth />
+                <Feedback2AccelFilterBandwidth />
+                <PositionFineCommand />
+                <VelocityFineCommand />
+                <AccelerationFineCommand />
+                <PositionErrorToleranceTime />
+                <PositionLeadLagFilterBandwidth />
+                <PositionLeadLagFilterGain />
+                <PositionNotchFilterFrequency />
+                <VelocityNegativeFeedforwardGain />
+                <VelocityDroop />
+                <VelocityErrorTolerance />
+                <VelocityErrorToleranceTime />
+                <VelocityLowPassFilterBandwidth />
+                <VelocityThreshold />
+                <VelocityLockTolerance />
+                <VelocityLimitPositive />
+                <VelocityLimitNegative />
+                <AccelerationReference />
+                <LoadObserverAccelerationEstimate MinMajorRev="2" />
+                <LoadObserverTorqueEstimate MinMajorRev="2" />
+                <LoadObserverConfiguration MinMajorRev="2" />
+                <LoadObserverBandwidth MinMajorRev="2" />
+                <LoadObserverIntegratorBandwidth MinMajorRev="2" />
+                <LoadObserverFeedbackGain MinMajorRev="2" />
+                <AccelerationLimit />
+                <DecelerationLimit />
+                <BacklashCompensationWindow />
+                <FrictionCompensationSliding />
+                <FrictionCompensationStatic />
+                <FrictionCompensationViscous />
+                <FrictionCompensationWindow />
+                <TorqueLeadLagFilterBandwidth />
+                <TorqueLeadLagFilterGain />
+                <TorqueLowPassFilterBandwidth />
+                <TorqueNotchFilterFrequency />
+                <TorqueRateLimit />
+                <TorqueThreshold />
+                <OvertorqueLimit />
+                <OvertorqueLimitTime />
+                <UndertorqueLimit />
+                <UndertorqueLimitTime />
+                <OperativeCurrentLimit />
+                <CurrentLimitSource />
+                <CurrentReference />
+                <FluxCurrentReference />
+                <CurrentError />
+                <FluxCurrentError />
+                <CurrentFeedback />
+                <FluxCurrentFeedback />
+                <TorqueLoopBandwidth />
+                <CommutationSelfSensingCurrent />
+                <CommutationPolarity MinMajorRev="2" />
+                <FeedbackCommutationAligned MinMajorRev="2" />
+                <OutputFrequency />
+                <StoppingTimeLimit />
+                <ResistiveBrakeContactDelay />
+                <MechanicalBrakeControl />
+                <MechanicalBrakeReleaseDelay />
+                <MechanicalBrakeEngageDelay />
+                <ShutdownAction />
+                <ConverterCapacity />
+                <BusRegulatorCapacity />
+                <MotorOverloadAction />
+                <InverterOverloadAction />
+                <CIPAxisAlarms />
+                <CIPAxisAlarmsRA />
+                <MotorThermalOverloadUserLimit />
+                <InverterThermalOverloadUserLimit />
+                <FeedbackSignalLossUserLimit />
+                <FeedbackDataLossUserLimit />
+                <GuardStatus />
+                <GuardFaults />
+              </PositionLoop>
+              <VelocityLoop>
+                <MotorCatalogNumber />
+                <MotorPolarity />
+                <MotorRatedPeakCurrent />
+                <MotorRatedOutputPower />
+                <MotorOverloadLimit />
+                <MotorIntegralThermalSwitch />
+                <MotorWindingToAmbientCapacitance />
+                <MotorWindingToAmbientResistance />
+                <PMMotorFluxSaturation />
+                <PMMotorRatedTorque />
+                <PMMotorTorqueConstant />
+                <PMMotorRatedForce />
+                <PMMotorForceConstant />
+                <RotaryMotorInertia />
+                <RotaryMotorMaxSpeed />
+                <LinearMotorMass />
+                <LinearMotorMaxSpeed />
+                <FeedbackUnitRatio />
+                <Feedback1SerialNumber />
+                <Feedback1Polarity />
+                <Feedback1VelocityFilterTaps />
+                <Feedback1AccelFilterTaps />
+                <Feedback1VelocityFilterBandwidth />
+                <Feedback1AccelFilterBandwidth />
+                <Feedback2SerialNumber />
+                <Feedback2Polarity />
+                <Feedback2VelocityFilterTaps />
+                <Feedback2AccelFilterTaps />
+                <Feedback2VelocityFilterBandwidth />
+                <Feedback2AccelFilterBandwidth />
+                <VelocityFineCommand />
+                <AccelerationFineCommand />
+                <VelocityNegativeFeedforwardGain />
+                <VelocityDroop />
+                <VelocityErrorTolerance />
+                <VelocityErrorToleranceTime />
+                <VelocityLowPassFilterBandwidth />
+                <VelocityThreshold />
+                <VelocityLockTolerance />
+                <VelocityLimitPositive />
+                <VelocityLimitNegative />
+                <AccelerationReference />
+                <LoadObserverAccelerationEstimate MinMajorRev="2" />
+                <LoadObserverTorqueEstimate MinMajorRev="2" />
+                <LoadObserverConfiguration MinMajorRev="2" />
+                <LoadObserverBandwidth MinMajorRev="2" />
+                <LoadObserverIntegratorBandwidth MinMajorRev="2" />
+                <LoadObserverFeedbackGain MinMajorRev="2" />
+                <AccelerationLimit />
+                <DecelerationLimit />
+                <FrictionCompensationSliding />
+                <FrictionCompensationViscous />
+                <TorqueLeadLagFilterBandwidth />
+                <TorqueLeadLagFilterGain />
+                <TorqueLowPassFilterBandwidth />
+                <TorqueNotchFilterFrequency />
+                <TorqueRateLimit />
+                <TorqueThreshold />
+                <OvertorqueLimit />
+                <OvertorqueLimitTime />
+                <UndertorqueLimit />
+                <UndertorqueLimitTime />
+                <OperativeCurrentLimit />
+                <CurrentLimitSource />
+                <CurrentReference />
+                <FluxCurrentReference />
+                <CurrentError />
+                <FluxCurrentError />
+                <CurrentFeedback />
+                <FluxCurrentFeedback />
+                <TorqueLoopBandwidth />
+                <CommutationSelfSensingCurrent />
+                <CommutationPolarity MinMajorRev="2" />
+                <FeedbackCommutationAligned MinMajorRev="2" />
+                <OutputFrequency />
+                <StoppingTimeLimit />
+                <ResistiveBrakeContactDelay />
+                <MechanicalBrakeControl />
+                <MechanicalBrakeReleaseDelay />
+                <MechanicalBrakeEngageDelay />
+                <ShutdownAction />
+                <ConverterCapacity />
+                <BusRegulatorCapacity />
+                <MotorOverloadAction />
+                <InverterOverloadAction />
+                <CIPAxisAlarms />
+                <CIPAxisAlarmsRA />
+                <MotorThermalOverloadUserLimit />
+                <InverterThermalOverloadUserLimit />
+                <FeedbackSignalLossUserLimit />
+                <FeedbackDataLossUserLimit />
+                <GuardStatus />
+                <GuardFaults />
+              </VelocityLoop>
+              <TorqueLoop>
+                <MotorCatalogNumber />
+                <MotorPolarity />
+                <MotorRatedPeakCurrent />
+                <MotorRatedOutputPower />
+                <MotorOverloadLimit />
+                <MotorIntegralThermalSwitch />
+                <MotorWindingToAmbientCapacitance />
+                <MotorWindingToAmbientResistance />
+                <PMMotorFluxSaturation />
+                <PMMotorRatedTorque />
+                <PMMotorTorqueConstant />
+                <PMMotorRatedForce />
+                <PMMotorForceConstant />
+                <RotaryMotorInertia />
+                <RotaryMotorMaxSpeed />
+                <LinearMotorMass />
+                <LinearMotorMaxSpeed />
+                <Feedback1SerialNumber />
+                <Feedback1Polarity />
+                <Feedback1VelocityFilterTaps />
+                <Feedback1AccelFilterTaps />
+                <Feedback1VelocityFilterBandwidth />
+                <Feedback1AccelFilterBandwidth />
+                <Feedback2SerialNumber />
+                <Feedback2Polarity />
+                <Feedback2VelocityFilterTaps />
+                <Feedback2AccelFilterTaps />
+                <Feedback2VelocityFilterBandwidth />
+                <Feedback2AccelFilterBandwidth />
+                <AccelerationFineCommand />
+                <VelocityThreshold MinMajorRev="2" />
+                <LoadObserverAccelerationEstimate MinMajorRev="2" />
+                <LoadObserverTorqueEstimate MinMajorRev="2" />
+                <LoadObserverConfiguration MinMajorRev="2" />
+                <LoadObserverBandwidth MinMajorRev="2" />
+                <LoadObserverIntegratorBandwidth MinMajorRev="2" />
+                <LoadObserverFeedbackGain MinMajorRev="2" />
+                <TorqueLeadLagFilterBandwidth />
+                <TorqueLeadLagFilterGain />
+                <TorqueLowPassFilterBandwidth />
+                <TorqueNotchFilterFrequency />
+                <TorqueRateLimit />
+                <TorqueThreshold />
+                <OvertorqueLimit />
+                <OvertorqueLimitTime />
+                <UndertorqueLimit />
+                <UndertorqueLimitTime />
+                <OperativeCurrentLimit />
+                <CurrentLimitSource />
+                <CurrentReference />
+                <FluxCurrentReference />
+                <CurrentError />
+                <FluxCurrentError />
+                <CurrentFeedback />
+                <FluxCurrentFeedback />
+                <TorqueLoopBandwidth />
+                <CommutationSelfSensingCurrent />
+                <CommutationPolarity MinMajorRev="2" />
+                <FeedbackCommutationAligned MinMajorRev="2" />
+                <OutputFrequency />
+                <StoppingTimeLimit />
+                <ResistiveBrakeContactDelay />
+                <MechanicalBrakeControl />
+                <MechanicalBrakeReleaseDelay />
+                <MechanicalBrakeEngageDelay />
+                <ShutdownAction />
+                <ConverterCapacity />
+                <BusRegulatorCapacity />
+                <MotorOverloadAction />
+                <InverterOverloadAction />
+                <CIPAxisAlarms />
+                <CIPAxisAlarmsRA />
+                <MotorThermalOverloadUserLimit />
+                <InverterThermalOverloadUserLimit />
+                <FeedbackSignalLossUserLimit />
+                <FeedbackDataLossUserLimit />
+                <GuardStatus />
+                <GuardFaults />
+              </TorqueLoop>
+              <FeedbackOnly>
+                <Feedback1SerialNumber />
+                <Feedback1Polarity />
+                <Feedback1VelocityFilterTaps />
+                <Feedback1AccelFilterTaps />
+                <Feedback1VelocityFilterBandwidth />
+                <Feedback1AccelFilterBandwidth />
+                <Feedback2SerialNumber />
+                <Feedback2Polarity />
+                <Feedback2VelocityFilterTaps />
+                <Feedback2AccelFilterTaps />
+                <Feedback2VelocityFilterBandwidth />
+                <Feedback2AccelFilterBandwidth />
+                <VelocityThreshold MinMajorRev="2" />
+                <CIPAxisAlarms />
+                <CIPAxisAlarmsRA />
+                <FeedbackSignalLossUserLimit />
+                <FeedbackDataLossUserLimit />
+              </FeedbackOnly>
+            </SupportedAttributes>
+            <SupportedEnums>
+              <AxisFeatures>
+                <Value>Fine Interpolation</Value>
+                <Value>Registration Autorearm</Value>
+                <Value>Alarm Log</Value>
+                <Value>Hookup Test</Value>
+                <Value MinMajorRev="2">Commutation Test</Value>
+                <Value>Inertia Test</Value>
+              </AxisFeatures>
+              <MotorDataSource>
+                <Value>Database</Value>
+                <Value>Motor NV</Value>
+              </MotorDataSource>
+              <MotorType>
+                <Value>Rotary Permanent Magnet</Value>
+                <Value>Linear Permanent Magnet</Value>
+              </MotorType>
+              <Feedback1StartupMethod>
+                <Value>Absolute</Value>
+              </Feedback1StartupMethod>
+              <Feedback2StartupMethod>
+                <Value>Absolute</Value>
+              </Feedback2StartupMethod>
+              <LoadObserverConfiguration MinMajorRev="2">
+                <Value>Load Observer Only</Value>
+                <Value>Load Observer With Velocity Estimate</Value>
+                <Value>Velocity Estimate Only</Value>
+                <Value>Acceleration Feedback</Value>
+              </LoadObserverConfiguration>
+              <FeedbackCommutationAligned MinMajorRev="2">
+                <Value>Motor Offset</Value>
+                <Value>SelfSense</Value>
+              </FeedbackCommutationAligned>
+              <ShutdownAction>
+                <Value>Drop DC Bus</Value>
+              </ShutdownAction>
+              <MotorOverloadAction>
+                <Value>Current Foldback</Value>
+              </MotorOverloadAction>
+              <InverterOverloadAction>
+                <Value>Current Foldback</Value>
+              </InverterOverloadAction>
+            </SupportedEnums>
+            <SupportedEnumsPerAxisConfiguration>
+              <FeedbackConfiguration>
+                <PositionLoop>
+                  <Value>Load Feedback</Value>
+                  <Value>Dual Feedback</Value>
+                </PositionLoop>
+                <VelocityLoop>
+                  <Value>Load Feedback</Value>
+                </VelocityLoop>
+                <TorqueLoop>
+                  <Value>Load Feedback</Value>
+                </TorqueLoop>
+              </FeedbackConfiguration>
+              <StoppingAction>
+                <PositionLoop>
+                  <Value>Current Decel Hold</Value>
+                </PositionLoop>
+                <VelocityLoop>
+                  <Value>Current Decel Hold</Value>
+                </VelocityLoop>
+              </StoppingAction>
+            </SupportedEnumsPerAxisConfiguration>
+            <DefaultAttributeValues>
+              <CommutationSelfSensingCurrent>100</CommutationSelfSensingCurrent>
+            </DefaultAttributeValues>
+            <SupportedExceptions>
+              <CIPAxisExceptionAction>
+                <MotorCommutation />
+                <MotorOverspeedFL />
+                <MotorOverspeedUL MaxMajorRev="1">
+                  <Value>Ignore</Value>
+                  <Value>Alarm</Value>
+                  <Value>Fault Status Only</Value>
+                  <Value>Stop Planner</Value>
+                </MotorOverspeedUL>
+                <MotorOvertemperatureFL />
+                <MotorThermalOverloadFL />
+                <MotorThermalOverloadUL>
+                  <Value>Ignore</Value>
+                  <Value>Alarm</Value>
+                  <Value>Fault Status Only</Value>
+                  <Value>Stop Planner</Value>
+                </MotorThermalOverloadUL>
+                <InverterOvercurrent />
+                <InverterOvertemperatureFL />
+                <InverterThermalOverloadFL />
+                <InverterThermalOverloadUL>
+                  <Value>Ignore</Value>
+                  <Value>Alarm</Value>
+                  <Value>Fault Status Only</Value>
+                  <Value>Stop Planner</Value>
+                </InverterThermalOverloadUL>
+                <ConverterGroundCurrentFL />
+                <ConverterOvertemperatureFL />
+                <ConverterThermalOverloadFL />
+                <ConverterThermalOverloadUL>
+                  <Value>Ignore</Value>
+                  <Value>Alarm</Value>
+                  <Value>Fault Status Only</Value>
+                  <Value>Stop Planner</Value>
+                </ConverterThermalOverloadUL>
+                <ConverterACPowerLoss>
+                  <Value>Ignore</Value>
+                  <Value>Alarm</Value>
+                  <Value>Fault Status Only</Value>
+                  <Value>Stop Planner</Value>
+                </ConverterACPowerLoss>
+                <ConverterACSinglePhaseLoss>
+                  <Value>Ignore</Value>
+                  <Value>Alarm</Value>
+                  <Value>Fault Status Only</Value>
+                  <Value>Stop Planner</Value>
+                </ConverterACSinglePhaseLoss>
+                <ConverterPreChargeFailure />
+                <BusRegulatorThermalOverloadFL />
+                <BusRegulatorThermalOverloadUL>
+                  <Value>Ignore</Value>
+                  <Value>Alarm</Value>
+                  <Value>Fault Status Only</Value>
+                  <Value>Stop Planner</Value>
+                </BusRegulatorThermalOverloadUL>
+                <BusRegulatorFailure />
+                <BusUndervoltageFL />
+                <BusUndervoltageUL>
+                  <Value>Ignore</Value>
+                  <Value>Alarm</Value>
+                  <Value>Fault Status Only</Value>
+                  <Value>Stop Planner</Value>
+                </BusUndervoltageUL>
+                <BusOvervoltageFL />
+                <BusPowerFuseBlown MaxLogixVersion="20"/>
+				<BusPowerBlownFuse MinLogixVersion="21"/>
+                <FeedbackSignalNoiseFL />
+                <FeedbackSignalNoiseUL>
+                  <Value>Ignore</Value>
+                  <Value>Alarm</Value>
+                  <Value>Fault Status Only</Value>
+                  <Value>Stop Planner</Value>
+                </FeedbackSignalNoiseUL>
+                <FeedbackSignalLossFL />
+                <FeedbackSignalLossUL>
+                  <Value>Ignore</Value>
+                  <Value>Alarm</Value>
+                  <Value>Fault Status Only</Value>
+                  <Value>Stop Planner</Value>
+                </FeedbackSignalLossUL>
+                <FeedbackDataLossFL />
+                <FeedbackDataLossUL>
+                  <Value>Ignore</Value>
+                  <Value>Alarm</Value>
+                  <Value>Fault Status Only</Value>
+                  <Value>Stop Planner</Value>
+                </FeedbackDataLossUL>
+                <FeedbackDeviceFailure />
+                <HardwareOvertravelPositive>
+                  <Value>Ignore</Value>
+                  <Value>Alarm</Value>
+                  <Value>Fault Status Only</Value>
+                  <Value>Stop Planner</Value>
+                </HardwareOvertravelPositive>
+                <HardwareOvertravelNegative>
+                  <Value>Ignore</Value>
+                  <Value>Alarm</Value>
+                  <Value>Fault Status Only</Value>
+                  <Value>Stop Planner</Value>
+                </HardwareOvertravelNegative>
+                <ExcessivePositionError>
+                  <Value>Ignore</Value>
+                  <Value>Alarm</Value>
+                  <Value>Fault Status Only</Value>
+                  <Value>Stop Planner</Value>
+                </ExcessivePositionError>
+                <ExcessiveVelocityError>
+                  <Value>Ignore</Value>
+                  <Value>Alarm</Value>
+                  <Value>Fault Status Only</Value>
+                  <Value>Stop Planner</Value>
+                </ExcessiveVelocityError>
+                <OvertorqueLimit>
+                  <Value>Ignore</Value>
+                  <Value>Alarm</Value>
+                  <Value>Fault Status Only</Value>
+                  <Value>Stop Planner</Value>
+                </OvertorqueLimit>
+                <UndertorqueLimit>
+                  <Value>Ignore</Value>
+                  <Value>Alarm</Value>
+                  <Value>Fault Status Only</Value>
+                  <Value>Stop Planner</Value>
+                </UndertorqueLimit>
+                <IllegalControlMode />
+                <EnableInputDeactivated>
+                  <Value>Ignore</Value>
+                  <Value>Alarm</Value>
+                  <Value>Fault Status Only</Value>
+                  <Value>Stop Planner</Value>
+                </EnableInputDeactivated>
+                <ControllerInitiatedException />
+              </CIPAxisExceptionAction>
+              <CIPAxisExceptionActionRA>
+                <CommutationStartupFailure />
+                <MotorVoltageMismatch />
+                <FeedbackFilterNoise>
+                  <Value>Ignore</Value>
+                  <Value>Alarm</Value>
+                  <Value>Fault Status Only</Value>
+                  <Value>Stop Planner</Value>
+                </FeedbackFilterNoise>
+                <FeedbackIncrementalCountError />
+                <ControlModuleOvertemperatureFL />
+                <ControlModuleOvertemperatureUL MaxMajorRev="1">
+                  <Value>Ignore</Value>
+                  <Value>Alarm</Value>
+                  <Value>Fault Status Only</Value>
+                  <Value>Stop Planner</Value>
+                </ControlModuleOvertemperatureUL>
+                <ConverterPrechargeOverloadFL />
+                <RegenerativePowerSupplyFailure />
+              </CIPAxisExceptionActionRA>
+            </SupportedExceptions>
+            <FeedbackOnlySupportedExceptions>
+              <CIPAxisExceptionAction>
+                <FeedbackSignalNoiseFL />
+                <FeedbackSignalNoiseUL>
+                  <Value>Ignore</Value>
+                  <Value>Alarm</Value>
+                </FeedbackSignalNoiseUL>
+                <FeedbackSignalLossFL />
+                <FeedbackSignalLossUL>
+                  <Value>Ignore</Value>
+                  <Value>Alarm</Value>
+                </FeedbackSignalLossUL>
+                <FeedbackDataLossFL />
+                <FeedbackDataLossUL>
+                  <Value>Ignore</Value>
+                  <Value>Alarm</Value>
+                </FeedbackDataLossUL>
+                <FeedbackDeviceFailure />
+                <IllegalControlMode />
+                <ControllerInitiatedException />
+              </CIPAxisExceptionAction>
+              <CIPAxisExceptionActionRA>
+                <FeedbackFilterNoise>
+                  <Value>Ignore</Value>
+                  <Value>Alarm</Value>
+                </FeedbackFilterNoise>
+                <FeedbackIncrementalCountError />
+              </CIPAxisExceptionActionRA>
+            </FeedbackOnlySupportedExceptions>
+          </Attributes>
+        </Drive>
+      </Schema>
+    </ModuleType>
+  </ModuleTypes>
+</ModuleTypeInstall>

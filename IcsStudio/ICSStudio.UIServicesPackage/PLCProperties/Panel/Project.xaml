@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="ICSStudio.UIServicesPackage.PLCProperties.Panel.Project"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ICSStudio.UIServicesPackage.PLCProperties.Panel"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="{DynamicResource Name:}"></TextBlock>
+        <TextBox Grid.Row="0" Grid.Column="1" Width="300" HorizontalAlignment="Left" Text="{Binding Name}" IsReadOnly="True"></TextBox>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="{DynamicResource Path:}"></TextBlock>
+        <TextBox Grid.Row="1" Grid.Column="1" Width="300" HorizontalAlignment="Left" Text="{Binding Path}" IsReadOnly="True"></TextBox>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="{DynamicResource Created:}"></TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding CreateTime}"></TextBlock>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="{DynamicResource Edited:}"></TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding EditedTime}"></TextBlock>
+
+        <CheckBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" IsChecked="{Binding Check1}" IsEnabled="{Binding Enabled1}"
+                  Content="{DynamicResource Download Project Documentation and Extended Properties}"></CheckBox>
+
+        <CheckBox Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" IsChecked="{Binding Check2}" IsEnabled="{Binding Enabled2}"
+                  Content="{DynamicResource Download Custom Properties}" Margin="10,0,0,0"></CheckBox>
+
+        <DockPanel Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2">
+            <TextBlock Text="{DynamicResource Pass-Through Display}" FontWeight="Bold"></TextBlock>
+            <Separator Width="300" HorizontalAlignment="Left"></Separator>
+        </DockPanel>
+
+        <CheckBox Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" IsChecked="{Binding Check3}" IsEnabled="{Binding Enabled3}"
+                  Content="{DynamicResource Show Pass-Through Properties}"></CheckBox>
+
+        <CheckBox Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2"  IsChecked="{Binding Check4}" IsEnabled="{Binding Enabled4}"
+                  Content="{DynamicResource Append To Base Tag Description}" Margin="10,0,0,0"></CheckBox>
+    </Grid>
+</UserControl>

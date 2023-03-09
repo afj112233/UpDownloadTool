@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="ICSStudio.Diagram.Flowchart.FlowchartEditor"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:diagrams="clr-namespace:ICSStudio.Diagrams">
+    <Border BorderBrush="Black" BorderThickness="1">
+        <diagrams:DiagramScrollView>
+            <diagrams:DiagramView x:Name="_editor" AllowDrop="True"
+                                  ShowGrid="True" GridCellSize="20,20" DocumentSize="2000,2000">
+            </diagrams:DiagramView>
+        </diagrams:DiagramScrollView>
+    </Border>
+</UserControl>

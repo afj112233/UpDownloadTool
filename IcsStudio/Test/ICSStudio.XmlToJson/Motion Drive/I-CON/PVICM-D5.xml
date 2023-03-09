@@ -1,0 +1,1214 @@
+<?xml version       = "1.0"
+      encoding      = "UTF-8"
+      standalone    = "no" ?>
+
+<!--Copyright 2016 Information Convergence -->
+
+<ProfileViewDirectory xmlns              = "xsdPV"
+                      xsi:schemaLocation = "xsdPV PV.xsd"
+                      xmlns:xsi          = "http://www.w3.org/2001/XMLSchema-instance">
+
+    <Schema Value="1"/>
+  <!-- ****************************************************************** -->
+    <Modules>
+	<!-- ****** ICM-D5S08.xml ************************************************** -->
+        <Module>
+            <Identity Name ="CIPDrive" VendorID="5" ProductType="37" ProductCode="46"/>
+            <ModuleDefDlgID Value="CIPDrive"/>
+
+            <MajorRev Value="1">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 101: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="101" PageSetID="Midrange CIP Drive Page Set" />
+                
+            </MajorRev>
+            <MajorRev Value="2">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 101: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="101" PageSetID="Midrange CIP Drive Page Set" />
+                
+            </MajorRev>
+			<MajorRev Value="3">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="102" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+			<MajorRev Value="4">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="102" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+        </Module>
+    
+    </Modules>
+	
+    <!-- ****************************************************************** -->
+    <Modules>
+	<!-- ****** ICM-D5D08.xml ************************************************** -->
+        <Module>
+            <Identity Name ="CIPDrive" VendorID="5" ProductType="37" ProductCode="47"/>
+            <ModuleDefDlgID Value="CIPDrive"/>
+
+            <MajorRev Value="1">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 101: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="101" PageSetID="Midrange CIP Drive Page Set" />
+                
+            </MajorRev>
+            <MajorRev Value="2">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 101: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="101" PageSetID="Midrange CIP Drive Page Set" />
+                
+            </MajorRev>
+			<MajorRev Value="3">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="102" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+			<MajorRev Value="4">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="102" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+        </Module>
+    
+    </Modules>
+
+    <!-- ****************************************************************** -->
+    <Modules>
+	
+	<!-- ****** ICM-D5D11.xml ************************************************** -->
+        <Module>
+            <Identity Name ="CIPDrive" VendorID="5" ProductType="37" ProductCode="48"/>
+            <ModuleDefDlgID Value="CIPDrive"/>
+
+            <MajorRev Value="1">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 101: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="101" PageSetID="Midrange CIP Drive Page Set" />
+                
+            </MajorRev>
+            <MajorRev Value="2">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 101: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="101" PageSetID="Midrange CIP Drive Page Set" />
+                
+            </MajorRev>
+			<MajorRev Value="3">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="102" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+			<MajorRev Value="4">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="102" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+        </Module>
+    
+    </Modules>
+
+    <!-- ****************************************************************** -->
+    <Modules>
+	
+	<!-- ****** ICM-D5D18.xml ************************************************** -->
+        <Module>
+            <Identity Name ="CIPDrive" VendorID="5" ProductType="37" ProductCode="68"/>
+            <ModuleDefDlgID Value="CIPDrive"/>
+
+			<MajorRev Value="4">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="102" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+        </Module>
+    
+    </Modules>
+
+    <!-- ****************************************************************** -->
+    <Modules>
+    
+    <!-- ****** ICM-D3D11.xml ************************************************** -->
+        <Module>
+            <Identity Name ="CIPDrive" VendorID="5" ProductType="37" ProductCode="58"/>
+            <ModuleDefDlgID Value="CIPDrive"/>
+
+            <MajorRev Value="1">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 101: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="101" PageSetID="Midrange CIP Drive Page Set" />
+                
+            </MajorRev>
+            <MajorRev Value="2">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 101: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="101" PageSetID="Midrange CIP Drive Page Set" />
+                
+            </MajorRev>
+            <MajorRev Value="3">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="102" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+            <MajorRev Value="4">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="103" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+        </Module>
+    
+    </Modules>
+
+    <!-- ****************************************************************** -->
+    <Modules>
+
+	<!-- ****** ICM-D5D28.xml ************************************************** -->
+        <Module>
+            <Identity Name ="CIPDrive" VendorID="5" ProductType="37" ProductCode="49"/>
+            <ModuleDefDlgID Value="CIPDrive"/>
+
+            <MajorRev Value="1">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 101: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="101" PageSetID="Midrange CIP Drive Page Set" />
+                
+            </MajorRev>
+            <MajorRev Value="2">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 101: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="101" PageSetID="Midrange CIP Drive Page Set" />
+                
+            </MajorRev>
+			<MajorRev Value="3">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="102" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+			<MajorRev Value="4">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="102" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+        </Module>
+    
+    </Modules>
+
+    <!-- ****************************************************************** -->
+    <Modules>
+
+	<!-- ****** ICM-D5D38.xml ************************************************** -->
+        <Module>
+            <Identity Name ="CIPDrive" VendorID="5" ProductType="37" ProductCode="50"/>
+            <ModuleDefDlgID Value="CIPDrive"/>
+
+            <MajorRev Value="1">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 101: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="101" PageSetID="Midrange CIP Drive Page Set" />
+                
+            </MajorRev>
+            <MajorRev Value="2">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 101: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="101" PageSetID="Midrange CIP Drive Page Set" />
+                
+            </MajorRev>
+			<MajorRev Value="3">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="102" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+			<MajorRev Value="4">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="102" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+        </Module>
+    
+    </Modules>
+
+	<!-- ****************************************************************** -->
+    <Modules>
+	
+    	<!-- ****** ICM-D1S11.xml ************************************************** -->
+        <Module>
+            <Identity Name ="CIPDrive" VendorID="5" ProductType="37" ProductCode="69"/>
+            <ModuleDefDlgID Value="CIPDrive"/>
+
+		<MajorRev Value="4">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="104" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+        </Module>
+    
+    </Modules>
+    
+	<!-- ****************************************************************** -->
+    <Modules>
+	
+    	<!-- ****** ICM-D1S18.xml ************************************************** -->
+        <Module>
+            <Identity Name ="CIPDrive" VendorID="5" ProductType="37" ProductCode="64"/>
+            <ModuleDefDlgID Value="CIPDrive"/>
+
+            <MajorRev Value="1">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 101: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="101" PageSetID="Midrange CIP Drive Page Set" />
+                
+            </MajorRev>
+            <MajorRev Value="2">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 101: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="101" PageSetID="Midrange CIP Drive Page Set" />
+                
+            </MajorRev>
+			<MajorRev Value="3">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="104" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+			<MajorRev Value="4">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="104" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+        </Module>
+    
+    </Modules>
+
+    <!-- ****************************************************************** -->
+    <Modules>
+
+    	<!-- ****** ICM-D1S15.xml ************************************************** -->
+        <Module>
+            <Identity Name ="CIPDrive" VendorID="5" ProductType="37" ProductCode="65"/>
+            <ModuleDefDlgID Value="CIPDrive"/>
+
+            <MajorRev Value="1">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 101: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="101" PageSetID="Midrange CIP Drive Page Set" />
+                
+            </MajorRev>
+            <MajorRev Value="2">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 101: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="101" PageSetID="Midrange CIP Drive Page Set" />
+                
+            </MajorRev>
+			<MajorRev Value="3">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="104" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+			<MajorRev Value="4">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="104" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+        </Module>
+    
+    </Modules>
+
+    <!-- ****************************************************************** -->
+    <Modules>	
+ 
+    	<!-- ****** ICM-D1S30.xml ************************************************** -->
+        <Module>
+            <Identity Name ="CIPDrive" VendorID="5" ProductType="37" ProductCode="66"/>
+            <ModuleDefDlgID Value="CIPDrive"/>
+
+	    <MajorRev Value="4">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="104" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+        </Module>
+    
+    </Modules>
+
+    <!-- ****************************************************************** -->
+    <Modules>	
+ 
+    	<!-- ****** ICM-D1S70.xml ************************************************** -->
+        <Module>
+            <Identity Name ="CIPDrive" VendorID="5" ProductType="37" ProductCode="67"/>
+            <ModuleDefDlgID Value="CIPDrive"/>
+
+	    <MajorRev Value="4">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="104" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+        </Module>
+    
+    </Modules>
+
+    <!-- ****************************************************************** -->
+    <Modules>
+   
+	<!-- ****** ICM-D5S50.xml ************************************************** -->
+        <Module>
+            <Identity Name ="CIPDrive" VendorID="5" ProductType="37" ProductCode="51"/>
+            <ModuleDefDlgID Value="CIPDrive"/>
+
+            <MajorRev Value="1">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 101: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="101" PageSetID="Midrange CIP Drive Page Set" />
+                
+            </MajorRev>
+            <MajorRev Value="2">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 101: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="101" PageSetID="Midrange CIP Drive Page Set" />
+                
+            </MajorRev>
+			<MajorRev Value="3">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="102" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+			<MajorRev Value="4">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="102" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+        </Module>
+    
+    </Modules>
+
+    <!-- ****************************************************************** -->
+    <Modules>
+	
+	<!-- ****** ICM-D5S70.xml ************************************************** -->
+        <Module>
+            <Identity Name ="CIPDrive" VendorID="5" ProductType="37" ProductCode="52"/>
+            <ModuleDefDlgID Value="CIPDrive"/>
+
+            <MajorRev Value="1">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 101: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="101" PageSetID="Midrange CIP Drive Page Set" />
+                
+            </MajorRev>
+            <MajorRev Value="2">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 101: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="101" PageSetID="Midrange CIP Drive Page Set" />
+                
+            </MajorRev>
+			<MajorRev Value="3">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="102" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+			<MajorRev Value="4">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="102" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+        </Module>
+    
+    </Modules>
+
+   <!-- ****************************************************************** -->
+    <Modules>
+	
+	<!-- ****** ICM-D5S130.xml ************************************************** -->
+        <Module>
+            <Identity Name ="CIPDrive" VendorID="5" ProductType="37" ProductCode="53"/>
+            <ModuleDefDlgID Value="CIPDrive"/>
+
+            <MajorRev Value="1">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 101: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="101" PageSetID="Midrange CIP Drive Page Set" />
+                
+            </MajorRev>
+            <MajorRev Value="2">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 101: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="101" PageSetID="Midrange CIP Drive Page Set" />
+                
+            </MajorRev>
+			<MajorRev Value="3">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="102" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+			<MajorRev Value="4">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="102" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+        </Module>
+    
+    </Modules>
+
+   <!-- ****************************************************************** -->
+    <Modules>
+	
+	<!-- ****** ICM-D5S160.xml ************************************************** -->
+        <Module>
+            <Identity Name ="CIPDrive" VendorID="5" ProductType="37" ProductCode="54"/>
+            <ModuleDefDlgID Value="CIPDrive"/>
+
+            <MajorRev Value="1">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 101: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="101" PageSetID="Midrange CIP Drive Page Set" />
+                
+            </MajorRev>
+            <MajorRev Value="2">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 101: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="101" PageSetID="Midrange CIP Drive Page Set" />
+                
+            </MajorRev>
+			<MajorRev Value="3">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="102" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+			<MajorRev Value="4">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="102" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+        </Module>
+    
+    </Modules>
+
+  <!-- ****************************************************************** -->
+    <Modules>
+	
+	<!-- ****** ICM-D5D05.xml ************************************************** -->
+        <Module>
+            <Identity Name ="CIPDrive" VendorID="5" ProductType="37" ProductCode="55"/>
+            <ModuleDefDlgID Value="CIPDrive"/>
+
+            <MajorRev Value="1">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 101: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="101" PageSetID="Midrange CIP Drive Page Set" />
+                
+            </MajorRev>
+            <MajorRev Value="2">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 101: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="101" PageSetID="Midrange CIP Drive Page Set" />
+                
+            </MajorRev>
+			<MajorRev Value="3">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="102" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+			<MajorRev Value="4">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="102" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+        </Module>
+    
+    </Modules>
+
+  <!-- ****************************************************************** -->
+    <Modules>
+	
+	<!-- ****** ICM-D5S100.xml ************************************************** -->
+        <Module>
+            <Identity Name ="CIPDrive" VendorID="5" ProductType="37" ProductCode="56"/>
+            <ModuleDefDlgID Value="CIPDrive"/>
+
+            <MajorRev Value="1">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 101: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="101" PageSetID="Midrange CIP Drive Page Set" />
+                
+            </MajorRev>
+            <MajorRev Value="2">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 101: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="101" PageSetID="Midrange CIP Drive Page Set" />
+                
+            </MajorRev>
+			<MajorRev Value="3">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="102" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+			<MajorRev Value="4">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="102" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+        </Module>
+    
+    </Modules>
+
+  <!-- ****************************************************************** -->
+    <Modules>
+	
+	<!-- ****** ICM-D5D03.xml ************************************************** -->
+        <Module>
+            <Identity Name ="CIPDrive" VendorID="5" ProductType="37" ProductCode="57"/>
+            <ModuleDefDlgID Value="CIPDrive"/>
+
+            <MajorRev Value="1">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 101: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="101" PageSetID="Midrange CIP Drive Page Set" />
+                
+            </MajorRev>
+            <MajorRev Value="2">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 101: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="101" PageSetID="Midrange CIP Drive Page Set" />
+                
+            </MajorRev>
+			<MajorRev Value="3">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="102" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+			<MajorRev Value="4">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="102" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+        </Module>
+    
+    </Modules>
+
+	<Modules>
+    <!-- ****** ICM-D3D18.xml ************************************************** -->
+        <Module>
+            <Identity Name ="CIPDrive" VendorID="5" ProductType="37" ProductCode="59"/>
+            <ModuleDefDlgID Value="CIPDrive"/>
+            <MajorRev Value="4">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="103" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+        </Module>
+    </Modules>
+
+	<Modules>
+    <!-- ****** ICM-D3D28.xml ************************************************** -->
+        <Module>
+            <Identity Name ="CIPDrive" VendorID="5" ProductType="37" ProductCode="60"/>
+            <ModuleDefDlgID Value="CIPDrive"/>
+            <MajorRev Value="4">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="103" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+        </Module>
+    </Modules>
+
+    <Modules>
+    <!-- ****** ICM-D3D38.xml ************************************************** -->
+        <Module>
+            <Identity Name ="CIPDrive" VendorID="5" ProductType="37" ProductCode="61"/>
+            <ModuleDefDlgID Value="CIPDrive"/>
+            <MajorRev Value="4">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="103" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+        </Module>
+    </Modules>
+
+     <Modules>
+    <!-- ****** ICM-D3D05.xml ************************************************** -->
+        <Module>
+            <Identity Name ="CIPDrive" VendorID="5" ProductType="37" ProductCode="62"/>
+            <ModuleDefDlgID Value="CIPDrive"/>
+            <MajorRev Value="4">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="103" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+        </Module>
+    </Modules>
+
+    <Modules>
+    <!-- ****** ICM-D3D05.xml ************************************************** -->
+        <Module>
+            <Identity Name ="CIPDrive" VendorID="5" ProductType="37" ProductCode="63"/>
+            <ModuleDefDlgID Value="CIPDrive"/>
+            <MajorRev Value="4">
+                <!--
+                *************************************************************
+                ConfigID Summary:
+                *************************************************************
+                ConfigID 102: Input Connection,        Readback Diagnostics   
+                *************************************************************
+                 -->
+                                  
+                 <!-- All config. IDs specify their associated page set -->
+                <ModuleDefinition ConfigID="103" PageSetID="Midrange CIP Drive Page Set 2" />
+                
+            </MajorRev>
+        </Module>
+    </Modules>
+
+    <!-- ****************************************************************** -->
+    <ModuleDefDlgs>
+
+        <ModuleDefDlg ID="CIPDrive" Clsid="{9CBDA3F8-445D-4F0A-9D4A-161A5C583103}" />
+
+    </ModuleDefDlgs>
+
+    <!-- ****************************************************************** -->
+    <PageSets>
+
+        <PageSet ID="Midrange CIP Drive Page Set">
+            <Page Clsid="{22ACFFBB-BCB0-49be-9A43-D5D03D21A4D8}" Comment="CIP Motion General Page"/>
+            <Page Clsid="{8530D41F-FB99-4E0B-82DE-AF6A865AEEDD}" Comment="Connection Page"/>
+            <Page Clsid="{ABAB5278-EE68-4b07-B4D1-88EFC3B2B648}" Comment="Time Sync Page"/>
+            <Page Clsid="{E69600E3-4089-4C0B-BD98-6CDF51B4C303}" Comment="Module Info Page"/>
+            <Page Clsid="{0AB30081-F401-491b-9640-351F35BE3721}" Comment="Internet Protocol Page"/>
+			<Page Clsid="{423A7636-F9AF-4624-ABE3-979677176938}" Comment="Port Page" /> 
+			<Page Clsid="{AFDF5AAE-9DCF-44ff-BA5C-1DDFBB5829E7}" Comment="Network Page" /> 
+            <Page Clsid="{89BEAB84-B0DC-491c-A76B-AF7D49384182}" Comment="Associated Axes Page"/>
+            <Page Clsid="{4AC93BEC-A07A-4f40-B0A5-E729841F8BD2}" Comment="Power Page" />
+            <Page Clsid="{CC991944-C792-48ce-8352-06B4C29624BD}" Comment="Motion Diagnostics Page" />
+        </PageSet>
+		<PageSet ID="Midrange CIP Drive Page Set 2">
+            <Page Clsid="{22ACFFBB-BCB0-49be-9A43-D5D03D21A4D8}" Comment="CIP Motion General Page"/>
+            <Page Clsid="{8530D41F-FB99-4E0B-82DE-AF6A865AEEDD}" Comment="Connection Page"/>
+            <Page Clsid="{ABAB5278-EE68-4b07-B4D1-88EFC3B2B648}" Comment="Time Sync Page"/>
+            <Page Clsid="{E69600E3-4089-4C0B-BD98-6CDF51B4C303}" Comment="Module Info Page"/>
+            <Page Clsid="{0AB30081-F401-491b-9640-351F35BE3721}" Comment="Internet Protocol Page"/>
+			<Page Clsid="{423A7636-F9AF-4624-ABE3-979677176938}" Comment="Port Page" /> 
+			<Page Clsid="{AFDF5AAE-9DCF-44ff-BA5C-1DDFBB5829E7}" Comment="Network Page" /> 
+            <Page Clsid="{89BEAB84-B0DC-491c-A76B-AF7D49384182}" Comment="Associated Axes Page"/>
+            <Page Clsid="{4AC93BEC-A07A-4f40-B0A5-E729841F8BD2}" Comment="Power Page" />
+			<Page Clsid="{D58A8C06-13AD-4D1D-AEED-554991CF3E7D}" Comment="Digital Input Page"/>		
+            <Page Clsid="{CC991944-C792-48ce-8352-06B4C29624BD}" Comment="Motion Diagnostics Page" />
+        </PageSet>
+        
+   </PageSets>
+
+</ProfileViewDirectory>
+

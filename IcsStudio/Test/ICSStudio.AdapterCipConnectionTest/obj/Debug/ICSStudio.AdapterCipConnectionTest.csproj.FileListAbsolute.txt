@@ -1,0 +1,6 @@
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.AdapterCipConnectionTest.exe.config
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.AdapterCipConnectionTest.exe
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.AdapterCipConnectionTest.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.AdapterCipConnectionTest\obj\Debug\ICSStudio.AdapterCipConnectionTest.csprojResolveAssemblyReference.cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.AdapterCipConnectionTest\obj\Debug\ICSStudio.AdapterCipConnectionTest.exe
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.AdapterCipConnectionTest\obj\Debug\ICSStudio.AdapterCipConnectionTest.pdb

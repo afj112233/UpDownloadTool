@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--  This is the file that defines the actual layout and type of the commands.
+        It is divided in different sections (e.g. command definition, command
+        placement, ...), with each defining a specific set of properties.
+        See the comment before each section for more details about how to
+        use it. -->
+
+  <!--  The VSCT compiler (the tool that translates this file into the binary
+        format that VisualStudio will consume) has the ability to run a preprocessor
+        on the vsct file; this preprocessor is (usually) the C++ preprocessor, so
+        it is possible to define includes and macros with the same syntax used
+        in C++ files. Using this ability of the compiler here, we include some files
+        defining some of the constants that we will use inside the file. -->
+
+  <!--This is the file that defines the IDs for all the commands exposed by VisualStudio. -->
+  <Extern href="stdidcmd.h"/>
+
+  <!--This header contains the command ids for the menus provided by the shell. -->
+  <Extern href="vsshlids.h"/>
+
+  <!--The Commands section is where commands, menus, and menu groups are defined.
+      This section uses a Guid to identify the package that provides the command defined inside it. -->
+  <Commands package="toolsCommandPackage">
+    <!-- Inside this section we have different sub-sections: one for the menus, another
+    for the menu groups, one for the buttons (the actual commands), one for the combos
+    and the last one for the bitmaps used. Each element is identified by a command id that
+    is a unique pair of guid and numeric identifier; the guid part of the identifier is usually
+    called "command set" and is used to group different command inside a logically related
+    group; your package should define its own command set in order to avoid collisions
+    with command ids defined by other packages. -->
+
+    <!-- In this section you can define new menu groups. A menu group is a container for
+         other menus or buttons (commands); from a visual point of view you can see the
+         group as the part of a menu contained between two lines. The parent of a group
+         must be a menu. -->
+
+    <Menus>
+      <Menu guid="toolsCommandPackageCmdSet" id ="toolsMenu" type="Menu">
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <CommandName>Tools</CommandName>
+          <ButtonText>Tools</ButtonText>
+        </Strings>
+      </Menu>
+
+      <Menu guid="toolsCommandPackageCmdSet" id="securityCommand" type="Menu">
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <CommandName>Security</CommandName>
+          <ButtonText>Security</ButtonText>
+        </Strings>
+      </Menu>
+
+      <Menu guid="toolsCommandPackageCmdSet" id="importCommand" type="Menu">
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <CommandName>Import</CommandName>
+          <ButtonText>Import</ButtonText>
+        </Strings>
+      </Menu>
+
+      <Menu guid="toolsCommandPackageCmdSet" id="exportCommand" type="Menu">
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <CommandName>Export</CommandName>
+          <ButtonText>Export</ButtonText>
+        </Strings>
+      </Menu>
+
+      
+
+    </Menus>
+
+    <Groups>
+      <Group guid="toolsCommandPackageCmdSet" id="toolsGroup0"/>
+      <Group guid="toolsCommandPackageCmdSet" id="toolsGroup1"/>
+      <Group guid="toolsCommandPackageCmdSet" id="toolsGroup2"/>
+      <Group guid="toolsCommandPackageCmdSet" id="toolsGroup3"/>
+      <Group guid="toolsCommandPackageCmdSet" id="toolsGroup4"/>
+      <Group guid="toolsCommandPackageCmdSet" id="toolsGroup5"/>
+      <Group guid="toolsCommandPackageCmdSet" id="toolsGroup6"/>
+
+      <Group guid="toolsCommandPackageCmdSet" id="securityGroup0"/>
+      <Group guid="toolsCommandPackageCmdSet" id="securityGroup1"/>
+
+      <Group guid="toolsCommandPackageCmdSet" id="importGroup"/>
+      <Group guid="toolsCommandPackageCmdSet" id="exportGroup"/>
+
+    </Groups>
+
+    <!--Buttons section. -->
+    <!--This section defines the elements the user can interact with, like a menu command or a button
+        or combo box in a toolbar. -->
+    <Buttons>
+      <!--To define a menu group you have to specify its ID, the parent menu and its display priority.
+          The command is visible and enabled by default. If you need to change the visibility, status, etc, you can use
+          the CommandFlag node.
+          You can add more than one CommandFlag node e.g.:
+              <CommandFlag>DefaultInvisible</CommandFlag>
+              <CommandFlag>DynamicVisibility</CommandFlag>
+          If you do not want an image next to your command, remove the Icon node /> -->
+      <Button guid="toolsCommandPackageCmdSet" id="optionsCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Options...</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="toolsCommandPackageCmdSet" id="updateCommand" type="Button">
+        <Icon guid="updaterImages" id="bmpPic1" />
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>IconUpdate Plus</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="toolsCommandPackageCmdSet" id="gatewayCommand" type="Button">
+        <Icon guid="gatewayImages" id="bmpPic1" />
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>ICS Gateway</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="toolsCommandPackageCmdSet" id="compareCommand" type="Button">
+        <Icon guid="compareToolImages" id="bmpPic1" />
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Compare Tool</ButtonText>
+        </Strings>
+      </Button>
+
+
+      <Button guid="toolsCommandPackageCmdSet" id="languagesCommand" type="Button">
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Documentation Languages...</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="toolsCommandPackageCmdSet" id="logOnCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Log On...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="toolsCommandPackageCmdSet" id="logOffCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Log Off</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="toolsCommandPackageCmdSet" id="refreshPrivilegesCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Refresh Privileges</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="toolsCommandPackageCmdSet" id="configureSourceProtectionCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Configure Source Protection</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="toolsCommandPackageCmdSet" id="lockAllUnlockedContentCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Lock All Unlocked Content</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="toolsCommandPackageCmdSet" id="lockComponentCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Lock Component</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="toolsCommandPackageCmdSet" id="unlockComponentCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>UnLock Component</ButtonText>
+        </Strings>
+      </Button>
+
+
+      <Button guid="toolsCommandPackageCmdSet" id="importTagsCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Variables and Logic Comments...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="toolsCommandPackageCmdSet" id="importComponentCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Component...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="toolsCommandPackageCmdSet" id="exportTagsCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Tags and Logic Comments...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="toolsCommandPackageCmdSet" id="exportComponentCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Component...</ButtonText>
+        </Strings>
+      </Button>
+
+
+    </Buttons>
+
+    <!--The bitmaps section is used to define the bitmaps that are used for the commands.-->
+    <Bitmaps>
+      <!--  The bitmap id is defined in a way that is a little bit different from the others:
+            the declaration starts with a guid for the bitmap strip, then there is the resource id of the
+            bitmap strip containing the bitmaps and then there are the numeric ids of the elements used
+            inside a button definition. An important aspect of this declaration is that the element id
+            must be the actual index (1-based) of the bitmap inside the bitmap strip. -->
+      <Bitmap guid="guidImages" href="Resources\ToolsCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough"/>
+      <Bitmap guid="updaterImages" href="Resources\Updater.png" usedList="bmpPic1" />
+      <Bitmap guid="gatewayImages" href="Resources\Gateway.png" usedList="bmpPic1" />
+      <Bitmap guid="compareToolImages" href="Resources\CompareTool.png" usedList="bmpPic1" />
+    </Bitmaps>
+  </Commands>
+
+  <CommandPlacements>
+    <CommandPlacement guid="toolsCommandPackageCmdSet" id="toolsMenu" priority="776">
+      <Parent guid="guidSHLMainMenu" id="IDG_VS_MM_TOOLSADDINS"/>
+    </CommandPlacement>
+
+
+    <CommandPlacement guid="toolsCommandPackageCmdSet" id="toolsGroup0" priority="0x001">
+      <Parent guid="toolsCommandPackageCmdSet" id="toolsMenu"/>
+    </CommandPlacement>
+    <CommandPlacement guid="toolsCommandPackageCmdSet" id="toolsGroup1" priority="0x002">
+      <Parent guid="toolsCommandPackageCmdSet" id="toolsMenu"/>
+    </CommandPlacement>
+    <CommandPlacement guid="toolsCommandPackageCmdSet" id="toolsGroup2" priority="0x003">
+      <Parent guid="toolsCommandPackageCmdSet" id="toolsMenu"/>
+    </CommandPlacement>
+    <CommandPlacement guid="toolsCommandPackageCmdSet" id="toolsGroup3" priority="0x004">
+      <Parent guid="toolsCommandPackageCmdSet" id="toolsMenu"/>
+    </CommandPlacement>
+    <CommandPlacement guid="toolsCommandPackageCmdSet" id="toolsGroup4" priority="0x005">
+      <Parent guid="toolsCommandPackageCmdSet" id="toolsMenu"/>
+    </CommandPlacement>
+    <CommandPlacement guid="toolsCommandPackageCmdSet" id="toolsGroup5" priority="0x006">
+      <Parent guid="toolsCommandPackageCmdSet" id="toolsMenu"/>
+    </CommandPlacement>
+    <CommandPlacement guid="toolsCommandPackageCmdSet" id="toolsGroup6" priority="0x007">
+      <Parent guid="toolsCommandPackageCmdSet" id="toolsMenu"/>
+    </CommandPlacement>
+
+
+    <CommandPlacement guid="toolsCommandPackageCmdSet" id="optionsCommand" priority="0x001">
+      <Parent guid="toolsCommandPackageCmdSet" id="toolsGroup0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="toolsCommandPackageCmdSet" id="securityCommand" priority="0x002">
+      <Parent guid="toolsCommandPackageCmdSet" id="toolsGroup0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="toolsCommandPackageCmdSet" id="languagesCommand" priority="0x003">
+      <Parent guid="toolsCommandPackageCmdSet" id="toolsGroup0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="toolsCommandPackageCmdSet" id="updateCommand" priority="0x003">
+      <Parent guid="toolsCommandPackageCmdSet" id="toolsGroup2"/>
+    </CommandPlacement>
+    <CommandPlacement guid="toolsCommandPackageCmdSet" id="gatewayCommand" priority="0x004">
+      <Parent guid="toolsCommandPackageCmdSet" id="toolsGroup2"/>
+    </CommandPlacement>
+    <CommandPlacement guid="toolsCommandPackageCmdSet" id="compareCommand" priority="0x005">
+      <Parent guid="toolsCommandPackageCmdSet" id="toolsGroup2"/>
+    </CommandPlacement>
+
+    <CommandPlacement guid="toolsCommandPackageCmdSet" id="securityGroup0" priority="0x001">
+      <Parent guid="toolsCommandPackageCmdSet" id="securityCommand"/>
+    </CommandPlacement>
+    <CommandPlacement guid="toolsCommandPackageCmdSet" id="securityGroup1" priority="0x002">
+      <Parent guid="toolsCommandPackageCmdSet" id="securityCommand"/>
+    </CommandPlacement>
+
+
+    <CommandPlacement guid="toolsCommandPackageCmdSet" id="logOnCommand" priority="0x001">
+      <Parent guid="toolsCommandPackageCmdSet" id="securityGroup0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="toolsCommandPackageCmdSet" id="logOffCommand" priority="0x002">
+      <Parent guid="toolsCommandPackageCmdSet" id="securityGroup0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="toolsCommandPackageCmdSet" id="refreshPrivilegesCommand" priority="0x003">
+      <Parent guid="toolsCommandPackageCmdSet" id="securityGroup0"/>
+    </CommandPlacement>
+
+    <CommandPlacement guid="toolsCommandPackageCmdSet" id="configureSourceProtectionCommand" priority="0x001">
+      <Parent guid="toolsCommandPackageCmdSet" id="securityGroup1"/>
+    </CommandPlacement>
+    <CommandPlacement guid="toolsCommandPackageCmdSet" id="lockAllUnlockedContentCommand" priority="0x002">
+      <Parent guid="toolsCommandPackageCmdSet" id="securityGroup1"/>
+    </CommandPlacement>
+    <CommandPlacement guid="toolsCommandPackageCmdSet" id="lockComponentCommand" priority="0x003">
+      <Parent guid="toolsCommandPackageCmdSet" id="securityGroup1"/>
+    </CommandPlacement>
+    <CommandPlacement guid="toolsCommandPackageCmdSet" id="unlockComponentCommand" priority="0x004">
+      <Parent guid="toolsCommandPackageCmdSet" id="securityGroup1"/>
+    </CommandPlacement>
+
+
+    <CommandPlacement guid="toolsCommandPackageCmdSet" id="importCommand" priority="0x001">
+      <Parent guid="toolsCommandPackageCmdSet" id="toolsGroup1"/>
+    </CommandPlacement>
+    <CommandPlacement guid="toolsCommandPackageCmdSet" id="exportCommand" priority="0x002">
+      <Parent guid="toolsCommandPackageCmdSet" id="toolsGroup1"/>
+    </CommandPlacement>
+
+
+    <CommandPlacement guid="toolsCommandPackageCmdSet" id="importGroup" priority="0x001">
+      <Parent guid="toolsCommandPackageCmdSet" id="importCommand"/>
+    </CommandPlacement>
+    <CommandPlacement guid="toolsCommandPackageCmdSet" id="exportGroup" priority="0x001">
+      <Parent guid="toolsCommandPackageCmdSet" id="exportCommand"/>
+    </CommandPlacement>
+
+
+    <CommandPlacement guid="toolsCommandPackageCmdSet" id="importTagsCommand" priority="0x001">
+      <Parent guid="toolsCommandPackageCmdSet" id="importGroup"/>
+    </CommandPlacement>
+    <CommandPlacement guid="toolsCommandPackageCmdSet" id="importComponentCommand" priority="0x002">
+      <Parent guid="toolsCommandPackageCmdSet" id="importGroup"/>
+    </CommandPlacement>
+
+
+    <CommandPlacement guid="toolsCommandPackageCmdSet" id="exportTagsCommand" priority="0x001">
+      <Parent guid="toolsCommandPackageCmdSet" id="exportGroup"/>
+    </CommandPlacement>
+    <CommandPlacement guid="toolsCommandPackageCmdSet" id="exportComponentCommand" priority="0x002">
+      <Parent guid="toolsCommandPackageCmdSet" id="exportGroup"/>
+    </CommandPlacement>
+
+
+  </CommandPlacements>
+
+  <Symbols>
+    <!-- This is the package guid. -->
+    <GuidSymbol name="toolsCommandPackage" value="{90ddcd4b-b87f-4345-bce6-4b4a4d376a4b}" />
+
+    <!-- This is the guid used to group the menu commands together -->
+    <GuidSymbol name="toolsCommandPackageCmdSet" value="{e22dac82-d881-433e-923e-bd8e0f4724d0}">
+      <IDSymbol name="toolsMenu" value="0x0100"/>
+
+      <IDSymbol name="toolsGroup0" value="0x1100" />
+      <IDSymbol name="toolsGroup1" value="0x1200" />
+      <IDSymbol name="toolsGroup2" value="0x1300" />
+      <IDSymbol name="toolsGroup3" value="0x1400" />
+      <IDSymbol name="toolsGroup4" value="0x1500" />
+      <IDSymbol name="toolsGroup5" value="0x1600" />
+      <IDSymbol name="toolsGroup6" value="0x1700" />
+
+      <IDSymbol name="securityGroup0" value="0x1800" />
+      <IDSymbol name="securityGroup1" value="0x1900" />
+
+      <IDSymbol name="importGroup" value="0x1A00" />
+      <IDSymbol name="exportGroup" value="0x1B00" />
+
+      <!--toolsGroup0-->
+      <IDSymbol name="optionsCommand" value="0x1101"/>
+      <IDSymbol name="securityCommand" value="0x1102"/>
+      <IDSymbol name="languagesCommand" value="0x1103"/>
+      <IDSymbol name="updateCommand" value="0x110B"/>
+      <IDSymbol name="gatewayCommand" value="0x110C"/>
+      <IDSymbol name="compareCommand" value="0x110D"/>
+
+
+      <IDSymbol name="logOnCommand" value="0x1104"/>
+      <IDSymbol name="logOffCommand" value="0x1105"/>
+      <IDSymbol name="refreshPrivilegesCommand" value="0x1106"/>
+      <IDSymbol name="configureSourceProtectionCommand" value="0x1107"/>
+      <IDSymbol name="lockAllUnlockedContentCommand" value="0x1108"/>
+      <IDSymbol name="lockComponentCommand" value="0x1109"/>
+      <IDSymbol name="unlockComponentCommand" value="0x110A"/>
+
+      <!--toolsGroup1-->
+      <IDSymbol name="importCommand" value="0x1201"/>
+      <IDSymbol name="exportCommand" value="0x1202"/>
+
+      <IDSymbol name="importTagsCommand" value="0x1203"/>
+      <IDSymbol name="importComponentCommand" value="0x1204"/>
+      <IDSymbol name="exportTagsCommand" value="0x1205"/>
+      <IDSymbol name="exportComponentCommand" value="0x1206"/>
+
+
+      <!--toolsGroup2-->
+
+    </GuidSymbol>
+
+    <GuidSymbol name="guidImages" value="{8e464b79-9855-400c-b5ee-81945a7b9727}" >
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+
+    <GuidSymbol name="updaterImages" value="{C56E7D10-8A70-4BDB-91FA-80A96F6D0C19}">
+      <IDSymbol name="bmpPic1" value="1" />
+    </GuidSymbol>
+
+    <GuidSymbol name="gatewayImages" value="{8967446C-1EE7-4844-B678-329DC54FF691}">
+      <IDSymbol name="bmpPic1" value="1" />
+    </GuidSymbol>
+
+    <GuidSymbol name="compareToolImages" value="{E4B5D6BB-65E9-473A-A1E2-E90A3F7117C1}">
+      <IDSymbol name="bmpPic1" value="1" />
+    </GuidSymbol>
+
+  </Symbols>
+</CommandTable>

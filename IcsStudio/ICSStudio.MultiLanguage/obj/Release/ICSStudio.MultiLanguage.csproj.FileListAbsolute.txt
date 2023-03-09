@@ -1,0 +1,9 @@
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ICSStudio.MultiLanguage.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ICSStudio.MultiLanguage.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.MultiLanguage\obj\Release\ICSStudio.MultiLanguage.csprojResolveAssemblyReference.cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.MultiLanguage\obj\Release\LanguageResource\English.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.MultiLanguage\obj\Release\LanguageResource\Chinese.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.MultiLanguage\obj\Release\ICSStudio.MultiLanguage_MarkupCompile.cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.MultiLanguage\obj\Release\ICSStudio.MultiLanguage.g.resources
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.MultiLanguage\obj\Release\ICSStudio.MultiLanguage.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.MultiLanguage\obj\Release\ICSStudio.MultiLanguage.pdb

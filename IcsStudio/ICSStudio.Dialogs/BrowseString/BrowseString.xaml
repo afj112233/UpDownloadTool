@@ -1,0 +1,209 @@
+﻿<UserControl
+    x:Class="ICSStudio.Dialogs.BrowseString.BrowseString"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:command="http://www.galasoft.ch/mvvmlight"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:gui="clr-namespace:ICSStudio.Gui;assembly=ICSStudio.Gui"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:local="clr-namespace:ICSStudio.Dialogs.BrowseString"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:richTextBoxExtend="clr-namespace:ICSStudio.Dialogs.BrowseString.RichTextBoxExtend"
+    HorizontalAlignment="Stretch"
+    VerticalAlignment="Stretch"
+    Background="White"
+    mc:Ignorable="d">
+    <UserControl.InputBindings>
+        <KeyBinding Key="Escape" Command="{Binding CloseCommand}"></KeyBinding>
+        <KeyBinding Key="Enter" Command="{Binding SaveCommand}"></KeyBinding>
+    </UserControl.InputBindings>
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Style x:Key="SpecialButtonStyle" TargetType="Button">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="BorderBrush" Value="Transparent" />
+                <Setter Property="Margin" Value="0,5,0,0" />
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="30" />
+        </Grid.ColumnDefinitions>
+        <richTextBoxExtend:ASCIIRichTextBox
+            x:Name="AsciiRichTextBox"
+            Grid.Row="0"
+            Grid.Column="0"
+            AcceptsReturn="False" InputMethod.IsInputMethodEnabled="False"
+            Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}"
+            VerticalScrollBarVisibility="Visible">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="TextChanged">
+                    <command:EventToCommand Command="{Binding TextChangeCommand}" PassEventArgsToCommand="True" />
+                </i:EventTrigger>
+                <i:EventTrigger EventName="PreviewKeyDown">
+                    <command:EventToCommand Command="{Binding KeyDownCommand}" PassEventArgsToCommand="True" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </richTextBoxExtend:ASCIIRichTextBox>
+        <StackPanel
+            Grid.Row="1"
+            Grid.Column="0"
+            HorizontalAlignment="Right"
+            Orientation="Horizontal"
+            Visibility="{Binding ButtonVisibility}">
+            <Button
+                Width="30"
+                Height="20"
+                Command="{Binding OkCommand}" IsDefault="True"
+                CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Grid}}">
+                Ok
+            </Button>
+            <Button
+                Width="30"
+                Height="20" IsCancel="True"
+                Command="{Binding CancelCommand}">
+                Cancel
+            </Button>
+            <Button
+                Width="30"
+                Height="20"
+                Command="{Binding ApplyCommand}"
+                CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Grid}}">
+                Apply
+            </Button>
+            <Button Width="30" Height="20">Help</Button>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <Button
+                Width="20"
+                Height="20"
+                MinWidth="20"
+                Command="{Binding InsertCommand1}"
+                CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Grid}}"
+                Style="{StaticResource SpecialButtonStyle}">
+                $$
+            </Button>
+            <Button
+                Width="20"
+                Height="20"
+                MinWidth="20"
+                Command="{Binding InsertCommand2}"
+                CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Grid}}"
+                Style="{StaticResource SpecialButtonStyle}">
+                $'
+            </Button>
+            <Button
+                Width="20"
+                Height="20"
+                MinWidth="20"
+                Command="{Binding InsertCommand3}"
+                CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Grid}}"
+                Style="{StaticResource SpecialButtonStyle}">
+                $L
+            </Button>
+            <Button
+                Width="20"
+                Height="20"
+                MinWidth="20"
+                Command="{Binding InsertCommand4}"
+                CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Grid}}"
+                Style="{StaticResource SpecialButtonStyle}">
+                $N
+            </Button>
+            <Button
+                Width="20"
+                Height="20"
+                MinWidth="20"
+                Command="{Binding InsertCommand5}"
+                CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Grid}}"
+                Style="{StaticResource SpecialButtonStyle}">
+                $P
+            </Button>
+            <Button
+                Width="20"
+                Height="20"
+                MinWidth="20"
+                Command="{Binding InsertCommand6}"
+                CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Grid}}"
+                Style="{StaticResource SpecialButtonStyle}">
+                $R
+            </Button>
+            <Button
+                Width="20"
+                Height="20"
+                MinWidth="20"
+                Command="{Binding InsertCommand7}"
+                CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Grid}}"
+                Style="{StaticResource SpecialButtonStyle}">
+                $T
+            </Button>
+        </StackPanel>
+        <Grid
+            Grid.Row="2"
+            Grid.Column="0"
+            Margin="0,-5,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Border
+                Grid.Column="0"
+                BorderBrush="LightGray"
+                BorderThickness="1,1,0,1" />
+            <Border
+                Grid.Column="1"
+                BorderBrush="LightGray"
+                BorderThickness="1,1,0,1" />
+            <Border
+                Grid.Column="2"
+                BorderBrush="LightGray"
+                BorderThickness="1" />
+            <Button
+                Grid.Column="0"
+                Width="15"
+                Height="15"
+                MinWidth="15"
+                Margin="2,-2,0,0"
+                HorizontalAlignment="Left"
+                Command="{Binding PreviousErrorCommand}"
+                CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Grid, AncestorLevel=2}}"
+                ToolTip="Previous Error">
+                ←
+            </Button>
+            <Button
+                Grid.Column="0"
+                Width="15"
+                Height="15"
+                MinWidth="15"
+                Margin="20,-2,0,0"
+                HorizontalAlignment="Left"
+                Command="{Binding NextErrorCommand}"
+                CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Grid, AncestorLevel=2}}"
+                ToolTip="Next Error">
+                →
+            </Button>
+            <TextBlock
+                Grid.Column="0"
+                Margin="45,-2,0,0"
+                TextAlignment="Left"
+                Text="{Binding Error}" />
+            <TextBlock
+                Grid.Column="0"
+                HorizontalAlignment="Right"
+                Text="{Binding Count}" />
+            <TextBlock Grid.Column="1" Text="{Binding InputMode}" />
+            <TextBlock Grid.Column="2" Text="{Binding Info}" />
+        </Grid>
+    </Grid>
+</UserControl>

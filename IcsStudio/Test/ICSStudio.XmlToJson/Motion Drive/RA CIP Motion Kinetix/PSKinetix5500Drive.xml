@@ -1,0 +1,1619 @@
+﻿<!--Copyright 2015 Rockwell Automation -->
+
+<AOPModuleTypes>
+
+	<!-- ****** 2198-H003-ERS ************************************************** -->
+    <ModuleType VendorID="1" ProductType="37" ProductCode="46">
+	<Variant MajorRev="7" MinLogixVersion="29" MinICE2Version="29" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive3" Default="True"/>
+	<Variant MajorRev="5" MinLogixVersion="26" MinICE2Version="27" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive3"/>
+	<Variant MajorRev="4" MinLogixVersion="26" MinICE2Version="27" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive3"/>
+	<Variant MajorRev="3" MinLogixVersion="26" MinICE2Version="27" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive3"/>
+	<Variant MajorRev="2" MinLogixVersion="21" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive"/>
+	<Variant MajorRev="1" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive"/>
+	<Extensions>
+		<Extension CLSID="{BFAB31D2-E559-46a8-969C-24BE21A0DE52}" 
+				CIPObjectID="TimeSync" 
+				CIPObjectSpecificFile="Rockwell Software\RSLogix 5000\Module Profiles\Core\PSCommonTimeSyncObjects.xml"/> 
+		
+		<Extension CLSID="{FCB004E7-0FD4-49D3-B56B-B91105A892D6}" Comment="Extended-Properties plugin "/>
+		
+		<Extension CLSID="{F0025D9C-8F1A-4672-88DF-87E6B257E717}"/>
+
+		<Extension CLSID="{C60BC85D-3487-4DBB-AACC-DAB767A17330}" 
+				CIPObjectID="DeviceInfo" 
+				CIPObjectSpecificFile="Rockwell Software\RSLogix 5000\Module Profiles\Core\PSCommonCIPObjects.xml"/>
+
+		<Extension CLSID="{7AA9D530-8144-49DD-830E-C471AD5689C4}" 
+                            CIPObjectID="OpenTCPIP"
+                            CIPObjectSpecificFile=
+                            "Rockwell Software\RSLogix 5000\Module Profiles\Core\PSENetTCPIPCIPObjects.xml"/>
+		
+		<Extension CLSID="{10CB9195-05B8-4B38-A9A4-41E3D87A570B}" 
+						    CIPPropertyID="OpenENetLinkManager"
+                            CIPObjectID="OpenENetLink"
+                            CIPObjectSpecificFile=
+                            "Rockwell Software\RSLogix 5000\Module Profiles\Core\PSENetLinkMultiplePortCIPObjects.xml"/>
+							
+		<Extension CLSID="{670C8D9C-AE73-4FC8-B73C-D9E3DD447DF4}" 
+                            CIPObjectID="OpenENetLink"
+                            CIPObjectSpecificFile=
+                            "Rockwell Software\RSLogix 5000\Module Profiles\Core\PSENetLinkMultiplePortCIPObjects.xml"/>
+							
+		<Extension CLSID="{08651900-DE45-49AF-A36C-22EA95BFBE1C}" 
+				            CIPObjectID="ENetDLR" 
+				            CIPObjectSpecificFile=
+				            "Rockwell Software\RSLogix 5000\Module Profiles\Core\PSENetDLRCIPObjects.xml" />
+	</Extensions>
+    </ModuleType>
+
+	<!-- ****** 2198-H008-ERS ************************************************** -->
+    <ModuleType VendorID="1" ProductType="37" ProductCode="47">
+	<Variant MajorRev="7" MinLogixVersion="29" MinICE2Version="29" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive3" Default="True"/>
+	<Variant MajorRev="5" MinLogixVersion="26" MinICE2Version="27" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive3"/>
+	<Variant MajorRev="4" MinLogixVersion="26" MinICE2Version="27" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive3"/>
+	<Variant MajorRev="3" MinLogixVersion="26" MinICE2Version="27" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive3"/>
+	<Variant MajorRev="2" MinLogixVersion="21" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive"/>
+	<Variant MajorRev="1" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive"/>
+	<Extensions>
+		<Extension CLSID="{BFAB31D2-E559-46a8-969C-24BE21A0DE52}" 
+				CIPObjectID="TimeSync" 
+				CIPObjectSpecificFile="Rockwell Software\RSLogix 5000\Module Profiles\Core\PSCommonTimeSyncObjects.xml"/> 
+		
+		<Extension CLSID="{FCB004E7-0FD4-49D3-B56B-B91105A892D6}" Comment="Extended-Properties plugin "/>
+		
+		<Extension CLSID="{F0025D9C-8F1A-4672-88DF-87E6B257E717}"/>
+
+		<Extension CLSID="{C60BC85D-3487-4DBB-AACC-DAB767A17330}" 
+				CIPObjectID="DeviceInfo" 
+				CIPObjectSpecificFile="Rockwell Software\RSLogix 5000\Module Profiles\Core\PSCommonCIPObjects.xml"/>
+
+		<Extension CLSID="{7AA9D530-8144-49DD-830E-C471AD5689C4}" 
+                            CIPObjectID="OpenTCPIP"
+                            CIPObjectSpecificFile=
+                            "Rockwell Software\RSLogix 5000\Module Profiles\Core\PSENetTCPIPCIPObjects.xml"/>
+		
+		<Extension CLSID="{10CB9195-05B8-4B38-A9A4-41E3D87A570B}" 
+						    CIPPropertyID="OpenENetLinkManager"
+                            CIPObjectID="OpenENetLink"
+                            CIPObjectSpecificFile=
+                            "Rockwell Software\RSLogix 5000\Module Profiles\Core\PSENetLinkMultiplePortCIPObjects.xml"/>
+							
+		<Extension CLSID="{670C8D9C-AE73-4FC8-B73C-D9E3DD447DF4}" 
+                            CIPObjectID="OpenENetLink"
+                            CIPObjectSpecificFile=
+                            "Rockwell Software\RSLogix 5000\Module Profiles\Core\PSENetLinkMultiplePortCIPObjects.xml"/>
+							
+		<Extension CLSID="{08651900-DE45-49AF-A36C-22EA95BFBE1C}" 
+				            CIPObjectID="ENetDLR" 
+				            CIPObjectSpecificFile=
+				            "Rockwell Software\RSLogix 5000\Module Profiles\Core\PSENetDLRCIPObjects.xml" />
+	</Extensions>
+    </ModuleType>
+
+	<!-- ****** 2198-H015-ERS ************************************************** -->
+    <ModuleType VendorID="1" ProductType="37" ProductCode="48">
+	<Variant MajorRev="7" MinLogixVersion="29" MinICE2Version="29" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive3" Default="True"/>
+	<Variant MajorRev="5" MinLogixVersion="26" MinICE2Version="27" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive3"/>
+	<Variant MajorRev="4" MinLogixVersion="26" MinICE2Version="27" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive3"/>
+	<Variant MajorRev="3" MinLogixVersion="26" MinICE2Version="27" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive3"/>
+	<Variant MajorRev="2" MinLogixVersion="21" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive"/>
+	<Variant MajorRev="1" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive"/>
+	<Extensions>
+		<Extension CLSID="{BFAB31D2-E559-46a8-969C-24BE21A0DE52}" 
+				CIPObjectID="TimeSync" 
+				CIPObjectSpecificFile="Rockwell Software\RSLogix 5000\Module Profiles\Core\PSCommonTimeSyncObjects.xml"/> 
+		
+		<Extension CLSID="{FCB004E7-0FD4-49D3-B56B-B91105A892D6}" Comment="Extended-Properties plugin "/>
+		
+		<Extension CLSID="{F0025D9C-8F1A-4672-88DF-87E6B257E717}"/>
+
+		<Extension CLSID="{C60BC85D-3487-4DBB-AACC-DAB767A17330}" 
+				CIPObjectID="DeviceInfo" 
+				CIPObjectSpecificFile="Rockwell Software\RSLogix 5000\Module Profiles\Core\PSCommonCIPObjects.xml"/>
+
+		<Extension CLSID="{7AA9D530-8144-49DD-830E-C471AD5689C4}" 
+                            CIPObjectID="OpenTCPIP"
+                            CIPObjectSpecificFile=
+                            "Rockwell Software\RSLogix 5000\Module Profiles\Core\PSENetTCPIPCIPObjects.xml"/>
+		
+		<Extension CLSID="{10CB9195-05B8-4B38-A9A4-41E3D87A570B}" 
+						    CIPPropertyID="OpenENetLinkManager"
+                            CIPObjectID="OpenENetLink"
+                            CIPObjectSpecificFile=
+                            "Rockwell Software\RSLogix 5000\Module Profiles\Core\PSENetLinkMultiplePortCIPObjects.xml"/>
+							
+		<Extension CLSID="{670C8D9C-AE73-4FC8-B73C-D9E3DD447DF4}" 
+                            CIPObjectID="OpenENetLink"
+                            CIPObjectSpecificFile=
+                            "Rockwell Software\RSLogix 5000\Module Profiles\Core\PSENetLinkMultiplePortCIPObjects.xml"/>
+							
+		<Extension CLSID="{08651900-DE45-49AF-A36C-22EA95BFBE1C}" 
+				            CIPObjectID="ENetDLR" 
+				            CIPObjectSpecificFile=
+				            "Rockwell Software\RSLogix 5000\Module Profiles\Core\PSENetDLRCIPObjects.xml" />
+	</Extensions>
+    </ModuleType>
+
+	<!-- ****** 2198-H025-ERS ************************************************** -->
+    <ModuleType VendorID="1" ProductType="37" ProductCode="49">
+	<Variant MajorRev="7" MinLogixVersion="29" MinICE2Version="29" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive3" Default="True"/>
+	<Variant MajorRev="5" MinLogixVersion="26" MinICE2Version="27" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive3"/>
+	<Variant MajorRev="4" MinLogixVersion="26" MinICE2Version="27" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive3"/>
+	<Variant MajorRev="3" MinLogixVersion="26" MinICE2Version="27" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive3"/>
+	<Variant MajorRev="2" MinLogixVersion="21" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive"/>
+	<Variant MajorRev="1" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive"/>
+	<Extensions>
+		<Extension CLSID="{BFAB31D2-E559-46a8-969C-24BE21A0DE52}" 
+				CIPObjectID="TimeSync" 
+				CIPObjectSpecificFile="Rockwell Software\RSLogix 5000\Module Profiles\Core\PSCommonTimeSyncObjects.xml"/> 
+		
+		<Extension CLSID="{FCB004E7-0FD4-49D3-B56B-B91105A892D6}" Comment="Extended-Properties plugin "/>
+		
+		<Extension CLSID="{F0025D9C-8F1A-4672-88DF-87E6B257E717}"/>
+
+		<Extension CLSID="{C60BC85D-3487-4DBB-AACC-DAB767A17330}" 
+				CIPObjectID="DeviceInfo" 
+				CIPObjectSpecificFile="Rockwell Software\RSLogix 5000\Module Profiles\Core\PSCommonCIPObjects.xml"/>
+
+		<Extension CLSID="{7AA9D530-8144-49DD-830E-C471AD5689C4}" 
+                            CIPObjectID="OpenTCPIP"
+                            CIPObjectSpecificFile=
+                            "Rockwell Software\RSLogix 5000\Module Profiles\Core\PSENetTCPIPCIPObjects.xml"/>
+		
+		<Extension CLSID="{10CB9195-05B8-4B38-A9A4-41E3D87A570B}" 
+						    CIPPropertyID="OpenENetLinkManager"
+                            CIPObjectID="OpenENetLink"
+                            CIPObjectSpecificFile=
+                            "Rockwell Software\RSLogix 5000\Module Profiles\Core\PSENetLinkMultiplePortCIPObjects.xml"/>
+							
+		<Extension CLSID="{670C8D9C-AE73-4FC8-B73C-D9E3DD447DF4}" 
+                            CIPObjectID="OpenENetLink"
+                            CIPObjectSpecificFile=
+                            "Rockwell Software\RSLogix 5000\Module Profiles\Core\PSENetLinkMultiplePortCIPObjects.xml"/>
+							
+		<Extension CLSID="{08651900-DE45-49AF-A36C-22EA95BFBE1C}" 
+				            CIPObjectID="ENetDLR" 
+				            CIPObjectSpecificFile=
+				            "Rockwell Software\RSLogix 5000\Module Profiles\Core\PSENetDLRCIPObjects.xml" />
+	</Extensions>
+    </ModuleType>
+
+	<!-- ****** 2198-H040-ERS ************************************************** -->
+    <ModuleType VendorID="1" ProductType="37" ProductCode="50">
+	<Variant MajorRev="7" MinLogixVersion="29" MinICE2Version="29" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive3" Default="True"/>
+	<Variant MajorRev="5" MinLogixVersion="26" MinICE2Version="27" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive3"/>
+	<Variant MajorRev="4" MinLogixVersion="26" MinICE2Version="27" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive3"/>
+	<Variant MajorRev="3" MinLogixVersion="26" MinICE2Version="27" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive3"/>
+	<Variant MajorRev="2" MinLogixVersion="21" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive"/>
+	<Variant MajorRev="1" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive"/>
+	<Extensions>
+		<Extension CLSID="{BFAB31D2-E559-46a8-969C-24BE21A0DE52}" 
+				CIPObjectID="TimeSync" 
+				CIPObjectSpecificFile="Rockwell Software\RSLogix 5000\Module Profiles\Core\PSCommonTimeSyncObjects.xml"/> 
+		
+		<Extension CLSID="{FCB004E7-0FD4-49D3-B56B-B91105A892D6}" Comment="Extended-Properties plugin "/>
+		
+		<Extension CLSID="{F0025D9C-8F1A-4672-88DF-87E6B257E717}"/>
+
+		<Extension CLSID="{C60BC85D-3487-4DBB-AACC-DAB767A17330}" 
+				CIPObjectID="DeviceInfo" 
+				CIPObjectSpecificFile="Rockwell Software\RSLogix 5000\Module Profiles\Core\PSCommonCIPObjects.xml"/>
+
+		<Extension CLSID="{7AA9D530-8144-49DD-830E-C471AD5689C4}" 
+                            CIPObjectID="OpenTCPIP"
+                            CIPObjectSpecificFile=
+                            "Rockwell Software\RSLogix 5000\Module Profiles\Core\PSENetTCPIPCIPObjects.xml"/>
+		
+		<Extension CLSID="{10CB9195-05B8-4B38-A9A4-41E3D87A570B}" 
+						    CIPPropertyID="OpenENetLinkManager"
+                            CIPObjectID="OpenENetLink"
+                            CIPObjectSpecificFile=
+                            "Rockwell Software\RSLogix 5000\Module Profiles\Core\PSENetLinkMultiplePortCIPObjects.xml"/>
+							
+		<Extension CLSID="{670C8D9C-AE73-4FC8-B73C-D9E3DD447DF4}" 
+                            CIPObjectID="OpenENetLink"
+                            CIPObjectSpecificFile=
+                            "Rockwell Software\RSLogix 5000\Module Profiles\Core\PSENetLinkMultiplePortCIPObjects.xml"/>
+							
+		<Extension CLSID="{08651900-DE45-49AF-A36C-22EA95BFBE1C}" 
+				            CIPObjectID="ENetDLR" 
+				            CIPObjectSpecificFile=
+				            "Rockwell Software\RSLogix 5000\Module Profiles\Core\PSENetDLRCIPObjects.xml" />
+	</Extensions>
+    </ModuleType>
+	
+	<!-- ****** 2198-H070-ERS ************************************************** -->
+    <ModuleType VendorID="1" ProductType="37" ProductCode="51">
+	<Variant MajorRev="7" MinLogixVersion="29" MinICE2Version="29" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive3" Default="True"/>
+	<Variant MajorRev="5" MinLogixVersion="26" MinICE2Version="27" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive3"/>
+	<Variant MajorRev="4" MinLogixVersion="26" MinICE2Version="27" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive3"/>
+	<Variant MajorRev="3" MinLogixVersion="26" MinICE2Version="27" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive3"/>
+	<Variant MajorRev="2" MinLogixVersion="21" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive"/>
+	<Variant MajorRev="1" ModuleID="CIP_Drive" ModuleDefinitionID="CIP_Drive"/>
+	<Extensions>
+		<Extension CLSID="{BFAB31D2-E559-46a8-969C-24BE21A0DE52}" 
+				CIPObjectID="TimeSync" 
+				CIPObjectSpecificFile="Rockwell Software\RSLogix 5000\Module Profiles\Core\PSCommonTimeSyncObjects.xml"/> 
+		
+		<Extension CLSID="{FCB004E7-0FD4-49D3-B56B-B91105A892D6}" Comment="Extended-Properties plugin "/>
+		
+		<Extension CLSID="{F0025D9C-8F1A-4672-88DF-87E6B257E717}"/>
+
+		<Extension CLSID="{C60BC85D-3487-4DBB-AACC-DAB767A17330}" 
+				CIPObjectID="DeviceInfo" 
+				CIPObjectSpecificFile="Rockwell Software\RSLogix 5000\Module Profiles\Core\PSCommonCIPObjects.xml"/>
+
+		<Extension CLSID="{7AA9D530-8144-49DD-830E-C471AD5689C4}" 
+                            CIPObjectID="OpenTCPIP"
+                            CIPObjectSpecificFile=
+                            "Rockwell Software\RSLogix 5000\Module Profiles\Core\PSENetTCPIPCIPObjects.xml"/>
+		
+		<Extension CLSID="{10CB9195-05B8-4B38-A9A4-41E3D87A570B}" 
+						    CIPPropertyID="OpenENetLinkManager"
+                            CIPObjectID="OpenENetLink"
+                            CIPObjectSpecificFile=
+                            "Rockwell Software\RSLogix 5000\Module Profiles\Core\PSENetLinkMultiplePortCIPObjects.xml"/>
+							
+		<Extension CLSID="{670C8D9C-AE73-4FC8-B73C-D9E3DD447DF4}" 
+                            CIPObjectID="OpenENetLink"
+                            CIPObjectSpecificFile=
+                            "Rockwell Software\RSLogix 5000\Module Profiles\Core\PSENetLinkMultiplePortCIPObjects.xml"/>
+							
+		<Extension CLSID="{08651900-DE45-49AF-A36C-22EA95BFBE1C}" 
+				            CIPObjectID="ENetDLR" 
+				            CIPObjectSpecificFile=
+				            "Rockwell Software\RSLogix 5000\Module Profiles\Core\PSENetDLRCIPObjects.xml" />
+	</Extensions>
+    </ModuleType>
+
+    <Module ID="CIP_Drive" SupportsReset="True" NumberOfInputs="0" NumberOfOutputs="0" DriverType = "1552" CIPObjectDefinesID="ModuleCIPObjects"/>
+
+	<!-- The "CIPProperty" which defines the number of ports and the ports data -->
+    <CIPProperty ID="OpenENetLinkManager">
+		<NumberOfPorts>2</NumberOfPorts>
+		<Ports>
+			<Port Name="1" Instance="1" />
+			<Port Name="2" Instance="2" />
+		</Ports>
+    </CIPProperty>
+    
+	<CIPObjectDefines ID="ModuleCIPObjects">
+		<NumOfPorts Value='1'/>
+		<ValidationRange>
+			<ENetDLR Name="BeaconInterval" Min="200" Max="100000"></ENetDLR>
+		</ValidationRange>
+	</CIPObjectDefines>
+
+   <ModuleDefinition ID="CIP_Drive" StringsID="ModuleDefinitionStrings">
+        <Selections>
+            <Field ID="Connection" StringID="1">
+                <Choice ID="MotionSyncAndMotionDiagnostics" StringID="2"/>
+            </Field>
+            
+        </Selections>
+
+        <SelectionTree>
+                <Choice ChoiceID="MotionSyncAndMotionDiagnostics"	ConfigID="101"/>
+        </SelectionTree>  
+    </ModuleDefinition>
+	
+	<ModuleDefinition ID="CIP_Drive3" StringsID="ModuleDefinitionStrings">
+        <Selections>
+            <Field ID="Connection" StringID="1">
+                <Choice ID="MotionSyncAndMotionDiagnostics" StringID="2"/>
+            </Field>
+            
+        </Selections>
+
+        <SelectionTree>
+                <Choice ChoiceID="MotionSyncAndMotionDiagnostics"	ConfigID="102"/>
+        </SelectionTree>  
+    </ModuleDefinition>
+
+
+	<!-- Motion Sync And Motion Diagnostics  -->
+	<Construction ConfigID="101">
+		<ConfigTag CLSID="{34B63725-CA55-42DE-91D5-9F87E1CB6BD5}" ExtensionCLSID="{2B7647C3-4FA0-4DC0-AFC3-137277BA70F8}" ValueID="AB:CIP_Drive:C:1" Instance="2">
+			<DataType Name="AB:CIP_Drive:C:1"></DataType>
+			<Enum EnumID="ExternalShuntEnum" />
+			<Enum EnumID="BusRegulatorActionEnum"/>
+			<Enum EnumID="ACInputPhasingEnum"/>
+			<Enum EnumID="ACInputVoltageEnum"/>
+			<Enum EnumID="PWMFrequencyEnum"/>
+			<Enum EnumID="BusConfigurationEnum"/>
+			<Enum EnumID="BusSharingGroupEnum"/>
+		</ConfigTag>
+		<Connections>
+			<!-- Connections must appear in alphabetical order by name. -->
+			<Connection ConnectionID="Motion_Diagnostics2" CLSID="{3DB9EEC3-C915-41B6-A706-86F7A1E319F0}" /> 
+			<Connection ConnectionID="Motion_Sync" CLSID="{3DB9EEC3-C915-41B6-A706-86F7A1E319F0}" /> 
+		</Connections>
+	</Construction>
+	
+	<Construction ConfigID="102">
+		<ConfigTag CLSID="{34B63725-CA55-42DE-91D5-9F87E1CB6BD5}" ExtensionCLSID="{2B7647C3-4FA0-4DC0-AFC3-137277BA70F8}" ValueID="AB:CIP_Drive:C:2" Instance="3">
+			<DataType Name="AB:CIP_Drive:C:2"></DataType>
+			<Enum EnumID="ExternalShuntEnum" />
+			<Enum EnumID="BusRegulatorActionEnum"/>
+			<Enum EnumID="ACInputPhasingEnum"/>
+			<Enum EnumID="ACInputVoltageEnum"/>
+			<Enum EnumID="PWMFrequencyEnum"/>
+			<Enum EnumID="BusConfigurationEnum"/>
+			<Enum EnumID="BusSharingGroupEnum"/>
+			<Enum EnumID="DigitalInputEnum1"/>
+			<Enum EnumID="DigitalInputEnumUnassigned"/>
+		</ConfigTag>
+		<Connections>
+			<!-- Connections must appear in alphabetical order by name. -->
+			<Connection ConnectionID="Motion_Diagnostics2" CLSID="{3DB9EEC3-C915-41B6-A706-86F7A1E319F0}" /> 
+			<Connection ConnectionID="Motion_Sync" CLSID="{3DB9EEC3-C915-41B6-A706-86F7A1E319F0}" /> 
+		</Connections>
+	</Construction>
+
+
+	<Connection ID="Motion_Diagnostics2"
+		Name="MotionDiagnostics"
+		Type="DiagnosticInput"
+		MinRPI="1000" 
+		MaxRPI="1000"
+		RPI="1000"
+		Force0RPI="True"
+		InputCxnPoint="1"
+		OutputCxnPoint="1">
+		  
+		<InputTag CLSID="{34B63725-CA55-42DE-91D5-9F87E1CB6BD5}">
+			<DataType Name="AB:Motion_Diagnostics:S:1" />
+		</InputTag>
+	</Connection>
+
+	<Connection ID="Motion_Sync"
+		Name="MotionSync"
+		Type="MotionSync"
+		MinRPI="1000" 
+		MaxRPI="1000"
+		RPI="1000"
+		Force0RPI="True"
+		InputCxnPoint="2"
+		OutputCxnPoint="2">
+		  
+		<InputTag CLSID="{34B63725-CA55-42DE-91D5-9F87E1CB6BD5}">
+			<DataType Name="AB:Motion_Sync:I:0" />
+		</InputTag>
+		
+		<OutputTag CLSID="{34B63725-CA55-42DE-91D5-9F87E1CB6BD5}">
+			<DataType Name="AB:Motion_Sync:O:0" />
+		</OutputTag>
+	</Connection>
+
+	<DataType Name="AB:CIP_Drive:C:1" Class="IO">
+		<Members>
+			<Member Name="CfgSize" DataType="DINT" Hidden="True"></Member>
+			<Member Name="CfgIDNum" DataType="DINT" Hidden="True"></Member>
+			<Member Name="ConfigRevNumber" DataType="SINT" Hidden="True"></Member>
+			<Member Name="BitHost" DataType="SINT" Hidden="True"></Member>
+			<Member Name="Pad1" DataType="INT" Hidden="True"></Member>
+			<Member Name="DriveClassID" DataType="DINT" Hidden="True"></Member>
+			<Member Name="ConfigControl" DataType="DINT" Dimension="2" Hidden="True"></Member>
+
+			<!-- MDAO Class Attributes -->
+			<Member Name="SyncThreshold" DataType="DINT" Hidden="True"></Member>
+			<Member Name="ControllerUpdateDelayHighLimit" DataType="SINT" Hidden="True"></Member>
+			<Member Name="ControllerUpdateDelayLowLimit" DataType="SINT" Hidden="True"></Member>
+			<Member Name="TimeSyncSupport" DataType="SINT" Hidden="True"></Member>
+			<Member Name="IntegralConverter" DataType="SINT" Hidden="True"></Member>
+				<Member Name="IntegralConverterBit" DataType="BIT" BitNumber="0" Target="IntegralConverter" Hidden="True"/>
+			<Member Name="InverterSupport" DataType="SINT" Hidden="True"></Member>
+			<Member Name="FWOptionBits" DataType="SINT" Hidden="True"></Member>
+				<Member Name="EnableTimingStatistics" DataType="BIT" BitNumber="0" Target="FWOptionBits" Hidden="True"/>
+				<Member Name="ResetTransmissionStatistics" DataType="BIT" BitNumber="1" Target="FWOptionBits" Hidden="True"/>
+			<Member Name="Pad2" DataType="INT" Hidden="True"></Member>
+
+			<!-- Module level DAO attributes to be updated to each axis. -->
+			<Member Name="DrivePowerStructureAxisID" DataType="DINT" Dimension="8" Hidden="True"></Member>
+			<Member Name="PWMFrequency" DataType="INT" Dimension="8" Enum="PWMFrequencyEnum" Hidden="True"></Member>
+			<Member Name="DutySelect" DataType="SINT" Dimension="8" Hidden="True"></Member>
+			<Member Name="BusConfiguration" DataType="SINT" Enum="BusConfigurationEnum" Hidden="True"></Member>
+			<Member Name="BusRegulatorAction" DataType="SINT" Enum="BusRegulatorActionEnum" Hidden="True"></Member>
+			<Member Name="ShuntRegulatorResistorType" DataType="SINT" Hidden="True"></Member>
+				<Member Name="ShuntRegulatorResistorTypeBit" DataType="BIT" BitNumber="0" Target="ShuntRegulatorResistorType" Hidden="True"/>
+			
+			<Member Name="ConverterACInputPhasing" DataType="SINT" Enum="ACInputPhasingEnum" Hidden="True"></Member>
+			<Member Name="ConverterACInputVoltage" DataType="INT" Enum="ACInputVoltageEnum" Min="0.0" Hidden="True"></Member>
+			<Member Name="Pad3" DataType="INT" Hidden="True"></Member>
+			<Member Name="BusVoltageSelect" DataType="SINT" Hidden="True"></Member>
+			<Member Name="BusSharingGroup" DataType="SINT" Enum="BusSharingGroupEnum" Hidden="True"></Member>
+			<Member Name="ExternalShuntRegulatorID" DataType="INT" Enum="ExternalShuntEnum" InhibitValidation="True" Hidden="True"></Member>
+			<Member Name="RegenerativePowerLimit" DataType="REAL" Hidden="True"></Member>
+			<Member Name="ExternalShuntPower" DataType="REAL" Hidden="True"></Member>
+			<Member Name="ExternalShuntPulsePower" DataType="REAL" Hidden="True"></Member>
+			<Member Name="ExternalBusCapacitance" DataType="REAL" Min="0.0" Max="100000.0" Hidden="True"></Member>
+			<Member Name="ExternalShuntResistance" DataType="REAL" Hidden="True"></Member>
+			<Member Name="ConverterOvertemperatureUserLimit" DataType="REAL" Min="0.0" Max="1e9" Hidden="True"></Member>
+			<Member Name="ConverterThermalOverloadUserLimit" DataType="REAL" Min="0.0" Max="1e9" Hidden="True"></Member>
+			<Member Name="ConverterGroundUserLimit" DataType="REAL" Min="0.0" Hidden="True"></Member>
+			<Member Name="BusRegulatorOvertemperatureUserLimit" DataType="REAL" Min="0.0" Max="1e9" Hidden="True"></Member>
+			<Member Name="BusRegulatorThermalOverloadUserLimit" DataType="REAL" Min="0.0" Max="1e9" Hidden="True"></Member>
+			<Member Name="BusOvervoltageUserLimit" DataType="REAL" Min="0.0" Max="1e9" Hidden="True"></Member>
+			<Member Name="BusUndervoltageUserLimit" DataType="REAL" Min="0.0" Max="100.0" Hidden="True"></Member>
+			<Member Name="ControlModuleOvertemperatureUserLimit" DataType="REAL" Min="0.0" Hidden="True"></Member>
+			<Member Name="ConverterPrechargeOverloadUserLimit" DataType="REAL" Min="0.0" Hidden="True"></Member>
+			<Member Name="NumberOfConfiguredAxes" DataType="SINT" Hidden="True"></Member>
+			<Member Name="Pad4" DataType="SINT" Hidden="True"></Member>
+			<Member Name="Pad5" DataType="INT" Hidden="True"></Member>
+			<Member Name="FeedbackPortSelect" DataType="SINT" Dimension="32" Min="0" Max="31" Hidden="True"></Member>
+			<Member Name="SelectedCardType" DataType="INT" Dimension="32" Hidden="True"></Member>
+			<Member Name="NumberConfigurableInputs" DataType="SINT" Hidden="True"></Member>
+			<Member Name="Pad6" DataType="SINT" Hidden="True"></Member>
+			<Member Name="PositionLoopDeviceUpdatePeriod" DataType="INT" Hidden="True"></Member>
+			<Member Name="VelocityLoopDeviceUpdatePeriod" DataType="INT" Hidden="True"></Member>
+			<Member Name="TorqueLoopDeviceUpdatePeriod" DataType="INT" Hidden="True"></Member>
+			<Member Name="DigitalInputConfiguration" DataType="SINT" Dimension="32" Hidden="True"></Member>
+		</Members>
+	</DataType>
+
+	<Value ID="AB:CIP_Drive:C:1">
+		00,00,00,00,	<!-- CfgSize -->
+		02,00,00,00,	<!-- CfgIDNum -->
+		01,				<!-- ConfigRevNumber -->
+		01,				<!-- BitHost -->
+		00,00,			<!-- Pad1 -->
+		00,00,00,00,	<!-- DriveClassID -->
+		ff,ff,1f,00,	<!-- ConfigControl[0] -->
+		00,00,00,00,	<!-- ConfigControl[1] -->
+
+		<!-- MDAO Class Attributes -->
+		00,40,1c,46,	<!-- SyncThreshold -->
+		04,				<!-- ControllerUpdateDelayHighLimit -->
+		00,				<!-- ControllerUpdateDelayLowLimit -->
+		02,				<!-- TimeSyncSupport -->
+		01,				<!-- IntegralConverter -->
+		01,				<!-- InverterSupport -->
+		00,				<!-- FWOptionBits -->
+		00,00,				<!-- Pad2 -->
+
+		<!-- Module level DAO attributes to be updated to each axis. -->
+
+		00,00,00,00,			<!-- DrivePowerStructureAxisID[8] -->
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+
+		a0,0f,				<!-- PWMFrequency[8] -->
+		a0,0f,
+		a0,0f,
+		a0,0f,
+		a0,0f,
+		a0,0f,
+		a0,0f,
+		a0,0f,
+
+		00,				<!-- DutySelect[8] -->
+		00,
+		00,
+		00,
+		00,
+		00,
+		00,
+		00,
+
+		02,				<!-- BusConfiguration -->
+
+		01,				<!-- BusRegulatorAction -->
+		00,				<!-- ShuntRegulatorResistorType -->
+		00,				<!-- ConverterACInputPhasing -->
+		cc,01,				<!-- ConverterACInputVoltage -->
+		00,00,				<!-- Pad3 -->
+		00,				<!-- BusVoltageSelect -->
+		01,				<!-- BusSharingGroup -->
+		ff,ff,		<!-- ExternalShuntRegulatorID -->
+		00,00,c8,42,	<!-- RegenerativePowerLimit -->
+		cd,cc,4c,3e,	<!-- ExternalShuntPower -->
+		00,00,00,00,	<!-- ExternalShuntPulsePower -->
+		00,00,00,00,	<!-- ExternalBusCapacitance -->
+		00,00,00,00,	<!-- ExternalShuntResistance -->
+		00,00,00,00,	<!-- ConverterOvertemperatureUserLimit -->
+		00,00,c8,42,	<!-- ConverterThermalOverloadUserLimit -->
+		00,00,c8,42,	<!-- ConverterGroundCurrentUserLimit -->
+		00,00,00,00,	<!-- BusRegulatorOvertemperatureUserLimit -->
+		00,00,c8,42,	<!-- BusRegulatorThermalOverloadUserLimit -->
+		00,00,0c,43,	<!-- BusOvervoltageUserLimit -->
+		00,00,00,00,	<!-- BusUndervoltageUserLimit -->
+		00,00,00,00,	<!-- ControlModuleOvertemperatureUserLimit -->
+		00,00,c8,42,	<!-- ConverterPrechargeOverloadUserLimit -->
+		01,				<!-- NumberOfConfiguredAxes -->
+		00,				<!-- Pad4 -->
+		00,00,			<!-- Pad5 -->
+		
+		01,00,00,00,	<!-- FeedbackPortSelect[32] -->
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		
+		01,00,00,00,	<!-- SelectedCardType[32] -->
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00
+		00,				<!-- NumberConfigurableInputs -->
+		00,				<!-- Pad6 -->
+		7d,00,			<!-- PositionLoopDeviceUpdatePeriod -->
+		7d,00,			<!-- VelocityLoopDeviceUpdatePeriod -->
+		7d,00,			<!-- TorqueLoopDeviceUpdatePeriod -->
+		
+		00,00,00,00,	<!-- DigitalInputConfiguration[32] -->
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00
+	</Value>
+
+	<DataType Name="AB:CIP_Drive:C:2" Class="IO">
+		<Members>
+			<Member Name="CfgSize" DataType="DINT" Hidden="True" />
+			<Member Name="CfgIDNum" DataType="DINT" Hidden="True" />
+			<Member Name="ConfigRevNumber" DataType="SINT" Hidden="True" />
+			<Member Name="BitHost" DataType="SINT" Hidden="True" />
+			<Member Name="Pad1" DataType="INT" Hidden="True" />
+			<Member Name="DriveClassID" DataType="DINT" Hidden="True" />
+			<Member Name="ConfigControl" DataType="DINT" Dimension="2" Hidden="True" />
+			<!-- MDAO Class Attributes -->
+			<Member Name="SyncThreshold" DataType="DINT" Hidden="True" />
+			<Member Name="ControllerUpdateDelayHighLimit" DataType="SINT" Hidden="True" />
+			<Member Name="ControllerUpdateDelayLowLimit" DataType="SINT" Hidden="True" />
+			<Member Name="TimeSyncSupport" DataType="SINT" Hidden="True" />
+			<Member Name="Pad2" DataType="SINT" Hidden="True" />
+			<Member Name="InverterSupport" DataType="SINT" Hidden="True" />
+			<Member Name="FWOptionBits" DataType="SINT" Hidden="True" />
+			<Member Name="EnableTimingStatistics" DataType="BIT" BitNumber="0" Target="FWOptionBits" Hidden="True" />
+			<Member Name="ResetTransmissionStatistics" DataType="BIT" BitNumber="1" Target="FWOptionBits" Hidden="True" />
+			<Member Name="Pad3" DataType="INT" Hidden="True" />
+			<!-- Module level DAO attributes to be updated to each axis. -->
+			<Member Name="DrivePowerStructureAxisID" DataType="DINT" Dimension="8" Hidden="True" />
+			<Member Name="RegenerativePowerLimit" DataType="REAL" Dimension="8" Hidden="True" />
+			<Member Name="PWMFrequency" DataType="INT" Dimension="8" Hidden="True" />
+			<Member Name="DutySelect" DataType="SINT" Dimension="8" Hidden="True" />
+			<Member Name="BusRegulatorAction" DataType="SINT" Dimension="8" Hidden="True" Enum="BusRegulatorActionEnum" />
+			<Member Name="BusConfiguration" DataType="SINT" Hidden="True" Enum="BusConfigurationEnum" />
+			<Member Name="DemonstrationModeSelect" DataType="SINT" Hidden="True" />
+			<Member Name="ShuntRegulatorResistorType" DataType="SINT" Hidden="True" />
+			<Member Name="ShuntRegulatorResistorTypeBit" DataType="BIT" BitNumber="0" Target="ShuntRegulatorResistorType" Hidden="True" />
+			<Member Name="ConverterACInputPhasing" DataType="SINT" Hidden="True" Enum="ACInputPhasingEnum" />
+			<Member Name="ConverterACInputVoltage" DataType="INT" Min="230" Hidden="True" Max="460" Enum="ACInputVoltageEnum" />
+			<Member Name="Pad4" DataType="INT" Hidden="True" />
+			<Member Name="BusVoltageSelect" DataType="SINT" Hidden="True" />
+			<Member Name="BusSharingGroup" DataType="SINT" Hidden="True" Enum="BusSharingGroupEnum" />
+			<Member Name="ExternalShuntRegulatorID" DataType="INT" InhibitValidation="True" Hidden="True" Enum="ExternalShuntEnum" />
+			<Member Name="ExternalShuntPower" DataType="REAL" Hidden="True" />
+			<Member Name="ExternalShuntPulsePower" DataType="REAL" Hidden="True" />
+			<Member Name="ExternalBusCapacitance" DataType="REAL" Min="0.0" Max="1e9" Hidden="True" />
+			<Member Name="ExternalShuntResistance" DataType="REAL" Hidden="True" Min="0.0" Max="1e9" />
+			<Member Name="ConverterOvertemperatureUserLimit" DataType="REAL" Min="0.0" Max="1e9" Hidden="True" />
+			<Member Name="ConverterThermalOverloadUserLimit" DataType="REAL" Min="0.0" Max="1e9" Hidden="True" />
+			<Member Name="ConverterGroundUserLimit" DataType="REAL" Min="0.0" Hidden="True" Max="1e9" />
+			<Member Name="BusRegulatorOvertemperatureUserLimit" DataType="REAL" Min="0.0" Max="1e9" Hidden="True" />
+			<Member Name="BusRegulatorThermalOverloadUserLimit" DataType="REAL" Min="0.0" Max="1e9" Hidden="True" />
+			<Member Name="BusOvervoltageUserLimit" DataType="REAL" Min="0.0" Max="1e9" Hidden="True" />
+			<Member Name="BusUndervoltageUserLimit" DataType="REAL" Min="0.0" Max="100.0" Hidden="True" />
+			<Member Name="ControlModuleOvertemperatureUserLimit" DataType="REAL" Min="0.0" Hidden="True" Max="1e9" />
+			<Member Name="ConverterPrechargeOverloadUserLimit" DataType="REAL" Min="0.0" Hidden="True" Max="1e9" />
+			<Member Name="NumberOfConfiguredAxes" DataType="SINT" Hidden="True" />
+			<Member Name="Pad5" DataType="SINT" Hidden="True" />
+			<Member Name="Pad6" DataType="INT" Hidden="True" />
+			<Member Name="FeedbackPortSelect" DataType="SINT" Dimension="32" Min="0" Max="31" Hidden="True" />
+			<Member Name="SelectedCardType" DataType="INT" Dimension="32" Hidden="True" />
+			<Member Name="NumberConfigurableInputs" DataType="SINT" Dimension="8" Hidden="True" />
+			<Member Name="SourceOfConfigurableInputs" DataType="SINT" Dimension="8" Hidden="True" />
+			<Member Name="Pad7" DataType="INT" Hidden="True" />
+			<Member Name="PositionLoopDeviceUpdatePeriod" DataType="INT" Hidden="True" />
+			<Member Name="VelocityLoopDeviceUpdatePeriod" DataType="INT" Hidden="True" />
+			<Member Name="TorqueLoopDeviceUpdatePeriod" DataType="INT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration1_1" Enum="DigitalInputEnum1" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration1_2" Enum="DigitalInputEnum1" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration1_3" Enum="DigitalInputEnum1" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration1_4" Enum="DigitalInputEnum1" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration1_5" Enum="DigitalInputEnum1" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration1_6" Enum="DigitalInputEnum1" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration1_7" Enum="DigitalInputEnum1" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration1_8" Enum="DigitalInputEnum1" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration2_1" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration2_2" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration2_3" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration2_4" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration2_5" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration2_6" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration2_7" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration2_8" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration3_1" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration3_2" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration3_3" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration3_4" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration3_5" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration3_6" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration3_7" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration3_8" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration4_1" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration4_2" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration4_3" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration4_4" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration4_5" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration4_6" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration4_7" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration4_8" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration5_1" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration5_2" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration5_3" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration5_4" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration5_5" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration5_6" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration5_7" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration5_8" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration6_1" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration6_2" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration6_3" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration6_4" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration6_5" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration6_6" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration6_7" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration6_8" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration7_1" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration7_2" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration7_3" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration7_4" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration7_5" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration7_6" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration7_7" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration7_8" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration8_1" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration8_2" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration8_3" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration8_4" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration8_5" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration8_6" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration8_7" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+			<Member Name="DigitalInputConfiguration8_8" Enum="DigitalInputEnumUnassigned" DataType="SINT" Hidden="True" />
+		</Members>
+	</DataType>
+
+	<Value ID="AB:CIP_Drive:C:2">
+		00,00,00,00,	<!-- CfgSize -->
+		03,00,00,00,	<!-- CfgIDNum -->
+		01,		<!-- ConfigRevNumber -->
+		01,		<!-- BitHost -->
+		00,00,		<!-- Pad1 -->
+		00,00,00,00,	<!-- DriveClassID -->
+		ff,ff,ff,1f,	<!-- ConfigControl[0] -->
+		00,00,00,00,	<!-- ConfigControl[1] -->
+
+		<!-- MDAO Class Attributes -->
+		10,27,27,00,	<!-- Sync Threshold -->
+		04,		<!-- Controller Update Delay High Limit -->
+		02,		<!-- Controller Update Delay Low Limit -->
+		02,		<!-- TimeSyncSupport -->
+		00,		<!-- Pad2 -->
+
+		<!-- Module level DAO attributes to be updated to each axis -->
+		00,		<!-- InverterSupport -->
+		00,		<!-- FWOptionBits -->
+		00,00,		<!-- Pad3 -->
+		00,00,00,00,	<!-- DrivePowerStructureAxisID[8] -->
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+
+		00,00,c8,c2,		<!-- RegenerativePowerLimit[8] -->
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+
+		40,1f,		<!-- PWMFrequency[8] -->
+		40,1f,
+		40,1f,
+		40,1f,
+		40,1f,
+		40,1f,
+		40,1f,
+		40,1f,
+
+		00,		<!-- DutySelect[8] -->
+		00,
+		00,
+		00,
+		00,
+		00,
+		00,
+		00,
+
+		01,		<!-- BusRegulatorActionValues[8] -->
+		00,
+		00,
+		00,
+		00,
+		00,
+		00,
+		00,
+
+		02,		<!-- Bus Configuration -->
+		00,		<!-- Demonstration Mode Select -->
+		00,		<!-- Shunt Regulator Resistor Type -->
+		00,		<!-- Converter AC Input Phasing -->
+		cc,01,		<!-- Converter AC Input Voltage -->
+		00,00,		<!-- Pad4 -->
+		00,		<!-- Bus Voltage Select -->
+		01,		<!-- Bus Sharing Group -->
+		ff,ff,		<!-- External Shunt Regulator ID -->
+		cd,cc,4c,3e,	<!-- External Shunt Power -->
+		00,00,00,00,	<!-- External Shunt Pulse Power -->
+		00,00,00,00,	<!-- External Bus Capacitance -->
+		00,00,00,00,	<!-- External Shunt Resistance -->
+		00,00,00,00,	<!-- Converter Overtemperature User Limit -->
+		00,00,c8,42,	<!-- Converter Thermal Overload User Limit -->
+		00,00,c8,42,	<!-- Converter Ground Current User Limit -->
+		00,00,00,00,	<!-- Bus Regulator Overtemperature User Limit -->
+		00,00,c8,42,	<!-- Bus Regulator Thermal Overload User Limit -->
+		00,00,0c,43,	<!-- Bus Overvoltage User Limit -->
+		00,00,00,00,	<!-- Bus Undervoltage User Limit -->
+		00,00,00,00,	<!-- Control Module Overtemperature User Limit -->
+		00,00,c8,42,	<!-- Converter Pre-charge Overload User Limit -->
+
+		01,		<!-- NumberOfConfiguredAxes -->
+		00,		<!-- Pad5 -->
+		00,00,		<!-- Pad6 -->
+
+		01,00,00,00,	<!-- FeedbackPortSelect[32] -->
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+
+		01,00,00,00,	<!-- SelectedCardType[32] -->
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+		00,00,00,00,
+
+		02,		<!-- NumberOfConfigurableInputs[8] -->
+		00,
+		00,
+		00,
+		00,
+		00,
+		00,
+		00,
+
+		01,		<!-- SourceOfConfigurableInputs[8] -->
+		00,
+		00,
+		00,
+		00,
+		00,
+		00,
+		00,
+
+		00,00,		<!-- Pad7 -->
+
+		7d,00,		<!-- PositionLoopDeviceUpdatePeriod -->
+		7d,00,		<!-- VelocityLoopDeviceUpdatePeriod -->
+		7d,00,		<!-- TorqueLoopDeviceUpdatePeriod -->
+
+		0a,04,00,00,	<!-- DigitalInputConfiguration1_* -->
+		00,00,00,00,
+		
+		00,00,00,00,	<!-- DigitalInputConfiguration2_* -->
+		00,00,00,00,
+		
+		00,00,00,00,	<!-- DigitalInputConfiguration3_* -->
+		00,00,00,00,
+		
+		00,00,00,00,	<!-- DigitalInputConfiguration4_* -->
+		00,00,00,00,
+		
+		00,00,00,00,	<!-- DigitalInputConfiguration5_* -->
+		00,00,00,00,
+		
+		00,00,00,00,	<!-- DigitalInputConfiguration6_* -->
+		00,00,00,00,
+		
+		00,00,00,00,	<!-- DigitalInputConfiguration7_* -->
+		00,00,00,00,
+		
+		00,00,00,00,	<!-- DigitalInputConfiguration8_* -->
+		00,00,00,00
+	</Value>
+	
+	<DataType Name="AB:Motion_Sync:I:0" Class="IO">
+		<Members>
+			<Member Name="Data" DataType="SINT" Dimension="220" Radix="Decimal" Hidden="True"></Member>
+		</Members>
+	</DataType>
+
+	<DataType Name="AB:Motion_Sync:O:0" Class="IO">
+		<Members>
+			<Member Name="Data" DataType="SINT" Dimension="220" Radix="Decimal" Hidden="True"></Member>
+		</Members>
+	</DataType>
+
+	<DataType Name="AB:Motion_Diagnostics:S:1" Class="IO" HiddenDataType="SINT">
+		<Members>
+			<Member Name="LostControllerToDriveTransmissions" DataType="INT" Hidden="False"></Member>
+			<Member Name="LateControllerToDriveTransmissions" DataType="INT" Hidden="False"></Member>
+			<Member Name="LostDriveToControllerTransmissions" DataType="INT" Hidden="False"></Member>
+			<Member Name="LateDriveToControllerTransmissions" DataType="INT" Hidden="False"></Member>
+			<Member Name="LastControllerToDriveTime" DataType="INT" Hidden="False"></Member>
+			<Member Name="AverageControllerToDriveTime" DataType="INT" Hidden="False"></Member>
+			<Member Name="MaximumControllerToDriveTime" DataType="INT" Hidden="False"></Member>
+			<Member Name="LastDriveToControllerTime" DataType="INT" Hidden="False"></Member>
+			<Member Name="AverageDriveToControllerTime" DataType="INT" Hidden="False"></Member>
+			<Member Name="MaximumDriveToControllerTime" DataType="INT" Hidden="False"></Member>
+			<Member Name="LastSystemClockJitter" DataType="DINT" Hidden="False"></Member>
+			<Member Name="AverageSystemClockJitter" DataType="DINT" Hidden="False"></Member>
+			<Member Name="MaximumSystemClockJitter" DataType="DINT" Hidden="False"></Member>
+			<Member Name="TimingStatisticsEnabled" DataType="SINT" Hidden="False"></Member>
+			<Member Name="Pad1" DataType="SINT" Hidden="True"></Member>
+			<Member Name="ControllerToDriveConnectionSize" DataType="INT" Hidden="False"></Member>
+			<Member Name="DriveToControllerConnectionSize" DataType="INT" Hidden="False"></Member>
+			<Member Name="NominalControllerToDriveTime" DataType="INT" Hidden="False"></Member>
+			<Member Name="NominalDriveToControllerTime" DataType="INT" Hidden="False"></Member>
+			<Member Name="CoarseUpdatePeriod" DataType="INT" Hidden="False"></Member>
+    </Members>
+  </DataType>
+  <!-- **** String defines ************************************************* -->
+	<Enum ID="ExternalShuntEnum" StringsID="ExternalShuntStrings">
+		<Value StringID="0">-1</Value>
+	</Enum>
+  <Strings ID="ExternalShuntStrings">
+    <String ID="0">
+      <Text LCID="1033">&lt;none&gt;</Text>
+      <Text LCID="1031">&lt;keine&gt;</Text>
+      <Text LCID="1034">&lt;ninguno&gt;</Text>
+      <Text LCID="1036">&lt;aucun&gt;</Text>
+      <Text LCID="1040">&lt;nessuno&gt;</Text>
+      <Text LCID="1041">&lt;なし&gt;</Text>
+      <Text LCID="1042">&lt;없음&gt;</Text>
+      <Text LCID="1046">&lt;nenhum&gt;</Text>
+      <Text LCID="2052">&lt;无&gt;</Text>
+    </String>
+  </Strings>
+  <Strings ID="ModuleDefinitionStrings">
+    <String ID="1">
+      <Text LCID="1033">Connection</Text>
+      <Text LCID="1031">Verbindung</Text>
+      <Text LCID="1034">Conexión</Text>
+      <Text LCID="1036">Connexion</Text>
+      <Text LCID="1040">Collegamento</Text>
+      <Text LCID="1041">接続</Text>
+      <Text LCID="1042">연결</Text>
+      <Text LCID="1046">Conexão</Text>
+      <Text LCID="2052">连接</Text>
+    </String>
+    <String ID="2">
+      <Text LCID="1033">Motion</Text>
+      <Text LCID="1031">Achssteuerung</Text>
+      <Text LCID="1034">Movimiento</Text>
+      <Text LCID="1036">Mouvement</Text>
+      <Text LCID="1040">Movimento</Text>
+      <Text LCID="1041">モーション</Text>
+      <Text LCID="1042">모션</Text>
+      <Text LCID="1046">Movimento</Text>
+      <Text LCID="2052">运动</Text>
+    </String>
+  </Strings>
+    <Enum ID="DigitalInputEnumUnassigned" StringsID="DigitalInputStrings">
+		<Value StringID="0">0</Value>
+	</Enum>
+  	<Enum ID="DigitalInputEnum1" StringsID="DigitalInputStrings">
+		<Value StringID="0">0</Value>
+		<Value StringID="2">2</Value>
+		<Value StringID="3">3</Value>
+		<Value StringID="4">4</Value>
+		<Value StringID="5">5</Value>
+		<Value StringID="6">6</Value>
+		<Value StringID="10">10</Value>
+	</Enum>
+	<Strings ID="DigitalInputStrings">
+		<String ID="0">
+			<Text LCID="1033">Unassigned</Text> 
+			<Text LCID="1031">Nicht zugeordnet</Text> 
+			<Text LCID="1034">Desasignado</Text> 
+			<Text LCID="1036">Non assigné</Text> 
+			<Text LCID="1040">Non assegnato</Text> 
+			<Text LCID="1041">未割り当て</Text> 
+			<Text LCID="1042">할당 안 됨</Text> 
+			<Text LCID="1046">Não atribuído</Text> 
+			<Text LCID="2052">未分配</Text> 
+		</String>
+		<String ID="1">
+			<Text LCID="1033">Enable</Text> 
+			<Text LCID="1031">Aktivieren</Text> 
+			<Text LCID="1034">Habilitar</Text> 
+			<Text LCID="1036">Activer</Text> 
+			<Text LCID="1040">Attiva</Text> 
+			<Text LCID="1041">有効</Text> 
+			<Text LCID="1042">사용</Text> 
+			<Text LCID="1046">Ativar</Text> 
+			<Text LCID="2052">启用</Text> 
+		</String>
+		<String ID="2">
+			<Text LCID="1033">Home</Text> 
+			<Text LCID="1031">Ausgangsposition</Text> 
+			<Text LCID="1034">Inicio</Text> 
+			<Text LCID="1036">Origine</Text> 
+			<Text LCID="1040">Posizione iniziale</Text> 
+			<Text LCID="1041">ホーム</Text> 
+			<Text LCID="1042">원위치</Text> 
+			<Text LCID="1046">Início</Text> 
+			<Text LCID="2052">主页</Text> 
+		</String>
+		<String ID="3">
+			<Text LCID="1033">Registration 1</Text> 
+			<Text LCID="1031">Registrierung 1</Text> 
+			<Text LCID="1034">Registro 1</Text> 
+			<Text LCID="1036">Enregistrement 1</Text> 
+			<Text LCID="1040">Registrazione 1</Text> 
+			<Text LCID="1041">登録 1</Text> 
+			<Text LCID="1042">등록 1</Text> 
+			<Text LCID="1046">Registro 1</Text> 
+			<Text LCID="2052">注册 1</Text> 
+		</String>
+		<String ID="4">
+			<Text LCID="1033">Registration 2</Text> 
+			<Text LCID="1031">Registrierung 2</Text> 
+			<Text LCID="1034">Registro 2</Text> 
+			<Text LCID="1036">Enregistrement 2</Text> 
+			<Text LCID="1040">Registrazione 2</Text> 
+			<Text LCID="1041">登録 2</Text> 
+			<Text LCID="1042">등록 2</Text> 
+			<Text LCID="1046">Registro 2</Text> 
+			<Text LCID="2052">注册 2</Text> 
+		</String>
+		<String ID="5">
+			<Text LCID="1033">Positive Overtravel</Text> 
+			<Text LCID="1031">Positiver Endschalter</Text> 
+			<Text LCID="1034">Fin de carrera positivo</Text> 
+			<Text LCID="1036">Surcourse positive</Text> 
+			<Text LCID="1040">Fuoricorsa positivo</Text> 
+			<Text LCID="1041">正のオーバトラベル</Text> 
+			<Text LCID="1042">양수 과도 이동</Text> 
+			<Text LCID="1046">Sobrecurso positivo</Text> 
+			<Text LCID="2052">正超程</Text> 
+		</String>
+		<String ID="6">
+			<Text LCID="1033">Negative Overtravel</Text> 
+			<Text LCID="1031">Negativer Endschalter</Text> 
+			<Text LCID="1034">Fin de carrera negativo</Text> 
+			<Text LCID="1036">Surcourse négative</Text> 
+			<Text LCID="1040">Fuoricorsa negativo</Text> 
+			<Text LCID="1041">負のオーバトラベル</Text> 
+			<Text LCID="1042">음수 과도 이동</Text> 
+			<Text LCID="1046">Sobrecurso negativo</Text> 
+			<Text LCID="2052">负超程</Text> 
+		</String>
+		<String ID="7">
+			<Text LCID="1033">Regeneration OK</Text> 
+			<Text LCID="1031">Regenerierung OK</Text> 
+			<Text LCID="1034">Regeneración completada</Text> 
+			<Text LCID="1036">Régénération OK</Text> 
+			<Text LCID="1040">Rigenerazione OK</Text> 
+			<Text LCID="1041">再生成 OK</Text> 
+			<Text LCID="1042">회생 확인</Text> 
+			<Text LCID="1046">Regeneração OK</Text> 
+			<Text LCID="2052">已重新生成 OK</Text> 
+		</String>
+		<String ID="8">
+			<Text LCID="1033">Bus Capacitor OK</Text>
+			<Text LCID="1036">Condensateur du bus OK</Text>
+			<Text LCID="1031">Bus-Kondesator OK</Text>
+			<Text LCID="1034">Condensador del bus correcto</Text>
+			<Text LCID="1046">Condensador de barramento OK</Text>
+			<Text LCID="1040">Condensatore bus OK</Text>
+			<Text LCID="1041">Bus Capacitor OK</Text>
+			<Text LCID="1042">버스 커패시터 정상</Text>
+			<Text LCID="2052">母排电容正常</Text>
+		</String>
+		<String ID="9">
+			<Text LCID="1033">Shunt Thermal Switch OK</Text>
+			<Text LCID="1036">Interrupteur thermique de dérivation OK</Text>
+			<Text LCID="1031">Schalter Thermischer Nebenschluss OK</Text>
+			<Text LCID="1034">Interruptor térmico de derivación correcto</Text>
+			<Text LCID="1046">Interruptor de derivação termal OK</Text>
+			<Text LCID="1040">Interruttore termico derivatore OK</Text>
+			<Text LCID="1041">シャント熱スイッチ OK</Text>
+			<Text LCID="1042">분로 서멀 스위치 정상</Text>
+			<Text LCID="2052">分流热开关正常</Text>
+		</String>
+		<String ID="10">
+			<Text LCID="1033">Home &amp; Registration 1</Text>
+			<Text LCID="1036">Origine &amp; Enregistrement 1</Text>
+			<Text LCID="1031">Ausgangsposition &amp; Registrierung 1</Text>
+			<Text LCID="1034">Inicio &amp; Registro 1</Text>
+			<Text LCID="1046">Início &amp; Registro 1</Text>
+			<Text LCID="1040">Posizione iniziale &amp; Registrazione 1</Text>
+			<Text LCID="1041">ホーム &amp; 登録 1</Text>
+			<Text LCID="1042">원위치 &amp; 등록 1</Text>
+			<Text LCID="2052">主页 &amp; 注册 1</Text>
+		</String>
+	</Strings>
+  <Enum ID="ACInputPhasingEnum" StringsID="ACInputPhasingStrings">
+    <Value StringID="0">0</Value>
+    <Value StringID="1">1</Value>
+  </Enum>
+  <Strings ID="ACInputPhasingStrings">
+    <String ID="0">
+      <Text LCID="1033">Three Phase</Text>
+      <Text LCID="1031">Dreiphasig</Text>
+      <Text LCID="1034">Trifásico</Text>
+      <Text LCID="1036">Triphasé</Text>
+      <Text LCID="1040">Trifase</Text>
+      <Text LCID="1041">3 相</Text>
+      <Text LCID="1042">3-Phase</Text>
+      <Text LCID="1046">Três fases</Text>
+      <Text LCID="2052">三相</Text>
+    </String>
+    <String ID="1">
+      <Text LCID="1033">Single Phase</Text>
+      <Text LCID="1031">Einphasig</Text>
+      <Text LCID="1034">Monofásico</Text>
+      <Text LCID="1036">Monophasé</Text>
+      <Text LCID="1040">Monofase</Text>
+      <Text LCID="1041">単相</Text>
+      <Text LCID="1042">단일 Phase</Text>
+      <Text LCID="1046">Fase única</Text>
+      <Text LCID="2052">单相</Text>
+    </String>
+  </Strings>
+  <Enum ID="ACInputVoltageEnum" StringsID="ACInputVoltageStrings">
+    <Value StringID="0">230</Value>
+    <Value StringID="1">460</Value>
+  </Enum>
+  <Strings ID="ACInputVoltageStrings">
+    <String ID="0">
+      <Text LCID="1033">200-240 VAC</Text>
+      <Text LCID="1031">200-240 VAC</Text>
+      <Text LCID="1034">200-240 V CA</Text>
+      <Text LCID="1036">200-240 VCA</Text>
+      <Text LCID="1040">200-240 VCA</Text>
+      <Text LCID="1041">200-240 VAC</Text>
+      <Text LCID="1042">200-240 VAC</Text>
+      <Text LCID="1046">200-240 VAC</Text>
+      <Text LCID="2052">200-240 VAC</Text>
+    </String>
+    <String ID="1">
+      <Text LCID="1033">400-480 VAC</Text>
+      <Text LCID="1031">400-480 VAC</Text>
+      <Text LCID="1034">400-480 V CA</Text>
+      <Text LCID="1036">400-480 VCA</Text>
+      <Text LCID="1040">400-480 VCA</Text>
+      <Text LCID="1041">400-480 VAC</Text>
+      <Text LCID="1042">400-480 VAC</Text>
+      <Text LCID="1046">400-480 VAC</Text>
+      <Text LCID="2052">400-480 VAC</Text>
+    </String>
+  </Strings>
+  <Enum ID="PWMFrequencyEnum" StringsID="PWMFrequencyStrings">
+    <Value StringID="0">4000</Value>
+    <Value StringID="1">8000</Value>
+  </Enum>
+  <Strings ID="PWMFrequencyStrings">
+    <String ID="0">
+      <Text LCID="1033">4Khz</Text>
+      <Text LCID="1031">4 Khz</Text>
+      <Text LCID="1034">4 Khz</Text>
+      <Text LCID="1036">4 kHz</Text>
+      <Text LCID="1040">4Khz</Text>
+      <Text LCID="1041">4Khz</Text>
+      <Text LCID="1042">4Khz</Text>
+      <Text LCID="1046">4 kHz</Text>
+      <Text LCID="2052">4 Khz</Text>
+    </String>
+    <String ID="1">
+      <Text LCID="1033">8Khz</Text>
+      <Text LCID="1031">8 Khz</Text>
+      <Text LCID="1034">8 Khz</Text>
+      <Text LCID="1036">8 kHz</Text>
+      <Text LCID="1040">8Khz</Text>
+      <Text LCID="1041">8Khz</Text>
+      <Text LCID="1042">8Khz</Text>
+      <Text LCID="1046">8 kHz</Text>
+      <Text LCID="2052">8 Khz</Text>
+    </String>
+  </Strings>
+  <Enum ID="BusConfigurationEnum" StringsID="BusConfigurationStrings">
+    <Value StringID="0">0</Value>
+    <Value StringID="1">1</Value>
+    <Value StringID="2">2</Value>
+  </Enum>
+  <Strings ID="BusConfigurationStrings">
+    <String ID="0">
+      <Text LCID="1033">Standalone</Text>
+      <Text LCID="1031">Eigenständig</Text>
+      <Text LCID="1034">Independiente</Text>
+      <Text LCID="1036">Autonome</Text>
+      <Text LCID="1040">Autonoma</Text>
+      <Text LCID="1041">スタンドアロン</Text>
+      <Text LCID="1042">독립 실행형</Text>
+      <Text LCID="1046">Autônomo</Text>
+      <Text LCID="2052">独立</Text>
+    </String>
+    <String ID="1">
+      <Text LCID="1033">Shared AC/DC</Text>
+      <Text LCID="1031">Freigabe-AC/DC</Text>
+      <Text LCID="1034">CA/CC compartido</Text>
+      <Text LCID="1036">C.A./C.C. partagé</Text>
+      <Text LCID="1040">Condivisa CA/CC</Text>
+      <Text LCID="1041">共有 AC/DC</Text>
+      <Text LCID="1042">공유 AC/DC</Text>
+      <Text LCID="1046">CA/CC compartilhada</Text>
+      <Text LCID="2052">共享 AC/DC</Text>
+    </String>
+    <String ID="2">
+      <Text LCID="1033">Shared DC</Text>
+      <Text LCID="1031">Freigabe-DC</Text>
+      <Text LCID="1034">CC compartido</Text>
+      <Text LCID="1036">C.C. partagé</Text>
+      <Text LCID="1040">Condivisa CC</Text>
+      <Text LCID="1041">共有 DC</Text>
+      <Text LCID="1042">공유 DC</Text>
+      <Text LCID="1046">CC compartilhada</Text>
+      <Text LCID="2052">共享 DC</Text>
+    </String>
+  </Strings>
+  <Enum ID="BusSharingGroupEnum" StringsID="BusSharingGroupStrings">
+    <Value StringID="0">0</Value>
+    <Value StringID="1">1</Value>
+    <Value StringID="2">2</Value>
+    <Value StringID="3">3</Value>
+    <Value StringID="4">4</Value>
+    <Value StringID="5">5</Value>
+    <Value StringID="6">6</Value>
+    <Value StringID="7">7</Value>
+    <Value StringID="8">8</Value>
+    <Value StringID="9">9</Value>
+    <Value StringID="10">10</Value>
+    <Value StringID="11">11</Value>
+    <Value StringID="12">12</Value>
+    <Value StringID="13">13</Value>
+    <Value StringID="14">14</Value>
+    <Value StringID="15">15</Value>
+    <Value StringID="16">16</Value>
+    <Value StringID="17">17</Value>
+    <Value StringID="18">18</Value>
+    <Value StringID="19">19</Value>
+    <Value StringID="20">20</Value>
+    <Value StringID="21">21</Value>
+    <Value StringID="22">22</Value>
+    <Value StringID="23">23</Value>
+    <Value StringID="24">24</Value>
+    <Value StringID="25">25</Value>
+  </Enum>
+  <Strings ID="BusSharingGroupStrings">
+    <String ID="0">
+      <Text LCID="1033">Standalone</Text>
+      <Text LCID="1031">Eigenständig</Text>
+      <Text LCID="1034">Independiente</Text>
+      <Text LCID="1036">Autonome</Text>
+      <Text LCID="1040">Autonoma</Text>
+      <Text LCID="1041">スタンドアロン</Text>
+      <Text LCID="1042">독립 실행형</Text>
+      <Text LCID="1046">Autônomo</Text>
+      <Text LCID="2052">独立</Text>
+    </String>
+    <String ID="1">
+      <Text LCID="1033">Group1</Text>
+      <Text LCID="1031">Gruppe 1</Text>
+      <Text LCID="1034">Grupo 1</Text>
+      <Text LCID="1036">Groupe 1</Text>
+      <Text LCID="1040">Gruppo1</Text>
+      <Text LCID="1041">グループ 1</Text>
+      <Text LCID="1042">그룹1</Text>
+      <Text LCID="1046">Grupo 1</Text>
+      <Text LCID="2052">组 1</Text>
+    </String>
+    <String ID="2">
+      <Text LCID="1033">Group2</Text>
+      <Text LCID="1031">Gruppe 2</Text>
+      <Text LCID="1034">Grupo 2</Text>
+      <Text LCID="1036">Groupe 2</Text>
+      <Text LCID="1040">Gruppo2</Text>
+      <Text LCID="1041">グループ 2</Text>
+      <Text LCID="1042">그룹2</Text>
+      <Text LCID="1046">Grupo 2</Text>
+      <Text LCID="2052">组 2</Text>
+    </String>
+    <String ID="3">
+      <Text LCID="1033">Group3</Text>
+      <Text LCID="1031">Gruppe 3</Text>
+      <Text LCID="1034">Grupo 3</Text>
+      <Text LCID="1036">Groupe 3</Text>
+      <Text LCID="1040">Gruppo3</Text>
+      <Text LCID="1041">グループ 3</Text>
+      <Text LCID="1042">그룹3</Text>
+      <Text LCID="1046">Grupo 3</Text>
+      <Text LCID="2052">组 3</Text>
+    </String>
+    <String ID="4">
+      <Text LCID="1033">Group4</Text>
+      <Text LCID="1031">Gruppe 4</Text>
+      <Text LCID="1034">Grupo 4</Text>
+      <Text LCID="1036">Groupe 4</Text>
+      <Text LCID="1040">Gruppo4</Text>
+      <Text LCID="1041">グループ 4</Text>
+      <Text LCID="1042">그룹4</Text>
+      <Text LCID="1046">Grupo 4</Text>
+      <Text LCID="2052">组 4</Text>
+    </String>
+    <String ID="5">
+      <Text LCID="1033">Group5</Text>
+      <Text LCID="1031">Gruppe 5</Text>
+      <Text LCID="1034">Grupo 5</Text>
+      <Text LCID="1036">Groupe 5</Text>
+      <Text LCID="1040">Gruppo5</Text>
+      <Text LCID="1041">グループ 5</Text>
+      <Text LCID="1042">그룹5</Text>
+      <Text LCID="1046">Grupo 5</Text>
+      <Text LCID="2052">组 5</Text>
+    </String>
+    <String ID="6">
+      <Text LCID="1033">Group6</Text>
+      <Text LCID="1031">Gruppe 6</Text>
+      <Text LCID="1034">Grupo 6</Text>
+      <Text LCID="1036">Groupe 6</Text>
+      <Text LCID="1040">Gruppo6</Text>
+      <Text LCID="1041">グループ 6</Text>
+      <Text LCID="1042">그룹6</Text>
+      <Text LCID="1046">Grupo 6</Text>
+      <Text LCID="2052">组 6</Text>
+    </String>
+    <String ID="7">
+      <Text LCID="1033">Group7</Text>
+      <Text LCID="1031">Gruppe 7</Text>
+      <Text LCID="1034">Grupo 7</Text>
+      <Text LCID="1036">Groupe 7</Text>
+      <Text LCID="1040">Gruppo7</Text>
+      <Text LCID="1041">グループ 7</Text>
+      <Text LCID="1042">그룹7</Text>
+      <Text LCID="1046">Grupo 7</Text>
+      <Text LCID="2052">组 7</Text>
+    </String>
+    <String ID="8">
+      <Text LCID="1033">Group8</Text>
+      <Text LCID="1031">Gruppe 8</Text>
+      <Text LCID="1034">Grupo 8</Text>
+      <Text LCID="1036">Groupe 8</Text>
+      <Text LCID="1040">Gruppo8</Text>
+      <Text LCID="1041">グループ 8</Text>
+      <Text LCID="1042">그룹8</Text>
+      <Text LCID="1046">Grupo 8</Text>
+      <Text LCID="2052">组 8</Text>
+    </String>
+    <String ID="9">
+      <Text LCID="1033">Group9</Text>
+      <Text LCID="1031">Gruppe 9</Text>
+      <Text LCID="1034">Grupo 9</Text>
+      <Text LCID="1036">Groupe 9</Text>
+      <Text LCID="1040">Gruppo9</Text>
+      <Text LCID="1041">グループ 9</Text>
+      <Text LCID="1042">그룹9</Text>
+      <Text LCID="1046">Grupo 9</Text>
+      <Text LCID="2052">组 9</Text>
+    </String>
+    <String ID="10">
+      <Text LCID="1033">Group10</Text>
+      <Text LCID="1031">Gruppe 10</Text>
+      <Text LCID="1034">Grupo 10</Text>
+      <Text LCID="1036">Groupe 10</Text>
+      <Text LCID="1040">Gruppo10</Text>
+      <Text LCID="1041">グループ 10</Text>
+      <Text LCID="1042">그룹10</Text>
+      <Text LCID="1046">Grupo 10</Text>
+      <Text LCID="2052">组 10</Text>
+    </String>
+    <String ID="11">
+      <Text LCID="1033">Group11</Text>
+      <Text LCID="1031">Gruppe 11</Text>
+      <Text LCID="1034">Grupo 11</Text>
+      <Text LCID="1036">Groupe 11</Text>
+      <Text LCID="1040">Gruppo11</Text>
+      <Text LCID="1041">グループ 11</Text>
+      <Text LCID="1042">그룹11</Text>
+      <Text LCID="1046">Grupo 11</Text>
+      <Text LCID="2052">组 11</Text>
+    </String>
+    <String ID="12">
+      <Text LCID="1033">Group12</Text>
+      <Text LCID="1031">Gruppe 12</Text>
+      <Text LCID="1034">Grupo 12</Text>
+      <Text LCID="1036">Groupe 12</Text>
+      <Text LCID="1040">Gruppo12</Text>
+      <Text LCID="1041">グループ 12</Text>
+      <Text LCID="1042">그룹12</Text>
+      <Text LCID="1046">Grupo 12</Text>
+      <Text LCID="2052">组 12</Text>
+    </String>
+    <String ID="13">
+      <Text LCID="1033">Group13</Text>
+      <Text LCID="1031">Gruppe 13</Text>
+      <Text LCID="1034">Grupo 13</Text>
+      <Text LCID="1036">Groupe 13</Text>
+      <Text LCID="1040">Gruppo13</Text>
+      <Text LCID="1041">グループ 13</Text>
+      <Text LCID="1042">그룹13</Text>
+      <Text LCID="1046">Grupo 13</Text>
+      <Text LCID="2052">组 13</Text>
+    </String>
+    <String ID="14">
+      <Text LCID="1033">Group14</Text>
+      <Text LCID="1031">Gruppe 14</Text>
+      <Text LCID="1034">Grupo 14</Text>
+      <Text LCID="1036">Groupe 14</Text>
+      <Text LCID="1040">Gruppo14</Text>
+      <Text LCID="1041">グループ 14</Text>
+      <Text LCID="1042">그룹14</Text>
+      <Text LCID="1046">Grupo 14</Text>
+      <Text LCID="2052">组 14</Text>
+    </String>
+    <String ID="15">
+      <Text LCID="1033">Group15</Text>
+      <Text LCID="1031">Gruppe 15 </Text>
+      <Text LCID="1034">Grupo 15</Text>
+      <Text LCID="1036">Groupe 15</Text>
+      <Text LCID="1040">Gruppo15</Text>
+      <Text LCID="1041">グループ 15</Text>
+      <Text LCID="1042">그룹15</Text>
+      <Text LCID="1046">Grupo 15</Text>
+      <Text LCID="2052">组 15</Text>
+    </String>
+    <String ID="16">
+      <Text LCID="1033">Group16</Text>
+      <Text LCID="1031">Gruppe 16</Text>
+      <Text LCID="1034">Grupo 16</Text>
+      <Text LCID="1036">Groupe 16</Text>
+      <Text LCID="1040">Gruppo16</Text>
+      <Text LCID="1041">グループ 16</Text>
+      <Text LCID="1042">그룹16</Text>
+      <Text LCID="1046">Grupo 16</Text>
+      <Text LCID="2052">组 16</Text>
+    </String>
+    <String ID="17">
+      <Text LCID="1033">Group17</Text>
+      <Text LCID="1031">Gruppe 17</Text>
+      <Text LCID="1034">Grupo 17</Text>
+      <Text LCID="1036">Groupe 17</Text>
+      <Text LCID="1040">Gruppo17</Text>
+      <Text LCID="1041">グループ 17</Text>
+      <Text LCID="1042">그룹17</Text>
+      <Text LCID="1046">Grupo 17</Text>
+      <Text LCID="2052">组 17</Text>
+    </String>
+    <String ID="18">
+      <Text LCID="1033">Group18</Text>
+      <Text LCID="1031">Gruppe 18</Text>
+      <Text LCID="1034">Grupo 18</Text>
+      <Text LCID="1036">Groupe 18</Text>
+      <Text LCID="1040">Gruppo18</Text>
+      <Text LCID="1041">グループ 18</Text>
+      <Text LCID="1042">그룹18</Text>
+      <Text LCID="1046">Grupo 18</Text>
+      <Text LCID="2052">组 18</Text>
+    </String>
+    <String ID="19">
+      <Text LCID="1033">Group19</Text>
+      <Text LCID="1031">Gruppe 19</Text>
+      <Text LCID="1034">Grupo 19</Text>
+      <Text LCID="1036">Groupe 19</Text>
+      <Text LCID="1040">Gruppo19</Text>
+      <Text LCID="1041">グループ 19</Text>
+      <Text LCID="1042">그룹19</Text>
+      <Text LCID="1046">Grupo 19</Text>
+      <Text LCID="2052">组 19</Text>
+    </String>
+    <String ID="20">
+      <Text LCID="1033">Group20</Text>
+      <Text LCID="1031">Gruppe 20</Text>
+      <Text LCID="1034">Grupo 20</Text>
+      <Text LCID="1036">Groupe 20</Text>
+      <Text LCID="1040">Gruppo20</Text>
+      <Text LCID="1041">グループ 20</Text>
+      <Text LCID="1042">그룹20</Text>
+      <Text LCID="1046">Grupo 20</Text>
+      <Text LCID="2052">组 20</Text>
+    </String>
+    <String ID="21">
+      <Text LCID="1033">Group21</Text>
+      <Text LCID="1031">Gruppe 21</Text>
+      <Text LCID="1034">Grupo 21</Text>
+      <Text LCID="1036">Groupe 21</Text>
+      <Text LCID="1040">Gruppo21</Text>
+      <Text LCID="1041">グループ 21</Text>
+      <Text LCID="1042">그룹21</Text>
+      <Text LCID="1046">Grupo 21</Text>
+      <Text LCID="2052">组 21</Text>
+    </String>
+    <String ID="22">
+      <Text LCID="1033">Group22</Text>
+      <Text LCID="1031">Gruppe 22</Text>
+      <Text LCID="1034">Grupo 22</Text>
+      <Text LCID="1036">Groupe 22</Text>
+      <Text LCID="1040">Gruppo22</Text>
+      <Text LCID="1041">グループ 22</Text>
+      <Text LCID="1042">그룹22</Text>
+      <Text LCID="1046">Grupo 22</Text>
+      <Text LCID="2052">组 22</Text>
+    </String>
+    <String ID="23">
+      <Text LCID="1033">Group23</Text>
+      <Text LCID="1031">Gruppe 23</Text>
+      <Text LCID="1034">Grupo 23</Text>
+      <Text LCID="1036">Groupe 23</Text>
+      <Text LCID="1040">Gruppo23</Text>
+      <Text LCID="1041">グループ 23</Text>
+      <Text LCID="1042">그룹23</Text>
+      <Text LCID="1046">Grupo 23</Text>
+      <Text LCID="2052">组 23</Text>
+    </String>
+    <String ID="24">
+      <Text LCID="1033">Group24</Text>
+      <Text LCID="1031">Gruppe 24</Text>
+      <Text LCID="1034">Grupo 24</Text>
+      <Text LCID="1036">Groupe 24</Text>
+      <Text LCID="1040">Gruppo24</Text>
+      <Text LCID="1041">グループ 24</Text>
+      <Text LCID="1042">그룹24</Text>
+      <Text LCID="1046">Grupo 24</Text>
+      <Text LCID="2052">组 24</Text>
+    </String>
+    <String ID="25">
+      <Text LCID="1033">Group25</Text>
+      <Text LCID="1031">Gruppe 25</Text>
+      <Text LCID="1034">Grupo 25</Text>
+      <Text LCID="1036">Groupe 25</Text>
+      <Text LCID="1040">Gruppo25</Text>
+      <Text LCID="1041">グループ 25</Text>
+      <Text LCID="1042">그룹25</Text>
+      <Text LCID="1046">Grupo 25</Text>
+      <Text LCID="2052">组 25</Text>
+    </String>
+  </Strings>
+  <!--  ************* BusRegulatorActionEnum values **************   -->
+  <!-- BusRegulatorAction is a SINT witha range of 0 to 255          -->
+  <!-- Values of 0 through 127 are positive numbers                  -->
+  <!-- Values of 128 through 255 are represented as negative numbers -->
+  <!-- Enum value of 128 represented by a value of -128              -->
+  <!-- Enum value of 129 represented by a value of -127              -->
+  <!-- Enum value of 130 represented by a value of -126              -->
+  <!-- Enum value of 131 represented by a value of -125              -->
+  <Enum ID="BusRegulatorActionEnum" StringsID="BusRegulatorActionStrings">
+    <Value StringID="0">0</Value>
+    <Value StringID="1">1</Value>
+  </Enum>
+  <Strings ID="BusRegulatorActionStrings">
+    <String ID="0">
+      <Text LCID="1033">Disabled</Text>
+      <Text LCID="1031">Deaktiviert</Text>
+      <Text LCID="1034">Inhabilitado</Text>
+      <Text LCID="1036">Désactivé</Text>
+      <Text LCID="1040">Disattivata</Text>
+      <Text LCID="1041">無効</Text>
+      <Text LCID="1042">사용 안 함</Text>
+      <Text LCID="1046">Desativado</Text>
+      <Text LCID="2052">禁用</Text>
+    </String>
+    <String ID="1">
+      <Text LCID="1033">Shunt Regulator</Text>
+      <Text LCID="1031">Nebenschlussregler</Text>
+      <Text LCID="1034">Regulador de derivación</Text>
+      <Text LCID="1036">Régulateur shunt</Text>
+      <Text LCID="1040">Regolatore derivatore</Text>
+      <Text LCID="1041">シャント レギュレータ</Text>
+      <Text LCID="1042">션트 조절기</Text>
+      <Text LCID="1046">Regulador da derivação</Text>
+      <Text LCID="2052">分流调节器</Text>
+    </String>
+  </Strings>
+  <CIPObject ID="DeviceInfo" Timeout="8000">
+    <!-- Supported Services -->
+    <Services>
+      <Service Name="Refresh" ContainsTargetServices="True">
+        <TargetService ID="GetAttributeSingle" />
+        <TargetService ID="GetAttributeAll" />
+      </Service>
+      <Service Name="GetAttributeAll" ReplyStatusEnumID="GetAttrSingleGenStatusCode" ReplyExtStatusEnumID="GASReplyStatus">
+        <MessageStream>
+          <ByteData>01,02,20,01,24,01</ByteData>
+        </MessageStream>
+      </Service>
+      <Service Name="GetAttributeSingle" ReplyStatusEnumID="GetAttrSingleGenStatusCode" ReplyExtStatusEnumID="GASReplyStatus">
+        <MessageStream>
+          <ByteData>0e,03,20,01,24,01,30</ByteData>
+          <Insert DataType="USINT" />
+        </MessageStream>
+      </Service>
+    </Services>
+    <!-- Supported Attributes -->
+    <Members>
+      <Member Name="Vendor" AttributeID="1" DataType="UINT" MessageID="GetAttributeAll" SupportsRefresh="True" />
+      <Member Name="Product Type" AttributeID="2" DataType="UINT" MessageID="GetAttributeAll" SupportsRefresh="True" />
+      <Member Name="Product Code" AttributeID="3" DataType="UINT" MessageID="GetAttributeAll" SupportsRefresh="True" />
+      <Member Name="Revision" AttributeID="4" DataType="STRUCT" Dimension="2" MessageID="GetAttributeAll" SupportsRefresh="True" />
+      <Member Name="Major Revision" DataType="USINT" Target="Revision" SupportsRefresh="True" />
+      <Member Name="Minor Revision" DataType="USINT" Target="Revision" SupportsRefresh="True" />
+      <Member Name="Status" AttributeID="5" DataType="WORD" MessageID="GetAttributeAll" SupportsRefresh="True" />
+      <Member Name="Owned" DataType="BIT" BitNumber="0" Target="Status" EnumID="OwnedCode" SupportsRefresh="True" />
+      <Member Name="Configured" DataType="BIT" BitNumber="2" Target="Status" EnumID="ConfigureCode" SupportsRefresh="True" />
+      <Member Name="Internal State" DataType="BITFIELD" HiBit="7" LowBit="4" Target="Status" EnumID="IntrnlStateCode" SupportsRefresh="True" />
+      <Member Name="Minor Recoverable Fault" DataType="BIT" BitNumber="8" Target="Status" EnumID="RecoverableFaultCode" SupportsRefresh="True" />
+      <Member Name="Minor Unrecoverable Fault" DataType="BIT" BitNumber="9" Target="Status" EnumID="UnRecoverableFaultCode" SupportsRefresh="True" />
+      <Member Name="Major Recoverable Fault" DataType="BIT" BitNumber="10" Target="Status" EnumID="RecoverableFaultCode" SupportsRefresh="True" />
+      <Member Name="Major Unrecoverable Fault" DataType="BIT" BitNumber="11" Target="Status" EnumID="UnRecoverableFaultCode" SupportsRefresh="True" />
+      <Member Name="Serial Number" AttributeID="6" DataType="UDINT" MessageID="GetAttributeAll" EnumID="SerialNumberCode" SupportsRefresh="True" />
+      <Member Name="Product Name" AttributeID="7" DataType="SHORT_STRING" MessageID="GetAttributeAll" SupportsRefresh="True" />
+      <Member Name="Module Identity" CIPNativeAttribute="False" />
+    </Members>
+  </CIPObject>
+  <!-- CIP SUPPORTED DATA TYPES -->
+  <CIPDataType>
+    <CIPData DataType="UDINT" Bytes="4" SignDesignation="Unsigned" />
+    <CIPData DataType="DINT" Bytes="4" SignDesignation="Signed" />
+    <CIPData DataType="DWORD" Bytes="4" SignDesignation="Unsigned" />
+    <CIPData DataType="WORD" Bytes="2" SignDesignation="Unsigned" />
+    <CIPData DataType="UINT" Bytes="2" SignDesignation="Unsigned" />
+    <CIPData DataType="INT" Bytes="2" SignDesignation="Signed" />
+    <CIPData DataType="USINT" Bytes="1" SignDesignation="Unsigned" />
+    <CIPData DataType="SHORT_STRING" Bytes="1" />
+    <CIPData DataType="BITFIELD" />
+    <CIPData DataType="BIT" />
+    <!-- CIP Supported variable size data type & structs -->
+    <CIPData DataType="OCTET" Bytes="1" NeedsDimension="True" />
+    <CIPData DataType="STRUCT" Bytes="1" NeedsDimension="True" />
+    <CIPData DataType="UNID" Struct="True" Bytes="10">
+      <StructMember DataType="SNN" />
+      <StructMember DataType="UDINT" />
+    </CIPData>
+    <CIPData DataType="SNN" Struct="True" Bytes="6">
+      <StructMember DataType="DWORD" />
+      <StructMember DataType="WORD" />
+    </CIPData>
+  </CIPDataType>
+</AOPModuleTypes>

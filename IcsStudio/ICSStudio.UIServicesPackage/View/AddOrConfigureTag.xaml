@@ -1,0 +1,76 @@
+﻿<Window x:Class="ICSStudio.UIServicesPackage.View.AddOrConfigureTag"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ICSStudio.UIServicesPackage.View"
+             xmlns:gui="clr-namespace:ICSStudio.Gui;assembly=ICSStudio.Gui"
+             xmlns:extend="clr-namespace:ICSStudio.EditorPackage.Reference.Extend;assembly=ICSStudio.EditorPackage"
+             xmlns:controls="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
+             xmlns:filter="clr-namespace:ICSStudio.Dialogs.Filter;assembly=ICSStudio.Dialogs"
+             xmlns:controls1="clr-namespace:ICSStudio.Components.Controls;assembly=ICSStudio.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Width="445" Height="325" ResizeMode="NoResize" Title="{Binding Title}"
+            gui:DialogCloser.DialogResult="{Binding DialogResult}">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Margin="10" x:Name="TopGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="{DynamicResource Scope:}"></TextBlock>
+
+        <ComboBox Grid.Row="1" Width="231" Height="24" HorizontalAlignment="Left" DisplayMemberPath="Name" ItemsSource="{Binding ScopeList}" SelectedItem="{Binding SelectedScope}"></ComboBox>
+
+        <TextBlock Grid.Row="2" Text="{DynamicResource SelectVariable}"></TextBlock>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal">
+            <Grid Height="25" Width="318" Margin="0,0,0,0">
+                <controls1:FastAutoCompleteTextBox 
+                    Width="318" Padding="0,0,20,0" 
+                    Height="23" 
+                    PreviewKeyDown="FastAutoCompleteTextBox_PreviewKeyDown"
+                    Text="{Binding TagName,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" 
+                    Data="{Binding NameList}" 
+                    MaxDropDownHeight="0" 
+                    IsTextCompletionEnabled="True"
+                    Visibility="{Binding FilterVisibility}"></controls1:FastAutoCompleteTextBox>
+                <Button VerticalAlignment="Top" Height="18" Background="Transparent" BorderBrush="Transparent"
+                            HorizontalAlignment="Right" Width="18" MinWidth="18" 
+                            Command="{Binding NameFilterCommand}" 
+                            CommandParameter="{Binding RelativeSource={RelativeSource Self}}">
+                    <Button.Content>
+                        <Path Data="M0,4L5,9L10,4" Stroke="Black"></Path>
+                    </Button.Content>
+                </Button>
+                <filter:NameFilterPopup  x:Name="NameFilterPopup"></filter:NameFilterPopup>
+            </Grid>
+            <Button Content="{DynamicResource Add}" Width="75" Height="23" Margin="10,0,0,0" Command="{Binding AddCommand}"></Button>
+        </StackPanel>
+
+        <TextBlock Grid.Row="4" Text="{DynamicResource VariableToTrend}"></TextBlock>
+
+        <StackPanel Grid.Row="5" Orientation="Horizontal">
+            <ListView Width="318" Height="122" Margin="0" ItemsSource="{Binding TagsToTrend}" SelectedValue="{Binding SelectedTag}"></ListView>
+            <Button Content="{DynamicResource Remove}" Width="75" Height="23" VerticalAlignment="Top" Margin="10,0,0,0" Command="{Binding RemoveCommand}"></Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Width="75" Height="23" MinHeight="23" Content="{DynamicResource OK}" Command="{Binding OKCommand}"></Button>
+            <Button Width="75" Height="23" MinHeight="23" Content="{DynamicResource Cancel}" IsCancel="True" Command="{Binding CancelCommand}"></Button>
+            <Button Width="75" Height="23" MinHeight="23" Content="{DynamicResource Help}"></Button>
+        </StackPanel>
+    </Grid>
+</Window>

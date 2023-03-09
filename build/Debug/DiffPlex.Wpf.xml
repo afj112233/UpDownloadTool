@@ -1,0 +1,2006 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DiffPlex.Wpf</name>
+    </assembly>
+    <members>
+        <member name="T:DiffPlex.Wpf.Controls.DiffViewer">
+            <summary>
+            The diff control for text.
+            </summary>
+            <summary>
+            DiffViewer
+            </summary>
+        </member>
+        <member name="T:DiffPlex.Wpf.Controls.DiffViewer.ViewModeChangedEventArgs">
+            <summary>
+            The event arguments of view mode changed.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.DiffViewer.ViewModeChangedEventArgs.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the ViewModeChangedEventArgs class.
+            </summary>
+            <param name="isSideBySide">true if it is side-by-side view mode.</param>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.ViewModeChangedEventArgs.IsSideBySideViewMode">
+            <summary>
+            Gets a value indicating whether it is side-by-side (split) view mode.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.ViewModeChangedEventArgs.IsInlineViewMode">
+            <summary>
+            Gets a value indicating whether it is inline (unified) view mode.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.DiffViewer.OldTextProperty">
+            <summary>
+            The property of old text.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.DiffViewer.NewTextProperty">
+            <summary>
+            The property of new text.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.DiffViewer.IgnoreWhiteSpaceProperty">
+            <summary>
+            The property of a flag to ignore white space.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.DiffViewer.IgnoreCaseProperty">
+            <summary>
+            The property of a flag to ignore case.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.DiffViewer.LineNumberForegroundProperty">
+            <summary>
+            The property of line number background brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.DiffViewer.LineNumberWidthProperty">
+            <summary>
+            The property of line number width.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.DiffViewer.ChangeTypeForegroundProperty">
+            <summary>
+            The property of change type symbol foreground brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.DiffViewer.OldTextHeaderProperty">
+            <summary>
+            The property of old text header.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.DiffViewer.NewTextHeaderProperty">
+            <summary>
+            The property of new text header.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.DiffViewer.HeaderHeightProperty">
+            <summary>
+            The property of header height.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.DiffViewer.HeaderForegroundProperty">
+            <summary>
+            The property of header background brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.DiffViewer.HeaderBackgroundProperty">
+            <summary>
+            The property of header background brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.DiffViewer.InsertedForegroundProperty">
+            <summary>
+            The property of text inserted background brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.DiffViewer.InsertedBackgroundProperty">
+            <summary>
+            The property of text inserted background brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.DiffViewer.DeletedForegroundProperty">
+            <summary>
+            The property of text inserted background brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.DiffViewer.DeletedBackgroundProperty">
+            <summary>
+            The property of text inserted background brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.DiffViewer.UnchangedForegroundProperty">
+            <summary>
+            The property of text inserted background brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.DiffViewer.UnchangedBackgroundProperty">
+            <summary>
+            The property of text inserted background brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.DiffViewer.ImaginaryBackgroundProperty">
+            <summary>
+            The property of text inserted background brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.DiffViewer.SplitterBackgroundProperty">
+            <summary>
+            The property of grid splitter background brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.DiffViewer.SplitterBorderBrushProperty">
+            <summary>
+            The property of grid splitter border brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.DiffViewer.SplitterBorderThicknessProperty">
+            <summary>
+            The property of grid splitter border thickness.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.DiffViewer.SplitterWidthProperty">
+            <summary>
+            The property of grid splitter width.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.DiffViewer.IgnoreUnchangedProperty">
+            <summary>
+            The property of flag of hiding unchanged lines
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.DiffViewer.LinesContextProperty">
+            <summary>
+            The property of flag of lines count that will be displayed before and after of unchanged line
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.DiffViewer.IsSideBySideProperty">
+            <summary>
+            The property of IsSideBySide.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.DiffViewer.sideBySideResult">
+            <summary>
+            The side-by-side diffs result.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.DiffViewer.inlineResult">
+            <summary>
+            The inline diffs result.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.DiffViewer.isHeaderEnabled">
+            <summary>
+            The flag to enable header.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.DiffViewer.#ctor">
+            <summary>
+            Initializes a new instance of the DiffViewer class.
+            </summary>
+        </member>
+        <member name="E:DiffPlex.Wpf.Controls.DiffViewer.ViewModeChanged">
+            <summary>
+            Occurs when the view mode is changed.
+            </summary>
+        </member>
+        <member name="E:DiffPlex.Wpf.Controls.DiffViewer.SplitterDragCompleted">
+            <summary>
+            Occurs when the grid splitter loses mouse capture.
+            </summary>
+        </member>
+        <member name="E:DiffPlex.Wpf.Controls.DiffViewer.SplitterDragDelta">
+            <summary>
+            Occurs one or more times as the mouse changes position when the grid splitter has logical focus and mouse capture.
+            </summary>
+        </member>
+        <member name="E:DiffPlex.Wpf.Controls.DiffViewer.SplitterDragStarted">
+            <summary>
+            Occurs when the grid splitter receives logical focus and mouse capture.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.OldText">
+            <summary>
+            Gets or sets the old text.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.NewText">
+            <summary>
+            Gets or sets the new text.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.IgnoreWhiteSpace">
+            <summary>
+            Gets or sets a value indicating whether ignore the white space.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.IgnoreCase">
+            <summary>
+            Gets or sets a value indicating whether ignore case.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.LineNumberForeground">
+            <summary>
+            Gets or sets the foreground brush of the line number.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.LineNumberWidth">
+            <summary>
+            Gets or sets the line number width.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.ChangeTypeForeground">
+            <summary>
+            Gets or sets the foreground brush of the change type symbol.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.OldTextHeader">
+            <summary>
+            Gets or sets the header of the old text.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.NewTextHeader">
+            <summary>
+            Gets or sets the header of the new text.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.HeaderHeight">
+            <summary>
+            Gets or sets the foreground brush of the line added.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.HeaderForeground">
+            <summary>
+            Gets or sets the foreground brush of the line added.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.HeaderBackground">
+            <summary>
+            Gets or sets the background brush of the line added.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.InsertedForeground">
+            <summary>
+            Gets or sets the foreground brush of the line added.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.InsertedBackground">
+            <summary>
+            Gets or sets the background brush of the line added.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.DeletedForeground">
+            <summary>
+            Gets or sets the foreground brush of the line deleted.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.DeletedBackground">
+            <summary>
+            Gets or sets the background brush of the line deleted.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.UnchangedForeground">
+            <summary>
+            Gets or sets the foreground brush of the line unchanged.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.UnchangedBackground">
+            <summary>
+            Gets or sets the background brush of the line unchanged.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.ImaginaryBackground">
+            <summary>
+            Gets or sets the background brush of the line imaginary.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.SplitterBackground">
+            <summary>
+            Gets or sets the background brush of the grid splitter.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.SplitterBorderBrush">
+            <summary>
+            Gets or sets the border brush of the grid splitter.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.SplitterBorderThickness">
+            <summary>
+            Gets or sets the border thickness of the grid splitter.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.SplitterWidth">
+            <summary>
+            Gets or sets the width of the grid splitter.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.IsSideBySide">
+            <summary>
+            Gets or sets a value indicating whether it is in side-by-side (split) view mode to diff.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.IgnoreUnchanged">
+            <summary>
+            Gets or sets a value indicating whether need collapse unchanged sections.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.LinesContext">
+            <summary>
+            Gets or sets the count of context line.
+            The context line is the one unchanged arround others as their margin.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.InlineModeToggleTitle">
+            <summary>
+            Gets or sets the display name of inline mode toggle.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.SideBySideModeToggleTitle">
+            <summary>
+            Gets or sets the display name of side by side mode toggle.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.CollapseUnchangedSectionsToggleTitle">
+            <summary>
+            Gets or sets the display name of skip unchanged lines toggle.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.ContextLinesMenuItemsTitle">
+            <summary>
+            Gets or sets the display name of context lines count.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.IsSplitterDragging">
+            <summary>
+            Gets a value indicating whether the grid splitter has logical focus and mouse capture and the left mouse button is pressed.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.LeftSideActualWidth">
+            <summary>
+            Gets a value that represents the actual calculated width of the left side panel.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.RightSideActualWidth">
+            <summary>
+            Gets a value that represents the actual calculated width of the right side panel.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.IsSideBySideViewMode">
+            <summary>
+            Gets a value indicating whether it is side-by-side (split) view mode.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.DiffViewer.IsInlineViewMode">
+            <summary>
+            Gets a value indicating whether it is inline view mode.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.DiffViewer.GetSideBySideDiffModel">
+            <summary>
+            Gets the side-by-side diffs result.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.DiffViewer.GetInlineDiffModel">
+            <summary>
+            Gets the inline diffs result.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.DiffViewer.Refresh">
+            <summary>
+            Refreshes.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.DiffViewer.ShowSideBySide">
+            <summary>
+            Switches to the view of side-by-side diff mode.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.DiffViewer.ShowInline">
+            <summary>
+            Switches to the view of inline diff mode.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.DiffViewer.GoTo(System.Int32,System.Boolean)">
+            <summary>
+            Goes to a specific line.
+            </summary>
+            <param name="lineIndex">The index of the line to go to.</param>
+            <param name="isLeftLine">true if goes to the line of the left panel for side-by-side (splitted) view; otherwise, false. This will be ignored when it is in inline view.</param>
+            <returns>true if it has turned to the specific line; otherwise, false.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.DiffViewer.GoTo(DiffPlex.DiffBuilder.Model.DiffPiece,System.Boolean)">
+            <summary>
+            Goes to a specific line.
+            </summary>
+            <param name="line">The line to go to.</param>
+            <param name="isLeftLine">true if goes to the line of the left panel for side-by-side (splitted) view; otherwise, false. This will be ignored when it is in inline view.</param>
+            <returns>true if it has turned to the specific line; otherwise, false.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.DiffViewer.GetLine(System.Int32,System.Boolean)">
+            <summary>
+            Gets the line diff information.
+            </summary>
+            <param name="lineIndex">The index of the line to get information.</param>
+            <param name="isLeftLine">true if goes to the line of the left panel for side-by-side (splitted) view; otherwise, false. This will be ignored when it is in inline view.</param>
+            <returns>The line diff information instance; or null, if non-exists.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.DiffViewer.GetLinesInViewport(System.Boolean,DiffPlex.Wpf.Controls.VisibilityLevels)">
+            <summary>
+            Gets all line information in viewport.
+            </summary>
+            <param name="isLeftLine">true if goes to the line of the left panel for side-by-side (splitted) view; otherwise, false. This will be ignored when it is in inline view.</param>
+            <param name="level">The optional visibility level.</param>
+            <returns>All lines.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.DiffViewer.GetLinesInViewport(DiffPlex.Wpf.Controls.VisibilityLevels)">
+            <summary>
+            Gets all line information in viewport.
+            </summary>
+            <param name="level">The optional visibility level.</param>
+            <returns>All lines.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.DiffViewer.GetLinesBeforeViewport(System.Boolean,DiffPlex.Wpf.Controls.VisibilityLevels)">
+            <summary>
+            Gets all line information before viewport.
+            </summary>
+            <param name="isLeftLine">true if goes to the line of the left panel for side-by-side (splitted) view; otherwise, false. This will be ignored when it is in inline view.</param>
+            <param name="level">The optional visibility level.</param>
+            <returns>All lines.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.DiffViewer.GetLinesBeforeViewport(DiffPlex.Wpf.Controls.VisibilityLevels)">
+            <summary>
+            Gets all line information before viewport.
+            </summary>
+            <param name="level">The optional visibility level.</param>
+            <returns>All lines.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.DiffViewer.GetLinesAfterViewport(System.Boolean,DiffPlex.Wpf.Controls.VisibilityLevels)">
+            <summary>
+            Gets all line information after viewport.
+            </summary>
+            <param name="isLeftLine">true if goes to the line of the left panel for side-by-side (splitted) view; otherwise, false. This will be ignored when it is in inline view.</param>
+            <param name="level">The optional visibility level.</param>
+            <returns>All lines.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.DiffViewer.GetLinesAfterViewport(DiffPlex.Wpf.Controls.VisibilityLevels)">
+            <summary>
+            Gets all line information after viewport.
+            </summary>
+            <param name="level">The optional visibility level.</param>
+            <returns>All lines.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.DiffViewer.OpenViewModeContextMenu">
+            <summary>
+            Opens the context menu for view mode selection.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.DiffViewer.CollapseUnchangedSections(System.Nullable{System.Int32})">
+            <summary>
+            Collapses unchanged sections.
+            </summary>
+            <param name="contextLineCount">The optional context line count to set.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">contextLineCount was less than 0.</exception>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.DiffViewer.ExpandUnchangedSections">
+            <summary>
+            Expands unchanged sections.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.DiffViewer.SetHeaderAsOldToNew">
+            <summary>
+            Sets header as old and new.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.DiffViewer.SetHeaderAsLeftToRight">
+            <summary>
+            Sets header as left and right.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.DiffViewer.RenderSideBySideDiffs">
+            <summary>
+            Updates the side-by-side diffs view.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.DiffViewer.RenderInlineDiffs">
+            <summary>
+            Updates the inline diffs view.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.DiffViewer.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:DiffPlex.Wpf.Controls.VisibilityLevels">
+            <summary>
+            Visibility levels.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.VisibilityLevels.Any">
+            <summary>
+            Any part of visual in viewport.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.VisibilityLevels.Half">
+            <summary>
+            Half at least in viewport.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.VisibilityLevels.All">
+            <summary>
+            All visual in viewport.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.Helper.RenderInlineDiffs(DiffPlex.Wpf.Controls.InternalLinesViewer,System.Collections.Generic.ICollection{DiffPlex.DiffBuilder.Model.DiffPiece},System.Windows.UIElement,System.Int32)">
+            <summary>
+            Updates the inline diffs view.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.Helper.GoTo(DiffPlex.Wpf.Controls.InternalLinesViewer,System.Int32)">
+            <summary>
+            Goes to the specific line.
+            </summary>
+            <param name="panel">The content panel.</param>
+            <param name="lineIndex">The index of the line to go to.</param>
+            <returns>true if it has turned to the specific line; otherwise, false.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.Helper.GoTo(DiffPlex.Wpf.Controls.InternalLinesViewer,DiffPlex.DiffBuilder.Model.DiffPiece)">
+            <summary>
+            Goes to the specific line.
+            </summary>
+            <param name="panel">The content panel.</param>
+            <param name="line">The line to go to.</param>
+            <returns>true if it has turned to the specific line; otherwise, false.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.Helper.GetLine(DiffPlex.Wpf.Controls.InternalLinesViewer,System.Int32)">
+            <summary>
+            Gets the line diff information.
+            </summary>
+            <param name="panel">The content panel.</param>
+            <param name="lineIndex">The index of the line to get information.</param>
+            <returns>The line diff information instance; or null, if non-exists.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.Helper.GetLinesInViewport(DiffPlex.Wpf.Controls.InternalLinesViewer,DiffPlex.Wpf.Controls.VisibilityLevels)">
+            <summary>
+            Gets all line information in viewport.
+            </summary>
+            <param name="panel">The content panel.</param>
+            <param name="level">The optional visibility level.</param>
+            <returns>All lines.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.Helper.GetLinesBeforeViewport(DiffPlex.Wpf.Controls.InternalLinesViewer,DiffPlex.Wpf.Controls.VisibilityLevels)">
+            <summary>
+            Gets all line information before viewport.
+            </summary>
+            <param name="panel">The content panel.</param>
+            <param name="level">The optional visibility level.</param>
+            <returns>All lines.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.Helper.GetLinesAfterViewport(DiffPlex.Wpf.Controls.InternalLinesViewer,DiffPlex.Wpf.Controls.VisibilityLevels)">
+            <summary>
+            Gets all line information after viewport.
+            </summary>
+            <param name="panel">The content panel.</param>
+            <param name="level">The optional visibility level.</param>
+            <returns>All lines.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.Helper.GetLineViewportStates(DiffPlex.Wpf.Controls.InternalLinesViewer,DiffPlex.Wpf.Controls.VisibilityLevels)">
+            <summary>
+            Gets all line information in viewport.
+            </summary>
+            <param name="panel">The content panel.</param>
+            <param name="level">The optional visibility level.</param>
+            <returns>All lines.</returns>
+        </member>
+        <member name="T:DiffPlex.Wpf.Controls.InlineDiffViewer">
+            <summary>
+            The inline diff control for text.
+            Interaction logic for InlineDiffViewer.xaml
+            </summary>
+            <summary>
+            InlineDiffViewer
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.InlineDiffViewer.DiffModelProperty">
+            <summary>
+            The property of diff model.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.InlineDiffViewer.LineNumberForegroundProperty">
+            <summary>
+            The property of line number background brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.InlineDiffViewer.LineNumberWidthProperty">
+            <summary>
+            The property of line number.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.InlineDiffViewer.ChangeTypeForegroundProperty">
+            <summary>
+            The property of change type symbol foreground brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.InlineDiffViewer.InsertedForegroundProperty">
+            <summary>
+            The property of text inserted background brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.InlineDiffViewer.InsertedBackgroundProperty">
+            <summary>
+            The property of text inserted background brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.InlineDiffViewer.DeletedForegroundProperty">
+            <summary>
+            The property of text inserted background brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.InlineDiffViewer.DeletedBackgroundProperty">
+            <summary>
+            The property of text inserted background brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.InlineDiffViewer.UnchangedForegroundProperty">
+            <summary>
+            The property of text inserted background brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.InlineDiffViewer.UnchangedBackgroundProperty">
+            <summary>
+            The property of text inserted background brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.InlineDiffViewer.SplitterForegroundProperty">
+            <summary>
+            The property of grid splitter background brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.InlineDiffViewer.SplitterBackgroundProperty">
+            <summary>
+            The property of grid splitter background brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.InlineDiffViewer.SplitterBorderBrushProperty">
+            <summary>
+            The property of grid splitter border brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.InlineDiffViewer.SplitterBorderThicknessProperty">
+            <summary>
+            The property of grid splitter border thickness.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.InlineDiffViewer.SplitterWidthProperty">
+            <summary>
+            The property of grid splitter width.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.InlineDiffViewer.IgnoreUnchangedProperty">
+            <summary>
+            The property of flag of hiding unchanged lines
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.InlineDiffViewer.LinesContextProperty">
+            <summary>
+            The property of flag of lines count that will be displayed before and after of unchanged line
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.InlineDiffViewer.#ctor">
+            <summary>
+            Initializes a new instance of the InlineDiffViewer class.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.InlineDiffViewer.DiffModel">
+            <summary>
+            Gets or sets the side by side diff model.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.InlineDiffViewer.Lines">
+            <summary>
+            Gets the lines in the diff model.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.InlineDiffViewer.LineNumberForeground">
+            <summary>
+            Gets or sets the foreground brush of the line number.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.InlineDiffViewer.LineNumberWidth">
+            <summary>
+            Gets or sets the line number width.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.InlineDiffViewer.ChangeTypeForeground">
+            <summary>
+            Gets or sets the foreground brush of the change type symbol.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.InlineDiffViewer.InsertedForeground">
+            <summary>
+            Gets or sets the foreground brush of the line added.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.InlineDiffViewer.InsertedBackground">
+            <summary>
+            Gets or sets the background brush of the line added.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.InlineDiffViewer.DeletedForeground">
+            <summary>
+            Gets or sets the foreground brush of the line deleted.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.InlineDiffViewer.DeletedBackground">
+            <summary>
+            Gets or sets the background brush of the line deleted.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.InlineDiffViewer.UnchangedForeground">
+            <summary>
+            Gets or sets the foreground brush of the line unchanged.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.InlineDiffViewer.UnchangedBackground">
+            <summary>
+            Gets or sets the background brush of the line unchanged.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.InlineDiffViewer.SplitterForeground">
+            <summary>
+            Gets or sets the foreground brush of the grid splitter.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.InlineDiffViewer.SplitterBackground">
+            <summary>
+            Gets or sets the background brush of the grid splitter.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.InlineDiffViewer.SplitterBorderBrush">
+            <summary>
+            Gets or sets the border brush of the grid splitter.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.InlineDiffViewer.SplitterBorderThickness">
+            <summary>
+            Gets or sets the border thickness of the grid splitter.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.InlineDiffViewer.SplitterWidth">
+            <summary>
+            Gets or sets the border thickness of the grid splitter.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.InlineDiffViewer.IgnoreUnchanged">
+            <summary>
+            Gets or sets a value indicating whether need collapse unchanged sections.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.InlineDiffViewer.LinesContext">
+            <summary>
+            Gets or sets the count of context line.
+            The context line is the one unchanged arround others as their margin.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.InlineDiffViewer.SetDiffModel(System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Sets a new diff model.
+            </summary>
+            <param name="oldText">The old text string to compare.</param>
+            <param name="newText">The new text string.</param>
+            <param name="ignoreWhiteSpace">true if ignore the white space; otherwise, false.</param>
+            <param name="ignoreCase">true if case-insensitive; otherwise, false.</param>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.InlineDiffViewer.SetDiffModel(DiffPlex.IDiffer,System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Sets a new diff model.
+            </summary>
+            <param name="differ">The differ instance.</param>
+            <param name="oldText">The old text string to compare.</param>
+            <param name="newText">The new text string.</param>
+            <param name="ignoreWhiteSpace">true if ignore the white space; otherwise, false.</param>
+            <param name="ignoreCase">true if case-insensitive; otherwise, false.</param>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.InlineDiffViewer.SetDiffModel(DiffPlex.DiffBuilder.IInlineDiffBuilder,System.String,System.String,System.Boolean,System.Boolean,DiffPlex.IChunker)">
+            <summary>
+            Sets a new diff model.
+            </summary>
+            <param name="builder">The differ builder instance.</param>
+            <param name="oldText">The old text string to compare.</param>
+            <param name="newText">The new text string.</param>
+            <param name="ignoreWhiteSpace">true if ignore the white space; otherwise, false.</param>
+            <param name="ignoreCase">true if case-insensitive; otherwise, false.</param>
+            <param name="chunker">The chunker.</param>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.InlineDiffViewer.SetDiffModel(System.IO.FileInfo,System.IO.FileInfo,System.Boolean,System.Boolean,DiffPlex.IChunker)">
+            <summary>
+            Sets a new diff model.
+            </summary>
+            <param name="oldFile">The old text file to compare.</param>
+            <param name="newFile">The new text file.</param>
+            <param name="ignoreWhiteSpace">true if ignore the white space; otherwise, false.</param>
+            <param name="ignoreCase">true if case-insensitive; otherwise, false.</param>
+            <param name="chunker">The chunker.</param>
+            <exception cref="T:System.ArgumentNullException">oldFile or newFile was null.</exception>
+            <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
+            <exception cref="T:System.IO.IOException">Read file failed because of I/O exception.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Cannot access the file.</exception>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.InlineDiffViewer.SetDiffModel(System.IO.FileInfo,System.IO.FileInfo,System.Text.Encoding,System.Boolean,System.Boolean,DiffPlex.IChunker)">
+            <summary>
+            Sets a new diff model.
+            </summary>
+            <param name="oldFile">The old text file to compare.</param>
+            <param name="newFile">The new text file.</param>
+            <param name="encoding">The encoding applied to the contents of the file.</param>
+            <param name="ignoreWhiteSpace">true if ignore the white space; otherwise, false.</param>
+            <param name="ignoreCase">true if case-insensitive; otherwise, false.</param>
+            <param name="chunker">The chunker.</param>
+            <exception cref="T:System.ArgumentNullException">oldFile or newFile was null.</exception>
+            <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
+            <exception cref="T:System.IO.IOException">Read file failed because of I/O exception.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Cannot access the file.</exception>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.InlineDiffViewer.Refresh">
+            <summary>
+            Refreshes.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.InlineDiffViewer.GoTo(System.Int32)">
+            <summary>
+            Goes to a specific line.
+            </summary>
+            <param name="lineIndex">The index of the line to go to.</param>
+            <returns>true if it has turned to the specific line; otherwise, false.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.InlineDiffViewer.GoTo(DiffPlex.DiffBuilder.Model.DiffPiece)">
+            <summary>
+            Goes to a specific line.
+            </summary>
+            <param name="line">The line to go to.</param>
+            <returns>true if it has turned to the specific line; otherwise, false.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.InlineDiffViewer.GetLine(System.Int32)">
+            <summary>
+            Gets the line diff information.
+            </summary>
+            <param name="lineIndex">The index of the line to get information.</param>
+            <returns>The line diff information instance; or null, if non-exists.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.InlineDiffViewer.GetLinesInViewport(DiffPlex.Wpf.Controls.VisibilityLevels)">
+            <summary>
+            Gets all line information in viewport.
+            </summary>
+            <param name="level">The optional visibility level.</param>
+            <returns>All lines.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.InlineDiffViewer.GetLinesBeforeViewport(DiffPlex.Wpf.Controls.VisibilityLevels)">
+            <summary>
+            Gets all line information before viewport.
+            </summary>
+            <param name="level">The optional visibility level.</param>
+            <returns>All lines.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.InlineDiffViewer.GetLinesAfterViewport(DiffPlex.Wpf.Controls.VisibilityLevels)">
+            <summary>
+            Gets all line information after viewport.
+            </summary>
+            <param name="level">The optional visibility level.</param>
+            <returns>All lines.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.InlineDiffViewer.CollapseUnchangedSections(System.Nullable{System.Int32})">
+            <summary>
+            Collapses unchanged sections.
+            </summary>
+            <param name="contextLineCount">The optional context line count to set.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">contextLineCount was less than 0.</exception>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.InlineDiffViewer.ExpandUnchangedSections">
+            <summary>
+            Expands unchanged sections.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.InlineDiffViewer.UpdateContent(DiffPlex.DiffBuilder.Model.DiffPaneModel)">
+            <summary>
+            Updates the content.
+            </summary>
+            <param name="m">The diff model.</param>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.InlineDiffViewer.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:DiffPlex.Wpf.Controls.InternalLinesViewer">
+            <summary>
+            Interaction logic for InternalLinesViewer.xaml
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.InternalLinesViewer.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:DiffPlex.Wpf.Controls.Resource">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.Resource.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.Resource.Culture">
+            <summary>
+              重写当前线程的 CurrentUICulture 属性，对
+              使用此强类型资源类的所有资源查找执行重写。
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.Resource.ContextLines">
+            <summary>
+              查找类似 Lines for context 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.Resource.CopyThisLine">
+            <summary>
+              查找类似 Copy this line 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.Resource.Diff">
+            <summary>
+              查找类似 Diff 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.Resource.Empty">
+            <summary>
+              查找类似 Empty 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.Resource.Find">
+            <summary>
+              查找类似 Find 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.Resource.GoTo">
+            <summary>
+              查找类似 Go to 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.Resource.InlineMode">
+            <summary>
+              查找类似 Unified view 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.Resource.Left">
+            <summary>
+              查找类似 Left 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.Resource.New">
+            <summary>
+              查找类似 New 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.Resource.Next">
+            <summary>
+              查找类似 Next 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.Resource.Old">
+            <summary>
+              查找类似 Old 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.Resource.Open">
+            <summary>
+              查找类似 Open 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.Resource.OpenFile">
+            <summary>
+              查找类似 Open file 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.Resource.Previous">
+            <summary>
+              查找类似 Previous 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.Resource.Right">
+            <summary>
+              查找类似 Right 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.Resource.Same">
+            <summary>
+              查找类似 Same 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.Resource.SaveAs">
+            <summary>
+              查找类似 Save as… 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.Resource.SideBySideMode">
+            <summary>
+              查找类似 Split view 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.Resource.SkipUnchangedLines">
+            <summary>
+              查找类似 Collapse unchanged sections 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.Resource.SwitchViewMode">
+            <summary>
+              查找类似 Switch mode 的本地化字符串。
+            </summary>
+        </member>
+        <member name="T:DiffPlex.Wpf.Controls.SideBySideDiffViewer">
+            <summary>
+            The side by side diff control for text.
+            Interaction logic for SideBySideDiffViewer.xaml
+            </summary>
+            <summary>
+            SideBySideDiffViewer
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.SideBySideDiffViewer.DiffModelProperty">
+            <summary>
+            The property of diff model.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.SideBySideDiffViewer.LineNumberForegroundProperty">
+            <summary>
+            The property of line number background brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.SideBySideDiffViewer.LineNumberWidthProperty">
+            <summary>
+            The property of line number width.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.SideBySideDiffViewer.ChangeTypeForegroundProperty">
+            <summary>
+            The property of change type symbol foreground brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.SideBySideDiffViewer.InsertedForegroundProperty">
+            <summary>
+            The property of text inserted background brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.SideBySideDiffViewer.InsertedBackgroundProperty">
+            <summary>
+            The property of text inserted background brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.SideBySideDiffViewer.DeletedForegroundProperty">
+            <summary>
+            The property of text inserted background brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.SideBySideDiffViewer.DeletedBackgroundProperty">
+            <summary>
+            The property of text inserted background brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.SideBySideDiffViewer.UnchangedForegroundProperty">
+            <summary>
+            The property of text inserted background brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.SideBySideDiffViewer.UnchangedBackgroundProperty">
+            <summary>
+            The property of text inserted background brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.SideBySideDiffViewer.ImaginaryBackgroundProperty">
+            <summary>
+            The property of text inserted background brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.SideBySideDiffViewer.SplitterBackgroundProperty">
+            <summary>
+            The property of grid splitter background brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.SideBySideDiffViewer.SplitterBorderBrushProperty">
+            <summary>
+            The property of grid splitter border brush.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.SideBySideDiffViewer.SplitterBorderThicknessProperty">
+            <summary>
+            The property of grid splitter border thickness.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.SideBySideDiffViewer.SplitterWidthProperty">
+            <summary>
+            The property of grid splitter width.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.SideBySideDiffViewer.IgnoreUnchangedProperty">
+            <summary>
+            The property of flag of hiding unchanged lines
+            </summary>
+        </member>
+        <member name="F:DiffPlex.Wpf.Controls.SideBySideDiffViewer.LinesContextProperty">
+            <summary>
+            The property of flag of lines count that will be displayed before and after of unchanged line
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.SideBySideDiffViewer.#ctor">
+            <summary>
+            Initializes a new instance of the SideBySideDiffViewer class.
+            </summary>
+        </member>
+        <member name="E:DiffPlex.Wpf.Controls.SideBySideDiffViewer.SplitterDragCompleted">
+            <summary>
+            Occurs when the grid splitter loses mouse capture.
+            </summary>
+        </member>
+        <member name="E:DiffPlex.Wpf.Controls.SideBySideDiffViewer.SplitterDragDelta">
+            <summary>
+            Occurs one or more times as the mouse changes position when the grid splitter has logical focus and mouse capture.
+            </summary>
+        </member>
+        <member name="E:DiffPlex.Wpf.Controls.SideBySideDiffViewer.SplitterDragStarted">
+            <summary>
+            Occurs when the grid splitter receives logical focus and mouse capture.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.SideBySideDiffViewer.DiffModel">
+            <summary>
+            Gets or sets the side by side diff model.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.SideBySideDiffViewer.OldText">
+            <summary>
+            Gets the old text.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.SideBySideDiffViewer.NewText">
+            <summary>
+            Gets the new text.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.SideBySideDiffViewer.LineNumberForeground">
+            <summary>
+            Gets or sets the foreground brush of the line number.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.SideBySideDiffViewer.LineNumberWidth">
+            <summary>
+            Gets or sets the line number width.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.SideBySideDiffViewer.ChangeTypeForeground">
+            <summary>
+            Gets or sets the foreground brush of the change type symbol.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.SideBySideDiffViewer.InsertedForeground">
+            <summary>
+            Gets or sets the foreground brush of the line added.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.SideBySideDiffViewer.InsertedBackground">
+            <summary>
+            Gets or sets the background brush of the line added.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.SideBySideDiffViewer.DeletedForeground">
+            <summary>
+            Gets or sets the foreground brush of the line deleted.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.SideBySideDiffViewer.DeletedBackground">
+            <summary>
+            Gets or sets the background brush of the line deleted.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.SideBySideDiffViewer.UnchangedForeground">
+            <summary>
+            Gets or sets the foreground brush of the line unchanged.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.SideBySideDiffViewer.UnchangedBackground">
+            <summary>
+            Gets or sets the background brush of the line unchanged.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.SideBySideDiffViewer.ImaginaryBackground">
+            <summary>
+            Gets or sets the background brush of the line imaginary.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.SideBySideDiffViewer.SplitterBackground">
+            <summary>
+            Gets or sets the background brush of the grid splitter.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.SideBySideDiffViewer.SplitterBorderBrush">
+            <summary>
+            Gets or sets the border brush of the grid splitter.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.SideBySideDiffViewer.SplitterBorderThickness">
+            <summary>
+            Gets or sets the border thickness of the grid splitter.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.SideBySideDiffViewer.SplitterWidth">
+            <summary>
+            Gets or sets the width of the grid splitter.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.SideBySideDiffViewer.IsSplitterDragging">
+            <summary>
+            Gets a value indicating whether the grid splitter has logical focus and mouse capture and the left mouse button is pressed.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.SideBySideDiffViewer.LeftSideActualWidth">
+            <summary>
+            Gets a value that represents the actual calculated width of the left side panel.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.SideBySideDiffViewer.RightSideActualWidth">
+            <summary>
+            Gets a value that represents the actual calculated width of the right side panel.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.SideBySideDiffViewer.IgnoreUnchanged">
+            <summary>
+            Gets or sets a value indicating whether need collapse unchanged sections.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.Controls.SideBySideDiffViewer.LinesContext">
+            <summary>
+            Gets or sets the count of context line.
+            The context line is the one unchanged arround others as their margin.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.SideBySideDiffViewer.SetDiffModel(System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Sets a new diff model.
+            </summary>
+            <param name="oldText">The old text string to compare.</param>
+            <param name="newText">The new text string.</param>
+            <param name="ignoreWhiteSpace">true if ignore the white space; otherwise, false.</param>
+            <param name="ignoreCase">true if case-insensitive; otherwise, false.</param>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.SideBySideDiffViewer.SetDiffModel(DiffPlex.IDiffer,System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Sets a new diff model.
+            </summary>
+            <param name="differ">The differ instance.</param>
+            <param name="oldText">The old text string to compare.</param>
+            <param name="newText">The new text string.</param>
+            <param name="ignoreWhiteSpace">true if ignore the white space; otherwise, false.</param>
+            <param name="ignoreCase">true if case-insensitive; otherwise, false.</param>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.SideBySideDiffViewer.SetDiffModel(DiffPlex.DiffBuilder.ISideBySideDiffBuilder,System.String,System.String)">
+            <summary>
+            Sets a new diff model.
+            </summary>
+            <param name="builder">The differ builder instance.</param>
+            <param name="oldText">The old text string to compare.</param>
+            <param name="newText">The new text string.</param>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.SideBySideDiffViewer.SetDiffModel(System.IO.FileInfo,System.IO.FileInfo,System.Boolean,System.Boolean)">
+            <summary>
+            Sets a new diff model.
+            </summary>
+            <param name="oldFile">The old text file to compare.</param>
+            <param name="newFile">The new text file.</param>
+            <param name="ignoreWhiteSpace">true if ignore the white space; otherwise, false.</param>
+            <param name="ignoreCase">true if case-insensitive; otherwise, false.</param>
+            <exception cref="T:System.ArgumentNullException">oldFile or newFile was null.</exception>
+            <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
+            <exception cref="T:System.IO.IOException">Read file failed because of I/O exception.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Cannot access the file.</exception>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.SideBySideDiffViewer.SetDiffModel(System.IO.FileInfo,System.IO.FileInfo,System.Text.Encoding,System.Boolean,System.Boolean)">
+            <summary>
+            Sets a new diff model.
+            </summary>
+            <param name="oldFile">The old text file to compare.</param>
+            <param name="newFile">The new text file.</param>
+            <param name="encoding">The encoding applied to the contents of the file.</param>
+            <param name="ignoreWhiteSpace">true if ignore the white space; otherwise, false.</param>
+            <param name="ignoreCase">true if case-insensitive; otherwise, false.</param>
+            <exception cref="T:System.ArgumentNullException">oldFile or newFile was null.</exception>
+            <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
+            <exception cref="T:System.IO.IOException">Read file failed because of I/O exception.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Cannot access the file.</exception>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.SideBySideDiffViewer.Refresh">
+            <summary>
+            Refreshes.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.SideBySideDiffViewer.GoTo(System.Int32,System.Boolean)">
+            <summary>
+            Goes to a specific line.
+            </summary>
+            <param name="lineIndex">The index of the line to go to.</param>
+            <param name="isLeftLine">true if goes to the line of the left panel; otherwise, false.</param>
+            <returns>true if it has turned to the specific line; otherwise, false.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.SideBySideDiffViewer.GoTo(DiffPlex.DiffBuilder.Model.DiffPiece,System.Boolean)">
+            <summary>
+            Goes to a specific line.
+            </summary>
+            <param name="line">The line to go to.</param>
+            <param name="isLeftLine">true if goes to the line of the left panel; otherwise, false.</param>
+            <returns>true if it has turned to the specific line; otherwise, false.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.SideBySideDiffViewer.GetLine(System.Int32,System.Boolean)">
+            <summary>
+            Gets the line diff information.
+            </summary>
+            <param name="lineIndex">The index of the line to get information.</param>
+            <param name="isLeftLine">true if goes to the line of the left panel; otherwise, false.</param>
+            <returns>The line diff information instance; or null, if non-exists.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.SideBySideDiffViewer.GetLinesInViewport(System.Boolean,DiffPlex.Wpf.Controls.VisibilityLevels)">
+            <summary>
+            Gets all line information in viewport.
+            </summary>
+            <param name="isLeftLine">true if goes to the line of the left panel; otherwise, false.</param>
+            <param name="level">The optional visibility level.</param>
+            <returns>All lines.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.SideBySideDiffViewer.GetLinesInViewport(DiffPlex.Wpf.Controls.VisibilityLevels)">
+            <summary>
+            Gets all line information in viewport.
+            </summary>
+            <param name="level">The optional visibility level.</param>
+            <returns>All lines.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.SideBySideDiffViewer.GetLinesBeforeViewport(System.Boolean,DiffPlex.Wpf.Controls.VisibilityLevels)">
+            <summary>
+            Gets all line information before viewport.
+            </summary>
+            <param name="isLeftLine">true if goes to the line of the left panel; otherwise, false.</param>
+            <param name="level">The optional visibility level.</param>
+            <returns>All lines.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.SideBySideDiffViewer.GetLinesBeforeViewport(DiffPlex.Wpf.Controls.VisibilityLevels)">
+            <summary>
+            Gets all line information before viewport.
+            </summary>
+            <param name="level">The optional visibility level.</param>
+            <returns>All lines.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.SideBySideDiffViewer.GetLinesAfterViewport(System.Boolean,DiffPlex.Wpf.Controls.VisibilityLevels)">
+            <summary>
+            Gets all line information after viewport.
+            </summary>
+            <param name="isLeftLine">true if goes to the line of the left panel; otherwise, false.</param>
+            <param name="level">The optional visibility level.</param>
+            <returns>All lines.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.SideBySideDiffViewer.GetLinesAfterViewport(DiffPlex.Wpf.Controls.VisibilityLevels)">
+            <summary>
+            Gets all line information after viewport.
+            </summary>
+            <param name="level">The optional visibility level.</param>
+            <returns>All lines.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.SideBySideDiffViewer.CollapseUnchangedSections(System.Nullable{System.Int32})">
+            <summary>
+            Collapses unchanged sections.
+            </summary>
+            <param name="contextLineCount">The optional context line count to set.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">contextLineCount was less than 0.</exception>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.SideBySideDiffViewer.ExpandUnchangedSections">
+            <summary>
+            Expands unchanged sections.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.SideBySideDiffViewer.UpdateContent(DiffPlex.DiffBuilder.Model.SideBySideDiffModel)">
+            <summary>
+            Updates the content.
+            </summary>
+            <param name="m">The diff model.</param>
+        </member>
+        <member name="M:DiffPlex.Wpf.Controls.SideBySideDiffViewer.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:DiffPlex.Wpf.DiffWindow">
+            <summary>
+            Diff window.
+            </summary>
+            <summary>
+            DiffWindow
+            </summary>
+        </member>
+        <member name="T:DiffPlex.Wpf.DiffWindow.TextFileInfo">
+            <summary>
+            The information for the text file.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.DiffWindow.TextFileInfo.FileName">
+            <summary>
+            Gets or sets the file name.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.DiffWindow.TextFileInfo.FolderName">
+            <summary>
+            Gets or sets the folder name.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.DiffWindow.TextFileInfo.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.DiffWindow.#ctor">
+            <summary>
+            Initializes a new instance of the DiffWindow class.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.DiffWindow.Core">
+            <summary>
+            Gets the diff viewer.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.DiffWindow.OldText">
+            <summary>
+            Gets or sets the old text.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.DiffWindow.NewText">
+            <summary>
+            Gets or sets the new text.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.DiffWindow.OldTextHeader">
+            <summary>
+            Gets or sets the header of the old text.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.DiffWindow.NewTextHeader">
+            <summary>
+            Gets or sets the header of the new text.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.DiffWindow.AutoSetHeader">
+            <summary>
+            Gets or sets a value indicating whether need set headers automatically.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.DiffWindow.IsOpenFileButtonVisbile">
+            <summary>
+            Gets or sets a value indicating whether show open file button.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.DiffWindow.IsSideBySideViewMode">
+            <summary>
+            Gets a value indicating whether it is side-by-side (split) view mode.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.DiffWindow.IgnoreUnchanged">
+            <summary>
+            Gets or sets a value indicating whether need collapse unchanged sections.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.DiffWindow.LinesContext">
+            <summary>
+            Gets or sets the count of context line.
+            The context line is the one unchanged arround others as their margin.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.DiffWindow.MenuChildren">
+            <summary>
+            Gets the customized menu children.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.DiffWindow.MenuMargin">
+            <summary>
+            Gets or sets the margin of the customized menu.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.DiffWindow.AddtionalMenuChildren">
+            <summary>
+            Gets the customized additional menu children.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.Wpf.DiffWindow.AddtionalMenuMargin">
+            <summary>
+            Gets or sets the margin of the customized additional menu.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.DiffWindow.SetOldText(System.String,System.String)">
+            <summary>
+            Sets old text.
+            </summary>
+            <param name="value">The old text.</param>
+            <param name="header">An optional header for old text.</param>
+        </member>
+        <member name="M:DiffPlex.Wpf.DiffWindow.SetNewText(System.String,System.String)">
+            <summary>
+            Sets new text.
+            </summary>
+            <param name="value">The new text.</param>
+            <param name="header">An optional header for new text.</param>
+        </member>
+        <member name="M:DiffPlex.Wpf.DiffWindow.SetFiles(System.IO.FileInfo,System.IO.FileInfo)">
+            <summary>
+            Sets file contents as old and new text.
+            </summary>
+            <param name="oldFile">The old file information instance to read content.</param>
+            <param name="newFile">The new file information instance to read content.</param>
+            <returns>A token for the asynchronous operation.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.DiffWindow.OpenOpenFileContextMenu">
+            <summary>
+            Shows the context menu to open file.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.DiffWindow.OpenViewModeContextMenu">
+            <summary>
+            Opens the context menu for view mode selection.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.DiffWindow.OpenFileOnBoth">
+            <summary>
+            Pops up a file dialog to open file on both of left and right.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.DiffWindow.OpenFileOnLeft">
+            <summary>
+            Pops up a file dialog to open file on left.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.DiffWindow.OpenFileOnRight">
+            <summary>
+            Pops up a file dialog to open file on right.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.DiffWindow.ShowSideBySide">
+            <summary>
+            Switches to the view of side-by-side (split) diff mode.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.DiffWindow.ShowInline">
+            <summary>
+            Switches to the view of inline (unified) diff mode.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.Wpf.DiffWindow.GoTo(System.Int32,System.Boolean)">
+            <summary>
+            Goes to a specific line.
+            </summary>
+            <param name="lineIndex">The index of the line to go to.</param>
+            <param name="isLeftLine">true if goes to the line of the left panel for side-by-side (splitted) view; otherwise, false. This will be ignored when it is in inline view.</param>
+            <returns>true if it has turned to the specific line; otherwise, false.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.DiffWindow.GoTo(DiffPlex.DiffBuilder.Model.DiffPiece,System.Boolean)">
+            <summary>
+            Goes to a specific line.
+            </summary>
+            <param name="line">The line to go to.</param>
+            <param name="isLeftLine">true if goes to the line of the left panel for side-by-side (splitted) view; otherwise, false. This will be ignored when it is in inline view.</param>
+            <returns>true if it has turned to the specific line; otherwise, false.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.DiffWindow.GetLine(System.Int32,System.Boolean)">
+            <summary>
+            Gets the line diff information.
+            </summary>
+            <param name="lineIndex">The index of the line to get information.</param>
+            <param name="isLeftLine">true if goes to the line of the left panel for side-by-side (splitted) view; otherwise, false. This will be ignored when it is in inline view.</param>
+            <returns>The line diff information instance; or null, if non-exists.</returns>
+        </member>
+        <member name="M:DiffPlex.Wpf.DiffWindow.SetMenuButtonStyle(System.Windows.Style)">
+            <summary>
+            Sets the style to the menu buttons.
+            The buttons in customized menu bar will not be impacted.
+            </summary>
+            <param name="style">The button style to set.</param>
+        </member>
+        <member name="M:DiffPlex.Wpf.DiffWindow.SetMenuButtonTemplate(System.Windows.Controls.ControlTemplate)">
+            <summary>
+            Sets the control template to the menu buttons.
+            The buttons in customized menu bar will not be impacted.
+            </summary>
+            <param name="template">The control template to set.</param>
+        </member>
+        <member name="M:DiffPlex.Wpf.DiffWindow.SetMenuTextBoxStyle(System.Windows.Style)">
+            <summary>
+            Sets the style to the menu text input boxes.
+            The text input boxes in customized menu bar will not be impacted.
+            </summary>
+            <param name="style">The button style to set.</param>
+        </member>
+        <member name="M:DiffPlex.Wpf.DiffWindow.SetMenuTextBoxTemlate(System.Windows.Controls.ControlTemplate)">
+            <summary>
+            Sets the control template to the menu text input boxes.
+            The text input boxes in customized menu bar will not be impacted.
+            </summary>
+            <param name="template">The control template to set.</param>
+        </member>
+        <member name="M:DiffPlex.Wpf.DiffWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:DiffPlex.WindowsForms.Controls.DiffViewer">
+            <summary>
+            The diff control for text.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.WindowsForms.Controls.DiffViewer.#ctor">
+            <summary>
+            Initializes a new instance of the DiffViewer class.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.Core">
+            <summary>
+            Gets the core control.
+            </summary>
+        </member>
+        <member name="E:DiffPlex.WindowsForms.Controls.DiffViewer.ViewModeChanged">
+            <summary>
+            Occurs when the view mode is changed.
+            </summary>
+        </member>
+        <member name="E:DiffPlex.WindowsForms.Controls.DiffViewer.SplitterDragCompleted">
+            <summary>
+            Occurs when the grid splitter loses mouse capture.
+            </summary>
+        </member>
+        <member name="E:DiffPlex.WindowsForms.Controls.DiffViewer.SplitterDragDelta">
+            <summary>
+            Occurs one or more times as the mouse changes position when the grid splitter has logical focus and mouse capture.
+            </summary>
+        </member>
+        <member name="E:DiffPlex.WindowsForms.Controls.DiffViewer.SplitterDragStarted">
+            <summary>
+            Occurs when the grid splitter receives logical focus and mouse capture.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.FontWeight">
+            <summary>
+            Gets or sets the open type weight or thickness of the specified font.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.IsFontItalic">
+            <summary>
+            Gets or sets a value indicating whether the font is italic.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.FontStretch">
+            <summary>
+            Gets or sets the degree to which a font is condensed or expanded on the screen.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.FontSize">
+            <summary>
+            Gets or sets the font size.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.FontFamilyNames">
+            <summary>
+            Gets or sets the font family names.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.BorderWidth">
+            <summary>
+            Gets or sets the border width of a control.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.BorderColor">
+            <summary>
+            Gets or sets the border background color of a control.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.ForeColor">
+            <summary>
+            Gets or sets the foreground color.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.BackColor">
+            <summary>
+            Gets or sets the background color.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.OldText">
+            <summary>
+            Gets or sets the old text.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.NewText">
+            <summary>
+            Gets or sets the new text.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.IgnoreWhiteSpace">
+            <summary>
+            Gets or sets a value indicating whether ignore the white space.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.IgnoreCase">
+            <summary>
+            Gets or sets a value indicating whether ignore case.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.LineNumberForeColor">
+            <summary>
+            Gets or sets the foreground color of the line number.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.LineNumberWidth">
+            <summary>
+            Gets or sets the line number width.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.ChangeTypeForeColor">
+            <summary>
+            Gets or sets the foreground color of the change type symbol.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.OldTextHeader">
+            <summary>
+            Gets or sets the header of the old text.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.NewTextHeader">
+            <summary>
+            Gets or sets the header of the new text.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.HeaderHeight">
+            <summary>
+            Gets or sets the foreground color of the line added.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.HeaderForeColor">
+            <summary>
+            Gets or sets the foreground color of the line added.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.HeaderBackColor">
+            <summary>
+            Gets or sets the background color of the line added.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.InsertedForeColor">
+            <summary>
+            Gets or sets the foreground color of the line added.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.InsertedBackColor">
+            <summary>
+            Gets or sets the background color of the line added.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.DeletedForeColor">
+            <summary>
+            Gets or sets the foreground color of the line deleted.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.DeletedBackColor">
+            <summary>
+            Gets or sets the background color of the line deleted.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.UnchangedForeColor">
+            <summary>
+            Gets or sets the foreground color of the line unchanged.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.UnchangedBackColor">
+            <summary>
+            Gets or sets the background color of the line unchanged.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.ImaginaryBackColor">
+            <summary>
+            Gets or sets the background color of the line imaginary.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.SplitterBackColor">
+            <summary>
+            Gets or sets the background color of the grid splitter.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.SplitterBorderColor">
+            <summary>
+            Gets or sets the border color of the grid splitter.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.SplitterBorderWidth">
+            <summary>
+            Gets or sets the border width of the grid splitter.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.SplitterWidth">
+            <summary>
+            Gets or sets the width of the grid splitter.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.IsSideBySide">
+            <summary>
+            Gets or sets a value indicating whether it is in side-by-side (split) view mode to diff.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.IgnoreUnchanged">
+            <summary>
+            Gets or sets a value indicating whether need collapse unchanged sections.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.LinesContext">
+            <summary>
+            Gets or sets the count of context line.
+            The context line is the one unchanged arround others as their margin.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.InlineModeToggleTitle">
+            <summary>
+            Gets or sets the display name of inline mode toggle.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.SideBySideModeToggleTitle">
+            <summary>
+            Gets or sets the display name of side by side mode toggle.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.CollapseUnchangedSectionsToggleTitle">
+            <summary>
+            Gets or sets the display name of skip unchanged lines toggle.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.ContextLinesMenuItemsTitle">
+            <summary>
+            Gets or sets the display name of context lines count.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.IsSplitterDragging">
+            <summary>
+            Gets a value indicating whether the grid splitter has logical focus and mouse capture and the left mouse button is pressed.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.LeftSideActualWidth">
+            <summary>
+            Gets a value that represents the actual calculated width of the left side panel.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.RightSideActualWidth">
+            <summary>
+            Gets a value that represents the actual calculated width of the right side panel.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.IsSideBySideViewMode">
+            <summary>
+            Gets a value indicating whether it is side-by-side view mode.
+            </summary>
+        </member>
+        <member name="P:DiffPlex.WindowsForms.Controls.DiffViewer.IsInlineViewMode">
+            <summary>
+            Gets a value indicating whether it is inline view mode.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.WindowsForms.Controls.DiffViewer.GetSideBySideDiffModel">
+            <summary>
+            Gets the side-by-side diffs result.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.WindowsForms.Controls.DiffViewer.GetInlineDiffModel">
+            <summary>
+            Gets the inline diffs result.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.WindowsForms.Controls.DiffViewer.RefreshCore">
+            <summary>
+            Refreshes.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.WindowsForms.Controls.DiffViewer.Refresh">
+            <inheritdoc />
+        </member>
+        <member name="M:DiffPlex.WindowsForms.Controls.DiffViewer.ShowSideBySide">
+            <summary>
+            Switches to the view of side-by-side diff mode.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.WindowsForms.Controls.DiffViewer.ShowInline">
+            <summary>
+            Switches to the view of inline diff mode.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.WindowsForms.Controls.DiffViewer.GoTo(System.Int32,System.Boolean)">
+            <summary>
+            Goes to a specific line.
+            </summary>
+            <param name="lineIndex">The index of line.</param>
+            <param name="isLeftLine">true if goes to the line of the left panel for side-by-side (splitted) view; otherwise, false. This will be ignored when it is in inline view.</param>
+            <returns>true if it has turned to the specific line; otherwise, false.</returns>
+        </member>
+        <member name="M:DiffPlex.WindowsForms.Controls.DiffViewer.GoTo(DiffPlex.DiffBuilder.Model.DiffPiece,System.Boolean)">
+            <summary>
+            Goes to a specific line.
+            </summary>
+            <param name="line">The line to go to.</param>
+            <param name="isLeftLine">true if goes to the line of the left panel for side-by-side (splitted) view; otherwise, false. This will be ignored when it is in inline view.</param>
+            <returns>true if it has turned to the specific line; otherwise, false.</returns>
+        </member>
+        <member name="M:DiffPlex.WindowsForms.Controls.DiffViewer.GetLine(System.Int32,System.Boolean)">
+            <summary>
+            Gets the line diff information.
+            </summary>
+            <param name="lineIndex">The zero-based index of line to go to.</param>
+            <param name="isLeftLine">true if goes to the line of the left panel for side-by-side (splitted) view; otherwise, false. This will be ignored when it is in inline view.</param>
+            <returns>The line diff information instance; or null, if non-exists.</returns>
+        </member>
+        <member name="M:DiffPlex.WindowsForms.Controls.DiffViewer.GetLinesInViewport(System.Boolean,DiffPlex.Wpf.Controls.VisibilityLevels)">
+            <summary>
+            Gets all line information in viewport.
+            </summary>
+            <param name="isLeftLine">true if goes to the line of the left panel for side-by-side (splitted) view; otherwise, false. This will be ignored when it is in inline view.</param>
+            <param name="level">The optional visibility level.</param>
+            <returns>All lines.</returns>
+        </member>
+        <member name="M:DiffPlex.WindowsForms.Controls.DiffViewer.GetLinesInViewport(DiffPlex.Wpf.Controls.VisibilityLevels)">
+            <summary>
+            Gets all line information in viewport.
+            </summary>
+            <param name="level">The optional visibility level.</param>
+            <returns>All lines.</returns>
+        </member>
+        <member name="M:DiffPlex.WindowsForms.Controls.DiffViewer.OpenViewModeContextMenu">
+            <summary>
+            Opens the context menu for view mode selection.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.WindowsForms.Controls.DiffViewer.CollapseUnchangedSections(System.Nullable{System.Int32})">
+            <summary>
+            Collapses unchanged sections.
+            </summary>
+            <param name="contextLineCount">The optional context line count to set.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">contextLineCount was less than 0.</exception>
+        </member>
+        <member name="M:DiffPlex.WindowsForms.Controls.DiffViewer.ExpandUnchangedSections">
+            <summary>
+            Expands unchanged sections.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.WindowsForms.Controls.DiffViewer.SetHeaderAsOldToNew">
+            <summary>
+            Sets header as old and new.
+            </summary>
+        </member>
+        <member name="M:DiffPlex.WindowsForms.Controls.DiffViewer.SetHeaderAsLeftToRight">
+            <summary>
+            Sets header as left and right.
+            </summary>
+        </member>
+        <member name="F:DiffPlex.WindowsForms.Controls.DiffViewer.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:DiffPlex.WindowsForms.Controls.DiffViewer.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:DiffPlex.WindowsForms.Controls.DiffViewer.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要修改
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+    </members>
+</doc>

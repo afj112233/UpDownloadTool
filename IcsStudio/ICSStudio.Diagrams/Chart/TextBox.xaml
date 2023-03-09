@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="ICSStudio.Diagrams.Chart.TextBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ICSStudio.Diagrams.Chart"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+       <Style TargetType="{x:Type TextBox}">
+           <Setter Property="Margin" Value="5"></Setter>
+       </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="5"></Setter>
+        </Style>
+        <Style x:Key="TextStyle" TargetType="{x:Type TextBox}">
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="GotFocus">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Duration="0" To="DeepSkyBlue" Storyboard.TargetProperty="Background.Color"></ColorAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="LostFocus">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Duration="0" To="#00000000" Storyboard.TargetProperty="Background.Color"></ColorAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Border Background="White" BorderBrush="DeepSkyBlue" BorderThickness="1">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Margin="5">
+                <TextBox TextWrapping="WrapWithOverflow" MinWidth="70" AcceptsReturn="True" HorizontalAlignment="Left" Text="{Binding Text}" 
+                         MouseDoubleClick="Control_OnMouseDoubleClick" Style="{StaticResource TextStyle}" Name="TextBox1" IsReadOnly="True"></TextBox>
+                <TextBox Visibility="Hidden" TextWrapping="WrapWithOverflow" MinWidth="70" AcceptsReturn="True" HorizontalAlignment="Left" 
+                         Text="{Binding Text}" Name="TextBox2" LostFocus="TextBox2_OnLostFocus"></TextBox>
+            </Grid>
+            
+        </Grid>
+    </Border>
+    
+</UserControl>

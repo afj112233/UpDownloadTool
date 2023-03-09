@@ -1,0 +1,313 @@
+﻿<Window
+    x:Class="ICSStudio.Dialogs.PortDiagnostics.PortDiagnostics"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ICSStudio.Dialogs.PortDiagnostics"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{Binding Title}"
+    Width="650"
+    Height="426"
+    d:DesignHeight="300"
+    d:DesignWidth="300"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="FontSize" Value="11" />
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="Width" Value="100" />
+                <Setter Property="Margin" Value="8" />
+                <Setter Property="Height" Value="30" />
+            </Style>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <GroupBox Header="Interface Counters">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock Text="Octets Inbound:" />
+                <TextBlock
+                    Grid.Column="1"
+                    HorizontalAlignment="Right"
+                    Text="{Binding Inbound}" />
+
+                <TextBlock
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Text="Octets Outbound:" />
+                <TextBlock
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Text="{Binding Outbound}" />
+
+                <TextBlock
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Text="Unicast Packets Inbound:" />
+                <TextBlock
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Text="{Binding UnicastPacketsInbound}" />
+
+                <TextBlock
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Text="Unicast Packets Outbound:" />
+                <TextBlock
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Text="{Binding UnicastPacketsOutbound}" />
+
+                <TextBlock
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    Text="Non-unicast Packets Inbound:" />
+                <TextBlock
+                    Grid.Row="6"
+                    Grid.Column="1"
+                    Text="{Binding NonunicastPacketsInbound}" />
+
+                <TextBlock
+                    Grid.Row="7"
+                    Grid.Column="0"
+                    Text="Non-unicast Packets Outbound:" />
+                <TextBlock
+                    Grid.Row="7"
+                    Grid.Column="1"
+                    Text="{Binding NonunicastPacketsOutbound}" />
+
+                <TextBlock
+                    Grid.Row="9"
+                    Grid.Column="1"
+                    Text="{Binding PacketsDiscardedInbound}" />
+                <TextBlock
+                    Grid.Row="9"
+                    Grid.Column="0"
+                    Text="Packets Discarded Inbound:" />
+
+                <TextBlock
+                    Grid.Row="10"
+                    Grid.Column="0"
+                    Text="Packets Discarded Outbound:" />
+                <TextBlock
+                    Grid.Row="10"
+                    Grid.Column="1"
+                    Text="{Binding PacketsDiscardedOutbound}" />
+
+                <TextBlock
+                    Grid.Row="12"
+                    Grid.Column="0"
+                    Text="Packets With Errors Inbound:" />
+                <TextBlock
+                    Grid.Row="12"
+                    Grid.Column="1"
+                    Text="{Binding PacketsWithErrorsInbound}" />
+
+                <TextBlock
+                    Grid.Row="13"
+                    Grid.Column="0"
+                    Text="Packets With Errors Outbound:" />
+                <TextBlock
+                    Grid.Row="13"
+                    Grid.Column="1"
+                    Text="{Binding PacketsWithErrorsOutbound}" />
+
+                <TextBlock
+                    Grid.Row="15"
+                    Grid.Column="0"
+                    Text="Unknown Protocol Packets Inbound:" />
+                <TextBlock
+                    Grid.Row="15"
+                    Grid.Column="1"
+                    Text="{Binding UnknownProtocolPacketsInbound}" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Grid.Column="1" Header="Media Counters">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock Text="Alignment Errors:" />
+                <TextBlock
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Text="{Binding AlignmentErrors}" />
+
+                <TextBlock
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Text="FCS Errors:" />
+                <TextBlock
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Text="{Binding FCSErrors}" />
+
+                <TextBlock
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Text="Single Collisions:" />
+                <TextBlock
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Text="{Binding SingleCollisions}" />
+
+                <TextBlock
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Text="Multiple Collisions:" />
+                <TextBlock
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Text="{Binding MultipleCollisions}" />
+
+                <TextBlock
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    Text="SQE Test Errors:" />
+                <TextBlock
+                    Grid.Row="6"
+                    Grid.Column="1"
+                    Text="{Binding SQETestErrors}" />
+
+                <TextBlock
+                    Grid.Row="7"
+                    Grid.Column="0"
+                    Text="Deferred Transmissions:" />
+                <TextBlock
+                    Grid.Row="7"
+                    Grid.Column="1"
+                    Text="{Binding DeferredTransmissions}" />
+
+                <TextBlock
+                    Grid.Row="9"
+                    Grid.Column="0"
+                    Text="Late Collisions:" />
+                <TextBlock
+                    Grid.Row="9"
+                    Grid.Column="1"
+                    Text="{Binding LateCollisions}" />
+
+                <TextBlock
+                    Grid.Row="10"
+                    Grid.Column="0"
+                    Text="Excessive Collisions:" />
+                <TextBlock
+                    Grid.Row="10"
+                    Grid.Column="1"
+                    Text="{Binding ExcessiveCollisions}" />
+
+                <TextBlock
+                    Grid.Row="12"
+                    Grid.Column="0"
+                    Text="MAC Transmit Errors:" />
+                <TextBlock
+                    Grid.Row="12"
+                    Grid.Column="1"
+                    Text="{Binding MACTransmitErrors}" />
+
+                <TextBlock
+                    Grid.Row="13"
+                    Grid.Column="0"
+                    Text="MAC Receive Errors:" />
+                <TextBlock
+                    Grid.Row="13"
+                    Grid.Column="1"
+                    Text="{Binding MACReceiveErrors}" />
+
+                <TextBlock
+                    Grid.Row="15"
+                    Grid.Column="0"
+                    Text="Carrier Sense:" />
+                <TextBlock
+                    Grid.Row="15"
+                    Grid.Column="1"
+                    Text="{Binding CarrierSense}" />
+
+                <TextBlock
+                    Grid.Row="16"
+                    Grid.Column="0"
+                    Text=" Frame Too Long:" />
+                <TextBlock
+                    Grid.Row="16"
+                    Grid.Column="1"
+                    Text="{Binding FrameTooLong}" />
+            </Grid>
+        </GroupBox>
+
+        <Button
+            Grid.Row="1"
+            Grid.Column="1"
+            HorizontalAlignment="Right"
+            Content="Reset Counter" />
+
+        <StackPanel
+            Grid.Row="2"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            HorizontalAlignment="Center"
+            Orientation="Horizontal">
+            <Button Content="Close" />
+            <Button Content="Help" />
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,1626 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--  This is the file that defines the actual layout and type of the commands.
+        It is divided in different sections (e.g. command definition, command
+        placement, ...), with each defining a specific set of properties.
+        See the comment before each section for more details about how to
+        use it. -->
+
+  <!--  The VSCT compiler (the tool that translates this file into the binary
+        format that VisualStudio will consume) has the ability to run a preprocessor
+        on the vsct file; this preprocessor is (usually) the C++ preprocessor, so
+        it is possible to define includes and macros with the same syntax used
+        in C++ files. Using this ability of the compiler here, we include some files
+        defining some of the constants that we will use inside the file. -->
+
+  <!--This is the file that defines the IDs for all the commands exposed by VisualStudio. -->
+  <Extern href="stdidcmd.h" />
+
+  <!--This header contains the command ids for the menus provided by the shell. -->
+  <Extern href="vsshlids.h" />
+
+  <!--The Commands section is where commands, menus, and menu groups are defined.
+      This section uses a Guid to identify the package that provides the command defined inside it. -->
+  <Commands package="organizerPackage">
+    <!-- Inside this section we have different sub-sections: one for the menus, another
+    for the menu groups, one for the buttons (the actual commands), one for the combos
+    and the last one for the bitmaps used. Each element is identified by a command id that
+    is a unique pair of guid and numeric identifier; the guid part of the identifier is usually
+    called "command set" and is used to group different command inside a logically related
+    group; your package should define its own command set in order to avoid collisions
+    with command ids defined by other packages. -->
+
+    <Menus>
+      <Menu guid="organizerPackageCmdSet" id="controllerContextMenu" type="Context">
+        <Strings>
+          <CommandName></CommandName>
+          <ButtonText></ButtonText>
+        </Strings>
+      </Menu>
+      <Menu guid="organizerPackageCmdSet" id="editMenu" type="Menu">
+        <Strings>
+          <CommandName>Edit</CommandName>
+          <ButtonText>Edit</ButtonText>
+        </Strings>
+      </Menu>
+      <Menu guid="organizerPackageCmdSet" id="viewMenu" type="Menu">
+        <Strings>
+          <CommandName>View</CommandName>
+          <ButtonText>View</ButtonText>
+        </Strings>
+      </Menu>
+      <Menu guid="organizerPackageCmdSet" id="newAxisMenu" type="Menu">
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <CommandName>New Axis</CommandName>
+          <ButtonText>New Axis</ButtonText>
+        </Strings>
+      </Menu>
+      <Menu guid="organizerPackageCmdSet" id="taskAddMenu" type="Menu">
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <CommandName>Add</CommandName>
+          <ButtonText>Add</ButtonText>
+        </Strings>
+      </Menu>
+      <Menu guid="organizerPackageCmdSet" id="programAddMenu" type="Menu">
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <CommandName>Add</CommandName>
+          <ButtonText>Add</ButtonText>
+        </Strings>
+      </Menu>
+      <Menu guid="organizerPackageCmdSet" id="PrintSubMenu" type="Menu">
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Print</ButtonText>
+          <CommandName>Print</CommandName>
+        </Strings>
+      </Menu>
+      <Menu guid="organizerPackageCmdSet" id="PrintContextMenu" type="Menu">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Print</ButtonText>
+          <CommandName>Print</CommandName>
+        </Strings>
+      </Menu>
+      <Menus>
+        <Menu guid="organizerPackageCmdSet" id="Toolbar"
+              type="Toolbar" >
+          <CommandFlag>DefaultDocked</CommandFlag>
+          <Strings>
+            <ButtonText>ICS Toolbar</ButtonText>
+            <CommandName>ICS Toolbar</CommandName>
+          </Strings>
+        </Menu>
+      </Menus>
+    </Menus>
+
+    <Groups>
+      <Group guid="organizerPackageCmdSet" id="ToolbarGroup"
+             priority="0x0003">
+        <Parent guid="organizerPackageCmdSet" id="Toolbar"/>
+      </Group>
+      <Group guid="organizerPackageCmdSet" id="PrintGroup"
+             priority="0x0500">
+        <Parent guid="organizerPackageCmdSet" id="PrintSubMenu"/>
+      </Group>
+      <Group guid="organizerPackageCmdSet" id="PrintGroup2"
+             priority="0x0A00">
+        <Parent guid="organizerPackageCmdSet" id="PrintContextMenu"/>
+      </Group>
+      <Group guid="organizerPackageCmdSet" id="studioViewMenuGroup"/>
+      <Group guid="organizerPackageCmdSet" id="propertiesMenuGroup"/>
+      <Group guid="organizerPackageCmdSet" id="clipboardMenuGroup"/>
+      
+      <Group guid="organizerPackageCmdSet" id="group0"/>
+      <Group guid="organizerPackageCmdSet" id="group1"/>
+      <Group guid="organizerPackageCmdSet" id="group2"/>
+      <Group guid="organizerPackageCmdSet" id="group3"/>
+      <Group guid="organizerPackageCmdSet" id="group4"/>
+      <Group guid="organizerPackageCmdSet" id="group5"/>
+      <Group guid="organizerPackageCmdSet" id="group6"/>
+      <Group guid="organizerPackageCmdSet" id="group7"/>
+      <Group guid="organizerPackageCmdSet" id="group8"/>
+      <Group guid="organizerPackageCmdSet" id="group9"/>
+
+      <Group guid="organizerPackageCmdSet" id="newAxisGroup"/>
+      <Group guid="organizerPackageCmdSet" id="taskAddGroup"/>
+      <Group guid="organizerPackageCmdSet" id="programAddGroup0"/>
+      <Group guid="organizerPackageCmdSet" id="programAddGroup1"/>
+      <Group guid="organizerPackageCmdSet" id="programAddGroup2"/>
+
+      <Group guid="organizerPackageCmdSet" id="historyGroup"></Group>
+
+    </Groups>
+    <!--Buttons section. -->
+    <!--This section defines the elements the user can interact with, like a menu command or a button
+        or combo box in a toolbar. -->
+    <Buttons>
+
+      <Button guid="organizerPackageCmdSet" id="newInToolbarCommand" priority="0x0100" type="Button">
+        <Parent guid= "organizerPackageCmdSet" id="ToolbarGroup" />
+        <Icon guid="newImages" id="bmpPic1" />
+        <Strings>
+          <ButtonText>New(Ctrl+N)</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="openInToolbarCommand" priority="0x0101" type="Button">
+        <Parent guid= "organizerPackageCmdSet" id="ToolbarGroup" />
+        <Icon guid="openImages" id="bmpPic1" />
+        <Strings>
+          <ButtonText>Open(Ctrl+O)</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="saveInToolbarCommand" priority="0x0102" type="Button">
+        <Parent guid= "organizerPackageCmdSet" id="ToolbarGroup" />
+        <Icon guid="saveImages" id="bmpPic1" />
+        <Strings>
+          <ButtonText>Save(Ctrl+S)</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="printInToolbarCommand" priority="0x0103" type="Button">
+        <Parent guid= "organizerPackageCmdSet" id="ToolbarGroup" />
+        <Icon guid="printImages" id="bmpPic1" />
+        <Strings>
+          <ButtonText>Print</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="cutInToolbarCommand" priority="0x0104" type="Button">
+        <Parent guid= "organizerPackageCmdSet" id="ToolbarGroup" />
+        <Icon guid="cutImages" id="bmpPic1" />
+        <Strings>
+          <ButtonText>Cut(Ctrl+X)</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="copyInToolbarCommand" priority="0x0105" type="Button">
+        <Parent guid= "organizerPackageCmdSet" id="ToolbarGroup" />
+        <Icon guid="copyImages" id="bmpPic1" />
+        <Strings>
+          <ButtonText>Copy(Ctrl+C)</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="pasteInToolbarCommand" priority="0x0106" type="Button">
+        <Parent guid= "organizerPackageCmdSet" id="ToolbarGroup" />
+        <Icon guid="pasteImages" id="bmpPic1" />
+        <Strings>
+          <ButtonText>Paste(Ctrl+V)</ButtonText>
+        </Strings>
+      </Button>
+
+      <!--To define a menu group you have to specify its ID, the parent menu and its display priority.
+          The command is visible and enabled by default. If you need to change the visibility, status, etc, you can use
+          the CommandFlag node.
+          You can add more than one CommandFlag node e.g.:
+              <CommandFlag>DefaultInvisible</CommandFlag>
+              <CommandFlag>DynamicVisibility</CommandFlag>
+          If you do not want an image next to your command, remove the Icon node /> -->
+      <Button guid="organizerPackageCmdSet" id="newFileCommand" type="Button">
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>New...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="openFileCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Open...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="saveFileCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Save</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="saveAsFileCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Save As...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="buildSaveFileCommand" type="Button">
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Build Save</ButtonText>
+        </Strings>
+      </Button>
+
+      <!--Print Group -->
+      <Button guid="organizerPackageCmdSet" id="printRoutine"  priority="0x0501" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Routine...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="printRoutineProperties"  priority="0x0502" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Routine Properties...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="printTags"  priority="0x0503" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Variable...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="printSequencingAndStepTags"  priority="0x0504" type="Button">
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Sequencing and Step Variable...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="printModuleProperties"  priority="0x0505" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Module Properties...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="printAdd_OnInstructionSignatures"  priority="0x0506" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>User Define Funciton Signatures...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="printAdd_OnInstruction"  priority="0x0507" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>User Define Funciton...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="printDataType"  priority="0x0508" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Data Type...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="printCrossReference"  priority="0x0509" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Cross Reference...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="printControllerOrganizer"  priority="0x050A" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Controller Organizer...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="printControllerProperties"  priority="0x050B" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Controller Properties...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="printTaskProperties"  priority="0x050C" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Task Properties...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="printProgramProperties"  priority="0x050D" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Program Properties...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="printEquipmentSequence"  priority="0x050E" type="Button">
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Equipment Sequence...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="printEntireProject"  priority="0x050F" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Entire Project...</ButtonText>
+        </Strings>
+      </Button>
+
+      <!--Print Group2 -->
+      <Button guid="organizerPackageCmdSet" id="printRoutine2"  priority="0x1001" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Routine...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="printRoutineProperties2"  priority="0x1002" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Routine Properties...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="printTags2"  priority="0x1003" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Variable...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="printSequencingAndStepTags2"  priority="0x1004" type="Button">
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Sequencing and Step Variable...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="printModuleProperties2"  priority="0x1005" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Module Properties...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="printAdd_OnInstructionSignatures2"  priority="0x1006" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>User Define Funciton Signatures...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="printAdd_OnInstruction2"  priority="0x1007" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>User Define Funciton...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="printDataType2"  priority="0x1008" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Data Type...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="printCrossReference2"  priority="0x1009" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Cross Reference...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="printControllerOrganizer2"  priority="0x100A" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Controller Organizer...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="printControllerProperties2"  priority="0x100B" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Controller Properties...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="printTaskProperties2"  priority="0x100C" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Task Properties...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="printProgramProperties2"  priority="0x100D" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Program Properties...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="printEquipmentSequence2"  priority="0x100E" type="Button">
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Equipment Sequence...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="printEntireProject2"  priority="0x100F" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Entire Project...</ButtonText>
+        </Strings>
+      </Button>
+      
+      <Button guid="organizerPackageCmdSet" id="controllerOrganizerCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <!--<Icon guid="guidImages" id="bmpPic1"/>-->
+        <Strings>
+          <ButtonText>Controller Organizer</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="logicalOrganizerCommand" type="Button">
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Icon guid="guidImages" id="bmpPic1" />
+        <Strings>
+          <ButtonText>Logical Organizer</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="organizerPackageCmdSet" id="propertiesCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Properties</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="controllerPropertiesCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>>
+        <Strings>
+          <ButtonText>Controller Properties</ButtonText>
+        </Strings>
+      </Button>
+
+      <!--Group0-->
+      <Button guid="organizerPackageCmdSet" id="monitorGroupTagCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Monitor Group Variable</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="monitorAxisTagCommand" type="Button">
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Monitor Axis Variable</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="verifyControllerCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Verify</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="newTagCommand" type="Button">
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>New Variable...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="newProgramCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>New Program...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="newTaskCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>New Task...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="newLocalTagCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>New Local Variable...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="newParameterCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>New Parameter...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="newMotionGroupCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>New Axes Groups...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="newCoordinateSystemCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>New Coordinate System...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="newAddOnInstructionCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>New UD Function Block...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="newDataTypeCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>New Data Type...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="importAddOnInstructionCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Import UD Function Block...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="importDataTypeCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Import Data Type...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="newStringTypeCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>New String Type...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="importStringTypeCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Import String Type...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="importModuleCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Import Module...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="newTrendCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>New Trace...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="importTrendCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Import Trace...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="newModuleCommand" type="Button">
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>New Module...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="importProgramCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Import Program...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="openTrendLogCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Open Trace Variable...</ButtonText>
+        </Strings>
+      </Button>
+      <!--Add here-->
+      <Button guid="organizerPackageCmdSet" id="openCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Open</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="openDefinitionCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Open Definition</ButtonText>
+        </Strings>
+      </Button>
+
+      <!--Group8-->
+      <Button guid="organizerPackageCmdSet" id="exportDataTypeCommand" type="Button">
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Export Data Type...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="exportStringTypeCommand" type="Button">
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Export String Type...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="exportAddOnInstructionCommand" type="Button">
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Export UD Function Block...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="exportProgramCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Export Program...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="exportRoutineCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Export Routine...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="exportModuleCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Export Module...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="exportTrendCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Export Trace...</ButtonText>
+        </Strings>
+      </Button>
+      <!--Group3-->
+      <Button guid="organizerPackageCmdSet" id="cutCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Cut</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="copyCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Copy</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="pasteCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Paste</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="pasteWithConfigurationCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Paste With Configuration...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="deleteCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Delete</ButtonText>
+        </Strings>
+      </Button>
+      <!--Group4-->
+      <Button guid="organizerPackageCmdSet" id="motionDirectCommandsCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Motion Direct Commands...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="crossReferenceCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Cross Reference...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="gotoModuleCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Goto Module</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="manualTuneCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Manual Tune...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="monitorTagsCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Monitor Variables</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="editTagsCommand" type="Button">
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Edit Variables</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="verifyCommand">
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Verify</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="exportTagsCommand" type="Button">
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Export Variables</ButtonText>
+        </Strings>
+      </Button>
+
+      <!--Group5-->
+      <Button guid="organizerPackageCmdSet" id="browseLogicCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Browse Logic...</ButtonText>
+        </Strings>
+      </Button>
+
+      <!--NewAxisGroup-->
+      <Button guid="organizerPackageCmdSet" id="AXIS_CIP_DRIVECommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>AXIS_CIP_DRIVE...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="AXIS_VIRTUALCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>AXIS_VIRTUAL...</ButtonText>
+        </Strings>
+      </Button>
+
+      <!--TaskAddGroup-->
+      <Button guid="organizerPackageCmdSet" id="taskNewProgramCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>New Program...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="newEquipmentPhaseCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>New Equipment Phase...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="newEquipmentSequenceCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>New Equipment Sequence...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="taskImportProgramCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Import Program...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="importEquipmentPhaseCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Import Equipment Phase...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="importEquipmentSequenceCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Import Equipment Sequence...</ButtonText>
+        </Strings>
+      </Button>
+
+      <!--ProgramAddGroup-->
+      <Button guid="organizerPackageCmdSet" id="newPhaseStateCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>New Phase State Routine...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="newRoutineCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>New Routine...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="programNewLocalTagCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>New Local Variable...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="programNewParameterCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>New Parameter...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="organizerPackageCmdSet" id="importRoutineCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Import Routine...</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="organizerPackageCmdSet" id="historyFileCommand" priority="0x1000" >
+        <CommandFlag>DynamicItemStart</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+
+        <!-- This text does not appear. -->
+        <Strings>
+          <ButtonText></ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+    <!--The bitmaps section is used to define the bitmaps that are used for the commands.-->
+    <Bitmaps>
+      <!--  The bitmap id is defined in a way that is a little bit different from the others:
+            the declaration starts with a guid for the bitmap strip, then there is the resource id of the
+            bitmap strip containing the bitmaps and then there are the numeric ids of the elements used
+            inside a button definition. An important aspect of this declaration is that the element id
+            must be the actual index (1-based) of the bitmap inside the bitmap strip. -->
+      <Bitmap guid="guidImages" href="Resources\ControllerOrganizerCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
+      <Bitmap guid="copyImages" href="Resources\copy.png" usedList="bmpPic1" />
+      <Bitmap guid="cutImages" href="Resources\cut.png" usedList="bmpPic1" />
+      <Bitmap guid="newImages" href="Resources\new.png" usedList="bmpPic1" />
+      <Bitmap guid="openImages" href="Resources\open.png" usedList="bmpPic1" />
+      <Bitmap guid="pasteImages" href="Resources\paste.png" usedList="bmpPic1" />
+      <Bitmap guid="printImages" href="Resources\print.png" usedList="bmpPic1" />
+      <Bitmap guid="saveImages" href="Resources\save.png" usedList="bmpPic1" />
+
+    </Bitmaps>
+  </Commands>
+ 
+  <!--<KeyBindings>
+    <KeyBinding guid="organizerPackageCmdSet" editor="guidVSStd97" id="cutCommand" mod1="Control" key1="x"></KeyBinding>
+  </KeyBindings>-->
+  <CommandPlacements>
+    <!-- Placement for groups and menus.
+           The parent of a group is a menu, context menu or toolbar.
+           The parent of a submenu is always a group
+           The priority sets the position of the group compared to the priority of other existing groups in the menu.
+           The order is: Toolbar or Menu > MyGroupForSubmenu > MySubmenu > MyGroupForCommands > Command1Id, Command2Id
+    -->
+
+    <CommandPlacement guid="organizerPackageCmdSet" id="editMenu" priority="771">
+      <Parent guid="guidSHLMainMenu" id="IDG_VS_MM_TOOLSADDINS"/>
+    </CommandPlacement>
+
+    <CommandPlacement guid="organizerPackageCmdSet" id="viewMenu" priority="772">
+      <Parent guid="guidSHLMainMenu" id="IDG_VS_MM_TOOLSADDINS"/>
+    </CommandPlacement>
+
+    <CommandPlacement guid="organizerPackageCmdSet" id="studioViewMenuGroup" priority="0x0001">
+      <Parent guid="organizerPackageCmdSet" id="viewMenu"/>
+    </CommandPlacement>
+
+    <CommandPlacement guid="organizerPackageCmdSet" id="clipboardMenuGroup" priority="0xFFFE">
+      <Parent guid="organizerPackageCmdSet" id="editMenu"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="propertiesMenuGroup" priority="0xFFFF">
+      <Parent guid="organizerPackageCmdSet" id="editMenu"/>
+    </CommandPlacement>
+
+
+    <CommandPlacement guid="organizerPackageCmdSet" id="group0" priority="0x0001">
+      <Parent guid="organizerPackageCmdSet" id="controllerContextMenu"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="group1" priority="0x0002">
+      <Parent guid="organizerPackageCmdSet" id="controllerContextMenu"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="group2" priority="0x0003">
+      <Parent guid="organizerPackageCmdSet" id="controllerContextMenu"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="group3" priority="0x0004">
+      <Parent guid="organizerPackageCmdSet" id="controllerContextMenu"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="group4" priority="0x0005">
+      <Parent guid="organizerPackageCmdSet" id="controllerContextMenu"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="group5" priority="0x0006">
+      <Parent guid="organizerPackageCmdSet" id="controllerContextMenu"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="group6" priority="0x0007">
+      <Parent guid="organizerPackageCmdSet" id="controllerContextMenu"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="group7" priority="0x0008">
+      <Parent guid="organizerPackageCmdSet" id="controllerContextMenu"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="group8" priority="0x0009">
+      <Parent guid="organizerPackageCmdSet" id="controllerContextMenu"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="group9" priority="0x000A">
+      <Parent guid="organizerPackageCmdSet" id="controllerContextMenu"/>
+    </CommandPlacement>
+
+    <CommandPlacement guid="organizerPackageCmdSet" id="newAxisGroup" priority="0x0001">
+      <Parent guid="organizerPackageCmdSet" id="newAxisMenu"/>
+    </CommandPlacement>
+
+    <CommandPlacement guid="organizerPackageCmdSet" id="taskAddGroup" priority="0x0001">
+      <Parent guid="organizerPackageCmdSet" id="taskAddMenu"/>
+    </CommandPlacement>
+
+    <CommandPlacement guid="organizerPackageCmdSet" id="programAddGroup0" priority="0x0001">
+      <Parent guid="organizerPackageCmdSet" id="programAddMenu"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="programAddGroup1" priority="0x0002">
+      <Parent guid="organizerPackageCmdSet" id="programAddMenu"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="programAddGroup2" priority="0x0003">
+      <Parent guid="organizerPackageCmdSet" id="programAddMenu"/>
+    </CommandPlacement>
+
+    <!-- Placement for commands.
+           The parent of a command is always a group, never a menu, context menu or toolbar.
+    -->
+
+    <CommandPlacement guid="organizerPackageCmdSet" id="newFileCommand" priority="0xFF0C" >
+      <Parent guid="guidSHLMainMenu" id="IDG_VS_FILE_FILE"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="openFileCommand" priority="0xFF0D" >
+      <Parent guid="guidSHLMainMenu" id="IDG_VS_FILE_FILE"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="saveFileCommand" priority="0xFF0E" >
+      <Parent guid="guidSHLMainMenu" id="IDG_VS_FILE_FILE"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="saveAsFileCommand" priority="0xFF0F" >
+      <Parent guid="guidSHLMainMenu" id="IDG_VS_FILE_FILE"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="buildSaveFileCommand" priority="0xFF10" >
+      <Parent guid="guidSHLMainMenu" id="IDG_VS_FILE_FILE"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="PrintSubMenu" priority="0xFF11" >
+      <Parent guid="guidSHLMainMenu" id="IDG_VS_FILE_FILE"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="PrintContextMenu" priority="0xFA11" >
+      <Parent guid="organizerPackageCmdSet" id="group0"/>
+    </CommandPlacement>
+
+
+    <!--PrintGroup-->
+    <CommandPlacement guid="organizerPackageCmdSet" id="printRoutine" priority="0x001" >
+      <Parent guid="organizerPackageCmdSet" id="PrintGroup"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="printRoutineProperties" priority="0x002" >
+      <Parent guid="organizerPackageCmdSet" id="PrintGroup"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="printTags" priority="0x003" >
+      <Parent guid="organizerPackageCmdSet" id="PrintGroup"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="printSequencingAndStepTags" priority="0x004" >
+      <Parent guid="organizerPackageCmdSet" id="PrintGroup"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="printModuleProperties" priority="0x005" >
+      <Parent guid="organizerPackageCmdSet" id="PrintGroup"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="printAdd_OnInstructionSignatures" priority="0x006" >
+      <Parent guid="organizerPackageCmdSet" id="PrintGroup"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="printAdd_OnInstruction" priority="0x007" >
+      <Parent guid="organizerPackageCmdSet" id="PrintGroup"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="printDataType" priority="0x008" >
+      <Parent guid="organizerPackageCmdSet" id="PrintGroup"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="printCrossReference" priority="0x009" >
+      <Parent guid="organizerPackageCmdSet" id="PrintGroup"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="printControllerOrganizer" priority="0x00A" >
+      <Parent guid="organizerPackageCmdSet" id="PrintGroup"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="printControllerProperties" priority="0x00B" >
+      <Parent guid="organizerPackageCmdSet" id="PrintGroup"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="printTaskProperties" priority="0x00C" >
+      <Parent guid="organizerPackageCmdSet" id="PrintGroup"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="printProgramProperties" priority="0x00D" >
+      <Parent guid="organizerPackageCmdSet" id="PrintGroup"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="printEquipmentSequence" priority="0x00E" >
+      <Parent guid="organizerPackageCmdSet" id="PrintGroup"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="printEntireProject" priority="0x00F" >
+      <Parent guid="organizerPackageCmdSet" id="PrintGroup"/>
+    </CommandPlacement>
+
+    <!--PrintGroup2-->
+    <CommandPlacement guid="organizerPackageCmdSet" id="printRoutine2" priority="0xC01" >
+      <Parent guid="organizerPackageCmdSet" id="PrintGroup2"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="printRoutineProperties2" priority="0xC02" >
+      <Parent guid="organizerPackageCmdSet" id="PrintGroup2"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="printTags2" priority="0xC03" >
+      <Parent guid="organizerPackageCmdSet" id="PrintGroup2"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="printSequencingAndStepTags2" priority="0xC04" >
+      <Parent guid="organizerPackageCmdSet" id="PrintGroup2"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="printModuleProperties2" priority="0xC05" >
+      <Parent guid="organizerPackageCmdSet" id="PrintGroup2"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="printAdd_OnInstructionSignatures2" priority="0xC06" >
+      <Parent guid="organizerPackageCmdSet" id="PrintGroup2"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="printAdd_OnInstruction2" priority="0xC07" >
+      <Parent guid="organizerPackageCmdSet" id="PrintGroup2"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="printDataType2" priority="0xC08" >
+      <Parent guid="organizerPackageCmdSet" id="PrintGroup2"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="printCrossReference2" priority="0xC09" >
+      <Parent guid="organizerPackageCmdSet" id="PrintGroup2"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="printControllerOrganizer2" priority="0xC0A" >
+      <Parent guid="organizerPackageCmdSet" id="PrintGroup2"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="printControllerProperties2" priority="0xC0B" >
+      <Parent guid="organizerPackageCmdSet" id="PrintGroup2"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="printTaskProperties2" priority="0xC0C" >
+      <Parent guid="organizerPackageCmdSet" id="PrintGroup2"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="printProgramProperties2" priority="0xC0D" >
+      <Parent guid="organizerPackageCmdSet" id="PrintGroup2"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="printEquipmentSequence2" priority="0xC0E" >
+      <Parent guid="organizerPackageCmdSet" id="PrintGroup2"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="printEntireProject2" priority="0xC0F" >
+      <Parent guid="organizerPackageCmdSet" id="PrintGroup2"/>
+    </CommandPlacement>
+
+    <CommandPlacement guid="organizerPackageCmdSet" id="historyGroup" priority="0xFFF0" >
+      <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_FILE"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="historyFileCommand" priority="0xFF11" >
+      <Parent guid="organizerPackageCmdSet" id="historyGroup"/>
+    </CommandPlacement>
+    
+    <CommandPlacement guid="organizerPackageCmdSet" id="controllerOrganizerCommand" priority="0x0001" >
+      <Parent guid="organizerPackageCmdSet" id="studioViewMenuGroup"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="logicalOrganizerCommand" priority="0x0005" >
+      <Parent guid="organizerPackageCmdSet" id="studioViewMenuGroup"/>
+    </CommandPlacement>
+
+    <CommandPlacement guid="organizerPackageCmdSet" id="propertiesCommand" priority="0x0001" >
+      <Parent guid="organizerPackageCmdSet" id="propertiesMenuGroup"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="controllerPropertiesCommand" priority="0x0002" >
+      <Parent guid="organizerPackageCmdSet" id="propertiesMenuGroup"/>
+    </CommandPlacement>
+
+    <CommandPlacement guid="organizerPackageCmdSet" id="cutCommand" priority="0x0001" >
+      <Parent guid="organizerPackageCmdSet" id="clipboardMenuGroup"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="copyCommand" priority="0x0002" >
+      <Parent guid="organizerPackageCmdSet" id="clipboardMenuGroup"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="pasteCommand" priority="0x0003" >
+      <Parent guid="organizerPackageCmdSet" id="clipboardMenuGroup"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="pasteWithConfigurationCommand" priority="0x0004" >
+      <Parent guid="organizerPackageCmdSet" id="clipboardMenuGroup"/>
+    </CommandPlacement>
+
+    <CommandPlacement guid="organizerPackageCmdSet" id="monitorGroupTagCommand" priority="0x0001">
+      <Parent guid="organizerPackageCmdSet" id="group1"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="monitorAxisTagCommand" priority="0x0001">
+      <Parent guid="organizerPackageCmdSet" id="group1"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="gotoModuleCommand" priority="0x0001">
+      <Parent guid="organizerPackageCmdSet" id="group0"/>
+    </CommandPlacement>
+    <!--Group0-->
+    <CommandPlacement guid="organizerPackageCmdSet" id="verifyControllerCommand" priority="0x0001" >
+      <Parent guid="organizerPackageCmdSet" id="group0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="newTagCommand" priority="0x0002" >
+      <Parent guid="organizerPackageCmdSet" id="group0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="newProgramCommand" priority="0x0003" >
+      <Parent guid="organizerPackageCmdSet" id="group0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="newTaskCommand" priority="0x0004" >
+      <Parent guid="organizerPackageCmdSet" id="group0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="newLocalTagCommand" priority="0x0005" >
+      <Parent guid="organizerPackageCmdSet" id="group0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="newParameterCommand" priority="0x0006" >
+      <Parent guid="organizerPackageCmdSet" id="group0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="newMotionGroupCommand" priority="0x0007" >
+      <Parent guid="organizerPackageCmdSet" id="group0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="newAxisMenu" priority="0x0008" >
+      <Parent guid="organizerPackageCmdSet" id="group0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="newCoordinateSystemCommand" priority="0x0009" >
+      <Parent guid="organizerPackageCmdSet" id="group0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="newAddOnInstructionCommand" priority="0x000A" >
+      <Parent guid="organizerPackageCmdSet" id="group0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="newDataTypeCommand" priority="0x000B" >
+      <Parent guid="organizerPackageCmdSet" id="group0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="newStringTypeCommand" priority="0x000C" >
+      <Parent guid="organizerPackageCmdSet" id="group0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="importDataTypeCommand" priority="0x000C" >
+      <Parent guid="organizerPackageCmdSet" id="group0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="newTrendCommand" priority="0x000D" >
+      <Parent guid="organizerPackageCmdSet" id="group0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="importTrendCommand" priority="0x000F" >
+      <Parent guid="organizerPackageCmdSet" id="group0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="newModuleCommand" priority="0x000E" >
+      <Parent guid="organizerPackageCmdSet" id="group0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="importModuleCommand" priority="0x000F" >
+      <Parent guid="organizerPackageCmdSet" id="group0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="importProgramCommand" priority="0x000F" >
+      <Parent guid="organizerPackageCmdSet" id="group0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="importAddOnInstructionCommand" priority="0x00018" >
+      <Parent guid="organizerPackageCmdSet" id="group0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="openTrendLogCommand" priority="0x00018" >
+      <Parent guid="organizerPackageCmdSet" id="group0"/>
+    </CommandPlacement>
+
+    <CommandPlacement guid="organizerPackageCmdSet" id="taskAddMenu" priority="0x0015" >
+      <Parent guid="organizerPackageCmdSet" id="group0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="programAddMenu" priority="0x0016" >
+      <Parent guid="organizerPackageCmdSet" id="group0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="openCommand" priority="0x0017" >
+      <Parent guid="organizerPackageCmdSet" id="group0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="importStringTypeCommand" priority="0x0018" >
+      <Parent guid="organizerPackageCmdSet" id="group0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="openDefinitionCommand" priority="0x0018" >
+      <Parent guid="organizerPackageCmdSet" id="group0"/>
+    </CommandPlacement>
+
+    <!--Group3-->
+    <CommandPlacement guid="organizerPackageCmdSet" id="cutCommand" priority="0x0001" >
+      <Parent guid="organizerPackageCmdSet" id="group3"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="copyCommand" priority="0x0002" >
+      <Parent guid="organizerPackageCmdSet" id="group3"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="pasteCommand" priority="0x0003" >
+      <Parent guid="organizerPackageCmdSet" id="group3"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="pasteSpecialMenu" priority="0x0004" >
+      <Parent guid="organizerPackageCmdSet" id="group3"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="pasteWithConfigurationCommand" priority="0x0005" >
+      <Parent guid="organizerPackageCmdSet" id="group3"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="deleteCommand" priority="0x0006" >
+      <Parent guid="organizerPackageCmdSet" id="group3"/>
+    </CommandPlacement>
+
+    <!--Group4-->
+    <CommandPlacement guid="organizerPackageCmdSet" id="motionDirectCommandsCommand" priority="0x0001" >
+      <Parent guid="organizerPackageCmdSet" id="group4"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="manualTuneCommand" priority="0x0002" >
+      <Parent guid="organizerPackageCmdSet" id="group4"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="monitorTagsCommand" priority="0x0004" >
+      <Parent guid="organizerPackageCmdSet" id="group4"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="editTagsCommand" priority="0x0005" >
+      <Parent guid="organizerPackageCmdSet" id="group4"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="verifyCommand" priority="0x0006" >
+      <Parent guid="organizerPackageCmdSet" id="group4"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="exportTagsCommand" priority="0x0007" >
+      <Parent guid="organizerPackageCmdSet" id="group4"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="crossReferenceCommand" priority="0x0008" >
+      <Parent guid="organizerPackageCmdSet" id="group4"/>
+    </CommandPlacement>
+
+    <!--Group5-->
+    <CommandPlacement guid="organizerPackageCmdSet" id="browseLogicCommand" priority="0x0001" >
+      <Parent guid="organizerPackageCmdSet" id="group5"/>
+    </CommandPlacement>
+
+    <!--Group8-->
+    <CommandPlacement guid="organizerPackageCmdSet" id="exportDataTypeCommand" priority="0x0001" >
+      <Parent guid="organizerPackageCmdSet" id="group8"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="exportAddOnInstructionCommand" priority="0x0001" >
+      <Parent guid="organizerPackageCmdSet" id="group8"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="exportProgramCommand" priority="0x0001" >
+      <Parent guid="organizerPackageCmdSet" id="group8"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="exportRoutineCommand" priority="0x0001" >
+      <Parent guid="organizerPackageCmdSet" id="group8"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="exportModuleCommand" priority="0x0001" >
+      <Parent guid="organizerPackageCmdSet" id="group8"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="exportTrendCommand" priority="0x0001" >
+      <Parent guid="organizerPackageCmdSet" id="group8"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="exportStringTypeCommand" priority="0x0001" >
+      <Parent guid="organizerPackageCmdSet" id="group8"/>
+    </CommandPlacement>
+
+    <!--Group9-->
+    <CommandPlacement guid="organizerPackageCmdSet" id="includeInTrackingGroupCommand" priority="0x0001" >
+      <Parent guid="organizerPackageCmdSet" id="group9"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="propertiesCommand" priority="0x0002" >
+      <Parent guid="organizerPackageCmdSet" id="group9"/>
+    </CommandPlacement>
+
+
+    <!--NewAxisGroup-->
+    <CommandPlacement guid="organizerPackageCmdSet" id="AXIS_CIP_DRIVECommand" priority="0x0006" >
+      <Parent guid="organizerPackageCmdSet" id="newAxisGroup"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="AXIS_VIRTUALCommand" priority="0x0007" >
+      <Parent guid="organizerPackageCmdSet" id="newAxisGroup"/>
+    </CommandPlacement>
+
+    <!--TaskAddGroup-->
+    <CommandPlacement guid="organizerPackageCmdSet" id="taskNewProgramCommand" priority="0x0001" >
+      <Parent guid="organizerPackageCmdSet" id="taskAddGroup"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="newEquipmentPhaseCommand" priority="0x0002" >
+      <Parent guid="organizerPackageCmdSet" id="taskAddGroup"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="newEquipmentSequenceCommand" priority="0x0003" >
+      <Parent guid="organizerPackageCmdSet" id="taskAddGroup"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="taskImportProgramCommand" priority="0x0004" >
+      <Parent guid="organizerPackageCmdSet" id="taskAddGroup"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="importEquipmentPhaseCommand" priority="0x0005" >
+      <Parent guid="organizerPackageCmdSet" id="taskAddGroup"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="importEquipmentSequenceCommand" priority="0x0006" >
+      <Parent guid="organizerPackageCmdSet" id="taskAddGroup"/>
+    </CommandPlacement>
+
+    <!--ProgramAddGroup-->
+    <CommandPlacement guid="organizerPackageCmdSet" id="newPhaseStateCommand" priority="0x0001" >
+      <Parent guid="organizerPackageCmdSet" id="programAddGroup0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="newRoutineCommand" priority="0x0002" >
+      <Parent guid="organizerPackageCmdSet" id="programAddGroup0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="programNewLocalTagCommand" priority="0x0001" >
+      <Parent guid="organizerPackageCmdSet" id="programAddGroup1"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="programNewParameterCommand" priority="0x0002" >
+      <Parent guid="organizerPackageCmdSet" id="programAddGroup1"/>
+    </CommandPlacement>
+    <CommandPlacement guid="organizerPackageCmdSet" id="importRoutineCommand" priority="0x0001" >
+      <Parent guid="organizerPackageCmdSet" id="programAddGroup2"/>
+    </CommandPlacement>
+
+
+
+  </CommandPlacements>
+
+  <Symbols>
+    <!-- This is the package guid. -->
+    <GuidSymbol name="organizerPackage" value="{f92062fc-89aa-4e53-9e85-ca55b8d4a201}" />
+
+    <!-- This is the guid used to group the menu commands together -->
+    <GuidSymbol name="organizerPackageCmdSet" value="{964dd943-7515-4353-9959-03e5792d62f3}">
+      <IDSymbol name="studioViewMenuGroup" value="0x0100" />
+      <IDSymbol name="controllerOrganizerCommand" value="0x0101" />
+      <IDSymbol name="logicalOrganizerCommand" value="0x0105" />
+
+      <IDSymbol name="newFileCommand" value="0x010C"/>
+      <IDSymbol name="openFileCommand" value="0x010D"/>
+      <IDSymbol name="saveFileCommand" value="0x010E"/>
+      <IDSymbol name="saveAsFileCommand" value="0x010F"/>
+      <IDSymbol name="buildSaveFileCommand" value="0x0110"/>
+
+      <IDSymbol name="printRoutine" value="0x0111"/>
+      <IDSymbol name="printRoutineProperties" value="0x0112"/>
+      <IDSymbol name="printTags" value="0x0113"/>
+      <IDSymbol name="printSequencingAndStepTags" value="0x0114"/>
+      <IDSymbol name="printModuleProperties" value="0x0115"/>
+      <IDSymbol name="printAdd_OnInstructionSignatures" value="0x0116"/>
+      <IDSymbol name="printAdd_OnInstruction" value="0x0117"/>
+      <IDSymbol name="printDataType" value="0x0118"/>
+      <IDSymbol name="printCrossReference" value="0x0119"/>
+      <IDSymbol name="printControllerOrganizer" value="0x011A"/>
+      <IDSymbol name="printControllerProperties" value="0x011B"/>
+      <IDSymbol name="printTaskProperties" value="0x011C"/>
+      <IDSymbol name="printProgramProperties" value="0x011D"/>
+      <IDSymbol name="printEquipmentSequence" value="0x011E"/>
+      <IDSymbol name="printEntireProject" value="0x011F"/>
+
+      <IDSymbol name="printRoutine2" value="0x0C11"/>
+      <IDSymbol name="printRoutineProperties2" value="0x0C12"/>
+      <IDSymbol name="printTags2" value="0x0C13"/>
+      <IDSymbol name="printSequencingAndStepTags2" value="0x0C14"/>
+      <IDSymbol name="printModuleProperties2" value="0x0C15"/>
+      <IDSymbol name="printAdd_OnInstructionSignatures2" value="0x0C16"/>
+      <IDSymbol name="printAdd_OnInstruction2" value="0x0C17"/>
+      <IDSymbol name="printDataType2" value="0x0C18"/>
+      <IDSymbol name="printCrossReference2" value="0x0C19"/>
+      <IDSymbol name="printControllerOrganizer2" value="0x0C1A"/>
+      <IDSymbol name="printControllerProperties2" value="0x0C1B"/>
+      <IDSymbol name="printTaskProperties2" value="0x0C1C"/>
+      <IDSymbol name="printProgramProperties2" value="0x0C1D"/>
+      <IDSymbol name="printEquipmentSequence2" value="0x0C1E"/>
+      <IDSymbol name="printEntireProject2" value="0x0C1F"/>
+
+      <IDSymbol name="propertiesMenuGroup" value="0x0200" />
+      <IDSymbol name="propertiesCommand" value="0x0201" />
+      <IDSymbol name="controllerPropertiesCommand" value="0x0202" />
+
+      <IDSymbol name="clipboardMenuGroup" value="0x0300" />
+
+      <!--ContextMenu-->
+      <IDSymbol name="controllerContextMenu" value="0x1000" />
+      <IDSymbol name="group0" value="0x1100" />
+      <IDSymbol name="group1" value="0x1200" />
+      <IDSymbol name="group2" value="0x1300" />
+      <IDSymbol name="group3" value="0x1400" />
+      <IDSymbol name="group4" value="0x1500" />
+      <IDSymbol name="group5" value="0x1600" />
+      <IDSymbol name="group6" value="0x1700" />
+      <IDSymbol name="group7" value="0x1800" />
+      <IDSymbol name="group8" value="0x1900" />
+      <IDSymbol name="group9" value="0x1A00" />
+      <IDSymbol name="newAxisGroup" value="0x1B00" />
+      <IDSymbol name="taskAddGroup" value="0x1C00" />
+      <IDSymbol name="programAddGroup0" value="0x1D00" />
+      <IDSymbol name="programAddGroup1" value="0x1D10" />
+      <IDSymbol name="programAddGroup2" value="0x1D20" />
+
+
+      <!--Group0-->
+      <IDSymbol name="verifyControllerCommand" value="0x1101" />
+      <IDSymbol name="newTagCommand" value="0x1102" />
+      <IDSymbol name="newProgramCommand" value="0x1103" />
+      <IDSymbol name="newTaskCommand" value="0x1104" />
+      <IDSymbol name="newLocalTagCommand" value="0x1105" />
+      <IDSymbol name="newParameterCommand" value="0x1106" />
+      <IDSymbol name="newMotionGroupCommand" value="0x1107" />
+      <IDSymbol name="newAxisMenu" value="0x1108" />
+      <IDSymbol name="newCoordinateSystemCommand" value="0x1109" />
+      <IDSymbol name="newAddOnInstructionCommand" value="0x110A" />
+      <IDSymbol name="newDataTypeCommand" value="0x110B" />
+      <IDSymbol name="newStringTypeCommand" value="0x110C" />
+      <IDSymbol name="newTrendCommand" value="0x110D" />
+      <IDSymbol name="newModuleCommand" value="0x110E" />
+      <IDSymbol name="importProgramCommand" value="0x110F" />
+      <IDSymbol name="importAddOnInstructionCommand" value="0x1110" />
+      <IDSymbol name="importDataTypeCommand" value="0x1111" />
+      <IDSymbol name="importStringTypeCommand" value="0x1112" />
+      <IDSymbol name="importTrendCommand" value="0x1113" />
+      <IDSymbol name="taskAddMenu" value="0x1114" />
+      <IDSymbol name="programAddMenu" value="0x1115" />
+      <IDSymbol name="openCommand" value="0x1116" />
+      <IDSymbol name="openTrendLogCommand" value="0x1117" />
+      <IDSymbol name="discoverModulesCommand" value="0x1118" />
+      <IDSymbol name="gotoModuleCommand" value="0x1119" />
+      <IDSymbol name="importModuleCommand" value="0x111A" />
+      <IDSymbol name="openDefinitionCommand" value="0x111B" />
+
+      <!--Group1-->
+      <IDSymbol name="monitorGroupTagCommand" value="0x1201" />
+      <IDSymbol name="monitorAxisTagCommand" value="0x1202" />
+
+      <!--Group2-->
+      <IDSymbol name="faultHelpCommand" value="0x1301" />
+      <IDSymbol name="clearMotionGroupFaultsCommand" value="0x1302" />
+      <IDSymbol name="clearAxisFaultsCommand" value="0x1303" />
+
+      <!--Group3-->
+      <IDSymbol name="cutCommand" value="0x1401" />
+      <IDSymbol name="copyCommand" value="0x1402" />
+      <IDSymbol name="pasteCommand" value="0x1403" />
+      <IDSymbol name="pasteSpecialMenu" value="0x1404" />
+      <IDSymbol name="pasteWithConfigurationCommand" value="0x1405" />
+      <IDSymbol name="deleteCommand" value="0x1406" />
+
+      <!--Group4-->
+      <IDSymbol name="motionDirectCommandsCommand" value="0x1501" />
+      <IDSymbol name="manualTuneCommand" value="0x1502" />
+      <IDSymbol name="motionGeneratorCommand" value="0x1503" />
+      <IDSymbol name="monitorTagsCommand" value="0x1504" />
+      <IDSymbol name="editTagsCommand" value="0x1505" />
+      <IDSymbol name="verifyCommand" value="0x1506" />
+      <IDSymbol name="exportTagsCommand" value="0x1507" />
+      <IDSymbol name="crossReferenceCommand" value="0x1508" />
+
+      <!--Group5-->
+      <IDSymbol name="browseLogicCommand" value="0x1601" />
+      <IDSymbol name="findInLogicalOrganizerCommand" value="0x1602" />
+
+      <!--Group6-->
+      <IDSymbol name="onlineEditsCommand" value="0x1701" />
+
+      <!--Group7-->
+      <IDSymbol name="generateReportCommand" value="0x1801" />
+      <IDSymbol name="printMenu" value="0x1802" />
+
+      <!--Group8-->
+      <IDSymbol name="exportProgramCommand" value="0x1901" />
+      <IDSymbol name="exportRoutineCommand" value="0x1902" />
+      <IDSymbol name="exportModuleCommand" value="0x1903" />
+      <IDSymbol name="exportAddOnInstructionCommand" value="0x1904" />
+      <IDSymbol name="exportDataTypeCommand" value="0x1905" />
+      <IDSymbol name="exportStringTypeCommand" value="0x1906" />
+      <IDSymbol name="exportTrendCommand" value="0x1907" />
+
+      <!--Group9-->
+      <IDSymbol name="includeInTrackingGroupCommand" value="0x1A01" />
+
+      <!--NewAxisGroup-->
+      <IDSymbol name="AXIS_CIP_DRIVECommand" value="0x1B01" />
+      <IDSymbol name="AXIS_VIRTUALCommand" value="0x1B02" />
+
+      <!--TaskAddGroup-->
+      <IDSymbol name="taskNewProgramCommand" value="0x1C01" />
+      <IDSymbol name="newEquipmentPhaseCommand" value="0x1C02" />
+      <IDSymbol name="newEquipmentSequenceCommand" value="0x1C03" />
+      <IDSymbol name="taskImportProgramCommand" value="0x1C04" />
+      <IDSymbol name="importEquipmentPhaseCommand" value="0x1C05" />
+      <IDSymbol name="importEquipmentSequenceCommand" value="0x1C06" />
+
+      <!--ProgramAddGroup-->
+      <IDSymbol name="newRoutineCommand" value="0x1D01" />
+      <IDSymbol name="programNewLocalTagCommand" value="0x1D02" />
+      <IDSymbol name="programNewParameterCommand" value="0x1D03" />
+      <IDSymbol name="importRoutineCommand" value="0x1D04" />
+      <IDSymbol name="newPhaseStateCommand" value="0x1D05" />
+
+      <IDSymbol name="historyGroup" value="0x1CFF" />
+      <!-- NOTE: The following command expands at run time to some number of ids.
+     Try not to place command ids after it (e.g. 0x0105, 0x0106).
+     If you must add a command id after it, make the gap very large (e.g. 0x200) -->
+      <IDSymbol name="historyFileCommand" value="0x1E00" />
+
+      <IDSymbol name="Toolbar" value="0x2000" />
+      <IDSymbol name="ToolbarGroup" value="0x2050" />
+      <IDSymbol name="PrintGroup" value="0x2100" />
+      <IDSymbol name="PrintGroup2" value="0x2200" />
+      <IDSymbol name="newInToolbarCommand" value="0x2001" />
+      <IDSymbol name="openInToolbarCommand" value="0x2002" />
+      <IDSymbol name="saveInToolbarCommand" value="0x2003" />q
+      <IDSymbol name="printInToolbarCommand" value="0x2004" />
+      <IDSymbol name="cutInToolbarCommand" value="0x2005" />
+      <IDSymbol name="copyInToolbarCommand" value="0x2006" />
+      <IDSymbol name="pasteInToolbarCommand" value="0x2007" />
+
+      <!--editMenu-->
+      <IDSymbol name="editMenu" value="0x3000"/>
+
+      <!--viewMenu-->
+      <IDSymbol name="viewMenu" value="0x4000"/>
+
+      <!--PrintSubMenu-->
+      <IDSymbol name="PrintSubMenu" value="0x5000"/>
+
+      <!--PrintContextMenu-->
+      <IDSymbol name="PrintContextMenu" value="0x6000"/>
+    </GuidSymbol>
+
+    <GuidSymbol name="guidImages" value="{317cee9b-121d-4921-9051-22cc17805a96}">
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+    <GuidSymbol name="newImages" value="{1569EA15-D59B-C3F0-061B-55103F460FD1}">
+      <IDSymbol name="bmpPic1" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="openImages" value="{764E5A65-1C65-CEE6-520B-0BE5F73D003B}">
+      <IDSymbol name="bmpPic1" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="saveImages" value="{849B61BC-5A9E-5934-9035-98AFF89E02CD}">
+      <IDSymbol name="bmpPic1" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="printImages" value="{EC332E04-F789-E312-5D3B-2F0D6CBCB04F}">
+      <IDSymbol name="bmpPic1" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="cutImages" value="{8FC83780-7D97-3DE2-6D42-2711B28BDEA0}">
+      <IDSymbol name="bmpPic1" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="copyImages" value="{E0E9592A-0993-8EF6-A1D0-E0F2173CE958}">
+      <IDSymbol name="bmpPic1" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="pasteImages" value="{9C44D3F0-D2C4-F804-4F90-30BFB2394708}">
+      <IDSymbol name="bmpPic1" value="1" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>

@@ -1,0 +1,13 @@
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.UIControlTest.exe.config
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.UIControlTest.exe
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.UIControlTest.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.UIControlTest\obj\Debug\MainWindow.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.UIControlTest\obj\Debug\App.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.UIControlTest\obj\Debug\ICSStudio.UIControlTest_MarkupCompile.cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.UIControlTest\obj\Debug\ICSStudio.UIControlTest_MarkupCompile.lref
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.UIControlTest\obj\Debug\MainWindow.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.UIControlTest\obj\Debug\ICSStudio.UIControlTest.g.resources
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.UIControlTest\obj\Debug\ICSStudio.UIControlTest.Properties.Resources.resources
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.UIControlTest\obj\Debug\ICSStudio.UIControlTest.csproj.GenerateResource.Cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.UIControlTest\obj\Debug\ICSStudio.UIControlTest.exe
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.UIControlTest\obj\Debug\ICSStudio.UIControlTest.pdb

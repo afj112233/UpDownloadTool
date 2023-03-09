@@ -1,0 +1,955 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="31.00" TargetName="Sigang" TargetType="Controller" ContainsContext="false" ExportDate="Fri Apr 26 14:23:40 2019" ExportOptions="NoRawData L5KData DecoratedData ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Target" Name="Sigang" ProcessorType="1769-L27ERM-QBFC1B" MajorRev="31" MinorRev="11" TimeSlice="20" ShareUnusedTimeSlice="1" ProjectCreationDate="Sun Jul 15 10:56:34 2018" LastModifiedDate="Wed Apr 17 16:56:58 2019" SFCExecutionControl="CurrentActive" SFCRestartPosition="MostRecent"
+ SFCLastScan="DontScan" ProjectSN="16#c01e_1b90" MatchProjectToController="false" CanUseRPIFromProducer="false" InhibitAutomaticFirmwareUpdate="0" PassThroughConfiguration="EnabledWithAppend" DownloadProjectDocumentationAndExtendedProperties="true" DownloadProjectCustomProperties="true" ReportMinorOverflow="false">
+<RedundancyInfo Enabled="false" KeepTestEditsOnSwitchOver="false" IOMemoryPadPercentage="90" DataTablePadPercentage="50"/>
+<Security Code="0" ChangesToDetect="16#ffff_ffff_ffff_ffff"/>
+<SafetyInfo/>
+<DataTypes/>
+<Modules>
+<Module Name="Local" CatalogNumber="1769-L27ERM-QBFC1B" Vendor="1" ProductType="14" ProductCode="151" Major="31" Minor="11" ParentModule="Local" ParentModPortId="1" Inhibited="false" MajorFault="true"
+>
+<EKey State="Disabled"/>
+<Ports>
+<Port Id="1" Address="0" Type="Compact" Upstream="false">
+<Bus Size="8"/>
+</Port>
+<Port Id="2" Type="Ethernet" Upstream="false">
+<Bus/>
+</Port>
+</Ports>
+</Module>
+<Module Name="Discrete_IO" CatalogNumber="Embedded" Vendor="1" ProductType="7" ProductCode="64" Major="3" Minor="1" ParentModule="Local" ParentModPortId="1" Inhibited="true" MajorFault="true"
+>
+<EKey State="CompatibleModule"/>
+<Ports>
+<Port Id="1" Address="1" Type="Compact" Upstream="true"/>
+</Ports>
+<Communications>
+<ConfigTag ConfigSize="20" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[24,102,1,0,0,0,0,0,0,0,0,0]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="AB:Embedded_DiscreteIO1:C:0">
+<DataValueMember Name="Filter0OffOn_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Filter0OffOn_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Filter0OffOn_2" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Filter0OffOn_3" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Filter0OnOff_4" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Filter0OnOff_5" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Filter0OnOff_6" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Filter0OnOff_7" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Filter1OffOn_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Filter1OffOn_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Filter1OffOn_2" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Filter1OffOn_3" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Filter1OnOff_4" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Filter1OnOff_5" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Filter1OnOff_6" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Filter1OnOff_7" DataType="BOOL" Value="0"/>
+</Structure>
+</Data>
+</ConfigTag>
+<Connections>
+<Connection Name="Output" RPI="20000" Type="Output" EventID="0" ProgrammaticallySendEventTrigger="false">
+<InputTag ExternalAccess="Read/Write">
+<Data Format="Decorated">
+<Structure DataType="AB:Embedded_DiscreteIO1:I:0">
+<DataValueMember Name="Fault" DataType="DINT" Radix="Binary" Value="2#1111_1111_1111_1111_1111_1111_1111_1111"/>
+<DataValueMember Name="Data" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="Readback" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+</Structure>
+</Data>
+</InputTag>
+<OutputTag ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[0]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="AB:Embedded_DiscreteIO1:O:0">
+<DataValueMember Name="Data" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+</Structure>
+</Data>
+</OutputTag>
+</Connection>
+</Connections>
+</Communications>
+<ExtendedProperties>
+<public><ConfigID>100</ConfigID><CatNum>Embedded</CatNum></public>
+</ExtendedProperties>
+</Module>
+<Module Name="Analog_IO" CatalogNumber="Embedded" Vendor="1" ProductType="10" ProductCode="164" Major="1" Minor="1" ParentModule="Local" ParentModPortId="1" Inhibited="true" MajorFault="true"
+>
+<EKey State="CompatibleModule"/>
+<Ports>
+<Port Id="1" Address="2" Type="Compact" Upstream="true"/>
+</Ports>
+<Communications>
+<ConfigTag ConfigSize="90" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[94,102,1,0,0,16,0,0,2,0,0,0,16,0,0,2,0,0,0,16,0,0,2,0,0,0,16,0,0,2,0,0,0,0,0,0,0,0,0,32764,32764,-32764,0,0,0,0,0,0,32764,32764,-32764
+					,0]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="AB:Embedded_AnalogIO1:C:0">
+<DataValueMember Name="RealTimeSample" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="TimestampEn" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch0InputFilter_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch0InputFilter_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch0InputFilter_2" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch0InputFilter_3" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch0DisableCJCompensation" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Ch0OpenWire_5" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch0OpenWire_6" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch0OpenWireEn" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch0AlarmLatchEn" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch0AlarmEn" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch0InputEn" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch0InputRange" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ch0InputDataFormat_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch0InputDataFormat_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch0InputDataFormat_2" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch0TempUnits" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch0RTD_ResistanceMeasType_6" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch0RTD_ResistanceMeasType_7" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch0HAlarmLimit" DataType="INT" Radix="Decimal" Value="2"/>
+<DataValueMember Name="Ch0LAlarmLimit" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ch0AlarmDeadband" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ch1InputFilter_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch1InputFilter_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch1InputFilter_2" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch1InputFilter_3" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch1DisableCJCompensation" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Ch1OpenWire_5" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch1OpenWire_6" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch1OpenWireEn" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch1AlarmLatchEn" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch1AlarmEn" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch1InputEn" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch1InputRange" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ch1InputDataFormat_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch1InputDataFormat_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch1InputDataFormat_2" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch1TempUnits" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch1HAlarmLimit" DataType="INT" Radix="Decimal" Value="2"/>
+<DataValueMember Name="Ch1LAlarmLimit" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ch1AlarmDeadband" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ch2InputFilter_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch2InputFilter_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch2InputFilter_2" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch2InputFilter_3" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch2DisableCJCompensation" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Ch2OpenWire_5" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch2OpenWire_6" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch2OpenWireEn" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch2AlarmLatchEn" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch2AlarmEn" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch2InputEn" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch2InputRange" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ch2InputDataFormat_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch2InputDataFormat_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch2InputDataFormat_2" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch2TempUnits" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch2RTD_ResistanceMeasType_6" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch2RTD_ResistanceMeasType_7" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch2HAlarmLimit" DataType="INT" Radix="Decimal" Value="2"/>
+<DataValueMember Name="Ch2LAlarmLimit" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ch2AlarmDeadband" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ch3InputFilter_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch3InputFilter_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch3InputFilter_2" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch3InputFilter_3" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch3DisableCJCompensation" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Ch3OpenWire_5" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch3OpenWire_6" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch3OpenWireEn" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch3AlarmLatchEn" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch3AlarmEn" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch3InputEn" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch3InputRange" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ch3InputDataFormat_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch3InputDataFormat_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch3InputDataFormat_2" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch3TempUnits" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch3HAlarmLimit" DataType="INT" Radix="Decimal" Value="2"/>
+<DataValueMember Name="Ch3LAlarmLimit" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ch3AlarmDeadband" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="CJTempUnits" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CJWeightedProfile" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CyclicCalibrationEn" DataType="BOOL" Value="0"/>
+<DataValueMember Name="UpdateCJCompensationEn" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch0LimitAlarmLatchEn" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch0OutputEn" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch0OutputRangeType" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ch0OutputDataFormat" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ch0HClampValue" DataType="INT" Radix="Decimal" Value="32764"/>
+<DataValueMember Name="Ch0LClampValue" DataType="INT" Radix="Decimal" Value="-32764"/>
+<DataValueMember Name="Ch1LimitAlarmLatchEn" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch1OutputEn" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch1OutputRangeType" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ch1OutputDataFormat" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ch1HClampValue" DataType="INT" Radix="Decimal" Value="32764"/>
+<DataValueMember Name="Ch1LClampValue" DataType="INT" Radix="Decimal" Value="-32764"/>
+</Structure>
+</Data>
+</ConfigTag>
+<Connections>
+<Connection Name="Output" RPI="80000" Type="Output" EventID="0" ProgrammaticallySendEventTrigger="false">
+<InputTag ExternalAccess="Read/Write">
+<Data Format="Decorated">
+<Structure DataType="AB:Embedded_AnalogIO1:I:0">
+<DataValueMember Name="Fault" DataType="DINT" Radix="Binary" Value="2#1111_1111_1111_1111_1111_1111_1111_1111"/>
+<DataValueMember Name="Ch0Data" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="Ch1Data" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="Ch2Data" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="Ch3Data" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="RealTimeSample" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="Ch0InputError" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch1InputError" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch2InputError" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch3InputError" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CJCError" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch0InputOpenWire" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch1InputOpenWire" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch2InputOpenWire" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch3InputOpenWire" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CJCOpenWire" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CJCOverrange" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CJCUnderrange" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch0InputOverrange" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch0InputUnderrange" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch0HAlarm" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch0LAlarm" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch1InputOverrange" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch1InputUnderrange" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch1HAlarm" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch1LAlarm" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch2InputOverrange" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch2InputUnderrange" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch2HAlarm" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch2LAlarm" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch3InputOverrange" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch3InputUnderrange" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch3HAlarm" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch3LAlarm" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CJData" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="Ch0Readback" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="Ch1Readback" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="Ch0OutputFault" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch1OutputFault" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch0OutputOverrange" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch0OutputUnderrange" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch1OutputOverrange" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch1OutputUnderrange" DataType="BOOL" Value="0"/>
+</Structure>
+</Data>
+</InputTag>
+<OutputTag ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[0,0,0,0]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="AB:Embedded_AnalogIO1:O:0">
+<DataValueMember Name="Ch0Data" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ch1Data" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ch0HAlarmUnlatch" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch0LAlarmUnlatch" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch1HAlarmUnlatch" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch1LAlarmUnlatch" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch2HAlarmUnlatch" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch2LAlarmUnlatch" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch3HAlarmUnlatch" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch3LAlarmUnlatch" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch0HLimitUnlatch" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch0LLimitUnlatch" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch1HLimitUnlatch" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ch1LLimitUnlatch" DataType="BOOL" Value="0"/>
+</Structure>
+</Data>
+</OutputTag>
+</Connection>
+</Connections>
+</Communications>
+<ExtendedProperties>
+<public><ConfigID>101</ConfigID><CatNum>Embedded</CatNum></public>
+</ExtendedProperties>
+</Module>
+<Module Name="Counters" CatalogNumber="Embedded" Vendor="1" ProductType="109" ProductCode="71" Major="1" Minor="1" ParentModule="Local" ParentModPortId="1" Inhibited="true" MajorFault="true"
+>
+<EKey State="CompatibleModule"/>
+<Ports>
+<Port Id="1" Address="3" Type="Compact" Upstream="true"/>
+</Ports>
+<Communications>
+<ConfigTag ConfigSize="240" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[244,102,1,256,0,0,0,0,0,2147483647,-2147483648,0,0,1,10,0,0,2147483647,-2147483648,0,0,1,10,0,0,0,0,0,0,0,0,0,0,0,0
+					,0,0,0,0,[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="AB:Embedded_HSC1:C:0">
+<DataValueMember Name="Config0" DataType="INT" Radix="Binary" Value="2#0000_0001_0000_0000"/>
+<DataValueMember Name="OverCurrentLatchOff" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CtrReset" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ProgToFaultEn" DataType="BOOL" Value="0"/>
+<DataValueMember Name="NumberOfCounters_0" DataType="BOOL" Value="1"/>
+<DataValueMember Name="NumberOfCounters_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr0ResetEn" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr1ResetEn" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr2ResetEn" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr3ResetEn" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Filter" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="FilterA0_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FilterA0_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FilterB0_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FilterB0_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FilterZ0_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FilterZ0_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FilterA1_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FilterA1_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FilterB1_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FilterB1_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FilterZ1_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FilterZ1_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr0MaxCount" DataType="DINT" Radix="Decimal" Value="2147483647"/>
+<DataValueMember Name="Ctr0MinCount" DataType="DINT" Radix="Decimal" Value="-2147483648"/>
+<DataValueMember Name="Ctr0Preset" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ctr0Hysteresis" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ctr0Scaler" DataType="INT" Radix="Decimal" Value="1"/>
+<DataValueMember Name="Ctr0CyclicRateUpdateTime" DataType="INT" Radix="Decimal" Value="10"/>
+<DataValueMember Name="Ctr0Config" DataType="SINT" Radix="Binary" Value="2#0000_0000"/>
+<DataValueMember Name="Ctr0OperationMode_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr0OperationMode_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr0OperationMode_2" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr0StoreOnRisingZ" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr0HoldOnZ" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr0PresetOnRisingZ" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr0Linear" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr1MaxCount" DataType="DINT" Radix="Decimal" Value="2147483647"/>
+<DataValueMember Name="Ctr1MinCount" DataType="DINT" Radix="Decimal" Value="-2147483648"/>
+<DataValueMember Name="Ctr1Preset" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ctr1Hysteresis" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ctr1Scaler" DataType="INT" Radix="Decimal" Value="1"/>
+<DataValueMember Name="Ctr1CyclicRateUpdateTime" DataType="INT" Radix="Decimal" Value="10"/>
+<DataValueMember Name="Ctr1Config" DataType="SINT" Radix="Binary" Value="2#0000_0000"/>
+<DataValueMember Name="Ctr1OperationMode_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr1OperationMode_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr1OperationMode_2" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr1StoreOnRisingZ" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr1HoldOnZ" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr1PresetOnRisingZ" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr1Linear" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr2MaxCount" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ctr2MinCount" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ctr2Preset" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ctr2Hysteresis" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ctr2Scaler" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ctr2CyclicRateUpdateTime" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ctr2Linear" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr3MaxCount" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ctr3MinCount" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ctr3Preset" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ctr3Hysteresis" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ctr3Scaler" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ctr3CyclicRateUpdateTime" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ctr3Linear" DataType="BOOL" Value="0"/>
+<ArrayMember Name="Range0To11" DataType="AB:1769_HSC1_Range:C:0" Dimensions="12">
+<Element Index="[0]">
+<Structure DataType="AB:1769_HSC1_Range:C:0">
+<DataValueMember Name="HighLimit" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="LowLimit" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="OutputControl" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="RangeConfig" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="ToThisCounter_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ToThisCounter_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Type" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Invert" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[1]">
+<Structure DataType="AB:1769_HSC1_Range:C:0">
+<DataValueMember Name="HighLimit" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="LowLimit" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="OutputControl" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="RangeConfig" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="ToThisCounter_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ToThisCounter_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Type" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Invert" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[2]">
+<Structure DataType="AB:1769_HSC1_Range:C:0">
+<DataValueMember Name="HighLimit" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="LowLimit" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="OutputControl" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="RangeConfig" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="ToThisCounter_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ToThisCounter_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Type" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Invert" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[3]">
+<Structure DataType="AB:1769_HSC1_Range:C:0">
+<DataValueMember Name="HighLimit" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="LowLimit" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="OutputControl" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="RangeConfig" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="ToThisCounter_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ToThisCounter_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Type" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Invert" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[4]">
+<Structure DataType="AB:1769_HSC1_Range:C:0">
+<DataValueMember Name="HighLimit" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="LowLimit" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="OutputControl" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="RangeConfig" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="ToThisCounter_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ToThisCounter_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Type" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Invert" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[5]">
+<Structure DataType="AB:1769_HSC1_Range:C:0">
+<DataValueMember Name="HighLimit" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="LowLimit" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="OutputControl" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="RangeConfig" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="ToThisCounter_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ToThisCounter_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Type" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Invert" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[6]">
+<Structure DataType="AB:1769_HSC1_Range:C:0">
+<DataValueMember Name="HighLimit" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="LowLimit" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="OutputControl" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="RangeConfig" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="ToThisCounter_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ToThisCounter_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Type" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Invert" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[7]">
+<Structure DataType="AB:1769_HSC1_Range:C:0">
+<DataValueMember Name="HighLimit" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="LowLimit" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="OutputControl" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="RangeConfig" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="ToThisCounter_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ToThisCounter_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Type" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Invert" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[8]">
+<Structure DataType="AB:1769_HSC1_Range:C:0">
+<DataValueMember Name="HighLimit" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="LowLimit" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="OutputControl" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="RangeConfig" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="ToThisCounter_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ToThisCounter_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Type" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Invert" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[9]">
+<Structure DataType="AB:1769_HSC1_Range:C:0">
+<DataValueMember Name="HighLimit" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="LowLimit" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="OutputControl" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="RangeConfig" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="ToThisCounter_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ToThisCounter_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Type" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Invert" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[10]">
+<Structure DataType="AB:1769_HSC1_Range:C:0">
+<DataValueMember Name="HighLimit" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="LowLimit" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="OutputControl" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="RangeConfig" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="ToThisCounter_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ToThisCounter_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Type" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Invert" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[11]">
+<Structure DataType="AB:1769_HSC1_Range:C:0">
+<DataValueMember Name="HighLimit" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="LowLimit" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="OutputControl" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="RangeConfig" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="ToThisCounter_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ToThisCounter_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Type" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Invert" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+</ArrayMember>
+</Structure>
+</Data>
+</ConfigTag>
+<Connections>
+<Connection Name="Output" RPI="20000" Type="Output" EventID="0" ProgrammaticallySendEventTrigger="false">
+<InputTag ExternalAccess="Read/Write">
+<Data Format="Decorated">
+<Structure DataType="AB:Embedded_HSC1:I:0">
+<DataValueMember Name="Fault" DataType="DINT" Radix="Binary" Value="2#1111_1111_1111_1111_1111_1111_1111_1111"/>
+<DataValueMember Name="InputState" DataType="SINT" Radix="Binary" Value="2#0000_0000"/>
+<DataValueMember Name="InputStateA0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="InputStateB0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="InputStateZ0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="InputStateA1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="InputStateB1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="InputStateZ1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Readback" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="Status" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="Out0OverCurrent" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Out1OverCurrent" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Out2OverCurrent" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Out3OverCurrent" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ModConfig" DataType="BOOL" Value="0"/>
+<DataValueMember Name="InvalidOutput" DataType="BOOL" Value="0"/>
+<DataValueMember Name="GenError" DataType="BOOL" Value="0"/>
+<DataValueMember Name="InvalidCtrAssignToRange12" DataType="BOOL" Value="0"/>
+<DataValueMember Name="InvalidCtrAssignToRange13" DataType="BOOL" Value="0"/>
+<DataValueMember Name="InvalidCtrAssignToRange14" DataType="BOOL" Value="0"/>
+<DataValueMember Name="InvalidCtrAssignToRange15" DataType="BOOL" Value="0"/>
+<DataValueMember Name="InvalidRangeLimit12" DataType="BOOL" Value="0"/>
+<DataValueMember Name="InvalidRangeLimit13" DataType="BOOL" Value="0"/>
+<DataValueMember Name="InvalidRangeLimit14" DataType="BOOL" Value="0"/>
+<DataValueMember Name="InvalidRangeLimit15" DataType="BOOL" Value="0"/>
+<DataValueMember Name="RangeActive" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="Ctr0CurrentCount" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ctr0StoredCount" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ctr0CurrentRate" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ctr0PulseInterval" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ctr0Status" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="Ctr0Overflow" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr0Underflow" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr0RisingEdgeZ" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr0InvalidDirectWrite" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr0RateValid" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr0PresetWarning" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr1CurrentCount" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ctr1StoredCount" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ctr1CurrentRate" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ctr1PulseInterval" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ctr1Status" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="Ctr1Overflow" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr1Underflow" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr1RisingEdgeZ" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr1InvalidDirectWrite" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr1InvalidCounter" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr1RateValid" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr1PresetWarning" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr2CurrentCount" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ctr2CurrentRate" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ctr2Status" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="Ctr2Overflow" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr2Underflow" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr2InvalidDirectWrite" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr2InvalidCounter" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr2RateValid" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr2PresetWarning" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr3CurrentCount" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ctr3CurrentRate" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Ctr3Status" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="Ctr3Overflow" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr3Underflow" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr3InvalidDirectWrite" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr3InvalidCounter" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr3RateValid" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr3PresetWarning" DataType="BOOL" Value="0"/>
+</Structure>
+</Data>
+</InputTag>
+<OutputTag ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[0,0,0,0,0,0,0,0,0,0,[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="AB:Embedded_HSC1:O:0">
+<DataValueMember Name="OutputOnMask" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="OutputOffMask" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="RangeEn" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="ResetBlownFuse" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr0" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="Ctr0En" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr0SoftPreset" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr0ResetCountOverflow" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr0ResetCountUnderflow" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr0DirectionInvert" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr0DirectionInhibit" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr0ZInvert" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr0ZInhibit" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr0ResetRisingEdgeZ" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr0ResetCtrPresetWarning" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr1" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="Ctr1En" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr1SoftPreset" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr1ResetCountOverflow" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr1ResetCountUnderflow" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr1DirectionInvert" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr1DirectionInhibit" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr1ZInvert" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr1ZInhibit" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr1ResetRisingEdgeZ" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr1ResetCtrPresetWarning" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr2" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="Ctr2En" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr2SoftPreset" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr2ResetCountOverflow" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr2ResetCountUnderflow" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr2DirectionInvert" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr2ResetCtrPresetWarning" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr3" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="Ctr3En" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr3SoftPreset" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr3ResetCountOverflow" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr3ResetCountUnderflow" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr3DirectionInvert" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Ctr3ResetCtrPresetWarning" DataType="BOOL" Value="0"/>
+<ArrayMember Name="Range12To15" DataType="AB:Embedded_HSC1_STRUCT_OUT1:O:0" Dimensions="4">
+<Element Index="[0]">
+<Structure DataType="AB:Embedded_HSC1_STRUCT_OUT1:O:0">
+<DataValueMember Name="HiLimOrDirWr" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="LowLimit" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="OutputControl" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="Config" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="ToThisCounter_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ToThisCounter_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="LoadDirectWrite" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Invert" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[1]">
+<Structure DataType="AB:Embedded_HSC1_STRUCT_OUT1:O:0">
+<DataValueMember Name="HiLimOrDirWr" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="LowLimit" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="OutputControl" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="Config" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="ToThisCounter_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ToThisCounter_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="LoadDirectWrite" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Invert" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[2]">
+<Structure DataType="AB:Embedded_HSC1_STRUCT_OUT1:O:0">
+<DataValueMember Name="HiLimOrDirWr" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="LowLimit" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="OutputControl" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="Config" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="ToThisCounter_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ToThisCounter_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="LoadDirectWrite" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Invert" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[3]">
+<Structure DataType="AB:Embedded_HSC1_STRUCT_OUT1:O:0">
+<DataValueMember Name="HiLimOrDirWr" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="LowLimit" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="OutputControl" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="Config" DataType="INT" Radix="Binary" Value="2#0000_0000_0000_0000"/>
+<DataValueMember Name="ToThisCounter_0" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ToThisCounter_1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="LoadDirectWrite" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Invert" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+</ArrayMember>
+</Structure>
+</Data>
+</OutputTag>
+</Connection>
+</Connections>
+</Communications>
+<ExtendedProperties>
+<public><ConfigID>102</ConfigID><CatNum>Embedded</CatNum></public>
+</ExtendedProperties>
+</Module>
+<Module Name="k5500" CatalogNumber="2198-H003-ERS" Vendor="1" ProductType="37" ProductCode="46" Major="7" Minor="1" ParentModule="Local" ParentModPortId="2" Inhibited="false" MajorFault="false"
+>
+<EKey State="CompatibleModule"/>
+<Ports>
+<Port Id="2" Address="192.168.1.120" Type="Ethernet" Upstream="true"/>
+</Ports>
+<Communications>
+<ConfigData ConfigSize="376">
+<Data Format="L5K">
+<![CDATA[[380,3,257,46,430572775,0,2565904,131588,1,0,0,0,0,0,0,0,0,-1027080192,0,0,0,0,0,0,0,524296000,524296000,524296000
+					,524296000,0,0,1,0,16777216,230,-65536,1045220557,0,0,0,0,1120403456,1120403456,0,1120403456,1124859904
+					,0,0,1120403456,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,1,0,8192000,8192125,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]]>
+</Data>
+</ConfigData>
+<Connections>
+<Connection Name="MotionDiagnostics" RPI="1000" Type="DiagnosticInput" EventID="0" ProgrammaticallySendEventTrigger="false">
+<InputTag ExternalAccess="Read/Write">
+<Data Format="Decorated">
+<Structure DataType="AB:Motion_Diagnostics:S:1">
+<DataValueMember Name="LostControllerToDriveTransmissions" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="LateControllerToDriveTransmissions" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="LostDriveToControllerTransmissions" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="LateDriveToControllerTransmissions" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="LastControllerToDriveTime" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="AverageControllerToDriveTime" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="MaximumControllerToDriveTime" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="LastDriveToControllerTime" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="AverageDriveToControllerTime" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="MaximumDriveToControllerTime" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="LastSystemClockJitter" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="AverageSystemClockJitter" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="MaximumSystemClockJitter" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="TimingStatisticsEnabled" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ControllerToDriveConnectionSize" DataType="INT" Radix="Decimal" Value="44"/>
+<DataValueMember Name="DriveToControllerConnectionSize" DataType="INT" Radix="Decimal" Value="36"/>
+<DataValueMember Name="NominalControllerToDriveTime" DataType="INT" Radix="Decimal" Value="666"/>
+<DataValueMember Name="NominalDriveToControllerTime" DataType="INT" Radix="Decimal" Value="666"/>
+<DataValueMember Name="CoarseUpdatePeriod" DataType="INT" Radix="Decimal" Value="2000"/>
+</Structure>
+</Data>
+</InputTag>
+</Connection>
+<Connection Name="MotionSync" RPI="2000" Type="MotionSync" EventID="0" ProgrammaticallySendEventTrigger="false"/>
+</Connections>
+</Communications>
+<ExtendedProperties>
+<public><Vendor>Allen-Bradley</Vendor><CatNum>2198-H003-ERS</CatNum><FeedbackDevice1>1</FeedbackDevice1><ConfigID>102</ConfigID></public>
+</ExtendedProperties>
+</Module>
+</Modules>
+<AddOnInstructionDefinitions/>
+<Tags>
+<Tag Name="Axis1" TagType="Base" DataType="AXIS_CIP_DRIVE" ExternalAccess="Read/Write">
+<Data Format="Axis">
+<AxisParameters MotionGroup="MG" MotionModule="k5500:Ch1" AxisConfiguration="Position Loop" FeedbackConfiguration="Motor Feedback" MotorDataSource="Nameplate Datasheet" MotorCatalogNumber="&lt;none>" Feedback1Type="Hiperface DSL" MotorType="Rotary Permanent Magnet" MotionScalingConfiguration="Control Scaling" ConversionConstant="10000.0" OutputCamExecutionTargets="0"
+ PositionUnits="mm" AverageVelocityTimebase="0.25" PositionUnwind="1000000" HomeMode="Active" HomeDirection="Bi-directional Forward" HomeSequence="Immediate" HomeConfigurationBits="16#0000_0000" HomePosition="0.0" HomeOffset="0.0" HomeSpeed="0.0" HomeReturnSpeed="0.0"
+ MaximumSpeed="991.6667" MaximumAcceleration="68811.1" MaximumDeceleration="68811.1" ProgrammedStopMode="Fast Stop" MasterInputConfigurationBits="1" MasterPositionFilterBandwidth="0.1" VelocityFeedforwardGain="100.0" AccelerationFeedforwardGain="0.0" PositionErrorTolerance="20.050575" PositionLockTolerance="0.099999994" VelocityOffset="0.0"
+ TorqueOffset="0.0" FrictionCompensationWindow="0.0" BacklashReversalOffset="0.0" TuningTravelLimit="0.0" TuningSpeed="0.0" TuningTorque="100.0" DampingFactor="1.0" DriveModelTimeConstant="0.000537069" PositionServoBandwidth="18.52124" VelocityServoBandwidth="74.08496" VelocityDroop="0.0"
+ VelocityLimitPositive="1500.0" VelocityLimitNegative="-1500.0" VelocityThreshold="1049.9999" VelocityStandstillWindow="11.666666" TorqueLimitPositive="103.734436" TorqueLimitNegative="-103.734436" TorqueThreshold="93.36099" StoppingTorque="103.734436" StoppingTimeLimit="1.0" LoadInertiaRatio="0.0" RegistrationInputs="2"
+ MaximumAccelerationJerk="4774757.0" MaximumDecelerationJerk="4774757.0" DynamicsConfigurationBits="7" AccelerationLimit="196603.16" DecelerationLimit="196603.16" PositionIntegratorBandwidth="0.0" PositionErrorToleranceTime="0.0" PositionIntegratorControl="0" VelocityErrorTolerance="422.35785" VelocityErrorToleranceTime="0.01" VelocityIntegratorControl="0"
+ VelocityLockTolerance="11.666666" SystemInertia="0.010552673" TorqueLowPassFilterBandwidth="370.4248" TorqueNotchFilterFrequency="0.0" TorqueRateLimit="1000000.0" OvertorqueLimit="200.0" OvertorqueLimitTime="0.0" UndertorqueLimit="10.0" UndertorqueLimitTime="0.0" FluxCurrentReference="0.0" CurrentError="0.0"
+ TorqueLoopBandwidth="1000.0" StoppingAction="Current Decel Disable" MechanicalBrakeControl="Automatic" MechanicalBrakeReleaseDelay="0.0" MechanicalBrakeEngageDelay="0.0" InverterCapacity="0.0" ConverterCapacity="0.0" InverterOverloadAction="None" MotorOverloadAction="None" CIPAxisExceptionAction="Unsupported Unsupported Unsupported StopDrive StopDrive StopDrive Unsupported StopDrive StopDrive StopDrive StopDrive StopDrive Unsupported StopDrive StopDrive StopDrive StopDrive Unsupported StopDrive Unsupported StopDrive StopDrive Unsupported StopDrive Unsupported StopDrive Unsupported Unsupported Unsupported StopDrive StopDrive StopDrive Unsupported StopDrive StopDrive StopDrive Unsupported Unsupported Unsupported StopDrive StopDrive Unsupported Unsupported Unsupported Unsupported StopDrive Unsupported StopDrive Unsupported StopDrive StopDrive StopDrive Unsupported Unsupported StopDrive StopDrive StopDrive StopDrive Unsupported Unsupported Unsupported Unsupported StopDrive Unsupported" CIPAxisExceptionActionRA="Unsupported Unsupported StopDrive Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported StopDrive Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported StopDrive StopDrive Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported"
+ MotorOverspeedUserLimit="120.0" MotorThermalOverloadUserLimit="110.0" InverterThermalOverloadUserLimit="110.0" PositionLeadLagFilterBandwidth="0.0" PositionLeadLagFilterGain="0.0" VelocityNegativeFeedforwardGain="0.0" BacklashCompensationWindow="0.0" TorqueLeadLagFilterBandwidth="0.0" TorqueLeadLagFilterGain="1.0" MotorDeviceCode="16#0000_0000" MotorUnit="Rev"
+ MotorPolarity="Normal" MotorRatedVoltage="230.0" MotorRatedContinuousCurrent="2.41" MotorRatedPeakCurrent="8.9" MotorRatedOutputPower="0.63" MotorOverloadLimit="100.0" MotorIntegralThermalSwitch="false" MotorMaxWindingTemperature="0.0" MotorWindingToAmbientCapacitance="0.0" MotorWindingToAmbientResistance="0.0" PMMotorResistance="5.11"
+ PMMotorInductance="0.0099" RotaryMotorPoles="8" RotaryMotorInertia="0.000017" RotaryMotorRatedSpeed="7000.0" RotaryMotorMaxSpeed="7300.0" PMMotorRatedTorque="0.85" PMMotorTorqueConstant="0.42" PMMotorRotaryVoltageConstant="26.0" Feedback1Unit="Rev" Feedback1StartupMethod="Absolute" Feedback1CycleResolution="262144"
+ Feedback1CycleInterpolation="1" Feedback1Turns="4096" Feedback1VelocityFilterBandwidth="5092.9575" Feedback1AccelFilterBandwidth="0.0" PMMotorFluxSaturation="100.0 100.0 100.0 100.0 100.0 100.0 100.0 100.0" Feedback1VelocityFilterTaps="1" Feedback1AccelFilterTaps="1" ScalingSource="From Calculator" LoadType="Linear Actuator" ActuatorType="Screw" TravelMode="Limited"
+ PositionScalingNumerator="1.0" PositionScalingDenominator="1.0" PositionUnwindNumerator="1.0" PositionUnwindDenominator="1.0" TravelRange="80.0" MotionResolution="10000" MotionPolarity="Normal" MotorTestResistance="0.0" MotorTestInductance="0.0" TuneFriction="0.0" TuneLoadOffset="0.0"
+ TotalInertia="0.000017" TuningSelect="Total Inertia" TuningDirection="Uni-directional Forward" ApplicationType="Basic" LoopResponse="Medium" FeedbackCommutationAligned="Motor Offset" FrictionCompensationSliding="0.0" FrictionCompensationStatic="0.0" FrictionCompensationViscous="0.0" PositionLoopBandwidth="18.52124" VelocityLoopBandwidth="74.08496"
+ VelocityIntegratorBandwidth="0.0" FeedbackDataLossUserLimit="4" MotionExceptionAction="Unsupported StopDrive StopDrive Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported" SoftTravelLimitChecking="false" LoadRatio="0.0" TuneInertiaMass="0.0" SoftTravelLimitPositive="0.0" SoftTravelLimitNegative="0.0" GainTuningConfigurationBits="16#0143" CommutationOffset="0.0" SystemBandwidth="0.0"
+ VelocityLowPassFilterBandwidth="0.0" TransmissionRatioInput="1" TransmissionRatioOutput="10" ActuatorLead="1.0" ActuatorLeadUnit="Millimeter/Rev" ActuatorDiameter="1.0" ActuatorDiameterUnit="Millimeter" SystemAccelerationBase="9476.272" DriveModelTimeConstantBase="0.000505819" DriveRatedPeakCurrent="2.5" HookupTestDistance="1.0"
+ HookupTestFeedbackChannel="Feedback 1" LoadCoupling="Rigid" SystemDamping="1.0" CurrentVectorLimit="103.734436" LoadObserverConfiguration="Disabled" LoadObserverBandwidth="0.0" LoadObserverIntegratorBandwidth="0.0" LoadObserverFeedbackGain="0.5" AxisID="1259490340" InterpolatedPositionConfiguration="16#0000_0002" AxisUpdateSchedule="Base"
+ ProvingConfiguration="Disabled" TorqueProveCurrent="0.0" BrakeTestTorque="0.0" BrakeSlipTolerance="0.0" ZeroSpeed="1.0" ZeroSpeedTime="0.0" AdaptiveTuningConfiguration="Disabled" TorqueNotchFilterHighFrequencyLimit="2000.0" TorqueNotchFilterLowFrequencyLimit="296.33984" TorqueNotchFilterTuningThreshold="5.0" CoastingTimeLimit="0.0"
+ BusOvervoltageOperationalLimit="730.0"/>
+</Data>
+</Tag>
+<Tag Name="MG" TagType="Base" DataType="MOTION_GROUP" ExternalAccess="Read/Write">
+<Data Format="MotionGroup">
+<MotionGroupParameters GroupType="Warning Enabled" CoarseUpdatePeriod="2000" PhaseShift="0" GeneralFaultType="Non Major Fault" AutoTagUpdate="Enabled" Alternate1UpdateMultiplier="1" Alternate2UpdateMultiplier="1"/>
+</Data>
+</Tag>
+</Tags>
+<Programs>
+<Program Name="MainProgram" TestEdits="false" MainRoutineName="MainRoutine" Disabled="false" UseAsFolder="false">
+<Tags>
+<Tag Name="auto" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[1]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="1"/>
+</Data>
+</Tag>
+<Tag Name="MAM_left" TagType="Base" DataType="MOTION_INSTRUCTION" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[704643072,0,0,0,0,0,0,0,0]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="MOTION_INSTRUCTION">
+<DataValueMember Name="FLAGS" DataType="DINT" Radix="Decimal" Value="704643072"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="1"/>
+<DataValueMember Name="ER" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PC" DataType="BOOL" Value="1"/>
+<DataValueMember Name="IP" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AC" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACCEL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DECEL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TrackingMaster" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CalculatedDataAvailable" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ERR" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="STATUS" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="STATE" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="SEGMENT" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EXERR" DataType="SINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="MAM_Right" TagType="Base" DataType="MOTION_INSTRUCTION" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[33554432,0,0,0,0,0,0,0,0]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="MOTION_INSTRUCTION">
+<DataValueMember Name="FLAGS" DataType="DINT" Radix="Decimal" Value="33554432"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ER" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PC" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IP" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AC" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACCEL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DECEL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TrackingMaster" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CalculatedDataAvailable" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ERR" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="STATUS" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="STATE" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="SEGMENT" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EXERR" DataType="SINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="MSF_OFF" TagType="Base" DataType="MOTION_INSTRUCTION" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[-1577058304,0,2,1,0,0,0,0,0]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="MOTION_INSTRUCTION">
+<DataValueMember Name="FLAGS" DataType="DINT" Radix="Decimal" Value="-1577058304"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="1"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="1"/>
+<DataValueMember Name="ER" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PC" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IP" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AC" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACCEL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DECEL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TrackingMaster" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CalculatedDataAvailable" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ERR" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="STATUS" DataType="SINT" Radix="Decimal" Value="2"/>
+<DataValueMember Name="STATE" DataType="SINT" Radix="Decimal" Value="1"/>
+<DataValueMember Name="SEGMENT" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EXERR" DataType="SINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="MSO_ON" TagType="Base" DataType="MOTION_INSTRUCTION" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[570425344,0,0,0,0,0,0,0,0]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="MOTION_INSTRUCTION">
+<DataValueMember Name="FLAGS" DataType="DINT" Radix="Decimal" Value="570425344"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="1"/>
+<DataValueMember Name="ER" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PC" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IP" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AC" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACCEL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DECEL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TrackingMaster" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CalculatedDataAvailable" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ERR" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="STATUS" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="STATE" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="SEGMENT" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EXERR" DataType="SINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="OFF" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[1]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="1"/>
+</Data>
+</Tag>
+<Tag Name="ON" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="Stop" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+</Tags>
+<Routines>
+<Routine Name="MainRoutine" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Text>
+<![CDATA[NOP();]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Text>
+<![CDATA[XIC(ON)XIO(OFF)MSO(Axis1,MSO_ON);]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Text>
+<![CDATA[XIC(OFF)XIO(ON)MSF(Axis1,MSF_OFF);]]>
+</Text>
+</Rung>
+<Rung Number="3" Type="N">
+<Text>
+<![CDATA[[XIC(auto) XIO(Stop) ,XIO(Stop) XIO(MAM_Right.EN) ]XIO(OFF)MAM(Axis1,MAM_left,0,-60,20,Units per sec,100,Units per sec2,100,Units per sec2,Trapezoidal,100,100,Units per sec3,Disabled,Programmed,0,0,0,0);]]>
+</Text>
+</Rung>
+<Rung Number="4" Type="N">
+<Text>
+<![CDATA[XIC(MAM_left.PC)XIO(MAM_left.DN)MAM(Axis1,MAM_Right,0,60,20,Units per sec,100,Units per sec2,100,Units per sec2,Trapezoidal,100,100,Units per sec3,Disabled,Programmed,0,0,0,0);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+</Routines>
+</Program>
+</Programs>
+<Tasks>
+<Task Name="MainTask" Type="CONTINUOUS" Priority="10" Watchdog="500" DisableUpdateOutputs="false" InhibitTask="false">
+<ScheduledPrograms>
+<ScheduledProgram Name="MainProgram"/>
+</ScheduledPrograms>
+</Task>
+</Tasks>
+<CST MasterID="0"/>
+<WallClockTime LocalTimeAdjustment="0" TimeZone="0"/>
+<Trends/>
+<DataLogs/>
+<TimeSynchronize Priority1="128" Priority2="128" PTPEnable="true"/>
+<EthernetPorts>
+<EthernetPort Port="1" Label="1" PortEnabled="true"/>
+<EthernetPort Port="2" Label="2" PortEnabled="true"/>
+</EthernetPorts>
+<EthernetNetwork SupervisorModeEnabled="true" SupervisorPrecedence="0" BeaconInterval="100000" BeaconTimeout="500000" VLANID="0"/>
+</Controller>
+</RSLogix5000Content>

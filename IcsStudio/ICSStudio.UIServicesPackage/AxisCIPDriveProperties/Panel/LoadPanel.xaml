@@ -1,0 +1,221 @@
+﻿<UserControl x:Class="ICSStudio.UIServicesPackage.AxisCIPDriveProperties.Panel.LoadPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:util="clr-namespace:ICSStudio.Gui.Controls;assembly=ICSStudio.Gui"
+             mc:Ignorable="d"
+             d:DesignHeight="600" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid IsEnabled="{Binding IsLoadEnabled}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" FontWeight="Bold" Text="{DynamicResource Load Inertia/Mass}"></TextBlock>
+            <Separator Grid.Column="1" />
+
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="160" />
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="180" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="{DynamicResource CIPTag Load Load Coupling:}"></TextBlock>
+
+            <ComboBox Grid.Row="0" Grid.Column="2" x:Name="CmbLoadCoupling"
+                      ItemsSource="{Binding LoadCouplingSource}"
+                      Margin="0"
+                      SelectedValuePath="Value"
+                      DisplayMemberPath="DisplayName"
+                      SelectedValue="{Binding LoadCoupling}" />
+
+
+            <CheckBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"
+                      x:Name="CkbUseLoadRatio"
+                      IsEnabled="{Binding UseLoadRatioEnabled}"
+                      IsChecked="{Binding UseLoadRatioChecked}"
+                      Content="{DynamicResource Use Load Ratio}"></CheckBox>
+
+            <Grid Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"
+                  IsEnabled="{Binding ElementName=CkbUseLoadRatio,Path= IsChecked}">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="140" />
+                    <ColumnDefinition Width="120" />
+                    <ColumnDefinition Width="180" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="1" Content="{DynamicResource Load Ratio:}"></Label>
+                <util:SingleUpDownExtensions Margin="-4.6,0,5,0" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center"
+                                             AllowSpin="False" ShowButtonSpinner="False"
+                                             Minimum="0" TextAlignment="Left"
+                                             Value="{Binding LoadRatio}"/>
+                <Label Grid.Row="0" Grid.Column="3" Content="{DynamicResource LoadInertia/MotorInertia}"></Label>
+
+                <!--Motor Inertia-->
+                <Label Grid.Row="1" Grid.Column="1"
+                       Visibility="{Binding RotaryMotorInertiaVisibility}" Content="{DynamicResource Motor Inertia:}">
+                </Label>
+                <util:SingleUpDownExtensions Margin="-4.6,0,5,0" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center"
+                                             AllowSpin="False" ShowButtonSpinner="False"
+                                             Minimum="0" TextAlignment="Left"
+                                             Visibility="{Binding RotaryMotorInertiaVisibility}"
+                                             Value="{Binding RotaryMotorInertia}"/>
+                <Label Grid.Row="1" Grid.Column="3"
+                       Visibility="{Binding RotaryMotorInertiaVisibility}">
+                    Kg-m^2
+                </Label>
+
+                <!--Motor Mass-->
+                <Label Grid.Row="1" Grid.Column="1"
+                       Visibility="{Binding LinearMotorMassVisibility}" Content="{DynamicResource Motor Mass:}">
+                </Label>
+                <util:SingleUpDownExtensions Margin="-4.6,0,5,0" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center"
+                                             AllowSpin="False" ShowButtonSpinner="False"
+                                             Minimum="0" TextAlignment="Left"
+                                             Visibility="{Binding LinearMotorMassVisibility}"
+                                             Value="{Binding LinearMotorMass}"/>
+                <Label Grid.Row="1" Grid.Column="3"
+                       Visibility="{Binding LinearMotorMassVisibility}">
+                    Kg
+                </Label>
+            </Grid>
+
+            <!--Total Inertia-->
+            <Grid Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" Margin="0"
+                  IsEnabled="{Binding TotalInertiaEnabled}"
+                  Visibility="{Binding RotaryMotorInertiaVisibility}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="160" />
+                    <ColumnDefinition Width="120" />
+                    <ColumnDefinition Width="140" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Column="0" Content="{DynamicResource Total Inertia:}"></Label>
+                <util:SingleUpDownExtensions Grid.Column="1" VerticalAlignment="Center"
+                                             AllowSpin="False" ShowButtonSpinner="False"
+                                             Minimum="0" TextAlignment="Left"
+                                             Value="{Binding TotalInertia}"/>
+                <Label Grid.Column="2" Margin="7,0,0,0">Kg-m^2</Label>
+            </Grid>
+
+            <!--Total Mass-->
+            <Grid Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" Margin="0"
+                  IsEnabled="{Binding TotalMassEnabled}"
+                  Visibility="{Binding LinearMotorMassVisibility}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="160" />
+                    <ColumnDefinition Width="120" />
+                    <ColumnDefinition Width="140" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Column="0" Content="{DynamicResource Total Mass:}"></Label>
+                <util:SingleUpDownExtensions Grid.Column="1" VerticalAlignment="Center" 
+                                             AllowSpin="False" ShowButtonSpinner="False"
+                                             Minimum="0" TextAlignment="Left"
+                                             Value="{Binding TotalMass}"/>
+                <Label Grid.Column="2" Margin="7,0,0,0">Kg</Label>
+            </Grid>
+
+        </Grid>
+
+        <Grid Grid.Row="2" Margin="0"
+              Visibility="{Binding InertiaMassCompensationVisibility}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" FontWeight="Bold" Text="{DynamicResource Inertia/Mass Compensation}"></TextBlock>
+            <Separator Grid.Column="1" />
+
+        </Grid>
+
+        <Grid Grid.Row="3" Margin="0"
+              Visibility="{Binding InertiaMassCompensationVisibility}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="160" />
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="140" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="{DynamicResource System Inertia:}"></TextBlock>
+            <util:SingleUpDownExtensions Grid.Row="0" Grid.Column="2" VerticalAlignment="Center"
+                                         IsEnabled="{Binding SystemInertiaEnabled}"
+                                         AllowSpin="False" ShowButtonSpinner="False"
+                                         Minimum="0" TextAlignment="Left"
+                                         Value="{Binding SystemInertia, Mode=OneWay}"/>
+            <TextBlock Grid.Row="0" Grid.Column="3" Margin="12,0,0,0" Text="{DynamicResource % Rate/(Rev/s^2)}"></TextBlock>
+
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="{DynamicResource System Acceleration:}"></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding SystemAcceleration, Mode=OneWay}"/>
+            <TextBlock Grid.Row="1" Grid.Column="3" Margin="12,0,0,0" Text="{DynamicResource Rev/s^2@ 100%Rated}"></TextBlock>
+
+        </Grid>
+
+        <Grid Grid.Row="4" Margin="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" FontWeight="Bold" Text="{DynamicResource Active Load Compensation}"></TextBlock>
+            <Separator Grid.Column="1" />
+
+        </Grid>
+
+        <Grid Grid.Row="5" Margin="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="160" />
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="140" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="1" Text="{DynamicResource Torque Offset:}"></TextBlock>
+            <util:SingleUpDownExtensions Grid.Column="2" VerticalAlignment="Center"
+                                         AllowSpin="False" ShowButtonSpinner="False"
+                                         Minimum="-100" Maximum="100"
+                                         TextAlignment="Left"
+                                         Value="{Binding TorqueOffset}"/>
+            <TextBlock Grid.Column="3" Margin="12,0,0,0" Text="{DynamicResource % Rated}"></TextBlock>
+        </Grid>
+
+    </Grid>
+</UserControl>

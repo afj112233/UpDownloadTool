@@ -1,0 +1,286 @@
+﻿<Window
+    x:Class="ICSStudio.UIServicesPackage.View.DynamicsDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:gui="clr-namespace:ICSStudio.Gui;assembly=ICSStudio.Gui"
+    xmlns:local="clr-namespace:ICSStudio.UIServicesPackage.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:utils="clr-namespace:ICSStudio.Gui.Controls;assembly=ICSStudio.Gui"
+    Title="{DynamicResource Dynamics Calculate}"
+    Width="640"
+    gui:DialogCloser.DialogResult="{Binding DialogResult}"
+    Background="#FFF0F0F0"
+    MouseDown="DynamicsDialog_OnMouseDown"
+    ResizeMode="NoResize"
+    ShowInTaskbar="False"
+    SizeToContent="Height"
+    WindowStartupLocation="CenterOwner"
+    mc:Ignorable="d">
+    <Grid Margin="15,10,15,0">
+        <Grid.Resources>
+            <local:CalculatePatternToBool x:Key="CalculatePatternToBool" />
+            <Style x:Key="{x:Type utils:SingleUpDownExtensions}" TargetType="{x:Type utils:SingleUpDownExtensions}">
+                <Setter Property="Width" Value="auto" />
+                <Setter Property="Margin" Value="5" />
+                <Setter Property="Padding" Value="3" />
+                <Setter Property="ShowButtonSpinner" Value="False" />
+                <Setter Property="AllowSpin" Value="False" />
+                <Setter Property="TextAlignment" Value="Left" />
+                <Setter Property="Minimum" Value="0" />
+            </Style>
+            <Style x:Key="{x:Type TextBlock}" TargetType="{x:Type TextBlock}">
+                <Setter Property="VerticalAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="{x:Type CheckBox}" TargetType="{x:Type CheckBox}">
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="HorizontalAlignment" Value="Right" />
+                <Setter Property="Margin" Value="5,0" />
+            </Style>
+            <Style x:Key="{x:Type Slider}" TargetType="{x:Type Slider}">
+                <Setter Property="Width" Value="auto" />
+                <Setter Property="Margin" Value="5" />
+                <Setter Property="IsSnapToTickEnabled" Value="True" />
+                <Setter Property="TickPlacement" Value="BottomRight" />
+                <Setter Property="AutoToolTipPrecision" Value="2" />
+                <Setter Property="AutoToolTipPlacement" Value="TopLeft" />
+                <Setter Property="IsDirectionReversed" Value="True" />
+            </Style>
+            <Style x:Key="{x:Type GroupBox}" TargetType="{x:Type GroupBox}">
+                <Setter Property="BorderBrush" Value="Gray" />
+                <Setter Property="Padding" Value="5,0" />
+            </Style>
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <GroupBox>
+            <GroupBox.HeaderTemplate>
+                <DataTemplate>
+                    <RadioButton
+                        Content="{DynamicResource Indirect by Acceleration Time}"
+                        DataContext="{Binding DataContext, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type GroupBox}}}"
+                        FontWeight="Black"
+                        GroupName="IsDirect"
+                        IsChecked="{Binding CalculatePattern, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource CalculatePatternToBool}, ConverterParameter=0}" />
+                </DataTemplate>
+            </GroupBox.HeaderTemplate>
+            <Grid IsEnabled="{Binding CalculatePattern, Mode=OneWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource CalculatePatternToBool}, ConverterParameter=0}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="0.7*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <TextBlock
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Text="{DynamicResource Maximum Velocity(V max):}" />
+                <utils:SingleUpDownExtensions Grid.Row="0" Grid.Column="1">
+                    <utils:SingleUpDownExtensions.Value>
+                        <Binding Path="MaximumVelocity" UpdateSourceTrigger="PropertyChanged" />
+                    </utils:SingleUpDownExtensions.Value>
+                </utils:SingleUpDownExtensions>
+                <TextBlock
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Text="{Binding PositionUnits, StringFormat={}{0}/s}" />
+
+                <TextBlock
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Text="{DynamicResource Acceleration Time:}" />
+                <utils:SingleUpDownExtensions Grid.Row="1" Grid.Column="1">
+                    <utils:SingleUpDownExtensions.Value>
+                        <Binding Path="AccelerationTime" UpdateSourceTrigger="PropertyChanged" />
+                    </utils:SingleUpDownExtensions.Value>
+                </utils:SingleUpDownExtensions>
+                <TextBlock
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    Text="s" />
+
+                <UniformGrid
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Columns="2">
+                    <TextBlock Text="{DynamicResource Deceleration Time:}" />
+                    <CheckBox
+                        Content="{DynamicResource as above}"
+                        IsChecked="{Binding IsIndirectAsAbove}"
+                        IsEnabled="False" />
+                </UniformGrid>
+                <utils:SingleUpDownExtensions Grid.Row="2" Grid.Column="1">
+                    <utils:SingleUpDownExtensions.Value>
+                        <Binding Path="DecelerationTime" UpdateSourceTrigger="PropertyChanged" />
+                    </utils:SingleUpDownExtensions.Value>
+                </utils:SingleUpDownExtensions>
+                <TextBlock
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    Text="s" />
+
+                <Grid
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    Margin="0,5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock
+                        Margin="5,0"
+                        Text="{DynamicResource smooth}"
+                        TextAlignment="Left" />
+                    <Separator Grid.Column="1" Margin="5,0" />
+                    <TextBlock
+                        Grid.Column="2"
+                        Margin="5,0"
+                        Text="{DynamicResource stiff}"
+                        TextAlignment="Right" />
+                </Grid>
+
+                <TextBlock
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Text="{DynamicResource Acceleration Characteristic}" />
+                <Slider
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    Maximum="100"
+                    TickFrequency="1"
+                    TickPlacement="BottomRight"
+                    Value="{Binding AccelerationCharacteristic}" />
+
+                <TextBlock
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    Text="{DynamicResource Deceleration Characteristic}" />
+                <Slider
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    Maximum="100"
+                    TickFrequency="1"
+                    TickPlacement="BottomRight"
+                    Value="{Binding DecelerationCharacteristic}" />
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Grid.Row="1">
+            <GroupBox.HeaderTemplate>
+                <DataTemplate>
+                    <RadioButton
+                        Content="{DynamicResource Direct}"
+                        DataContext="{Binding DataContext, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type GroupBox}}}"
+                        FontWeight="Black"
+                        GroupName="IsDirect"
+                        IsChecked="{Binding CalculatePattern, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource CalculatePatternToBool}, ConverterParameter=1}" />
+                </DataTemplate>
+            </GroupBox.HeaderTemplate>
+            <Grid IsEnabled="{Binding CalculatePattern, Mode=OneWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource CalculatePatternToBool}, ConverterParameter=1}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="0.7*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <TextBlock
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Text="{DynamicResource Acceleration:}" />
+                <utils:SingleUpDownExtensions Grid.Row="0" Grid.Column="1">
+                    <utils:SingleUpDownExtensions.Value>
+                        <Binding Path="Acceleration" UpdateSourceTrigger="PropertyChanged" />
+                    </utils:SingleUpDownExtensions.Value>
+                </utils:SingleUpDownExtensions>
+                <TextBlock
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Text="{Binding PositionUnits, StringFormat={}{0}/s^2}" />
+
+                <UniformGrid
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Columns="2">
+                    <TextBlock Text="{DynamicResource Deceleration:}" />
+                    <CheckBox
+                        Content="{DynamicResource as above}"
+                        IsChecked="{Binding IsDirectAsAbove}"
+                        IsEnabled="False" />
+                </UniformGrid>
+                <utils:SingleUpDownExtensions Grid.Row="1" Grid.Column="1">
+                    <utils:SingleUpDownExtensions.Value>
+                        <Binding Path="Deceleration" UpdateSourceTrigger="PropertyChanged" />
+                    </utils:SingleUpDownExtensions.Value>
+                </utils:SingleUpDownExtensions>
+                <TextBlock
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    Text="{Binding PositionUnits, StringFormat={}{0}/s^2}" />
+
+                <TextBlock
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Text="{DynamicResource Jerk:}" />
+                <utils:SingleUpDownExtensions Grid.Row="2" Grid.Column="1">
+                    <utils:SingleUpDownExtensions.Value>
+                        <Binding Path="Jerk" UpdateSourceTrigger="PropertyChanged" />
+                    </utils:SingleUpDownExtensions.Value>
+                </utils:SingleUpDownExtensions>
+                <TextBlock
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    Text="{Binding PositionUnits, StringFormat={}{0}/s^3}" />
+            </Grid>
+        </GroupBox>
+
+        <Grid Grid.Row="2">
+            <Grid.Resources>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Width" Value="65" />
+                    <Setter Property="Height" Value="20" />
+                    <Setter Property="Margin" Value="5" />
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <UniformGrid
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Margin="0,5"
+                Columns="4">
+                <Button Command="{Binding OKCommand}" Content="{DynamicResource OK}" />
+                <Button Command="{Binding CancelCommand}" Content="{DynamicResource Cancel}" />
+                <Button Command="{Binding ApplyCommand}" Content="{DynamicResource Apply}" />
+                <Button Content="{DynamicResource Help}" />
+            </UniformGrid>
+        </Grid>
+    </Grid>
+</Window>

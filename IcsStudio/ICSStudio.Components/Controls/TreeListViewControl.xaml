@@ -1,0 +1,150 @@
+﻿<UserControl x:Class="ICSStudio.Components.Controls.TreeListViewControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:controls="clr-namespace:ICSStudio.Components.Controls"
+             xmlns:converters="clr-namespace:ICSStudio.Components.Converters"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300"
+             Loaded="TreeListViewControlLoaded">
+    <FrameworkElement.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ExpandCollapseToggleStyle" TargetType="{x:Type ToggleButton}">
+                <Setter Property="Focusable" Value="False" />
+                <Setter Property="Width" Value="19" />
+                <Setter Property="Height" Value="13" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ToggleButton}">
+                            <Border Width="19" Height="13" Background="#00FFFFFF">
+                                <Path Name="ExpandPath" Margin="2" Stroke="#FF000000" StrokeThickness="1" Data="M4,0 L8,4 L4,8 Z" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="ToggleButton.IsChecked" Value="True">
+                                    <Setter TargetName="ExpandPath" Property="Path.Data" Value="M8,0 L8,8 L0,8 Z" />
+                                    <Setter TargetName="ExpandPath" Property="Shape.Fill" Value="#FF000000" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <system:Int32 x:Key="IndentOffset">10</system:Int32>
+            <converters:LevelToIndentConverter x:Key="LevelToIndentConverter" />
+
+            <DataTemplate x:Key="CellTemplate_Name">
+                <DockPanel>
+                    <ToggleButton Name="Expander" ClickMode="Press" Style="{StaticResource ExpandCollapseToggleStyle}" Margin="{Binding Level, Converter={StaticResource LevelToIndentConverter}, ConverterParameter={StaticResource IndentOffset}, RelativeSource={RelativeSource AncestorType={x:Type controls:TreeListViewItem}}}" IsChecked="{Binding Path=IsExpanded, RelativeSource={RelativeSource AncestorType={x:Type controls:TreeListViewItem}}}" />
+                    <TextBlock Text="{Binding FullName}" />
+                </DockPanel>
+                <DataTemplate.Triggers>
+                    <DataTrigger Value="False" Binding="{Binding Path=HasItems, RelativeSource={RelativeSource AncestorType={x:Type controls:TreeListViewItem}}}">
+                        <Setter TargetName="Expander" Property="UIElement.Visibility" Value="Hidden" />
+                    </DataTrigger>
+                </DataTemplate.Triggers>
+            </DataTemplate>
+
+            <Style TargetType="{x:Type controls:TreeListViewItem}">
+                <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
+                <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+                <EventSetter Event="Selected" Handler="TreeViewSelectedItemChanged"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type controls:TreeListViewItem}">
+                            <StackPanel>
+                                <Border Name="Bd" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}">
+                                    <GridViewRowPresenter Name="PART_Header" Content="{TemplateBinding Header}" Columns="{Binding Path=Columns, RelativeSource={RelativeSource AncestorType={x:Type controls:TreeListView}}}" />
+                                </Border>
+                                <ItemsPresenter Name="ItemsHost" />
+                            </StackPanel>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="TreeViewItem.IsExpanded" Value="False">
+                                    <Setter TargetName="ItemsHost" Property="Visibility" Value="Collapsed" />
+                                </Trigger>
+                                <MultiTrigger>
+                                    <MultiTrigger.Conditions>
+                                        <Condition Property="HasHeader" Value="False" />
+                                        <Condition Property="Width" Value="Auto" />
+                                    </MultiTrigger.Conditions>
+                                    <Setter TargetName="PART_Header" Property="MinWidth" Value="75" />
+                                </MultiTrigger>
+                                <MultiTrigger>
+                                    <MultiTrigger.Conditions>
+                                        <Condition Property="HasHeader" Value="False" />
+                                        <Condition Property="Height" Value="Auto" />
+                                    </MultiTrigger.Conditions>
+                                    <Setter TargetName="PART_Header" Property="MinHeight" Value="19" />
+                                </MultiTrigger>
+                                <Trigger Property="TreeViewItem.IsSelected" Value="True">
+                                    <Setter TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Property="Border.Background" />
+                                    <Setter Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" Property="Foreground" />
+                                </Trigger>
+                                <MultiTrigger>
+                                    <MultiTrigger.Conditions>
+                                        <Condition Property="TreeViewItem.IsSelected" Value="True" />
+                                        <Condition Property="TreeViewItem.IsSelectionActive" Value="False" />
+                                    </MultiTrigger.Conditions>
+                                    <Setter TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Property="Border.Background" />
+                                    <Setter Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" Property="Foreground" />
+                                </MultiTrigger>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" Property="Foreground" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="TreeListViewScrollViewer" TargetType="{x:Type ScrollViewer}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                            <Grid Background="{TemplateBinding Background}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <DockPanel Margin="{TemplateBinding Padding}">
+                                    <ScrollViewer DockPanel.Dock="Top" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" Focusable="False">
+                                        <GridViewHeaderRowPresenter Margin="2,0,2,0" Columns="{Binding Path=TemplatedParent.Columns, RelativeSource={RelativeSource TemplatedParent}}" />
+                                    </ScrollViewer>
+                                    <ScrollContentPresenter Name="PART_ScrollContentPresenter" KeyboardNavigation.DirectionalNavigation="Local" RequestBringIntoView="ScrollContentPresenterRequestBringIntoView" />
+                                </DockPanel>
+                                <ScrollBar Name="PART_HorizontalScrollBar" Orientation="Horizontal" Grid.Row="1" Maximum="{TemplateBinding ScrollableWidth}" ViewportSize="{TemplateBinding ViewportWidth}" Value="{TemplateBinding HorizontalOffset}" Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}" />
+                                <ScrollBar Name="PART_VerticalScrollBar" Grid.Column="1" Maximum="{TemplateBinding ScrollableHeight}" ViewportSize="{TemplateBinding ViewportHeight}" Value="{TemplateBinding VerticalOffset}" Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" />
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="{x:Type controls:TreeListView}" TargetType="{x:Type controls:TreeListView}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type controls:TreeListView}">
+                            <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                <DockPanel>
+                                    <ScrollViewer Style="{StaticResource TreeListViewScrollViewer}">
+                                        <ItemsPresenter />
+                                    </ScrollViewer>
+                                </DockPanel>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+        </ResourceDictionary>
+    </FrameworkElement.Resources>
+    <controls:TreeListView x:Name="ListView"
+                           SelectedItemChanged="ListViewSelectedItemChanged"
+                           ItemsSource="{Binding Items}"
+                           ItemTemplate="{Binding ItemTemplate}" 
+                           />
+</UserControl>

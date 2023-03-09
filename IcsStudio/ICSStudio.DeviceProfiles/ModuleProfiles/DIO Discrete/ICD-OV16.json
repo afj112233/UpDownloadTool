@@ -1,0 +1,32 @@
+{
+    "VendorID": 5,
+    "ProductType": 7,
+    "ProductCode": 233,
+    "CatalogNumber": "ICD-OV16",
+    "Descriptions": [
+        {
+            "LCID": 1033,
+            "Text": "16 Point 24V DC Output, Sink"
+        },
+        {
+            "LCID": 2052,
+            "Text": "16 点 24V 直流输出，拉电流"
+        }
+    ],
+    "MajorRevs": [
+        {
+            "MajorRev": 1,
+            "Series": "A"
+        }
+    ],
+    "Ports": [
+        {
+            "Number": 1,
+            "Type": "PointIO",
+            "Label": "Chassis",
+            "Width": 1,
+            "ConnectorOffset": 0
+        }
+    ],
+    "PSFile": "PSICD_Discrete.json"
+}

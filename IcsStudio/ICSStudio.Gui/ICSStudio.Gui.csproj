@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4576440D-1A48-487A-8DFA-F94751ABAE38}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICSStudio.Gui</RootNamespace>
+    <AssemblyName>ICSStudio.Gui</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>$(SolutionDir)\build\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>$(SolutionDir)\build\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>ICSStudio.Gui.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CommonServiceLocator.2.0.4\lib\net45\CommonServiceLocator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.4.1.0, Culture=neutral, PublicKeyToken=0ffbc31322e9d308, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmLightLibsStd10.5.4.1.1\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmLightLibsStd10.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Imagin.Common">
+      <HintPath>lib\Imagin.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Imagin.Controls.Common">
+      <HintPath>lib\Imagin.Controls.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Imagin.Controls.Extended">
+      <HintPath>lib\Imagin.Controls.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.OLE.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.OLE.Interop.7.10.6070\lib\Microsoft.VisualStudio.OLE.Interop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Shell.Interop.7.10.6071\lib\Microsoft.VisualStudio.Shell.Interop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.TextManager.Interop.7.10.6070\lib\Microsoft.VisualStudio.TextManager.Interop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmLightLibsStd10.5.4.1.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Extended.Wpf.Toolkit.4.2.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Extended.Wpf.Toolkit.4.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Extended.Wpf.Toolkit.4.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Extended.Wpf.Toolkit.4.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Extended.Wpf.Toolkit.4.2.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Behaviors\DragDropRowBehavior.cs" />
+    <Compile Include="Behaviors\TreeViewBindableSelectedItemBehavior.cs" />
+    <Compile Include="Behaviors\TreeViewMultipleSelectionBehavior.cs" />
+    <Compile Include="Controls\BitPicker.xaml.cs">
+      <DependentUpon>BitPicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CustomDataGrid.cs" />
+    <Compile Include="Controls\DropDownTextControl.cs" />
+    <Compile Include="Controls\ExtendedPropertyGrid\Attributes\IsChangedAttribute.cs" />
+    <Compile Include="Controls\ExtendedPropertyGrid\Attributes\UnitAttribute.cs" />
+    <Compile Include="Controls\ExtendedPropertyGrid\ExtendedPropertyGrid.xaml.cs">
+      <DependentUpon>ExtendedPropertyGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ExtendedPropertyGrid\ExtendedPropertyModelCollection.cs" />
+    <Compile Include="Controls\ExtendedPropertyGrid\ExtendedPropertyTemplateSelector.cs" />
+    <Compile Include="Controls\ExtendedPropertyGrid\Models\ExtendedCoercedPropertyModel.cs" />
+    <Compile Include="Controls\ExtendedPropertyGrid\Models\ExtendedCoercedVariantPropertyModel.cs" />
+    <Compile Include="Controls\ExtendedPropertyGrid\Models\ExtendedNestedPropertyModel.cs" />
+    <Compile Include="Controls\ExtendedPropertyGrid\Models\ExtendedPropertyModel.cs" />
+    <Compile Include="Controls\ExtendedPropertyGrid\Models\ExtendedPropertyModel.Generic.cs" />
+    <Compile Include="Controls\SingleUpDownExtensions.cs" />
+    <Compile Include="Controls\ExtensionTextBox.xaml.cs">
+      <DependentUpon>ExtensionTextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GifImage.cs" />
+    <Compile Include="Controls\IPMaskedTextBox.xaml.cs">
+      <DependentUpon>IPMaskedTextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MultipleCheckBox.cs" />
+    <Compile Include="Controls\SpinButtonControl.xaml.cs">
+      <DependentUpon>SpinButtonControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\StatusBitControl.xaml.cs">
+      <DependentUpon>StatusBitControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TextMasking.cs" />
+    <Compile Include="Controls\TreeViewExtensions.cs" />
+    <Compile Include="Controls\UpdateCommandParameterInfo.cs" />
+    <Compile Include="Converters\AnyValueToVisibilityConverter.cs" />
+    <Compile Include="Converters\BinaryConverter.cs" />
+    <Compile Include="Converters\BooleanInverterConverter.cs" />
+    <Compile Include="Converters\DataTypeToVisibilityConverter.cs" />
+    <Compile Include="Converters\DescriptionConverter.cs" />
+    <Compile Include="Converters\DirtyStatusImageConverter.cs" />
+    <Compile Include="Converters\DoubleConverter.cs" />
+    <Compile Include="Converters\EnumBooleanConverter.cs" />
+    <Compile Include="Converters\EnumMemberValueConverter.cs" />
+    <Compile Include="Converters\EnumToDisplayNameConverter.cs" />
+    <Compile Include="Converters\InverseBooleanConverter.cs" />
+    <Compile Include="Converters\IsChangedConverter.cs" />
+    <Compile Include="Converters\IsVisibleConverter.cs" />
+    <Compile Include="Converters\ParameterConverter.cs" />
+    <Compile Include="Converters\SegmentConverter.cs" />
+    <Compile Include="Converters\StartPointConverter.cs" />
+    <Compile Include="Converters\UInt16ToIntegerConverter.cs" />
+    <Compile Include="Converters\UInt32ToLongConverter.cs" />
+    <Compile Include="DateTimePicker\ButtonUD.cs" />
+    <Compile Include="DateTimePicker\DatePickerView.xaml.cs">
+      <DependentUpon>DatePickerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DateTimePicker\DateTimeControl.cs" />
+    <Compile Include="DateTimePicker\TimePicker.cs" />
+    <Compile Include="DialogCloser.cs" />
+    <Compile Include="Dialogs\AddOnInstructionOptionsDialog.xaml.cs">
+      <DependentUpon>AddOnInstructionOptionsDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AddOnInstructionOptionsDialogViewModel.cs" />
+    <Compile Include="Dialogs\CurrentObject.cs" />
+    <Compile Include="Dialogs\DefaultOptionPanelDescriptor.cs" />
+    <Compile Include="Dialogs\ImportPropertiesDialog.xaml.cs">
+      <DependentUpon>ImportPropertiesDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ImportPropertiesDialogViewModel.cs" />
+    <Compile Include="Dialogs\IOptionPanel.cs" />
+    <Compile Include="Dialogs\IOptionPanelDescriptor.cs" />
+    <Compile Include="Dialogs\TabbedOptions.cs" />
+    <Compile Include="Dialogs\TreeViewOptionsDialogViewModel.cs" />
+    <Compile Include="Dialogs\TabbedOptionsDialog.xaml.cs">
+      <DependentUpon>TabbedOptionsDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\TreeViewOptionsDialog.xaml.cs">
+      <DependentUpon>TreeViewOptionsDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Dialogs\TabbedOptionsDialogViewModel.cs" />
+    <Compile Include="PropertyAttribute\PropertiesDeluxeTypeConverter.cs" />
+    <Compile Include="PropertyAttribute\PropertyAttributes.cs" />
+    <Compile Include="PropertyAttribute\PropertyAttributesProviderAttribute.cs" />
+    <Compile Include="PropertyAttribute\PropertyDescriptorExtension.cs" />
+    <Compile Include="Recover\RecoverDialog.xaml.cs">
+      <DependentUpon>RecoverDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Recover\RecoverViewModel.cs" />
+    <Compile Include="Utils\BitValue.cs" />
+    <Compile Include="Utils\DependencyObjectExtensions.cs" />
+    <Compile Include="Utils\DispatcherHelper.cs" />
+    <Compile Include="Utils\DisplayItem.cs" />
+    <Compile Include="Utils\EnumHelper.cs" />
+    <Compile Include="Utils\FlagsEnumHelper.cs" />
+    <Compile Include="Utils\ICanBeDirty.cs" />
+    <Compile Include="Utils\EthernetAddressChecker.cs" />
+    <Compile Include="Utils\WindowExtensions.cs" />
+    <Compile Include="View\BindableCommand.cs" />
+    <Compile Include="View\BindingProxy.cs" />
+    <Compile Include="View\RelayCommandBinding.cs" />
+    <Compile Include="View\VisualTreeHelpers.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\image\left_6_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="icon.pfx" />
+    <None Include="ICSStudio.Gui.snk" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\BitPicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ExtendedPropertyGrid\ExtendedPropertyGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ExtensionTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\IPMaskedTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SpinButtonControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\StatusBitControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DateTimePicker\DatePickerStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DateTimePicker\DatePickerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\AddOnInstructionOptionsDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\ImportPropertiesDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\TabbedOptionsDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\TreeViewOptionsDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Recover\RecoverDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Resource Include="Resources\styles\TaskTemplate.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Page Include="Resources\styles\CustomControls.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\styles\Default.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Resource Include="Resources\styles\ProgramTemplate.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\styles\RoutinePropertyTemplate.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Page Include="Themes\DateTimeControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\DropDownTextControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\image\Pencil_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DateTimePicker\Images\arrowBottom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="DateTimePicker\Images\arrowTop.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recover\Image\Exclamation.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ICSStudio.MultiLanguage\ICSStudio.MultiLanguage.csproj">
+      <Project>{06AFD655-2AAC-4268-B609-64A649A3746D}</Project>
+      <Name>ICSStudio.MultiLanguage</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\image\left_10_10.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

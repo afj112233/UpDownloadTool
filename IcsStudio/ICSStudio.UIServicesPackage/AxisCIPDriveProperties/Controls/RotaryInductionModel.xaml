@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="ICSStudio.UIServicesPackage.AxisCIPDriveProperties.Controls.RotaryInductionModel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:util="clr-namespace:ICSStudio.Gui.Controls;assembly=ICSStudio.Gui"
+             mc:Ignorable="d"
+             d:DesignHeight="600" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="util:SingleUpDownExtensions">
+            <Setter Property="Margin" Value="2" />
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="240" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="180" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="{DynamicResource Rated Flux Current:}"></TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="{DynamicResource Rated Slip Speed:}"></TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="{DynamicResource Stator Leakage(X1):}"></TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="{DynamicResource Rotor Leakage(X2):}"></TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="0" />
+        <TextBlock Grid.Row="5" Grid.Column="0" Text="{DynamicResource Stator Resistance(R1):}"></TextBlock>
+
+        <util:SingleUpDownExtensions Grid.Row="0" Grid.Column="1" AllowSpin="False" ShowButtonSpinner="False"
+                                     Minimum="0" Value="{Binding InductionMotorFluxCurrent}"
+                                     TextAlignment="Left"/>
+        <util:SingleUpDownExtensions Grid.Row="1" Grid.Column="1" AllowSpin="False" ShowButtonSpinner="False"
+                                     Minimum="0" Value="{Binding InductionMotorRatedSlipSpeed}"
+                                     TextAlignment="Left"/>
+        <util:SingleUpDownExtensions Grid.Row="2" Grid.Column="1" AllowSpin="False" ShowButtonSpinner="False"
+                                     Minimum="0" Value="{Binding InductionMotorStatorLeakageReactance}"
+                                     TextAlignment="Left"/>
+        <util:SingleUpDownExtensions Grid.Row="3" Grid.Column="1" AllowSpin="False" ShowButtonSpinner="False"
+                                     Minimum="0" Value="{Binding InductionMotorRotorLeakageReactance}"
+                                     TextAlignment="Left"/>
+        <util:SingleUpDownExtensions Grid.Row="5" Grid.Column="1" AllowSpin="False" ShowButtonSpinner="False"
+                                     Minimum="0" Value="{Binding InductionMotorStatorResistance}"
+                                     TextAlignment="Left"/>
+
+        <TextBlock Grid.Row="0" Grid.Column="2" Text="{DynamicResource Amps(RMS)}"></TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="2">RPM</TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="2" Text="{DynamicResource Ohms}"></TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="2" Text="{DynamicResource Ohms}"></TextBlock>
+        <TextBlock Grid.Row="5" Grid.Column="2" Text="{DynamicResource Ohms}"></TextBlock>
+
+    </Grid>
+</UserControl>

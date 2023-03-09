@@ -1,0 +1,312 @@
+﻿<UserControl x:Class="ICSStudio.EditorPackage.RLLEditor.RLLEditorControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             mc:Ignorable="d"
+             xmlns:view="clr-namespace:ICSStudio.Gui.View;assembly=ICSStudio.Gui"
+             xmlns:command="http://www.galasoft.ch/mvvmlight"
+             d:DesignHeight="300" d:DesignWidth="800" PreviewMouseDown="RLLEditorControl_OnPreviewMouseDown" MouseDown="UIElement_OnMouseDown" Focusable="True">
+    <UserControl.Resources>
+        <Style TargetType="Image">
+            <Setter Property="UseLayoutRounding" Value="True" />
+            <Setter Property="RenderOptions.BitmapScalingMode" Value="Fant" />
+            <Setter Property="Width" Value="24" />
+            <Setter Property="Height" Value="24" />
+        </Style>
+        <!--<view:BindableCommand x:Key="CopyCommand" Command="{Binding CopyCommand}"/>-->
+        <!--<view:BindableCommand x:Key="PasteCommand" Command="{Binding PasteCommand}"/>-->
+        <view:BindableCommand x:Key="DeleteCommand" Command="{Binding DeleteCommand}"/>
+        <!--<view:BindableCommand x:Key="CutCommand" Command="{Binding CutCommand}"/>-->
+        <view:BindableCommand x:Key="ToggleCommand" Command="{Binding ToggleCommand}"/>
+        <view:BindableCommand x:Key="EditRungCommand" Command="{Binding EditRungCommand}"/>
+        <view:BindableCommand x:Key="AddRungCommand" Command="{Binding AddRungCommand}"/>
+        <view:BindableCommand x:Key="NewTagCommand" Command="{Binding NewTagCommand}"/>
+        <view:BindableCommand x:Key="UndoCommand" Command="{Binding UndoCommand}"/>
+        <view:BindableCommand x:Key="RedoCommand" Command="{Binding RedoCommand}"/>
+        <view:BindableCommand x:Key="EditRungCommentCommand" Command="{Binding EditRungCommentCommand}"/>
+
+        <SolidColorBrush x:Key="Menu.Static.Foreground" Color="#FF212121"/>
+        <SolidColorBrush x:Key="Menu.Disabled.Foreground" Color="#FF707070"/>
+        <SolidColorBrush x:Key="MenuItem.Selected.Background" Color="#3D26A0DA"/>
+        <SolidColorBrush x:Key="MenuItem.Selected.Border" Color="#FF26A0DA"/>
+        <SolidColorBrush x:Key="MenuItem.Highlight.Background" Color="#3D26A0DA"/>
+        <SolidColorBrush x:Key="MenuItem.Highlight.Border" Color="#FF26A0DA"/>
+        <SolidColorBrush x:Key="MenuItem.Highlight.Disabled.Background" Color="#0A000000"/>
+        <SolidColorBrush x:Key="MenuItem.Highlight.Disabled.Border" Color="#21000000"/>
+        <Geometry x:Key="Checkmark">F1 M 10.0,1.2 L 4.7,9.1 L 4.5,9.1 L 0,5.2 L 1.3,3.5 L 4.3,6.1L 8.3,0 L 10.0,1.2 Z</Geometry>
+        <ControlTemplate x:Key="MyMenuItemTemplate" TargetType="{x:Type MenuItem}">
+            <Border x:Name="templateRoot" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Height="22" SnapsToDevicePixels="true">
+                <Grid Margin="-1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition MinWidth="22" SharedSizeGroup="MenuItemIconColumnGroup" Width="Auto"/>
+                        <ColumnDefinition Width="13"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition SharedSizeGroup="MenuItemIGTColumnGroup" Width="Auto"/>
+                        <ColumnDefinition Width="20"/>
+                    </Grid.ColumnDefinitions>
+                    <ContentPresenter x:Name="Icon" ContentSource="Icon" HorizontalAlignment="Center" Height="16" Margin="3" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Center" Width="16"/>
+                    <Border x:Name="GlyphPanel" Background="{StaticResource MenuItem.Selected.Background}" BorderBrush="{StaticResource MenuItem.Selected.Border}" BorderThickness="1" ClipToBounds="False" HorizontalAlignment="Center" Height="22" Margin="-1,0,0,0" VerticalAlignment="Center" Visibility="Hidden" Width="22">
+                        <Path x:Name="Glyph" Data="{StaticResource Checkmark}" FlowDirection="LeftToRight" Fill="{StaticResource Menu.Static.Foreground}" Height="11" Width="10"/>
+                    </Border>
+                    <ContentPresenter x:Name="menuHeaderContainer" ContentSource="Header" Grid.Column="2" HorizontalAlignment="Left" Margin="{TemplateBinding Padding}" RecognizesAccessKey="False" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Center"/>
+                    <TextBlock x:Name="menuGestureText" Grid.Column="4" Margin="{TemplateBinding Padding}" Opacity="0.7" Text="{TemplateBinding InputGestureText}" VerticalAlignment="Center"/>
+                </Grid>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="Icon" Value="{x:Null}">
+                    <Setter Property="Visibility" TargetName="Icon" Value="Collapsed"/>
+                </Trigger>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="Visibility" TargetName="GlyphPanel" Value="Visible"/>
+                    <Setter Property="Visibility" TargetName="Icon" Value="Collapsed"/>
+                </Trigger>
+                <Trigger Property="IsHighlighted" Value="True">
+                    <Setter Property="Background" TargetName="templateRoot" Value="{StaticResource MenuItem.Highlight.Background}"/>
+                    <Setter Property="BorderBrush" TargetName="templateRoot" Value="{StaticResource MenuItem.Highlight.Border}"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="TextElement.Foreground" TargetName="templateRoot" Value="{StaticResource Menu.Disabled.Foreground}"/>
+                    <Setter Property="Fill" TargetName="Glyph" Value="{StaticResource Menu.Disabled.Foreground}"/>
+                </Trigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsHighlighted" Value="True"/>
+                        <Condition Property="IsEnabled" Value="False"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Background" TargetName="templateRoot" Value="{StaticResource MenuItem.Highlight.Disabled.Background}"/>
+                    <Setter Property="BorderBrush" TargetName="templateRoot" Value="{StaticResource MenuItem.Highlight.Disabled.Border}"/>
+                </MultiTrigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </UserControl.Resources>
+    <UserControl.InputBindings>
+        <KeyBinding Key="T" Modifiers="Ctrl" Command="{StaticResource ToggleCommand}"/>
+        <KeyBinding Key="Enter" Command="{StaticResource EditRungCommand}"/>
+        <KeyBinding Key="R" Modifiers="Ctrl" Command="{StaticResource AddRungCommand}"/>
+        <KeyBinding Key="W" Modifiers="Ctrl" Command="{StaticResource NewTagCommand}"/>
+        <KeyBinding Key="Z" Modifiers="Ctrl" Command="{StaticResource UndoCommand}"/>
+        <KeyBinding Key="Y" Modifiers="Ctrl" Command="{StaticResource RedoCommand}"/>
+        <KeyBinding Key="D" Modifiers="Ctrl" Command="{StaticResource EditRungCommentCommand}"/>
+        <!--<KeyBinding Key="F2" Command="{StaticResource F2Command}"/>-->
+    </UserControl.InputBindings>
+    <UserControl.CommandBindings>
+        <!--<view:RelayCommandBinding 
+            Command="{x:Static ApplicationCommands.Paste}"
+            RelayCommand="{StaticResource PasteCommand}"/>-->
+        <!--<view:RelayCommandBinding Command="{x:Static ApplicationCommands.Copy}"
+                                  RelayCommand="{StaticResource CopyCommand}"/>-->
+        <view:RelayCommandBinding Command="{x:Static ApplicationCommands.Delete}"
+                                  RelayCommand="{StaticResource DeleteCommand}"/>
+        <!--<view:RelayCommandBinding Command="{x:Static ApplicationCommands.Cut}"
+                                  RelayCommand="{StaticResource CutCommand}"/>-->
+    </UserControl.CommandBindings>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="PreviewKeyDown">
+            <command:EventToCommand Command="{Binding HotKeyPressedCommand}" PassEventArgsToCommand="True"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid x:Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="0" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <ToolBar Visibility="{Binding OnlineEditToolBarVisible}" IsEnabled="{Binding OnlineEditToolBarEnable}">
+                <!--<Button Content="Online Edit" Margin="10,0" Command="{Binding OnlineEdit}"/>
+                <Button Content="Accept Edit" Margin="10,0" Command="{Binding AcceptEdit}"/>
+                <Button Content="Cancel Edit" Margin="10,0" Command="{Binding CancelEdit}"/>
+                <Button Content="Cancel Accepted Edit" Margin="10,0" Command="{Binding CancelAcceptedEdit}" Visibility="Collapsed"/>
+                <Button Content="Finalize Edit" Margin="10,0" Command="{Binding FinalizeEdit}"/>-->
+                <Button ToolTip="{DynamicResource Online Edit}" Margin="5,0" Command="{Binding OnlineEdit}">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border x:Name="border" Background="{x:Null}" CornerRadius="1" Width="24" Height="24">
+                                <Image x:Name="img" Source="Icon/undo.png"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsEnabled" Value="True">
+                                    <Setter TargetName="img" Property="Source" Value="Icon/StartPendingActived.png"/>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter TargetName="img" Property="Source" Value="Icon/StartPending.png"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#FFCFE6FD"></Setter>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#FFB2D8FE"></Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button ToolTip="{DynamicResource Accept Edit}" Margin="5,0" Command="{Binding AcceptEdit}">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border x:Name="border" Background="{x:Null}" CornerRadius="1" Width="24" Height="24">
+                                <Image x:Name="img" Source="Icon/undo.png"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsEnabled" Value="True">
+                                    <Setter TargetName="img" Property="Source" Value="Icon/AcceptedPendingActived.png"/>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter TargetName="img" Property="Source" Value="Icon/AcceptedPending.png"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#FFCFE6FD"></Setter>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#FFB2D8FE"></Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button ToolTip="{DynamicResource Cancel Edit}" Margin="5,0" Command="{Binding CancelEdit}">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border x:Name="border" Background="{x:Null}" CornerRadius="1" Width="24" Height="24">
+                                <Image x:Name="img" Source="Icon/undo.png"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsEnabled" Value="True">
+                                    <Setter TargetName="img" Property="Source" Value="Icon/CancelAcceptedPendingActived.png"/>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter TargetName="img" Property="Source" Value="Icon/CancelAcceptedPending.png"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#FFCFE6FD"></Setter>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#FFB2D8FE"></Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Separator/>
+                <Button ToolTip="{DynamicResource Finalize Edit}" Margin="5,0" Command="{Binding FinalizeEdit}">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border x:Name="border" Background="{x:Null}" CornerRadius="1" Width="24" Height="24">
+                                <Image x:Name="img" Source="Icon/undo.png"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsEnabled" Value="True">
+                                    <Setter TargetName="img" Property="Source" Value="Icon/FinalizeActived.png"/>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter TargetName="img" Property="Source" Value="Icon/Finalize.png"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#FFCFE6FD"></Setter>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#FFB2D8FE"></Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </ToolBar>
+            <ToolBar>
+                <Button ToolTip="{DynamicResource Undo(Ctrl+Z)}" Command="{Binding UndoCommand}">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border x:Name="border" Background="{x:Null}" CornerRadius="1" Width="20" Height="20">
+                                <Image x:Name="img" Source="Icon/undo.png"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsEnabled" Value="True">
+                                    <Setter TargetName="img" Property="Source" Value="Icon/undo.png"/>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter TargetName="img" Property="Source" Value="Icon/undo0.png"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#FFCFE6FD"></Setter>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#FFB2D8FE"></Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button ToolTip="Redo(Ctrl+Y)" Command="{Binding RedoCommand}" Margin="10,0">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border x:Name="border" Background="{x:Null}" CornerRadius="1" Width="20" Height="20">
+                                <Image x:Name="img" Source="Icon/undo.png"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsEnabled" Value="True">
+                                    <Setter TargetName="img" Property="Source" Value="Icon/redo.png"/>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter TargetName="img" Property="Source" Value="Icon/redo0.png"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#FFCFE6FD"></Setter>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#FFB2D8FE"></Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </ToolBar>
+            <ToolBar>
+                <Button Content="{DynamicResource Edit}" Command="{Binding ShowLdtEditorCommand}" Focusable="False"/>
+                <Button Content="{DynamicResource Test}" Command="{Binding TestCommand}" Visibility="Hidden"/>
+            </ToolBar>
+            <ToolBar Visibility="{Binding AoiVisibility}">
+                <TextBlock VerticalAlignment="Center" Text="{DynamicResource RLLEditor.Data}"/>
+                <ComboBox
+                    DisplayMemberPath="Title"
+                    ItemsSource="{Binding Reference}"
+                    SelectedItem="{Binding SelectedReference}"/>
+                <!--<Button
+                    Command="{Binding GoCommand}"
+                    Content="Go"
+                    ToolTip="{Binding GoTip}" />-->
+            </ToolBar>
+
+        </StackPanel>
+        <!--<ToolBar Grid.Row="1" ToolBarTray.IsLocked="True" Visibility="{Binding LdtEditorVisible}" MinHeight="16">
+            <TextBlock Text="Ladder Diagram Text:" Height="16"/>
+            <Button Content="√" VerticalContentAlignment="Center" Height="16" Margin="10,0,5,0" Command="{Binding FinishLdtEdit}" CommandParameter="true"/>
+            <Button Content="×" VerticalContentAlignment="Center" Height="16" Margin="5,0,10,0" Command="{Binding FinishLdtEdit}" CommandParameter="false"/>
+            <TextBox TextWrapping="Wrap" Text="{Binding LdtText}" FontStretch="Expanded"/>
+        </ToolBar>-->
+        <Grid Grid.Row="1" Visibility="{Binding LdtEditorVisible}" MinHeight="16">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <TextBlock Text="{Binding RungInfo}" Height="16"/>
+                <!--Ladder Diagram Text:-->
+                <Button x:Name="ButtonFinishEdit" Height="16" Content="√" Margin="10,0,5,0" Command="{Binding FinishLdtEdit}" CommandParameter="true"/>
+                <Button Height="16" Content="×" Margin="5,0,10,0" Command="{Binding FinishLdtEdit}" CommandParameter="false"/>
+            </StackPanel>
+            <TextBox Grid.Column="1" TextWrapping="Wrap" Text="{Binding LdtText}"/>
+        </Grid>
+        <!--<GridSplitter Grid.Row="2" Height="5" HorizontalAlignment="Stretch" Visibility="{Binding LdtEditorVisible}"/>
+         PreviewMouseDown="UIElement_OnMouseDown"-->
+        <ContentPresenter Grid.Row="3" Content="{Binding TopControl}"/>
+        <GridSplitter Grid.Row="4" Height="5" 
+                      HorizontalAlignment="Stretch"/>
+        <ContentPresenter Grid.Row="5" Content="{Binding BottomControl}" SizeChanged="ContentPresenter_SizeChanged"/>
+    </Grid>
+</UserControl>

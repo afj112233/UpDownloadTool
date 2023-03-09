@@ -1,0 +1,271 @@
+﻿<UserControl x:Class="ICSStudio.Gui.Controls.BitPicker"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:controls="clr-namespace:ICSStudio.Gui.Controls"
+             xmlns:converters="clr-namespace:ICSStudio.Gui.Converters"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300"
+             KeyboardNavigation.TabNavigation="Cycle">
+    <FrameworkElement.Resources>
+        <system:Int16 x:Key="Zero">0</system:Int16>
+        <system:Int16 x:Key="One">1</system:Int16>
+        <system:Int16 x:Key="Two">2</system:Int16>
+        <system:Int16 x:Key="Three">3</system:Int16>
+        <system:Int16 x:Key="Four">4</system:Int16>
+        <system:Int16 x:Key="Five">5</system:Int16>
+        <system:Int16 x:Key="Six">6</system:Int16>
+        <system:Int16 x:Key="Seven">7</system:Int16>
+        <system:Int16 x:Key="Eight">8</system:Int16>
+        <system:Int16 x:Key="Nine">9</system:Int16>
+        <system:Int16 x:Key="Ten">10</system:Int16>
+        <system:Int16 x:Key="Eleven">11</system:Int16>
+        <system:Int16 x:Key="Twelve">12</system:Int16>
+        <system:Int16 x:Key="Thirteen">13</system:Int16>
+        <system:Int16 x:Key="Fourteen">14</system:Int16>
+        <system:Int16 x:Key="Fifteen">15</system:Int16>
+        <system:Int16 x:Key="Sixteen">16</system:Int16>
+        <system:Int16 x:Key="Seventeen">17</system:Int16>
+        <system:Int16 x:Key="Eighteen">18</system:Int16>
+        <system:Int16 x:Key="Nineteen">19</system:Int16>
+        <system:Int16 x:Key="Twenty">20</system:Int16>
+        <system:Int16 x:Key="TwentyOne">21</system:Int16>
+        <system:Int16 x:Key="TwentyTwo">22</system:Int16>
+        <system:Int16 x:Key="TwentyThree">23</system:Int16>
+        <system:Int16 x:Key="TwentyFour">24</system:Int16>
+        <system:Int16 x:Key="TwentyFive">25</system:Int16>
+        <system:Int16 x:Key="TwentySix">26</system:Int16>
+        <system:Int16 x:Key="TwentySeven">27</system:Int16>
+        <system:Int16 x:Key="TwentyEight">28</system:Int16>
+        <system:Int16 x:Key="TwentyNine">29</system:Int16>
+        <system:Int16 x:Key="Thirty">30</system:Int16>
+        <system:Int16 x:Key="ThirtyOne">31</system:Int16>
+
+        <converters:DirtyStatusImageConverter x:Key="DirtyStatusImageConverter" />
+        <converters:BinaryConverter x:Key="BinaryConverter" />
+        <converters:DataTypeToVisibilityConverter x:Key="RowVisibilityConverter" />
+
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0,3,0,3" />
+        </Style>
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="MaxLength" Value="1" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="BorderBrush" Value="Black" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="IsReadOnly" Value="true" />
+            <Setter Property="ContextMenu">
+                <Setter.Value>
+                    <ContextMenu Visibility="Collapsed" />
+                </Setter.Value>
+            </Setter>
+
+            <EventSetter Event="PreviewMouseLeftButtonDown" Handler="OnPreviewMouseLeftButtonDown" />
+            <EventSetter Event="PreviewLostKeyboardFocus" Handler="OnPreviewLostKeyboardFocus" />
+            <EventSetter Event="LostFocus" Handler="OnLostFocus" />
+            <EventSetter Event="PreviewKeyDown" Handler="OnPreviewKeyDown" />
+            <EventSetter Event="PreviewTextInput" Handler="OnPreviewTextInput" />
+            <EventSetter Event="TextChanged" Handler="OnTextChanged" />
+
+            <Style.Triggers>
+                <Trigger Property="UIElement.IsFocused" Value="true">
+                    <Setter Property="Control.BorderThickness" Value="1.75" />
+                </Trigger>
+            </Style.Triggers>
+
+        </Style>
+        <Style TargetType="{x:Type Border}">
+            <Setter Property="BorderBrush" Value="Black" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="1" />
+            <Setter Property="Background" Value="LightGray" />
+        </Style>
+    </FrameworkElement.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0"
+                    Background="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=IsDirty, Converter={StaticResource DirtyStatusImageConverter}}" />
+            <Border Grid.Column="1">
+                <TextBlock Text="7" />
+            </Border>
+            <Border Grid.Column="2">
+                <TextBlock Text="6" />
+            </Border>
+            <Border Grid.Column="3">
+                <TextBlock Text="5" />
+            </Border>
+            <Border Grid.Column="4">
+                <TextBlock Text="4" />
+            </Border>
+            <Border Grid.Column="5">
+                <TextBlock Text="3" />
+            </Border>
+            <Border Grid.Column="6">
+                <TextBlock Text="2" />
+            </Border>
+            <Border Grid.Column="7">
+                <TextBlock Text="1" />
+            </Border>
+            <Border Grid.Column="8">
+                <TextBlock Text="0" />
+            </Border>
+        </Grid>
+        <Grid Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+            </Grid.ColumnDefinitions>
+            <Border>
+                <TextBlock Text="7 - 0" Margin="0, 2, 5, 2" HorizontalAlignment="Right" />
+            </Border>
+            <TextBox Grid.Column="1" Tag="{StaticResource Seven}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource Seven}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+            <TextBox Grid.Column="2" Tag="{StaticResource Six}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource Six}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+            <TextBox Grid.Column="3" Tag="{StaticResource Five}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource Five}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+            <TextBox Grid.Column="4" Tag="{StaticResource Four}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource Four}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+            <TextBox Grid.Column="5" Tag="{StaticResource Three}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource Three}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+            <TextBox Grid.Column="6" Tag="{StaticResource Two}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource Two}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+            <TextBox Grid.Column="7" Tag="{StaticResource One}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource One}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+            <TextBox Grid.Column="8" Tag="{StaticResource Zero}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource Zero}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+        </Grid>
+        <Grid Row="2"
+              Visibility="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=DataType, ConverterParameter={StaticResource Two}, Converter={StaticResource RowVisibilityConverter}}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+            </Grid.ColumnDefinitions>
+            <Border>
+                <TextBlock Text="15 - 8" Margin="0, 2, 5, 2" HorizontalAlignment="Right" />
+            </Border>
+            <TextBox Grid.Column="1" Tag="{StaticResource Fifteen}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource Fifteen}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+            <TextBox Grid.Column="2" Tag="{StaticResource Fourteen}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource Fourteen}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+            <TextBox Grid.Column="3" Tag="{StaticResource Thirteen}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource Thirteen}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+            <TextBox Grid.Column="4" Tag="{StaticResource Twelve}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource Twelve}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+            <TextBox Grid.Column="5" Tag="{StaticResource Eleven}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource Eleven}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+            <TextBox Grid.Column="6" Tag="{StaticResource Ten}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource Ten}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+            <TextBox Grid.Column="7" Tag="{StaticResource Nine}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource Nine}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+            <TextBox Grid.Column="8" Tag="{StaticResource Eight}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource Eight}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+        </Grid>
+        <Grid Row="3"
+              Visibility="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=DataType, ConverterParameter={StaticResource Three}, Converter={StaticResource RowVisibilityConverter}}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+            </Grid.ColumnDefinitions>
+            <Border>
+                <TextBlock Text="23 - 16" Margin="0, 2, 5, 2" HorizontalAlignment="Right" />
+            </Border>
+            <TextBox Grid.Column="1" Tag="{StaticResource TwentyThree}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource TwentyThree}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+            <TextBox Grid.Column="2" Tag="{StaticResource TwentyTwo}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource TwentyTwo}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+            <TextBox Grid.Column="3" Tag="{StaticResource TwentyOne}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource TwentyOne}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+            <TextBox Grid.Column="4" Tag="{StaticResource Twenty}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource Twenty}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+            <TextBox Grid.Column="5" Tag="{StaticResource Nineteen}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource Nineteen}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+            <TextBox Grid.Column="6" Tag="{StaticResource Eighteen}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource Eighteen}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+            <TextBox Grid.Column="7" Tag="{StaticResource Seventeen}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource Seventeen}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+            <TextBox Grid.Column="8" Tag="{StaticResource Sixteen}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource Sixteen}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+        </Grid>
+        <Grid Row="4"
+              Visibility="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=DataType, ConverterParameter={StaticResource Four}, Converter={StaticResource RowVisibilityConverter}}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+            </Grid.ColumnDefinitions>
+            <Border>
+                <TextBlock Text="31 - 24" Margin="0, 2, 5, 2" HorizontalAlignment="Right" />
+            </Border>
+            <TextBox Grid.Column="1" Tag="{StaticResource ThirtyOne}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource ThirtyOne}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+            <TextBox Grid.Column="2" Tag="{StaticResource Thirty}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource Thirty}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+            <TextBox Grid.Column="3" Tag="{StaticResource TwentyNine}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource TwentyNine}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+            <TextBox Grid.Column="4" Tag="{StaticResource TwentyEight}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource TwentyEight}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+            <TextBox Grid.Column="5" Tag="{StaticResource TwentySeven}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource TwentySeven}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+            <TextBox Grid.Column="6" Tag="{StaticResource TwentySix}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource TwentySix}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+            <TextBox Grid.Column="7" Tag="{StaticResource TwentyFive}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource TwentyFive}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+            <TextBox Grid.Column="8" Tag="{StaticResource TwentyFour}"
+                     Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:BitPicker}}, Path=Value, Mode=TwoWay, ConverterParameter={StaticResource TwentyFour}, UpdateSourceTrigger=Explicit, Converter={StaticResource BinaryConverter}}" />
+        </Grid>
+    </Grid>
+</UserControl>

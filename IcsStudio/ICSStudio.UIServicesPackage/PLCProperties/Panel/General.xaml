@@ -1,0 +1,111 @@
+﻿<UserControl
+    x:Class="ICSStudio.UIServicesPackage.PLCProperties.Panel.General"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:ICSStudio.Components.Controls;assembly=ICSStudio.Components"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    Loaded="OnLoaded"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="Margin" Value="5,5,25,5" />
+            </Style>
+            <Style TargetType="{x:Type TextBox}">
+                <Setter Property="Margin" Value="5" />
+            </Style>
+            <Style TargetType="{x:Type Button}">
+                <Setter Property="Margin" Value="5" />
+                <Setter Property="Height" Value="22" />
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="0"
+            Margin="5"
+            Text="{DynamicResource Vendor:}" />
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="1"
+            Margin="5"
+            Text="{Binding Vendor}" />
+
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="0"
+            Margin="5"
+            VerticalAlignment="Center"
+            Text="{DynamicResource Type:}" />
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="5"
+            VerticalAlignment="Center"
+            Text="{Binding Type}" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="2"
+            Height="20"
+            VerticalContentAlignment="Center"
+            Command="{Binding ChangeCommand}"
+            Content="{DynamicResource Change Controller}" />
+
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="0"
+            Text="{DynamicResource Revision:}" />
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="1"
+            Text="32" />
+
+        <TextBlock
+            Grid.Row="3"
+            Grid.Column="0"
+            VerticalAlignment="Center"
+            Text="{DynamicResource Name:}" />
+        <controls:ValidateNameControl
+            x:Name="NameBox"
+            Grid.Row="3"
+            Grid.Column="1"
+            Height="19"
+            Margin="5"
+            IsEnabled="{Binding IsEnable}"
+            Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+
+        <TextBlock
+            Grid.Row="4"
+            Grid.Column="0"
+            Margin="5,10,25,5"
+            Text="{DynamicResource Description:}" />
+        <TextBox
+            Grid.Row="4"
+            Grid.Column="1"
+            Height="80"
+            AcceptsReturn="True"
+            IsEnabled="{Binding IsEnable}"
+            Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}"
+            TextWrapping="WrapWithOverflow"
+            VerticalScrollBarVisibility="Visible" />
+    </Grid>
+</UserControl>

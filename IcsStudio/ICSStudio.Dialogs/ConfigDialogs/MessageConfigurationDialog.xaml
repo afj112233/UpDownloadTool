@@ -1,0 +1,473 @@
+﻿<Window x:Class="ICSStudio.Dialogs.ConfigDialogs.MessageConfigurationDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:configDialogs="clr-namespace:ICSStudio.Dialogs.ConfigDialogs"
+        xmlns:dataType="clr-namespace:ICSStudio.Interfaces.DataType;assembly=ICSStudio.Interfaces"
+        xmlns:converters="clr-namespace:ICSStudio.Gui.Converters;assembly=ICSStudio.Gui"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:controls="clr-namespace:ICSStudio.Gui.Controls;assembly=ICSStudio.Gui"
+        xmlns:gui="clr-namespace:ICSStudio.Gui;assembly=ICSStudio.Gui"
+        mc:Ignorable="d"
+        d:DesignHeight="300" d:DesignWidth="300"
+        Width="540" Height="535" ResizeMode="NoResize"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False"
+        FontFamily="Segoe UI" FontSize="12"
+        Title="{Binding Title}"
+        gui:DialogCloser.DialogResult="{Binding DialogResult}">
+    <Window.Resources>
+        <ResourceDictionary>
+            <BitmapImage x:Key="LeftImage"
+                         UriSource="pack://application:,,,/ICSStudio.Gui;component/Resources/image/left_10_10.png" />
+
+            <configDialogs:MessageTypeToVisibilityConverter x:Key="MessageTypeToVisibilityConverter" />
+            <converters:BooleanInverterConverter x:Key="BooleanInverterConverter" />
+
+            <Style x:Key="ReadOnlyStyle" TargetType="{x:Type TextBlock}">
+                <Style.Triggers>
+                    <Trigger Property="IsEnabled" Value="False">
+                        <Setter Property="TextElement.Foreground"
+                                Value="{DynamicResource ResourceKey={x:Static SystemColors.GrayTextBrushKey}}" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style x:Key="ReadOnlyRadioButtonStyle" TargetType="{x:Type RadioButton}">
+                <Style.Triggers>
+                    <Trigger Property="IsEnabled" Value="False">
+                        <Setter Property="TextElement.Foreground"
+                                Value="{DynamicResource ResourceKey={x:Static SystemColors.GrayTextBrushKey}}" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style TargetType="TextBox">
+                <Setter Property="Validation.ErrorTemplate">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <ControlTemplate.Resources>
+                                <BooleanToVisibilityConverter x:Key="Converter" />
+                            </ControlTemplate.Resources>
+                            <DockPanel LastChildFill="True">
+                                <Border BorderThickness="1" BorderBrush="#00000000"
+                                        Visibility="{Binding ElementName=placeholder,Mode=OneWay, Path=AdornedElement.IsVisible, Converter={StaticResource Converter}}">
+                                    <AdornedElementPlaceholder x:Name="placeholder" />
+                                </Border>
+                            </DockPanel>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding (Validation.HasError),RelativeSource={RelativeSource Mode=Self}}"
+                                 Value="True">
+                        <Setter Property="FocusManager.FocusedElement"
+                                Value="{Binding RelativeSource={RelativeSource Mode=Self}}" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+
+    </Window.Resources>
+    <Grid Margin="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TabControl Grid.Row="0" SelectedIndex="{Binding SelectedIndex}">
+            <TabItem Header="{Binding ConfigurationHeader}"
+                     Width="100">
+                <Grid Margin="8">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{DynamicResource Message Type:}" Style="{StaticResource ReadOnlyStyle}" />
+                        <ComboBox Grid.Column="1" Width="222" VerticalAlignment="Center"
+                                  ItemsSource="{Binding MessageTypes}"
+                                  SelectedValue="{Binding MessageType}"
+                                  DisplayMemberPath="DisplayName"
+                                  SelectedValuePath="Value" />
+                    </Grid>
+
+                    <Grid Grid.Row="1" x:Name="BlockTransferReadGrid"
+                          Visibility="{Binding MessageType, Converter={StaticResource MessageTypeToVisibilityConverter}, ConverterParameter={x:Static dataType:MessageTypeEnum.CIPDataTableRead}}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="{DynamicResource Number Of Elements:}" />
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="{DynamicResource Destination Element:}" />
+
+                        <TextBox Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" />
+                        <ComboBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" />
+
+                        <Button Grid.Row="1" Grid.Column="2"
+                                HorizontalAlignment="Right" VerticalAlignment="Center"
+                                Content="{DynamicResource New Tag}" />
+
+                    </Grid>
+
+                    <Grid Grid.Row="1" x:Name="CIPGenericGrid"
+                          Visibility="{Binding MessageType, Converter={StaticResource MessageTypeToVisibilityConverter}, ConverterParameter={x:Static dataType:MessageTypeEnum.CIPGeneric}}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="55" />
+                                <ColumnDefinition Width="43" />
+                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition Width="40" />
+                                <ColumnDefinition Width="43" />
+                                <ColumnDefinition Width="40" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Row="0" Grid.Column="0"
+                                       Text="{DynamicResource Service Type:}" TextWrapping="Wrap" />
+                            <ComboBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="5"
+                                      VerticalAlignment="Center"
+                                      SelectedValue="{Binding ServiceType}"
+                                      ItemsSource="{Binding ServiceTypes}"
+                                      DisplayMemberPath="DisplayName"
+                                      SelectedValuePath="Value" />
+
+                            <TextBlock Grid.Row="1" Grid.Column="0" />
+
+                            <TextBlock Grid.Row="2" Grid.Column="0"
+                                       Text="{DynamicResource Service Code:}"
+                                       TextWrapping="Wrap" Style="{StaticResource ReadOnlyStyle}"
+                                       IsEnabled="{Binding ServiceCodeReadOnly, Converter={StaticResource BooleanInverterConverter}}" />
+
+                            <TextBlock Grid.Row="3" Grid.Column="0"
+                                       Text="{DynamicResource Instance:}" Style="{StaticResource ReadOnlyStyle}"
+                                       IsEnabled="{Binding InstanceIDReadOnly,Converter={StaticResource BooleanInverterConverter}}" />
+
+                            <TextBlock Grid.Row="2" Grid.Column="2" Text="(Hex)"
+                                       VerticalAlignment="Center" Margin="10 0 10 0"
+                                       Style="{StaticResource ReadOnlyStyle}"
+                                       IsEnabled="{Binding ServiceCodeReadOnly, Converter={StaticResource BooleanInverterConverter}}" />
+                            <TextBlock Grid.Row="2" Grid.Column="5" Text="(Hex)"
+                                       VerticalAlignment="Center" Margin="10 0 0 0"
+                                       Style="{StaticResource ReadOnlyStyle}"
+                                       IsEnabled="{Binding ClassIDReadOnly, Converter={StaticResource BooleanInverterConverter}}" />
+                            <TextBlock Grid.Row="3" Grid.Column="5" Text="(Hex)"
+                                       VerticalAlignment="Center" Margin="10 0 0 0"
+                                       Style="{StaticResource ReadOnlyStyle}"
+                                       IsEnabled="{Binding AttributeIDReadOnly, Converter={StaticResource BooleanInverterConverter}}" />
+
+                            <TextBlock Grid.Row="2" Grid.Column="3"
+                                       Text="{DynamicResource Class:}" VerticalAlignment="Center" TextAlignment="Right"
+                                       Margin="0 0 10 0"
+                                       Style="{StaticResource ReadOnlyStyle}"
+                                       IsEnabled="{Binding ClassIDReadOnly, Converter={StaticResource BooleanInverterConverter}}" />
+                            <TextBlock Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2"
+                                       Text="{DynamicResource Attribute:}" VerticalAlignment="Center" TextAlignment="Right"
+                                       Margin="0 0 10 0"
+                                       Style="{StaticResource ReadOnlyStyle}"
+                                       IsEnabled="{Binding AttributeIDReadOnly, Converter={StaticResource BooleanInverterConverter}}" />
+
+                            <TextBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" MaxLength="4"
+                                     Text="{Binding ServiceCode, UpdateSourceTrigger=PropertyChanged}"
+                                     IsEnabled="{Binding ServiceCodeReadOnly, Converter={StaticResource BooleanInverterConverter}}" />
+                            <TextBox Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" MaxLength="5"
+                                     x:Name="Test"
+                                     Text="{Binding InstanceID, UpdateSourceTrigger=PropertyChanged}"
+                                     IsEnabled="{Binding InstanceIDReadOnly,Converter={StaticResource BooleanInverterConverter}}" />
+                            <TextBox Grid.Row="2" Grid.Column="4" VerticalAlignment="Center" MaxLength="4"
+                                     Text="{Binding ClassID,UpdateSourceTrigger=PropertyChanged}"
+                                     IsEnabled="{Binding ClassIDReadOnly, Converter={StaticResource BooleanInverterConverter}}" />
+                            <TextBox Grid.Row="3" Grid.Column="4" VerticalAlignment="Center" MaxLength="4"
+                                     Text="{Binding AttributeID,UpdateSourceTrigger=PropertyChanged}"
+                                     IsEnabled="{Binding AttributeIDReadOnly, Converter={StaticResource BooleanInverterConverter}}" />
+
+                        </Grid>
+
+                        <Grid Grid.Column="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Row="0" Grid.Column="0"
+                                       Text="{DynamicResource Source Element:}" Style="{StaticResource ReadOnlyStyle}"
+                                       IsEnabled="{Binding SourceElementReadOnly, Converter={StaticResource BooleanInverterConverter}}" />
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="{DynamicResource Source Length:}"
+                                       Style="{StaticResource ReadOnlyStyle}"
+                                       IsEnabled="{Binding SourceLengthReadOnly, Converter={StaticResource BooleanInverterConverter}}" />
+                            <TextBlock Grid.Row="2" Grid.Column="0" Text="{DynamicResource Destination Element:}" TextWrapping="Wrap"
+                                       Style="{StaticResource ReadOnlyStyle}"
+                                       IsEnabled="{Binding DestinationElementReadOnly, Converter={StaticResource BooleanInverterConverter}}" />
+
+                            <!--<ComboBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" />-->
+                            <!--<DockPanel Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2">
+                                <Button DockPanel.Dock="Right" IsTabStop="False" MinWidth="21" Content="v"></Button>
+                                <controls:FastAutoCompeteTextBox IsTextCompletionEnabled="True"/>
+                            </DockPanel>-->
+                            <TextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center"
+                                     Text="{Binding SourceElement, UpdateSourceTrigger=PropertyChanged}"
+                                     IsEnabled="{Binding SourceElementReadOnly, Converter={StaticResource BooleanInverterConverter}}" />
+                            <!--<ComboBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" />-->
+                            <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center"
+                                     Text="{Binding DestinationElement, UpdateSourceTrigger=PropertyChanged}"
+                                     IsEnabled="{Binding DestinationElementReadOnly, Converter={StaticResource BooleanInverterConverter}}" />
+
+                            <xctk:ShortUpDown Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"
+                                              Value="{Binding SourceLength}"
+                                              Minimum="0" Maximum="32767"
+                                              IsEnabled="{Binding SourceLengthReadOnly, Converter={StaticResource BooleanInverterConverter}}" />
+                            <TextBlock Grid.Row="1" Grid.Column="2" Text="(Bytes)" VerticalAlignment="Center"
+                                       Style="{StaticResource ReadOnlyStyle}"
+                                       IsEnabled="{Binding SourceLengthReadOnly, Converter={StaticResource BooleanInverterConverter}}" />
+
+                            <Button Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"
+                                    HorizontalAlignment="Left"
+                                    Content="{DynamicResource New Tag}"
+                                    Command="{Binding NewTagCommand}" />
+
+                        </Grid>
+
+                    </Grid>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="{Binding CommunicationHeader}"
+                     Width="100">
+                <Grid Margin="8">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Orientation="Horizontal">
+                        <RadioButton Content="{DynamicResource Path:}" GroupName="CommunicationType"
+                                     IsChecked="True"
+                                     Margin="0 0 10 0" />
+                        <TextBox Width="285" Text="{Binding ConnectionPath, UpdateSourceTrigger=PropertyChanged}" />
+                        <Button Content="{DynamicResource Browse...}" Margin="10 0 0 0" />
+                    </StackPanel>
+
+                    <TextBlock Grid.Row="1" Margin="55 0 0 0" />
+
+                    <StackPanel Grid.Row="2" Orientation="Horizontal" IsEnabled="False">
+                        <RadioButton Content="{DynamicResource Broadcast:}" GroupName="CommunicationType"
+                                     Margin="0 0 10 0"
+                                     Style="{StaticResource ReadOnlyRadioButtonStyle}" />
+                        <ComboBox Width="100" />
+                    </StackPanel>
+
+                    <GroupBox Grid.Row="3" Header="{DynamicResource Communication Method}" IsEnabled="False">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <RadioButton Grid.Row="0" Grid.Column="0" Content="CIP"
+                                         Style="{StaticResource ReadOnlyRadioButtonStyle}" />
+                            <RadioButton Grid.Row="0" Grid.Column="1" Content="DH+"
+                                         Style="{StaticResource ReadOnlyRadioButtonStyle}" />
+                            <TextBlock Grid.Row="0" Grid.Column="2" Text="{DynamicResource Channel:}"
+                                       Style="{StaticResource ReadOnlyStyle}" />
+                            <ComboBox Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" />
+                            <TextBlock Grid.Row="0" Grid.Column="4" Text="{DynamicResource Destination Link:}"
+                                       Style="{StaticResource ReadOnlyStyle}" />
+                            <TextBox Grid.Row="0" Grid.Column="5" VerticalAlignment="Center" />
+
+                            <RadioButton Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                                         Style="{StaticResource ReadOnlyRadioButtonStyle}">
+                                <RadioButton.Content>
+                                    <TextBlock Text="{DynamicResource CIP With Source ID}" TextWrapping="Wrap" />
+                                </RadioButton.Content>
+                            </RadioButton>
+                            <TextBlock Grid.Row="1" Grid.Column="2" Text="{DynamicResource Source Link:}"
+                                       VerticalAlignment="Center" Style="{StaticResource ReadOnlyStyle}" />
+                            <TextBox Grid.Row="1" Grid.Column="3" VerticalAlignment="Center" />
+                            <TextBlock Grid.Row="1" Grid.Column="4" Text="{DynamicResource Destination Node:}"
+                                       VerticalAlignment="Center" Style="{StaticResource ReadOnlyStyle}" />
+                            <TextBox Grid.Row="1" Grid.Column="5" VerticalAlignment="Center" />
+                            <TextBlock Grid.Row="1" Grid.Column="6" Text="(Octal)"
+                                       VerticalAlignment="Center" Style="{StaticResource ReadOnlyStyle}" />
+
+                        </Grid>
+                    </GroupBox>
+
+                    <GroupBox Grid.Row="3" Header="{DynamicResource Module Address}" Visibility="Collapsed" />
+
+                    <Grid Grid.Row="4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <CheckBox Grid.Column="0" Content="{DynamicResource Connected}" IsChecked="{Binding Connected}"/>
+
+                        <StackPanel Grid.Column="1" Orientation="Horizontal">
+                            <CheckBox Content="{DynamicResource Cache Connections}" 
+                                      IsChecked="{Binding CacheConnections}"
+                                      IsEnabled="{Binding CacheConnectionsEnabled}"/>
+                            <Image Source="{StaticResource LeftImage}" Width="10" Height="10" />
+                        </StackPanel>
+
+                        <CheckBox Grid.Column="2" Content="{DynamicResource Large Connection}" 
+                                  IsChecked="{Binding LargeConnection}"
+                                  IsEnabled="{Binding LargeConnectionEnabled}"/>
+                    </Grid>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="{Binding TagHeader}"
+                     Width="100">
+                <Grid Margin="8">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height=" Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="75" />
+                        <ColumnDefinition Width="260" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="{DynamicResource Name:}" />
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="{DynamicResource Description:}" />
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="{DynamicResource Type:}" />
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="{DynamicResource Data Type:}" />
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="{DynamicResource Scope:}" />
+                    <TextBlock Grid.Row="5" Grid.Column="0" Text="{DynamicResource ExternalAccess:}" TextWrapping="Wrap" />
+
+                    <TextBox Grid.Row="0" Grid.Column="1"
+                             Text="{Binding TagName,UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBox Grid.Row="1" Grid.Column="1"
+                             TextWrapping="Wrap" AcceptsReturn="True"
+                             VerticalScrollBarVisibility="Visible"
+                             Text="{Binding Description,UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBlock Grid.Row="2" Grid.Column="1" Text="{DynamicResource Base}" />
+                    <TextBlock Grid.Row="3" Grid.Column="1" Text="MESSAGE" />
+                    <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Scope}" />
+                    <TextBlock Grid.Row="5" Grid.Column="1" Text="{DynamicResource Read/Write}" />
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+        <Grid Grid.Row="1">
+            <FrameworkElement.Resources>
+            </FrameworkElement.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+                <controls:StatusBitControl Text="{DynamicResource Enable}" IsSet="{Binding Enable,Mode=OneWay}"
+                                           Margin="0 0 16 0" />
+                <controls:StatusBitControl Text="{DynamicResource Enable Waiting}" IsSet="{Binding EnableWaiting,Mode=OneWay}"
+                                           Margin="0 0 16 0" />
+                <controls:StatusBitControl Text="{DynamicResource StatusStart}" IsSet="{Binding Start,Mode=OneWay}"
+                                           Margin="0 0 16 0" />
+                <controls:StatusBitControl Text="{DynamicResource Done}" IsSet="{Binding Done,Mode=OneWay}"
+                                           Margin="0 0 16 0" />
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
+                <controls:StatusBitControl Text="{DynamicResource Error Code:}"
+                                           IsSet="{Binding Error,Mode=OneWay}" />
+                <TextBlock MinWidth="60" Text="{Binding ErrorCode,Mode=OneWay}" />
+                <TextBlock Text="{DynamicResource Extended Error Code:}" />
+                <TextBlock MinWidth="120" Text="{Binding ExtendedErrorCode,Mode=OneWay}" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal"
+                        Margin="0 6 0 6">
+                <TextBlock Margin="0 0 6 0" Text="{DynamicResource Done Length:}" />
+                <TextBlock Text="{Binding DoneLength}" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                <CheckBox Content="{DynamicResource Timed Out}" IsChecked="{Binding TimedOut}" />
+                <Image Source="{StaticResource LeftImage}" Width="10" Height="10" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal">
+                <TextBlock Text="{DynamicResource Error Path:}" />
+                <TextBlock Text="{Binding ErrorPath,Mode=OneWay}" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="3" Grid.Column="0" Orientation="Horizontal">
+                <TextBlock Text="{DynamicResource Error Text:}" />
+                <TextBlock Text="{Binding ErrorText,Mode=OneWay}" />
+            </StackPanel>
+
+        </Grid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right"
+                    Margin="0,8,0,0">
+            <FrameworkElement.Resources>
+                <Style x:Key="ButtonStyle" TargetType="{x:Type Button}">
+                    <Setter Property="Margin" Value="8,0,0,0" />
+                    <Setter Property="Padding" Value="16,1" />
+                </Style>
+            </FrameworkElement.Resources>
+            <UniformGrid Rows="1" Columns="4">
+                <Button Style="{StaticResource ButtonStyle}" IsDefault="True" Content="{DynamicResource OK}"
+                        Command="{Binding OKCommand}" />
+                <Button Style="{StaticResource ButtonStyle}" IsCancel="True" Content="{DynamicResource Cancel}" />
+                <Button Style="{StaticResource ButtonStyle}" Content="{DynamicResource Apply}"
+                        Command="{Binding ApplyCommand}" />
+                <Button Style="{StaticResource ButtonStyle}" Content="{DynamicResource Help}" />
+            </UniformGrid>
+        </StackPanel>
+
+    </Grid>
+</Window>

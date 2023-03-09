@@ -1,0 +1,64 @@
+﻿<UserControl
+    x:Class="ICSStudio.Gui.Controls.ExtensionTextBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="TextTest"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    FocusVisualStyle="{x:Null}"
+    Focusable="True"
+    mc:Ignorable="d">
+
+    <Grid Margin="0">
+        <TextBox
+            x:Name="MainTextBox"
+            Margin="0,0,17,0"
+            HorizontalAlignment="Stretch"
+            HorizontalContentAlignment="Left"
+            BorderThickness="0"
+            KeyUp="MainTextBox_OnKeyUp"
+            Loaded="MainTextBox_OnLoaded"
+            MouseDoubleClick="TextBox_OnMouseDoubleClick"
+            Text="{Binding Text, ElementName=TextTest, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        <Button
+            Width="17"
+            Height="Auto"
+            MinWidth="17"
+            Margin="0"
+            HorizontalAlignment="Right"
+            Background="Transparent"
+            BorderThickness="0"
+            Click="ShowExtensionTextBox_OnClick">
+            <Button.Content>
+                <Path
+                    Height="7"
+                    Data="M758.272 352.469333l-257.493333 236.629334-230.442667-236.629334-44.586667 42.112 275.029334 276.949334 297.472-276.906667z"
+                    Stretch="Fill"
+                    Stroke="#FFE2E2E2"
+                    StrokeThickness="1" />
+            </Button.Content>
+            <Button.ContextMenu>
+                <ContextMenu>
+                    <ContextMenu.Template>
+                        <ControlTemplate>
+                            <TextBox
+                                x:Name="ExtensionTextBox"
+                                Padding="50 0 50 0"
+                                Width="350"
+                                Height="80"
+                                HorizontalContentAlignment="Center"
+                                AcceptsReturn="True"
+                                KeyUp="ExtensionTextBox_OnKeyUp"
+                                MouseDoubleClick="TextBox_OnMouseDoubleClick"
+                                PreviewLostKeyboardFocus="ExtensionTextBox_OnPreviewLostKeyboardFocus"
+                                TextWrapping="Wrap"
+                                VerticalScrollBarVisibility="Auto" />
+                        </ControlTemplate>
+                    </ContextMenu.Template>
+                </ContextMenu>
+            </Button.ContextMenu>
+        </Button>
+    </Grid>
+</UserControl>

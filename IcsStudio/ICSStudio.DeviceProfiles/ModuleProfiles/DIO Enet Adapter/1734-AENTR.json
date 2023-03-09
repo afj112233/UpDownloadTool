@@ -1,0 +1,423 @@
+{
+    "VendorID": 1,
+    "ProductType": 12,
+    "ProductCode": 196,
+    "CatalogNumber": "1734-AENTR",
+    "Descriptions": [
+        {
+            "LCID": 1033,
+            "Text": "1734 Ethernet Adapter, 2-Port, Twisted Pair Media"
+        },
+        {
+            "LCID": 2052,
+            "Text": "1734 以太网适配器，2 端口，双绞线介质"
+        }
+    ],
+    "MajorRevs": [
+        {
+            "MajorRev": 3,
+            "Series": "A"
+        },
+        {
+            "MajorRev": 4,
+            "Series": "B"
+        },
+        {
+            "MajorRev": 5,
+            "Series": "B"
+        }
+    ],
+    "Ports": [
+        {
+            "Number": 1,
+            "Type": "PointIO",
+            "Label": "Chassis",
+            "Width": 1,
+            "ConnectorOffset": 0,
+            "ExtendedProperties": {
+                "DownstreamOnly": true,
+                "MaxRPIRestriction": 750000,
+                "MinRPIRestriction": 2000,
+                "RPIResolutionRestriction": 1000
+            }
+        },
+        {
+            "Number": 2,
+            "Type": "Ethernet",
+            "Label": "ENet",
+            "Width": 1,
+            "ConnectorOffset": 0
+        }
+    ],
+    "AOPModuleTypes": {
+        "Module": {
+            "ID": "1734_AENTR",
+            "SupportsReset": true,
+            "DriverType": 2048,
+            "BusID": "1734_AENTR",
+            "CIPObjectDefinesID": "CIPObjects",
+            "Relaxed": true
+        },
+        "ModuleTypes": [
+            {
+                "MajorRev": 3,
+                "ModuleID": "1734_AENTR",
+                "FilterMask": 134217728,
+                "ModuleDefinitionID": "1734_AENTR"
+            },
+            {
+                "MajorRev": 4,
+                "ModuleID": "1734_AENTR",
+                "FilterMask": 134217728,
+                "ModuleDefinitionID": "1734_AENTR"
+            },
+            {
+                "MajorRev": 5,
+                "ModuleID": "1734_AENTR",
+                "ModuleDefinitionID": "1734_AENTR_ERACK",
+                "Default": true
+            }
+        ],
+        "Bus": {
+            "ID": "1734_AENTR",
+            "Downstream": {
+                "Exclusions": {
+                    "ExcludeAddressRange": {
+                        "MinAddress": 1,
+                        "MaxAddress": 63
+                    }
+                }
+            }
+        },
+        "ModuleDefinitions": [
+            {
+                "ID": "1734_AENTR",
+                "StringsID": "AENModuleDefinitionStrings",
+                "Connection": {
+                    "StringID": 1,
+                    "Choices": [
+                        {
+                            "ID": "Listen_Only_Rack",
+                            "StringID": 7,
+                            "CommMethod": 939524099,
+                            "ConfigID": 524289
+                        },
+                        {
+                            "ID": "None",
+                            "StringID": 5,
+                            "CommMethod": 536870914,
+                            "ConfigID": 131073
+                        },
+                        {
+                            "ID": "Rack",
+                            "StringID": 4,
+                            "CommMethod": 805306369,
+                            "ConfigID": 262145,
+                            "Default": true
+                        }
+                    ]
+                }
+            },
+            {
+                "ID": "1734_AENTR_ERACK",
+                "StringsID": "AENModuleDefinitionStrings",
+                "Connection": {
+                    "StringID": 1,
+                    "Choices": [
+                        {
+                            "ID": "Listen_Only_Rack",
+                            "StringID": 7,
+                            "CommMethod": 939524099,
+                            "ConfigID": 524289
+                        },
+                        {
+                            "ID": "None",
+                            "StringID": 5,
+                            "CommMethod": 536870914,
+                            "ConfigID": 131073
+                        },
+                        {
+                            "ID": "Rack",
+                            "StringID": 4,
+                            "CommMethod": 805306369,
+                            "ConfigID": 262145,
+                            "Default": true
+                        },
+                        {
+                            "ID": "Enhanced_Rack",
+                            "StringID": 8,
+                            "ConfigID": 67108864
+                        }
+                    ]
+                }
+            }
+        ],
+        "ConnectionConfigDefinitions": [
+            {
+                "ConfigID": 262145,
+                "Connections": ["1734_AENTR"]
+            },
+            {
+                "ConfigID": 524289,
+                "Connections": ["1734_AENTR_LORack"]
+            },
+            {
+                "ConfigID": 67108864,
+                "ConfigTag": {
+                    "ValueID": "AB:1734_ERACK_Data:C:0",
+                    "Instance": 0,
+                    "DataType": "AB:1734_ERACK:C:0"
+                },
+                "Connections": ["1734_AENTR_ERack"]
+            },
+            {
+                "ConfigID": 131073
+            }
+        ],
+        "ConnectionDefinitions": [
+            {
+                "ID": "1734_AENTR",
+                "Name": "Output",
+                "Type": "Output",
+                "MinRPI": 2000,
+                "MaxRPI": 750000,
+                "RPI": 20000,
+                "InputCxnPoint": 1026,
+                "OutputCxnPoint": 33794,
+                "InputTag": {
+                    "DataType": "AB:1734_{ChassisSize}SLOT:I:0"
+                },
+                "OutputTag": {
+                    "DataType": "AB:1734_{ChassisSize}SLOT:O:0"
+                }
+            },
+            {
+                "ID": "1734_AENTR_LORack",
+                "Name": "Output",
+                "Type": "Input",
+                "MinRPI": 2000,
+                "MaxRPI": 750000,
+                "RPI": 20000,
+                "InputCxnPoint": 1026,
+                "OutputCxnPoint": 32768,
+                "InputTag": {
+                    "DataType": "AB:1734_{ChassisSize}SLOT:I:0"
+                }
+            },
+            {
+                "ID": "1734_AENTR_ERack",
+                "Name": "Output",
+                "Type": "Output",
+                "MinRPI": 2000,
+                "MaxRPI": 750000,
+                "RPI": 20000,
+                "InputCxnPoint": 1026,
+                "OutputCxnPoint": 33794,
+                "InputTag": {
+                    "DataType": "AB:1734_ERACK{CRC}:I:0"
+                },
+                "OutputTag": {
+                    "DataType": "AB:1734_ERACK{CRC}:O:0"
+                }
+            }
+        ],
+        "DataTypeDefinitions": [
+            {
+                "Name": "AB:1734_ERACK:C:0",
+                "Class": "IO",
+                "Members": [
+                    {
+                        "Name": "CfgSize",
+                        "DataType": "DINT",
+                        "Hidden": true
+                    },
+                    {
+                        "Name": "CfgIDNum",
+                        "DataType": "DINT",
+                        "Hidden": true
+                    },
+                    {
+                        "Name": "ERackFlag",
+                        "DataType": "INT",
+                        "Hidden": true
+                    }
+                ]
+            },
+            {
+                "Name": "AB:1734_{ChassisSize}SLOT:I:0",
+                "Class": "IO",
+                "Members": [
+                    {
+                        "Name": "SlotStatusBits0_31",
+                        "DataType": "DINT",
+                        "Radix": "Binary"
+                    },
+                    {
+                        "Name": "SlotStatusBits32_63",
+                        "DataType": "DINT",
+                        "Radix": "Binary"
+                    },
+                    {
+                        "Name": "Data",
+                        "DataType": "SINT",
+                        "Dimension": "{ChassisSize}",
+                        "Radix": "Binary"
+                    }
+                ]
+            },
+            {
+                "Name": "AB:1734_{ChassisSize}SLOT:O:0",
+                "Class": "IO",
+                "Members": [
+                    {
+                        "Name": "SlotControlBits0_31",
+                        "DataType": "DINT",
+                        "Radix": "Binary",
+                        "Hidden": true
+                    },
+                    {
+                        "Name": "SlotControlBits32_63",
+                        "DataType": "DINT",
+                        "Radix": "Binary",
+                        "Hidden": true
+                    },
+                    {
+                        "Name": "Data",
+                        "DataType": "SINT",
+                        "Dimension": "{ChassisSize}",
+                        "Radix": "Binary"
+                    }
+                ]
+            },
+            {
+                "Name": "AB:1734_ERACK{CRC}:I:0",
+                "Class": "IO",
+                "Members": [
+                    {
+                        "Name": "SlotStatusBits0_31",
+                        "DataType": "DINT",
+                        "Radix": "Binary"
+                    },
+                    {
+                        "Name": "SlotStatusBits32_63",
+                        "DataType": "DINT",
+                        "Radix": "Binary"
+                    }
+                ]
+            },
+            {
+                "Name": "AB:1734_ERACK{CRC}:O:0",
+                "Class": "IO",
+                "Members": [
+                    {
+                        "Name": "SlotControlBits0_31",
+                        "DataType": "DINT",
+                        "Radix": "Binary",
+                        "Hidden": true
+                    },
+                    {
+                        "Name": "SlotControlBits32_63",
+                        "DataType": "DINT",
+                        "Radix": "Binary",
+                        "Hidden": true
+                    }
+                ]
+            }
+        ],
+        "DataValueDefinitions": [
+            {
+                "ID": "AB:1734_ERACK_Data:C:0",
+                "Data": "00,00,00,00,00,00,00,00,01,00"
+            },
+            {
+                "ID": "AB:1734_{ChassisSize}SLOT:I:0",
+                "Data": "00,00,00,00,00,00,00,00,00"
+            },
+            {
+                "ID": "AB:1734_{ChassisSize}SLOT:O:0",
+                "Data": "00,00,00,00,00,00,00,00,00"
+            },
+            {
+                "ID": "AB:1734_ERACK{CRC}:I:0",
+                "Data": "00,00,00,00,00,00,00,00"
+            },
+            {
+                "ID": "AB:1734_ERACK{CRC}:O:0",
+                "Data": "00,00,00,00,00,00,00,00"
+            }
+        ],
+        "CIPObjects": [
+            {
+                "ID": "ChassisInfo",
+                "TimeOut": 8000,
+                "Services": [
+                    {
+                        "Name": "GetChassisSize",
+                        "MessageStream": {
+                            "ByteData": "0e,04,21,00,00,03,24,01,30,01"
+                        }
+                    },
+                    {
+                        "Name": "SetChassisSize",
+                        "MessageStream": {
+                            "ByteData": "10,04,21,00,00,03,24,01,30,01",
+                            "Insert": ["UINT"]
+                        }
+                    }
+                ]
+            }
+        ],
+        "StringDefines": [
+            {
+                "ID": "AENModuleDefinitionStrings",
+                "Strings": [
+                    {
+                        "ID": 1,
+                        "Descriptions": [
+                            {
+                                "LCID": 1033,
+                                "Text": "Connection"
+                            }
+                        ]
+                    },
+                    {
+                        "ID": 4,
+                        "Descriptions": [
+                            {
+                                "LCID": 1033,
+                                "Text": "Rack Optimization"
+                            }
+                        ]
+                    },
+                    {
+                        "ID": 5,
+                        "Descriptions": [
+                            {
+                                "LCID": 1033,
+                                "Text": "None"
+                            }
+                        ]
+                    },
+                    {
+                        "ID": 7,
+                        "Descriptions": [
+                            {
+                                "LCID": 1033,
+                                "Text": "Listen Only - Rack Optimization"
+                            }
+                        ]
+                    },
+                    {
+                        "ID": 8,
+                        "Descriptions": [
+                            {
+                                "LCID": 1033,
+                                "Text": "Enhanced Rack Optimization"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

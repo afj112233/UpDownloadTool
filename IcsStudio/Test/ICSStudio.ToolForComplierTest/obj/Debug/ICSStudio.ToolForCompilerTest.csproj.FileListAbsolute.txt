@@ -1,0 +1,237 @@
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\database.db
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\DIO Analog\ICD-IF4.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\DIO Analog\ICD-IR4.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\DIO Analog\ICD-OF4.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\DIO Analog\ICON_PS1734CO_Analog.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\DIO Analog\ICON_PS1734HD_Analog.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\DIO Analog\ICON_PS1734_Analog.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\DIO Discrete\1734-IB4.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\DIO Discrete\1734-IB8.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\DIO Discrete\1734-OB4.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\DIO Discrete\1734-OB8.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\DIO Discrete\1734-OB8E.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\DIO Discrete\Embedded-IQ16.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\DIO Discrete\Embedded-OB16.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\DIO Discrete\ICD-IB16.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\DIO Discrete\ICD-IQ16.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\DIO Discrete\ICD-OB16.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\DIO Discrete\ICD-OV16.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\DIO Discrete\PS1734_Discrete.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\DIO Discrete\PSICD_Discrete.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\DIO Discrete\PSICD_Embedded.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\DIO Enet Adapter\1734-AENTR.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\DIO Enet Adapter\ICD-AENTR.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\Embedded\Embedded_DiscreteIO.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\Embedded\PS1769_L1YEmbedded.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\Generic\ETHERNET-MODULE.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\motion.db
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\2198-D006-ERS3.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\2198-D012-ERS3.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\2198-D020-ERS3.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\2198-D032-ERS3.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\2198-D057-ERS3.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\2198-H003-ERS.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\2198-H003-ERS2.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\2198-H008-ERS.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\2198-H008-ERS2.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\2198-H015-ERS.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\2198-H015-ERS2.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\2198-H025-ERS.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\2198-H025-ERS2.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\2198-H040-ERS.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\2198-H040-ERS2.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\2198-H070-ERS.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\2198-H070-ERS2.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\2198-S086-ERS3.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\ICM-D1S11.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\ICM-D1S15.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\ICM-D1S18.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\ICM-D1S30.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\ICM-D1S70.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\ICM-D3D05.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\ICM-D3D08.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\ICM-D3D11.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\ICM-D3D18.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\ICM-D3D28.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\ICM-D3D38.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\ICM-D5D03.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\ICM-D5D05.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\ICM-D5D08.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\ICM-D5D11.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\ICM-D5D18.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\ICM-D5D28.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\ICM-D5D38.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\ICM-D5S08.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\ICM-D5S100.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\ICM-D5S130.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\ICM-D5S160.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\ICM-D5S50.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\ICM-D5S70.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\PSICM-D5.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ModuleProfiles\MotionDrive\PSKinetix5500Drive.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Toolchains\include\ivmbytecodeimpl.h
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Toolchains\include\ivmexport.h
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Toolchains\include\module.aarch64.lds
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Toolchains\include\module.lds
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Toolchains\include\module.x64.lds
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Template\ICC-B010ERM_Template.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Template\ICC-P0100ERM_Template.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Template\ICC-P010ERM_Template.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Template\ICC-P020ERM_Template.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Template\ICC-T0100ERM_Template.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.ToolForComplierTest.exe.config
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.ToolForComplierTest.exe
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.ToolForComplierTest.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.AvalonEdit.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.Database.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.Interfaces.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.SimpleServices.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.StxEditor.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.UIServicesPackage.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\System.Data.SQLite.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Dapper.StrongName.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.Utils.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.Gui.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Newtonsoft.Json.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Antlr4.Runtime.Standard.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\NLog.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.Cip.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.SourceProtection.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\GalaSoft.MvvmLight.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.DeviceProfiles.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.CipConnection.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\AutoMapper.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\NPOI.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\MessagePack.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\NPOI.OOXML.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.Dialogs.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.Threading.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.UIInterfaces.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\DotNetProjects.Input.Toolkit.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.Components.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.Shell.14.0.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.MultiLanguage.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.DownloadChange.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Xceed.Wpf.Toolkit.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.DownloadOptions.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.EditorPackage.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.DeviceProperties.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.Validation.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.FileConverter.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Crc32C.NET.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Imagin.Common.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Imagin.Controls.Extended.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\System.ValueTuple.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\NPOI.OpenXml4Net.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\NPOI.OpenXmlFormats.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\OxyPlot.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.Descriptor.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.VSHelp.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.Utilities.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.Shell.Immutable.10.0.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.Shell.Immutable.14.0.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.Shell.Immutable.11.0.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.Shell.Interop.9.0.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\EnvDTE.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.ProjectAggregator.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.Imaging.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.Shell.Immutable.12.0.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.ComponentModelHost.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.ImageCatalog.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.JsonDiffPatch.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.Ladder.Viewer.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.OxyPlot.Wpf.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.OxyPlot.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.Diagrams.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.FBD.Viewer.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Imagin.Controls.Common.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.GraphModel.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.CoreUtility.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\stdole.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.MSXML.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.Diagram.Viewer.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.Database.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.Interfaces.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.SimpleServices.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.StxEditor.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.AvalonEdit.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\System.Data.SQLite.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Dapper.StrongName.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.Utils.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.Gui.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Newtonsoft.Json.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Antlr4.Runtime.Standard.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\NLog.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.Cip.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.SourceProtection.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\GalaSoft.MvvmLight.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\GalaSoft.MvvmLight.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.DeviceProfiles.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.CipConnection.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\AutoMapper.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\AutoMapper.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\NPOI.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\NPOI.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\MessagePack.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\NPOI.OOXML.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\NPOI.OOXML.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.Dialogs.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.Threading.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.UIInterfaces.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.Shell.Interop.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.Components.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.Shell.14.0.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.MultiLanguage.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.DownloadChange.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.DownloadOptions.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.DeviceProperties.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.Validation.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.FileConverter.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\System.ValueTuple.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSharpCode.SharpZipLib.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSharpCode.SharpZipLib.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\NPOI.OpenXml4Net.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\NPOI.OpenXml4Net.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\NPOI.OpenXmlFormats.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\OxyPlot.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.Descriptor.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.OLE.Interop.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.Utilities.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.Shell.Immutable.10.0.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.Shell.Immutable.14.0.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.Shell.Immutable.11.0.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.Shell.Interop.9.0.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\EnvDTE.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.ProjectAggregator.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.Imaging.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.Shell.Immutable.12.0.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.ImageCatalog.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.JsonDiffPatch.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.OxyPlot.Wpf.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.OxyPlot.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\ICSStudio.Diagrams.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.VisualStudio.CoreUtility.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\Microsoft.WindowsAPICodePack.xml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\bin\Debug\zh-Hans\Microsoft.VisualStudio.GraphModel.resources.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\obj\Debug\ICSStudio.ToolForCompilerTest.csprojResolveAssemblyReference.cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\obj\Debug\ICSStudio.ToolForComplierTest.exe
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ToolForComplierTest\obj\Debug\ICSStudio.ToolForComplierTest.pdb

@@ -1,0 +1,5 @@
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.JsonDiffPatch.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.JsonDiffPatch.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Libraries\ICSStudio.JsonDiffPatch\obj\Debug\ICSStudio.JsonDiffPatch.csprojResolveAssemblyReference.cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Libraries\ICSStudio.JsonDiffPatch\obj\Debug\ICSStudio.JsonDiffPatch.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Libraries\ICSStudio.JsonDiffPatch\obj\Debug\ICSStudio.JsonDiffPatch.pdb

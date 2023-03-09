@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2E7D4256-92D6-4E0E-A1A1-D819D4D71667}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICSStudio.Interfaces</RootNamespace>
+    <AssemblyName>ICSStudio.Interfaces</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>$(SolutionDir)\build\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>$(SolutionDir)\build\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>ICSStudio.Interfaces.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aoi\IAoiDefinition.cs" />
+    <Compile Include="Aoi\IAoiDefinitionCollection.cs" />
+    <Compile Include="Aoi\IAoiInvocationContext.cs" />
+    <Compile Include="Common\ComponentCoreInfo.cs" />
+    <Compile Include="Common\ControllerExtension.cs" />
+    <Compile Include="Common\EnumTypes.cs" />
+    <Compile Include="Common\Function.cs" />
+    <Compile Include="Common\IBaseCommon.cs" />
+    <Compile Include="Common\IBaseComponent.cs" />
+    <Compile Include="Common\IBaseComponentCollection.cs" />
+    <Compile Include="Common\IBaseObject.cs" />
+    <Compile Include="Common\IController.cs" />
+    <Compile Include="Common\IDataOperand.cs" />
+    <Compile Include="Common\IDataServer.cs" />
+    <Compile Include="Common\IOperandParser.cs" />
+    <Compile Include="Common\IParameterConnectionCollection.cs" />
+    <Compile Include="Common\IPen.cs" />
+    <Compile Include="Common\IProgram.cs" />
+    <Compile Include="Common\IProgramCollection.cs" />
+    <Compile Include="Common\IProgramModule.cs" />
+    <Compile Include="Common\IRoutine.cs" />
+    <Compile Include="Common\IRoutineCollection.cs" />
+    <Compile Include="Common\IsOnlineChangedEventArgs.cs" />
+    <Compile Include="Common\ISourceProtected.cs" />
+    <Compile Include="Common\ITagCollectionContainer.cs" />
+    <Compile Include="Common\ITask.cs" />
+    <Compile Include="Common\ITaskCollection.cs" />
+    <Compile Include="Common\ITrackedComponent.cs" />
+    <Compile Include="Common\ITransactionService.cs" />
+    <Compile Include="Common\ITrend.cs" />
+    <Compile Include="Common\ITrendCollection.cs" />
+    <Compile Include="Common\IVariableInfo.cs" />
+    <Compile Include="Common\Language.cs" />
+    <Compile Include="Common\OperandInfo.cs" />
+    <Compile Include="Common\ProgramCreationData.cs" />
+    <Compile Include="Common\PropertyChangedExtendedEventArgs.cs" />
+    <Compile Include="Common\Routine.cs" />
+    <Compile Include="Common\TagDisplayInfo.cs" />
+    <Compile Include="DataType\IDataType.cs" />
+    <Compile Include="DataType\IDataTypeCollection.cs" />
+    <Compile Include="DataType\IDataTypeMember.cs" />
+    <Compile Include="DataType\ITypeMemberComponentCollection.cs" />
+    <Compile Include="DataType\IValueConverter.cs" />
+    <Compile Include="DataType\MessageTypeEnum.cs" />
+    <Compile Include="DeviceModule\IDeviceModule.cs" />
+    <Compile Include="DeviceModule\IDeviceModuleCollection.cs" />
+    <Compile Include="Notification\MessageData.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Instruction\InstructionInfo.cs" />
+    <Compile Include="Instruction\InstructionParameterInfo.cs" />
+    <Compile Include="Instruction\ISupportedInstructions.cs" />
+    <Compile Include="Instruction\ParameterAccessType.cs" />
+    <Compile Include="Tags\DataTypeInfo.cs" />
+    <Compile Include="Tags\ITag.cs" />
+    <Compile Include="Tags\ITagCollection.cs" />
+    <Compile Include="Tags\ITagDataContext.cs" />
+    <Compile Include="Tags\MetadataDefinitionID.cs" />
+    <Compile Include="Tags\TagInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="icon.pfx" />
+    <None Include="ICSStudio.Interfaces.snk" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ICSStudio.Gui\ICSStudio.Gui.csproj">
+      <Project>{4576440D-1A48-487A-8DFA-F94751ABAE38}</Project>
+      <Name>ICSStudio.Gui</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.Utils\ICSStudio.Utils.csproj">
+      <Project>{f880d2c5-68d6-4b83-a89e-b3958a75428d}</Project>
+      <Name>ICSStudio.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

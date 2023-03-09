@@ -1,0 +1,136 @@
+﻿<UserControl x:Class="ICSStudio.UIServicesPackage.AddOnInstruction.Signature"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="370" d:DesignWidth="600" IsEnabled="{Binding IsAllEnabled}">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+          <Grid.RowDefinitions>
+              <RowDefinition Height="30"></RowDefinition>
+              <RowDefinition Height="30"></RowDefinition>
+              <RowDefinition Height="Auto"></RowDefinition>
+              <RowDefinition Height="30"></RowDefinition>
+              <RowDefinition Height="Auto"></RowDefinition>
+              <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="270"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="{DynamicResource Signature}" FontWeight="Bold" Margin="5"></TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Text="{DynamicResource Generate A Signature To}" Margin="5"></TextBlock>
+        <StackPanel Grid.Row="2" Grid.Column="0">
+            <Button Content="{DynamicResource Generate...}" Margin="5" IsDefault="True" Visibility="{Binding GenerateVisibility}" Command="{Binding GenerateCommand}"></Button>
+            <Button Content="{DynamicResource Remove...}" Margin="5" Visibility="{Binding RemoveVisibility}" Command="{Binding RemoveCommand}"></Button>
+            <Button Content="{DynamicResource Add To History...}" Margin="5" Command="{Binding AddToHistoryCommand}"></Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="1">
+            <TextBlock Text="{Binding ID}"></TextBlock>
+            <TextBlock Text="{Binding Timestamp}"></TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="2">
+            <Button Width="40" Height="20" Content="{DynamicResource Copy}" HorizontalAlignment="Left" IsEnabled="{Binding CopyEnable}"></Button>
+        </StackPanel>
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="{DynamicResource Signature history}" FontWeight="Bold" Margin="5"></TextBlock>
+        <DataGrid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Height="166" IsReadOnly="True" ItemsSource="{Binding HistoryRows}"
+                  CanUserAddRows="False"  AutoGenerateColumns="False">
+            <DataGrid.Resources>
+                <Style TargetType="DataGridCell">
+                    <Setter Property="Background" Value="#C8C8C8"></Setter>
+                </Style>
+                <Style TargetType="TextBlock" x:Key="Style1">
+                    <Setter Property="TextWrapping" Value="NoWrap"></Setter>
+                    <Setter Property="TextTrimming" Value="WordEllipsis"></Setter>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="*">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{DynamicResource User}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding User}" Style="{Binding Source={StaticResource Style1}}">
+                                <TextBlock.ToolTip>
+                                    <TextBlock Text="{Binding User}"></TextBlock>
+                                </TextBlock.ToolTip>
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="*">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{DynamicResource Signature Id}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding SignatureID}" Style="{Binding Source={StaticResource Style1}}">
+                                <TextBlock.ToolTip>
+                                    <TextBlock Text="{Binding SignatureID}"></TextBlock>
+                                </TextBlock.ToolTip>
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Timestamp" Width="2*">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{DynamicResource Timestamp}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Timestamp}" Style="{Binding Source={StaticResource Style1}}">
+                                <TextBlock.ToolTip>
+                                    <TextBlock Text="{Binding Timestamp}"></TextBlock>
+                                </TextBlock.ToolTip>
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="2*">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{DynamicResource Description}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Description}" Style="{Binding Source={StaticResource Style1}}">
+                                <TextBlock.ToolTip>
+                                    <TextBlock Text="{Binding Description}"></TextBlock>
+                                </TextBlock.ToolTip>
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+            
+        </DataGrid>
+        <Button 
+            Grid.Row="5" 
+            Grid.Column="0" 
+            Grid.ColumnSpan="2" 
+            Content="{DynamicResource Clear Signature History...}" 
+            Width="150" 
+            HorizontalAlignment="Left" 
+            Margin="5" 
+            Command="{Binding ClearCommand}">
+        </Button>
+    </Grid>
+</UserControl>

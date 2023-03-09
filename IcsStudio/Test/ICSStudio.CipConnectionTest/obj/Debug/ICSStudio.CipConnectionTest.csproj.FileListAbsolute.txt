@@ -1,0 +1,6 @@
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.CipConnectionTest.exe.config
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.CipConnectionTest.exe
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.CipConnectionTest.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\ICSStudio\Test\ICSStudio.CipConnectionTest\obj\Debug\ICSStudio.CipConnectionTest.csprojResolveAssemblyReference.cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\ICSStudio\Test\ICSStudio.CipConnectionTest\obj\Debug\ICSStudio.CipConnectionTest.exe
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\ICSStudio\Test\ICSStudio.CipConnectionTest\obj\Debug\ICSStudio.CipConnectionTest.pdb

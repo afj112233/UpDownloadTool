@@ -1,0 +1,101 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:ICSStudio.Components.Controls"
+    xmlns:converters="clr-namespace:ICSStudio.Components.Converters"
+    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source=".\ImagesDictionary.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    <converters:BoolToAsteriskConverter x:Key="DirtyConverter" />
+    <converters:ErrorLevelToImageSourceConverter x:Key="ErrorLevelConverter" />
+
+    <system:Double x:Key="DefaultGridRowHeight">21</system:Double>
+    <system:Double x:Key="DefaultCellContentMaxHeight">20</system:Double>
+    <system:Double x:Key="DataGridRowHeaderWidth">25</system:Double>
+
+    <SolidColorBrush x:Key="GridLinesBrush" Color="{DynamicResource {x:Static SystemColors.ControlDarkColorKey}}" />
+    <SolidColorBrush x:Key="ReadOnlyCellBackgroundBrush" Color="{DynamicResource {x:Static SystemColors.ScrollBarColorKey}}" />
+    <SolidColorBrush x:Key="EditCellBackgroundBrush" Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}" />
+    <SolidColorBrush x:Key="WatermarkTextBrush" Color="{DynamicResource {x:Static SystemColors.GrayTextColorKey}}" />
+    <SolidColorBrush x:Key="TextBoxTextBrush" Color="{DynamicResource {x:Static SystemColors.WindowTextColorKey}}" />
+
+    <Style
+        x:Key="RowStyle"
+        BasedOn="{StaticResource {x:Type DataGridRow}}"
+        TargetType="{x:Type DataGridRow}">
+        <Setter Property="Background" Value="{StaticResource ReadOnlyCellBackgroundBrush}" />
+    </Style>
+    <Style
+        x:Key="CellStyle"
+        BasedOn="{StaticResource {x:Type DataGridCell}}"
+        TargetType="{x:Type DataGridCell}">
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+
+    <Style
+        x:Key="RowHeaderStyle"
+        BasedOn="{StaticResource {x:Type DataGridRowHeader}}"
+        TargetType="{x:Type DataGridRowHeader}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGridRowHeader}">
+                    <Grid>
+                        <Image
+                            Width="13"
+                            Height="13"
+                            Visibility="{Binding Path=IsNewItem, Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <Image.Source>
+                                <DrawingImage Drawing="{StaticResource TagDrawing}" />
+                            </Image.Source>
+                        </Image>
+                        <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                            <Image
+                                Width="13"
+                                Height="13"
+                                Source="{Binding ErrorSeverity, Converter={StaticResource ErrorLevelConverter}, ConverterParameter=13}" />
+                            <TextBlock Margin="1,0,0,0" Text="{Binding Path=IsDirty, Converter={StaticResource DirtyConverter}}" />
+                        </StackPanel>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+
+        </Setter>
+    </Style>
+
+    <Style x:Key="SingleClickEditControlStyle" TargetType="{x:Type controls:SingleClickEditControl}">
+        <Setter Property="Background" Value="{StaticResource EditCellBackgroundBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource TextBoxTextBrush}" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+
+    <Style x:Key="TextBlockStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="Margin" Value="4,0,4,0" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="TextTrimming" Value="CharacterEllipsis" />
+    </Style>
+
+    <Style x:Key="DataGridStyle" TargetType="{x:Type DataGrid}">
+        <Setter Property="RowHeight" Value="{StaticResource DefaultGridRowHeight}" />
+        <Setter Property="RowHeaderWidth" Value="{StaticResource DataGridRowHeaderWidth}" />
+        <Setter Property="SelectionMode" Value="Extended" />
+        <Setter Property="AutoGenerateColumns" Value="false" />
+        <Setter Property="CanUserAddRows" Value="false" />
+        <Setter Property="CanUserResizeRows" Value="false" />
+        <Setter Property="CanUserDeleteRows" Value="false" />
+        <Setter Property="HorizontalGridLinesBrush" Value="{StaticResource GridLinesBrush}" />
+        <Setter Property="VerticalGridLinesBrush" Value="{StaticResource GridLinesBrush}" />
+        <Setter Property="RowStyle" Value="{StaticResource RowStyle}" />
+        <Setter Property="CellStyle" Value="{StaticResource CellStyle}" />
+        <Setter Property="RowHeaderStyle" Value="{StaticResource RowHeaderStyle}" />
+    </Style>
+
+    <Style x:Key="DataGridCheckBoxStyle" TargetType="{x:Type CheckBox}">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+</ResourceDictionary>

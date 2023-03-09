@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="ICSStudio.UIServicesPackage.TaskProperties.panel.Monitor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="TextBox">
+                <Setter Property="Height" Value="20" />
+            </Style>
+            <Style TargetType="TextBlock">
+                <Setter Property="Margin" Value="2,0,25,0"></Setter>
+                <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            </Style>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MinHeight="30" />
+            <RowDefinition Height="Auto" MinHeight="30" />
+            <RowDefinition Height="Auto" MinHeight="30" />
+            <RowDefinition Height="Auto" MinHeight="30" />
+            <RowDefinition Height="Auto" MinHeight="30" />
+            <RowDefinition Height="Auto" MinHeight="30" />
+            <RowDefinition Height="Auto" MinHeight="30" />
+            <RowDefinition Height="Auto" MinHeight="30" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Text="{DynamicResource Scan times(elapsed time):}" />
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="{DynamicResource Max:}" />
+        <TextBox Grid.Row="1" Grid.Column="2" Width="100" HorizontalAlignment="Left" IsEnabled="{Binding IsOnline}"
+                 Text="{Binding MaxScanTime, Mode=OneWay}" IsReadOnly="True" />
+        <TextBlock Grid.Row="1" Grid.Column="2" Text="{DynamicResource ms}" HorizontalAlignment="Right" Margin="0,0,48,0"/>
+        <Button Grid.Row="1" Grid.Column="3" Width="75" Height="20" Content="{DynamicResource Reset}" Command="{Binding ResetCommand}" />
+        <TextBlock Grid.Row="2" Grid.Column="1" Text="{DynamicResource Last:}" />
+        <TextBox Grid.Row="2" Grid.Column="2" Width="100" HorizontalAlignment="Left" IsEnabled="{Binding IsOnline}"
+                 Text="{Binding LastScanTime,Mode=OneWay}" IsReadOnly="True" />
+        <TextBlock Grid.Row="2" Grid.Column="2" Text="{DynamicResource ms}" HorizontalAlignment="Right" Margin="0,0,48,0"/>
+        <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4"
+                   Text="{DynamicResource Interval times(elapsed time between triggers):}" />
+        <TextBlock Grid.Row="4" Grid.Column="1" Text="{DynamicResource Max:}" />
+        <TextBox Grid.Row="4" Grid.Column="2" Width="100" HorizontalAlignment="Left" IsEnabled="{Binding IsOnline}"
+                 Text="{Binding MaxIntervalTime,Mode=OneWay}" IsReadOnly="True" />
+        <TextBlock Grid.Row="4" Grid.Column="2" Text="{DynamicResource ms}" HorizontalAlignment="Right" Margin="0,0,48,0"/>
+        <TextBlock Grid.Row="5" Grid.Column="1" Text="{DynamicResource Min:}" />
+        <TextBox Grid.Row="5" Grid.Column="2" Width="100" HorizontalAlignment="Left" IsEnabled="{Binding IsOnline}"
+                 Text="{Binding MinIntervalTime,Mode=OneWay}" IsReadOnly="True" />
+        <TextBlock Grid.Row="5" Grid.Column="2" Text="{DynamicResource ms}" HorizontalAlignment="Right" Margin="0,0,48,0"/>
+        <TextBlock Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="4" Text="{DynamicResource Task overlap count:}" />
+        <TextBox Grid.Row="7" Grid.Column="2" Width="55" HorizontalAlignment="Left" IsEnabled="{Binding IsOnline}"
+                 IsReadOnly="True" Text="{Binding OverlapCount,Mode=OneWay}" />
+    </Grid>
+
+</UserControl>

@@ -1,0 +1,137 @@
+﻿<UserControl x:Class="ICSStudio.UIServicesPackage.AxisCIPDriveProperties.Panel.GeneralPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="600" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="30" />
+            <ColumnDefinition Width="180" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!--第一列-->
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="{DynamicResource Axis Configuration:}"></TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="{DynamicResource Feedback Configuration:}"></TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="0" Visibility="{Binding MoreConfigVisibility}" Text="{DynamicResource Application Type:}"></TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="0" Visibility="{Binding MoreConfigVisibility}" Text="{DynamicResource Loop Response:}"></TextBlock>
+
+        <TextBlock Grid.Row="4" Grid.Column="0" />
+
+        <TextBlock Grid.Row="5" Grid.Column="0" FontWeight="Bold" Text="{DynamicResource Assigned Group}"></TextBlock>
+
+        <TextBlock Grid.Row="8" Grid.Column="0" />
+
+        <TextBlock Grid.Row="9" Grid.Column="0" FontWeight="Bold" Text="{DynamicResource Associated Module}"></TextBlock>
+
+        <!--缩进-->
+        <Label Grid.Row="6" Grid.Column="0" Margin="15,0,0,0" Content="{DynamicResource Motion Group:}" />
+        <Label Grid.Row="7" Grid.Column="0" Margin="15,0,0,0" Content="{DynamicResource Update Period:}" />
+
+        <Label Grid.Row="10" Grid.Column="0" Margin="15,0,0,0" Content="{DynamicResource Module:}" />
+        <Label Grid.Row="11" Grid.Column="0" Margin="15,0,0,0" Content="{DynamicResource Module Type:}" />
+        <Label Grid.Row="12" Grid.Column="0" Margin="15,0,0,0" Content="{DynamicResource Power Structure:}" />
+        <Label Grid.Row="13" Grid.Column="0" Margin="15,0,0,0" Content="{DynamicResource Axis Number:}" IsEnabled="{Binding AxisNumberEnabled}" />
+
+        <!--第二列-->
+        <Separator Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="4" />
+        <Separator Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="4" />
+
+        <!--第三列-->
+        <ComboBox Grid.Row="0" Grid.Column="2" x:Name="CmbAxisConfiguration"
+                  ItemsSource="{Binding AxisConfigurationSource}"
+                  SelectedValuePath="Value"
+                  DisplayMemberPath="DisplayName"
+                  SelectedValue="{Binding AxisConfiguration}"
+                  IsEnabled="{Binding AxisConfigurationEnabled}" />
+
+        <ComboBox Grid.Row="1" Grid.Column="2" x:Name="CmbFeedbackConfiguration"
+                  ItemsSource="{Binding FeedbackConfigurationSource}"
+                  SelectedValuePath="Value"
+                  DisplayMemberPath="DisplayName"
+                  SelectedValue="{Binding FeedbackConfiguration}"
+                  IsEnabled="{Binding FeedbackConfigurationEnabled}" />
+
+        <ComboBox Grid.Row="2" Grid.Column="2" x:Name="CmbApplicationType" Visibility="{Binding MoreConfigVisibility}"
+                  ItemsSource="{Binding ApplicationTypeSource}"
+                  SelectedValuePath="Value"
+                  DisplayMemberPath="DisplayName"
+                  SelectedValue="{Binding ApplicationType}"
+                  IsEnabled="{Binding ApplicationTypeEnabled}" />
+
+        <ComboBox Grid.Row="3" Grid.Column="2" x:Name="CmbLoopResponse" Visibility="{Binding MoreConfigVisibility}"
+                  ItemsSource="{Binding LoopResponseSource}"
+                  SelectedValuePath="Value"
+                  DisplayMemberPath="DisplayName"
+                  SelectedValue="{Binding LoopResponse}"
+                  IsEnabled="{Binding LoopResponseEnabled}" />
+
+        <ComboBox Grid.Row="6" Grid.Column="2" x:Name="CmbMotionGroup"
+                  ItemsSource="{Binding MotionGroupSource}"
+                  SelectedValuePath="Value"
+                  DisplayMemberPath="DisplayName"
+                  SelectedValue="{Binding MotionGroup}"
+                  IsEnabled="{Binding MotionGroupEnabled}" />
+
+        <TextBlock Grid.Row="7" Grid.Column="2" Text="{Binding UpdatePeriod}" />
+
+        <ComboBox Grid.Row="10" Grid.Column="2" x:Name="CmbModule"
+                  ItemsSource="{Binding MotionDriveSource}"
+                  SelectedValuePath="Value"
+                  DisplayMemberPath="DisplayName"
+                  SelectedValue="{Binding MotionDrive}"
+                  IsEnabled="{Binding MotionDriveEnabled}" />
+
+        <TextBlock Grid.Row="11" Grid.Column="2" Text="{Binding ModuleType}" />
+        <TextBlock Grid.Row="12" Grid.Column="2" Text="{Binding PowerStructure}" />
+
+        <ComboBox Grid.Row="13" Grid.Column="2" x:Name="CmbAxisNumber"
+                  ItemsSource="{Binding AxisNumberSource}"
+                  SelectedValue="{Binding AxisNumber}"
+                  IsEnabled="{Binding AxisNumberEnabled}" />
+
+        <!--第四列-->
+        <Button Grid.Row="6" Grid.Column="3"
+                MinWidth="26" Width="26"
+                Command="{Binding MotionGroupPropertiesCommand}">
+            ...
+        </Button>
+        <Button Grid.Row="7" Grid.Column="3"
+                MinWidth="26" Width="26"
+                Command="{Binding AxisScheduleCommand}">
+            ...
+        </Button>
+
+        <!--第五列-->
+        <Button Grid.Row="6" Grid.Column="4" Command="{Binding NewMotionGroupCommand}" Content="{DynamicResource CIPAxis New Group}"></Button>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,7 @@
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\AutoBuild\Debug\temp.wxs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\AutoBuild\Debug\temp2.wxs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\AutoBuild\Debug\Release.bat
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\AutoBuild\Debug\ICSStudio.AutoBuildInstallation.exe
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\AutoBuild\Debug\ICSStudio.AutoBuildInstallation.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.Installation\ICSStudio.AutoBuildInstallation\obj\Debug\ICSStudio.AutoBuildInstallation.exe
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.Installation\ICSStudio.AutoBuildInstallation\obj\Debug\ICSStudio.AutoBuildInstallation.pdb

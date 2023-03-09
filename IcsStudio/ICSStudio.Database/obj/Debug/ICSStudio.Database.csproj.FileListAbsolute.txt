@@ -1,0 +1,5 @@
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.Database.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.Database.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.Database\obj\Debug\ICSStudio.Database.csprojResolveAssemblyReference.cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.Database\obj\Debug\ICSStudio.Database.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.Database\obj\Debug\ICSStudio.Database.pdb

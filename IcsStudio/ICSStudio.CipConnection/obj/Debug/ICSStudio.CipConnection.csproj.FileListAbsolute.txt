@@ -1,0 +1,12 @@
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.CipConnection.dll.config
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.CipConnection.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.CipConnection.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\ICSStudio\ICSStudio.CipConnection\obj\Debug\ICSStudio.CipConnection.csprojResolveAssemblyReference.cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\ICSStudio\ICSStudio.CipConnection\obj\Debug\ICSStudio.CipConnection.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\ICSStudio\ICSStudio.CipConnection\obj\Debug\ICSStudio.CipConnection.pdb
+C:\Users\11584\Documents\Visual Studio 2015\Projects\DownUpload\build\Debug\ICSStudio.CipConnection.dll.config
+C:\Users\11584\Documents\Visual Studio 2015\Projects\DownUpload\build\Debug\ICSStudio.CipConnection.dll
+C:\Users\11584\Documents\Visual Studio 2015\Projects\DownUpload\build\Debug\ICSStudio.CipConnection.pdb
+C:\Users\11584\Documents\Visual Studio 2015\Projects\DownUpload\IcsStudio\ICSStudio.CipConnection\obj\Debug\ICSStudio.CipConnection.csprojResolveAssemblyReference.cache
+C:\Users\11584\Documents\Visual Studio 2015\Projects\DownUpload\IcsStudio\ICSStudio.CipConnection\obj\Debug\ICSStudio.CipConnection.dll
+C:\Users\11584\Documents\Visual Studio 2015\Projects\DownUpload\IcsStudio\ICSStudio.CipConnection\obj\Debug\ICSStudio.CipConnection.pdb

@@ -1,0 +1,133 @@
+﻿<UserControl x:Class="ICSStudio.UIServicesPackage.AxisCIPDriveProperties.Panel.PositionLoopPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:util="clr-namespace:ICSStudio.Gui.Controls;assembly=ICSStudio.Gui"
+             mc:Ignorable="d"
+             d:DesignHeight="600" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="util:SingleUpDownExtensions">
+                <Setter Property="Margin" Value="0,4"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="350" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" FontWeight="Bold" Text="{DynamicResource Gains}"></TextBlock>
+            <Separator Grid.Column="1" />
+            <Button Grid.Column="2" Command="{Binding ParametersCommand}" Content="{DynamicResource Parameters...}"></Button>
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="160" />
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Text="{DynamicResource Bandwidth:}"></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Text="{DynamicResource Integrator Bandwidth:}"></TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Text="{DynamicResource Integrator Hold:}"></TextBlock>
+            <TextBlock Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Text="{DynamicResource Velocity Feedforward:}"></TextBlock>
+
+            <util:SingleUpDownExtensions Grid.Row="0" Grid.Column="2" VerticalAlignment="Center"
+                                         AllowSpin="False" ShowButtonSpinner="False"
+                                         Minimum="0" TextAlignment="Left"
+                                         Value="{Binding PositionLoopBandwidth}"
+                                         IsEnabled="{Binding IsPositionLoopEnabled}"/>
+            <util:SingleUpDownExtensions Grid.Row="1" Grid.Column="2" VerticalAlignment="Center"
+                                         AllowSpin="False" ShowButtonSpinner="False"
+                                         Minimum="0" TextAlignment="Left"
+                                         Value="{Binding PositionIntegratorBandwidth}"
+                                         IsEnabled="{Binding IsPositionLoopEnabled}"/>
+
+            <ComboBox Grid.Row="2" Grid.Column="2" x:Name="CmbIntegratorHold" Margin="0,4"
+                      ItemsSource="{Binding IntegratorHoldSource}"
+                      SelectedValuePath="Value"
+                      DisplayMemberPath="DisplayName"
+                      SelectedValue="{Binding IntegratorHold}" 
+                      IsEnabled="{Binding IsPositionLoopEnabled}"/>
+
+            <util:SingleUpDownExtensions Grid.Row="3" Grid.Column="2" VerticalAlignment="Center"
+                                         AllowSpin="False" ShowButtonSpinner="False"
+                                         Minimum="0" TextAlignment="Left"
+                                         Value="{Binding VelocityFeedforwardGain}"
+                                         IsEnabled="{Binding IsPositionLoopEnabled}"/>
+
+            <TextBlock Grid.Row="0" Grid.Column="3" Text="{DynamicResource Hertz}"></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="3" Text="{DynamicResource Hertz}"></TextBlock>
+            <TextBlock Grid.Row="3" Grid.Column="3">%</TextBlock>
+
+        </Grid>
+
+
+        <Grid Grid.Row="2" Margin="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="350" />
+
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" FontWeight="Bold" Text="{DynamicResource Limits}"></TextBlock>
+            <Separator Grid.Column="1" />
+
+        </Grid>
+
+        <Grid Grid.Row="3" Margin="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="160" />
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="{DynamicResource Error Tolerance:}"></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="{DynamicResource Lock Tolerance:}" ></TextBlock>
+
+            <util:SingleUpDownExtensions Grid.Row="0" Grid.Column="2" VerticalAlignment="Center"
+                                         AllowSpin="False" ShowButtonSpinner="False"
+                                         Minimum="0" TextAlignment="Left"
+                                         Value="{Binding PositionErrorTolerance}" 
+                                         IsEnabled="{Binding IsPositionLoopEnabled}"/>
+            <util:SingleUpDownExtensions Grid.Row="1" Grid.Column="2" VerticalAlignment="Center"
+                                         AllowSpin="False" ShowButtonSpinner="False"
+                                         Minimum="0" TextAlignment="Left"
+                                         Value="{Binding PositionLockTolerance}"
+                                         IsEnabled="{Binding IsPositionLoopEnabled}"/>
+
+
+            <TextBlock Grid.Row="0" Grid.Column="3" Text="{Binding PositionUnits}" />
+            <TextBlock Grid.Row="1" Grid.Column="3" Text="{Binding PositionUnits}" />
+
+        </Grid>
+
+    </Grid>
+</UserControl>

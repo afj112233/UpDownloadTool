@@ -1,0 +1,87 @@
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\database.db
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\DIO Analog\ICD-IF4.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\DIO Analog\ICD-IR4.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\DIO Analog\ICD-OF4.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\DIO Analog\ICON_PS1734CO_Analog.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\DIO Analog\ICON_PS1734HD_Analog.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\DIO Analog\ICON_PS1734_Analog.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\DIO Discrete\1734-IB4.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\DIO Discrete\1734-IB8.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\DIO Discrete\1734-OB4.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\DIO Discrete\1734-OB8.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\DIO Discrete\1734-OB8E.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\DIO Discrete\Embedded-IQ16.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\DIO Discrete\Embedded-OB16.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\DIO Discrete\ICD-IB16.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\DIO Discrete\ICD-IQ16.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\DIO Discrete\ICD-OB16.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\DIO Discrete\ICD-OV16.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\DIO Discrete\PS1734_Discrete.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\DIO Discrete\PSICD_Discrete.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\DIO Discrete\PSICD_Embedded.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\DIO Enet Adapter\1734-AENTR.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\DIO Enet Adapter\ICD-AENTR.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\Embedded\Embedded_DiscreteIO.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\Embedded\PS1769_L1YEmbedded.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\Generic\ETHERNET-MODULE.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\motion.db
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\2198-D006-ERS3.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\2198-D012-ERS3.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\2198-D020-ERS3.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\2198-D032-ERS3.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\2198-D057-ERS3.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\2198-H003-ERS.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\2198-H003-ERS2.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\2198-H008-ERS.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\2198-H008-ERS2.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\2198-H015-ERS.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\2198-H015-ERS2.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\2198-H025-ERS.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\2198-H025-ERS2.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\2198-H040-ERS.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\2198-H040-ERS2.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\2198-H070-ERS.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\2198-H070-ERS2.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\2198-S086-ERS3.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\ICM-D1S11.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\ICM-D1S15.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\ICM-D1S18.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\ICM-D1S30.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\ICM-D1S70.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\ICM-D3D05.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\ICM-D3D08.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\ICM-D3D11.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\ICM-D3D18.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\ICM-D3D28.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\ICM-D3D38.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\ICM-D5D03.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\ICM-D5D05.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\ICM-D5D08.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\ICM-D5D11.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\ICM-D5D18.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\ICM-D5D28.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\ICM-D5D38.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\ICM-D5S08.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\ICM-D5S100.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\ICM-D5S130.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\ICM-D5S160.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\ICM-D5S50.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\ICM-D5S70.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\PSICM-D5.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ModuleProfiles\MotionDrive\PSKinetix5500Drive.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\Toolchains\include\ivmbytecodeimpl.h
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\Toolchains\include\ivmexport.h
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\Toolchains\include\module.aarch64.lds
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\Toolchains\include\module.lds
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\Toolchains\include\module.x64.lds
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\xunit.abstractions.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\xunit.runner.visualstudio.testadapter.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\xunit.runner.reporters.net452.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\xunit.runner.utility.net452.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\Unittest.dll.config
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\Unittest.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\Unittest.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.Unittest\obj\Debug\ICSStudio.Unittest.csprojResolveAssemblyReference.cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.Unittest\obj\Debug\ICSStudio.Unittest.csproj.Unittest.dll.config
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.Unittest\obj\Debug\Unittest.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.Unittest\obj\Debug\Unittest.pdb

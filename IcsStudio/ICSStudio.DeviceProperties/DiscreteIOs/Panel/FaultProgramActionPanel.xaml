@@ -1,0 +1,117 @@
+﻿<UserControl
+    x:Class="ICSStudio.DeviceProperties.DiscreteIOs.Panel.FaultProgramActionPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="660"
+    HorizontalAlignment="Left"
+    d:DesignHeight="300"
+    d:DesignWidth="300"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style x:Key="CenterGridHeaderStyle" TargetType="DataGridColumnHeader">
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+        </Style>
+        <Style x:Key="OutputStateHeaderStyle" TargetType="DataGridColumnHeader">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <ContentPresenter
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2"
+                                HorizontalAlignment="Center"
+                                Content="{DynamicResource OutStateDuring}" />
+
+                            <ContentPresenter
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                HorizontalAlignment="Center"
+                                Content="{DynamicResource ProgramMode}" />
+                            <ContentPresenter
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                HorizontalAlignment="Center"
+                                Content="{DynamicResource FaultMode}" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <DataGrid
+            AutoGenerateColumns="False"
+            CanUserAddRows="False"
+            CanUserResizeColumns="False"
+            CanUserResizeRows="False"
+            IsEnabled="{Binding IsOutStateDuringEnabled}"
+            ItemsSource="{Binding FaultProgramActionSource}">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Width="50"
+                    Header="CamPoints"
+                    HeaderStyle="{StaticResource CenterGridHeaderStyle}"
+                    IsReadOnly="True">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Text" Value="{Binding PointIndex}" />
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+
+                <DataGridTemplateColumn
+                    Width="220"
+                    Header="{DynamicResource OutputStateDuring}"
+                    HeaderStyle="{StaticResource OutputStateHeaderStyle}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <!--  ReSharper disable Xaml.BindingWithContextNotResolved  -->
+                                <ComboBox
+                                    x:Name="CmbProgramMode"
+                                    Grid.Column="0"
+                                    Margin="-1"
+                                    ItemsSource="{Binding ModeSource}"
+                                    SelectedValue="{Binding ProgramMode, UpdateSourceTrigger=PropertyChanged}" />
+
+                                <ComboBox
+                                    x:Name="CmbFaultMode"
+                                    Grid.Column="1"
+                                    Margin="-1"
+                                    ItemsSource="{Binding ModeSource}"
+                                    SelectedValue="{Binding FaultMode, UpdateSourceTrigger=PropertyChanged}" />
+                                <!--  ReSharper restore Xaml.BindingWithContextNotResolved  -->
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

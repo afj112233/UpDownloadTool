@@ -1,0 +1,28 @@
+﻿<Window x:Class="ICSStudio.UIServicesPackage.View.ConnectingDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:gui="clr-namespace:ICSStudio.Gui;assembly=ICSStudio.Gui"
+        mc:Ignorable="d"
+        d:DesignHeight="300" d:DesignWidth="300"
+        Width="273" Height="90"
+        ShowInTaskbar="False" WindowStyle="None" ResizeMode="NoResize"
+        WindowStartupLocation="CenterOwner"
+        gui:DialogCloser.DialogResult="{Binding DialogResult}" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Connecting to device..."
+                   HorizontalAlignment="Center" VerticalAlignment="Center" 
+                   Margin="0 6 0 6"/>
+        <ProgressBar Grid.Row="1" Height="27" IsIndeterminate="True" />
+        <Button Grid.Row="2" Content="Cancel" HorizontalAlignment="Center" 
+                Width="75" Height="23" Margin="6"
+                IsCancel="True"
+                Command="{Binding CancelCommand}"/>
+    </Grid>
+</Window>

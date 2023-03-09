@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{44548318-C9F1-403F-A179-D34911CF438A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DownUpload</RootNamespace>
+    <AssemblyName>DownUpload</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AttachedCommandBehavior, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ICSGateway.1.0.15\lib\net452\AttachedCommandBehavior.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\ICSGateway.1.0.15\lib\net452\CommonServiceLocator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.4.1.0, Culture=neutral, PublicKeyToken=0ffbc31322e9d308, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibsStd10.5.4.1.1\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.4.1.0, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibsStd10.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSGateway.Cip, Version=1.0.58.21159, Culture=neutral, PublicKeyToken=b164c287f502fc58, processorArchitecture=MSIL">
+      <HintPath>..\packages\ICSGateway.1.0.15\lib\net452\ICSGateway.Cip.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSGateway.CipConnection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6f5e2c4c0aaaddc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\ICSGateway.1.0.15\lib\net452\ICSGateway.CipConnection.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSGateway.CommonView, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a8c224afb4531086, processorArchitecture=MSIL">
+      <HintPath>..\packages\ICSGateway.1.0.15\lib\net452\ICSGateway.CommonView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSGateway.Components, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c87c20ff50cebe8a, processorArchitecture=MSIL">
+      <HintPath>..\packages\ICSGateway.1.0.15\lib\net452\ICSGateway.Components.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSGateway.Database, Version=1.0.0.0, Culture=neutral, PublicKeyToken=ba1e2f2c8ecf749b, processorArchitecture=MSIL">
+      <HintPath>..\packages\ICSGateway.1.0.15\lib\net452\ICSGateway.Database.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSGateway.Interfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d9ef8f3a064c5aee, processorArchitecture=MSIL">
+      <HintPath>..\packages\ICSGateway.1.0.15\lib\net452\ICSGateway.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSgateway.Log, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cab5c4b084805298, processorArchitecture=MSIL">
+      <HintPath>..\packages\ICSGateway.1.0.15\lib\net452\ICSgateway.Log.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSGateway.Utils, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2f5eb73a71a60e4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\ICSGateway.1.0.15\lib\net452\ICSGateway.Utils.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\ICSGateway.1.0.15\lib\net452\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NDde, Version=2.1.563.0, Culture=neutral, PublicKeyToken=245bc65d415e57ee, processorArchitecture=MSIL">
+      <HintPath>..\packages\ICSGateway.1.0.15\lib\net452\NDde.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibsStd10.5.4.1.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Model\ConsoleManager.cs" />
+    <Compile Include="Model\LimitedConcurrencyLevelTaskScheduler.cs" />
+    <Compile Include="ViewModel\DownUploadViewModel.cs" />
+    <Page Include="DownUpload.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DownUpload.xaml.cs">
+      <DependentUpon>DownUpload.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="View\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IcsStudio\ICSStudio.CipConnection\ICSStudio.CipConnection.csproj">
+      <Project>{203372f2-17e7-490e-8ae3-104005887b05}</Project>
+      <Name>ICSStudio.CipConnection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IcsStudio\ICSStudio.CipControllerTest\ICSStudio.CipControllerTest.csproj">
+      <Project>{42d8f02a-2968-4557-ae28-be7cc1172891}</Project>
+      <Name>ICSStudio.CipControllerTest</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IcsStudio\ICSStudio.Cip\ICSStudio.Cip.csproj">
+      <Project>{3d36bed6-c812-43f2-8753-88961cd2c41e}</Project>
+      <Name>ICSStudio.Cip</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IcsStudio\ICSStudio.Interfaces\ICSStudio.Interfaces.csproj">
+      <Project>{2e7d4256-92d6-4e0e-a1a1-d819d4d71667}</Project>
+      <Name>ICSStudio.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IcsStudio\ICSStudio.SimpleServices\ICSStudio.SimpleServices.csproj">
+      <Project>{dac846e0-39e9-46ea-86b5-a5b89571831e}</Project>
+      <Name>ICSStudio.SimpleServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IcsStudio\ICSStudio.Utils\ICSStudio.Utils.csproj">
+      <Project>{f880d2c5-68d6-4b83-a89e-b3958a75428d}</Project>
+      <Name>ICSStudio.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

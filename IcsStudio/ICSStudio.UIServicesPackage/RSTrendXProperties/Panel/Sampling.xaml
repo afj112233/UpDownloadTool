@@ -1,0 +1,225 @@
+﻿<UserControl
+    x:Class="ICSStudio.UIServicesPackage.RSTrendXProperties.Panel.Sampling"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ICSStudio.UIServicesPackage.RSTrendXProperties.Panel"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+    mc:Ignorable="d" IsVisibleChanged="Sampling_OnIsVisibleChanged">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="{x:Type xctk:SingleUpDown}">
+                <Setter Property="Width" Value="103" />
+                <Setter Property="Height" Value="23" />
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <TextBlock
+            Grid.Column="0"
+            HorizontalAlignment="Left"
+            Text="{DynamicResource Sample Period:}" />
+        <xctk:SingleUpDown
+            Grid.Row="0"
+            Grid.Column="1"
+            Width="120"
+            MinWidth="0"
+            MaxWidth="120"
+            IsEnabled="{Binding AllEnable}"
+            Minimum="1"
+            Text="{Binding SamplePeriod, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+        <ComboBox
+            Grid.Row="0"
+            Grid.Column="2"
+            Width="110"
+            Height="21"
+            DisplayMemberPath="DisplayName"
+            IsEnabled="{Binding AllEnable}"
+            ItemsSource="{Binding TimeTypeList}"
+            SelectedValue="{Binding SelectedSamplePeriod}"
+            SelectedValuePath="Value" />
+
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="0"
+            HorizontalAlignment="Left"
+            Text="{DynamicResource NumberOfCaptures}"/>
+        <xctk:SingleUpDown
+            Grid.Row="1"
+            Grid.Column="1"
+            Width="120"
+            MinWidth="0"
+            MaxWidth="120"
+            IsEnabled="False"
+            Text="1" />
+
+        <GroupBox
+            Grid.Row="2"
+            Grid.Column="0"
+            Grid.ColumnSpan="3">
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <RadioButton
+                    x:Name="RadioButton1"
+                    HorizontalAlignment="Left"
+                    Content="{DynamicResource Samples:}"
+                    IsChecked="{Binding RadioChecked1, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                    IsEnabled="{Binding AllEnable}" />
+                <xctk:SingleUpDown
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Width="120"
+                    MinWidth="0"
+                    MaxWidth="120"
+                    Margin="51,0,0,0"
+                    Minimum="1"
+                    Text="{Binding Samples, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+                    <xctk:SingleUpDown.Style>
+                        <Style TargetType="{x:Type xctk:SingleUpDown}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=RadioButton1, Path=IsChecked}" Value="False">
+                                    <Setter Property="IsEnabled" Value="False" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=RadioButton1, Path=IsChecked}" Value="True">
+                                    <Setter Property="IsEnabled" Value="True" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=RadioButton1, Path=IsEnabled}" Value="False">
+                                    <Setter Property="IsEnabled" Value="False" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </xctk:SingleUpDown.Style>
+                </xctk:SingleUpDown>
+
+                <RadioButton
+                    x:Name="RadioButton2"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    HorizontalAlignment="Left"
+                    Content="{DynamicResource Time Period:}"
+                    IsChecked="{Binding RadioChecked2, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                    IsEnabled="{Binding AllEnable}" />
+                <xctk:SingleUpDown
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Width="120"
+                    MinWidth="0"
+                    MaxWidth="120"
+                    Margin="51,0,0,0"
+                    Minimum="1"
+                    Text="{Binding TimePeriod, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+                    <xctk:SingleUpDown.Style>
+                        <Style TargetType="{x:Type xctk:SingleUpDown}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=RadioButton2, Path=IsChecked}" Value="False">
+                                    <Setter Property="IsEnabled" Value="False" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=RadioButton2, Path=IsChecked}" Value="True">
+                                    <Setter Property="IsEnabled" Value="True" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=RadioButton2, Path=IsEnabled}" Value="False">
+                                    <Setter Property="IsEnabled" Value="False" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </xctk:SingleUpDown.Style>
+                </xctk:SingleUpDown>
+                <ComboBox
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    Width="110"
+                    Height="21"
+                    Margin="25,0,0,0"
+                    DisplayMemberPath="DisplayName"
+                    ItemsSource="{Binding TimePeriodTypeList}"
+                    SelectedValue="{Binding SelectedTimePeriod}"
+                    SelectedValuePath="Value">
+                    <ComboBox.Style>
+                        <Style TargetType="{x:Type ComboBox}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=RadioButton2, Path=IsChecked}" Value="False">
+                                    <Setter Property="IsEnabled" Value="False" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=RadioButton2, Path=IsChecked}" Value="True">
+                                    <Setter Property="IsEnabled" Value="True" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=RadioButton2, Path=IsEnabled}" Value="False">
+                                    <Setter Property="IsEnabled" Value="False" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ComboBox.Style>
+                </ComboBox>
+
+                <StackPanel
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    HorizontalAlignment="Left"
+                    Orientation="Horizontal">
+                    <RadioButton
+                        Content="{DynamicResource No Limit:}"
+                        IsChecked="{Binding RadioChecked3, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                        IsEnabled="False" />
+                    <TextBlock Text="{DynamicResource Sampling Stops When}"/>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+
+        <Grid
+            Grid.Row="3"
+            Grid.Column="0"
+            Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="{DynamicResource Estimated Trend Capture Size:}" />
+            <TextBlock
+                Grid.Row="0"
+                Grid.Column="1"
+                Text="{Binding Size}" />
+
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="0"
+                Text="{DynamicResource Estimated Trend Log Size:}" />
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="1"
+                Text="{Binding Size}" />
+        </Grid>
+    </Grid>
+</UserControl>

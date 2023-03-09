@@ -1,0 +1,2645 @@
+{
+  "ModuleTypes": [
+    {
+      "VendorID": 5,
+      "ProductType": 7,
+      "ProductCode": 216,
+      "Variants": [
+        {
+          "MajorRev": 1,
+          "ModuleID": "ICD_IB16",
+          "ModuleDefinitionID": "1734_DI8",
+          "Default": true
+        }
+      ]
+    },
+    {
+      "VendorID": 5,
+      "ProductType": 7,
+      "ProductCode": 217,
+      "Variants": [
+        {
+          "MajorRev": 1,
+          "ModuleID": "ICD_IB16",
+          "ModuleDefinitionID": "1734_DI8",
+          "Default": true
+        }
+      ]
+    },
+    {
+      "VendorID": 5,
+      "ProductType": 7,
+      "ProductCode": 232,
+      "Variants": [
+        {
+          "MajorRev": 1,
+          "ModuleID": "ICD_OB16",
+          "ModuleDefinitionID": "1734_DO8_NODIAG",
+          "Default": true
+        }
+      ]
+    },
+    {
+      "VendorID": 5,
+      "ProductType": 7,
+      "ProductCode": 233,
+      "Variants": [
+        {
+          "MajorRev": 1,
+          "ModuleID": "ICD_OB16",
+          "ModuleDefinitionID": "1734_DO8_NODIAG",
+          "Default": true
+        }
+      ]
+    }
+  ],
+  "Modules": [
+    {
+      "ID": "ICD_IB16",
+      "NumberOfInputs": 16,
+      "NumberOfOutputs": 0,
+      "DriverType": 2049,
+      "CIPObjectDefinesID": "CIPObjects",
+      "SupportsReset": true
+    },
+    {
+      "ID": "ICD_OB16",
+      "NumberOfInputs": 0,
+      "NumberOfOutputs": 16,
+      "DriverType": 2050,
+      "CIPObjectDefinesID": "CIPObjects",
+      "SupportsReset": true
+    }
+  ],
+  "ModuleDefinitions": [
+    {
+      "ID": "1734_DI8",
+      "StringsID": "ModuleDefinitionStrings",
+      "Connection": {
+        "StringID": 1,
+        "Choices": [
+          {
+            "ID": "Data",
+            "StringID": 8,
+            "DataFormat": "Integer",
+            "ConfigID": 300,
+            "CommMethod": 536870913
+          },
+          {
+            "ID": "Listen_Only",
+            "StringID": 9,
+            "DataFormat": "Integer",
+            "ConfigID": 301,
+            "CommMethod": 671088642,
+            "FilterMask": 65536
+          },
+          {
+            "ID": "Rack_Optimization",
+            "StringID": 10,
+            "DataFormat": "Integer",
+            "ConfigID": 262147,
+            "CommMethod": 1073741824
+          },
+          {
+            "ID": "Listen_Only_Rack",
+            "StringID": 11,
+            "DataFormat": "Integer",
+            "ConfigID": 524291,
+            "CommMethod": 4294967293
+          },
+          {
+            "ID": "Enhanced_Rack_Optimization",
+            "StringID": 12,
+            "DataFormat": "Integer",
+            "ConfigID": 67108866
+          }
+        ]
+      },
+      "DataFormat": {
+        "StringID": 3,
+        "Choices": [
+          {
+            "ID": "Integer",
+            "StringID": 6
+          }
+        ]
+      }
+    },
+    {
+      "ID": "1734_DO8_NODIAG",
+      "StringsID": "ModuleDefinitionStrings",
+      "Connection": {
+        "StringID": 1,
+        "Choices": [
+          {
+            "ID": "Data",
+            "StringID": 8,
+            "DataFormat": "Integer",
+            "ConfigID": 600,
+            "CommMethod": 536870913
+          },
+          {
+            "ID": "Rack_Optimization",
+            "StringID": 10,
+            "DataFormat": "Integer",
+            "ConfigID": 262152,
+            "CommMethod": 1073741824
+          },
+          {
+            "ID": "Enhanced_Rack_Optimization",
+            "StringID": 12,
+            "DataFormat": "Integer",
+            "ConfigID": 67108871
+          }
+        ]
+      },
+      "DataFormat": {
+        "StringID": 3,
+        "Choices": [
+          {
+            "ID": "Integer",
+            "StringID": 6
+          }
+        ]
+      }
+    }
+  ],
+  "ConnectionConfigDefinitions": [
+    {
+      "ConfigID": 300,
+      "ConfigTag": {
+        "ValueID": "ICON:ICD_DI16:C:0",
+        "Instance": 103,
+        "DataType": "ICON:ICD_DI16:C:0"
+      },
+      "Connections": [
+        "1734_DI8_DATA"
+      ]
+    },
+    {
+      "ConfigID": 301,
+      "ConfigTag": {
+        "ValueID": "AB:1734_DILO:C:0",
+        "Instance": 103,
+        "DataType": "AB:1734_DILO:C:0"
+      },
+      "Connections": [
+        "1734_DI8_LO_DATA"
+      ]
+    },
+    {
+      "ConfigID": 262147,
+      "ConfigTag": {
+        "ValueID": "ICON:ICD_DI16:C:0",
+        "Instance": 103,
+        "DataType": "ICON:ICD_DI16:C:0"
+      },
+      "Connections": [
+        "1734_DI8_RACK"
+      ]
+    },
+    {
+      "ConfigID": 524291,
+      "ConfigTag": {
+        "ValueID": "AB:1734_DILOR:C:0",
+        "Instance": 2,
+        "DataType": "AB:1734_DILOR:C:0"
+      },
+      "Connections": [
+        "1734_DI8_RACK"
+      ]
+    },
+    {
+      "ConfigID": 67108866,
+      "ConfigTag": {
+        "ValueID": "AB:1734_DI8_ERACK:C:0",
+        "Instance": 103,
+        "DataType": "AB:1734_DI8_ERACK:C:0"
+      },
+      "Connections": [
+        "1734_DI8_ERACK"
+      ]
+    },
+    {
+      "ConfigID": 600,
+      "ConfigTag": {
+        "ValueID": "ICON:ICD_DO16_NoDiag:C:0",
+        "Instance": 123,
+        "DataType": "ICON:ICD_DO16_NoDiag:C:0"
+      },
+      "Connections": [
+        "1734_DO8_NODIAG_DATA"
+      ]
+    },
+    {
+      "ConfigID": 262152,
+      "ConfigTag": {
+        "ValueID": "ICON:ICD_DO16_NoDiag:C:0",
+        "Instance": 123,
+        "DataType": "ICON:ICD_DO16_NoDiag:C:0"
+      },
+      "Connections": [
+        "1734_DO8_NODIAG_RACK"
+      ]
+    },
+    {
+      "ConfigID": 67108871,
+      "ConfigTag": {
+        "ValueID": "AB:1734_DO8_NoDiag_ERACK:C:0",
+        "Instance": 123,
+        "DataType": "AB:1734_DO8_NoDiag_ERACK:C:0"
+      },
+      "Connections": [
+        "1734_DO8_NODIAG_ERACK"
+      ]
+    }
+  ],
+  "ConnectionDefinitions": [
+    {
+      "ID": "1734_DI8_DATA",
+      "Name": "InputData",
+      "Type": "Input",
+      "MinRPI": 200,
+      "MaxRPI": 750000,
+      "RPI": 20000,
+      "InputCxnPoint": 4,
+      "OutputCxnPoint": 190,
+      "InputTag": {
+        "DataType": "ICON:ICD_DI16:I:0"
+      }
+    },
+    {
+      "ID": "1734_DI8_LO_DATA",
+      "Name": "ListenOnlyData",
+      "Type": "Input",
+      "MinRPI": 200,
+      "MaxRPI": 750000,
+      "RPI": 20000,
+      "InputCxnPoint": 4,
+      "OutputCxnPoint": 191,
+      "InputTag": {
+        "DataType": "ICON:ICD_DI16:I:0"
+      }
+    },
+    {
+      "ID": "1734_DI8_RACK",
+      "Name": "Rack_Optimization",
+      "InAliasTag": {
+        "Suffix": "I"
+      }
+    },
+    {
+      "ID": "1734_DI8_ERACK",
+      "Name": "Enhanced_Rack_Optmization",
+      "Type": "Input",
+      "InputCxnPoint": 4,
+      "OutputCxnPoint": 190,
+      "InputTag": {
+        "DataType": "ICON:ICD_DI16_ERACK:I:0"
+      }
+    },
+    {
+      "ID": "1734_DO8_NODIAG_DATA",
+      "Name": "OutputData",
+      "Type": "Output",
+      "MinRPI": 200,
+      "MaxRPI": 750000,
+      "RPI": 20000,
+      "InputCxnPoint": 44,
+      "OutputCxnPoint": 34,
+      "InputTag": {
+        "DataType": "ICON:ICD_DO16:I:0"
+      },
+      "OutputTag": {
+        "DataType": "ICON:ICD_DO16:O:0"
+      }
+    },
+    {
+      "ID": "1734_DO8_NODIAG_RACK",
+      "Name": "Rack_Optimization",
+      "OutAliasTag": {
+        "Suffix": "O"
+      },
+      "InAliasTag": {
+        "Suffix": "I"
+      }
+    },
+    {
+      "ID": "1734_DO8_NODIAG_ERACK",
+      "Name": "Enhanced_Rack_Optimization",
+      "InputCxnPoint": 44,
+      "OutputCxnPoint": 34,
+      "InputTag": {
+        "DataType": "AB:1734_DOB8_ERACK:I:0"
+      },
+      "OutputTag": {
+        "DataType": "ICON:ICD_DO16:O:0"
+      }
+    }
+  ],
+  "DataTypeDefinitions": [
+    {
+      "Name": "ICON:ICD_DI16:C:0",
+      "Class": "IO",
+      "Members": [
+        {
+          "Name": "CfgSize",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "CfgIDNum",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "Reserved",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "Pt0FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt0FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt1FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt1FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt2FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt2FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt3FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt3FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt4FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt4FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt5FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt5FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt6FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt6FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt7FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt7FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt8FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt8FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt9FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt9FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt10FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt10FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt11FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt11FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt12FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt12FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt13FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt13FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt14FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt14FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt15FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt15FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        }
+      ]
+    },
+    {
+      "Name": "AB:1734_DI8_ERACK:C:0",
+      "Class": "IO",
+      "Members": [
+        {
+          "Name": "CfgSize",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "CfgIDNum",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "EnProdDataOffset",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "EnProdConnPt",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "EnProdSize",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "EnConsDataOffset",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "EnConsConnPt",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "EnConsSize",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "Reserved",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "Pt0FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt0FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt1FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt1FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt2FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt2FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt3FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt3FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt4FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt4FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt5FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt5FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt6FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt6FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt7FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt7FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt8FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt8FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt9FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt9FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt10FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt10FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt11FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt11FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt12FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt12FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt13FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt13FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt14FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt14FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt15FilterOffOn",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        },
+        {
+          "Name": "Pt15FilterOnOff",
+          "DataType": "INT",
+          "Radix": "Decimal",
+          "Min": "0",
+          "Max": "65535"
+        }
+      ]
+    },
+    {
+      "Name": "ICON:ICD_DO16_NoDiag:C:0",
+      "Class": "IO",
+      "Members": [
+        {
+          "Name": "CfgSize",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "CfgIDNum",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "Reserved",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "FaultMode",
+          "DataType": "INT",
+          "Radix": "Binary"
+        },
+        {
+          "Name": "Pt0FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 0,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "Pt1FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 1,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "Pt2FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 2,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "Pt3FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 3,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "Pt4FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 4,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "Pt5FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 5,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "Pt6FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 6,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "Pt7FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 7,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "Pt8FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 8,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "Pt9FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 9,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "Pt10FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 10,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "Pt11FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 11,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "Pt12FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 12,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "Pt13FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 13,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "Pt14FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 14,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "Pt15FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 15,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "FaultValue",
+          "DataType": "INT",
+          "Radix": "Binary"
+        },
+        {
+          "Name": "Pt0FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 0,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "Pt1FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 1,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "Pt2FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 2,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "Pt3FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 3,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "Pt4FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 4,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "Pt5FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 5,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "Pt6FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 6,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "Pt7FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 7,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "Pt8FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 8,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "Pt9FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 9,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "Pt10FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 10,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "Pt11FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 11,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "Pt12FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 12,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "Pt13FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 13,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "Pt14FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 14,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "Pt15FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 15,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "ProgMode",
+          "DataType": "INT",
+          "Radix": "Binary"
+        },
+        {
+          "Name": "Pt0ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 0,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "Pt1ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 1,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "Pt2ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 2,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "Pt3ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 3,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "Pt4ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 4,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "Pt5ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 5,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "Pt6ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 6,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "Pt7ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 7,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "Pt8ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 8,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "Pt9ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 9,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "Pt10ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 10,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "Pt11ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 11,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "Pt12ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 12,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "Pt13ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 13,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "Pt14ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 14,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "Pt15ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 15,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "ProgValue",
+          "DataType": "INT",
+          "Radix": "Binary"
+        },
+        {
+          "Name": "Pt0ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 0,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        },
+        {
+          "Name": "Pt1ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 1,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        },
+        {
+          "Name": "Pt2ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 2,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        },
+        {
+          "Name": "Pt3ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 3,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        },
+        {
+          "Name": "Pt4ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 4,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        },
+        {
+          "Name": "Pt5ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 5,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        },
+        {
+          "Name": "Pt6ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 6,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        },
+        {
+          "Name": "Pt7ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 7,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        },
+        {
+          "Name": "Pt8ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 8,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        },
+        {
+          "Name": "Pt9ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 9,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        },
+        {
+          "Name": "Pt10ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 10,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        },
+        {
+          "Name": "Pt11ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 11,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        },
+        {
+          "Name": "Pt12ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 12,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        },
+        {
+          "Name": "Pt13ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 13,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        },
+        {
+          "Name": "Pt14ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 14,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        },
+        {
+          "Name": "Pt15ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 15,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        }
+      ]
+    },
+    {
+      "Name": "AB:1734_DO8_NoDiag_ERACK:C:0",
+      "Class": "IO",
+      "Members": [
+        {
+          "Name": "CfgSize",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "CfgIDNum",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "EnProdDataOffset",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "EnProdConnPt",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "EnProdSize",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "EnConsDataOffset",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "EnConsConnPt",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "EnConsSize",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "Reserved",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "FaultMode",
+          "DataType": "INT",
+          "Radix": "Binary"
+        },
+        {
+          "Name": "Pt0FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 0,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "Pt1FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 1,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "Pt2FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 2,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "Pt3FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 3,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "Pt4FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 4,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "Pt5FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 5,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "Pt6FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 6,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "Pt7FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 7,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "Pt8FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 8,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "Pt9FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 9,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "Pt10FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 10,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "Pt11FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 11,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "Pt12FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 12,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "Pt13FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 13,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "Pt14FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 14,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "Pt15FaultMode",
+          "DataType": "BIT",
+          "BitNumber": 15,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultMode"
+        },
+        {
+          "Name": "FaultValue",
+          "DataType": "INT",
+          "Radix": "Binary"
+        },
+        {
+          "Name": "Pt0FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 0,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "Pt1FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 1,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "Pt2FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 2,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "Pt3FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 3,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "Pt4FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 4,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "Pt5FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 5,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "Pt6FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 6,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "Pt7FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 7,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "Pt8FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 8,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "Pt9FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 9,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "Pt10FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 10,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "Pt11FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 11,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "Pt12FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 12,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "Pt13FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 13,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "Pt14FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 14,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "Pt15FaultValue",
+          "DataType": "BIT",
+          "BitNumber": 15,
+          "Enum": "FaultProgramEnum",
+          "Target": "FaultValue"
+        },
+        {
+          "Name": "ProgMode",
+          "DataType": "INT",
+          "Radix": "Binary"
+        },
+        {
+          "Name": "Pt0ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 0,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "Pt1ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 1,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "Pt2ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 2,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "Pt3ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 3,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "Pt4ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 4,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "Pt5ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 5,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "Pt6ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 6,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "Pt7ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 7,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "Pt8ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 8,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "Pt9ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 9,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "Pt10ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 10,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "Pt11ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 11,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "Pt12ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 12,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "Pt13ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 13,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "Pt14ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 14,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "Pt15ProgMode",
+          "DataType": "BIT",
+          "BitNumber": 15,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgMode"
+        },
+        {
+          "Name": "ProgValue",
+          "DataType": "INT",
+          "Radix": "Binary"
+        },
+        {
+          "Name": "Pt0ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 0,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        },
+        {
+          "Name": "Pt1ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 1,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        },
+        {
+          "Name": "Pt2ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 2,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        },
+        {
+          "Name": "Pt3ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 3,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        },
+        {
+          "Name": "Pt4ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 4,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        },
+        {
+          "Name": "Pt5ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 5,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        },
+        {
+          "Name": "Pt6ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 6,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        },
+        {
+          "Name": "Pt7ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 7,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        },
+        {
+          "Name": "Pt8ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 8,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        },
+        {
+          "Name": "Pt9ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 9,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        },
+        {
+          "Name": "Pt10ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 10,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        },
+        {
+          "Name": "Pt11ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 11,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        },
+        {
+          "Name": "Pt12ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 12,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        },
+        {
+          "Name": "Pt13ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 13,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        },
+        {
+          "Name": "Pt14ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 14,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        },
+        {
+          "Name": "Pt15ProgValue",
+          "DataType": "BIT",
+          "BitNumber": 15,
+          "Enum": "FaultProgramEnum",
+          "Target": "ProgValue"
+        }
+      ]
+    },
+    {
+      "Name": "ICON:ICD_DI16:I:0",
+      "Class": "IO",
+      "Members": [
+        {
+          "Name": "Fault",
+          "DataType": "DINT",
+          "Radix": "Binary"
+        },
+        {
+          "Name": "Data",
+          "DataType": "INT",
+          "Radix": "Binary"
+        }
+      ]
+    },
+    {
+      "Name": "ICON:ICD_DI16_ERACK:I:0",
+      "Class": "IO",
+      "Members": [
+        {
+          "Name": "Data",
+          "DataType": "INT",
+          "Radix": "Binary"
+        }
+      ]
+    },
+    {
+      "Name": "ICON:ICD_DO16:I:0",
+      "Class": "IO",
+      "Members": [
+        {
+          "Name": "Fault",
+          "DataType": "DINT",
+          "Radix": "Binary"
+        },
+        {
+          "Name": "Status",
+          "DataType": "INT",
+          "Radix": "Binary"
+        }
+      ]
+    },
+    {
+      "Name": "AB:1734_DOB8_ERACK:I:0",
+      "Class": "IO",
+      "Members": [
+        {
+          "Name": "Status",
+          "DataType": "INT",
+          "Radix": "Binary"
+        }
+      ]
+    },
+    {
+      "Name": "ICON:ICD_DO16:O:0",
+      "Class": "IO",
+      "Members": [
+        {
+          "Name": "Data",
+          "DataType": "INT",
+          "Radix": "Binary"
+        }
+      ]
+    },
+    {
+      "Name": "AB:1734_DILOR:C:0",
+      "Class": "IO",
+      "Members": [
+        {
+          "Name": "CfgSize",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "CfgIDNum",
+          "DataType": "DINT",
+          "Hidden": true
+        }
+      ]
+    },
+    {
+      "Name": "AB:1734_DILO:C:0",
+      "Class": "IO",
+      "Members": [
+        {
+          "Name": "CfgSize",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "CfgIDNum",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "Data",
+          "DataType": "INT",
+          "Hidden": true
+        }
+      ]
+    }
+  ],
+  "DataValueDefinitions": [
+    {
+      "ID": "ICON:ICD_DI16:C:0",
+      "Data": "00,00,00,00,00,00,00,00,01,00,00,00,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03"
+    },
+    {
+      "ID": "AB:1734_DI8_ERACK:C:0",
+      "Data": "00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,01,00,00,00,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03,e8,03"
+    },
+    {
+      "ID": "ICON:ICD_DO16_NoDiag:C:0",
+      "Data": "00,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,00,00,00,00"
+    },
+    {
+      "ID": "AB:1734_DO8_NoDiag_ERACK:C:0",
+      "Data": "00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,00,00,00,00"
+    },
+    {
+      "ID": "ICON:ICD_DI16:I:0",
+      "Data": "00,00,00,00,00,00"
+    },
+    {
+      "ID": "ICON:ICD_DI16_ERACK:I:0",
+      "Data": "00,00"
+    },
+    {
+      "ID": "ICON:ICD_DO16:I:0",
+      "Data": "00,00,00,00,00,00"
+    },
+    {
+      "ID": "AB:1734_DOB8_ERACK:I:0",
+      "Data": "00,00"
+    },
+    {
+      "ID": "ICON:ICD_DO16:O:0",
+      "Data": "00,00"
+    },
+    {
+      "ID": "AB:1734_DILOR:C:0",
+      "Data": "04,00,00,00,02,00,00,00"
+    },
+    {
+      "ID": "AB:1734_DILO:C:0",
+      "Data": "00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00"
+    }
+  ],
+  "StringDefines": [
+    {
+      "ID": "ModuleDefinitionStrings",
+      "Strings": [
+        {
+          "ID": 1,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Connection"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Connexion"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Verbindung"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Conexión"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Conexão"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Collegamento"
+            },
+            {
+              "LCID": 1041,
+              "Text": "接続"
+            },
+            {
+              "LCID": 1042,
+              "Text": "연결"
+            },
+            {
+              "LCID": 2052,
+              "Text": "连接"
+            }
+          ]
+        },
+        {
+          "ID": 2,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Diagnostics"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Diagnostic"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Diagnose"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Diagnóstico"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Diagnóstico"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Diagnostica"
+            },
+            {
+              "LCID": 1041,
+              "Text": "診断"
+            },
+            {
+              "LCID": 1042,
+              "Text": "진단"
+            },
+            {
+              "LCID": 2052,
+              "Text": "诊断"
+            }
+          ]
+        },
+        {
+          "ID": 3,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Data Format"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Format des données"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Datenformat"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Formato de datos"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Formato de dados"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Formato di dati"
+            },
+            {
+              "LCID": 1041,
+              "Text": "データ形式"
+            },
+            {
+              "LCID": 1042,
+              "Text": "데이터 형식"
+            },
+            {
+              "LCID": 2052,
+              "Text": "数据格式"
+            }
+          ]
+        },
+        {
+          "ID": 4,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Output"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Sortie"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Ausgang"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Salida"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Saída"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Uscita"
+            },
+            {
+              "LCID": 1041,
+              "Text": "出力"
+            },
+            {
+              "LCID": 1042,
+              "Text": "출력"
+            },
+            {
+              "LCID": 2052,
+              "Text": "输出"
+            }
+          ]
+        },
+        {
+          "ID": 5,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Input"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Entrée"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Eingang"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Entrada"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Entrada"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Ingresso"
+            },
+            {
+              "LCID": 1041,
+              "Text": "入力"
+            },
+            {
+              "LCID": 1042,
+              "Text": "입력"
+            },
+            {
+              "LCID": 2052,
+              "Text": "输入"
+            }
+          ]
+        },
+        {
+          "ID": 6,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Integer"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Entier"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Ganzzahl"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Entero"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Inteiro"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Numero intero"
+            },
+            {
+              "LCID": 1041,
+              "Text": "整数"
+            },
+            {
+              "LCID": 1042,
+              "Text": "정수"
+            },
+            {
+              "LCID": 2052,
+              "Text": "整型"
+            }
+          ]
+        },
+        {
+          "ID": 7,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "None"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Aucun"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Keine"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Ninguno"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Nenhuma"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Nessuno"
+            },
+            {
+              "LCID": 1041,
+              "Text": "なし"
+            },
+            {
+              "LCID": 1042,
+              "Text": "없음"
+            },
+            {
+              "LCID": 2052,
+              "Text": "无"
+            }
+          ]
+        },
+        {
+          "ID": 8,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Data"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Données"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Daten"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Datos"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Dados"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Dati"
+            },
+            {
+              "LCID": 1041,
+              "Text": "データ"
+            },
+            {
+              "LCID": 1042,
+              "Text": "데이터"
+            },
+            {
+              "LCID": 2052,
+              "Text": "数据"
+            }
+          ]
+        },
+        {
+          "ID": 9,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Listen Only"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Écoute seule"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Nur-Lesen"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Sólo recepción"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Somente escuta"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Solo ascolto"
+            },
+            {
+              "LCID": 1041,
+              "Text": "リッスン専用"
+            },
+            {
+              "LCID": 1042,
+              "Text": "수신 전용"
+            },
+            {
+              "LCID": 2052,
+              "Text": "只听"
+            }
+          ]
+        },
+        {
+          "ID": 10,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Rack Optimization"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Optimisation du rack"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Rack-Optimierung"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Optimización de rack"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Otimização de gaveta"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Ottimizzazione rack"
+            },
+            {
+              "LCID": 1041,
+              "Text": "ラック最適化"
+            },
+            {
+              "LCID": 1042,
+              "Text": "랙 최적화"
+            },
+            {
+              "LCID": 2052,
+              "Text": "机架优化"
+            }
+          ]
+        },
+        {
+          "ID": 11,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Listen Only Rack Optimization"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Optimisation du rack en écoute seule"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Nur Lesen - Rack-Optimierung"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Optimización de rack de sólo recepción"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Otimização de gaveta somente leitura"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Ottimizzazione rack solo ascolto"
+            },
+            {
+              "LCID": 1041,
+              "Text": "リッスン専用 - ラック最適化"
+            },
+            {
+              "LCID": 1042,
+              "Text": "수신 전용 랙 최적화"
+            },
+            {
+              "LCID": 2052,
+              "Text": "只听机架优化"
+            }
+          ]
+        },
+        {
+          "ID": 12,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Enhanced Rack Optimization"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Optimisation du rack"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Rack-Optimierung"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Optimización de rack"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Otimização de gaveta"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Ottimizzazione rack"
+            },
+            {
+              "LCID": 1041,
+              "Text": "ラック最適化"
+            },
+            {
+              "LCID": 1042,
+              "Text": "랙 최적화"
+            },
+            {
+              "LCID": 2052,
+              "Text": "机架优化"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "FaultProgramEnumStrings",
+      "Strings": [
+        {
+          "ID": 1,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Off"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Désactivé"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Aus"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Desactivado"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Desligado"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Off"
+            },
+            {
+              "LCID": 1041,
+              "Text": "オフ"
+            },
+            {
+              "LCID": 1042,
+              "Text": "꺼짐"
+            },
+            {
+              "LCID": 2052,
+              "Text": "关闭"
+            }
+          ]
+        },
+        {
+          "ID": 2,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "On"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Activé"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Ein"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Activado"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Ligado"
+            },
+            {
+              "LCID": 1040,
+              "Text": "On"
+            },
+            {
+              "LCID": 1041,
+              "Text": "オン"
+            },
+            {
+              "LCID": 1042,
+              "Text": "켜짐"
+            },
+            {
+              "LCID": 2052,
+              "Text": "打开"
+            }
+          ]
+        },
+        {
+          "ID": 3,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Hold"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Maintenir"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Halten"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Retener"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Manter"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Mantieni"
+            },
+            {
+              "LCID": 1041,
+              "Text": "保留"
+            },
+            {
+              "LCID": 1042,
+              "Text": "보류"
+            },
+            {
+              "LCID": 2052,
+              "Text": "暂挂"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

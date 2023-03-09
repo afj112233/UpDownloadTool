@@ -1,0 +1,5 @@
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.CipObjectTest.exe.config
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.CipObjectTest.exe
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.CipObjectTest.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\ICSStudio\Test\ICSStudio.CIPObjectTest\obj\Debug\ICSStudio.CipObjectTest.exe
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\ICSStudio\Test\ICSStudio.CIPObjectTest\obj\Debug\ICSStudio.CipObjectTest.pdb

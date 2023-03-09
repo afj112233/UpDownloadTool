@@ -1,0 +1,875 @@
+<?xml version="1.0"?>
+<!--Copyright 2016 Information Convergence -->
+<!--ICM-D1S70:		ICM-D1S70 Dual Axis Ethernet Drive-->
+<ModuleTypeInstall>
+  <ModuleTypes>	
+	<ModuleType CLSID="{FEC0A0F2-59DC-11d0-B749-080009D31CCC}" Version="29" MinLogixVersion="21" MinAOPVersion="21" Style="Addon">
+      <Identity>
+        <CatalogNumber>ICM-D1S70</CatalogNumber>
+        <Description LCID="1033">I-CON Drive 1, Single Axis, 25.7A, 380-440 Volt, CIP Motion Drive</Description>
+        <Description LCID="1036">I-CON Drive 1, Single Axis, 25.7A, 380-440 Volt, CIP Motion Drive</Description>
+        <Description LCID="1031">I-CON Drive 1, Single Axis, 25.7A, 380-440 Volt, CIP Motion Drive</Description>
+        <Description LCID="1034">I-CON Drive 1, Single Axis, 25.7A, 380-440 Volt, CIP Motion Drive</Description>
+        <Description LCID="1046">I-CON Drive 1, Single Axis, 25.7A, 380-440 Volt, CIP Motion Drive</Description>
+        <Description LCID="1040">I-CON Drive 1, Single Axis, 25.7A, 380-440 Volt, CIP Motion Drive</Description>
+        <Description LCID="1041">I-CON Drive 1, Single Axis, 25.7A, 380-440 Volt, CIP Motion Drive</Description>
+        <Description LCID="1042">I-CON Drive 1, Single Axis, 25.7A, 380-440 Volt, CIP Motion Drive</Description>
+        <Description LCID="2052">I-CON Drive 1, Single Axis，25.7A, 380-440 Volt, CIP Motion 伺服驱动器</Description>
+        <VendorID>5</VendorID>
+        <ProductType>37</ProductType>
+        <ProductName ProductCode="67">CIPDrive</ProductName>
+ <!--       <Variant MajorRev="1" />
+		<Variant MajorRev="2" />
+		<Variant MajorRev="3" /> -->
+		<Variant MajorRev="4" />
+        <IconFile>RSLogix 5000 Module Profiles\I-CON\I-CON CIP Motion Drive\Drive.ico</IconFile>
+      </Identity>
+      <Ports>
+        <Port Number="2">
+          <Type>Ethernet</Type>
+          <Label>ENet</Label>
+          <Width>1</Width>
+          <ConnectorOffset>0</ConnectorOffset>
+        </Port>
+      </Ports>
+      <Categories>
+        <Drive />
+        <Motion />
+      </Categories>
+      <ExtendedProperties>
+        <MsiUpgradeCode>{EAC34111-FF8B-45ED-95C2-CDB50513E63F}</MsiUpgradeCode>
+        <MsiFeatureName>_RAKinetix5500_H015</MsiFeatureName>
+        <PSModuleSpecificFile>RSLogix 5000 Module Profiles\I-CON\I-CON CIP Motion Drive\PSICM-D5.xml</PSModuleSpecificFile>
+        <PVModuleSpecificFile>RSLogix 5000 Module Profiles\I-CON\I-CON CIP Motion Drive\PVICM-D5.xml</PVModuleSpecificFile>
+        <PVCLSID>{489BC54F-86B5-43AB-9A30-E41B312451F0}</PVCLSID>
+        <PSCLSID>{848B1A29-B8C1-4333-89EB-80C2EF30BDD9}</PSCLSID>
+        <UnicastOnly>18</UnicastOnly>
+      </ExtendedProperties>
+			<Schema>
+				<Drive>
+					<OptionalAttributeRevision MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3">2</OptionalAttributeRevision>
+					<AxisType>AXIS_CIP_DRIVE</AxisType>
+					<TimeSync>
+						<HighQuality />
+					</TimeSync>
+					<UpdateableFlash />
+					<Safety>
+						<EnhancedSafeTorqueOff />
+					</Safety>
+					<SupportedAttributes>
+						<ControllerUpdateDelayHighLimit />
+						<ControllerUpdateDelayLowLimit />
+						<SyncThreshold />
+						<FeedbackPortSelect />
+						<BusConfiguration />
+						<BusRegulatorAction />
+						<ShuntRegulatorResistorType />
+						<ExternalShuntRegulatorID />
+						
+						<ConverterThermalOverloadUserLimit />
+						<BusRegulatorThermalOverloadUserLimit />
+						<BusUndervoltageUserLimit />
+						<DigitalInputConfiguration />
+					</SupportedAttributes>
+					<PowerStructures>
+						<PowerStructure ID="67" Integrated="True" DutySelect="Normal" Voltage="High">
+						 <CatalogNumber>
+							<Text LCID="1033">ICM-D1S70</Text>
+							<Text LCID="1036">ICM-D1S70</Text>
+							<Text LCID="1031">ICM-D1S70</Text>
+							<Text LCID="1034">ICM-D1S70</Text>
+							<Text LCID="1046">ICM-D1S70</Text>
+							<Text LCID="1040">ICM-D1S70</Text>
+							<Text LCID="1041">ICM-D1S70</Text>
+							<Text LCID="1042">ICM-D1S70</Text>
+							<Text LCID="2052">ICM-D1S70</Text>
+						  </CatalogNumber>
+						  <Description>
+							<Text LCID="1033">I-CON Drive 1, Single Axis, 25.7A, 380-440 Volt, CIP Motion Drive</Text>
+							<Text LCID="1036">I-CON Drive 1, Single Axis, 25.7A, 380-440 Volt, CIP Motion Drive</Text>
+							<Text LCID="1031">I-CON Drive 1, Single Axis, 25.7A, 380-440 Volt, CIP Motion Drive</Text>
+							<Text LCID="1034">I-CON Drive 1, Single Axis, 25.7A, 380-440 Volt, CIP Motion Drive</Text>
+							<Text LCID="1046">I-CON Drive 1, Single Axis, 25.7A, 380-440 Volt, CIP Motion Drive</Text>
+							<Text LCID="1040">I-CON Drive 1, Single Axis, 25.7A, 380-440 Volt, CIP Motion Drive</Text>
+							<Text LCID="1041">I-CON Drive 1, Single Axis, 25.7A, 380-440 Volt, CIP Motion Drive</Text>
+							<Text LCID="1042">I-CON Drive 1, Single Axis, 25.7A, 380-440 Volt, CIP Motion Drive</Text>
+							<Text LCID="2052">I-CON Drive 1, Single Axis, 25.7A, 380-440 Volt, CIP Motion 伺服驱动器</Text>
+						  </Description>
+							<BusConfiguration>
+								<BusCompatibilityID>0</BusCompatibilityID>
+							    <RelativeRating>15</RelativeRating>
+								<MaxBusMasters>4</MaxBusMasters>
+								<MaxBusFollowers>6</MaxBusFollowers>
+								<MaxInGroup>8</MaxInGroup>
+							</BusConfiguration>
+						</PowerStructure>
+					</PowerStructures>
+					<Feedback>
+						<Ports>
+							<Port Number="1">
+								<Description>
+									<Text LCID="1033">Main Feedback 1 Port</Text>
+									<Text LCID="1036">Port Motor de retour</Text>
+									<Text LCID="1031">Port Motor-Rückführungsmodul</Text>
+									<Text LCID="1034">Puerto de retroalimentación de Motor</Text>
+									<Text LCID="1046">Porta de realimentação de Motor</Text>
+									<Text LCID="1040">Porta di feedback Motor</Text>
+									<Text LCID="1041">Motor フィードバック ポート</Text>
+									<Text LCID="1042">Motor 피드백 포트</Text>
+									<Text LCID="2052">电机反馈端口</Text>
+								</Description>
+							</Port>
+							<Port Number="2">
+								<Description>
+									<Text LCID="1033">Universal Feedback 1 Port</Text>
+									<Text LCID="1036">Port universel de retour</Text>
+									<Text LCID="1031">Port Universelles Rückführungsmodul</Text>
+									<Text LCID="1034">Puerto de retroalimentación universal</Text>
+									<Text LCID="1046">Porta de realimentação universal</Text>
+									<Text LCID="1040">Porta di feedback universale</Text>
+									<Text LCID="1041">ユニバーサル フィードバック ポート</Text>
+									<Text LCID="1042">범용 피드백 포트</Text>
+									<Text LCID="2052">负载反馈端口</Text>
+								</Description>
+							</Port>
+							<Port Number="3">
+								<Description>
+									<Text LCID="1033">Main Feedback 2 Port</Text>
+									<Text LCID="1036">Port DSL de retour 2</Text>
+									<Text LCID="1031">Port DSL-Rückführungsmodul 2</Text>
+									<Text LCID="1034">Puerto de retroalimentación de DSL 2</Text>
+									<Text LCID="1046">Porta 2 de realimentação de DSL</Text>
+									<Text LCID="1040">Porta di feedback 2 DSL</Text>
+									<Text LCID="1041">DSL フィードバック 2 ポート</Text>
+									<Text LCID="1042">DSL 피드백 2 포트</Text>
+									<Text LCID="2052">DSL 反馈 2 端口</Text>
+								</Description>
+							</Port>
+							<Port Number="4">
+								<Description>
+									<Text LCID="1033">Universal Feedback 2 Port</Text>
+									<Text LCID="1036">Port universel de retour 2</Text>
+									<Text LCID="1031">Port Universelles Rückführungsmodul 2</Text>
+									<Text LCID="1034">Puerto de retroalimentación universal 2</Text>
+									<Text LCID="1046">Porta 2 de realimentação universal</Text>
+									<Text LCID="1040">Porta di feedback 2 universale</Text>
+									<Text LCID="1041">ユニバーサル フィードバック 2 ポート</Text>
+									<Text LCID="1042">범용 피드백 2 포트</Text>
+									<Text LCID="2052">通用反馈 2 端口</Text>
+								</Description>
+							</Port>							
+						</Ports>
+						<DevicePorts>
+							<DevicePort Number="1" FeedbackPortNumber="1" DefaultCardType="1" />
+						</DevicePorts>
+						<Devices>
+							<Device CardType="1" Channels="1">
+								<CatalogNumber>Motor Feedback Device</CatalogNumber>
+								<FeedbackTypes>
+									<FeedbackType>
+										<Value>Tamagawa Serial</Value>
+									</FeedbackType>									
+								</FeedbackTypes>
+								<RegistrationInputs>2</RegistrationInputs>
+								<AxisFeatures>
+									<Value>Marker</Value>
+									<Value>Home Switch</Value>
+								</AxisFeatures>
+								<HomeSequence>
+									<Value>Switch</Value>
+									<Value>Marker</Value>
+									<Value>Switch-Marker</Value>
+								</HomeSequence>
+							</Device>
+						</Devices>
+					</Feedback>
+					<Axes>
+						<Axis1>
+							<SupportedAxisConfigurations>
+								<Value>Feedback Only</Value>
+								<Value>Frequency Control</Value>
+								<Value>Position Loop</Value>
+								<Value>Velocity Loop</Value>
+								<Value>Torque Loop</Value>
+								<DefaultAxisConfigurationValue>Position Loop</DefaultAxisConfigurationValue>
+							</SupportedAxisConfigurations>
+							<AllowableFeedbackPorts MinLogixVersion="26" MinICE2Version="27">
+								<MotorMaster>
+									<PortNumber>0</PortNumber>
+									<PortNumber Default="True">1</PortNumber>
+									<PortNumber>2</PortNumber>
+								</MotorMaster>
+							</AllowableFeedbackPorts>
+						</Axis1>
+					</Axes>
+					<Attributes>
+						<SupportedAttributes>
+							<PositionLoop>
+								<MotorCatalogNumber />
+								<MotorPolarity />
+								<MotorRatedPeakCurrent />
+								<MotorRatedOutputPower />
+								<MotorOverloadLimit />
+								<MotorIntegralThermalSwitch MinMajorRev="2" />
+								<MotorMaxWindingTemperature />
+								<MotorWindingToAmbientCapacitance MinMajorRev="2" />
+								<MotorWindingToAmbientResistance MinMajorRev="2" />
+								<PMMotorFluxSaturation />
+								<PMMotorRatedTorque />
+								<PMMotorTorqueConstant />
+								<PMMotorRatedForce MinMajorRev="2" />
+								<PMMotorForceConstant MinMajorRev="2" />
+								<RotaryMotorInertia />
+								<RotaryMotorMaxSpeed />
+								<LinearMotorMass MinMajorRev="2" />
+								<LinearMotorMaxSpeed MinMajorRev="2" />
+								<InductionMotorStatorLeakageReactance MinLogixVersion="26" MinICE2Version="27" />
+								<InductionMotorRotorLeakageReactance MinLogixVersion="26" MinICE2Version="27" />
+								<FeedbackUnitRatio />
+								<Feedback1SerialNumber />
+								<Feedback1Polarity />
+								<Feedback1VelocityFilterTaps />
+								<Feedback1AccelFilterTaps />
+								<Feedback1VelocityFilterBandwidth />
+								<Feedback1AccelFilterBandwidth />
+								<Feedback2SerialNumber />
+								<Feedback2Polarity />
+								<Feedback2VelocityFilterTaps />
+								<Feedback2AccelFilterTaps />
+								<Feedback2VelocityFilterBandwidth />
+								<Feedback2AccelFilterBandwidth />
+								<PositionFineCommand />
+								<VelocityFineCommand />
+								<AccelerationFineCommand />
+								<PositionErrorToleranceTime />
+								<PositionLeadLagFilterBandwidth />
+								<PositionLeadLagFilterGain />
+								<VelocityNegativeFeedforwardGain />
+								<VelocityDroop />
+								<VelocityErrorTolerance />
+								<VelocityErrorToleranceTime />
+								<VelocityLowPassFilterBandwidth />
+								<VelocityThreshold />
+								<VelocityLockTolerance />
+								<VelocityLimitPositive />
+								<VelocityLimitNegative />
+								<AccelerationReference />
+								<LoadObserverAccelerationEstimate />
+								<LoadObserverTorqueEstimate />
+								<LoadObserverConfiguration />
+								<LoadObserverBandwidth />
+								<LoadObserverIntegratorBandwidth />
+								<LoadObserverFeedbackGain />
+								<AccelerationLimit />
+								<DecelerationLimit />
+								<BacklashCompensationWindow />
+								<FrictionCompensationSliding />
+								<FrictionCompensationStatic />
+								<FrictionCompensationViscous />
+								<FrictionCompensationWindow />
+								<TorqueLeadLagFilterBandwidth />
+								<TorqueLeadLagFilterGain />
+								<TorqueLowPassFilterBandwidth />
+								<TorqueNotchFilterFrequency />
+								<AdaptiveTuningConfiguration MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<TorqueNotchFilterHighFrequencyLimit MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<TorqueNotchFilterLowFrequencyLimit MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<TorqueNotchFilterTuningThreshold MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<TorqueNotchFilterFrequencyEstimate MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<TorqueNotchFilterMagnitudeEstimate MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<TorqueLowPassFilterBandwidthEstimate MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<AdaptiveTuningGainScalingFactor MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<TorqueRateLimit />
+								<TorqueThreshold />
+								<OvertorqueLimit />
+								<OvertorqueLimitTime />
+								<UndertorqueLimit />
+								<UndertorqueLimitTime />
+								<OperativeCurrentLimit />
+								<CurrentLimitSource />
+								<CurrentReference />
+								<FluxCurrentReference />
+								<CurrentError />
+								<FluxCurrentError />
+								<CurrentFeedback />
+								<FluxCurrentFeedback />
+								<TorqueLoopBandwidth />
+								<FluxUpControl MinMajorRev="4" />
+								<FluxUpTime MinMajorRev="4" />
+								<CommutationPolarity />
+								<FeedbackCommutationAligned />
+								<OutputFrequency />
+								<ConverterOutputCurrent MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<ConverterOutputPower MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<ZeroSpeed MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<ZeroSpeedTime MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<StoppingTimeLimit />
+								<CoastingTimeLimit MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<MechanicalBrakeControl />
+								<MechanicalBrakeReleaseDelay />
+								<MechanicalBrakeEngageDelay />
+								<ProvingConfiguration MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<TorqueProveCurrent MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<BrakeTestTorque MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<BrakeSlipTolerance MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<ConverterCapacity />
+								<BusRegulatorCapacity />
+								<MotorOverloadAction />
+								<InverterOverloadAction />
+								<CIPAxisAlarms />
+								<CIPAxisAlarmsRA />
+								<MotorOverspeedUserLimit MinMajorRev="2" />
+								<MotorThermalOverloadUserLimit />
+								<InverterThermalOverloadUserLimit />
+								<FeedbackDataLossUserLimit />
+								<GuardStatus />
+								<GuardFaults />
+							</PositionLoop>
+							<VelocityLoop>
+								<MotorCatalogNumber />
+								<MotorPolarity />
+								<MotorRatedPeakCurrent />
+								<MotorRatedOutputPower />
+								<MotorOverloadLimit />
+								<MotorIntegralThermalSwitch MinMajorRev="2" />
+								<MotorMaxWindingTemperature />
+								<MotorWindingToAmbientCapacitance MinMajorRev="2" />
+								<MotorWindingToAmbientResistance MinMajorRev="2" />
+								<PMMotorFluxSaturation />
+								<PMMotorRatedTorque />
+								<PMMotorTorqueConstant />
+								<PMMotorRatedForce MinMajorRev="2" />
+								<PMMotorForceConstant MinMajorRev="2" />
+								<RotaryMotorInertia />
+								<RotaryMotorMaxSpeed />
+								<LinearMotorMass MinMajorRev="2" />
+								<LinearMotorMaxSpeed MinMajorRev="2" />
+								<InductionMotorStatorLeakageReactance MinLogixVersion="26" MinICE2Version="27" />
+								<InductionMotorRotorLeakageReactance MinLogixVersion="26" MinICE2Version="27" />
+								<FeedbackUnitRatio />
+								<Feedback1SerialNumber />
+								<Feedback1Polarity />
+								<Feedback1VelocityFilterTaps />
+								<Feedback1AccelFilterTaps />
+								<Feedback1VelocityFilterBandwidth />
+								<Feedback1AccelFilterBandwidth />
+								<Feedback2SerialNumber />
+								<Feedback2Polarity />
+								<Feedback2VelocityFilterTaps />
+								<Feedback2AccelFilterTaps />
+								<Feedback2VelocityFilterBandwidth />
+								<Feedback2AccelFilterBandwidth />
+								<VelocityFineCommand />
+								<AccelerationFineCommand />
+								<VelocityNegativeFeedforwardGain />
+								<VelocityDroop />
+								<VelocityErrorTolerance />
+								<VelocityErrorToleranceTime />
+								<VelocityLowPassFilterBandwidth />
+								<VelocityThreshold />
+								<VelocityLockTolerance />
+								<VelocityLimitPositive />
+								<VelocityLimitNegative />
+								<SLATConfiguration MinMajorRev="4" />
+								<SLATSetPoint MinMajorRev="4" />
+								<SLATTimeDelay MinMajorRev="4" />
+								<AccelerationReference />
+								<LoadObserverAccelerationEstimate />
+								<LoadObserverTorqueEstimate />
+								<LoadObserverConfiguration />
+								<LoadObserverBandwidth />
+								<LoadObserverIntegratorBandwidth />
+								<LoadObserverFeedbackGain />
+								<AccelerationLimit />
+								<DecelerationLimit />
+								<FrictionCompensationSliding />
+								<FrictionCompensationStatic MinMajorRev="4" />
+								<FrictionCompensationViscous />
+								<TorqueLeadLagFilterBandwidth />
+								<TorqueLeadLagFilterGain />
+								<TorqueLowPassFilterBandwidth />
+								<TorqueNotchFilterFrequency />
+								<AdaptiveTuningConfiguration MinLogixVersion="26" MinICE2Version="27" MinMajorRev="4" />
+								<TorqueNotchFilterHighFrequencyLimit MinLogixVersion="26" MinICE2Version="27" MinMajorRev="4" />
+								<TorqueNotchFilterLowFrequencyLimit MinLogixVersion="26" MinICE2Version="27" MinMajorRev="4" />
+								<TorqueNotchFilterTuningThreshold MinLogixVersion="26" MinICE2Version="27" MinMajorRev="4" />
+								<TorqueNotchFilterFrequencyEstimate MinLogixVersion="26" MinICE2Version="27" MinMajorRev="4" />
+								<TorqueNotchFilterMagnitudeEstimate MinLogixVersion="26" MinICE2Version="27" MinMajorRev="4" />
+								<TorqueLowPassFilterBandwidthEstimate MinLogixVersion="26" MinICE2Version="27" MinMajorRev="4" />
+								<AdaptiveTuningGainScalingFactor MinLogixVersion="26" MinICE2Version="27" MinMajorRev="4" />
+								<TorqueRateLimit />
+								<TorqueThreshold />
+								<OvertorqueLimit />
+								<OvertorqueLimitTime />
+								<UndertorqueLimit />
+								<UndertorqueLimitTime />
+								<OperativeCurrentLimit />
+								<CurrentLimitSource />
+								<CurrentReference />
+								<FluxCurrentReference />
+								<CurrentError />
+								<FluxCurrentError />
+								<CurrentFeedback />
+								<FluxCurrentFeedback />
+								<TorqueLoopBandwidth />
+								<FluxUpControl MinMajorRev="4" />
+								<FluxUpTime MinMajorRev="4" />
+								<CommutationPolarity />
+								<FeedbackCommutationAligned />
+								<OutputFrequency />
+								<ConverterOutputCurrent MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<ConverterOutputPower MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<ZeroSpeed MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<ZeroSpeedTime MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<StoppingTimeLimit />
+								<CoastingTimeLimit MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<MechanicalBrakeControl />
+								<MechanicalBrakeReleaseDelay />
+								<MechanicalBrakeEngageDelay />
+								<ProvingConfiguration MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<TorqueProveCurrent MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<BrakeTestTorque MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<BrakeSlipTolerance MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<ConverterCapacity />
+								<BusRegulatorCapacity />
+								<MotorOverloadAction />
+								<InverterOverloadAction />
+								<CIPAxisAlarms />
+								<CIPAxisAlarmsRA />
+								<MotorOverspeedUserLimit MinMajorRev="2" />
+								<MotorThermalOverloadUserLimit />
+								<InverterThermalOverloadUserLimit />
+								<FeedbackDataLossUserLimit />
+								<GuardStatus />
+								<GuardFaults />
+							</VelocityLoop>
+							<TorqueLoop>
+								<MotorCatalogNumber />
+								<MotorPolarity />
+								<MotorRatedPeakCurrent />
+								<MotorRatedOutputPower />
+								<MotorOverloadLimit />
+								<MotorIntegralThermalSwitch MinMajorRev="2" />
+								<MotorMaxWindingTemperature />
+								<MotorWindingToAmbientCapacitance MinMajorRev="2" />
+								<MotorWindingToAmbientResistance MinMajorRev="2" />
+								<PMMotorFluxSaturation />
+								<PMMotorRatedTorque />
+								<PMMotorTorqueConstant />
+								<PMMotorRatedForce MinMajorRev="2" />
+								<PMMotorForceConstant MinMajorRev="2" />
+								<RotaryMotorInertia />
+								<RotaryMotorMaxSpeed />
+								<LinearMotorMass MinMajorRev="2" />
+								<LinearMotorMaxSpeed MinMajorRev="2" />
+								<InductionMotorStatorLeakageReactance MinLogixVersion="26" MinICE2Version="27" />
+								<InductionMotorRotorLeakageReactance MinLogixVersion="26" MinICE2Version="27" />
+								<Feedback1SerialNumber />
+								<Feedback1Polarity />								
+								<Feedback1VelocityFilterTaps />
+								<Feedback1AccelFilterTaps />
+								<Feedback1VelocityFilterBandwidth />
+								<Feedback1AccelFilterBandwidth />
+								<Feedback2SerialNumber />
+								<Feedback2Polarity />
+								<Feedback2VelocityFilterTaps />
+								<Feedback2AccelFilterTaps />
+								<Feedback2VelocityFilterBandwidth />
+								<Feedback2AccelFilterBandwidth />								
+								<AccelerationFineCommand />
+								<VelocityThreshold />
+								<LoadObserverAccelerationEstimate />
+								<LoadObserverTorqueEstimate />
+								<LoadObserverConfiguration />
+								<LoadObserverBandwidth />
+								<LoadObserverIntegratorBandwidth />
+								<LoadObserverFeedbackGain />
+								<FrictionCompensationSliding MinMajorRev="4" />
+								<FrictionCompensationStatic MinMajorRev="4" />
+								<FrictionCompensationViscous MinMajorRev="4" />
+								<TorqueLeadLagFilterBandwidth />
+								<TorqueLeadLagFilterGain />
+								<TorqueLowPassFilterBandwidth />
+								<TorqueNotchFilterFrequency />
+								<AdaptiveTuningConfiguration MinLogixVersion="26" MinICE2Version="27" MinMajorRev="4" />
+								<TorqueNotchFilterHighFrequencyLimit MinLogixVersion="26" MinICE2Version="27" MinMajorRev="4" />
+								<TorqueNotchFilterLowFrequencyLimit MinLogixVersion="26" MinICE2Version="27" MinMajorRev="4" />
+								<TorqueNotchFilterTuningThreshold MinLogixVersion="26" MinICE2Version="27" MinMajorRev="4" />
+								<TorqueNotchFilterFrequencyEstimate MinLogixVersion="26" MinICE2Version="27" MinMajorRev="4" />
+								<TorqueNotchFilterMagnitudeEstimate MinLogixVersion="26" MinICE2Version="27" MinMajorRev="4" />
+								<TorqueLowPassFilterBandwidthEstimate MinLogixVersion="26" MinICE2Version="27" MinMajorRev="4" />
+								<AdaptiveTuningGainScalingFactor MinLogixVersion="26" MinICE2Version="27" MinMajorRev="4" />
+								<TorqueRateLimit />
+								<TorqueThreshold />
+								<OvertorqueLimit />
+								<OvertorqueLimitTime />
+								<UndertorqueLimit />
+								<UndertorqueLimitTime />
+								<OperativeCurrentLimit />
+								<CurrentLimitSource />
+								<CurrentReference />
+								<FluxCurrentReference />
+								<CurrentError />
+								<FluxCurrentError />
+								<CurrentFeedback />
+								<FluxCurrentFeedback />
+								<TorqueLoopBandwidth />
+								<FluxUpControl MinMajorRev="4" />
+								<FluxUpTime MinMajorRev="4" />
+								<CommutationPolarity />
+								<FeedbackCommutationAligned />
+								<OutputFrequency />
+								<ConverterOutputCurrent MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<ConverterOutputPower MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<ZeroSpeed MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<ZeroSpeedTime MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<StoppingTimeLimit />
+								<CoastingTimeLimit MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<MechanicalBrakeControl />
+								<MechanicalBrakeReleaseDelay />
+								<MechanicalBrakeEngageDelay />
+								<ProvingConfiguration MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<TorqueProveCurrent MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<BrakeTestTorque MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<BrakeSlipTolerance MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<ConverterCapacity />
+								<BusRegulatorCapacity />
+								<MotorOverloadAction />
+								<InverterOverloadAction />
+								<CIPAxisAlarms />
+								<CIPAxisAlarmsRA />
+								<MotorOverspeedUserLimit MinMajorRev="2" />
+								<MotorThermalOverloadUserLimit />
+								<InverterThermalOverloadUserLimit />
+								<FeedbackDataLossUserLimit />
+								<GuardStatus />
+								<GuardFaults />
+							</TorqueLoop>
+							<FrequencyControl>
+								<MotorPolarity />
+								<MotorRatedOutputPower />
+								<MotorOverloadLimit />
+								<RotaryMotorMaxSpeed />
+								<InductionMotorStatorLeakageReactance MinLogixVersion="26" MinICE2Version="27" />
+								<InductionMotorRotorLeakageReactance MinLogixVersion="26" MinICE2Version="27" />
+								<InductionMotorRatedSlipSpeed />
+								<SkipSpeed1 />
+								<SkipSpeed2 MinMajorRev="4" />
+								<SkipSpeedBand />
+								<VelocityDroop MinMajorRev="4" />
+								<FluxUpControl MinMajorRev="4" />
+								<FluxUpTime MinMajorRev="4" />
+								<ConverterOutputCurrent MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<ConverterOutputPower MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<CoastingTimeLimit MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3" />
+								<MechanicalBrakeControl />
+								<MechanicalBrakeReleaseDelay />
+								<MechanicalBrakeEngageDelay />
+								<ConverterCapacity />
+								<BusRegulatorCapacity />
+								<MotorOverloadAction />
+								<InverterOverloadAction />
+								<CIPAxisAlarms />
+								<CIPAxisAlarmsRA />
+								<MotorThermalOverloadUserLimit />
+								<InverterThermalOverloadUserLimit />
+								<FeedbackDataLossUserLimit />
+								<GuardStatus />
+								<GuardFaults />
+							</FrequencyControl>
+							<FeedbackOnly>
+								<Feedback1SerialNumber />
+								<Feedback1Polarity />
+								<Feedback1VelocityFilterTaps />
+								<Feedback1AccelFilterTaps />
+								<Feedback1VelocityFilterBandwidth />
+								<Feedback1AccelFilterBandwidth />
+								<Feedback2SerialNumber />
+								<Feedback2Polarity />
+								<Feedback2VelocityFilterTaps />
+								<Feedback2AccelFilterTaps />
+								<Feedback2VelocityFilterBandwidth />
+								<Feedback2AccelFilterBandwidth />
+								<VelocityThreshold />
+								<CIPAxisAlarms />
+								<CIPAxisAlarmsRA />
+								<FeedbackDataLossUserLimit />
+							</FeedbackOnly>
+						</SupportedAttributes>
+						<SupportedEnums>
+							<AxisFeatures>
+								<Value>Fine Interpolation</Value>
+								<Value>Registration Autorearm</Value>
+								<Value>Alarm Log</Value>
+								<Value>Hookup Test</Value>
+								<Value>Commutation Test</Value>
+								<Value>Motor Test</Value>
+								<Value>Inertia Test</Value>
+							</AxisFeatures>
+							<MotorDataSource>
+								<Value>Database</Value>
+								<Value>Motor NV</Value>
+							</MotorDataSource>
+							<MotorType>
+								<Value>Rotary Permanent Magnet</Value>
+								<Value>Rotary Induction</Value>
+								<Value MinMajorRev="2">Linear Permanent Magnet</Value>
+							</MotorType>
+							<Feedback1StartupMethod>
+								<Value>Absolute</Value>
+							</Feedback1StartupMethod>
+							<Feedback2StartupMethod>
+								<Value>Absolute</Value>
+							</Feedback2StartupMethod>							
+							<LoadObserverConfiguration>
+								<Value>Load Observer Only</Value>
+								<Value>Load Observer With Velocity Estimate</Value>
+								<Value>Velocity Estimate Only </Value>
+							</LoadObserverConfiguration>
+							<FluxUpControl MinMajorRev="4">
+								<Value MinMajorRev="4">Manual Delay</Value>
+								<Value MinMajorRev="4">Automatic Delay</Value>
+							</FluxUpControl>
+							<FeedbackCommutationAligned>
+								<Value>Motor Offset</Value>
+							</FeedbackCommutationAligned>
+							<FrequencyControlMethod>
+								<Value MinMajorRev="4">Fan/Pump Volts/Hertz</Value>
+								<Value>Sensorless Vector</Value>
+							</FrequencyControlMethod>
+							<MotorOverloadAction>
+								<Value>Current Foldback</Value>
+							</MotorOverloadAction>
+							<InverterOverloadAction>
+								<Value>Current Foldback</Value>
+							</InverterOverloadAction>
+						</SupportedEnums>
+						<SupportedEnumsPerAxisConfiguration>
+							<StoppingAction>
+								<PositionLoop>
+									<Value>Current Decel Hold</Value>
+								</PositionLoop>
+								<VelocityLoop>
+									<Value>Current Decel Hold</Value>
+								</VelocityLoop>
+							</StoppingAction>
+						</SupportedEnumsPerAxisConfiguration>
+						<SupportedEnumsPerAxisConfigurationAndFeedbackConfiguration MinLogixVersion="24">
+							<MotorType>
+								<FrequencyControl>
+									<NoFeedback>
+										<Value>Rotary Induction</Value>
+									</NoFeedback>
+								</FrequencyControl>
+								<PositionLoop>
+									<Feedback>
+										<Value>Rotary Permanent Magnet</Value>
+										<!--<Value MinMajorRev="2">Linear Permanent Magnet</Value>-->
+										<Value MinMajorRev="4" MinLogixVersion="29">Rotary Interior Permanent Magnet</Value>
+									</Feedback>
+								</PositionLoop>
+								<VelocityLoop>
+									<Feedback>
+										<Value>Rotary Permanent Magnet</Value>
+										<!--<Value MinMajorRev="2">Linear Permanent Magnet</Value>-->
+										<Value MinMajorRev="4" MinLogixVersion="29">Rotary Interior Permanent Magnet</Value>
+									</Feedback>
+								</VelocityLoop>
+								<TorqueLoop>
+									<Feedback>
+										<Value>Rotary Permanent Magnet</Value>
+										<!--<Value MinMajorRev="2">Linear Permanent Magnet</Value>-->
+										<Value MinMajorRev="4" MinLogixVersion="29">Rotary Interior Permanent Magnet</Value>
+									</Feedback>
+								</TorqueLoop>
+							</MotorType>
+						</SupportedEnumsPerAxisConfigurationAndFeedbackConfiguration>
+						<CurrentLoopBandwidthScalingFactor MinLogixVersion="26" MinICE2Version="27">
+							<RotaryPermanentMagnet>1</RotaryPermanentMagnet>
+							<LinearPermanentMagnet>1</LinearPermanentMagnet>
+							<RotaryInduction>0.4</RotaryInduction>
+						</CurrentLoopBandwidthScalingFactor>
+						<SupportedMotorTests MinLogixVersion="26" MinICE2Version="27">
+							<RotaryInduction>
+								<Static />
+								<Dynamic MinMajorRev="4" />
+								<Calculate MinMajorRev="4" />
+							</RotaryInduction>
+						</SupportedMotorTests>
+						<SupportedExceptions>
+							<CIPAxisExceptionAction>
+								<MotorOverspeedFL />
+								<MotorOverspeedUL MinMajorRev="2">
+									<Value MinMajorRev="2">Ignore</Value>
+									<Value MinMajorRev="2">Alarm</Value>
+									<Value MinMajorRev="2">Fault Status Only</Value>
+									<Value MinMajorRev="2">Stop Planner</Value>
+								</MotorOverspeedUL>
+								<MotorOvertemperatureFL />
+								<MotorThermalOverloadFL />
+								<MotorThermalOverloadUL>
+									<Value>Ignore</Value>
+									<Value>Alarm</Value>
+									<Value>Fault Status Only</Value>
+									<Value>Stop Planner</Value>
+								</MotorThermalOverloadUL>
+								<MotorPhaseLoss MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3">
+									<Value MinMajorRev="3">Ignore</Value>
+									<Value MinMajorRev="3">Alarm</Value>
+									<Value MinMajorRev="3">Fault Status Only</Value>
+									<Value MinMajorRev="3">Stop Planner</Value>
+								</MotorPhaseLoss>
+								<InverterOvercurrent />
+								<InverterOvertemperatureFL />
+								<InverterThermalOverloadFL />
+								<InverterThermalOverloadUL>
+									<Value>Ignore</Value>
+									<Value>Alarm</Value>
+									<Value>Fault Status Only</Value>
+									<Value>Stop Planner</Value>
+								</InverterThermalOverloadUL>
+								<ConverterOvercurrent />
+								<ConverterGroundCurrentFL />
+								<ConverterOvertemperatureFL />
+								<ConverterThermalOverloadFL />
+								<ConverterThermalOverloadUL>
+									<Value>Ignore</Value>
+									<Value>Alarm</Value>
+									<Value>Fault Status Only</Value>
+									<Value>Stop Planner</Value>
+								</ConverterThermalOverloadUL>
+								<ConverterACSinglePhaseLoss>
+									<Value>Ignore</Value>
+									<Value>Alarm</Value>
+									<Value>Fault Status Only</Value>
+									<Value>Stop Planner</Value>
+								</ConverterACSinglePhaseLoss>
+								<ConverterPreChargeFailure />
+								<BusRegulatorThermalOverloadFL />
+								<BusRegulatorThermalOverloadUL>
+									<Value>Ignore</Value>
+									<Value>Alarm</Value>
+									<Value>Fault Status Only</Value>
+									<Value>Stop Planner</Value>
+								</BusRegulatorThermalOverloadUL>
+								<BusRegulatorFailure />
+								<BusUndervoltageFL />
+								<BusUndervoltageUL>
+									<Value>Ignore</Value>
+									<Value>Alarm</Value>
+									<Value>Fault Status Only</Value>
+									<Value>Stop Planner</Value>
+								</BusUndervoltageUL>
+								<BusOvervoltageFL />
+								<BusPowerLeakage />
+								<BusPowerSharing>
+									<Value>Ignore</Value>
+									<Value>Alarm</Value>
+									<Value>Fault Status Only</Value>
+									<Value>Stop Planner</Value>
+								</BusPowerSharing>
+								<FeedbackSignalNoiseFL />
+								<FeedbackSignalNoiseUL>
+									<Value>Ignore</Value>
+									<Value>Alarm</Value>
+									<Value>Fault Status Only</Value>
+									<Value>Stop Planner</Value>
+								</FeedbackSignalNoiseUL>
+								<FeedbackSignalLossFL />
+								<FeedbackSignalLossUL>
+									<Value>Ignore</Value>
+									<Value>Alarm</Value>
+									<Value>Fault Status Only</Value>
+									<Value>Stop Planner</Value>
+								</FeedbackSignalLossUL>
+								<FeedbackDataLossFL />
+								<FeedbackDataLossUL>
+									<Value>Ignore</Value>
+									<Value>Alarm</Value>
+									<Value>Fault Status Only</Value>
+									<Value>Stop Planner</Value>
+								</FeedbackDataLossUL>								
+								<FeedbackDeviceFailure />
+								<BrakeSlip MinLogixVersion="26" MinICE2Version="27" MinMajorRev="3">
+									<Value MinMajorRev="3">Ignore</Value>
+									<Value MinMajorRev="3">Alarm</Value>
+									<Value MinMajorRev="3">Fault Status Only</Value>
+									<Value MinMajorRev="3">Stop Planner</Value>
+								</BrakeSlip>
+								<HardwareOvertravelPositive MinMajorRev="2">
+									<Value MinMajorRev="2">Ignore</Value>
+									<Value MinMajorRev="2">Alarm</Value>
+									<Value MinMajorRev="2">Fault Status Only</Value>
+									<Value MinMajorRev="2">Stop Planner</Value>
+								</HardwareOvertravelPositive>
+								<HardwareOvertravelNegative MinMajorRev="2">
+									<Value MinMajorRev="2">Ignore</Value>
+									<Value MinMajorRev="2">Alarm</Value>
+									<Value MinMajorRev="2">Fault Status Only</Value>
+									<Value MinMajorRev="2">Stop Planner</Value>
+								</HardwareOvertravelNegative>
+								<ExcessivePositionError>
+									<Value>Ignore</Value>
+									<Value>Alarm</Value>
+									<Value>Fault Status Only</Value>
+									<Value>Stop Planner</Value>
+								</ExcessivePositionError>
+								<ExcessiveVelocityError>
+									<Value>Ignore</Value>
+									<Value>Alarm</Value>
+									<Value>Fault Status Only</Value>
+									<Value>Stop Planner</Value>
+								</ExcessiveVelocityError>
+								<OvertorqueLimit>
+									<Value>Ignore</Value>
+									<Value>Alarm</Value>
+									<Value>Fault Status Only</Value>
+									<Value>Stop Planner</Value>
+								</OvertorqueLimit>
+								<UndertorqueLimit>
+									<Value>Ignore</Value>
+									<Value>Alarm</Value>
+									<Value>Fault Status Only</Value>
+									<Value>Stop Planner</Value>
+								</UndertorqueLimit>
+								<EnableInputDeactivated>
+									<Value>Ignore</Value>
+									<Value>Alarm</Value>
+									<Value>Fault Status Only</Value>
+									<Value>Stop Planner</Value>
+								</EnableInputDeactivated>							
+								<ControllerInitiatedException />
+							</CIPAxisExceptionAction>
+							<CIPAxisExceptionActionRA>
+								<MotorVoltageMismatch>
+									<Value>Ignore</Value>
+									<Value>Alarm</Value>
+									<Value>Fault Status Only</Value>
+									<Value>Stop Planner</Value>
+								</MotorVoltageMismatch>
+								<FeedbackBatteryLow>
+									<Value>Ignore</Value>
+									<Value>Alarm</Value>
+									<Value>Fault Status Only</Value>
+									<Value>Stop Planner</Value>
+								</FeedbackBatteryLow>
+								<ExcessiveCurrentFeedbackOffset />
+								<DCCommonBus />
+								<RuntimeError />
+							</CIPAxisExceptionActionRA>
+						</SupportedExceptions>
+						<FeedbackOnlySupportedExceptions>
+							<CIPAxisExceptionAction>
+								<FeedbackDataLossFL />
+								<FeedbackDeviceFailure />
+							</CIPAxisExceptionAction>
+							<CIPAxisExceptionActionRA>
+								<RuntimeError MinMajorRev="3" />
+							</CIPAxisExceptionActionRA>
+						</FeedbackOnlySupportedExceptions>
+					</Attributes>
+				</Drive>
+			</Schema>
+		</ModuleType>
+	</ModuleTypes>
+</ModuleTypeInstall>

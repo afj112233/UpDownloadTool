@@ -1,0 +1,135 @@
+﻿<UserControl x:Class="ICSStudio.UIServicesPackage.ManualTune.Controls.Filters"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <BitmapImage x:Key="LeftImage"
+                         UriSource="pack://application:,,,/ICSStudio.Gui;component/Resources/image/left_6_5.png" />
+            <Style TargetType="xctk:SingleUpDown">
+                <EventSetter Event="KeyUp" Handler="SingleUpDown_KeyUp"/>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="{DynamicResource Filters Torque Low Pass Filter Bandwidth:}"></Label>
+        <Label Grid.Row="1" Grid.Column="0" Content="{DynamicResource Filters Torque Notch Filter Frequency:}"></Label>
+        <Label Grid.Row="2" Grid.Column="0" Content="{DynamicResource Torque Lag Filter Gain:}"></Label>
+        <Label Grid.Row="3" Grid.Column="0" Content="{DynamicResource Torque Lag Filter Bandwidth:}"></Label>
+
+        <xctk:SingleUpDown Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"
+                           Minimum="0" Maximum="10000"
+                           Value="{Binding TorqueLowPassFilterBandwidth,UpdateSourceTrigger=LostFocus }"
+                           LostFocus="UIElement_OnLostFocus"
+                           IsEnabled="{Binding EditEnabled}" 
+                           FormatString="######0.0######"/>
+        <xctk:SingleUpDown Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"
+                           Minimum="0" Maximum="10000"
+                           Value="{Binding TorqueNotchFilterFrequency,UpdateSourceTrigger=LostFocus}"
+                           LostFocus="UIElement_OnLostFocus"
+                           IsEnabled="{Binding EditEnabled}" 
+                           FormatString="######0.0######"/>
+        <xctk:SingleUpDown Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"
+                           Minimum="0"
+                           Value="{Binding TorqueLeadLagFilterGain,UpdateSourceTrigger=LostFocus}"
+                           LostFocus="UIElement_OnLostFocus"
+                           IsEnabled="{Binding EditEnabled}" 
+                           FormatString="######0.0######"/>
+        <xctk:SingleUpDown Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"
+                           Minimum="0" Maximum="10000"
+                           Value="{Binding TorqueLeadLagFilterBandwidth,UpdateSourceTrigger=LostFocus}"
+                           LostFocus="UIElement_OnLostFocus"
+                           IsEnabled="{Binding EditEnabled}" 
+                           FormatString="######0.0######"/>
+
+        <StackPanel Grid.Row="0" Grid.Column="2"
+                    Orientation="Horizontal" VerticalAlignment="Center">
+            <Image Source="{StaticResource LeftImage}" Width="6" Height="5" />
+            <Label Content="{DynamicResource Hertz}" />
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="2"
+                    Orientation="Horizontal" VerticalAlignment="Center">
+            <Image Source="{StaticResource LeftImage}" Width="6" Height="5" />
+            <Label Content="{DynamicResource Hertz}" />
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="2"
+                    Orientation="Horizontal" VerticalAlignment="Center">
+            <Image Source="{StaticResource LeftImage}" Width="6" Height="5" />
+            <Label Content="{DynamicResource Hertz}" />
+        </StackPanel>
+
+        <Label Grid.Row="0" Grid.Column="3" Content="{DynamicResource Filters Adaptive Tuning Configuration:}"></Label>
+        <Label Grid.Row="1" Grid.Column="3" Content="{DynamicResource Filters Torque Notch Filter High Frequency Limit:}"></Label>
+        <Label Grid.Row="2" Grid.Column="3" Content="{DynamicResource Filters Torque Notch Filter Low Frequency Limit:}"></Label>
+        <Label Grid.Row="3" Grid.Column="3" Content="{DynamicResource Filters Torque Notch Filter Tuning Threshold:}"></Label>
+
+
+        <StackPanel Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2"
+                    Orientation="Horizontal" VerticalAlignment="Center">
+            <ComboBox Width="190"
+                      x:Name="CmbAdaptiveTuningConfiguration"
+                      ItemsSource="{Binding AdaptiveTuningConfigurationSource}"
+                      SelectedValuePath="Value"
+                      DisplayMemberPath="DisplayName"
+                      SelectedValue="{Binding AdaptiveTuningConfiguration}"
+                      IsEnabled="{Binding EditEnabled}" />
+            <Image Source="{StaticResource LeftImage}" Width="6" Height="5" />
+        </StackPanel>
+
+        
+        <xctk:SingleUpDown Grid.Row="1" Grid.Column="4" VerticalAlignment="Center"
+                           Minimum="20" Maximum="4000"
+                           Value="{Binding TorqueNotchFilterHighFrequencyLimit,UpdateSourceTrigger=LostFocus}"
+                           LostFocus="UIElement_OnLostFocus"
+                           IsEnabled="{Binding AdaptiveTuningEditEnabled}" 
+                           FormatString="######0.0######"/>
+        <xctk:SingleUpDown Grid.Row="2" Grid.Column="4" VerticalAlignment="Center"
+                           Minimum="20" Maximum="2000"
+                           Value="{Binding TorqueNotchFilterLowFrequencyLimit,UpdateSourceTrigger=LostFocus}"
+                           LostFocus="UIElement_OnLostFocus"
+                           IsEnabled="{Binding AdaptiveTuningEditEnabled}" 
+                           FormatString="######0.0######"/>
+        <xctk:SingleUpDown Grid.Row="3" Grid.Column="4" VerticalAlignment="Center"
+                           Minimum="0" Maximum="100"
+                           Value="{Binding TorqueNotchFilterTuningThreshold,UpdateSourceTrigger=LostFocus}"
+                           LostFocus="UIElement_OnLostFocus"
+                           IsEnabled="{Binding AdaptiveTuningEditEnabled}" 
+                           FormatString="######0.0######"/>
+
+        <StackPanel Grid.Row="1" Grid.Column="5"
+                    Orientation="Horizontal" VerticalAlignment="Center">
+            <Image Source="{StaticResource LeftImage}" Width="6" Height="5" />
+            <Label Content="{DynamicResource Hertz}" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="5"
+                    Orientation="Horizontal" VerticalAlignment="Center">
+            <Image Source="{StaticResource LeftImage}" Width="6" Height="5" />
+            <Label Content="{DynamicResource Hertz}" />
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="5"
+                    Orientation="Horizontal" VerticalAlignment="Center">
+            <Image Source="{StaticResource LeftImage}" Width="6" Height="5" />
+            <Label Content="{DynamicResource %Motor Rated}" />
+        </StackPanel>
+
+    </Grid>
+</UserControl>

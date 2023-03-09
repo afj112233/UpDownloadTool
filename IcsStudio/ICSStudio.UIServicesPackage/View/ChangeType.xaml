@@ -1,0 +1,129 @@
+﻿<Window
+    x:Class="ICSStudio.UIServicesPackage.View.ChangeType"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:gui="clr-namespace:ICSStudio.Gui;assembly=ICSStudio.Gui"
+    xmlns:local="clr-namespace:ICSStudio.UIServicesPackage.AddOnInstruction.Panel"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{DynamicResource Change Language Type}"
+    d:DesignHeight="250"
+    d:DesignWidth="400"
+    gui:DialogCloser.DialogResult="{Binding DialogResult}"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterOwner"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <StackPanel
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Orientation="Horizontal">
+            <Image Margin="10" Source="Image\Mark1.gif" />
+            <TextBlock
+                Width="320"
+                Text="{DynamicResource ChangingTypeWillRemoveAny}"
+                TextWrapping="Wrap" />
+        </StackPanel>
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="0"
+            Margin="10"
+            FontWeight="Bold"
+            Text="{DynamicResource From}" />
+        <Line
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Stroke="Black"
+            X1="45"
+            X2="370"
+            Y1="20"
+            Y2="20" />
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="0"
+            HorizontalAlignment="Right"
+            Text="{DynamicResource Type:}" />
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="1"
+            Margin="30,0,0,0"
+            Text="{Binding OldType}" />
+
+        <TextBlock
+            Grid.Row="3"
+            Grid.Column="0"
+            Margin="10"
+            FontWeight="Bold"
+            Text="{DynamicResource To}" />
+        <Line
+            Grid.Row="3"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Stroke="Black"
+            X1="45"
+            X2="370"
+            Y1="20"
+            Y2="20" />
+        <TextBlock
+            Grid.Row="4"
+            Grid.Column="0"
+            HorizontalAlignment="Right"
+            Text="{DynamicResource Type:}" />
+        <ComboBox
+            Grid.Row="4"
+            Grid.Column="1"
+            Width="300"
+            DisplayMemberPath="DisplayName"
+            ItemsSource="{Binding TypeList}"
+            SelectedValue="{Binding Type}"
+            SelectedValuePath="Value" />
+        <DockPanel
+            Grid.Row="5"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            LastChildFill="False">
+            <Button
+                Width="75"
+                Height="20"
+                Margin="5,0,12,0"
+                Content="{DynamicResource Help}"
+                DockPanel.Dock="Right" />
+            <Button
+                Width="75"
+                Height="20"
+                Margin="5,0,0,0"
+                Command="{Binding CancelCommand}"
+                Content="{DynamicResource Cancel}"
+                DockPanel.Dock="Right"
+                IsCancel="True"/>
+            <Button
+                Width="75"
+                Height="20"
+                Command="{Binding OkCommand}"
+                Content="{DynamicResource OK}"
+                DockPanel.Dock="Right"
+                IsDefault="True" />
+        </DockPanel>
+    </Grid>
+</Window>

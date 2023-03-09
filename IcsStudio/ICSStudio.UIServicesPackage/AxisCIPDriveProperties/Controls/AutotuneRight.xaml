@@ -1,0 +1,239 @@
+﻿<UserControl x:Class="ICSStudio.UIServicesPackage.AxisCIPDriveProperties.Controls.AutotuneRight"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:l="clr-namespace:ICSStudio.UIServicesPackage.AxisCIPDriveProperties.Resources"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="410">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <BitmapImage x:Key="LeftImage"
+                         UriSource="pack://application:,,,/ICSStudio.Gui;component/Resources/image/left_6_5.png" />
+            <Style x:Key="ExpandCollapseToggleStyle"
+                   TargetType="ToggleButton">
+                <Setter Property="Focusable"
+                        Value="False" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ToggleButton">
+                            <StackPanel Orientation="Horizontal">
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CheckStates">
+                                        <VisualState x:Name="Checked">
+                                            <Storyboard>
+                                                <ObjectAnimationUsingKeyFrames
+                                                    Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                    Storyboard.TargetName="Collapsed">
+                                                    <DiscreteObjectKeyFrame KeyTime="0"
+                                                                            Value="{x:Static Visibility.Hidden}" />
+                                                </ObjectAnimationUsingKeyFrames>
+                                                <ObjectAnimationUsingKeyFrames
+                                                    Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                    Storyboard.TargetName="Expanded">
+                                                    <DiscreteObjectKeyFrame KeyTime="0"
+                                                                            Value="{x:Static Visibility.Visible}" />
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Unchecked" />
+                                        <VisualState x:Name="Indeterminate" />
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <Grid Width="15"
+                                      Height="13"
+                                      Background="Transparent">
+                                    <Path x:Name="Collapsed"
+                                          HorizontalAlignment="Left"
+                                          VerticalAlignment="Center"
+                                          Margin="1,1,1,1" Stroke="Black" StrokeThickness="1"
+                                          Data="M 0 0 H 8 V 8 H 0 Z M 1 4 H 7 M 4 1 V 7" />
+                                    <Path x:Name="Expanded"
+                                          HorizontalAlignment="Left"
+                                          VerticalAlignment="Center"
+                                          Margin="1,1,1,1" Stroke="Black" StrokeThickness="1"
+                                          Data="M 0 0 H 8 V 8 H 0 Z M 1 4 H 7"
+                                          Visibility="Hidden" />
+                                </Grid>
+                                <ContentPresenter Content="{TemplateBinding ContentControl.Content}"
+                                                  HorizontalAlignment="Stretch" VerticalAlignment="Center" />
+                            </StackPanel>
+
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" FontWeight="Bold" Text="{DynamicResource Perform Tune}"></TextBlock>
+
+        <DockPanel Grid.Row="1" IsEnabled="{Binding PerformTuneEnabled}" VerticalAlignment="Bottom">
+            <Button Width="80" HorizontalAlignment="Left" Command="{Binding StartCommand}" Content="{DynamicResource Start}"></Button>
+            <Button Width="80" HorizontalAlignment="Left" Command="{Binding StopCommand}" Content="{DynamicResource CIPTag AutotuneRight Stop}"></Button>
+        </DockPanel>
+
+        <DockPanel Grid.Row="2" IsEnabled="{Binding PerformTuneEnabled}">
+            <Label Content="{DynamicResource Tune Status:}"></Label>
+            <Label Content="{Binding TuneStatus}" />
+        </DockPanel>
+
+        <TextBlock Grid.Row="3" Text="{DynamicResource Loop Parameters Tuned}"></TextBlock>
+
+        <l:GridLineDecorator Grid.Row="4" GridLineBrush="Black">
+            <ListView Name="LvLoopParametersTuned" Width="350" Height="90" FontSize="10" Background="LightGray"
+                      ItemsSource="{Binding LoopParametersTunedSource}" HorizontalAlignment="Left">
+                <ListView.Resources>
+                    <Style TargetType="{x:Type GridViewColumnHeader}">
+                        <Setter Property="HorizontalContentAlignment" Value="Left" />
+                    </Style>
+                </ListView.Resources>
+                <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="" DisplayMemberBinding="{Binding Different}" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Name}">
+                        <GridViewColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{DynamicResource Name}"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.HeaderTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Current}">
+                        <GridViewColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{DynamicResource CIPCurrent}"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.HeaderTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Tuned}">
+                        <GridViewColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{DynamicResource Tuned}"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.HeaderTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Units}">
+                        <GridViewColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{DynamicResource Units}"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.HeaderTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        </l:GridLineDecorator>
+
+        <ToggleButton Grid.Row="5" Width="12" Height="12" Margin="1,0" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{DynamicResource ExpandCollapseToggleStyle}"
+                 Background="WhiteSmoke" Command="{Binding ResizeCommand}" IsChecked="True"
+                 MinHeight="5" MinWidth="5"></ToggleButton>
+        <TextBlock Grid.Row="5" FontWeight="Bold" Margin="15,0,0,0" Text="{DynamicResource Advanced Compensation}"></TextBlock>
+
+        <Grid Grid.Row="6" Margin="0"
+              Visibility="{Binding IsVisibility}"
+              IsEnabled="{Binding PerformTuneEnabled}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="4" Text="{DynamicResource Compensate}"></TextBlock>
+
+            <TextBlock Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Text="{DynamicResource Inertia:}"></TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Text="{DynamicResource Friction:}"></TextBlock>
+            <TextBlock Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Text="{DynamicResource Active Torque:}"></TextBlock>
+
+            <Button Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" Width="140" HorizontalAlignment="Left" Content="{DynamicResource Calculate Compensation}"></Button>
+
+            <TextBox Grid.Row="1" Grid.Column="2" Text="0.0" TextAlignment="Left"/>
+            <TextBox Grid.Row="2" Grid.Column="2" Text="0.0" TextAlignment="Left"/>
+            <TextBox Grid.Row="3" Grid.Column="2" Text="0.0" TextAlignment="Left"/>
+
+            <TextBlock Grid.Row="1" Grid.Column="3" Text="{DynamicResource % Rate/(Rev/s^2)}"></TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="3">%</TextBlock>
+            <TextBlock Grid.Row="3" Grid.Column="3">%</TextBlock>
+
+            <CheckBox Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" />
+            <CheckBox Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" />
+            <CheckBox Grid.Row="3" Grid.Column="4" HorizontalAlignment="Center" />
+
+        </Grid>
+
+        <TextBlock Grid.Row="7" Text="{DynamicResource Load Parameters Tuned}"></TextBlock>
+
+        <l:GridLineDecorator Grid.Row="8" GridLineBrush="Black">
+        <ListView Name="LvLoadParametersTuned" Width="350" Height="90" FontSize="10" Background="LightGray" 
+                  ItemsSource="{Binding LoadParametersTunedSource}" HorizontalAlignment="Left">
+            <ListView.Resources>
+                <Style TargetType="{x:Type GridViewColumnHeader}">
+                    <Setter Property="HorizontalContentAlignment" Value="Left" />
+                </Style>
+            </ListView.Resources>
+                <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="" DisplayMemberBinding="{Binding Different}" />
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}">
+                        <GridViewColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{DynamicResource Name}"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.HeaderTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Current}">
+                        <GridViewColumn.HeaderTemplate>
+                            <DataTemplate>
+                                    <TextBlock Text="{DynamicResource CIPCurrent}"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.HeaderTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Tuned}">
+                        <GridViewColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{DynamicResource Tuned}"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.HeaderTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Units}">
+                        <GridViewColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{DynamicResource Units}"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.HeaderTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        </l:GridLineDecorator>
+
+        <Button Grid.Row="9" Width="140"
+                HorizontalAlignment="Left"
+                IsEnabled="{Binding PerformTuneEnabled}"
+                Command="{Binding AcceptTunedValuesCommand}"
+                Content="{DynamicResource Accept Tuned Values}">
+        </Button>
+        <Image Grid.Row="9" Source="{StaticResource LeftImage}" Margin="0,0,95,0" Width="9" Height="8" />
+
+    </Grid>
+</UserControl>

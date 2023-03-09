@@ -1,0 +1,15 @@
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.Interfaces.dll.config
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.Interfaces.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.Interfaces.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\ICSStudio\ICSStudio.Interfaces\obj\Debug\ICSStudio.Interfaces.csprojResolveAssemblyReference.cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\ICSStudio\ICSStudio.Interfaces\obj\Debug\ICSStudio.Interfaces.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\ICSStudio\ICSStudio.Interfaces\obj\Debug\ICSStudio.Interfaces.pdb
+c:\users\11584\documents\visual studio 2015\Projects\ConsoleApplication3\build\Debug\ICSStudio.Interfaces.dll.config
+c:\users\11584\documents\visual studio 2015\Projects\ConsoleApplication3\build\Debug\ICSStudio.Interfaces.dll
+c:\users\11584\documents\visual studio 2015\Projects\ConsoleApplication3\build\Debug\ICSStudio.Interfaces.pdb
+C:\Users\11584\Documents\Visual Studio 2015\Projects\DownUpload\build\Debug\ICSStudio.Interfaces.dll.config
+C:\Users\11584\Documents\Visual Studio 2015\Projects\DownUpload\build\Debug\ICSStudio.Interfaces.dll
+C:\Users\11584\Documents\Visual Studio 2015\Projects\DownUpload\build\Debug\ICSStudio.Interfaces.pdb
+C:\Users\11584\Documents\Visual Studio 2015\Projects\DownUpload\IcsStudio\ICSStudio.Interfaces\obj\Debug\ICSStudio.Interfaces.csprojResolveAssemblyReference.cache
+C:\Users\11584\Documents\Visual Studio 2015\Projects\DownUpload\IcsStudio\ICSStudio.Interfaces\obj\Debug\ICSStudio.Interfaces.dll
+C:\Users\11584\Documents\Visual Studio 2015\Projects\DownUpload\IcsStudio\ICSStudio.Interfaces\obj\Debug\ICSStudio.Interfaces.pdb

@@ -1,0 +1,15 @@
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.DataGridTest.exe.config
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.DataGridTest.exe
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.DataGridTest.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.DataGridTest\obj\Debug\ICSStudio.DataGridTest.csprojResolveAssemblyReference.cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.DataGridTest\obj\Debug\MainWindow.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.DataGridTest\obj\Debug\MainWindow.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.DataGridTest\obj\Debug\App.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.DataGridTest\obj\Debug\ICSStudio.DataGridTest_MarkupCompile.cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.DataGridTest\obj\Debug\ICSStudio.DataGridTest_MarkupCompile.lref
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.DataGridTest\obj\Debug\App.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.DataGridTest\obj\Debug\ICSStudio.DataGridTest.g.resources
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.DataGridTest\obj\Debug\ICSStudio.DataGridTest.Properties.Resources.resources
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.DataGridTest\obj\Debug\ICSStudio.DataGridTest.csproj.GenerateResource.Cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.DataGridTest\obj\Debug\ICSStudio.DataGridTest.exe
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.DataGridTest\obj\Debug\ICSStudio.DataGridTest.pdb

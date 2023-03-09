@@ -1,0 +1,7 @@
+C:\Users\11584\Documents\Visual Studio 2015\Projects\DownUpload\DownUpload\bin\Release\DownUpload.exe.config
+C:\Users\11584\Documents\Visual Studio 2015\Projects\DownUpload\DownUpload\obj\Release\DownUpload.csprojResolveAssemblyReference.cache
+C:\Users\11584\Documents\Visual Studio 2015\Projects\DownUpload\DownUpload\obj\Release\DownUpload.csproj.DownUpload.exe.config
+C:\Users\11584\Documents\Visual Studio 2015\Projects\DownUpload\DownUpload\obj\Release\DownUpload.g.cs
+C:\Users\11584\Documents\Visual Studio 2015\Projects\DownUpload\DownUpload\obj\Release\App.g.cs
+C:\Users\11584\Documents\Visual Studio 2015\Projects\DownUpload\DownUpload\obj\Release\DownUpload_MarkupCompile.cache
+C:\Users\11584\Documents\Visual Studio 2015\Projects\DownUpload\DownUpload\obj\Release\DownUpload_MarkupCompile.lref

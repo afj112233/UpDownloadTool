@@ -1,0 +1,106 @@
+﻿<UserControl x:Class="ICSStudio.UIServicesPackage.ManualTune.Controls.Planner"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d"
+             d:DesignHeight="600" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <BitmapImage x:Key="LeftImage"
+                         UriSource="pack://application:,,,/ICSStudio.Gui;component/Resources/image/left_6_5.png" />
+            <Style TargetType="xctk:SingleUpDown">
+                <EventSetter Event="KeyUp" Handler="SingleUpDown_KeyUp"/>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="{DynamicResource Planner Maximum Speed:}"></Label>
+        <Label Grid.Row="1" Grid.Column="0" Content="{DynamicResource Planner Maximum Acceleration:}"></Label>
+        <Label Grid.Row="2" Grid.Column="0" Content="{DynamicResource Planner Maximum Deceleration:}"></Label>
+
+        <xctk:SingleUpDown Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"
+                           Minimum="0"
+                           Value="{Binding MaximumSpeed,UpdateSourceTrigger=LostFocus}"
+                           LostFocus="UIElement_OnLostFocus"
+                           IsEnabled="{Binding EditEnabled}"
+                           FormatString="######0.0######" />
+        <xctk:SingleUpDown Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"
+                           Minimum="0"
+                           Value="{Binding MaximumAcceleration,UpdateSourceTrigger=LostFocus}"
+                           LostFocus="UIElement_OnLostFocus"
+                           IsEnabled="{Binding EditEnabled}"
+                           FormatString="######0.0######" />
+        <xctk:SingleUpDown Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"
+                           Minimum="0"
+                           Value="{Binding MaximumDeceleration,UpdateSourceTrigger=LostFocus}"
+                           LostFocus="UIElement_OnLostFocus"
+                           IsEnabled="{Binding EditEnabled}"
+                           FormatString="######0.0######" />
+
+
+        <StackPanel Grid.Row="0" Grid.Column="2"
+                    Orientation="Horizontal" VerticalAlignment="Center">
+            <Image Source="{StaticResource LeftImage}" Width="6" Height="5" />
+            <Label Content="{Binding PositionUnits}"
+                   ContentStringFormat="{}{0}/s" />
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="2"
+                    Orientation="Horizontal" VerticalAlignment="Center">
+            <Image Source="{StaticResource LeftImage}" Width="6" Height="5" />
+            <Label Content="{Binding PositionUnits}"
+                   ContentStringFormat="{}{0}/s^2" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="2"
+                    Orientation="Horizontal" VerticalAlignment="Center">
+            <Image Source="{StaticResource LeftImage}" Width="6" Height="5" />
+            <Label Content="{Binding PositionUnits}"
+                   ContentStringFormat="{}{0}/s^2" />
+        </StackPanel>
+
+        <Label Grid.Row="0" Grid.Column="3" Content="{DynamicResource Planner Maximum Acceleration Jerk:}"></Label>
+        <Label Grid.Row="1" Grid.Column="3" Content="{DynamicResource Planner Maximum Deceleration Jerk:}"></Label>
+
+        <xctk:SingleUpDown Grid.Row="0" Grid.Column="4" VerticalAlignment="Center"
+                           Minimum="0"
+                           Value="{Binding MaximumAccelerationJerk,UpdateSourceTrigger=LostFocus}"
+                           LostFocus="UIElement_OnLostFocus"
+                           IsEnabled="{Binding EditEnabled}"
+                           FormatString="######0.0######" />
+        <xctk:SingleUpDown Grid.Row="1" Grid.Column="4" VerticalAlignment="Center"
+                           Minimum="0"
+                           Value="{Binding MaximumDecelerationJerk,UpdateSourceTrigger=LostFocus}"
+                           LostFocus="UIElement_OnLostFocus"
+                           IsEnabled="{Binding EditEnabled}"
+                           FormatString="######0.0######" />
+
+        <StackPanel Grid.Row="0" Grid.Column="5"
+                    Orientation="Horizontal" VerticalAlignment="Center">
+            <Image Source="{StaticResource LeftImage}" Width="6" Height="5" />
+            <Label Content="{Binding PositionUnits}"
+                   ContentStringFormat="{}{0}/s^3" />
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="5"
+                    Orientation="Horizontal" VerticalAlignment="Center">
+            <Image Source="{StaticResource LeftImage}" Width="6" Height="5" />
+            <Label Content="{Binding PositionUnits}"
+                   ContentStringFormat="{}{0}/s^3" />
+        </StackPanel>
+
+    </Grid>
+</UserControl>

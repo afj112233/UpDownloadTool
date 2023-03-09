@@ -1,0 +1,191 @@
+﻿<UserControl
+    x:Class="ICSStudio.UIServicesPackage.RSTrendXProperties.Panel.X_Axis"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:ICSStudio.UIServicesPackage.RSTrendXProperties.Controls"
+    xmlns:converters="clr-namespace:ICSStudio.UIServicesPackage.RSTrendXProperties.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dateTimePicker="clr-namespace:ICSStudio.Gui.DateTimePicker;assembly=ICSStudio.Gui"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+    IsVisibleChanged="X_Axis_OnIsVisibleChanged"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+                <ResourceDictionary Source="../Resources/ButtonWithColorDialogDefaultStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <converters:ColorToSolidColorBrushConverter x:Key="ColorToSolidColorBrushConverter" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <GroupBox
+            Width="324"
+            HorizontalAlignment="Left"
+            Header="{DynamicResource ChartTomeRange}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.ColumnSpan="2" Text="{DynamicResource StartDate}" />
+
+                <dateTimePicker:DatePickerView
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Width="133"
+                    HorizontalAlignment="Left"
+                    IsEnabled="{Binding DatePickerEnable}"
+                    SelectedDate="{Binding Date, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBlock
+                    Grid.Row="1"
+                    Grid.RowSpan="5"
+                    Grid.Column="2"
+                    VerticalAlignment="Top"
+                    Margin="12,3.76,2,3.48"
+                    Text="{DynamicResource StartDateAndStartTime}"
+                    Visibility="{Binding TipVisibility}" />
+
+                <TextBlock
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Text="{DynamicResource StartTime}" />
+
+                <dateTimePicker:TimePicker
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Width="100"
+                    HorizontalAlignment="Left"
+                    BorderBrush="Black"
+                    BorderThickness="1"
+                    Hour="{Binding Hour, Mode=TwoWay}"
+                    IsEnabled="{Binding DatePickerEnable}"
+                    Minute="{Binding Minute, Mode=TwoWay}"
+                    Second="{Binding Second, Mode=TwoWay}" />
+
+                <TextBlock
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Text="{DynamicResource TimeSpan}" />
+
+                <StackPanel
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Orientation="Horizontal">
+                    <xctk:SingleUpDown
+                        Width="55"
+                        Height="21"
+                        FormatString="0"
+                        Minimum="1"
+                        Text="{Binding TimeSpan, UpdateSourceTrigger=PropertyChanged}" />
+                    <ComboBox
+                        Width="78"
+                        Height="20"
+                        DisplayMemberPath="DisplayName"
+                        ItemsSource="{Binding TimeTypeList}"
+                        SelectedValue="{Binding SelectedTimeType}"
+                        SelectedValuePath="Value" />
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox
+            Grid.Row="1"
+            Width="324"
+            HorizontalAlignment="Left"
+            Header="{DynamicResource DisplayOptions}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <CheckBox
+                    Grid.ColumnSpan="2"
+                    Content="{DynamicResource DisplayScale}"
+                    IsChecked="{Binding DisplayScale}" />
+
+                <CheckBox
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Content="{DynamicResource DisplayDateOnScale}"
+                    IsChecked="{Binding DisplayDateOnScale}"
+                    IsEnabled="{Binding DisplayScale}" />
+
+                <CheckBox
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Content="{DynamicResource DisplayGridLines}"
+                    IsChecked="{Binding DisplayGridLines}" />
+
+                <StackPanel
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Orientation="Horizontal">
+                    <xctk:SingleUpDown
+                        Width="55"
+                        Height="21"
+                        IsEnabled="{Binding DisplayGridLines}"
+                        Maximum="30"
+                        Minimum="0"
+                        Text="{Binding MajorGridLines, UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBlock Text="{DynamicResource MajorGridLines}" />
+                </StackPanel>
+
+                <StackPanel
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Orientation="Horizontal">
+                    <xctk:SingleUpDown
+                        Width="55"
+                        Height="21"
+                        IsEnabled="{Binding DisplayGridLines}"
+                        Maximum="10"
+                        Minimum="0"
+                        Text="{Binding MinorGridLines, UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBlock Text="{DynamicResource MinorGridLines}" />
+                </StackPanel>
+
+                <StackPanel
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    Margin="2"
+                    Orientation="Horizontal">
+                    <controls:ButtonWithColorDialog
+                        Width="15"
+                        Height="15"
+                        Background="{Binding GridLinesColor, Converter={StaticResource ColorToSolidColorBrushConverter}, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"
+                        Content="{Binding GridLinesColor, UpdateSourceTrigger=PropertyChanged, Mode=OneWayToSource}"
+                        IsEnabled="{Binding DisplayGridLines}"
+                        Template="{DynamicResource ButtonWithColorDialogDefaultStyle}" />
+                    <TextBlock Text="{DynamicResource GridColor}" />
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</UserControl>

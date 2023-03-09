@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Id="3e3387b9-f1c2-4050-a297-5cbdba02dbdd" Version="1.0" Language="en-US" Publisher="My Company" />
+    <DisplayName>Shell VSIX manifest</DisplayName>
+    <Description>Core extensions for ICSStudio</Description>
+  </Metadata>
+  <Installation InstalledByMsi="true" SystemComponent="true">
+    <InstallationTarget Id="ICSStudio" Version="[1.0]" />
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="ICSStudio.UIServicesPackage" Path="|ICSStudio.UIServicesPackage;PkgdefProjectOutputGroup|" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="ICSStudio.OrganizerPackage" Path="|ICSStudio.OrganizerPackage;PkgdefProjectOutputGroup|" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="ICSStudio.EditorPackage" Path="|ICSStudio.EditorPackage;PkgdefProjectOutputGroup|" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="ICSStudio.CommunicationsPackage" Path="|ICSStudio.CommunicationsPackage;PkgdefProjectOutputGroup|" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="ICSStudio.OutputWindowPackage" Path="|ICSStudio.OutputWindowPackage;PkgdefProjectOutputGroup|" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="ICSStudio.ControllerOverviewPackage" Path="|ICSStudio.ControllerOverviewPackage;PkgdefProjectOutputGroup|" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="ICSStudio.SearchPackage" Path="|ICSStudio.SearchPackage;PkgdefProjectOutputGroup|" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="ICSStudio.ErrorOutputPackage" Path="|ICSStudio.ErrorOutputPackage;PkgdefProjectOutputGroup|" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="ICSStudio.ToolsPackage" Path="|ICSStudio.ToolsPackage;PkgdefProjectOutputGroup|" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="ICSStudio.QuickWatchPackage" Path="|ICSStudio.QuickWatchPackage;PkgdefProjectOutputGroup|" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="ICSStudio.AboutBoxPackage" Path="|ICSStudio.AboutBoxPackage;PkgdefProjectOutputGroup|" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="ICSStudio.ToolBoxPackage" Path="|ICSStudio.ToolBoxPackage;PkgdefProjectOutputGroup|" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="ICSStudio.LanguageElement" Path="|ICSStudio.LanguageElement;PkgdefProjectOutputGroup|" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="ICSStudio.ParserPackage" Path="|ICSStudio.ParserPackage;PkgdefProjectOutputGroup|" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="ICSStudio.ToolBarPackage" Path="|ICSStudio.ToolBarPackage;PkgdefProjectOutputGroup|" />
+  </Assets>
+</PackageManifest>

@@ -1,0 +1,2647 @@
+{
+  "Identity": {
+    "CatalogNumber": "ICM-D5D08",
+    "VendorID": 5,
+    "ProductType": 37,
+    "ProductCode": 47,
+    "ProductName": "CIPDrive",
+    "Descriptions": [
+      {
+        "LCID": 1033,
+        "Text": "I-CON Drive 5, Double Axis, 2.8A, 200-500 Volt, CIP Motion Drive"
+      },
+      {
+        "LCID": 1036,
+        "Text": "I-CON Drive 5, Double Axis, 2.8A, 200-500 Volt, CIP Motion Drive"
+      },
+      {
+        "LCID": 1031,
+        "Text": "I-CON Drive 5, Double Axis, 2.8A, 200-500 Volt, CIP Motion Drive"
+      },
+      {
+        "LCID": 1034,
+        "Text": "I-CON Drive 5, Double Axis, 2.8A, 200-500 Volt, CIP Motion Drive"
+      },
+      {
+        "LCID": 1046,
+        "Text": "I-CON Drive 5, Double Axis, 2.8A, 200-500 Volt, CIP Motion Drive"
+      },
+      {
+        "LCID": 1040,
+        "Text": "I-CON Drive 5, Double Axis, 2.8A, 200-500 Volt, CIP Motion Drive"
+      },
+      {
+        "LCID": 1041,
+        "Text": "I-CON Drive 5, Double Axis, 2.8A, 200-500 Volt, CIP Motion Drive"
+      },
+      {
+        "LCID": 1042,
+        "Text": "I-CON Drive 5, Double Axis, 2.8A, 200-500 Volt, CIP Motion Drive"
+      },
+      {
+        "LCID": 2052,
+        "Text": "I-CON Drive 5, Double Axis，2.8A, 200-500 Volt, CIP Motion 伺服驱动器"
+      }
+    ],
+    "MajorRevs": [
+      4
+    ]
+  },
+  "Ports": [
+    {
+      "Number": 2,
+      "Type": "Ethernet",
+      "Label": "ENet",
+      "Width": 1,
+      "ConnectorOffset": 0
+    }
+  ],
+  "Categories": [
+    "Drive",
+    "Motion"
+  ],
+  "ExtendedProperties": {
+    "PSFile": "PSICM-D5.json",
+    "UnicastOnly": 18
+  },
+  "Schema": {
+    "OptionalAttributeRevision": {
+      "Revision": 2,
+      "MinMajorRev": 3
+    },
+    "AxisType": "AXIS_CIP_DRIVE",
+    "TimeSync": {
+      "HighQuality": true
+    },
+    "UpdateableFlash": true,
+    "Safety": {
+      "EnhancedSafeTorqueOff": true
+    },
+    "SupportedAttributes": [
+      {
+        "Attribute": "ControllerUpdateDelayHighLimit"
+      },
+      {
+        "Attribute": "ControllerUpdateDelayLowLimit"
+      },
+      {
+        "Attribute": "SyncThreshold"
+      },
+      {
+        "Attribute": "FeedbackPortSelect"
+      },
+      {
+        "Attribute": "BusConfiguration"
+      },
+      {
+        "Attribute": "BusRegulatorAction"
+      },
+      {
+        "Attribute": "ShuntRegulatorResistorType"
+      },
+      {
+        "Attribute": "ExternalShuntRegulatorID"
+      },
+      {
+        "Attribute": "ConverterACInputPhasing"
+      },
+      {
+        "Attribute": "ConverterACInputVoltage"
+      },
+      {
+        "Attribute": "ConverterThermalOverloadUserLimit"
+      },
+      {
+        "Attribute": "BusRegulatorThermalOverloadUserLimit"
+      },
+      {
+        "Attribute": "BusUndervoltageUserLimit"
+      },
+      {
+        "Attribute": "DigitalInputConfiguration"
+      }
+    ],
+    "PowerStructures": [
+      {
+        "ID": 47,
+        "Integrated": true,
+        "DutySelect": "Normal",
+        "Voltage": "High",
+        "CatalogNumber": [
+          {
+            "Text": "ICM-D5D08",
+            "LCID": 1033
+          },
+          {
+            "Text": "ICM-D5D08",
+            "LCID": 1036
+          },
+          {
+            "Text": "ICM-D5D08",
+            "LCID": 1031
+          },
+          {
+            "Text": "ICM-D5D08",
+            "LCID": 1034
+          },
+          {
+            "Text": "ICM-D5D08",
+            "LCID": 1046
+          },
+          {
+            "Text": "ICM-D5D08",
+            "LCID": 1040
+          },
+          {
+            "Text": "ICM-D5D08",
+            "LCID": 1041
+          },
+          {
+            "Text": "ICM-D5D08",
+            "LCID": 1042
+          },
+          {
+            "Text": "ICM-D5D08",
+            "LCID": 2052
+          }
+        ],
+        "Description": [
+          {
+            "Text": "I-CON Drive 5, Double Axis, 2.8A, 200-500 Volt, CIP Motion Drive",
+            "LCID": 1033
+          },
+          {
+            "Text": "I-CON Drive 5, Double Axis, 2.8A, 200-500 Volt, CIP Motion Drive",
+            "LCID": 1036
+          },
+          {
+            "Text": "I-CON Drive 5, Double Axis, 2.8A, 200-500 Volt, CIP Motion Drive",
+            "LCID": 1031
+          },
+          {
+            "Text": "I-CON Drive 5, Double Axis, 2.8A, 200-500 Volt, CIP Motion Drive",
+            "LCID": 1034
+          },
+          {
+            "Text": "I-CON Drive 5, Double Axis, 2.8A, 200-500 Volt, CIP Motion Drive",
+            "LCID": 1046
+          },
+          {
+            "Text": "I-CON Drive 5, Double Axis, 2.8A, 200-500 Volt, CIP Motion Drive",
+            "LCID": 1040
+          },
+          {
+            "Text": "I-CON Drive 5, Double Axis, 2.8A, 200-500 Volt, CIP Motion Drive",
+            "LCID": 1041
+          },
+          {
+            "Text": "I-CON Drive 5, Double Axis, 2.8A, 200-500 Volt, CIP Motion Drive",
+            "LCID": 1042
+          },
+          {
+            "Text": "I-CON Drive 5, Double Axis, 2.8A, 200-500 Volt, CIP Motion 伺服驱动器",
+            "LCID": 2052
+          }
+        ],
+        "BusConfiguration": {
+          "BusCompatibilityID": [
+            {
+              "ID": 0
+            }
+          ],
+          "RelativeRating": 15,
+          "MaxBusMasters": 4,
+          "MaxBusFollowers": 6,
+          "MaxInGroup": 8
+        }
+      }
+    ],
+    "Feedback": {
+      "Ports": [
+        {
+          "Number": 1,
+          "Description": [
+            {
+              "Text": "Main Feedback 1 Port",
+              "LCID": 1033
+            },
+            {
+              "Text": "Port Motor de retour",
+              "LCID": 1036
+            },
+            {
+              "Text": "Port Motor-Rückführungsmodul",
+              "LCID": 1031
+            },
+            {
+              "Text": "Puerto de retroalimentación de Motor",
+              "LCID": 1034
+            },
+            {
+              "Text": "Porta de realimentação de Motor",
+              "LCID": 1046
+            },
+            {
+              "Text": "Porta di feedback Motor",
+              "LCID": 1040
+            },
+            {
+              "Text": "Motor フィードバック ポート",
+              "LCID": 1041
+            },
+            {
+              "Text": "Motor 피드백 포트",
+              "LCID": 1042
+            },
+            {
+              "Text": "电机反馈端口",
+              "LCID": 2052
+            }
+          ]
+        },
+        {
+          "Number": 2,
+          "Description": [
+            {
+              "Text": "Universal Feedback 1 Port",
+              "LCID": 1033
+            },
+            {
+              "Text": "Port universel de retour",
+              "LCID": 1036
+            },
+            {
+              "Text": "Port Universelles Rückführungsmodul",
+              "LCID": 1031
+            },
+            {
+              "Text": "Puerto de retroalimentación universal",
+              "LCID": 1034
+            },
+            {
+              "Text": "Porta de realimentação universal",
+              "LCID": 1046
+            },
+            {
+              "Text": "Porta di feedback universale",
+              "LCID": 1040
+            },
+            {
+              "Text": "ユニバーサル フィードバック ポート",
+              "LCID": 1041
+            },
+            {
+              "Text": "범용 피드백 포트",
+              "LCID": 1042
+            },
+            {
+              "Text": "负载反馈端口",
+              "LCID": 2052
+            }
+          ]
+        },
+        {
+          "Number": 3,
+          "Description": [
+            {
+              "Text": "Main Feedback 2 Port",
+              "LCID": 1033
+            },
+            {
+              "Text": "Port DSL de retour 2",
+              "LCID": 1036
+            },
+            {
+              "Text": "Port DSL-Rückführungsmodul 2",
+              "LCID": 1031
+            },
+            {
+              "Text": "Puerto de retroalimentación de DSL 2",
+              "LCID": 1034
+            },
+            {
+              "Text": "Porta 2 de realimentação de DSL",
+              "LCID": 1046
+            },
+            {
+              "Text": "Porta di feedback 2 DSL",
+              "LCID": 1040
+            },
+            {
+              "Text": "DSL フィードバック 2 ポート",
+              "LCID": 1041
+            },
+            {
+              "Text": "DSL 피드백 2 포트",
+              "LCID": 1042
+            },
+            {
+              "Text": "DSL 反馈 2 端口",
+              "LCID": 2052
+            }
+          ]
+        },
+        {
+          "Number": 4,
+          "Description": [
+            {
+              "Text": "Universal Feedback 2 Port",
+              "LCID": 1033
+            },
+            {
+              "Text": "Port universel de retour 2",
+              "LCID": 1036
+            },
+            {
+              "Text": "Port Universelles Rückführungsmodul 2",
+              "LCID": 1031
+            },
+            {
+              "Text": "Puerto de retroalimentación universal 2",
+              "LCID": 1034
+            },
+            {
+              "Text": "Porta 2 de realimentação universal",
+              "LCID": 1046
+            },
+            {
+              "Text": "Porta di feedback 2 universale",
+              "LCID": 1040
+            },
+            {
+              "Text": "ユニバーサル フィードバック 2 ポート",
+              "LCID": 1041
+            },
+            {
+              "Text": "범용 피드백 2 포트",
+              "LCID": 1042
+            },
+            {
+              "Text": "通用反馈 2 端口",
+              "LCID": 2052
+            }
+          ]
+        }
+      ],
+      "DevicePorts": [
+        {
+          "Number": 1,
+          "FeedbackPortNumber": 1,
+          "DefaultCardType": 1
+        },
+        {
+          "Number": 2,
+          "FeedbackPortNumber": 2,
+          "DefaultCardType": 2
+        },
+        {
+          "Number": 3,
+          "FeedbackPortNumber": 3,
+          "DefaultCardType": 3
+        },
+        {
+          "Number": 4,
+          "FeedbackPortNumber": 4,
+          "DefaultCardType": 4
+        }
+      ],
+      "Devices": [
+        {
+          "CardType": 1,
+          "Channels": 1,
+          "CatalogNumber": "Motor Feedback Device",
+          "FeedbackTypes": [
+            {
+              "Value": "Tamagawa Serial"
+            },
+            {
+              "Value": "Hiperface DSL"
+            },
+            {
+              "Value": "Hiperface"
+            }
+          ],
+          "RegistrationInputs": 2,
+          "AxisFeatures": [
+            "Marker",
+            "Home Switch"
+          ],
+          "HomeSequence": [
+            "Switch",
+            "Marker",
+            "Switch-Marker"
+          ]
+        },
+        {
+          "CardType": 2,
+          "Channels": 1,
+          "CatalogNumber": "Load Feedback Device",
+          "FeedbackTypes": [
+            {
+              "Value": "Digital AqB",
+              "MinMajorRev": 3
+            },
+            {
+              "Value": "Digital AqB with UVW",
+              "MinMajorRev": 3
+            },
+            {
+              "Value": "Sine/Cosine with UVW",
+              "MinMajorRev": 3
+            },
+            {
+              "Value": "SSI Digital"
+            },
+            {
+              "Value": "EnDat 2.1"
+            },
+            {
+              "Value": "EnDat 2.2"
+            }
+          ],
+          "RegistrationInputs": 2,
+          "AxisFeatures": [
+            "Marker",
+            "Home Switch"
+          ],
+          "HomeSequence": [
+            "Switch",
+            "Marker",
+            "Switch-Marker"
+          ]
+        },
+        {
+          "CardType": 3,
+          "Channels": 1,
+          "CatalogNumber": "DSL Feedback 2 Port",
+          "FeedbackTypes": [
+            {
+              "Value": "Tamagawa Serial"
+            },
+            {
+              "Value": "Hiperface DSL"
+            },
+            {
+              "Value": "Hiperface"
+            }
+          ],
+          "RegistrationInputs": 2,
+          "AxisFeatures": [
+            "Marker",
+            "Home Switch"
+          ],
+          "HomeSequence": [
+            "Switch",
+            "Marker",
+            "Switch-Marker"
+          ]
+        },
+        {
+          "CardType": 4,
+          "Channels": 1,
+          "CatalogNumber": "Universal Feedback 2 Device",
+          "FeedbackTypes": [
+            {
+              "Value": "Digital AqB",
+              "MinMajorRev": 3
+            },
+            {
+              "Value": "Digital AqB with UVW",
+              "MinMajorRev": 3
+            },
+            {
+              "Value": "Sine/Cosine with UVW",
+              "MinMajorRev": 3
+            },
+            {
+              "Value": "SSI Digital"
+            },
+            {
+              "Value": "EnDat 2.1"
+            },
+            {
+              "Value": "EnDat 2.2"
+            }
+          ],
+          "RegistrationInputs": 2,
+          "AxisFeatures": [
+            "Marker",
+            "Home Switch"
+          ],
+          "HomeSequence": [
+            "Switch",
+            "Marker",
+            "Switch-Marker"
+          ]
+        }
+      ]
+    },
+    "Axes": [
+      {
+        "Number": 1,
+        "SupportedAxisConfigurations": {
+          "Values": [
+            "Feedback Only",
+            "Frequency Control",
+            "Position Loop",
+            "Velocity Loop",
+            "Torque Loop"
+          ],
+          "Default": "Position Loop"
+        },
+        "AllowableFeedbackPorts": {
+          "MotorMaster": [
+            {
+              "Number": 0
+            },
+            {
+              "Number": 1,
+              "Default": true
+            },
+            {
+              "Number": 2
+            }
+          ],
+          "Load": [
+            {
+              "Number": 0,
+              "Default": true
+            },
+            {
+              "Number": 1
+            },
+            {
+              "Number": 2
+            }
+          ]
+        }
+      },
+      {
+        "Number": 2,
+        "SupportedAxisConfigurations": {
+          "Values": [
+            "Feedback Only"
+          ],
+          "Default": "Feedback Only"
+        },
+        "AllowableFeedbackPorts": {
+          "MotorMaster": [
+            {
+              "Number": 0,
+              "Default": true
+            },
+            {
+              "Number": 1
+            },
+            {
+              "Number": 2
+            }
+          ]
+        }
+      },
+      {
+        "Number": 3,
+        "SupportedAxisConfigurations": {
+          "Values": [
+            "Feedback Only",
+            "Frequency Control",
+            "Position Loop",
+            "Velocity Loop",
+            "Torque Loop"
+          ],
+          "Default": "Position Loop"
+        },
+        "AllowableFeedbackPorts": {
+          "MotorMaster": [
+            {
+              "Number": 0
+            },
+            {
+              "Number": 3,
+              "Default": true
+            },
+            {
+              "Number": 4
+            }
+          ],
+          "Load": [
+            {
+              "Number": 0,
+              "Default": true
+            },
+            {
+              "Number": 3
+            },
+            {
+              "Number": 4
+            }
+          ]
+        }
+      },
+      {
+        "Number": 4,
+        "SupportedAxisConfigurations": {
+          "Values": [
+            "Feedback Only"
+          ],
+          "Default": "Feedback Only"
+        },
+        "AllowableFeedbackPorts": {
+          "MotorMaster": [
+            {
+              "Number": 0,
+              "Default": true
+            },
+            {
+              "Number": 3
+            },
+            {
+              "Number": 4
+            }
+          ]
+        }
+      }
+    ],
+    "Attributes": {
+      "SupportedAttributes": {
+        "PositionLoop": [
+          {
+            "Value": "MotorCatalogNumber"
+          },
+          {
+            "Value": "MotorPolarity"
+          },
+          {
+            "Value": "MotorRatedPeakCurrent"
+          },
+          {
+            "Value": "MotorRatedOutputPower"
+          },
+          {
+            "Value": "MotorOverloadLimit"
+          },
+          {
+            "Value": "MotorIntegralThermalSwitch",
+            "MinMajorRev": 2
+          },
+          {
+            "Value": "MotorMaxWindingTemperature"
+          },
+          {
+            "Value": "MotorWindingToAmbientCapacitance",
+            "MinMajorRev": 2
+          },
+          {
+            "Value": "MotorWindingToAmbientResistance",
+            "MinMajorRev": 2
+          },
+          {
+            "Value": "PMMotorFluxSaturation"
+          },
+          {
+            "Value": "PMMotorRatedTorque"
+          },
+          {
+            "Value": "PMMotorTorqueConstant"
+          },
+          {
+            "Value": "PMMotorRatedForce",
+            "MinMajorRev": 2
+          },
+          {
+            "Value": "PMMotorForceConstant",
+            "MinMajorRev": 2
+          },
+          {
+            "Value": "RotaryMotorInertia"
+          },
+          {
+            "Value": "RotaryMotorMaxSpeed"
+          },
+          {
+            "Value": "LinearMotorMass",
+            "MinMajorRev": 2
+          },
+          {
+            "Value": "LinearMotorMaxSpeed",
+            "MinMajorRev": 2
+          },
+          {
+            "Value": "InductionMotorStatorLeakageReactance"
+          },
+          {
+            "Value": "InductionMotorRotorLeakageReactance"
+          },
+          {
+            "Value": "FeedbackUnitRatio"
+          },
+          {
+            "Value": "Feedback1SerialNumber"
+          },
+          {
+            "Value": "Feedback1Polarity"
+          },
+          {
+            "Value": "Feedback1VelocityFilterTaps"
+          },
+          {
+            "Value": "Feedback1AccelFilterTaps"
+          },
+          {
+            "Value": "Feedback1VelocityFilterBandwidth"
+          },
+          {
+            "Value": "Feedback1AccelFilterBandwidth"
+          },
+          {
+            "Value": "Feedback2SerialNumber"
+          },
+          {
+            "Value": "Feedback2Polarity"
+          },
+          {
+            "Value": "Feedback2VelocityFilterTaps"
+          },
+          {
+            "Value": "Feedback2AccelFilterTaps"
+          },
+          {
+            "Value": "Feedback2VelocityFilterBandwidth"
+          },
+          {
+            "Value": "Feedback2AccelFilterBandwidth"
+          },
+          {
+            "Value": "PositionFineCommand"
+          },
+          {
+            "Value": "VelocityFineCommand"
+          },
+          {
+            "Value": "AccelerationFineCommand"
+          },
+          {
+            "Value": "PositionErrorToleranceTime"
+          },
+          {
+            "Value": "PositionLeadLagFilterBandwidth"
+          },
+          {
+            "Value": "PositionLeadLagFilterGain"
+          },
+          {
+            "Value": "VelocityNegativeFeedforwardGain"
+          },
+          {
+            "Value": "VelocityDroop"
+          },
+          {
+            "Value": "VelocityErrorTolerance"
+          },
+          {
+            "Value": "VelocityErrorToleranceTime"
+          },
+          {
+            "Value": "VelocityLowPassFilterBandwidth"
+          },
+          {
+            "Value": "VelocityThreshold"
+          },
+          {
+            "Value": "VelocityLockTolerance"
+          },
+          {
+            "Value": "VelocityLimitPositive"
+          },
+          {
+            "Value": "VelocityLimitNegative"
+          },
+          {
+            "Value": "AccelerationReference"
+          },
+          {
+            "Value": "LoadObserverAccelerationEstimate"
+          },
+          {
+            "Value": "LoadObserverTorqueEstimate"
+          },
+          {
+            "Value": "LoadObserverConfiguration"
+          },
+          {
+            "Value": "LoadObserverBandwidth"
+          },
+          {
+            "Value": "LoadObserverIntegratorBandwidth"
+          },
+          {
+            "Value": "LoadObserverFeedbackGain"
+          },
+          {
+            "Value": "AccelerationLimit"
+          },
+          {
+            "Value": "DecelerationLimit"
+          },
+          {
+            "Value": "BacklashCompensationWindow"
+          },
+          {
+            "Value": "FrictionCompensationSliding"
+          },
+          {
+            "Value": "FrictionCompensationStatic"
+          },
+          {
+            "Value": "FrictionCompensationViscous"
+          },
+          {
+            "Value": "FrictionCompensationWindow"
+          },
+          {
+            "Value": "TorqueLeadLagFilterBandwidth"
+          },
+          {
+            "Value": "TorqueLeadLagFilterGain"
+          },
+          {
+            "Value": "TorqueLowPassFilterBandwidth"
+          },
+          {
+            "Value": "TorqueNotchFilterFrequency"
+          },
+          {
+            "Value": "AdaptiveTuningConfiguration",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "TorqueNotchFilterHighFrequencyLimit",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "TorqueNotchFilterLowFrequencyLimit",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "TorqueNotchFilterTuningThreshold",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "TorqueNotchFilterFrequencyEstimate",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "TorqueNotchFilterMagnitudeEstimate",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "TorqueLowPassFilterBandwidthEstimate",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "AdaptiveTuningGainScalingFactor",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "TorqueRateLimit"
+          },
+          {
+            "Value": "TorqueThreshold"
+          },
+          {
+            "Value": "OvertorqueLimit"
+          },
+          {
+            "Value": "OvertorqueLimitTime"
+          },
+          {
+            "Value": "UndertorqueLimit"
+          },
+          {
+            "Value": "UndertorqueLimitTime"
+          },
+          {
+            "Value": "OperativeCurrentLimit"
+          },
+          {
+            "Value": "CurrentLimitSource"
+          },
+          {
+            "Value": "CurrentReference"
+          },
+          {
+            "Value": "FluxCurrentReference"
+          },
+          {
+            "Value": "CurrentError"
+          },
+          {
+            "Value": "FluxCurrentError"
+          },
+          {
+            "Value": "CurrentFeedback"
+          },
+          {
+            "Value": "FluxCurrentFeedback"
+          },
+          {
+            "Value": "TorqueLoopBandwidth"
+          },
+          {
+            "Value": "FluxUpControl",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "FluxUpTime",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "CommutationPolarity"
+          },
+          {
+            "Value": "FeedbackCommutationAligned"
+          },
+          {
+            "Value": "OutputFrequency"
+          },
+          {
+            "Value": "ConverterOutputCurrent",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "ConverterOutputPower",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "ZeroSpeed",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "ZeroSpeedTime",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "StoppingTimeLimit"
+          },
+          {
+            "Value": "CoastingTimeLimit",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "MechanicalBrakeControl"
+          },
+          {
+            "Value": "MechanicalBrakeReleaseDelay"
+          },
+          {
+            "Value": "MechanicalBrakeEngageDelay"
+          },
+          {
+            "Value": "ProvingConfiguration",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "TorqueProveCurrent",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "BrakeTestTorque",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "BrakeSlipTolerance",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "ConverterCapacity"
+          },
+          {
+            "Value": "BusRegulatorCapacity"
+          },
+          {
+            "Value": "MotorOverloadAction"
+          },
+          {
+            "Value": "InverterOverloadAction"
+          },
+          {
+            "Value": "CIPAxisAlarms"
+          },
+          {
+            "Value": "CIPAxisAlarmsRA"
+          },
+          {
+            "Value": "MotorOverspeedUserLimit",
+            "MinMajorRev": 2
+          },
+          {
+            "Value": "MotorThermalOverloadUserLimit"
+          },
+          {
+            "Value": "InverterThermalOverloadUserLimit"
+          },
+          {
+            "Value": "FeedbackDataLossUserLimit"
+          },
+          {
+            "Value": "GuardStatus"
+          },
+          {
+            "Value": "GuardFaults"
+          }
+        ],
+        "VelocityLoop": [
+          {
+            "Value": "MotorCatalogNumber"
+          },
+          {
+            "Value": "MotorPolarity"
+          },
+          {
+            "Value": "MotorRatedPeakCurrent"
+          },
+          {
+            "Value": "MotorRatedOutputPower"
+          },
+          {
+            "Value": "MotorOverloadLimit"
+          },
+          {
+            "Value": "MotorIntegralThermalSwitch",
+            "MinMajorRev": 2
+          },
+          {
+            "Value": "MotorMaxWindingTemperature"
+          },
+          {
+            "Value": "MotorWindingToAmbientCapacitance",
+            "MinMajorRev": 2
+          },
+          {
+            "Value": "MotorWindingToAmbientResistance",
+            "MinMajorRev": 2
+          },
+          {
+            "Value": "PMMotorFluxSaturation"
+          },
+          {
+            "Value": "PMMotorRatedTorque"
+          },
+          {
+            "Value": "PMMotorTorqueConstant"
+          },
+          {
+            "Value": "PMMotorRatedForce",
+            "MinMajorRev": 2
+          },
+          {
+            "Value": "PMMotorForceConstant",
+            "MinMajorRev": 2
+          },
+          {
+            "Value": "RotaryMotorInertia"
+          },
+          {
+            "Value": "RotaryMotorMaxSpeed"
+          },
+          {
+            "Value": "LinearMotorMass",
+            "MinMajorRev": 2
+          },
+          {
+            "Value": "LinearMotorMaxSpeed",
+            "MinMajorRev": 2
+          },
+          {
+            "Value": "InductionMotorStatorLeakageReactance"
+          },
+          {
+            "Value": "InductionMotorRotorLeakageReactance"
+          },
+          {
+            "Value": "FeedbackUnitRatio"
+          },
+          {
+            "Value": "Feedback1SerialNumber"
+          },
+          {
+            "Value": "Feedback1Polarity"
+          },
+          {
+            "Value": "Feedback1VelocityFilterTaps"
+          },
+          {
+            "Value": "Feedback1AccelFilterTaps"
+          },
+          {
+            "Value": "Feedback1VelocityFilterBandwidth"
+          },
+          {
+            "Value": "Feedback1AccelFilterBandwidth"
+          },
+          {
+            "Value": "Feedback2SerialNumber"
+          },
+          {
+            "Value": "Feedback2Polarity"
+          },
+          {
+            "Value": "Feedback2VelocityFilterTaps"
+          },
+          {
+            "Value": "Feedback2AccelFilterTaps"
+          },
+          {
+            "Value": "Feedback2VelocityFilterBandwidth"
+          },
+          {
+            "Value": "Feedback2AccelFilterBandwidth"
+          },
+          {
+            "Value": "VelocityFineCommand"
+          },
+          {
+            "Value": "AccelerationFineCommand"
+          },
+          {
+            "Value": "VelocityNegativeFeedforwardGain"
+          },
+          {
+            "Value": "VelocityDroop"
+          },
+          {
+            "Value": "VelocityErrorTolerance"
+          },
+          {
+            "Value": "VelocityErrorToleranceTime"
+          },
+          {
+            "Value": "VelocityLowPassFilterBandwidth"
+          },
+          {
+            "Value": "VelocityThreshold"
+          },
+          {
+            "Value": "VelocityLockTolerance"
+          },
+          {
+            "Value": "VelocityLimitPositive"
+          },
+          {
+            "Value": "VelocityLimitNegative"
+          },
+          {
+            "Value": "SLATConfiguration",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "SLATSetPoint",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "SLATTimeDelay",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "AccelerationReference"
+          },
+          {
+            "Value": "LoadObserverAccelerationEstimate"
+          },
+          {
+            "Value": "LoadObserverTorqueEstimate"
+          },
+          {
+            "Value": "LoadObserverConfiguration"
+          },
+          {
+            "Value": "LoadObserverBandwidth"
+          },
+          {
+            "Value": "LoadObserverIntegratorBandwidth"
+          },
+          {
+            "Value": "LoadObserverFeedbackGain"
+          },
+          {
+            "Value": "AccelerationLimit"
+          },
+          {
+            "Value": "DecelerationLimit"
+          },
+          {
+            "Value": "FrictionCompensationSliding"
+          },
+          {
+            "Value": "FrictionCompensationStatic",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "FrictionCompensationViscous"
+          },
+          {
+            "Value": "TorqueLeadLagFilterBandwidth"
+          },
+          {
+            "Value": "TorqueLeadLagFilterGain"
+          },
+          {
+            "Value": "TorqueLowPassFilterBandwidth"
+          },
+          {
+            "Value": "TorqueNotchFilterFrequency"
+          },
+          {
+            "Value": "AdaptiveTuningConfiguration",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "TorqueNotchFilterHighFrequencyLimit",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "TorqueNotchFilterLowFrequencyLimit",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "TorqueNotchFilterTuningThreshold",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "TorqueNotchFilterFrequencyEstimate",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "TorqueNotchFilterMagnitudeEstimate",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "TorqueLowPassFilterBandwidthEstimate",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "AdaptiveTuningGainScalingFactor",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "TorqueRateLimit"
+          },
+          {
+            "Value": "TorqueThreshold"
+          },
+          {
+            "Value": "OvertorqueLimit"
+          },
+          {
+            "Value": "OvertorqueLimitTime"
+          },
+          {
+            "Value": "UndertorqueLimit"
+          },
+          {
+            "Value": "UndertorqueLimitTime"
+          },
+          {
+            "Value": "OperativeCurrentLimit"
+          },
+          {
+            "Value": "CurrentLimitSource"
+          },
+          {
+            "Value": "CurrentReference"
+          },
+          {
+            "Value": "FluxCurrentReference"
+          },
+          {
+            "Value": "CurrentError"
+          },
+          {
+            "Value": "FluxCurrentError"
+          },
+          {
+            "Value": "CurrentFeedback"
+          },
+          {
+            "Value": "FluxCurrentFeedback"
+          },
+          {
+            "Value": "TorqueLoopBandwidth"
+          },
+          {
+            "Value": "FluxUpControl",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "FluxUpTime",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "CommutationPolarity"
+          },
+          {
+            "Value": "FeedbackCommutationAligned"
+          },
+          {
+            "Value": "OutputFrequency"
+          },
+          {
+            "Value": "ConverterOutputCurrent",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "ConverterOutputPower",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "ZeroSpeed",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "ZeroSpeedTime",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "StoppingTimeLimit"
+          },
+          {
+            "Value": "CoastingTimeLimit",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "MechanicalBrakeControl"
+          },
+          {
+            "Value": "MechanicalBrakeReleaseDelay"
+          },
+          {
+            "Value": "MechanicalBrakeEngageDelay"
+          },
+          {
+            "Value": "ProvingConfiguration",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "TorqueProveCurrent",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "BrakeTestTorque",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "BrakeSlipTolerance",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "ConverterCapacity"
+          },
+          {
+            "Value": "BusRegulatorCapacity"
+          },
+          {
+            "Value": "MotorOverloadAction"
+          },
+          {
+            "Value": "InverterOverloadAction"
+          },
+          {
+            "Value": "CIPAxisAlarms"
+          },
+          {
+            "Value": "CIPAxisAlarmsRA"
+          },
+          {
+            "Value": "MotorOverspeedUserLimit",
+            "MinMajorRev": 2
+          },
+          {
+            "Value": "MotorThermalOverloadUserLimit"
+          },
+          {
+            "Value": "InverterThermalOverloadUserLimit"
+          },
+          {
+            "Value": "FeedbackDataLossUserLimit"
+          },
+          {
+            "Value": "GuardStatus"
+          },
+          {
+            "Value": "GuardFaults"
+          }
+        ],
+        "TorqueLoop": [
+          {
+            "Value": "MotorCatalogNumber"
+          },
+          {
+            "Value": "MotorPolarity"
+          },
+          {
+            "Value": "MotorRatedPeakCurrent"
+          },
+          {
+            "Value": "MotorRatedOutputPower"
+          },
+          {
+            "Value": "MotorOverloadLimit"
+          },
+          {
+            "Value": "MotorIntegralThermalSwitch",
+            "MinMajorRev": 2
+          },
+          {
+            "Value": "MotorMaxWindingTemperature"
+          },
+          {
+            "Value": "MotorWindingToAmbientCapacitance",
+            "MinMajorRev": 2
+          },
+          {
+            "Value": "MotorWindingToAmbientResistance",
+            "MinMajorRev": 2
+          },
+          {
+            "Value": "PMMotorFluxSaturation"
+          },
+          {
+            "Value": "PMMotorRatedTorque"
+          },
+          {
+            "Value": "PMMotorTorqueConstant"
+          },
+          {
+            "Value": "PMMotorRatedForce",
+            "MinMajorRev": 2
+          },
+          {
+            "Value": "PMMotorForceConstant",
+            "MinMajorRev": 2
+          },
+          {
+            "Value": "RotaryMotorInertia"
+          },
+          {
+            "Value": "RotaryMotorMaxSpeed"
+          },
+          {
+            "Value": "LinearMotorMass",
+            "MinMajorRev": 2
+          },
+          {
+            "Value": "LinearMotorMaxSpeed",
+            "MinMajorRev": 2
+          },
+          {
+            "Value": "InductionMotorStatorLeakageReactance"
+          },
+          {
+            "Value": "InductionMotorRotorLeakageReactance"
+          },
+          {
+            "Value": "Feedback1SerialNumber"
+          },
+          {
+            "Value": "Feedback1Polarity"
+          },
+          {
+            "Value": "Feedback1VelocityFilterTaps"
+          },
+          {
+            "Value": "Feedback1AccelFilterTaps"
+          },
+          {
+            "Value": "Feedback1VelocityFilterBandwidth"
+          },
+          {
+            "Value": "Feedback1AccelFilterBandwidth"
+          },
+          {
+            "Value": "Feedback2SerialNumber"
+          },
+          {
+            "Value": "Feedback2Polarity"
+          },
+          {
+            "Value": "Feedback2VelocityFilterTaps"
+          },
+          {
+            "Value": "Feedback2AccelFilterTaps"
+          },
+          {
+            "Value": "Feedback2VelocityFilterBandwidth"
+          },
+          {
+            "Value": "Feedback2AccelFilterBandwidth"
+          },
+          {
+            "Value": "AccelerationFineCommand"
+          },
+          {
+            "Value": "VelocityThreshold"
+          },
+          {
+            "Value": "LoadObserverAccelerationEstimate"
+          },
+          {
+            "Value": "LoadObserverTorqueEstimate"
+          },
+          {
+            "Value": "LoadObserverConfiguration"
+          },
+          {
+            "Value": "LoadObserverBandwidth"
+          },
+          {
+            "Value": "LoadObserverIntegratorBandwidth"
+          },
+          {
+            "Value": "LoadObserverFeedbackGain"
+          },
+          {
+            "Value": "FrictionCompensationSliding",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "FrictionCompensationStatic",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "FrictionCompensationViscous",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "TorqueLeadLagFilterBandwidth"
+          },
+          {
+            "Value": "TorqueLeadLagFilterGain"
+          },
+          {
+            "Value": "TorqueLowPassFilterBandwidth"
+          },
+          {
+            "Value": "TorqueNotchFilterFrequency"
+          },
+          {
+            "Value": "AdaptiveTuningConfiguration",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "TorqueNotchFilterHighFrequencyLimit",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "TorqueNotchFilterLowFrequencyLimit",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "TorqueNotchFilterTuningThreshold",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "TorqueNotchFilterFrequencyEstimate",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "TorqueNotchFilterMagnitudeEstimate",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "TorqueLowPassFilterBandwidthEstimate",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "AdaptiveTuningGainScalingFactor",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "TorqueRateLimit"
+          },
+          {
+            "Value": "TorqueThreshold"
+          },
+          {
+            "Value": "OvertorqueLimit"
+          },
+          {
+            "Value": "OvertorqueLimitTime"
+          },
+          {
+            "Value": "UndertorqueLimit"
+          },
+          {
+            "Value": "UndertorqueLimitTime"
+          },
+          {
+            "Value": "OperativeCurrentLimit"
+          },
+          {
+            "Value": "CurrentLimitSource"
+          },
+          {
+            "Value": "CurrentReference"
+          },
+          {
+            "Value": "FluxCurrentReference"
+          },
+          {
+            "Value": "CurrentError"
+          },
+          {
+            "Value": "FluxCurrentError"
+          },
+          {
+            "Value": "CurrentFeedback"
+          },
+          {
+            "Value": "FluxCurrentFeedback"
+          },
+          {
+            "Value": "TorqueLoopBandwidth"
+          },
+          {
+            "Value": "FluxUpControl",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "FluxUpTime",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "CommutationPolarity"
+          },
+          {
+            "Value": "FeedbackCommutationAligned"
+          },
+          {
+            "Value": "OutputFrequency"
+          },
+          {
+            "Value": "ConverterOutputCurrent",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "ConverterOutputPower",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "ZeroSpeed",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "ZeroSpeedTime",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "StoppingTimeLimit"
+          },
+          {
+            "Value": "CoastingTimeLimit",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "MechanicalBrakeControl"
+          },
+          {
+            "Value": "MechanicalBrakeReleaseDelay"
+          },
+          {
+            "Value": "MechanicalBrakeEngageDelay"
+          },
+          {
+            "Value": "ProvingConfiguration",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "TorqueProveCurrent",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "BrakeTestTorque",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "BrakeSlipTolerance",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "ConverterCapacity"
+          },
+          {
+            "Value": "BusRegulatorCapacity"
+          },
+          {
+            "Value": "MotorOverloadAction"
+          },
+          {
+            "Value": "InverterOverloadAction"
+          },
+          {
+            "Value": "CIPAxisAlarms"
+          },
+          {
+            "Value": "CIPAxisAlarmsRA"
+          },
+          {
+            "Value": "MotorOverspeedUserLimit",
+            "MinMajorRev": 2
+          },
+          {
+            "Value": "MotorThermalOverloadUserLimit"
+          },
+          {
+            "Value": "InverterThermalOverloadUserLimit"
+          },
+          {
+            "Value": "FeedbackDataLossUserLimit"
+          },
+          {
+            "Value": "GuardStatus"
+          },
+          {
+            "Value": "GuardFaults"
+          }
+        ],
+        "FrequencyControl": [
+          {
+            "Value": "MotorPolarity"
+          },
+          {
+            "Value": "MotorRatedOutputPower"
+          },
+          {
+            "Value": "MotorOverloadLimit"
+          },
+          {
+            "Value": "RotaryMotorMaxSpeed"
+          },
+          {
+            "Value": "InductionMotorStatorLeakageReactance"
+          },
+          {
+            "Value": "InductionMotorRotorLeakageReactance"
+          },
+          {
+            "Value": "InductionMotorRatedSlipSpeed"
+          },
+          {
+            "Value": "SkipSpeed1"
+          },
+          {
+            "Value": "SkipSpeed2",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "SkipSpeedBand"
+          },
+          {
+            "Value": "VelocityDroop",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "FluxUpControl",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "FluxUpTime",
+            "MinMajorRev": 4
+          },
+          {
+            "Value": "ConverterOutputCurrent",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "ConverterOutputPower",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "CoastingTimeLimit",
+            "MinMajorRev": 3
+          },
+          {
+            "Value": "MechanicalBrakeControl"
+          },
+          {
+            "Value": "MechanicalBrakeReleaseDelay"
+          },
+          {
+            "Value": "MechanicalBrakeEngageDelay"
+          },
+          {
+            "Value": "ConverterCapacity"
+          },
+          {
+            "Value": "BusRegulatorCapacity"
+          },
+          {
+            "Value": "MotorOverloadAction"
+          },
+          {
+            "Value": "InverterOverloadAction"
+          },
+          {
+            "Value": "CIPAxisAlarms"
+          },
+          {
+            "Value": "CIPAxisAlarmsRA"
+          },
+          {
+            "Value": "MotorThermalOverloadUserLimit"
+          },
+          {
+            "Value": "InverterThermalOverloadUserLimit"
+          },
+          {
+            "Value": "FeedbackDataLossUserLimit"
+          },
+          {
+            "Value": "GuardStatus"
+          },
+          {
+            "Value": "GuardFaults"
+          }
+        ],
+        "FeedbackOnly": [
+          {
+            "Value": "Feedback1SerialNumber"
+          },
+          {
+            "Value": "Feedback1Polarity"
+          },
+          {
+            "Value": "Feedback1VelocityFilterTaps"
+          },
+          {
+            "Value": "Feedback1AccelFilterTaps"
+          },
+          {
+            "Value": "Feedback1VelocityFilterBandwidth"
+          },
+          {
+            "Value": "Feedback1AccelFilterBandwidth"
+          },
+          {
+            "Value": "Feedback2SerialNumber"
+          },
+          {
+            "Value": "Feedback2Polarity"
+          },
+          {
+            "Value": "Feedback2VelocityFilterTaps"
+          },
+          {
+            "Value": "Feedback2AccelFilterTaps"
+          },
+          {
+            "Value": "Feedback2VelocityFilterBandwidth"
+          },
+          {
+            "Value": "Feedback2AccelFilterBandwidth"
+          },
+          {
+            "Value": "VelocityThreshold"
+          },
+          {
+            "Value": "CIPAxisAlarms"
+          },
+          {
+            "Value": "CIPAxisAlarmsRA"
+          },
+          {
+            "Value": "FeedbackDataLossUserLimit"
+          }
+        ]
+      },
+      "SupportedEnums": [
+        {
+          "Name": "AxisFeatures",
+          "Values": [
+            {
+              "Value": "Fine Interpolation"
+            },
+            {
+              "Value": "Registration Autorearm"
+            },
+            {
+              "Value": "Alarm Log"
+            },
+            {
+              "Value": "Hookup Test"
+            },
+            {
+              "Value": "Commutation Test"
+            },
+            {
+              "Value": "Motor Test"
+            },
+            {
+              "Value": "Inertia Test"
+            }
+          ]
+        },
+        {
+          "Name": "MotorDataSource",
+          "Values": [
+            {
+              "Value": "Database"
+            },
+            {
+              "Value": "Motor NV"
+            }
+          ]
+        },
+        {
+          "Name": "MotorType",
+          "Values": [
+            {
+              "Value": "Rotary Permanent Magnet"
+            },
+            {
+              "Value": "Rotary Induction"
+            },
+            {
+              "Value": "Linear Permanent Magnet",
+              "MinMajorRev": 2
+            }
+          ]
+        },
+        {
+          "Name": "Feedback1StartupMethod",
+          "Values": [
+            {
+              "Value": "Absolute"
+            }
+          ]
+        },
+        {
+          "Name": "Feedback2StartupMethod",
+          "Values": [
+            {
+              "Value": "Absolute"
+            }
+          ]
+        },
+        {
+          "Name": "LoadObserverConfiguration",
+          "Values": [
+            {
+              "Value": "Load Observer Only"
+            },
+            {
+              "Value": "Load Observer With Velocity Estimate"
+            },
+            {
+              "Value": "Velocity Estimate Only"
+            }
+          ]
+        },
+        {
+          "Name": "FluxUpControl",
+          "MinMajorRev": 4,
+          "Values": [
+            {
+              "Value": "Manual Delay",
+              "MinMajorRev": 4
+            },
+            {
+              "Value": "Automatic Delay",
+              "MinMajorRev": 4
+            }
+          ]
+        },
+        {
+          "Name": "FeedbackCommutationAligned",
+          "Values": [
+            {
+              "Value": "Motor Offset"
+            }
+          ]
+        },
+        {
+          "Name": "FrequencyControlMethod",
+          "Values": [
+            {
+              "Value": "Fan/Pump Volts/Hertz",
+              "MinMajorRev": 4
+            },
+            {
+              "Value": "Sensorless Vector"
+            }
+          ]
+        },
+        {
+          "Name": "MotorOverloadAction",
+          "Values": [
+            {
+              "Value": "Current Foldback"
+            }
+          ]
+        },
+        {
+          "Name": "InverterOverloadAction",
+          "Values": [
+            {
+              "Value": "Current Foldback"
+            }
+          ]
+        }
+      ],
+      "SupportedEnumsPerAxisConfiguration": [
+        {
+          "Name": "FeedbackConfiguration",
+          "PositionLoop": [
+            {
+              "Value": "Load Feedback",
+              "MinMajorRev": 3
+            },
+            {
+              "Value": "Dual Feedback",
+              "MinMajorRev": 3
+            }
+          ],
+          "VelocityLoop": [
+            {
+              "Value": "Load Feedback",
+              "MinMajorRev": 3
+            }
+          ]
+        },
+        {
+          "Name": "StoppingAction",
+          "PositionLoop": [
+            {
+              "Value": "Current Decel & Hold"
+            }
+          ],
+          "VelocityLoop": [
+            {
+              "Value": "Current Decel & Hold"
+            }
+          ]
+        }
+      ],
+      "SupportedEnumsPerAxisConfigurationAndFeedbackConfiguration": [
+        {
+          "Name": "MotorType",
+          "FrequencyControl": {
+            "NoFeedback": [
+              {
+                "Value": "Rotary Induction"
+              }
+            ]
+          },
+          "PositionLoop": {
+            "Feedback": [
+              {
+                "Value": "Rotary Permanent Magnet"
+              },
+              {
+                "Value": "Rotary Interior Permanent Magnet",
+                "MinMajorRev": 4
+              }
+            ]
+          },
+          "VelocityLoop": {
+            "Feedback": [
+              {
+                "Value": "Rotary Permanent Magnet"
+              },
+              {
+                "Value": "Rotary Interior Permanent Magnet",
+                "MinMajorRev": 4
+              }
+            ]
+          },
+          "TorqueLoop": {
+            "Feedback": [
+              {
+                "Value": "Rotary Permanent Magnet"
+              },
+              {
+                "Value": "Rotary Interior Permanent Magnet",
+                "MinMajorRev": 4
+              }
+            ]
+          }
+        }
+      ],
+      "CurrentLoopBandwidthScalingFactor": {
+        "RotaryPermanentMagnet": 1.0,
+        "LinearPermanentMagnet": 1.0,
+        "RotaryInduction": 0.4
+      },
+      "SupportedMotorTests": [
+        {
+          "Name": "RotaryInduction",
+          "Methods": [
+            {
+              "Value": "Static"
+            },
+            {
+              "Value": "Dynamic",
+              "MinMajorRev": 4
+            },
+            {
+              "Value": "Calculate",
+              "MinMajorRev": 4
+            }
+          ]
+        }
+      ],
+      "SupportedExceptions": {
+        "CIPAxisExceptionAction": [
+          {
+            "Exception": "MotorOverspeedFL"
+          },
+          {
+            "Exception": "MotorOverspeedUL",
+            "MinMajorRev": 2,
+            "Action": [
+              {
+                "Value": "Ignore",
+                "MinMajorRev": 2
+              },
+              {
+                "Value": "Alarm",
+                "MinMajorRev": 2
+              },
+              {
+                "Value": "Fault Status Only",
+                "MinMajorRev": 2
+              },
+              {
+                "Value": "Stop Planner",
+                "MinMajorRev": 2
+              }
+            ]
+          },
+          {
+            "Exception": "MotorOvertemperatureFL"
+          },
+          {
+            "Exception": "MotorThermalOverloadFL"
+          },
+          {
+            "Exception": "MotorThermalOverloadUL",
+            "Action": [
+              {
+                "Value": "Ignore"
+              },
+              {
+                "Value": "Alarm"
+              },
+              {
+                "Value": "Fault Status Only"
+              },
+              {
+                "Value": "Stop Planner"
+              }
+            ]
+          },
+          {
+            "Exception": "MotorPhaseLoss",
+            "MinMajorRev": 3,
+            "Action": [
+              {
+                "Value": "Ignore",
+                "MinMajorRev": 3
+              },
+              {
+                "Value": "Alarm",
+                "MinMajorRev": 3
+              },
+              {
+                "Value": "Fault Status Only",
+                "MinMajorRev": 3
+              },
+              {
+                "Value": "Stop Planner",
+                "MinMajorRev": 3
+              }
+            ]
+          },
+          {
+            "Exception": "InverterOvercurrent"
+          },
+          {
+            "Exception": "InverterOvertemperatureFL"
+          },
+          {
+            "Exception": "InverterThermalOverloadFL"
+          },
+          {
+            "Exception": "InverterThermalOverloadUL",
+            "Action": [
+              {
+                "Value": "Ignore"
+              },
+              {
+                "Value": "Alarm"
+              },
+              {
+                "Value": "Fault Status Only"
+              },
+              {
+                "Value": "Stop Planner"
+              }
+            ]
+          },
+          {
+            "Exception": "ConverterOvercurrent"
+          },
+          {
+            "Exception": "ConverterGroundCurrentFL"
+          },
+          {
+            "Exception": "ConverterOvertemperatureFL"
+          },
+          {
+            "Exception": "ConverterThermalOverloadFL"
+          },
+          {
+            "Exception": "ConverterThermalOverloadUL",
+            "Action": [
+              {
+                "Value": "Ignore"
+              },
+              {
+                "Value": "Alarm"
+              },
+              {
+                "Value": "Fault Status Only"
+              },
+              {
+                "Value": "Stop Planner"
+              }
+            ]
+          },
+          {
+            "Exception": "ConverterACSinglePhaseLoss",
+            "Action": [
+              {
+                "Value": "Ignore"
+              },
+              {
+                "Value": "Alarm"
+              },
+              {
+                "Value": "Fault Status Only"
+              },
+              {
+                "Value": "Stop Planner"
+              }
+            ]
+          },
+          {
+            "Exception": "ConverterPreChargeFailure"
+          },
+          {
+            "Exception": "BusRegulatorThermalOverloadFL"
+          },
+          {
+            "Exception": "BusRegulatorThermalOverloadUL",
+            "Action": [
+              {
+                "Value": "Ignore"
+              },
+              {
+                "Value": "Alarm"
+              },
+              {
+                "Value": "Fault Status Only"
+              },
+              {
+                "Value": "Stop Planner"
+              }
+            ]
+          },
+          {
+            "Exception": "BusRegulatorFailure"
+          },
+          {
+            "Exception": "BusUndervoltageFL"
+          },
+          {
+            "Exception": "BusUndervoltageUL",
+            "Action": [
+              {
+                "Value": "Ignore"
+              },
+              {
+                "Value": "Alarm"
+              },
+              {
+                "Value": "Fault Status Only"
+              },
+              {
+                "Value": "Stop Planner"
+              }
+            ]
+          },
+          {
+            "Exception": "BusOvervoltageFL"
+          },
+          {
+            "Exception": "BusPowerLeakage"
+          },
+          {
+            "Exception": "BusPowerSharing",
+            "Action": [
+              {
+                "Value": "Ignore"
+              },
+              {
+                "Value": "Alarm"
+              },
+              {
+                "Value": "Fault Status Only"
+              },
+              {
+                "Value": "Stop Planner"
+              }
+            ]
+          },
+          {
+            "Exception": "FeedbackSignalNoiseFL"
+          },
+          {
+            "Exception": "FeedbackSignalNoiseUL",
+            "Action": [
+              {
+                "Value": "Ignore"
+              },
+              {
+                "Value": "Alarm"
+              },
+              {
+                "Value": "Fault Status Only"
+              },
+              {
+                "Value": "Stop Planner"
+              }
+            ]
+          },
+          {
+            "Exception": "FeedbackSignalLossFL"
+          },
+          {
+            "Exception": "FeedbackSignalLossUL",
+            "Action": [
+              {
+                "Value": "Ignore"
+              },
+              {
+                "Value": "Alarm"
+              },
+              {
+                "Value": "Fault Status Only"
+              },
+              {
+                "Value": "Stop Planner"
+              }
+            ]
+          },
+          {
+            "Exception": "FeedbackDataLossFL"
+          },
+          {
+            "Exception": "FeedbackDataLossUL",
+            "Action": [
+              {
+                "Value": "Ignore"
+              },
+              {
+                "Value": "Alarm"
+              },
+              {
+                "Value": "Fault Status Only"
+              },
+              {
+                "Value": "Stop Planner"
+              }
+            ]
+          },
+          {
+            "Exception": "FeedbackDeviceFailure"
+          },
+          {
+            "Exception": "BrakeSlip",
+            "MinMajorRev": 3,
+            "Action": [
+              {
+                "Value": "Ignore",
+                "MinMajorRev": 3
+              },
+              {
+                "Value": "Alarm",
+                "MinMajorRev": 3
+              },
+              {
+                "Value": "Fault Status Only",
+                "MinMajorRev": 3
+              },
+              {
+                "Value": "Stop Planner",
+                "MinMajorRev": 3
+              }
+            ]
+          },
+          {
+            "Exception": "HardwareOvertravelPositive",
+            "MinMajorRev": 2,
+            "Action": [
+              {
+                "Value": "Ignore",
+                "MinMajorRev": 2
+              },
+              {
+                "Value": "Alarm",
+                "MinMajorRev": 2
+              },
+              {
+                "Value": "Fault Status Only",
+                "MinMajorRev": 2
+              },
+              {
+                "Value": "Stop Planner",
+                "MinMajorRev": 2
+              }
+            ]
+          },
+          {
+            "Exception": "HardwareOvertravelNegative",
+            "MinMajorRev": 2,
+            "Action": [
+              {
+                "Value": "Ignore",
+                "MinMajorRev": 2
+              },
+              {
+                "Value": "Alarm",
+                "MinMajorRev": 2
+              },
+              {
+                "Value": "Fault Status Only",
+                "MinMajorRev": 2
+              },
+              {
+                "Value": "Stop Planner",
+                "MinMajorRev": 2
+              }
+            ]
+          },
+          {
+            "Exception": "ExcessivePositionError",
+            "Action": [
+              {
+                "Value": "Ignore"
+              },
+              {
+                "Value": "Alarm"
+              },
+              {
+                "Value": "Fault Status Only"
+              },
+              {
+                "Value": "Stop Planner"
+              }
+            ]
+          },
+          {
+            "Exception": "ExcessiveVelocityError",
+            "Action": [
+              {
+                "Value": "Ignore"
+              },
+              {
+                "Value": "Alarm"
+              },
+              {
+                "Value": "Fault Status Only"
+              },
+              {
+                "Value": "Stop Planner"
+              }
+            ]
+          },
+          {
+            "Exception": "OvertorqueLimit",
+            "Action": [
+              {
+                "Value": "Ignore"
+              },
+              {
+                "Value": "Alarm"
+              },
+              {
+                "Value": "Fault Status Only"
+              },
+              {
+                "Value": "Stop Planner"
+              }
+            ]
+          },
+          {
+            "Exception": "UndertorqueLimit",
+            "Action": [
+              {
+                "Value": "Ignore"
+              },
+              {
+                "Value": "Alarm"
+              },
+              {
+                "Value": "Fault Status Only"
+              },
+              {
+                "Value": "Stop Planner"
+              }
+            ]
+          },
+          {
+            "Exception": "EnableInputDeactivated",
+            "Action": [
+              {
+                "Value": "Ignore"
+              },
+              {
+                "Value": "Alarm"
+              },
+              {
+                "Value": "Fault Status Only"
+              },
+              {
+                "Value": "Stop Planner"
+              }
+            ]
+          },
+          {
+            "Exception": "ControllerInitiatedException"
+          }
+        ],
+        "CIPAxisExceptionActionRA": [
+          {
+            "Exception": "MotorVoltageMismatch",
+            "Action": [
+              {
+                "Value": "Ignore"
+              },
+              {
+                "Value": "Alarm"
+              },
+              {
+                "Value": "Fault Status Only"
+              },
+              {
+                "Value": "Stop Planner"
+              }
+            ]
+          },
+          {
+            "Exception": "FeedbackBatteryLow",
+            "Action": [
+              {
+                "Value": "Ignore"
+              },
+              {
+                "Value": "Alarm"
+              },
+              {
+                "Value": "Fault Status Only"
+              },
+              {
+                "Value": "Stop Planner"
+              }
+            ]
+          },
+          {
+            "Exception": "ExcessiveCurrentFeedbackOffset"
+          },
+          {
+            "Exception": "DCCommonBus"
+          },
+          {
+            "Exception": "RuntimeError"
+          }
+        ]
+      },
+      "FeedbackOnlySupportedExceptions": {
+        "CIPAxisExceptionAction": [
+          {
+            "Exception": "FeedbackDataLossFL"
+          },
+          {
+            "Exception": "FeedbackDeviceFailure"
+          }
+        ],
+        "CIPAxisExceptionActionRA": [
+          {
+            "Exception": "RuntimeError",
+            "MinMajorRev": 3
+          }
+        ]
+      }
+    }
+  }
+}

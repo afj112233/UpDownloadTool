@@ -1,0 +1,806 @@
+Release Notes for ICS Studio
+
+Latest
+ V1.0.129.23039(2023.2.8)
+ +添加icc-t系列的支持
+ +MessageConfiguration对话框 汉化
+ +轴属性窗口汉化；
+ +UDFB相关窗口(新建UDFB窗口、UDFB属性窗口)汉化
+ +UDT相关窗口(新建string/datatype窗口，string/datatype属性窗口)汉化
+ +Trend相关窗口(新建Trend窗口、Trend属性窗口、添加/配置变量窗口、Trend页面、Trend相关的Messagebox、弹出警告窗口)汉化
+ +Controller Organizer树状列表窗口(左侧)汉化
+ +Controller Organizer树状列表中所有节点右键按钮汉化
+ +补充调整Controller Overview窗口汉化
+ +补充调整Cross Reference窗口汉化
+ +实现工具栏上的Toggle Controller、Find All、Find Previous、Find Next、搜索框、Verify Routine、Verify Controller功能
+ +更新软件版本页面图片
+ +Tag新建窗口汉化
+ +Tag属性窗口汉化
+ +AOITag新建窗口汉化
+ +AOITag属性窗口汉化
+ +CamEditor窗口汉化
+ +CIPAxis实轴属性窗口汉化
+ +CIPAxis是周属性窗口内点击按钮的系列弹出窗口汉化
+ +在Download窗口中，未选择路径时提示窗口汉化
+ +梯形图增加Rung相关的右键菜单项及快捷键
+ +梯形图Tag的右键菜单增加tag properies
+ +优化梯形图元素的选择逻辑，包括单击、双击鼠标，拖拽，右键等
+ +实现New Tag的快捷键 Ctrl+W
+ +优化Tag选中及失去焦点效果
+ +解决编辑Rung代码无效的问题
+ +梯形图完善GSV/SSV的语法分析
+ +梯形图删除tag时，增加置为?
+ +梯形图错误输出信息，同一行如果有多个相同的Instruction有错误，现在可以分别输出多条错误信息
+ +梯形图GSV参数分析，增加对大小写的处理
+ +优化CPS的参数分析
+ +梯形图增加离线及在线的Branch的拖拽
+ +梯形图编辑页面修改后，关闭软件时增加未保存提示
+ +梯形图在离线模式时，增加对Rung编辑状态标注的显示（主要针对在线切离线时）
+ +Tag的tooltips增加description内容
+ +调整梯形图在线编辑功能（状态由14种减少到5种）
+ +梯形图插入元素时，增加对BRK的处理
+ +梯形图在线编辑，调整Accept Edit的功能为提交当前Routine所有代码
+ +梯形图增加Undo、Redo功能；
+ +梯形图调整离线粘贴的逻辑，增加对带标记的Rung的考虑
+ +梯形图增加Undo/Redo功能
+ +梯形图增加Rung的注释，包含显示、选中效果和编辑
+ +增加Edit Rung Commet及Edit Main Operand Description的菜单项及快捷键；
+ +实现Rung Comment的显示及编辑；
+ +实现Tag Descripton的显示；
+ +实现Main Operand Description的显示及编辑
+ +渲染梯形图时，现在会根据Rung的Error信息在左侧绘制Error标记
+ +编辑梯形图代码，如果提交有语法错误的代码，现在会恢复成之前的梯形图（原来会显示空梯形图，提示Syntax Error，确认后再恢复）
+ +优化NewTag逻辑：确认后才会对新建的Tag进行监控，并且会刷新Rung左侧的Error标注
+ +更新梯形图时，增加RegisterOperand的调用，以获取new tag的值
+ +完善ExecuteEditMainOperandDescription，解决编辑Main Operand Description时可能出现的问题
+ +梯形图语法分析，增加对InvalidExpression的Error输出，Tag名不合法时，改为提示TagUndefined类型的Error
+ +梯形图实现双击工具栏新建元素后，定位于新元素上的功能
+ +梯形图增加Edit Routine Properties菜单项
+ +增加JSR的Main Operand Description的显示及编辑功能
+ +完善运动控制指令的语法分析
+ +完善Size指令的语法分析
+ +完善对梯形图中，参数含?情况的处理
+ +梯形图中，Rung只含Warning的情况，也增加了Error标记
+ +Verify梯形图的输出信息，增加了统计信息
+ +梯形图语法分析，增加了对大小写的处理
+ +语法分析增加对MOV指令的处理
+ +增加Import Rungs和Export Rungs功能
+ +完善语法分析，增加对缺少输出指令的处理，以及对空Rung的处理
+ +完善语法分析，完善对指令参数未指定的处理
+ +梯形图tag的右键菜单，增加对枚举的考虑
+ +枚举解析方法Utils.ParseEnum，增加对有-的枚举名的考虑
+ +梯形图语法分析增加不允许跳转至Main Routine的处理
+ +完善CPT指令的语法分析
+ +完善CMP指令的语法分析
+ +梯形图语法分析，增加对DataType为自定义类型的情况的处理
+ +梯形图复制粘贴剪切操作，改为使用全局剪切板
+ +实现鼠标滚轮控制梯形图视图上下移动
+ +实现梯形图的go to cross 功能，包含Tag、Routine、Label的go to cross
+ +monitor tag中的value和description可以直接键盘输入
+ +添加FrequencyControl的支持
+ +重构download过程，完善download失败后的信息提示
+ +restore并发数量减少为16
+ -ID1001220, 尝试解决闪退问题
+ -ID1001207, 解决先Upload的PLC如果内部程序为空，此时再Uplaod其他有程序的PLC，也会显示为Upload空
+ -ID1001110，编辑Cam Editor后，会造成软件闪退的行为，其中问题1
+ -ID1001127，轴属性中Motor Types选项不正确
+ -ID1001131, 附件中的JSON文件，下载后提示Download fail，重复下载多次(并未修改程序)，又能下载成功
+ -ID1001190, 删除工程中的ST例程后软件闪退，再次打开工程save失败
+ -ID1001199, 中文模式下点轴参数/电机页面上的参数按钮，软件闪退
+ -ID1001183, 轴属性的Homing界面中，Position的范围跟AB存在差异
+ -ID1001184, 轴属性的Offset参数设置超出范围，点击Apply后，AB与ICC行为存在差异
+ -ID1001189, ics打开非法项目文件后无法开启正常文件项目
+ -ID1001148, PLC出现Major Fault后，每进行一次Online，MajorFaults中的错误信息就增加一条
+ -解决plc无工程时无法下载的问题
+ -解决go online后download失败的问题
+ -ID1001080，问题2，只调整中文个数为20
+ -ID1001067, 结构体中的Value为1.$或1.#QNAN时，将对应的L5X文件转成JSON后，结构体Tag的Value都会被清零
+ -ID1000654, Monitor Tag界面展开结构体时，AB：当结构体成员很多或者监控的Tag处于底部时，Tag会自动上移；ICC：不会
+ -切换到hard run后实轴属性界面状态修改
+ -ID1001001，ID1000979，ID1000379，udt修改后对应tag值保留问题
+ -去掉"Build Save"菜单
+ -解决工程为空时导出tag崩溃
+ -修改Cam editor中ZoomToFit显示
+ -在轴属性界面下Motor子界面中，有的字体看起来会有加粗效果，修改为正常粗细
+ -ID1000909,ST文本中存在多余的untile
+ -ID1000903,非正规的关键字写法，AB不会报错，ICC会报错
+ -修正部分字体高亮不正确
+ -ID1001193,软件显示问题，Download窗口提示文字汉化处理
+ -ID1001187,当勾选Preserve Backup to file 或 Restore时，未选择Browse，AB会弹出提示窗口，ICC则直接下载
+ -ID1001161,Preserve和Restor同时被勾选
+ -ID1001052,取消修改，目前软件暂时不需要弹窗
+ -ID1001052,ST下给的数据超过极值，且打开拜年祭窗口时，会在打开前弹出错误提示
+ -ID1001005,第二个问题，下方参数显示后六位，且部分显示会被遮挡
+ -ID1000920,软件第一次下载轴状态为Faulted第二次之后才有图标，以及轴状态发生改变图标不变
+ -ID1001070,当导入的CSV种MotionGroup命名与工程中命名不同时，AB与ICC存在差异
+ -ID1000920,轴状态为Faulted时，轴对应的图标要加“！”提示
+ -ID1000725,新建工程，导入只存在IOTag的CSV文件，报错信息完善
+ -ID1000715,凸轮编辑器放大缩小基准点调整(需要完善放大缩小系数问题才能完全改完)
+ -ID1001052,输入上限3.4e+38后，打开CamEditor闪退
+ -ID1000692,导入Tag卡在ADD进度条页面
+ -ID1001005,第二个问题，下方参数显示为数过多，且过多时需要科学计数法显示；
+ -ID1000908,自动tag输入选择的窗口宽度太小
+ -ID1000914,ST中选中高亮语句时，显示颜色异常
+ -ID1000919,ID1000639,ST编辑窗口中，输入指令时参数的辅助提示功能
+ -ID1000933,ST中取消注释，AB与ICC存在差异
+ -ID1000928,创建AOI时，在Local tag中添加AOI数组，软件报错
+ -ID1000922,Trend Tag中tag名称中如存在下划线，但未显示
+ -ID1000938,Dint在比较的时候，报超出范围的错误。AB、西门子、倍福均未存在错误
+ -ID1000882,将ST中Tag的值删除，然后将该例程关闭，再次打开时，Tag的值显示为空
+ -ID1000985,st编辑器 case 关键字后变量数组缺少元素索引 不会提示错误
+ -ID1000938,Dint在比较的时候，报超出范围的错误。AB、西门子、倍福均未存在错误
+ -ID1000953,ST中使用Ctrl+W新建Tag时，New Tag窗口被辅助提示信息遮挡(AB：使用Ctrl+W后，辅助提示会自动关闭)
+ -ID1001006,ST中的空白处点击注释，软件闪退
+ -ID1001027,st编辑器在线修改tag值，如果输入非法值后，左侧分段线条会错乱，无法和代码同步移动
+ -ID1000977,修改UDT子属性，ST中引用的子属性未修改
+ -ID1000976,st编辑器自定义数据数组赋值没有指定元素没有错误提示，下载失败
+ -ID1000817,st编辑器在线修改动作后不规律翻页
+ -ID1001009,数字后面的e应该同色，e可表示为自然常数
+ -ID1001008,二进制和八进制#后带字符，字符（abcdef）颜色
+ -ID1001058,ST中的AOI的参数过多时，AB会换行显示，ICC不会换行显示
+ -ID1001061,ST中Tag的自动补全功能(AB不仅支持添加Tag时自动补全，删除Tag时也支持自动补全)，ICC仅支持添加Tag的自动补全
+ -ID1001066,MAR指令的ST语法问题
+ -ID1001151,Replace窗口在线时可以打开，但是Replace功能无效
+ -ID1001145,JRS调用子例程，使用Argument list 软件闪退
+ -ID1001150,Find窗口不能使用Ctrl+V进行粘贴文本内容
+ -ID1001168,ST编辑窗口中，Tag输入非法值后，点击Controller Organizer，软件闪退
+ -ID1001165,删除program，对应标签 编译不报错，重新打开程序，才会报错
+ -ID1001178,修改PLC的型号，Local tag会消失
+ -完善编辑器缺陷
+ -ID1001132,输入MAJ指令的第一个参数时，没有自动补全
+ -ID1001118,修复：在 ST 编辑器中，鼠标悬浮在用户自定义 String 类型上，弹出的提示信息中无法显示 value 的问题
+ -ID1001135,ST 语法修改：将 stmt_list 递归解析方式变更为循环解析方式，以优化解析性能，防止出现崩溃问题
+ -修改语法定义，解决逻辑取反（NOT）不能嵌套调用的问题
+ -修改 ST 解析时，表达式中存在异常空白，编译错误提示会出现异常的问题：
+ +change controller、configure detect、monitor tag/edit tag、new task、new program、new routine窗口汉化
+ -ID1000498,需要补全常用的Standard快捷按钮及快捷键；
+ -ID1000917,菜单栏中，缺失的快捷键汇总，打开快捷键设置
+ -ID1001100,轴属性中Compline窗口问题
+ -ID1000578,编辑Tag时，Usage的选项被简写
+ -ID1000886,使用快捷按钮在线保存没有提示窗口
+ -ID1001215,轴属性弹窗中，在Tag标签页修改名称，个别名称修改后输入和显示存在出入
+ -ID1001133,轴属性窗口，输入较长的数值(如：1.0e+9)，AB与ICC在显示上存在差异
+ -ID1001143,udt窗口数据长度标签标识问题
+ -ID1000983,ICS Studio软件是否考虑，把ICS Gateway以及IconUpdate也集成上去(客户反馈安装多个软件太麻烦)
+ -ID1001205,轴属性窗口显示问题
+ -ID1000638，ST语言下编辑指令时语法时没有自动对齐
+ -ID1001011，52、导入AOI后，Edited的时间不会更新(AB会更新)
+ -ID1000743，if语句中存在注释，此时回车，ICC的光标不会自动缩进；(AB会自动缩进)(行注释)
+ -ID1001025，在5000中如果monitor tag的对象不在搜索结果中，跳转的时候会清除搜索设置(ICC不会)
+ -ID1001047，拨码开关打在run应该禁用的操作(create tag, InhibitTask, inhibitedProgram)
+ -ID1000879，创建AOI,创建完成后跳出属性页(修正错误逻辑)
+ -ID1001054，将UDT的窗口打开后，修改Member中AOI对应的Name，行为与AB不一致
+ -ID1000496，点击warning信息，不能准确的跳转到造成warning的地方(增加组织树选中效果，移除JumpAction)
+ -ID1000978，自定义数据结构声明窗口，出现红色错误不会恢复
+ -ID1001003，AOI属性界面的细节问题
+ -ID1001037，Controller Tags窗口--页面操作--离线--controller Tags页面筛选切换Scope，筛选功能存在失效。全局→局部 概率性OK 局部→全局 NG
+ -ID1001047，拨码开关打在run应该禁用的操作(monitor tag 创建tag，task扫描时间)
+ -ID1000996，AB：UDT中Member支持推拽(用于位置移动)，ICC暂不支持
+ -ID1000884，Download change轴比对画面，把0和0.0比对成差异，导致比对出大量差异项目
+ -ID1000447，梯形图的RUNG缺少导入导出功能
+ -ID1001169，LD中只含有END的Rung，导入不进Rung
+ -ID1001172， 导入Rung时，修改了Tag的Final Name，Operation只存在Create选项
+ -ID1000519，双击Tag的Name或Tag的Value时，AB相当于全选；ICC若Name或Value的中间，存在点/下划线/括号等符号，只能选中部分
+ -ID1001125，软件上的显示问题
+ -ID1001147，ICSStudio每次上传程序后，左上角的项目名称都会跳出个星号(AB不会出现)
+ -ID1001164，UDT窗口显示问题
+ -ID1001167，AOI界面显示问题
+ -ID1001186，导入了几个Program后的工程下载失败
+ -ID1001185，导出Socket Server的Rung，再导入该Rung到新工程中，下载失败
+ -ID1001177，导入Rung后，梯形图中的内容清空 ，重新打开后正常
+ -ID1001208，导入Program时，覆盖掉的tag没有delete提示
+ -ID1001216，轴属性弹窗中，在Autotune标签页，Loop Parameters Tuned和Load Parameters Tuned下拉列表的宽度需调整及需显示下拉块
+ -ID1001131，Download失败问题
+ -ID1001126，轴属性中的Motor界面， 使用tab键顺序不合理
+ -ID1001102，Manual Tuning中的Disable Axis按钮点击后，没有功能(AB点击后，相当于执行MSF)
+ -ID1001099，轴属性界面中，显示问题汇总
+ -ID1001044，Controller Tags窗口--Tag操作--离线--修改Tag信息，Tag行存在跳动明显，需修改
+ -ID1001036，Controller Tags窗口--页面操作--离线--Show的下拉列表--选择“Configure...”时，下拉列表上未显示Configure...
+ -ID1001035，Controller Tags窗口--页面操作--离线--Show的下拉列表--“Configure...”的弹窗中的“Clear Filter”按钮在未选择类型时应置灰
+ -ID1001034，Controller Tags窗口--页面操作--离线--Scope下拉列表中的Add-On Instructions新建AOI但无展开箭头（无法实时变化，需要重新打开tag页面）
+ -ID1001033，Controller Tags窗口--页面操作--离线--Scope下拉列表中的Programs/Equipment Phases/Equipment Sequences单击应不可选择，双击展开
+ -ID1001032，Controller Tags窗口--页面操作--离线--未选中Tag时，右侧属性框左上角缺少“Properties”
+ -ID1001031，Controller Tags窗口--页面操作--离线--“Scope：”、“Show：”和下拉列表等应在同一水平线上
+ -ID1001029，Controller Tags窗口--页面操作--离线--“Monitor Tags”和“Edit Tags”标签在右侧Tag Properties往左侧拉的时候应固定位置
+ -ID1001024，Controller Properties--Alarm Log--在在线状态下PLC处于运行模式时，应置灰
+ -ID1001023，Controller Properties--Alarm Log--在在线状态下项目与PLC联机，PLC处于Program状态，缺少提示文字
+ -ID1001022，Controller Properties--Security--在在线状态下“View Components...”按钮点击无效果，可先置灰
+ -ID1001021，Controller Properties--Network--在在线状态下“Enable Supervisor Mode Ring Faults Detected：”选择框，在线修改无效，置灰
+ -ID1001020，Controller Properties--Advanced--在在线状态下手动输入超出范围的数字，无法输入。（可参照AB形式）
+ -ID1001019，Controller Properties--Internet Protocol--在离线状态下离线时应不可点击操作
+ -ID1001014，Controller Properties--Security--在离线状态下文字显示不全
+ -ID1001013，Controller Properties--Security--在离线状态下缺少文字“Secure With：”
+ -ID1001012，Controller Properties--Security--在离线状态下文字需置灰
+ 主菜单重构，相关界面汉化
+ -ID1000990-ID1000994，Controller Properties Network界面修改
+ -ID1000988-ID1000989，Controller Properties Port Configuration界面修改
+ -ID1000987，Controller Properties--Advanced--System Overhead Time Slice：对应的输入框应与前面的字等高，字符长度限制3个字符，只限数字输入
+ -ID1000971-ID1000974，Controller Properties Date/Time界面修改
+ -ID1000970，Controller Properties--General--“Change Controller...”按钮 - 弹出框To Type：默认选择应是当前项目的PLC型号
+ -ID1000947，AOI中，Inout类型创建数组类型的Tag，该Tag在的Monitor Tag中不能展开
+ -ID1000946，AOI中Monitor Tag的Style、Default需要修改
+ -ID1000945，单击后No Forces 和No Edits选项卡的弹窗中 “Controller Properties”选项单击无效果
+ -ID1000897，PLC拨码开关打到RUN仍然可以更改Internet Protocol的IP，AB为灰色
+ -ID1000378，修改切换AOI上下文没反应的问题
+ -ID1000427，在线编辑梯形图Accept Edit现在会先分析梯形图代码
+ -ID1000438，解决可能删除无效的问题
+ -ID1000440：不能使用回车键确认在GSV中输入的变量
+ -ID1000448：梯形图编译报错，点击错误，不能跳转到对应行
+ -ID1000451：在梯形图中多次使用ctrl+v，例程丢失
+ -ID1000464：空程序行，不报错并可以下载到PLC
+ -ID1000465：梯形图_新建Rung，定位消失
+ -ID1000466：右键END行，弹出的弹窗页面，与AB不同
+ -ID1000748：梯形图的New Tag对话框中，Scope中增加Program选项
+ -ID1000747：解决有时候拖拽落点不会消失的问题
+ -ID1000763:处理拖拽tag至同名的tag处会报错的问题
+ -ID1000790:GSV中，Class为Controller时，Instrance name会置为空
+ -ID1000791:解决打开工程时的，同一行多个相同的指令有错误，只报一个错误的问题
+ -ID1000772，梯形图语法分析增加对Branch存在直通的情况的处理
+ -ID1000803:增加指令块的标题不能拖拽到tag的限制
+ -ID1000810，增加可能为空的判断
+ -ID1000431：PLC的拨码开关处于run时，梯形图的Rung标记为i的，改为cancel edit可点击
+ -ID1000812：梯形图变量语法分析，解析tag时改为不区分大小写
+ -ID1000700：点击Controller Organizerd的收缩按钮后，打开I/O Configuration中设备的属性界面，显示异常。折叠Controller Organizer时，清空所选item
+ -ID1000783：语法分析增加对Rung是否存在输出指令的校验
+ -ID1000952：增加右键菜单的Copy Instruction、Cut Instruction及Paste的实现
+ -ID:1000777，双击改为仅支持左键
+ -ID:1001046，分析Main Operand Description时，增加可能为null的判断
+ -ID1000788：解决MenuItem的下划线显示问题
+ -ID1000802：完善语法分析针对string类型参数未输入值的判断
+ -ID1000806：增加触点和线圈类型指令的标题的选择范围（原来双击容易响应为编辑指令，现在改为编辑tag）
+ -ID1000825：现在可以编辑梯形图代码为空行，并在梯形图左侧标注Error标记
+ -ID1000826：梯形图语法分析，现在不区分指令的大小写
+ -ID1000827：梯形图代码编辑，现可以用回车进行确认
+ -ID1000838：增加Branch选择区域的范围
+ -ID1000896：屏蔽AOI的Config
+ -ID1000956：Tag名以下划线结尾，编译梯形图时，不报错的问题
+ -ID1000360：实现从工具栏新建指令后，定位到新指令
+ -ID1001074：MSG的Config窗口可能多次打开的问题
+ -ID1001085：Verify后打开AOI的梯形图崩溃的问题
+ -ID1000899：完善插入Branch Level功能（解决梯形图可能异常的问题）
+ -ID1001081：解决梯形图双击行注释，可能会清除注释内容的问题
+ -ID1001073：完善JSR的注释的显示及编辑
+ -ID1000740：修改指令后，改为保留旧指令的参数
+ -ID1001091：梯形图语法分析增加判断文本是否为数字的逻辑，增加了对带格式的整型的考虑(2#、8#、16#)。旧版本对带格式的会报标签未定义
+ -ID1000943：实现梯形图常用指令的快捷键F2~F8，以及数字0/1设置Toggle Bit值
+ -ID1001093：编辑tag或指令后，现在会定位到修改的指令上
+ -ID1001107:Verify Rung前，会先Clear输出信息
+ -ID1001176：梯形图，修改含成员的tag名，再创建tag后，软件可能闪退的问题
+ -ID1001188：梯形图中，增加tag名过长时，tag之间的宽度
+ -ID1001196：完善SIZE指令的语法分析
+ -ID1001203：完善MAM的语法分析，Event Distance和Calculated Data可以为0
+ -ID1000957：梯形图Undo和Redo按钮，完善样式
+ -ID1000103：滑动鼠标滚轮或拖拽滚动条时，梯形图选中效果不再消失；
+ -ID1001222：梯形图中，使用鼠标的滚轮上下滚动，增加滚动的幅度
+
+ V1.0.128.22348(2022.12.14)
+ - 增加导入时属性重命检测
+ - 修改ICS部分界面
+ +增加edit tag背景颜色
+ +添加轴日志的Runtime Error
+ -默认打开st 指令工具栏
+ -修改CamEditor编辑窗体的Apply按钮是否可点击逻辑
+ -ID1000752，执行MCCP，输入0.01.但CamEditor中会显示为0.0010000(显示精度过多)
+ -ID1000873，CamEditor中精度显示和AB不一致
+ -ID1000883,现场工程Upload失败，需要禁掉Alias和Consumer以及Produced类型的Tag创建和编辑
+ -ID1000851,将CamP数组中手动更改某个成员的Status状态为，AB与ICC行为不一致
+ -ID1000711,CAM曲线的SegmentType为不合法值时，需要弹窗
+ -ID1000950,AOI数组元素在输入提示中不显示
+ -ID1000953,ST中使用Ctrl+W新建Tag时，New Tag窗口被辅助提示信息遮挡(AB：使用Ctrl+W后，辅助提示会自动关闭)
+ -ID1000966,ST中“1.0/0.0；”颜色显示异常
+ -ID1000938,Dint在比较的时候，报超出范围的错误。AB、西门子、倍福均未存在错误
+ -ID1000985,st编辑器 case 关键字后变量数组缺少元素索引 不会提示错误
+ -ID1000882,将ST中Tag的值删除，然后将该例程关闭，再次打开时，Tag的值显示为空
+ -ID1000922,Trend Tag中tag名称中如存在下划线，但未显示
+ -ID1000928,创建AOI时，在Local tag中添加AOI数组，软件报错
+ -st指令输入提示
+-ID1000845,MCCP中Cam/CamProfile改成Array[0]的形式后，在ST中右键Tag，不会显示Configure的选项(AB有)
+-ID1000608,ClassName和AttributeName应该是不管需入什么字符都存在下拉列表选择项目(SSV指令第三个参数输入错误时不能被识别)
+-ID1000830,downloadChange_底下有修改，programs也修改成蓝色
+-ID1000830,downloadChange_底下有修改，programs也修改成蓝色"(更换修改方式：通过重写父类属性修改)
+-ID1000874,Monitor Tag中右键Cam[0]或者Cam[0].Master，再点击Configure Cam，软件闪退
+-ID1000879,创建AOI,创建完成后跳出属性页
+-ID1000888,离线编辑程序闪退 ，之后打开文件失败(禁止导入module衍生出的tag)
+-ID1000885,DownloadChange Controller tag比对画面，优先把轴和轴组的不同显示在最上面
+-ID1000884,Download change轴比对画面，把0和0.0比对成差异，导致比对出大量差异项目
+-ID1000911,部分属性软件上可以在线修改但不会实际下发
+-ID1000931,aoi中的tag右键菜单的trend tag可以点击，AB为灰色
+-ID1000932,部分属性软件上可以在线修改但不会实际下发_V2
+-ID1000910,Download Change 进行AOI和数据类型，字符型数据类型的比对，比对结果不够人性化，难以分辨差异是什么
+-ID1000878,在线编辑操作左侧存在橙色标记后取消编辑 左侧橙色标记仍存在
+-ID1000578,编辑Tag时，Usage的选项被简写
+-ID1000865,name拷贝不了模块类型的tag，会把"："去掉
+-ID1000921,选中组织树controller条目，再切换语言会弹窗错误提示
+-ID1000640,新建Trend后，默认为关闭状态，需要执行一次打开操作
+-ID1000929,新建项目页面布局调整 
+-ID1000944,现阶段切换至Test Mode 无效果，先将Test Mode置灰
+-ID1000625,驱动器状态栏窗口不能显示分配的轴
+-ID1000917,菜单栏中，缺失的快捷键汇总处理
+-ID1000844,Quick Watch窗口，Tag后面多输入一个点，不会提示错误
+-ID1000905,实轴属性中的参数，最好能跟AB一样靠左显示(更方便修改参数)
+-ID1000902,修改虚轴的参数后，Apply仍不能点击，必须点击其他界面才会刷新
+-ID1000904,轴属性中Associated Page需要和Parameter List重合，方便切换
+-ID1000925,Fault Handler/power-up handler/program中的Fault暂时不支持
+-ID1000951,虚轴属性窗口，Homing界面和Conversion不能输入小数点
+-ID1000964,将虚轴的Conversion Constant从1000设置成1000.1后，再次打开且未修改，但发现Apply按钮仍可点击
+-ID1000963,虚轴/实轴属性中，部分参数类型为浮点数(0.0)，但是以整数形式(0)显示，需要调整
+-ID1000854,修改udt说明量过多时，点击download，页面跳出过久可能会闪退
+-ID1000831,解决只修改routine里的程序，会出现download置灰
+-ID1000868,go online过程中拔掉网线，然后再次go online，跳出download窗口
+-ID1000866,Connecting to device添加cancel功能
+-ID1000842,解决轴属性中的Scaling从360放大到360000，如果更改轴的其它参数并保存，会弹出错误提示；
+-ID1000864,虚轴参数离线修改后，应该不能go online但实际上可以
+-ID1000624,修改轴属性时，Apply弹出慢，造成按回车健后取消了属性修改
+-ID1000855,UDT结构的CAM或CAM_PROFILE，在monitor tag界面中缺失configure选项
+-ID1000927,模块添加：添加2094-EN02D-M01-S0和S1出现异常，添加2198尾号ERS2和ERS3时点击按钮无效；
+-ID1000254,修改电机型号后，某些参数与AB相比，并没有更新 (其中的问题1)
+-ID1000940,download change failure
+-ID1000965,Who Active窗口、Download窗口、Cam Editor窗口，5000软件是没有或者不能点击Minimize按钮(ICC都是存在的)
+
+ V1.0.126.22334(2022.12.05)
+ -加强st编辑器稳定性
+ 
+ V1.0.126.22334(2022.11.30)
+ +重构download change的比对结果
+ +ControllerOrganizerVM中QuickView窗口汉化
+ -含有错误parameter connection 禁止打开
+ -完善st编辑器高亮显示
+ -禁止在controller,program,AOI中创建无符号类型的Tag
+ -ID1000726，导入存在重复的Tag，报错信息需要改动
+ -ID1000726，导入重复Tag，报错类型需要从Error改为Warning
+ -ID1000795，Quick Watch窗口，不能输入array[0]的写法 
+ -ID1000757，Trend添加Tag操作，使用Add增加tag时，从输入变量名到add成功需要执行三次回车键。需要改成1次；在现有trend曲线中，添加新的tag，如果按回车键，tag没有被添加，回车键索引到OK键然后退出了
+ -ID1000588，FIND窗口若是没有内容被查找到，不能打开Search Result窗口
+ -ID1000758，软件在线编辑时，点击关闭软件的按钮，AB：软件先退出在线模式(相当于offline)，然后弹出提示窗口；ICC:弹出提示窗口
+ -ID1000641，AOI的monitor界面在线时不能修改Value值
+ -ID1000618，JSR指令，新建RoutineName时，应是创建新进程，而不是Tag
+ -ID1000352, 解决在工程中添加电机会报错
+ -ID1000821, download change比对tag部分不要比对Style属性
+ -ID1000823, download change写入属性顺序问题，写入Inhibit后程序异常执行一次
+ -ID1000214, 解决勾选各个通道的Disable All Alarms后，输入框的值仍然能输入，AB为灰色不能输入
+ -ID1000696，未打开工程时，切换中英文，页面上部分未切换（Controller OverView、Errors）
+ -ID1000701，ICS Studio的安装路径过长，下载失败时，最好能有对应的错误提示
+ -ID1000784，编译报错：GSV错误，实际是SSV
+ -ID1000846, AB：Cam Profile的书写形式只能为Array或者Array[0]，否则编译报错；ICC不会报错
+ -ID1000872, ST中点击Display后，点击空白处，Value不显示
+ -ID1000870, 编写ST程序（if语句）时，软件未响应
+ -ID1000869, AOI中监控实例中go to cross索引不到内容
+ -ID1000852, 红色箭头是三个变量挨在一起的，不报错
+ -ID1000714, 常用的语法，如：if/for/while/case/repeat语法，需要增加高亮提示，提高编程效率
+
+ V1.0.125.22323(2022.11.19)
++添加全局保存和查询功能
++controller属性窗口、task属性窗口、program属性窗口、routine属性窗口、find/replace窗口汉化
++Trend相关窗口、Controller Overview窗口、Cross Reference窗口、Errors/Warning窗口、Add-On Instruction相关窗口、Data Type相关窗口、Strings相关窗口汉化
++CamEditor添加接口，使AOI中可以打开该窗口
++添加analogIO的l5x导出
++添加FILTER_NOTCH的l5x导出
+-ID1000483，Cam Editor窗口Ctrl+C快捷键功能
+-ID1000773，Cam编译器不正确参数导致软件退出
+-ID1000751，里显示Cam Editor窗口中的Slope不能输入数值
+-ID1000602，ICS软件只有在Run模式下才不能对CAM窗口进行编辑
+-ID1000711，Cam曲线的SegmenrType为不合法值时，cam窗口图像确实段落且不弹窗
+-ID1000600，CAM曲线数据较多或数据过大时属性窗口卡顿或闪退
+-ID1000577，Usage为OutPut时，Externel Access为ReadOnly
+-ID1000671，导入时导入N次会导入N组同名Tag
+-ID1000730，Quick Watch窗口能输入中文，且不会弹出提示窗口
+-ID1000719，更改PLC的型号，提示窗口显示异常
+-ID1000665，Quick Watch中无法输入Tag
+-ID1000658，右键控制器的展开菜单不应该有copy等选项
+-ID1000545，routine属性界面，如有操作会中文切换成英文
+-ID1000661，Quick Watch的选择标签空白 
+-ID1000670，汉化后，UDT/Strings显示异常
+-ID1000672，打开软件后，先汉化，再打开程序，第一个Routine也被汉化
+-ID1000696，未打开工程时，切换中英文，页面上部分未切换（Watch）
+-ID1000647，connected to窗口中添加download功能
+-ID1000753, 解决增加TCP通讯代码后不能进行Downloadchange操作
+-ID1000603，鼠标悬浮在ST例程上方按钮处不能显示详细信息
+-ID1000610，在线修改任务扫描时间无效
+-ID1000691，导入导出模块汉化操作导致导入失败
+-ID1000688，中文状态下，导入AOI失效
+-ID1000504，User-Defined数据类型窗口问题点
+-ID1000478，L5X转JSON，IO中Tag的Description被清空
+-ID1000518，模块导出再导入提示Discard
+-ID1000630，缺少双击列栏目，可以进行排序的功能
+-ID1000760，创建UDT 复制粘贴存在字符覆盖问题
+-ID1000723，点击Build Save，软件出现未响应(附件中的工程，需要1分钟以上响应时间)
+-ID1000505，在ST中使用GSV或SSV轴参数时，使用的数据类型没有限制，任意数据类型都不会报错
+
+
+V1.0.123.22311 (2022.11.7)
++添加plc类型不支持提示
++find查询 历史功能
++添加download change功能
++Quick Watch、Controller Organizer汉化
+-ID1000483，Cam Editor列表第17、18，数据精度以及现实问题
+-ID1000528，如果是AOI或者UDT类型则不到处RADIX属性
+-ID1000554，导入CSV一直存在进度条
+-ID1000548，点击CAM配置窗口中的输入框软件闪退
+-ID1000468，Cam Editor列表第3个问题，新增右键Copy功能
+-ID1000468，Cam Editor列表第10个问题，在线时禁止编辑
+-ID1000502，Cam Editor点击insert按钮闪退
+-ID1000506，Cam Editor点击linear按钮闪退
+-ID1000483，Cam Editor列表第20个问题，右键选中*行进行键盘delete会闪退
+-ID1000483，Cam Editor列表第11个问题，关闭窗体时提示修正
+-ID1000483，Cam Editor列表第5个问题，布局调整增加分隔符
+-ID1000468，Cam Editor列表第23个问题，修改Apply和Cancel按钮逻辑
+-ID1000468，Cam Editor列表第16个问题，界面整体缩放扩大效果调整
+-ID1000468，Cam Editor列表第13个问题，添加右侧列表中右键菜单功能
+-ID1000468，Cam Editor列表第22个问题，界面在线时不可编辑
+-ID1000468，Cam Editor列表第21个问题，禁止右侧列表对高度进行修改
+-ID1000468，Cam Editor列表第20个问题，选择不同的‘S’时Y轴的Title会同步更改
+-ID1000460，Cam Editor列表第1个问题，添加直线曲线按钮功能
+-ID1000468，Cam Editor界面修改Master Slave数据的小数点显示效果
+-ID1000468，Cam Editor列表第9个问题，X轴Y轴Title显示位置问题
+-ID1000468，Cam Editor列表第7个问题，窗口下方五个显示坐标系点坐标的只读效果
+-ID1000468，Cam Editor列表第11个问题，显示Start、End Slope的浮点效果
+-ID1000468，Cam Editor列表第2、3、4，修改窗口显示效果
+-ID1000415，AOI下属性窗口的Paramater和LocalTags命名规范修改
+-ID1000415，AOI命名规范增加不可与指令重名的验证
+-ID1000408，AOI创建Tag，切换Usage会变成默认DINT
+-ID1000336，同问题ID1000302
+-ID1000381，AOI属性界面style为空问题
+-ID1000302, AOI新建Tag类型未对应和AOI属性界面
+-ID1000631,AOI内部变量数值显示与实际不一致
+-ID1000636, 创建IOT指令的TAG的时候，创建后卡顿了
+-ID1000581, Trend中的底色要与Tag左侧的同步变化
+-ID1000587, 轴属性窗口的Exception窗口，可以扩展行宽度
+-ID1000604, ST下新建Tag，DINT还不一样的
+-ID1000589, Find窗口，不勾选Wrap选项，查找到最后一项时再点击Find软件闪退
+-ID1000596, 在线时打开PLC属性中Port Configuration窗口，软件闪退
+-ID1000594, AB中的部分指令支持Array以及Array[0]的写法
+-ID1000513, FOR语句里TO后面和BY后面存在BOOL类型，未报错
+-ID1000551, 更改驱动器的name，轴属性窗口中的Module不能同步做出更改，需要重新打开轴属性窗口
+-ID1000569, Instance Name无法选择对应的Task
+-ID1000570, 右键单击指令时，Create instruction Tag应处于置灰状态
+-ID1000574, 注释对符号，只出现一半，不报错
+-ID1000573, 新建Local Tag，Scope应默认当前Program
+-ID1000560, languageElement出的OSRI指令显示错误
+-ID1000532, 工程中点击新建报错误，工程重新打开后可以正常新建
+-ID1000565, 删除MSG窗口中引用的tag，编译不会报错，若下载会失败
+-ID1000557, 标签名称同步问题
+-ID1000537, Instance Name无法选择对应的Program：AAAA
+-ID1000363, 解决online后，周期性的任务的周期值不同步问题
+-ID1000660, 中英文切换导致轴名字丢失
+-ID1000385, 解决修改自定义String的Maximum Characters后，对应的Tag结构体异常的问题
+-ID1000383，解决修改UDT中Member的顺序，但实际Tag中Member的顺序没有变化的问题
+-ID1000379, 解决其中数组被清空的问题
+-ID1000367, 解决go online之后的tag右键菜单为new tag的问题
+-ID1000406, 修改在轴错误状态下，修改参数时，手动整定界面和属性界面值的一致性
+-ID1000365, 解决在go online时轴参数值不上传的问题
+-ID1000337, 增加在手动整定窗口修改时，按下回车键，使数据修改生效
+-ID1000460，修改io tag的Dercription不保存的问题
+-ID1000472, mas中添加Positin Cam
+-ID1000524, 解决task和program的inhibit不能download change的问题
+-ID1000663，解决download change下载后的工程不能直接go online
+-ID1000662, AOI的第一个参数和第二个参数之间缺少一个逗号
+-ID1000659,控制器故障处理器和加电处理器更改名字
+-ID1000657,菜单栏的File和Help没有翻译
+-ID1000559,Controller Properties不能打开控制器属性窗口
+-ID1000558,ICS软件中点击没有效果的选项，取消显示
+-ID1000552,ICD属性界面存在重复选项
+-ID1000543,在线时可以更改任务属性窗口中的Program Schdule，实际不生效
+-ID1000523,who active 和select communication没有作用
+-ID1000487,TAG名称需要限制输入40个字符
+-ID1000482,tag名称输入空格时，和AB存在出入
+-ID1000454,在线点击PLC属性中的Port Configuration时，软件闪退
+-ID1000425,show tag中不能使用delete键删除所选内容
+-ID1000386,在线转离线状态后，ICC的页面与AB有差异
+-ID1000400,导入UDT时，若该UDT的member类型为AOI或UDT类型，导入会提示错误
+-ID1000405,导入UDT/AOI/Tag/Routine，若此时正打开对应界面，会发生导入异常的情况
+-ID1000404,导入AOI时，若此时正打开Logic窗口，会提示错误，然后软件闪退的情况
+-ID1000419,导入Program.json 选择Overwrite未覆盖
+-ID1000445,ICS导入选择非对应的Json文件，只报错。AB报错并重新打开导入文件夹。
+-ID1000420,导入AOS，打开界面时，闪退
+-ID1000331,Cross Reference信息不会排序(AB按Container/Routine/Location顺序)
+-ID1000362,软件在线时monitor tag中右键菜单的Paste为灰色不能粘贴 tag
+-ID1000486,名字过长，新建会报错，复制不会报错。（现场有使用到过长名称）
+-ID1000514,可以创建同名的rountine，区分了大小写
+-ID1000553,AB离线编辑时无法修改，ICS却可以
+-ID1000512,在monitor tag窗口中，使用回车键可以给tag的description换行(新增扩展输入框)
+-ID1000495,Add ST Element 窗口问题点;
+-ID1000572,切换ClassName时（Program、Routine、Task），Instance Name未根据程序变化
+-ID1000617,工程中含有轴组，导入Program（含有轴组），导入后会使全局变量中有两个轴组
+软件汉化：适配器、驱动器、IO模块相关界面汉化；
+-ID1000656, 切换中英文导致本体IO的name还原为默认name
+
+
+V1.0.120.22287 (2022.10.14)
+
++添加全局保留设置
++优化梯形图元素拖拽落点的显示效果
++梯形图在线编辑支持在线编辑Tag、常量、指令，支持拖拽Rung、Branch、Branch Level、Instruction、Tag、常量等拖拽操作
++梯形图的Tag、指令、枚举、Routine编辑输入框，增加自动填充功能
+-ID1000291，出现不符合标签名规则的仍可以导入
+-缺少双击trend的Line legend的颜色，可以更改颜色的功能，钉钉问题349
+-ID1000295，导入Tag时，Importing提示窗口不会结束
+-ID1000324，工程的例程存在编译错误，打开新的工程后编译错误仍然存在，且仍然能打开错误的例程
+-ID1000339，35、导入AOI，会显示重复信息，将工程save后，再次打开工程报错
+-ID1000354，go to cross窗口下方有三个by logic属性，新增需求：增加显示go to cross的条目数量
+-完善st错误语法
+-ID1000372, go to cross跳转后的tag高亮部分错位一个字符
+-ID1000332, go to cross的Tag的数据类型为DINT[i]或者UDT[i].DINT[i]的形式，AB的Cross Reference与ICC存在差异
+-ID1000333, 结构体的数组显示存在问题
+-ID1000327, 罗博程序，在空白处加入错误语法，编译不会报错
+-ID1000322, 注释if语句的判断条件，AB是(* *)，ICC是//
+-ID1000323, 罗博程序中对AOI进行go to cross后，点击cross reference中的信息会导致软件闪退
+-ID1000294, ICC：Trend的日期不会实时更新，必须重新打开Trend，日期才会更新；
+-ID1000308, Tag Filter功能问题列表
+
+V1.0.119.22271 (2022.9.28)
+
++GoToCrossReference定位改进
+-ID1000269，引用AOI的本地tag，编译无报错信息
+-ID1000274，29、删除适配器的模块，实际Tag也被删除，但ST程序编译不会报错
+-ID1000276，if语句的判断条件不合理，编译不会提示错误，但Download fail
+-ID1000277，if语句的判断条件中更改数据类型，Display有概率会显示‘？？’
+-完善取位错误语法提示
+
+v1.0.118.22263 (2022.9.20)
+
++梯形图支持双击EndRung添加新的行
++增加梯形图在线编辑的工具栏
++梯形图在线编辑支持Delete、Ctrl+C、Ctrl+V、Ctrl+T操作
++梯形图在线编辑支持双击Rung显示Rung代码的操作
+-ID1000210，打开罗博程序，出现报错
+-ID1000215，更改了AOI的name之后的工程，下载失败
+-ID1000216，罗博程序，Find All搜索LP，软件闪退
+-ID1000213，EditTag界面修改Tag的Name后，ST编辑窗口中没有立即生效
+-ID1000222，更改AOI的Name，会导致对应程序错乱
+-ID1000231，ST编辑窗口无法修改Value值
+-ID1000234，修改AOI的Logic中Tag的数据类型，例程中对应的数据类型不会被更改
+-ID1000232，Pending edit View在离线后，点击Online edit(Finalize all)后，程序不能编辑
+-ID1000233，离线后，在Original View和Pending edit View分别选中Online edit(Finalize all...)，显示结果不一致
+
+v1.0.116.22250 (2022.9.7)
+
++ 调整梯形图中Expression输入框大小
++ 优化梯形图中bitleg的显示
++ 完善st自动补全功能
++ 梯形图中新增了New Tag右键菜单项
++ 完善ir4配置窗口
+- ID1000195，修改自定义string的member可以insert和delete
+- ID1000169，修改Quick Watch窗口显示Tag的值跟Monitor Tag显示不一致的问题
+- ID1000185，修改二维数组或三维数组不会自动补全的问题
+- ID1000191，修改表达式不会提示错误的问题
+- 在导出CSV时，添加AOI和Program的Scope属性值
+- ID1000189, 临时修改wpf或excel保存后的csv导入失败的问题
+- ID1000180，解决usint导出l5x时报错的问题
+- ID1000184, 临时修改解决导入tag错误
+- ID1000167，修改趋势图在run状态下关闭软件没有提示的问题
+- ID1000166，修改趋势图在run状态下执行go offine没有提示的问题
+- ID1000170，修改Cross Reference中的Line比实际位置少了一行的问题
+- ID1000147，修改JSR跳转例程时，缺少自动补全的问题
+- ID1000178，解决修改自定义数据类型后，MonitorTag界面异常的问题
+- ID1000177，解决批量测试软件下载导致plc挂掉的问题
+- ID1000164，修改梯形图中添加指令，显示变乱的问题
+- ID1000163，修改梯形图中拖到tag，软件闪退的问题
+- ID1000105，梯形图中Controller下的Tag，tooltip修改为不显示Usage
+- ID1000162，解决打开AOI的logic后，导入AOI，软件闪退的问题
+- ID1000176，轴log修改为24小时制
+- ID1000175，解决离线新增或者修改fb里的标签会使软件卡死的问题
+
+v1.0.115.22244 (2022.9.1)
+
++ 梯形图中增加枚举编辑框
++ 完善jsr参数自动补全功能
++ 完善滤波类型、fbd_math、string数据l5x到json的转化
+- ID1000142，命名规范完善
+- ID1000165，调整轴log列宽
+- ID1000158，修改datatype输入崩溃的问题
+- 添加trend运行中关闭弹窗提醒
+- ID100125，解决点击Error窗口中的错误，软件闪退
+- ID1000119，解决AOI的显示问题
+- ID1000119，梯形图中指令参数缺失的问题
+- ID1000152，修改bool值显示不正确
+- AB若Tag勾选为Constant，则Value会有图标提示(添加Monitor部分的图标)，问题1415
+- 修改axis类型比较
+- ID1000145，导出L5X时，MESSAGE类型添加DestinationTag属性
+- 梯形图中完善枚举类型的tooltip
+- 梯形图中完善control类型的tooltip
+- 修改MSG指令配置窗口中的source element和destination element的tag没有被导入的问题
+- 修改st立即数自动补全
+- 修改st关闭时导致卡死的问题
+
+v1.0.114.22237 (2022.8.25)
+
++ 完善编译信息
++ 开发在线时program中新建tag的功能
++ 完善st自动补全
++ 完善st代码补全
++ 完善st结构体自动补全
+- 修改关闭st时卡死的问题
+- 修改plc属性中时间显示不是24小时格式的问题，ID1000138
+- 梯形图中增加axis，group，msg，cam等的属性按钮
+- 修改先输入结构体类型，再从中间点击删除键时，光标会跳转到末尾的问题
+- 修改右键Tag(修改Tag的Style)，点击Apply，显示形式不会立即刷新的问题
+- 修改自动补全提示没有排序的问题
+- 修改输入汉字时，显示刷新有延时的问题
+- 修改数字开始输入时，自动补全会失效的问题
+- 修改进行过一次在线编辑后，不点击Edit，也能进行编辑的问题
+- 修改在线编辑时语法错误，此时点击Finalize后，上方编辑按钮都无法选中的问题
+- 修改打开工程中的AOI属性窗口，软件闪退的问题
+- 修改使用GSV和SSV的Class name为Axis，Instace name选择tag中可选择的tag还包含除了轴之外的数据类型的tag，问题1139
+- 梯形图中增加对DDT、FBC的支持，问题1420
+- 新建梯形图后保存报错的问题
+- 修改常用的且只能用于实轴的GSV和SSV参数，对虚轴使用软件上不会提示报错的问题，问题1138
+
+v1.0.113.22234 (2022.8.22)
+
++ 梯形图指令修改，增加对大小写的支持
++ 完善含Control的指令的显示
+- 修改工具栏消失问题，问题1119
+- 修改L5X转json，部分Tag的Value丢失，问题1414
+- 修改st框选后可能出现空白的情况
+- st添加routine上下文菜单
+- 修改删除quickwatch中tag闪退问题，问题1422
+- 修改program批量导入导出功能，问题1334
+- 梯形图中增加对bit为整型的某位时，越界问题的处理
+- VerifyRung时，增加行号信息，
+- 添加自定义string导出功能，问题1364
+- 修改自定义string转换问题，问题1414
+- 修改在线编辑被JSR调用的例程，编辑时左侧仍有绿色运行标识，问题1143
+- 修改添加program卡死问题
+- 梯形图中增加索引为tag的解析，ID1000099
+- 优化字符串比较性能，问题1335
+- 修改trend name校验规则（大小写），问题1335
+
+v1.0.113.22229 (2022.8.17)
+
++ 实现梯形图中修改指令
++ 完善梯形图中aoi右侧状态显示
++ st右键中添加trend tag
++ 增加对梯形图的Verify
++ 在线时梯形图中增加拖拽限制
+- 修改aoi属性窗口的Parameter/Local Tag界面，在没有输入name的情况下，修改其它属性并提交，软件崩溃的问题，问题1404，
+- 修改在线情况下，工程中program下的例程没有绿色运行标识，问题1298
+- 增加立即运行效果，问题1335
+- 修改轴属性窗口大小，问题1235
+- l5x转json中增加CONTROL类型解析内容，问题1420
+- l5x转json中, 修改string数值转换失败的问题，问题1414
+- l5x转json中增加Counter类型的解析，问题1407
+- 解决edit tag中不能粘贴数组类型的datatype的问题，问题958
+- 解决软件在线时依旧可以修改控制器类型问题，问题1406
+- 解决导入of4失败的问题
+- l5x转json中增加Timer类型的解析，问题1410
+- 完善梯形图中msg指令右侧状态显示
+- 修改Error窗口中的序号出现错乱的情况，问题1392
+- 修改Error窗口中的Serach选项会出现重叠的情况，问题1393
+- 修改导入program，无法在st下监控变量的问题，问题1361
+- 修改Program和AOI下导出tag会报错的问题，问题1398
+- 修改aoi中创建fbd打开崩溃，问题1401
+- 继续完善aoi部分，问题1351
+- 修改tag表达式解析，问题1396
+- 导出l5x时添加Controller的Description，问题1395
+- 解决右键copy崩溃，问题1257
+- 解决aoi中新建ld和fbd打开崩溃问题，问题1401
+- 修改右键Parameters and local tags点击export tags报错的问题，问题1398
+- 修改导入l5x时，空模块命名重名的问题，问题1163
+- 修改UDT进行Insert Member，但不填入Name及类型，此时点击Apply，ICS不会提示错误的问题，问题1359
+- 修改在ST中使用新增的Member，Member的Display显示’？？‘的问题，问题1358
+- 暂时屏蔽多语言功能
+- 梯形图语法分析完善对MATC的处理，问题1312
+- 修改离线下io模块不显示inhibit图标的问题，问题1397
+- 修改导入模块错误，问题1363
+- 完善运动相关指令的右侧状态显示，问题1310
+- 修改upload后模块状态图标没有变化的问题，问题1320
+- 添加GoToFaults功能，问题1370
+- 修改tag属性更改时卡住的问题
+- 修改在线时仍然可以使用快捷键Ctrl+Z和Ctrl+Y（Undo和Redo）更改代码，问题1383
+- 解决save时等待时间长的问题，问题1378
+- 解决jsr死循环问题，问题1377
+- 导出l5x时，删除st中多余的换行符
+- 完善cross reference功能，问题1153
+- 解决st中右键tag崩溃问题，问题1375
+
+v1.0.113.22222 (2022.8.10)
+
++ 完善st语法
++ 新建自定义类型中添加member操作
++ 添加PLC的major faults功能
++ 完善find in routine功能
++ 编译调整为O1优化
++ 实现梯形图中tag和值的tooltips
++ 梯形图完善对TOF、RTO、CTD的显示
++ 添加PLC属性窗口中时间的显示
++ 完善在线编辑按钮的状态
+
+- 完善梯形图中RET的分析，以及修改JSR，RET，SBR渲染不正确的问题，问题1297
+- 增加导入自定义类型时重名检测，问题1301
+- 修改在monitor tag中重命名aoi数组tag时，aoi的logic出现代码错乱的问题，问题1246
+- 修改导出l5x时，aoi中包含bool数组导出错误的问题，问题1311
+- 修改导出l5x时，st代码格式错误的问题，问题1322
+- 修改gsv语法错误的问题，问题1331
+- 修改aoi的parameter排序无效的问题，问题1245
+- 修改monitor/edit tag中切换焦点问题，问题1326，1337
+- 修改PositionScaling改变时，position loop中的部分属性重置的问题，问题1349
+- 增加error和search窗口自动显示，问题1329
+- 修改梯形图在未知指令（错误指令）时显示崩溃问题
+- 修改tag在排序时崩溃的问题，问题1350
+- Description修改支持换行，问题1351
+- 修改模块拷贝时默认的ip地址，问题1287
+- 修改go to cross出现的闪退，问题1321
+- 修改在线时，梯形图中OTE的显示问题，问题1307
+- 修改反复点击在线编辑按钮闪退问题，问题1338
+- 修改aoi重命名后，引用类型名称没有变化的问题，问题1283
+- 修改upload取消后，st中不能监控数据的问题，问题1347
+- 尝试修改st编辑中闪退的问题
+- 修改aoi中使用constant提示错误的问题，问题1291
+- 修改aoi中inout类型为自定义string提示错误的问题，问题1290
+- 修改删除tag后，routin没有提示错误的问题，问题1339
+- 修改real值比较的语法错误，问题1332
+- 修改aoi属性窗口，在线后离线不可编辑问题，问题1150
+- 输出窗口增加序号和清除按钮，问题1263
+- 修改gsv+module，argrument list中Attribute Name显示为空的问题，问题1218
+- 修改轴属性窗口关闭后，轴log缺失的问题，问题1323
+- 修改aoi tag属性窗口在未修改关闭时的提示问题，问题1333
+- 修改Argument List弹出窗口异常，问题1271
+- 修改st右键菜单快捷键描述
+- 修改在打开plc属性窗口的情况下，第二次下载软件卡住的问题，问题1368
+- 修改导出模块时，默认文件名非法的问题，问题1362
+- 修改PLC两网口可设置同一网段的问题，问题1206
+- 完善梯形图中枚举类型的tooltip，问题1312
+- 修改COP/SWPB指令的Argument List为空，fbAxisMove的Argument List显示错误的问题，问题1336
+
+v1.0.113.22214 (2022.8.2)
++ 添加aoi类型tag的preserve功能
++ 添加梯形图在线时PowerRail状态
++ 完善轴log的Condition显示
++ 在trend中添加valuebar对比色
++ 继续完善梯形图语法分析
++ 改善编译器卡顿问题
++ 重构aoi的new tag窗口
+
+- 修改ip地址输入框问题，问题1273
+- 在线时，禁止修改aoi的默认值，问题1281
+- 支持鼠标上下键操作，问题1270
+
+v1.0.112.22209 (2022.7.28)
++ 添加eip设备类型图标
++ 添加utd类型tag的preserve功能
++ 添加轴log显示
++ ssv，gsv枚举更新
++ 添加梯形图语法分析
++ monitor tag中数据更新周期调整为350ms
++ 增加双ip显示
++ 兼容特殊符号路径
++ 优化upload过程
++ 优化save过程，去掉编译
++ 更换主界面图标
++ monitor中添加默认排序
++ 添加梯形图工具栏的tooltips
++ 添加对D1S11，D1S15，D1S30，D1S70的支持
++ 添加梯形图中routine的运行状态
+
+- 修改导出l5x时，string导出的问题，问题1253
+- 修改save as默认路径问题，问题1218
+- 修改梯形图导出，问题1233
+- 修改导出CSV文件中的description和redix的值
+- 增加在线时，禁用PLC时间调整
+- 修改右键udt数组，不能goto cross reference，问题1202 
+- 增加在线时，禁用部分轴属性功能
+- 增加在线时，禁用模块的Inhibited选项
+- 增加在线时，禁止tag属性修改和delete
+- 增加在线时，禁用program和aoi右键tag，以及限定new tag的controller范围
+- 修改代码错乱问题，问题1220
+- 修改导出l5x时，aoi和udt导出错误，问题1031
+- 修改st中数值监控的问题
+- 修改导出l5x时，CommutationOffset和InverterSupport的值，问题1195，1197
+- 增加导出l5x时，tag的ExternalAccess属性
+- 修改Cross Reference界面中Name排序问题，问题1154
+- 修改交叉索引数组成员功能不全的问题，问题1184
+- 增加在线时，禁用new string和import string，问题1142
+- 修改无法导入program的问题，问题1179
+- 修改search存在的问题
+- 修改aoi监控的排序问题
+- 修改cop提示错误，问题1165
+- 增加在线时，禁用new routine和import routine，问题1140
+- 修改l5x导入时，bool数组无法导入数值的问题，问题1168
+- 修改查询功能存在的问题
+- 修改导出l5x时，UseAsFolder="true"的问题，问题1088
+- 修改导出l5x时axis内容不正确的问题，问题1161
+
+v1.0.111.22193 (2022.7.12)
+
++ 增加新功能
+- 修复问题xxx

@@ -1,0 +1,14 @@
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.GuiTest.exe.config
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.GuiTest.exe
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.GuiTest.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\ICSStudio\Test\ICSStudio.GuiTest\obj\Debug\ICSStudio.GuiTest.csprojResolveAssemblyReference.cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\ICSStudio\Test\ICSStudio.GuiTest\obj\Debug\Axis\GeneralPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\ICSStudio\Test\ICSStudio.GuiTest\obj\Debug\Axis\MotorPanel.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\ICSStudio\Test\ICSStudio.GuiTest\obj\Debug\Axis\GeneralPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\ICSStudio\Test\ICSStudio.GuiTest\obj\Debug\Axis\MotorPanel.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\ICSStudio\Test\ICSStudio.GuiTest\obj\Debug\ICSStudio.GuiTest_MarkupCompile.cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\ICSStudio\Test\ICSStudio.GuiTest\obj\Debug\ICSStudio.GuiTest.g.resources
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\ICSStudio\Test\ICSStudio.GuiTest\obj\Debug\ICSStudio.GuiTest.Properties.Resources.resources
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\ICSStudio\Test\ICSStudio.GuiTest\obj\Debug\ICSStudio.GuiTest.csproj.GenerateResource.Cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\ICSStudio\Test\ICSStudio.GuiTest\obj\Debug\ICSStudio.GuiTest.exe
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\ICSStudio\Test\ICSStudio.GuiTest\obj\Debug\ICSStudio.GuiTest.pdb

@@ -1,0 +1,34 @@
+﻿<Window x:Class="ICSStudio.UIServicesPackage.View.DateTimeBrowser"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ICSStudio.UIServicesPackage.View"
+             xmlns:dateTimePicker="clr-namespace:ICSStudio.Gui.DateTimePicker;assembly=ICSStudio.Gui"
+             xmlns:gui="clr-namespace:ICSStudio.Gui;assembly=ICSStudio.Gui"
+             mc:Ignorable="d"  gui:DialogCloser.DialogResult="{Binding DialogResult}"
+             Width="366" Height="158" ResizeMode="NoResize" Title="Date and Time Broser - Controller Date and Time">
+    <Grid>
+         <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+             <TextBlock Text="Date and Time:   "></TextBlock>
+            <dateTimePicker:DatePickerView MaxWidth="120" Height="25" SelectedDate="{Binding Date}"></dateTimePicker:DatePickerView>
+            <Border BorderBrush="Black" BorderThickness="1" Margin="5,0,0,0">
+                <dateTimePicker:TimePicker Hour="{Binding Hour,Mode=TwoWay}" Minute="{Binding Minute,Mode=TwoWay}" 
+                                           Second="{Binding Second,Mode=TwoWay}" Width="90" Height="25"></dateTimePicker:TimePicker>
+            </Border>
+        </StackPanel>   
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Height" Value="20"></Setter>
+                    <Setter Property="MinWidth" Value="50"></Setter>
+                    <Setter Property="Width" Value="70"></Setter>
+                    <Setter Property="Margin" Value="10"></Setter>
+                </Style>
+            </StackPanel.Resources>
+            <Button Content="Ok" Command="{Binding OkCommand}" IsDefault="True"></Button>
+            <Button Content="Cancel" IsCancel="True" Command="{Binding CancelCommand}"></Button>
+            <Button Content="Help"></Button>
+        </StackPanel>
+    </Grid>
+</Window>

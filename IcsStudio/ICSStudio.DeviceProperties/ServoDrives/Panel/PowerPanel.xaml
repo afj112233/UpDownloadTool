@@ -1,0 +1,151 @@
+﻿<UserControl
+    x:Class="ICSStudio.DeviceProperties.ServoDrives.Panel.PowerPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="clr-namespace:ICSStudio.Gui.Converters;assembly=ICSStudio.Gui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:objects="clr-namespace:ICSStudio.Cip.Objects;assembly=ICSStudio.Cip"
+    Width="660"
+    HorizontalAlignment="Left"
+    d:DesignHeight="300"
+    d:DesignWidth="6600"
+    IsEnabled="{Binding Enable}"
+    mc:Ignorable="d">
+    <Control.Resources>
+        <converters:EnumBooleanConverter x:Key="EnumBooleanConverter" />
+    </Control.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="180" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="0"
+            Text="{DynamicResource PowerStructure}" />
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="1"
+            Text="{Binding PowerStructure, FallbackValue=2198-H015-ERS}" />
+        <Button
+            Grid.Row="0"
+            Grid.Column="3"
+            Command="{Binding AdvancedCommand}"
+            Content="{DynamicResource Advanced}" />
+
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            Text="{Binding Description, FallbackValue=......}"
+            TextTrimming="WordEllipsis"
+            ToolTip="{Binding Description}" />
+
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="0"
+            Text="{DynamicResource Voltage}"
+            Visibility="{Binding ConverterACInputVoltageVisibility}" />
+        <ComboBox
+            Grid.Row="2"
+            Grid.Column="1"
+            DisplayMemberPath="DisplayName"
+            ItemsSource="{Binding VoltageSource}"
+            SelectedValue="{Binding Voltage}"
+            SelectedValuePath="Value"
+            Visibility="{Binding ConverterACInputVoltageVisibility}" />
+
+        <TextBlock
+            Grid.Row="3"
+            Grid.Column="0"
+            Text="{DynamicResource ACInputPhasing}"
+            Visibility="{Binding ConverterACInputPhasingVisibility}" />
+        <ComboBox
+            Grid.Row="3"
+            Grid.Column="1"
+            DisplayMemberPath="DisplayName"
+            ItemsSource="{Binding ACInputPhasingSource}"
+            SelectedValue="{Binding ACInputPhasing}"
+            SelectedValuePath="Value"
+            Visibility="{Binding ConverterACInputPhasingVisibility}" />
+
+        <TextBlock
+            Grid.Row="4"
+            Grid.Column="0"
+            Text="{DynamicResource BusConfiguration}" />
+        <ComboBox
+            Grid.Row="4"
+            Grid.Column="1"
+            DisplayMemberPath="DisplayName"
+            ItemsSource="{Binding BusConfigurationSource}"
+            SelectedValue="{Binding BusConfiguration}"
+            SelectedValuePath="Value" />
+
+        <TextBlock
+            Grid.Row="5"
+            Grid.Column="0"
+            Text="{DynamicResource BusSharingGroup}" />
+        <ComboBox
+            Grid.Row="5"
+            Grid.Column="1"
+            DisplayMemberPath="DisplayName"
+            IsEnabled="{Binding BusSharingGroupEnabled}"
+            ItemsSource="{Binding BusSharingGroupSource}"
+            SelectedValue="{Binding BusSharingGroup}"
+            SelectedValuePath="Value" />
+
+        <TextBlock
+            Grid.Row="6"
+            Grid.Column="0"
+            Text="{DynamicResource BusRegulatorAction}" />
+        <ComboBox
+            Grid.Row="6"
+            Grid.Column="1"
+            DisplayMemberPath="DisplayName"
+            ItemsSource="{Binding BusRegulatorActionSource}"
+            SelectedValue="{Binding BusRegulatorAction}"
+            SelectedValuePath="Value" />
+
+        <TextBlock
+            Grid.Row="7"
+            Grid.Column="0"
+            Text="{DynamicResource ShuntRegulatorResistorType}" />
+        <StackPanel
+            Grid.Row="7"
+            Grid.Column="1"
+            IsEnabled="{Binding ShuntRegulatorResistorTypeEnabled}"
+            Orientation="Horizontal">
+            <RadioButton Content="{DynamicResource External}" IsChecked="{Binding ShuntRegulatorResistorType, Converter={StaticResource EnumBooleanConverter}, ConverterParameter={x:Static objects:ShuntRegulatorResistorType.External}}" />
+            <RadioButton Content="{DynamicResource Internal}" IsChecked="{Binding ShuntRegulatorResistorType, Converter={StaticResource EnumBooleanConverter}, ConverterParameter={x:Static objects:ShuntRegulatorResistorType.Internal}}" />
+        </StackPanel>
+
+        <TextBlock
+            Grid.Row="8"
+            Grid.Column="0"
+            Text="{DynamicResource ExternalShunt}" />
+        <ComboBox
+            Grid.Row="8"
+            Grid.Column="1"
+            DisplayMemberPath="DisplayName"
+            IsEnabled="{Binding ExternalShuntRegulatorIDEnabled}"
+            ItemsSource="{Binding ExternalShuntRegulatorIDSource}"
+            SelectedValue="{Binding ExternalShuntRegulatorID}"
+            SelectedValuePath="Value" />
+
+    </Grid>
+</UserControl>

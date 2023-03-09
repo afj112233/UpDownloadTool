@@ -1,0 +1,121 @@
+﻿<Window
+    x:Class="ICSStudio.Gui.Recover.RecoverDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:gui="clr-namespace:ICSStudio.Gui"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:command="http://www.galasoft.ch/mvvmlight"
+    Title="ICSStudio Project Recovery"
+    Width="600"
+    Height="320"
+    d:DesignHeight="300"
+    d:DesignWidth="300"
+    gui:DialogCloser.DialogResult="{Binding DialogResult}"
+    ResizeMode="NoResize"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style TargetType="TextBlock">
+                <Setter Property="VerticalAlignment" Value="Top" />
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="Width" Value="100" />
+                <Setter Property="Margin" Value="2" />
+                <Setter Property="Height" Value="23" />
+            </Style>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="45" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="45" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.ColumnSpan="2" Orientation="Horizontal">
+            <Image Source="Image/Exclamation.PNG" />
+            <TextBlock VerticalAlignment="Center" Text="ICS Studio has detected a recovery file associated with the project being opened.&#x0a;Choose how to proceed from the following options..." />
+        </StackPanel>
+
+
+        <RadioButton
+            Grid.Row="1"
+            Grid.Column="0"
+            Content="Recover:"
+            GroupName="group1"
+            IsChecked="{Binding IsRecover}">
+        </RadioButton>
+        <TextBlock Tag="1"
+            Grid.Row="1"
+            Grid.Column="1"
+            Text="Open the recovery project file.Choosing this option will attempt to recover unsaved&#x0a;changes you've made to the project.">
+            <i:Interaction.Triggers>
+            <i:EventTrigger EventName="PreviewMouseDown">
+                <command:EventToCommand Command="{Binding ClickCommand}" PassEventArgsToCommand="True"/>
+            </i:EventTrigger>
+                </i:Interaction.Triggers>
+        </TextBlock>
+
+        <RadioButton
+            Grid.Row="2"
+            Grid.Column="0"
+            Content="Save As:"
+            GroupName="group1"
+            IsChecked="{Binding IsSave}" />
+        <TextBlock Tag="2"
+            Grid.Row="2"
+            Grid.Column="1"
+            Text="Save the recovery project file to a different project file.Choosing this option allows&#x0a;you to inspect the recovered project's contents before overwriting the most recently&#x0a;saved project file.">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="PreviewMouseDown">
+                    <command:EventToCommand Command="{Binding ClickCommand}" PassEventArgsToCommand="True"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </TextBlock>
+
+        <RadioButton
+            Grid.Row="3"
+            Grid.Column="0"
+            Content="Continue:  "
+            GroupName="group1"
+            IsChecked="{Binding IsContinue}" />
+        <TextBlock Tag="3"
+                   Grid.Row="3"
+                   Grid.Column="1"
+                   Text="Ignore the recover project file and open the most recently saved project file.&#x0a;Choosing this option could result in a loss of work.">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="PreviewMouseDown">
+                    <command:EventToCommand Command="{Binding ClickCommand}" PassEventArgsToCommand="True"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </TextBlock>
+
+        <CheckBox
+            Grid.Row="4"
+            Grid.Column="1"
+            Content="Discard recovery project file"
+            IsChecked="{Binding IsDiscard}"
+            IsEnabled="{Binding IsContinue}" />
+
+        <StackPanel
+            Grid.Row="5"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            HorizontalAlignment="Right"
+            Orientation="Horizontal">
+            <Button Command="{Binding OKCommand}" Content="OK" IsDefault="True"/>
+            <Button Command="{Binding CancelCommand}" Content="Cancel" IsCancel="True" />
+        </StackPanel>
+    </Grid>
+</Window>

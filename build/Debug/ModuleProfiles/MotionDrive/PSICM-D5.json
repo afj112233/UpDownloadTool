@@ -1,0 +1,5787 @@
+{
+  "ModuleTypes": [
+    {
+      "VendorID": 5,
+      "ProductType": 37,
+      "ProductCode": 46,
+      "Variants": [
+        {
+          "MajorRev": 4,
+          "ModuleID": "CIP_Drive",
+          "ModuleDefinitionID": "CIP_Drive3",
+          "Default": true
+        }
+      ]
+    },
+    {
+      "VendorID": 5,
+      "ProductType": 37,
+      "ProductCode": 47,
+      "Variants": [
+        {
+          "MajorRev": 4,
+          "ModuleID": "CIP_Drive",
+          "ModuleDefinitionID": "CIP_Drive3",
+          "Default": true
+        }
+      ]
+    },
+    {
+      "VendorID": 5,
+      "ProductType": 37,
+      "ProductCode": 48,
+      "Variants": [
+        {
+          "MajorRev": 4,
+          "ModuleID": "CIP_Drive",
+          "ModuleDefinitionID": "CIP_Drive3",
+          "Default": true
+        }
+      ]
+    },
+    {
+      "VendorID": 5,
+      "ProductType": 37,
+      "ProductCode": 68,
+      "Variants": [
+        {
+          "MajorRev": 4,
+          "ModuleID": "CIP_Drive",
+          "ModuleDefinitionID": "CIP_Drive3",
+          "Default": true
+        }
+      ]
+    },
+    {
+      "VendorID": 5,
+      "ProductType": 37,
+      "ProductCode": 58,
+      "Variants": [
+        {
+          "MajorRev": 4,
+          "ModuleID": "CIP_Drive",
+          "ModuleDefinitionID": "CIP_Drive3_1",
+          "Default": true
+        }
+      ]
+    },
+    {
+      "VendorID": 5,
+      "ProductType": 37,
+      "ProductCode": 59,
+      "Variants": [
+        {
+          "MajorRev": 4,
+          "ModuleID": "CIP_Drive",
+          "ModuleDefinitionID": "CIP_Drive3_1",
+          "Default": true
+        }
+      ]
+    },
+    {
+      "VendorID": 5,
+      "ProductType": 37,
+      "ProductCode": 60,
+      "Variants": [
+        {
+          "MajorRev": 4,
+          "ModuleID": "CIP_Drive",
+          "ModuleDefinitionID": "CIP_Drive3_1",
+          "Default": true
+        }
+      ]
+    },
+    {
+      "VendorID": 5,
+      "ProductType": 37,
+      "ProductCode": 61,
+      "Variants": [
+        {
+          "MajorRev": 4,
+          "ModuleID": "CIP_Drive",
+          "ModuleDefinitionID": "CIP_Drive3_1",
+          "Default": true
+        }
+      ]
+    },
+    {
+      "VendorID": 5,
+      "ProductType": 37,
+      "ProductCode": 62,
+      "Variants": [
+        {
+          "MajorRev": 4,
+          "ModuleID": "CIP_Drive",
+          "ModuleDefinitionID": "CIP_Drive3_1",
+          "Default": true
+        }
+      ]
+    },
+    {
+      "VendorID": 5,
+      "ProductType": 37,
+      "ProductCode": 63,
+      "Variants": [
+        {
+          "MajorRev": 4,
+          "ModuleID": "CIP_Drive",
+          "ModuleDefinitionID": "CIP_Drive3_1",
+          "Default": true
+        }
+      ]
+    },
+    {
+      "VendorID": 5,
+      "ProductType": 37,
+      "ProductCode": 49,
+      "Variants": [
+        {
+          "MajorRev": 4,
+          "ModuleID": "CIP_Drive",
+          "ModuleDefinitionID": "CIP_Drive3",
+          "Default": true
+        }
+      ]
+    },
+    {
+      "VendorID": 5,
+      "ProductType": 37,
+      "ProductCode": 50,
+      "Variants": [
+        {
+          "MajorRev": 4,
+          "ModuleID": "CIP_Drive",
+          "ModuleDefinitionID": "CIP_Drive3",
+          "Default": true
+        }
+      ]
+    },
+    {
+      "VendorID": 5,
+      "ProductType": 37,
+      "ProductCode": 69,
+      "Variants": [
+        {
+          "MajorRev": 4,
+          "ModuleID": "CIP_Drive",
+          "ModuleDefinitionID": "CIP_Drive3_2",
+          "Default": true
+        }
+      ]
+    },
+    {
+      "VendorID": 5,
+      "ProductType": 37,
+      "ProductCode": 64,
+      "Variants": [
+        {
+          "MajorRev": 4,
+          "ModuleID": "CIP_Drive",
+          "ModuleDefinitionID": "CIP_Drive3_2",
+          "Default": true
+        }
+      ]
+    },
+    {
+      "VendorID": 5,
+      "ProductType": 37,
+      "ProductCode": 65,
+      "Variants": [
+        {
+          "MajorRev": 4,
+          "ModuleID": "CIP_Drive",
+          "ModuleDefinitionID": "CIP_Drive3_2",
+          "Default": true
+        }
+      ]
+    },
+    {
+      "VendorID": 5,
+      "ProductType": 37,
+      "ProductCode": 66,
+      "Variants": [
+        {
+          "MajorRev": 4,
+          "ModuleID": "CIP_Drive",
+          "ModuleDefinitionID": "CIP_Drive3_2",
+          "Default": true
+        }
+      ]
+    },
+    {
+      "VendorID": 5,
+      "ProductType": 37,
+      "ProductCode": 67,
+      "Variants": [
+        {
+          "MajorRev": 4,
+          "ModuleID": "CIP_Drive",
+          "ModuleDefinitionID": "CIP_Drive3_2",
+          "Default": true
+        }
+      ]
+    },
+    {
+      "VendorID": 5,
+      "ProductType": 37,
+      "ProductCode": 51,
+      "Variants": [
+        {
+          "MajorRev": 4,
+          "ModuleID": "CIP_Drive",
+          "ModuleDefinitionID": "CIP_Drive3",
+          "Default": true
+        }
+      ]
+    },
+    {
+      "VendorID": 5,
+      "ProductType": 37,
+      "ProductCode": 52,
+      "Variants": [
+        {
+          "MajorRev": 4,
+          "ModuleID": "CIP_Drive",
+          "ModuleDefinitionID": "CIP_Drive3",
+          "Default": true
+        }
+      ]
+    },
+    {
+      "VendorID": 5,
+      "ProductType": 37,
+      "ProductCode": 53,
+      "Variants": [
+        {
+          "MajorRev": 4,
+          "ModuleID": "CIP_Drive",
+          "ModuleDefinitionID": "CIP_Drive3",
+          "Default": true
+        }
+      ]
+    },
+    {
+      "VendorID": 5,
+      "ProductType": 37,
+      "ProductCode": 54,
+      "Variants": [
+        {
+          "MajorRev": 4,
+          "ModuleID": "CIP_Drive",
+          "ModuleDefinitionID": "CIP_Drive3",
+          "Default": true
+        }
+      ]
+    },
+    {
+      "VendorID": 5,
+      "ProductType": 37,
+      "ProductCode": 55,
+      "Variants": [
+        {
+          "MajorRev": 4,
+          "ModuleID": "CIP_Drive",
+          "ModuleDefinitionID": "CIP_Drive3",
+          "Default": true
+        }
+      ]
+    },
+    {
+      "VendorID": 5,
+      "ProductType": 37,
+      "ProductCode": 56,
+      "Variants": [
+        {
+          "MajorRev": 4,
+          "ModuleID": "CIP_Drive",
+          "ModuleDefinitionID": "CIP_Drive3",
+          "Default": true
+        }
+      ]
+    },
+    {
+      "VendorID": 5,
+      "ProductType": 37,
+      "ProductCode": 57,
+      "Variants": [
+        {
+          "MajorRev": 4,
+          "ModuleID": "CIP_Drive",
+          "ModuleDefinitionID": "CIP_Drive3",
+          "Default": true
+        }
+      ]
+    }
+  ],
+  "Modules": [
+    {
+      "ID": "CIP_Drive",
+      "SupportsReset": true,
+      "NumberOfInputs": 0,
+      "NumberOfOutputs": 0,
+      "DriverType": 1552,
+      "CIPObjectDefinesID": "ModuleCIPObjects"
+    }
+  ],
+  "ModuleDefinitions": [
+    {
+      "ID": "CIP_Drive",
+      "StringsID": "ModuleDefinitionStrings",
+      "Connection": {
+        "StringID": 1,
+        "Choices": [
+          {
+            "ID": "MotionSyncAndMotionDiagnostics",
+            "StringID": 2,
+            "ConfigID": 101
+          }
+        ]
+      }
+    },
+    {
+      "ID": "CIP_Drive3",
+      "StringsID": "ModuleDefinitionStrings",
+      "Connection": {
+        "StringID": 1,
+        "Choices": [
+          {
+            "ID": "MotionSyncAndMotionDiagnostics",
+            "StringID": 2,
+            "ConfigID": 102
+          }
+        ]
+      }
+    },
+    {
+      "ID": "CIP_Drive3_1",
+      "StringsID": "ModuleDefinitionStrings",
+      "Connection": {
+        "StringID": 1,
+        "Choices": [
+          {
+            "ID": "MotionSyncAndMotionDiagnostics",
+            "StringID": 2,
+            "ConfigID": 103
+          }
+        ]
+      }
+    },
+    {
+      "ID": "CIP_Drive3_2",
+      "StringsID": "ModuleDefinitionStrings",
+      "Connection": {
+        "StringID": 1,
+        "Choices": [
+          {
+            "ID": "MotionSyncAndMotionDiagnostics",
+            "StringID": 2,
+            "ConfigID": 104
+          }
+        ]
+      }
+    }
+  ],
+  "ConnectionConfigDefinitions": [
+    {
+      "ConfigID": 101,
+      "ConfigTag": {
+        "ValueID": "AB:CIP_Drive:C:1",
+        "Instance": 2,
+        "DataType": "AB:CIP_Drive:C:1",
+        "Enums": [
+          "ExternalShuntEnum",
+          "BusRegulatorActionEnum",
+          "ACInputPhasingEnum",
+          "ACInputVoltageEnum",
+          "PWMFrequencyEnum",
+          "BusConfigurationEnum",
+          "BusSharingGroupEnum"
+        ]
+      },
+      "Connections": [
+        "Motion_Diagnostics2",
+        "Motion_Sync"
+      ]
+    },
+    {
+      "ConfigID": 102,
+      "ConfigTag": {
+        "ValueID": "AB:CIP_Drive:C:2",
+        "Instance": 3,
+        "DataType": "AB:CIP_Drive:C:2",
+        "Enums": [
+          "ExternalShuntEnum",
+          "BusRegulatorActionEnum",
+          "ACInputPhasingEnum",
+          "ACInputVoltageEnum",
+          "PWMFrequencyEnum",
+          "BusConfigurationEnum",
+          "BusSharingGroupEnum",
+          "DigitalInputEnum1",
+          "DigitalInputEnumUnassigned",
+          "DigitalInputEnum3"
+        ]
+      },
+      "Connections": [
+        "Motion_Diagnostics2",
+        "Motion_Sync"
+      ]
+    },
+    {
+      "ConfigID": 103,
+      "ConfigTag": {
+        "ValueID": "ICON:CIP_Drive:C:2",
+        "Instance": 3,
+        "DataType": "ICON:CIP_Drive:C:2",
+        "Enums": [
+          "ExternalShuntEnum",
+          "BusRegulatorActionEnum",
+          "ACInputPhasingEnum",
+          "ACInputVoltageEnum",
+          "PWMFrequencyEnum",
+          "BusConfigurationEnum",
+          "BusSharingGroupEnum",
+          "DigitalInputEnum1",
+          "DigitalInputEnumUnassigned",
+          "DigitalInputEnum3"
+        ]
+      },
+      "Connections": [
+        "Motion_Diagnostics2",
+        "Motion_Sync"
+      ]
+    },
+    {
+      "ConfigID": 104,
+      "ConfigTag": {
+        "ValueID": "ICON:CIP_Drive:C:1",
+        "Instance": 3,
+        "DataType": "ICON:CIP_Drive:C:1",
+        "Enums": [
+          "ExternalShuntEnum",
+          "BusRegulatorActionEnum",
+          "PWMFrequencyEnum",
+          "BusConfigurationEnum",
+          "BusSharingGroupEnum",
+          "DigitalInputEnum1",
+          "DigitalInputEnumUnassigned",
+          "DigitalInputEnum3"
+        ]
+      },
+      "Connections": [
+        "Motion_Diagnostics2",
+        "Motion_Sync"
+      ]
+    }
+  ],
+  "ConnectionDefinitions": [
+    {
+      "ID": "Motion_Diagnostics2",
+      "Name": "MotionDiagnostics",
+      "Type": "DiagnosticInput",
+      "MinRPI": 1000,
+      "MaxRPI": 1000,
+      "RPI": 1000,
+      "Force0RPI": true,
+      "InputCxnPoint": 1,
+      "OutputCxnPoint": 1,
+      "InputTag": {
+        "DataType": "AB:Motion_Diagnostics:S:1"
+      }
+    },
+    {
+      "ID": "Motion_Sync",
+      "Name": "MotionSync",
+      "Type": "MotionSync",
+      "MinRPI": 1000,
+      "MaxRPI": 1000,
+      "RPI": 1000,
+      "Force0RPI": true,
+      "InputCxnPoint": 2,
+      "OutputCxnPoint": 2,
+      "InputTag": {
+        "DataType": "AB:Motion_Sync:I:0"
+      },
+      "OutputTag": {
+        "DataType": "AB:Motion_Sync:O:0"
+      }
+    }
+  ],
+  "DataTypeDefinitions": [
+    {
+      "Name": "AB:CIP_Drive:C:1",
+      "Class": "IO",
+      "Members": [
+        {
+          "Name": "CfgSize",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "CfgIDNum",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "ConfigRevNumber",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "BitHost",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "Pad1",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "DriveClassID",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "ConfigControl",
+          "DataType": "DINT",
+          "Dimension": 2,
+          "Hidden": true
+        },
+        {
+          "Name": "SyncThreshold",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "ControllerUpdateDelayHighLimit",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "ControllerUpdateDelayLowLimit",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "TimeSyncSupport",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "IntegralConverter",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "IntegralConverterBit",
+          "DataType": "BIT",
+          "Hidden": true,
+          "BitNumber": 0,
+          "Target": "IntegralConverter"
+        },
+        {
+          "Name": "InverterSupport",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "FWOptionBits",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "EnableTimingStatistics",
+          "DataType": "BIT",
+          "Hidden": true,
+          "BitNumber": 0,
+          "Target": "FWOptionBits"
+        },
+        {
+          "Name": "ResetTransmissionStatistics",
+          "DataType": "BIT",
+          "Hidden": true,
+          "BitNumber": 1,
+          "Target": "FWOptionBits"
+        },
+        {
+          "Name": "Pad2",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "DrivePowerStructureAxisID",
+          "DataType": "DINT",
+          "Dimension": 8,
+          "Hidden": true
+        },
+        {
+          "Name": "PWMFrequency",
+          "DataType": "INT",
+          "Dimension": 8,
+          "Hidden": true,
+          "Enum": "PWMFrequencyEnum"
+        },
+        {
+          "Name": "DutySelect",
+          "DataType": "SINT",
+          "Dimension": 8,
+          "Hidden": true
+        },
+        {
+          "Name": "BusConfiguration",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "BusConfigurationEnum"
+        },
+        {
+          "Name": "BusRegulatorAction",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "BusRegulatorActionEnum"
+        },
+        {
+          "Name": "ShuntRegulatorResistorType",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "ShuntRegulatorResistorTypeBit",
+          "DataType": "BIT",
+          "Hidden": true,
+          "BitNumber": 0,
+          "Target": "ShuntRegulatorResistorType"
+        },
+        {
+          "Name": "ConverterACInputPhasing",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "ACInputPhasingEnum"
+        },
+        {
+          "Name": "ConverterACInputVoltage",
+          "DataType": "INT",
+          "Hidden": true,
+          "Min": "0.0",
+          "Enum": "ACInputVoltageEnum"
+        },
+        {
+          "Name": "Pad3",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "BusVoltageSelect",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "BusSharingGroup",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "BusSharingGroupEnum"
+        },
+        {
+          "Name": "ExternalShuntRegulatorID",
+          "DataType": "INT",
+          "Hidden": true,
+          "Enum": "ExternalShuntEnum"
+        },
+        {
+          "Name": "RegenerativePowerLimit",
+          "DataType": "REAL",
+          "Hidden": true
+        },
+        {
+          "Name": "ExternalShuntPower",
+          "DataType": "REAL",
+          "Hidden": true
+        },
+        {
+          "Name": "ExternalShuntPulsePower",
+          "DataType": "REAL",
+          "Hidden": true
+        },
+        {
+          "Name": "ExternalBusCapacitance",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "100000.0"
+        },
+        {
+          "Name": "ExternalShuntResistance",
+          "DataType": "REAL",
+          "Hidden": true
+        },
+        {
+          "Name": "ConverterOvertemperatureUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "ConverterThermalOverloadUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "ConverterGroundUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0"
+        },
+        {
+          "Name": "BusRegulatorOvertemperatureUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "BusRegulatorThermalOverloadUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "BusOvervoltageUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "BusUndervoltageUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "100.0"
+        },
+        {
+          "Name": "ControlModuleOvertemperatureUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0"
+        },
+        {
+          "Name": "ConverterPrechargeOverloadUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0"
+        },
+        {
+          "Name": "NumberOfConfiguredAxes",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "Pad4",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "Pad5",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "FeedbackPortSelect",
+          "DataType": "SINT",
+          "Dimension": 32,
+          "Hidden": true,
+          "Min": "0",
+          "Max": "31"
+        },
+        {
+          "Name": "SelectedCardType",
+          "DataType": "INT",
+          "Dimension": 32,
+          "Hidden": true
+        },
+        {
+          "Name": "NumberConfigurableInputs",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "Pad6",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "PositionLoopDeviceUpdatePeriod",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "VelocityLoopDeviceUpdatePeriod",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "TorqueLoopDeviceUpdatePeriod",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "DigitalInputConfiguration",
+          "DataType": "SINT",
+          "Dimension": 32,
+          "Hidden": true
+        }
+      ]
+    },
+    {
+      "Name": "AB:CIP_Drive:C:2",
+      "Class": "IO",
+      "Members": [
+        {
+          "Name": "CfgSize",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "CfgIDNum",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "ConfigRevNumber",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "BitHost",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "Pad1",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "DriveClassID",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "ConfigControl",
+          "DataType": "DINT",
+          "Dimension": 2,
+          "Hidden": true
+        },
+        {
+          "Name": "SyncThreshold",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "ControllerUpdateDelayHighLimit",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "ControllerUpdateDelayLowLimit",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "TimeSyncSupport",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "Pad2",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "InverterSupport",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "FWOptionBits",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "EnableTimingStatistics",
+          "DataType": "BIT",
+          "Hidden": true,
+          "BitNumber": 0,
+          "Target": "FWOptionBits"
+        },
+        {
+          "Name": "ResetTransmissionStatistics",
+          "DataType": "BIT",
+          "Hidden": true,
+          "BitNumber": 1,
+          "Target": "FWOptionBits"
+        },
+        {
+          "Name": "Pad3",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "DrivePowerStructureAxisID",
+          "DataType": "DINT",
+          "Dimension": 8,
+          "Hidden": true
+        },
+        {
+          "Name": "RegenerativePowerLimit",
+          "DataType": "REAL",
+          "Dimension": 8,
+          "Hidden": true
+        },
+        {
+          "Name": "PWMFrequency",
+          "DataType": "INT",
+          "Dimension": 8,
+          "Hidden": true
+        },
+        {
+          "Name": "DutySelect",
+          "DataType": "SINT",
+          "Dimension": 8,
+          "Hidden": true
+        },
+        {
+          "Name": "BusRegulatorAction",
+          "DataType": "SINT",
+          "Dimension": 8,
+          "Hidden": true,
+          "Enum": "BusRegulatorActionEnum"
+        },
+        {
+          "Name": "BusConfiguration",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "BusConfigurationEnum"
+        },
+        {
+          "Name": "DemonstrationModeSelect",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "ShuntRegulatorResistorType",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "ShuntRegulatorResistorTypeBit",
+          "DataType": "BIT",
+          "Hidden": true,
+          "BitNumber": 0,
+          "Target": "ShuntRegulatorResistorType"
+        },
+        {
+          "Name": "ConverterACInputPhasing",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "ACInputPhasingEnum"
+        },
+        {
+          "Name": "ConverterACInputVoltage",
+          "DataType": "INT",
+          "Hidden": true,
+          "Min": "230",
+          "Max": "460",
+          "Enum": "ACInputVoltageEnum"
+        },
+        {
+          "Name": "Pad4",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "BusVoltageSelect",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "BusSharingGroup",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "BusSharingGroupEnum"
+        },
+        {
+          "Name": "ExternalShuntRegulatorID",
+          "DataType": "INT",
+          "Hidden": true,
+          "Enum": "ExternalShuntEnum"
+        },
+        {
+          "Name": "ExternalShuntPower",
+          "DataType": "REAL",
+          "Hidden": true
+        },
+        {
+          "Name": "ExternalShuntPulsePower",
+          "DataType": "REAL",
+          "Hidden": true
+        },
+        {
+          "Name": "ExternalBusCapacitance",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "ExternalShuntResistance",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "ConverterOvertemperatureUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "ConverterThermalOverloadUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "ConverterGroundUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "BusRegulatorOvertemperatureUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "BusRegulatorThermalOverloadUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "BusOvervoltageUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "BusUndervoltageUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "100.0"
+        },
+        {
+          "Name": "ControlModuleOvertemperatureUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "ConverterPrechargeOverloadUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "NumberOfConfiguredAxes",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "Pad5",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "Pad6",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "FeedbackPortSelect",
+          "DataType": "SINT",
+          "Dimension": 32,
+          "Hidden": true,
+          "Min": "0",
+          "Max": "31"
+        },
+        {
+          "Name": "SelectedCardType",
+          "DataType": "INT",
+          "Dimension": 32,
+          "Hidden": true
+        },
+        {
+          "Name": "NumberConfigurableInputs",
+          "DataType": "SINT",
+          "Dimension": 8,
+          "Hidden": true
+        },
+        {
+          "Name": "SourceOfConfigurableInputs",
+          "DataType": "SINT",
+          "Dimension": 8,
+          "Hidden": true
+        },
+        {
+          "Name": "Pad7",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "PositionLoopDeviceUpdatePeriod",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "VelocityLoopDeviceUpdatePeriod",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "TorqueLoopDeviceUpdatePeriod",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "DigitalInputConfiguration1_1",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnum1"
+        },
+        {
+          "Name": "DigitalInputConfiguration1_2",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnum1"
+        },
+        {
+          "Name": "DigitalInputConfiguration1_3",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnum1"
+        },
+        {
+          "Name": "DigitalInputConfiguration1_4",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnum1"
+        },
+        {
+          "Name": "DigitalInputConfiguration1_5",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnum1"
+        },
+        {
+          "Name": "DigitalInputConfiguration1_6",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnum1"
+        },
+        {
+          "Name": "DigitalInputConfiguration1_7",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnum1"
+        },
+        {
+          "Name": "DigitalInputConfiguration1_8",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnum1"
+        },
+        {
+          "Name": "DigitalInputConfiguration2_1",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration2_2",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration2_3",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration2_4",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration2_5",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration2_6",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration2_7",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration2_8",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration3_1",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnum3"
+        },
+        {
+          "Name": "DigitalInputConfiguration3_2",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnum3"
+        },
+        {
+          "Name": "DigitalInputConfiguration3_3",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnum3"
+        },
+        {
+          "Name": "DigitalInputConfiguration3_4",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnum3"
+        },
+        {
+          "Name": "DigitalInputConfiguration3_5",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnum3"
+        },
+        {
+          "Name": "DigitalInputConfiguration3_6",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnum3"
+        },
+        {
+          "Name": "DigitalInputConfiguration3_7",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnum3"
+        },
+        {
+          "Name": "DigitalInputConfiguration3_8",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnum3"
+        },
+        {
+          "Name": "DigitalInputConfiguration4_1",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration4_2",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration4_3",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration4_4",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration4_5",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration4_6",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration4_7",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration4_8",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration5_1",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration5_2",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration5_3",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration5_4",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration5_5",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration5_6",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration5_7",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration5_8",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration6_1",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration6_2",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration6_3",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration6_4",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration6_5",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration6_6",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration6_7",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration6_8",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration7_1",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration7_2",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration7_3",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration7_4",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration7_5",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration7_6",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration7_7",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration7_8",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration8_1",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration8_2",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration8_3",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration8_4",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration8_5",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration8_6",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration8_7",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration8_8",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        }
+      ]
+    },
+    {
+      "Name": "ICON:CIP_Drive:C:2",
+      "Class": "IO",
+      "Members": [
+        {
+          "Name": "CfgSize",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "CfgIDNum",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "ConfigRevNumber",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "BitHost",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "Pad1",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "DriveClassID",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "ConfigControl",
+          "DataType": "DINT",
+          "Dimension": 2,
+          "Hidden": true
+        },
+        {
+          "Name": "SyncThreshold",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "ControllerUpdateDelayHighLimit",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "ControllerUpdateDelayLowLimit",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "TimeSyncSupport",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "Pad2",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "InverterSupport",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "FWOptionBits",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "EnableTimingStatistics",
+          "DataType": "BIT",
+          "Hidden": true,
+          "BitNumber": 0,
+          "Target": "FWOptionBits"
+        },
+        {
+          "Name": "ResetTransmissionStatistics",
+          "DataType": "BIT",
+          "Hidden": true,
+          "BitNumber": 1,
+          "Target": "FWOptionBits"
+        },
+        {
+          "Name": "Pad3",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "DrivePowerStructureAxisID",
+          "DataType": "DINT",
+          "Dimension": 8,
+          "Hidden": true
+        },
+        {
+          "Name": "RegenerativePowerLimit",
+          "DataType": "REAL",
+          "Dimension": 8,
+          "Hidden": true
+        },
+        {
+          "Name": "PWMFrequency",
+          "DataType": "INT",
+          "Dimension": 8,
+          "Hidden": true
+        },
+        {
+          "Name": "DutySelect",
+          "DataType": "SINT",
+          "Dimension": 8,
+          "Hidden": true
+        },
+        {
+          "Name": "BusRegulatorAction",
+          "DataType": "SINT",
+          "Dimension": 8,
+          "Hidden": true,
+          "Enum": "BusRegulatorActionEnum"
+        },
+        {
+          "Name": "BusConfiguration",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "BusConfigurationEnum"
+        },
+        {
+          "Name": "DemonstrationModeSelect",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "ShuntRegulatorResistorType",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "ShuntRegulatorResistorTypeBit",
+          "DataType": "BIT",
+          "Hidden": true,
+          "BitNumber": 0,
+          "Target": "ShuntRegulatorResistorType"
+        },
+        {
+          "Name": "ConverterACInputPhasing",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "ACInputPhasingEnum"
+        },
+        {
+          "Name": "ConverterACInputVoltage",
+          "DataType": "INT",
+          "Hidden": true,
+          "Min": "230",
+          "Max": "460",
+          "Enum": "ACInputVoltageEnum"
+        },
+        {
+          "Name": "Pad4",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "BusVoltageSelect",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "BusSharingGroup",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "BusSharingGroupEnum"
+        },
+        {
+          "Name": "ExternalShuntRegulatorID",
+          "DataType": "INT",
+          "Hidden": true,
+          "Enum": "ExternalShuntEnum"
+        },
+        {
+          "Name": "ExternalShuntPower",
+          "DataType": "REAL",
+          "Hidden": true
+        },
+        {
+          "Name": "ExternalShuntPulsePower",
+          "DataType": "REAL",
+          "Hidden": true
+        },
+        {
+          "Name": "ExternalBusCapacitance",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "ExternalShuntResistance",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "ConverterOvertemperatureUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "ConverterThermalOverloadUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "ConverterGroundUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "BusRegulatorOvertemperatureUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "BusRegulatorThermalOverloadUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "BusOvervoltageUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "BusUndervoltageUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "100.0"
+        },
+        {
+          "Name": "ControlModuleOvertemperatureUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "ConverterPrechargeOverloadUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "NumberOfConfiguredAxes",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "Pad5",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "Pad6",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "FeedbackPortSelect",
+          "DataType": "SINT",
+          "Dimension": 32,
+          "Hidden": true,
+          "Min": "0",
+          "Max": "31"
+        },
+        {
+          "Name": "SelectedCardType",
+          "DataType": "INT",
+          "Dimension": 32,
+          "Hidden": true
+        },
+        {
+          "Name": "NumberConfigurableInputs",
+          "DataType": "SINT",
+          "Dimension": 8,
+          "Hidden": true
+        },
+        {
+          "Name": "SourceOfConfigurableInputs",
+          "DataType": "SINT",
+          "Dimension": 8,
+          "Hidden": true
+        },
+        {
+          "Name": "Pad7",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "PositionLoopDeviceUpdatePeriod",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "VelocityLoopDeviceUpdatePeriod",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "TorqueLoopDeviceUpdatePeriod",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "DigitalInputConfiguration1_1",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnum1"
+        },
+        {
+          "Name": "DigitalInputConfiguration1_2",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnum1"
+        },
+        {
+          "Name": "DigitalInputConfiguration1_3",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration1_4",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration1_5",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration1_6",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration1_7",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration1_8",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration2_1",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration2_2",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration2_3",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration2_4",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration2_5",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration2_6",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration2_7",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration2_8",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration3_1",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnum3"
+        },
+        {
+          "Name": "DigitalInputConfiguration3_2",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnum3"
+        },
+        {
+          "Name": "DigitalInputConfiguration3_3",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration3_4",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration3_5",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration3_6",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration3_7",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration3_8",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration4_1",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration4_2",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration4_3",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration4_4",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration4_5",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration4_6",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration4_7",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration4_8",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration5_1",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration5_2",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration5_3",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration5_4",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration5_5",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration5_6",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration5_7",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration5_8",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration6_1",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration6_2",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration6_3",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration6_4",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration6_5",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration6_6",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration6_7",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration6_8",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration7_1",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration7_2",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration7_3",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration7_4",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration7_5",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration7_6",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration7_7",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration7_8",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration8_1",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration8_2",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration8_3",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration8_4",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration8_5",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration8_6",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration8_7",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration8_8",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        }
+      ]
+    },
+    {
+      "Name": "ICON:CIP_Drive:C:1",
+      "Class": "IO",
+      "Members": [
+        {
+          "Name": "CfgSize",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "CfgIDNum",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "ConfigRevNumber",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "BitHost",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "Pad1",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "DriveClassID",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "ConfigControl",
+          "DataType": "DINT",
+          "Dimension": 2,
+          "Hidden": true
+        },
+        {
+          "Name": "SyncThreshold",
+          "DataType": "DINT",
+          "Hidden": true
+        },
+        {
+          "Name": "ControllerUpdateDelayHighLimit",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "ControllerUpdateDelayLowLimit",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "TimeSyncSupport",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "Pad2",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "InverterSupport",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "FWOptionBits",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "EnableTimingStatistics",
+          "DataType": "BIT",
+          "Hidden": true,
+          "BitNumber": 0,
+          "Target": "FWOptionBits"
+        },
+        {
+          "Name": "ResetTransmissionStatistics",
+          "DataType": "BIT",
+          "Hidden": true,
+          "BitNumber": 1,
+          "Target": "FWOptionBits"
+        },
+        {
+          "Name": "Pad3",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "DrivePowerStructureAxisID",
+          "DataType": "DINT",
+          "Dimension": 8,
+          "Hidden": true
+        },
+        {
+          "Name": "RegenerativePowerLimit",
+          "DataType": "REAL",
+          "Dimension": 8,
+          "Hidden": true
+        },
+        {
+          "Name": "PWMFrequency",
+          "DataType": "INT",
+          "Dimension": 8,
+          "Hidden": true
+        },
+        {
+          "Name": "DutySelect",
+          "DataType": "SINT",
+          "Dimension": 8,
+          "Hidden": true
+        },
+        {
+          "Name": "BusRegulatorAction",
+          "DataType": "SINT",
+          "Dimension": 8,
+          "Hidden": true,
+          "Enum": "BusRegulatorActionEnum"
+        },
+        {
+          "Name": "BusConfiguration",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "BusConfigurationEnum"
+        },
+        {
+          "Name": "DemonstrationModeSelect",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "ShuntRegulatorResistorType",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "ShuntRegulatorResistorTypeBit",
+          "DataType": "BIT",
+          "Hidden": true,
+          "BitNumber": 0,
+          "Target": "ShuntRegulatorResistorType"
+        },
+        {
+          "Name": "ConverterACInputPhasing",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "ACInputPhasingSingleEnum"
+        },
+        {
+          "Name": "ConverterACInputVoltage",
+          "DataType": "INT",
+          "Hidden": true,
+          "Min": "230",
+          "Enum": "ACInputVoltageIconEnum"
+        },
+        {
+          "Name": "Pad4",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "BusVoltageSelect",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "BusSharingGroup",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "BusSharingGroupEnum"
+        },
+        {
+          "Name": "ExternalShuntRegulatorID",
+          "DataType": "INT",
+          "Hidden": true,
+          "Enum": "ExternalShuntEnum"
+        },
+        {
+          "Name": "ExternalShuntPower",
+          "DataType": "REAL",
+          "Hidden": true
+        },
+        {
+          "Name": "ExternalShuntPulsePower",
+          "DataType": "REAL",
+          "Hidden": true
+        },
+        {
+          "Name": "ExternalBusCapacitance",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "ExternalShuntResistance",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "ConverterOvertemperatureUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "ConverterThermalOverloadUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "ConverterGroundUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "BusRegulatorOvertemperatureUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "BusRegulatorThermalOverloadUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "BusOvervoltageUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "BusUndervoltageUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "100.0"
+        },
+        {
+          "Name": "ControlModuleOvertemperatureUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "ConverterPrechargeOverloadUserLimit",
+          "DataType": "REAL",
+          "Hidden": true,
+          "Min": "0.0",
+          "Max": "1e9"
+        },
+        {
+          "Name": "NumberOfConfiguredAxes",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "Pad5",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "Pad6",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "FeedbackPortSelect",
+          "DataType": "SINT",
+          "Dimension": 32,
+          "Hidden": true,
+          "Min": "0",
+          "Max": "31"
+        },
+        {
+          "Name": "SelectedCardType",
+          "DataType": "INT",
+          "Dimension": 32,
+          "Hidden": true
+        },
+        {
+          "Name": "NumberConfigurableInputs",
+          "DataType": "SINT",
+          "Dimension": 8,
+          "Hidden": true
+        },
+        {
+          "Name": "SourceOfConfigurableInputs",
+          "DataType": "SINT",
+          "Dimension": 8,
+          "Hidden": true
+        },
+        {
+          "Name": "Pad7",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "PositionLoopDeviceUpdatePeriod",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "VelocityLoopDeviceUpdatePeriod",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "TorqueLoopDeviceUpdatePeriod",
+          "DataType": "INT",
+          "Hidden": true
+        },
+        {
+          "Name": "DigitalInputConfiguration1_1",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnum1"
+        },
+        {
+          "Name": "DigitalInputConfiguration1_2",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnum1"
+        },
+        {
+          "Name": "DigitalInputConfiguration1_3",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnum1"
+        },
+        {
+          "Name": "DigitalInputConfiguration1_4",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnum1"
+        },
+        {
+          "Name": "DigitalInputConfiguration1_5",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnum1"
+        },
+        {
+          "Name": "DigitalInputConfiguration1_6",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnum1"
+        },
+        {
+          "Name": "DigitalInputConfiguration1_7",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnum1"
+        },
+        {
+          "Name": "DigitalInputConfiguration1_8",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnum1"
+        },
+        {
+          "Name": "DigitalInputConfiguration2_1",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration2_2",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration2_3",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration2_4",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration2_5",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration2_6",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration2_7",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration2_8",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration3_1",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration3_2",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration3_3",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration3_4",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration3_5",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration3_6",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration3_7",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration3_8",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration4_1",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration4_2",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration4_3",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration4_4",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration4_5",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration4_6",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration4_7",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration4_8",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration5_1",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration5_2",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration5_3",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration5_4",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration5_5",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration5_6",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration5_7",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration5_8",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration6_1",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration6_2",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration6_3",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration6_4",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration6_5",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration6_6",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration6_7",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration6_8",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration7_1",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration7_2",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration7_3",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration7_4",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration7_5",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration7_6",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration7_7",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration7_8",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration8_1",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration8_2",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration8_3",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration8_4",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration8_5",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration8_6",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration8_7",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        },
+        {
+          "Name": "DigitalInputConfiguration8_8",
+          "DataType": "SINT",
+          "Hidden": true,
+          "Enum": "DigitalInputEnumUnassigned"
+        }
+      ]
+    },
+    {
+      "Name": "AB:Motion_Sync:I:0",
+      "Class": "IO",
+      "Members": [
+        {
+          "Name": "Data",
+          "DataType": "SINT",
+          "Dimension": 480,
+          "Hidden": true,
+          "Radix": "Decimal"
+        }
+      ]
+    },
+    {
+      "Name": "AB:Motion_Sync:O:0",
+      "Class": "IO",
+      "Members": [
+        {
+          "Name": "Data",
+          "DataType": "SINT",
+          "Dimension": 440,
+          "Hidden": true,
+          "Radix": "Decimal"
+        }
+      ]
+    },
+    {
+      "Name": "AB:Motion_Diagnostics:S:1",
+      "Class": "IO",
+      "Members": [
+        {
+          "Name": "LostControllerToDriveTransmissions",
+          "DataType": "INT",
+          "Hidden": false
+        },
+        {
+          "Name": "LateControllerToDriveTransmissions",
+          "DataType": "INT",
+          "Hidden": false
+        },
+        {
+          "Name": "LostDriveToControllerTransmissions",
+          "DataType": "INT",
+          "Hidden": false
+        },
+        {
+          "Name": "LateDriveToControllerTransmissions",
+          "DataType": "INT",
+          "Hidden": false
+        },
+        {
+          "Name": "LastControllerToDriveTime",
+          "DataType": "INT",
+          "Hidden": false
+        },
+        {
+          "Name": "AverageControllerToDriveTime",
+          "DataType": "INT",
+          "Hidden": false
+        },
+        {
+          "Name": "MaximumControllerToDriveTime",
+          "DataType": "INT",
+          "Hidden": false
+        },
+        {
+          "Name": "LastDriveToControllerTime",
+          "DataType": "INT",
+          "Hidden": false
+        },
+        {
+          "Name": "AverageDriveToControllerTime",
+          "DataType": "INT",
+          "Hidden": false
+        },
+        {
+          "Name": "MaximumDriveToControllerTime",
+          "DataType": "INT",
+          "Hidden": false
+        },
+        {
+          "Name": "LastSystemClockJitter",
+          "DataType": "DINT",
+          "Hidden": false
+        },
+        {
+          "Name": "AverageSystemClockJitter",
+          "DataType": "DINT",
+          "Hidden": false
+        },
+        {
+          "Name": "MaximumSystemClockJitter",
+          "DataType": "DINT",
+          "Hidden": false
+        },
+        {
+          "Name": "TimingStatisticsEnabled",
+          "DataType": "SINT",
+          "Hidden": false
+        },
+        {
+          "Name": "Pad1",
+          "DataType": "SINT",
+          "Hidden": true
+        },
+        {
+          "Name": "ControllerToDriveConnectionSize",
+          "DataType": "INT",
+          "Hidden": false
+        },
+        {
+          "Name": "DriveToControllerConnectionSize",
+          "DataType": "INT",
+          "Hidden": false
+        },
+        {
+          "Name": "NominalControllerToDriveTime",
+          "DataType": "INT",
+          "Hidden": false
+        },
+        {
+          "Name": "NominalDriveToControllerTime",
+          "DataType": "INT",
+          "Hidden": false
+        },
+        {
+          "Name": "CoarseUpdatePeriod",
+          "DataType": "INT",
+          "Hidden": false
+        }
+      ]
+    }
+  ],
+  "DataValueDefinitions": [
+    {
+      "ID": "AB:CIP_Drive:C:1",
+      "Data": "00,00,00,00,02,00,00,00,01,01,00,00,00,00,00,00,ff,ff,1f,00,00,00,00,00,00,40,1c,46,04,00,02,01,01,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,a0,0f,a0,0f,a0,0f,a0,0f,a0,0f,a0,0f,a0,0f,a0,0f,00,00,00,00,00,00,00,00,02,01,00,00,cc,01,00,00,00,01,ff,ff,00,00,c8,42,cd,cc,4c,3e,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,c8,42,00,00,c8,42,00,00,00,00,00,00,c8,42,00,00,0c,43,00,00,00,00,00,00,00,00,00,00,c8,42,01,00,00,00,01,00,00,00,00,00,00,00,03,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,03,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00\r\n\t\t00,00,7d,00,7d,00,7d,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00"
+    },
+    {
+      "ID": "AB:CIP_Drive:C:2",
+      "Data": "00,00,00,00,03,00,00,00,01,01,00,00,00,00,00,00,ff,ff,ff,1f,00,00,00,00,10,27,27,00,04,02,02,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,c8,c2,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,40,1f,40,1f,40,1f,40,1f,40,1f,40,1f,40,1f,40,1f,00,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,02,00,00,00,cc,01,00,00,00,01,ff,ff,cd,cc,4c,3e,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,c8,42,00,00,c8,42,00,00,00,00,00,00,c8,42,00,00,0c,43,00,00,00,00,00,00,00,00,00,00,c8,42,04,00,00,00,01,00,00,00,00,00,00,00,03,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,03,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,04,00,04,00,00,00,00,00,01,01,03,03,00,00,00,00,00,00,7d,00,7d,00,7d,00,01,02,03,04,00,00,00,00,00,00,00,00,00,00,00,00,01,02,03,04,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00"
+    },
+    {
+      "ID": "ICON:CIP_Drive:C:2",
+      "Data": "00,00,00,00,03,00,00,00,01,01,00,00,00,00,00,00,ff,ff,ff,1f,00,00,00,00,10,27,27,00,04,02,02,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,c8,c2,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,40,1f,40,1f,40,1f,40,1f,40,1f,40,1f,40,1f,40,1f,00,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,02,00,00,00,cc,01,00,00,00,01,ff,ff,cd,cc,4c,3e,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,c8,42,00,00,c8,42,00,00,00,00,00,00,c8,42,00,00,0c,43,00,00,00,00,00,00,00,00,00,00,c8,42,04,00,00,00,01,00,00,00,00,00,00,00,03,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,03,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,02,00,02,00,00,00,00,00,01,01,03,03,00,00,00,00,00,00,7d,00,7d,00,7d,00,01,02,00,00,00,00,00,00,00,00,00,00,00,00,00,00,01,02,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00"
+    },
+    {
+      "ID": "ICON:CIP_Drive:C:1",
+      "Data": "00,00,00,00,03,00,00,00,01,01,00,00,00,00,00,00,ff,ff,ff,1f,00,00,00,00,10,27,27,00,04,02,02,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,c8,c2,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,40,1f,40,1f,40,1f,40,1f,40,1f,40,1f,40,1f,40,1f,00,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,02,00,00,01,e6,00,00,00,00,01,ff,ff,cd,cc,4c,3e,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,c8,42,00,00,c8,42,00,00,00,00,00,00,c8,42,00,00,0c,43,00,00,00,00,00,00,00,00,00,00,c8,42,04,00,00,00,01,00,00,00,00,00,00,00,03,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,03,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,04,00,00,00,00,00,00,00,01,01,03,03,00,00,00,00,00,00,7d,00,7d,00,7d,00,01,02,03,04,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00"
+    }
+  ],
+  "EnumDefines": [
+    {
+      "ID": "ExternalShuntEnum",
+      "StringsID": "ExternalShuntStrings",
+      "Values": [
+        {
+          "Value": -1,
+          "StringID": 0
+        }
+      ]
+    },
+    {
+      "ID": "DigitalInputEnum1",
+      "StringsID": "DigitalInputStrings",
+      "Values": [
+        {
+          "Value": 0,
+          "StringID": 0
+        },
+        {
+          "Value": 1,
+          "StringID": 1
+        },
+        {
+          "Value": 2,
+          "StringID": 2
+        },
+        {
+          "Value": 3,
+          "StringID": 3
+        },
+        {
+          "Value": 4,
+          "StringID": 4
+        },
+        {
+          "Value": 5,
+          "StringID": 5
+        },
+        {
+          "Value": 6,
+          "StringID": 6
+        },
+        {
+          "Value": 9,
+          "StringID": 9
+        }
+      ]
+    },
+    {
+      "ID": "DigitalInputEnumUnassigned",
+      "StringsID": "DigitalInputStrings",
+      "Values": [
+        {
+          "Value": 0,
+          "StringID": 0
+        }
+      ]
+    },
+    {
+      "ID": "DigitalInputEnum3",
+      "StringsID": "DigitalInputStrings",
+      "Values": [
+        {
+          "Value": 0,
+          "StringID": 0
+        },
+        {
+          "Value": 1,
+          "StringID": 1
+        },
+        {
+          "Value": 2,
+          "StringID": 2
+        },
+        {
+          "Value": 3,
+          "StringID": 3
+        },
+        {
+          "Value": 4,
+          "StringID": 4
+        },
+        {
+          "Value": 5,
+          "StringID": 5
+        },
+        {
+          "Value": 6,
+          "StringID": 6
+        },
+        {
+          "Value": 9,
+          "StringID": 9
+        }
+      ]
+    },
+    {
+      "ID": "ACInputPhasingEnum",
+      "StringsID": "ACInputPhasingStrings",
+      "Values": [
+        {
+          "Value": 0,
+          "StringID": 0
+        },
+        {
+          "Value": 1,
+          "StringID": 1
+        }
+      ]
+    },
+    {
+      "ID": "ACInputPhasingSingleEnum",
+      "StringsID": "ACInputPhasingSingleStrings",
+      "Values": [
+        {
+          "Value": 1,
+          "StringID": 0
+        }
+      ]
+    },
+    {
+      "ID": "ACInputPhasingThreeEnum",
+      "StringsID": "ACInputPhasingThreeStrings",
+      "Values": [
+        {
+          "Value": 0,
+          "StringID": 0
+        }
+      ]
+    },
+    {
+      "ID": "ACInputVoltageEnum",
+      "StringsID": "ACInputVoltageStrings",
+      "Values": [
+        {
+          "Value": 230,
+          "StringID": 0
+        },
+        {
+          "Value": 460,
+          "StringID": 1
+        }
+      ]
+    },
+    {
+      "ID": "PWMFrequencyEnum",
+      "StringsID": "PWMFrequencyStrings",
+      "Values": [
+        {
+          "Value": 4000,
+          "StringID": 0
+        },
+        {
+          "Value": 8000,
+          "StringID": 1
+        }
+      ]
+    },
+    {
+      "ID": "BusConfigurationEnum",
+      "StringsID": "BusConfigurationStrings",
+      "Values": [
+        {
+          "Value": 0,
+          "StringID": 0
+        },
+        {
+          "Value": 1,
+          "StringID": 1
+        },
+        {
+          "Value": 2,
+          "StringID": 2
+        }
+      ]
+    },
+    {
+      "ID": "BusSharingGroupEnum",
+      "StringsID": "BusSharingGroupStrings",
+      "Values": [
+        {
+          "Value": 0,
+          "StringID": 0
+        },
+        {
+          "Value": 1,
+          "StringID": 1
+        },
+        {
+          "Value": 2,
+          "StringID": 2
+        },
+        {
+          "Value": 3,
+          "StringID": 3
+        },
+        {
+          "Value": 4,
+          "StringID": 4
+        },
+        {
+          "Value": 5,
+          "StringID": 5
+        },
+        {
+          "Value": 6,
+          "StringID": 6
+        },
+        {
+          "Value": 7,
+          "StringID": 7
+        },
+        {
+          "Value": 8,
+          "StringID": 8
+        },
+        {
+          "Value": 9,
+          "StringID": 9
+        },
+        {
+          "Value": 10,
+          "StringID": 10
+        },
+        {
+          "Value": 11,
+          "StringID": 11
+        },
+        {
+          "Value": 12,
+          "StringID": 12
+        },
+        {
+          "Value": 13,
+          "StringID": 13
+        },
+        {
+          "Value": 14,
+          "StringID": 14
+        },
+        {
+          "Value": 15,
+          "StringID": 15
+        },
+        {
+          "Value": 16,
+          "StringID": 16
+        },
+        {
+          "Value": 17,
+          "StringID": 17
+        },
+        {
+          "Value": 18,
+          "StringID": 18
+        },
+        {
+          "Value": 19,
+          "StringID": 19
+        },
+        {
+          "Value": 20,
+          "StringID": 20
+        },
+        {
+          "Value": 21,
+          "StringID": 21
+        },
+        {
+          "Value": 22,
+          "StringID": 22
+        },
+        {
+          "Value": 23,
+          "StringID": 23
+        },
+        {
+          "Value": 24,
+          "StringID": 24
+        },
+        {
+          "Value": 25,
+          "StringID": 25
+        }
+      ]
+    },
+    {
+      "ID": "BusRegulatorActionEnum",
+      "StringsID": "BusRegulatorActionStrings",
+      "Values": [
+        {
+          "Value": 0,
+          "StringID": 0
+        },
+        {
+          "Value": 1,
+          "StringID": 1
+        }
+      ]
+    },
+    {
+      "ID": "ACInputVoltageIconEnum",
+      "StringsID": "ACInputVoltageIconStrings",
+      "Values": [
+        {
+          "Value": 230,
+          "StringID": 0
+        }
+      ]
+    },
+    {
+      "ID": "ACInputVoltageIconThreeEnum",
+      "StringsID": "ACInputVoltageIconThreeStrings",
+      "Values": [
+        {
+          "Value": 380,
+          "StringID": 0
+        }
+      ]
+    }
+  ],
+  "StringDefines": [
+    {
+      "ID": "ExternalShuntStrings",
+      "Strings": [
+        {
+          "ID": 0,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "<none>"
+            },
+            {
+              "LCID": 1031,
+              "Text": "<keine>"
+            },
+            {
+              "LCID": 1034,
+              "Text": "<ninguno>"
+            },
+            {
+              "LCID": 1036,
+              "Text": "<aucun>"
+            },
+            {
+              "LCID": 1040,
+              "Text": "<nessuno>"
+            },
+            {
+              "LCID": 1041,
+              "Text": "<なし>"
+            },
+            {
+              "LCID": 1042,
+              "Text": "<없음>"
+            },
+            {
+              "LCID": 1046,
+              "Text": "<nenhum>"
+            },
+            {
+              "LCID": 2052,
+              "Text": "<无>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "ModuleDefinitionStrings",
+      "Strings": [
+        {
+          "ID": 1,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Connection"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Verbindung"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Conexión"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Connexion"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Collegamento"
+            },
+            {
+              "LCID": 1041,
+              "Text": "接続"
+            },
+            {
+              "LCID": 1042,
+              "Text": "연결"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Conexão"
+            },
+            {
+              "LCID": 2052,
+              "Text": "连接"
+            }
+          ]
+        },
+        {
+          "ID": 2,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Motion"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Achssteuerung"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Movimiento"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Mouvement"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Movimento"
+            },
+            {
+              "LCID": 1041,
+              "Text": "モーション"
+            },
+            {
+              "LCID": 1042,
+              "Text": "모션"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Movimento"
+            },
+            {
+              "LCID": 2052,
+              "Text": "运动"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "DigitalInputStrings",
+      "Strings": [
+        {
+          "ID": 0,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Unassigned"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Nicht zugeordnet"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Desasignado"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Non assigné"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Non assegnato"
+            },
+            {
+              "LCID": 1041,
+              "Text": "未割り当て"
+            },
+            {
+              "LCID": 1042,
+              "Text": "할당 안 됨"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Não atribuído"
+            },
+            {
+              "LCID": 2052,
+              "Text": "未分配"
+            }
+          ]
+        },
+        {
+          "ID": 1,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Enable"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Aktivieren"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Habilitar"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Activer"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Attiva"
+            },
+            {
+              "LCID": 1041,
+              "Text": "有効"
+            },
+            {
+              "LCID": 1042,
+              "Text": "사용"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Ativar"
+            },
+            {
+              "LCID": 2052,
+              "Text": "启用"
+            }
+          ]
+        },
+        {
+          "ID": 2,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Home"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Ausgangsposition"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Inicio"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Origine"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Posizione iniziale"
+            },
+            {
+              "LCID": 1041,
+              "Text": "ホーム"
+            },
+            {
+              "LCID": 1042,
+              "Text": "원위치"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Início"
+            },
+            {
+              "LCID": 2052,
+              "Text": "主页"
+            }
+          ]
+        },
+        {
+          "ID": 3,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Registration 1"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Registrierung 1"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Registro 1"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Enregistrement 1"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Registrazione 1"
+            },
+            {
+              "LCID": 1041,
+              "Text": "登録 1"
+            },
+            {
+              "LCID": 1042,
+              "Text": "등록 1"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Registro 1"
+            },
+            {
+              "LCID": 2052,
+              "Text": "注册 1"
+            }
+          ]
+        },
+        {
+          "ID": 4,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Registration 2"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Registrierung 2"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Registro 2"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Enregistrement 2"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Registrazione 2"
+            },
+            {
+              "LCID": 1041,
+              "Text": "登録 2"
+            },
+            {
+              "LCID": 1042,
+              "Text": "등록 2"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Registro 2"
+            },
+            {
+              "LCID": 2052,
+              "Text": "注册 2"
+            }
+          ]
+        },
+        {
+          "ID": 5,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Positive Overtravel"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Positiver Endschalter"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Fin de carrera positivo"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Surcourse positive"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Fuoricorsa positivo"
+            },
+            {
+              "LCID": 1041,
+              "Text": "正のオーバトラベル"
+            },
+            {
+              "LCID": 1042,
+              "Text": "양수 과도 이동"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Sobrecurso positivo"
+            },
+            {
+              "LCID": 2052,
+              "Text": "正超程"
+            }
+          ]
+        },
+        {
+          "ID": 6,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Negative Overtravel"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Negativer Endschalter"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Fin de carrera negativo"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Surcourse négative"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Fuoricorsa negativo"
+            },
+            {
+              "LCID": 1041,
+              "Text": "負のオーバトラベル"
+            },
+            {
+              "LCID": 1042,
+              "Text": "음수 과도 이동"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Sobrecurso negativo"
+            },
+            {
+              "LCID": 2052,
+              "Text": "负超程"
+            }
+          ]
+        },
+        {
+          "ID": 7,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Regeneration OK"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Regenerierung OK"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Regeneración completada"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Régénération OK"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Rigenerazione OK"
+            },
+            {
+              "LCID": 1041,
+              "Text": "再生成 OK"
+            },
+            {
+              "LCID": 1042,
+              "Text": "회생 확인"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Regeneração OK"
+            },
+            {
+              "LCID": 2052,
+              "Text": "已重新生成 OK"
+            }
+          ]
+        },
+        {
+          "ID": 8,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Bus Capacitor OK"
+            },
+            {
+              "LCID": 1036,
+              "Text": "FRA: Bus Capacitor OK"
+            },
+            {
+              "LCID": 1031,
+              "Text": "DEU: Bus Capacitor OK"
+            },
+            {
+              "LCID": 1034,
+              "Text": "ESP: Bus Capacitor OK"
+            },
+            {
+              "LCID": 1046,
+              "Text": "PTB: Bus Capacitor OK"
+            },
+            {
+              "LCID": 1040,
+              "Text": "ITA: Bus Capacitor OK"
+            },
+            {
+              "LCID": 1041,
+              "Text": "JPN: Bus Capacitor OK"
+            },
+            {
+              "LCID": 1042,
+              "Text": "KOR: Bus Capacitor OK"
+            },
+            {
+              "LCID": 2052,
+              "Text": "CHS: Bus Capacitor OK"
+            }
+          ]
+        },
+        {
+          "ID": 9,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Shunt Thermal Switch OK"
+            },
+            {
+              "LCID": 1036,
+              "Text": "FRA: Shunt Thermal Switch OK"
+            },
+            {
+              "LCID": 1031,
+              "Text": "DEU: Shunt Thermal Switch OK"
+            },
+            {
+              "LCID": 1034,
+              "Text": "ESP: Shunt Thermal Switch OK"
+            },
+            {
+              "LCID": 1046,
+              "Text": "PTB: Shunt Thermal Switch OK"
+            },
+            {
+              "LCID": 1040,
+              "Text": "ITA: Shunt Thermal Switch OK"
+            },
+            {
+              "LCID": 1041,
+              "Text": "JPN: Shunt Thermal Switch OK"
+            },
+            {
+              "LCID": 1042,
+              "Text": "KOR: Shunt Thermal Switch OK"
+            },
+            {
+              "LCID": 2052,
+              "Text": "CHS: Shunt Thermal Switch OK"
+            }
+          ]
+        },
+        {
+          "ID": 10,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Home & Registration 1"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Origine & Enregistrement 1"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Ausgangsposition & Registrierung 1"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Inicio & Registro 1"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Início & Registro 1"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Posizione iniziale & Registrazione 1"
+            },
+            {
+              "LCID": 1041,
+              "Text": "ホーム & 登録 1"
+            },
+            {
+              "LCID": 1042,
+              "Text": "원위치 & 등록 1"
+            },
+            {
+              "LCID": 2052,
+              "Text": "主页 & 注册 1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "ACInputPhasingStrings",
+      "Strings": [
+        {
+          "ID": 0,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Three Phase"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Dreiphasig"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Trifásico"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Triphasé"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Trifase"
+            },
+            {
+              "LCID": 1041,
+              "Text": "3 相"
+            },
+            {
+              "LCID": 1042,
+              "Text": "3-Phase"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Três fases"
+            },
+            {
+              "LCID": 2052,
+              "Text": "三相"
+            }
+          ]
+        },
+        {
+          "ID": 1,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Single Phase"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Einphasig"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Monofásico"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Monophasé"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Monofase"
+            },
+            {
+              "LCID": 1041,
+              "Text": "単相"
+            },
+            {
+              "LCID": 1042,
+              "Text": "단일 Phase"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Fase única"
+            },
+            {
+              "LCID": 2052,
+              "Text": "单相"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "ACInputPhasingSingleStrings",
+      "Strings": [
+        {
+          "ID": 0,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Single Phase"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Einphasig"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Monofásico"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Monophasé"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Monofase"
+            },
+            {
+              "LCID": 1041,
+              "Text": "単相"
+            },
+            {
+              "LCID": 1042,
+              "Text": "단일 Phase"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Fase única"
+            },
+            {
+              "LCID": 2052,
+              "Text": "单相"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "ACInputPhasingThreeStrings",
+      "Strings": [
+        {
+          "ID": 0,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Three Phase"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Dreiphasig"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Trifásico"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Triphasé"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Trifase"
+            },
+            {
+              "LCID": 1041,
+              "Text": "3 相"
+            },
+            {
+              "LCID": 1042,
+              "Text": "3-Phase"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Três fases"
+            },
+            {
+              "LCID": 2052,
+              "Text": "三相"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "ACInputVoltageStrings",
+      "Strings": [
+        {
+          "ID": 0,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "200-240 VAC"
+            },
+            {
+              "LCID": 1031,
+              "Text": "200-240 VAC"
+            },
+            {
+              "LCID": 1034,
+              "Text": "200-240 V CA"
+            },
+            {
+              "LCID": 1036,
+              "Text": "200-240 VCA"
+            },
+            {
+              "LCID": 1040,
+              "Text": "200-240 VCA"
+            },
+            {
+              "LCID": 1041,
+              "Text": "200-240 VAC"
+            },
+            {
+              "LCID": 1042,
+              "Text": "200-240 VAC"
+            },
+            {
+              "LCID": 1046,
+              "Text": "200-240 VAC"
+            },
+            {
+              "LCID": 2052,
+              "Text": "200-240 VAC"
+            }
+          ]
+        },
+        {
+          "ID": 1,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "400-480 VAC"
+            },
+            {
+              "LCID": 1031,
+              "Text": "400-480 VAC"
+            },
+            {
+              "LCID": 1034,
+              "Text": "400-480 V CA"
+            },
+            {
+              "LCID": 1036,
+              "Text": "400-480 VCA"
+            },
+            {
+              "LCID": 1040,
+              "Text": "400-480 VCA"
+            },
+            {
+              "LCID": 1041,
+              "Text": "400-480 VAC"
+            },
+            {
+              "LCID": 1042,
+              "Text": "400-480 VAC"
+            },
+            {
+              "LCID": 1046,
+              "Text": "400-480 VAC"
+            },
+            {
+              "LCID": 2052,
+              "Text": "400-480 VAC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "PWMFrequencyStrings",
+      "Strings": [
+        {
+          "ID": 0,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "4Khz"
+            },
+            {
+              "LCID": 1031,
+              "Text": "4 Khz"
+            },
+            {
+              "LCID": 1034,
+              "Text": "4 Khz"
+            },
+            {
+              "LCID": 1036,
+              "Text": "4 kHz"
+            },
+            {
+              "LCID": 1040,
+              "Text": "4Khz"
+            },
+            {
+              "LCID": 1041,
+              "Text": "4Khz"
+            },
+            {
+              "LCID": 1042,
+              "Text": "4Khz"
+            },
+            {
+              "LCID": 1046,
+              "Text": "4 kHz"
+            },
+            {
+              "LCID": 2052,
+              "Text": "4 Khz"
+            }
+          ]
+        },
+        {
+          "ID": 1,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "8Khz"
+            },
+            {
+              "LCID": 1031,
+              "Text": "8 Khz"
+            },
+            {
+              "LCID": 1034,
+              "Text": "8 Khz"
+            },
+            {
+              "LCID": 1036,
+              "Text": "8 kHz"
+            },
+            {
+              "LCID": 1040,
+              "Text": "8Khz"
+            },
+            {
+              "LCID": 1041,
+              "Text": "8Khz"
+            },
+            {
+              "LCID": 1042,
+              "Text": "8Khz"
+            },
+            {
+              "LCID": 1046,
+              "Text": "8 kHz"
+            },
+            {
+              "LCID": 2052,
+              "Text": "8 Khz"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "BusConfigurationStrings",
+      "Strings": [
+        {
+          "ID": 0,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Standalone"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Eigenständig"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Independiente"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Autonome"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Autonoma"
+            },
+            {
+              "LCID": 1041,
+              "Text": "スタンドアロン"
+            },
+            {
+              "LCID": 1042,
+              "Text": "독립 실행형"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Autônomo"
+            },
+            {
+              "LCID": 2052,
+              "Text": "独立"
+            }
+          ]
+        },
+        {
+          "ID": 1,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Shared AC/DC"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Freigabe-AC/DC"
+            },
+            {
+              "LCID": 1034,
+              "Text": "CA/CC compartido"
+            },
+            {
+              "LCID": 1036,
+              "Text": "C.A./C.C. partagé"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Condivisa CA/CC"
+            },
+            {
+              "LCID": 1041,
+              "Text": "共有 AC/DC"
+            },
+            {
+              "LCID": 1042,
+              "Text": "공유 AC/DC"
+            },
+            {
+              "LCID": 1046,
+              "Text": "CA/CC compartilhada"
+            },
+            {
+              "LCID": 2052,
+              "Text": "共享 AC/DC"
+            }
+          ]
+        },
+        {
+          "ID": 2,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Shared DC"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Freigabe-DC"
+            },
+            {
+              "LCID": 1034,
+              "Text": "CC compartido"
+            },
+            {
+              "LCID": 1036,
+              "Text": "C.C. partagé"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Condivisa CC"
+            },
+            {
+              "LCID": 1041,
+              "Text": "共有 DC"
+            },
+            {
+              "LCID": 1042,
+              "Text": "공유 DC"
+            },
+            {
+              "LCID": 1046,
+              "Text": "CC compartilhada"
+            },
+            {
+              "LCID": 2052,
+              "Text": "共享 DC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "BusSharingGroupStrings",
+      "Strings": [
+        {
+          "ID": 0,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Standalone"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Eigenständig"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Independiente"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Autonome"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Autonoma"
+            },
+            {
+              "LCID": 1041,
+              "Text": "スタンドアロン"
+            },
+            {
+              "LCID": 1042,
+              "Text": "독립 실행형"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Autônomo"
+            },
+            {
+              "LCID": 2052,
+              "Text": "独立"
+            }
+          ]
+        },
+        {
+          "ID": 1,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Group1"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Gruppe 1"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Grupo 1"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Groupe 1"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Gruppo1"
+            },
+            {
+              "LCID": 1041,
+              "Text": "グループ 1"
+            },
+            {
+              "LCID": 1042,
+              "Text": "그룹1"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Grupo 1"
+            },
+            {
+              "LCID": 2052,
+              "Text": "组 1"
+            }
+          ]
+        },
+        {
+          "ID": 2,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Group2"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Gruppe 2"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Grupo 2"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Groupe 2"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Gruppo2"
+            },
+            {
+              "LCID": 1041,
+              "Text": "グループ 2"
+            },
+            {
+              "LCID": 1042,
+              "Text": "그룹2"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Grupo 2"
+            },
+            {
+              "LCID": 2052,
+              "Text": "组 2"
+            }
+          ]
+        },
+        {
+          "ID": 3,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Group3"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Gruppe 3"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Grupo 3"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Groupe 3"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Gruppo3"
+            },
+            {
+              "LCID": 1041,
+              "Text": "グループ 3"
+            },
+            {
+              "LCID": 1042,
+              "Text": "그룹3"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Grupo 3"
+            },
+            {
+              "LCID": 2052,
+              "Text": "组 3"
+            }
+          ]
+        },
+        {
+          "ID": 4,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Group4"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Gruppe 4"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Grupo 4"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Groupe 4"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Gruppo4"
+            },
+            {
+              "LCID": 1041,
+              "Text": "グループ 4"
+            },
+            {
+              "LCID": 1042,
+              "Text": "그룹4"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Grupo 4"
+            },
+            {
+              "LCID": 2052,
+              "Text": "组 4"
+            }
+          ]
+        },
+        {
+          "ID": 5,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Group5"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Gruppe 5"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Grupo 5"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Groupe 5"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Gruppo5"
+            },
+            {
+              "LCID": 1041,
+              "Text": "グループ 5"
+            },
+            {
+              "LCID": 1042,
+              "Text": "그룹5"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Grupo 5"
+            },
+            {
+              "LCID": 2052,
+              "Text": "组 5"
+            }
+          ]
+        },
+        {
+          "ID": 6,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Group6"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Gruppe 6"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Grupo 6"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Groupe 6"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Gruppo6"
+            },
+            {
+              "LCID": 1041,
+              "Text": "グループ 6"
+            },
+            {
+              "LCID": 1042,
+              "Text": "그룹6"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Grupo 6"
+            },
+            {
+              "LCID": 2052,
+              "Text": "组 6"
+            }
+          ]
+        },
+        {
+          "ID": 7,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Group7"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Gruppe 7"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Grupo 7"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Groupe 7"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Gruppo7"
+            },
+            {
+              "LCID": 1041,
+              "Text": "グループ 7"
+            },
+            {
+              "LCID": 1042,
+              "Text": "그룹7"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Grupo 7"
+            },
+            {
+              "LCID": 2052,
+              "Text": "组 7"
+            }
+          ]
+        },
+        {
+          "ID": 8,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Group8"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Gruppe 8"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Grupo 8"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Groupe 8"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Gruppo8"
+            },
+            {
+              "LCID": 1041,
+              "Text": "グループ 8"
+            },
+            {
+              "LCID": 1042,
+              "Text": "그룹8"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Grupo 8"
+            },
+            {
+              "LCID": 2052,
+              "Text": "组 8"
+            }
+          ]
+        },
+        {
+          "ID": 9,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Group9"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Gruppe 9"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Grupo 9"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Groupe 9"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Gruppo9"
+            },
+            {
+              "LCID": 1041,
+              "Text": "グループ 9"
+            },
+            {
+              "LCID": 1042,
+              "Text": "그룹9"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Grupo 9"
+            },
+            {
+              "LCID": 2052,
+              "Text": "组 9"
+            }
+          ]
+        },
+        {
+          "ID": 10,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Group10"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Gruppe 10"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Grupo 10"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Groupe 10"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Gruppo10"
+            },
+            {
+              "LCID": 1041,
+              "Text": "グループ 10"
+            },
+            {
+              "LCID": 1042,
+              "Text": "그룹10"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Grupo 10"
+            },
+            {
+              "LCID": 2052,
+              "Text": "组 10"
+            }
+          ]
+        },
+        {
+          "ID": 11,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Group11"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Gruppe 11"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Grupo 11"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Groupe 11"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Gruppo11"
+            },
+            {
+              "LCID": 1041,
+              "Text": "グループ 11"
+            },
+            {
+              "LCID": 1042,
+              "Text": "그룹11"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Grupo 11"
+            },
+            {
+              "LCID": 2052,
+              "Text": "组 11"
+            }
+          ]
+        },
+        {
+          "ID": 12,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Group12"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Gruppe 12"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Grupo 12"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Groupe 12"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Gruppo12"
+            },
+            {
+              "LCID": 1041,
+              "Text": "グループ 12"
+            },
+            {
+              "LCID": 1042,
+              "Text": "그룹12"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Grupo 12"
+            },
+            {
+              "LCID": 2052,
+              "Text": "组 12"
+            }
+          ]
+        },
+        {
+          "ID": 13,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Group13"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Gruppe 13"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Grupo 13"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Groupe 13"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Gruppo13"
+            },
+            {
+              "LCID": 1041,
+              "Text": "グループ 13"
+            },
+            {
+              "LCID": 1042,
+              "Text": "그룹13"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Grupo 13"
+            },
+            {
+              "LCID": 2052,
+              "Text": "组 13"
+            }
+          ]
+        },
+        {
+          "ID": 14,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Group14"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Gruppe 14"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Grupo 14"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Groupe 14"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Gruppo14"
+            },
+            {
+              "LCID": 1041,
+              "Text": "グループ 14"
+            },
+            {
+              "LCID": 1042,
+              "Text": "그룹14"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Grupo 14"
+            },
+            {
+              "LCID": 2052,
+              "Text": "组 14"
+            }
+          ]
+        },
+        {
+          "ID": 15,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Group15"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Gruppe 15 "
+            },
+            {
+              "LCID": 1034,
+              "Text": "Grupo 15"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Groupe 15"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Gruppo15"
+            },
+            {
+              "LCID": 1041,
+              "Text": "グループ 15"
+            },
+            {
+              "LCID": 1042,
+              "Text": "그룹15"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Grupo 15"
+            },
+            {
+              "LCID": 2052,
+              "Text": "组 15"
+            }
+          ]
+        },
+        {
+          "ID": 16,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Group16"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Gruppe 16"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Grupo 16"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Groupe 16"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Gruppo16"
+            },
+            {
+              "LCID": 1041,
+              "Text": "グループ 16"
+            },
+            {
+              "LCID": 1042,
+              "Text": "그룹16"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Grupo 16"
+            },
+            {
+              "LCID": 2052,
+              "Text": "组 16"
+            }
+          ]
+        },
+        {
+          "ID": 17,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Group17"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Gruppe 17"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Grupo 17"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Groupe 17"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Gruppo17"
+            },
+            {
+              "LCID": 1041,
+              "Text": "グループ 17"
+            },
+            {
+              "LCID": 1042,
+              "Text": "그룹17"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Grupo 17"
+            },
+            {
+              "LCID": 2052,
+              "Text": "组 17"
+            }
+          ]
+        },
+        {
+          "ID": 18,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Group18"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Gruppe 18"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Grupo 18"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Groupe 18"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Gruppo18"
+            },
+            {
+              "LCID": 1041,
+              "Text": "グループ 18"
+            },
+            {
+              "LCID": 1042,
+              "Text": "그룹18"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Grupo 18"
+            },
+            {
+              "LCID": 2052,
+              "Text": "组 18"
+            }
+          ]
+        },
+        {
+          "ID": 19,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Group19"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Gruppe 19"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Grupo 19"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Groupe 19"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Gruppo19"
+            },
+            {
+              "LCID": 1041,
+              "Text": "グループ 19"
+            },
+            {
+              "LCID": 1042,
+              "Text": "그룹19"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Grupo 19"
+            },
+            {
+              "LCID": 2052,
+              "Text": "组 19"
+            }
+          ]
+        },
+        {
+          "ID": 20,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Group20"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Gruppe 20"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Grupo 20"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Groupe 20"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Gruppo20"
+            },
+            {
+              "LCID": 1041,
+              "Text": "グループ 20"
+            },
+            {
+              "LCID": 1042,
+              "Text": "그룹20"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Grupo 20"
+            },
+            {
+              "LCID": 2052,
+              "Text": "组 20"
+            }
+          ]
+        },
+        {
+          "ID": 21,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Group21"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Gruppe 21"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Grupo 21"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Groupe 21"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Gruppo21"
+            },
+            {
+              "LCID": 1041,
+              "Text": "グループ 21"
+            },
+            {
+              "LCID": 1042,
+              "Text": "그룹21"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Grupo 21"
+            },
+            {
+              "LCID": 2052,
+              "Text": "组 21"
+            }
+          ]
+        },
+        {
+          "ID": 22,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Group22"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Gruppe 22"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Grupo 22"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Groupe 22"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Gruppo22"
+            },
+            {
+              "LCID": 1041,
+              "Text": "グループ 22"
+            },
+            {
+              "LCID": 1042,
+              "Text": "그룹22"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Grupo 22"
+            },
+            {
+              "LCID": 2052,
+              "Text": "组 22"
+            }
+          ]
+        },
+        {
+          "ID": 23,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Group23"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Gruppe 23"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Grupo 23"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Groupe 23"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Gruppo23"
+            },
+            {
+              "LCID": 1041,
+              "Text": "グループ 23"
+            },
+            {
+              "LCID": 1042,
+              "Text": "그룹23"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Grupo 23"
+            },
+            {
+              "LCID": 2052,
+              "Text": "组 23"
+            }
+          ]
+        },
+        {
+          "ID": 24,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Group24"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Gruppe 24"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Grupo 24"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Groupe 24"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Gruppo24"
+            },
+            {
+              "LCID": 1041,
+              "Text": "グループ 24"
+            },
+            {
+              "LCID": 1042,
+              "Text": "그룹24"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Grupo 24"
+            },
+            {
+              "LCID": 2052,
+              "Text": "组 24"
+            }
+          ]
+        },
+        {
+          "ID": 25,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Group25"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Gruppe 25"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Grupo 25"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Groupe 25"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Gruppo25"
+            },
+            {
+              "LCID": 1041,
+              "Text": "グループ 25"
+            },
+            {
+              "LCID": 1042,
+              "Text": "그룹25"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Grupo 25"
+            },
+            {
+              "LCID": 2052,
+              "Text": "组 25"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "BusRegulatorActionStrings",
+      "Strings": [
+        {
+          "ID": 0,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Disabled"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Deaktiviert"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Inhabilitado"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Désactivé"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Disattivata"
+            },
+            {
+              "LCID": 1041,
+              "Text": "無効"
+            },
+            {
+              "LCID": 1042,
+              "Text": "사용 안 함"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Desativado"
+            },
+            {
+              "LCID": 2052,
+              "Text": "禁用"
+            }
+          ]
+        },
+        {
+          "ID": 1,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "Shunt Regulator"
+            },
+            {
+              "LCID": 1031,
+              "Text": "Nebenschlussregler"
+            },
+            {
+              "LCID": 1034,
+              "Text": "Regulador de derivación"
+            },
+            {
+              "LCID": 1036,
+              "Text": "Régulateur shunt"
+            },
+            {
+              "LCID": 1040,
+              "Text": "Regolatore derivatore"
+            },
+            {
+              "LCID": 1041,
+              "Text": "シャント レギュレータ"
+            },
+            {
+              "LCID": 1042,
+              "Text": "션트 조절기"
+            },
+            {
+              "LCID": 1046,
+              "Text": "Regulador da derivação"
+            },
+            {
+              "LCID": 2052,
+              "Text": "并励调节器"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "ACInputVoltageIconStrings",
+      "Strings": [
+        {
+          "ID": 0,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "200-240 VAC"
+            },
+            {
+              "LCID": 1031,
+              "Text": "200-240 VAC"
+            },
+            {
+              "LCID": 1034,
+              "Text": "200-240 V CA"
+            },
+            {
+              "LCID": 1036,
+              "Text": "200-240 VCA"
+            },
+            {
+              "LCID": 1040,
+              "Text": "200-240 VCA"
+            },
+            {
+              "LCID": 1041,
+              "Text": "200-240 VAC"
+            },
+            {
+              "LCID": 1042,
+              "Text": "200-240 VAC"
+            },
+            {
+              "LCID": 1046,
+              "Text": "200-240 VAC"
+            },
+            {
+              "LCID": 2052,
+              "Text": "200-240 VAC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "ACInputVoltageIconThreeStrings",
+      "Strings": [
+        {
+          "ID": 0,
+          "Descriptions": [
+            {
+              "LCID": 1033,
+              "Text": "380-440 VAC"
+            },
+            {
+              "LCID": 1031,
+              "Text": "380-440 VAC"
+            },
+            {
+              "LCID": 1034,
+              "Text": "380-440 V CA"
+            },
+            {
+              "LCID": 1036,
+              "Text": "380-440 VCA"
+            },
+            {
+              "LCID": 1040,
+              "Text": "380-440 VCA"
+            },
+            {
+              "LCID": 1041,
+              "Text": "380-440 VAC"
+            },
+            {
+              "LCID": 1042,
+              "Text": "380-440 VAC"
+            },
+            {
+              "LCID": 1046,
+              "Text": "380-440 VAC"
+            },
+            {
+              "LCID": 2052,
+              "Text": "380-440 VAC"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+﻿<Window
+    x:Class="ICSStudio.Gui.Dialogs.AddOnInstructionOptionsDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:local="clr-namespace:ICSStudio.Gui.Dialogs"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{Binding Title}"
+    Width="800"
+    Height="450"
+    MinWidth="600"
+    d:DesignHeight="300"
+    d:DesignWidth="300"
+    Activated="AddOnInstructionOptionsDialog_OnActivated"
+    Closing="AddOnInstructionOptionsDialog_OnClosing"
+    Deactivated="AddOnInstructionOptionsDialog_OnDeactivated"
+    ResizeMode="CanResizeWithGrip"
+    ShowInTaskbar="False"
+    WindowStartupLocation="CenterOwner"
+    mc:Ignorable="d">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Closed">
+            <i:InvokeCommandAction Command="{Binding CloseCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ButtonStyle" TargetType="{x:Type Button}">
+                <Setter Property="Margin" Value="4,4,12,4" />
+                <Setter Property="MinWidth" Value="74" />
+            </Style>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Name="Grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <CheckBox
+                Grid.Row="0"
+                Grid.ColumnSpan="2"
+                Content="{DynamicResource Copy All Default Values}"
+                IsEnabled="{Binding IsEnable}"
+                IsChecked="{Binding IsChecked}"/>
+            <Button
+                Grid.Row="1"
+                Grid.Column="0"
+                HorizontalAlignment="Left"
+                Command="{Binding LogicCommand}"
+                Content="{DynamicResource Logic}"
+                Style="{StaticResource ButtonStyle}" />
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="1"
+                HorizontalAlignment="Left"
+                Text="{Binding DataSize}" />
+            <StackPanel
+                Grid.Row="1"
+                Grid.Column="1"
+                MinWidth="450"
+                Margin="0,0,-90,0"
+                HorizontalAlignment="Right"
+                Orientation="Horizontal">
+                <Button
+                    Grid.Column="1"
+                    HorizontalAlignment="Right"
+                    Command="{Binding OkCommand}"
+                    Content="{DynamicResource OK}"
+                    IsDefault="True"
+                    Style="{StaticResource ButtonStyle}" />
+                <Button
+                    Grid.Column="1"
+                    HorizontalAlignment="Right"
+                    Command="{Binding CancelCommand}"
+                    Content="{DynamicResource Cancel}"
+                    IsCancel="True"
+                    Style="{StaticResource ButtonStyle}" />
+                <Button
+                    Grid.Column="1"
+                    HorizontalAlignment="Right"
+                    Command="{Binding ApplyCommand}"
+                    Content="{DynamicResource Apply}"
+                    Style="{StaticResource ButtonStyle}" />
+                <Button
+                    HorizontalAlignment="Right"
+                    Command="{Binding HelpCommand}"
+                    Content="{DynamicResource Help}"
+                    Style="{StaticResource ButtonStyle}" />
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</Window>

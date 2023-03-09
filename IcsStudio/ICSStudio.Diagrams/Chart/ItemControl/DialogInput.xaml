@@ -1,0 +1,45 @@
+﻿<Window x:Class="ICSStudio.Diagrams.Chart.ItemControl.DialogInput"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ICSStudio.Diagrams.Chart.ItemControl"
+        mc:Ignorable="d"
+        Title="DialogInput" Deactivated="DialogInput_OnDeactivated" ShowActivated="True"
+        ResizeMode="NoResize" WindowStyle="None" ShowInTaskbar="False" AllowsTransparency="True">
+    <Window.Background>
+        <SolidColorBrush Opacity="0.5"></SolidColorBrush>
+    </Window.Background>
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal">
+            <Border Background="#00000000" BorderThickness="1" BorderBrush="CornflowerBlue">
+                <Grid>
+                    <TextBox Height="20" Text="{Binding Content,UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left"
+                             FontSize="15" KeyDown="UIElement_OnKeyDown"></TextBox>
+                    <Button Height="20" Width="20"  Background="#00000000" Command="{Binding Command}" BorderThickness="0" HorizontalAlignment="Right" Margin="0,0,-20,0">
+                        <Button.Content>
+                            <Path Data="M5,5L10,15L15,5" Stroke="Black" StrokeThickness="1"></Path>
+                        </Button.Content>
+                    </Button>
+                </Grid>
+            </Border>
+        </StackPanel>
+        <Grid Visibility="{Binding Visibility}">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="TODO" Grid.Row="0" Grid.Column="0"></TextBlock>
+        </Grid>
+    </StackPanel>
+
+
+</Window>

@@ -1,0 +1,32 @@
+{
+    "VendorID": 1,
+    "ProductType": 7,
+    "ProductCode": 231,
+    "CatalogNumber": "1734-OB4",
+    "Descriptions": [
+        {
+            "LCID": 1033,
+            "Text": "4 Point Relay Output N.O./N.C."
+        },
+        {
+            "LCID": 2052,
+            "Text": "4 点继电器输出 N.O./N.C."
+        }
+    ],
+    "MajorRevs": [
+        {
+            "MajorRev": 3,
+            "Series": "C"
+        }
+    ],
+    "Ports": [
+        {
+            "Number": 1,
+            "Type": "PointIO",
+            "Label": "Chassis",
+            "Width": 1,
+            "ConnectorOffset": 0
+        }
+    ],
+    "PSFile": "PS1734_Discrete.json"
+}

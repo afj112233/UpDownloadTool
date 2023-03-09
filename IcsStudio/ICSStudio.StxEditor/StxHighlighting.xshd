@@ -1,0 +1,244 @@
+﻿<?xml version="1.0"?>
+<SyntaxDefinition name="ST" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+  <Color name="Preprocessor" foreground="#ff0060ff" />
+  <Color name="Comment" foreground="#FF008000" />
+	<Color name="String" foreground="Black" />
+	<Color name="NoMerge" foreground="Black" />
+  <Color name="MethodName" foreground="#ff0060ff" />
+  <Color name="Keyword" foreground="#ff0060ff" />
+  <Color name="Digits" foreground="#FF003080" />
+   <Color name="Integer" foreground="#FF003080" />
+   <Color name="HexInteger" foreground="#FF003080" />
+  <Color name="Variable" foreground="#ffAC225D"/>
+  <Color name="RegionComment" foreground="#ffB1CBE3"/>
+  <Color name="VariableOrInteger" foreground="#ffAC225D"/>
+	<!-- This is the main RuleSet. -->
+	<RuleSet ignoreCase="true">
+	  <Keywords color="NoMerge">
+	    <Word>[</Word>
+	    <Word>]</Word>
+	    <Word>(</Word>
+	    <Word>)</Word>
+	  </Keywords>
+    <Keywords color="String">
+      <Word>1.$</Word>
+      <Word>1.#QNAN</Word>
+      <Word>not</Word>
+      <Word>mod</Word>
+      <Word>and</Word>
+      <Word>xor</Word>
+      <Word>or</Word>
+    </Keywords>
+
+    <Keywords color="Comment">
+      <Word>(*</Word>
+      <Word>*)</Word>
+      <Word>/*</Word>
+      <Word>*/</Word>
+    </Keywords>
+<Keywords color="Keyword">
+      <Word>if</Word>
+      <Word>then</Word>
+      <Word>else</Word>
+      <Word>elsif</Word>
+      <Word>end_if</Word>
+
+      <Word>case</Word>
+      <Word>of</Word>
+      <Word>end_case</Word>
+
+      <Word>for</Word>
+      <Word>to</Word>
+      <Word>by</Word>
+      <Word>do</Word>
+      <Word>end_for</Word>
+
+      <Word>while</Word>
+      <Word>end_while</Word>
+
+      <Word>repeat</Word>
+      <Word>until</Word>
+      <Word>end_repeat</Word>
+
+      <Word>goto</Word>
+      <Word>return</Word>
+      <Word>exit</Word>
+
+      <Word>#region</Word>
+      <Word>#endregion</Word>
+    </Keywords>
+    <Rule color="RegionComment">(?&lt;=\#(region|endregion)).*</Rule>
+	  <!-- Digits -->
+	  <Rule color="HexInteger">16\#[0-9A-Fa-f][0-9A-Fa-f_]*</Rule>
+	  <Rule color="Integer">(2\#[01][01_]*|8\#[0-7][0-7_]*|[0-9][0-9_]*)</Rule>
+    <Rule color="Digits">((?&lt;=(&#160;|\t|=|\[|^|\n|&lt;|&gt;|\*|&#38;|&#32;|\+|\-|\/|\*|,|\(|\)))(\d+(\.[0-9]+)?|\.[0-9]+)([eE][+-]?[0-9]+)?)(?!\#)</Rule>
+    <Rule color="MethodName">[\d\w_]+(?=(\s*\())</Rule>
+	  <Rule color="VariableOrInteger">(\#)?[a-fA-F]+</Rule>
+    <Rule color="Variable">(((%)?[A-Za-z_]+([_A-Za-z0-9]|(:(?!=)))*))</Rule>
+    <Rule color="Variable">\.[0-9]+</Rule>
+	<Keywords>
+	  <Word>XPY</Word>
+    <Word>ABS</Word>
+      <Word>ACOS</Word>
+      <Word>ALM</Word>
+      <Word>ALMA</Word>
+      <Word>ALMD</Word>
+      <Word>ASIN</Word>
+      <Word>ATAN</Word>
+      <Word>BTDT</Word>
+      <Word>CC</Word>
+      <Word>CONCAT</Word>
+      <Word>COP</Word>
+      <Word>COS</Word>
+      <Word>CPS</Word>
+      <Word>CTUD</Word>
+      <Word>D2SD</Word>
+      <Word>D3SD</Word>
+      <Word>DEDT</Word>
+      <Word>DEG</Word>
+      <Word>DELETE</Word>
+      <Word>DERV</Word>
+      <Word>DFF</Word>
+      <Word>DTOS</Word>
+      <Word>EOT</Word>
+      <Word>ESEL</Word>
+      <Word>EVENT</Word>
+      <Word>FGEN</Word>
+      <Word>FIND</Word>
+      <Word>HLL</Word>
+      <Word>HMIBC</Word>
+      <Word>HPF</Word>
+      <Word>IMC</Word>
+      <Word>INSERT</Word>
+      <Word>INTG</Word>
+      <Word>IOT</Word>
+      <Word>JKFF</Word>
+      <Word>JSR</Word>
+      <Word>LDL2</Word>
+      <Word>LDLG</Word>
+      <Word>LN</Word>
+      <Word>LOG</Word>
+      <Word>LOWER</Word>
+      <Word>LPF</Word>
+      <Word>MAAT</Word>
+      <Word>MAFR</Word>
+      <Word>MAG</Word>
+      <Word>MAH</Word>
+      <Word>MAHD</Word>
+      <Word>MAJ</Word>
+      <Word>MAM</Word>
+      <Word>MAOC</Word>
+      <Word>MAPC</Word>
+      <Word>MAR</Word>
+      <Word>MAS</Word>
+      <Word>MASD</Word>
+      <Word>MASR</Word>
+      <Word>MATC</Word>
+      <Word>MAVE</Word>
+      <Word>MAW</Word>
+      <Word>MAXC</Word>
+      <Word>MCCD</Word>
+      <Word>MCCM</Word>
+      <Word>MCCP</Word>
+      <Word>MCD</Word>
+      <Word>MCLM</Word>
+      <Word>MCPM</Word>
+      <Word>MCS</Word>
+      <Word>MCSD</Word>
+      <Word>MCSR</Word>
+      <Word>MCSV</Word>
+      <Word>MCT</Word>
+      <Word>MCTO</Word>
+      <Word>MCTP</Word>
+      <Word>MCTPO</Word>
+      <Word>MDAC</Word>
+      <Word>MDCC</Word>
+      <Word>MDF</Word>
+      <Word>MDO</Word>
+      <Word>MDOC</Word>
+      <Word>MDR</Word>
+      <Word>MDS</Word>
+      <Word>MDW</Word>
+      <Word>MGS</Word>
+      <Word>MGSD</Word>
+      <Word>MGSP</Word>
+      <Word>MGSR</Word>
+      <Word>MID</Word>
+      <Word>MINC</Word>
+      <Word>MMC</Word>
+      <Word>MRAT</Word>
+      <Word>MRHD</Word>
+      <Word>MRP</Word>
+      <Word>MSF</Word>
+      <Word>MSG</Word>
+      <Word>MSO</Word>
+      <Word>MSTD</Word>
+      <Word>MVMT</Word>
+      <Word>NTCH</Word>
+      <Word>OSFI</Word>
+      <Word>OSRI</Word>
+      <Word>PATT</Word>
+      <Word>PCLF</Word>
+      <Word>PCMD</Word>
+      <Word>PDET</Word>
+      <Word>PFL</Word>
+      <Word>PI</Word>
+      <Word>PID</Word>
+      <Word>PIDE</Word>
+      <Word>PMUL</Word>
+      <Word>POSP</Word>
+      <Word>POVR</Word>
+      <Word>PPD</Word>
+      <Word>PRNP</Word>
+      <Word>PXRQ</Word>
+      <Word>PSC</Word>
+      <Word>RAD</Word>
+      <Word>RESD</Word>
+      <Word>RET</Word>
+      <Word>RLIM</Word>
+      <Word>RMPS</Word>
+      <Word>RTOR</Word>
+      <Word>RTOS</Word>
+      <Word>SASI</Word>
+      <Word>SATT</Word>
+      <Word>SBR</Word>
+      <Word>SCL</Word>
+      <Word>SCLF</Word>
+      <Word>SCMD</Word>
+      <Word>SCRV</Word>
+      <Word>SDET</Word>
+      <Word>SETD</Word>
+      <Word>SFP</Word>
+      <Word>SFR</Word>
+      <Word>SIN</Word>
+      <Word>SIZE</Word>
+      <Word>SNEG</Word>
+      <Word>SOC</Word>
+      <Word>SOVR</Word>
+      <Word>SQRT</Word>
+      <Word>SRTP</Word>
+      <Word>SRT</Word>
+      <Word>SSUM</Word>
+      <Word>SSV</Word>
+      <Word>STOD</Word>
+      <Word>STOR</Word>
+      <Word>SWPB</Word>
+</Keywords>
+
+    <Span color="Comment" begin="//" />
+    <Span color="Comment" multiline="true" begin="/\*" end="\*/" />
+    <Span color="Comment" multiline="true" begin="\(\*" end="\*\)" />
+		
+		<Span color="String">
+			<Begin>'</Begin>
+			<End>'</End>
+			<RuleSet>
+				<!-- nested span for escape sequences -->
+				<Span begin="\\" end="." />
+			</RuleSet>
+		</Span>
+
+    
+	</RuleSet>
+
+</SyntaxDefinition>

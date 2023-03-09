@@ -1,0 +1,242 @@
+﻿<UserControl x:Class="ICSStudio.UIServicesPackage.AxisCIPDriveProperties.Panel.StatusPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:controls="clr-namespace:ICSStudio.Gui.Controls;assembly=ICSStudio.Gui"
+             mc:Ignorable="d"
+             d:DesignHeight="600" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+                <ResourceDictionary
+                    Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/CustomControls.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="controls:StatusBitControl">
+                <Setter Property="Margin" Value="0" />
+            </Style>
+        </ResourceDictionary>
+
+    </UserControl.Resources>
+    <!-- ReSharper disable Xaml.StaticResourceNotResolved -->
+    <Grid IsSharedSizeScope="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="10" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="200" />
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Content="{DynamicResource Actual Position:}"></Label>
+            <Label Grid.Row="1" Grid.Column="0" IsEnabled="{Binding CommandEnabled}" Content="{DynamicResource Command Position:}"></Label>
+
+            <Label Grid.Row="0" Grid.Column="2" Content="{DynamicResource Actual Velocity:}"></Label>
+            <Label Grid.Row="1" Grid.Column="2" IsEnabled="{Binding CommandEnabled}" Content="{DynamicResource Command Velocity:}"></Label>
+
+            <Label Grid.Row="0" Grid.Column="1" Content="{Binding ActualPosition}" 
+                   Visibility="{Binding ActualVisibility}" />
+            <Label Grid.Row="1" Grid.Column="1" Content="{Binding CommandPosition}"
+                   Visibility="{Binding CommandVisibility}" />
+
+            <Label Grid.Row="0" Grid.Column="3" Content="{Binding ActualVelocity}"
+                   Visibility="{Binding ActualVisibility}"/>
+            <Label Grid.Row="1" Grid.Column="3" Content="{Binding CommandVelocity}"
+                   Visibility="{Binding CommandVisibility}" />
+
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" FontWeight="Bold" Text="{DynamicResource Axis Status}"></TextBlock>
+            <Separator Grid.Column="1" />
+        </Grid>
+
+        <Grid Grid.Row="2" Margin="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="5" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0"  SharedSizeGroup="Group0"/>
+                <ColumnDefinition Width="Auto" SharedSizeGroup="Group1"/>
+                <ColumnDefinition Width="Auto" SharedSizeGroup="Group2"/>
+                <ColumnDefinition Width="Auto" SharedSizeGroup="Group3"/>
+                <ColumnDefinition Width="Auto" SharedSizeGroup="Group4"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Row="0" Grid.Column="1">
+                <controls:StatusBitControl
+                    Text="{DynamicResource AC Line Power Loss}" IsSet="{Binding ACPowerLoss, Mode=OneWay}" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource AC Line Phase Loss}" IsEnabled="False" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource AC Line Frequency Change}" IsEnabled="False" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource AC Line Sync Loss}" IsEnabled="False" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource AC Line Sync}" IsEnabled="False" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource AC Line Voltage Sag}" IsEnabled="False" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Regenerating}" IsEnabled="False" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Regenerative Power Limit}" IsEnabled="False" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="0" Grid.Column="2">
+                <controls:StatusBitControl
+                    Text="{DynamicResource DC Bus Up}" IsSet="{Binding DCBusUp,Mode=OneWay}" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource DC Bus Unload}" IsSet="{Binding DCBusUnload,Mode=OneWay}" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Power Loss}" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Ride Thru}" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Shutdown}" IsSet="{Binding Shutdown,Mode=OneWay}" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Reactive Power Limit}" IsEnabled="False" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Motoring}" IsEnabled="False" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Motoring Power Limit}" IsEnabled="False" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="0" Grid.Column="3">
+                <controls:StatusBitControl
+                    Text="{DynamicResource Power Structure Enabled}" IsSet="{Binding PowerStructureEnabled,Mode=OneWay}" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Tracking Command}" IsSet="{Binding TrackingCommand,Mode=OneWay}" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Feedback Integrity}" IsSet="{Binding FeedbackIntegrity,Mode=OneWay}" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Position Lock}" IsSet="{Binding PositionLock,Mode=OneWay}" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Velocity Lock}" IsSet="{Binding VelocityLock,Mode=OneWay}" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Velocity Standstill}" IsSet="{Binding VelocityStandstill,Mode=OneWay}" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Bus Voltage Lock}" IsEnabled="False" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Active Current Limit}" IsEnabled="False" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="0" Grid.Column="4">
+                <controls:StatusBitControl
+                    Text="{DynamicResource Velocity Threshold}" IsSet="{Binding VelocityThreshold,Mode=OneWay}" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Velocity Limit}" IsSet="{Binding VelocityLimit,Mode=OneWay}" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Torque Threshold}" IsSet="{Binding TorqueThreshold,Mode=OneWay}" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Torque Limit}" IsSet="{Binding TorqueLimit,Mode=OneWay}" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Current Limit}" IsSet="{Binding CurrentLimit,Mode=OneWay}" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Thermal Limit}" IsSet="{Binding ThermalLimit,Mode=OneWay}" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Bus Voltage Limit}" IsEnabled="False" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Reactive Current Limit}" IsEnabled="False" />
+            </StackPanel>
+
+        </Grid>
+
+        <Grid Grid.Row="3" Margin="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" FontWeight="Bold" Text="{DynamicResource Digital I/O}"></TextBlock>
+            <Separator Grid.Column="1" />
+        </Grid>
+
+        <Grid Grid.Row="4" Margin="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0" SharedSizeGroup="Group0"/>
+                <ColumnDefinition Width="Auto" SharedSizeGroup="Group1"/>
+                <ColumnDefinition Width="Auto" SharedSizeGroup="Group2"/>
+                <ColumnDefinition Width="Auto" SharedSizeGroup="Group3"/>
+                <ColumnDefinition Width="Auto" SharedSizeGroup="Group4"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Row="0" Grid.Column="1">
+                <!--Enable,Home,Registration 1,Registration 2-->
+                <controls:StatusBitControl
+                    Text="{DynamicResource StatusEnable}" IsSet="{Binding Enable,Mode=OneWay}" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Home}" IsSet="{Binding Home,Mode=OneWay}" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Registration 1}" IsSet="{Binding Registration1,Mode=OneWay}" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Registration 2}" IsSet="{Binding Registration2,Mode=OneWay}" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="0" Grid.Column="2">
+                <!--Contactor Enable Out,Pre-Charge OK,Positive Overtravel,Negative Overtravel,Feedback Thermostat OK-->
+                <controls:StatusBitControl
+                    Text="{DynamicResource Contactor Enable Out}" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Pre-Charge OK}" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Positive Overtravel}" IsSet="{Binding PositiveOvertravel,Mode=OneWay}" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Negative Overtravel}" IsSet="{Binding NegativeOvertravel,Mode=OneWay}" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Feedback Thermostat OK}" IsSet="{Binding FeedbackThermostat,Mode=OneWay}" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="0" Grid.Column="3">
+                <!--AC Line Contactor OK,Regenerative Power OK In,Converter OK In,Bus Capacitor OK,Motor Thermostat OK-->
+                <controls:StatusBitControl
+                    Text="{DynamicResource AC Line Contactor OK}" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Regenerative Power OK In}" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Converter OK In}" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Bus Capacitor OK}" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Motor Thermostat OK}" IsSet="{Binding MotorThermostat,Mode=OneWay}" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="0" Grid.Column="4">
+                <!--Mechanical Brake,Regenerative Power OK Out,Converter OK Out,Bus Conditioner Module OK,Shunt Thermal Switch OK-->
+                <controls:StatusBitControl
+                    Text="{DynamicResource Mechanical Brake}" IsSet="{Binding MechanicalBrake,Mode=OneWay}" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Regenerative Power OK Out}" IsEnabled="False" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Converter OK Out}" IsEnabled="False" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Bus Conditioner Module OK}" />
+                <controls:StatusBitControl
+                    Text="{DynamicResource Shunt Thermal Switch OK}" />
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+    <!-- ReSharper restore Xaml.StaticResourceNotResolved -->
+</UserControl>

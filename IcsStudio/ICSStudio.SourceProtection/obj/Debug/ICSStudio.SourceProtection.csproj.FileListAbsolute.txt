@@ -1,0 +1,5 @@
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.SourceProtection.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.SourceProtection.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.SourceProtection\obj\Debug\ICSStudio.SourceProtection.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.SourceProtection\obj\Debug\ICSStudio.SourceProtection.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.SourceProtection\obj\Debug\ICSStudio.SourceProtection.csprojResolveAssemblyReference.cache

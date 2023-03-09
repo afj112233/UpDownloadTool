@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="ICSStudio.Components.Controls.DataTypeSelectorAutoCompleteControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:ICSStudio.Components.Controls"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300"
+             Loaded="HandleRootLoaded" GotFocus="HandleRootGotFocus" x:Name="Root" Focusable="true">
+    <FrameworkElement.Resources>
+        <RoutedCommand x:Key="LaunchDataTypeSelector" />
+    </FrameworkElement.Resources>
+    <UIElement.CommandBindings>
+        <CommandBinding Executed="ExecuteLaunchDataTypeSelector" Command="{StaticResource LaunchDataTypeSelector}" />
+    </UIElement.CommandBindings>
+    <UIElement.InputBindings>
+        <KeyBinding Command="{StaticResource LaunchDataTypeSelector}" Key="Down" Modifiers="Alt" />
+    </UIElement.InputBindings>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <local:DataTypeAutoCompleteControl
+            x:Name="DataTypeAutoCompleteBox" TextChanged="HandleTextChanged" Grid.Column="0" Padding="2,1,1,2"
+            Text="{Binding DataTypeName, ElementName=Root}"
+            VerticalContentAlignment="{Binding VerticalContentAlignment, ElementName=Root}"
+            BorderThickness="{Binding BorderThickness, ElementName=Root}"
+            IsTabStop="{Binding IsTabStop, ElementName=Root}"
+            StructureMembers="{Binding StructureMembers, ElementName=Root}" />
+
+        <Button Click="HandleDataTypeSelectorButtonClick" x:Name="DataTypeSelectorButton" Grid.Column="1"
+                IsTabStop="false" MinWidth="21" Content="..." Padding="1,1,1,4" />
+
+
+    </Grid>
+
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup Name="InvisibleState">
+            <VisualState Name="Visible">
+                <Storyboard>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetName="DataTypeSelectorButton"
+                                                   Storyboard.TargetProperty="Opacity">
+                        <DiscreteDoubleKeyFrame KeyTime="00:00:00.00" Value="0.0" />
+                        <EasingDoubleKeyFrame KeyTime="00:00:00.20" Value="1.0">
+                            <EasingDoubleKeyFrame.EasingFunction>
+                                <SineEase EasingMode="EaseInOut" />
+                            </EasingDoubleKeyFrame.EasingFunction>
+                        </EasingDoubleKeyFrame>
+                    </DoubleAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="DataTypeSelectorButton"
+                                                   Storyboard.TargetProperty="Visibility">
+                        <DiscreteObjectKeyFrame KeyTime="00:00:00.01" Value="{x:Static Visibility.Visible}" />
+                    </ObjectAnimationUsingKeyFrames>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetName="DataTypeAutoCompleteBox"
+                                                   Storyboard.TargetProperty="Opacity">
+                        <DiscreteDoubleKeyFrame KeyTime="00:00:00.00" Value="1.0" />
+                    </DoubleAnimationUsingKeyFrames>
+                    <ColorAnimationUsingKeyFrames Storyboard.TargetName="DataTypeAutoCompleteBox"
+                                                  Storyboard.TargetProperty="Foreground.Color">
+                        <DiscreteColorKeyFrame KeyTime="00:00:00.01"
+                                               Value="{StaticResource {x:Static SystemColors.ControlTextColorKey}}" />
+                    </ColorAnimationUsingKeyFrames>
+                </Storyboard>
+            </VisualState>
+            <VisualState Name="Invisible">
+                <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="DataTypeSelectorButton"
+                                                   Storyboard.TargetProperty="Visibility">
+                        <DiscreteObjectKeyFrame KeyTime="00:00:00.00" Value="{x:Static Visibility.Collapsed}" />
+                    </ObjectAnimationUsingKeyFrames>
+                    <ColorAnimationUsingKeyFrames Storyboard.TargetName="DataTypeAutoCompleteBox"
+                                                  Storyboard.TargetProperty="Foreground.Color">
+                        <DiscreteColorKeyFrame KeyTime="00:00:00.00" Value="Transparent" />
+                    </ColorAnimationUsingKeyFrames>
+                </Storyboard>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+
+</UserControl>

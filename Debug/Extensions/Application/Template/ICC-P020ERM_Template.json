@@ -1,0 +1,246 @@
+{
+  "AddOnInstructionDefinitions": [],
+  "DataTypes": [],
+  "MatchProjectToController": "false",
+  "Modules": [
+    {
+      "CatalogNumber": "ICC-P020ERM",
+      "EKey": "Disabled",
+      "Inhibited": false,
+      "Major": 33,
+      "MajorFault": true,
+      "Minor": 11,
+      "Name": "Local",
+      "ParentModPortId": 1,
+      "ParentModule": "Local",
+      "Ports": [
+        {
+          "Address": "0",
+          "Id": 1,
+          "Type": "PointIO",
+          "Upstream": false,
+          "Bus": {
+            "Size": #PointIOBusSize#
+          }
+        },
+        {
+          "Id": 2,
+          "Type": "Ethernet",
+          "Upstream": false,
+          "Bus": {
+            "Size": -1
+          }
+        }
+      ],
+      "ProductCode": #ProductCode#,
+      "ProductType": 14,
+      "Vendor": 1447
+    },    {
+      "CatalogNumber": "Embedded-IQ16/A",
+      "Inhibited": false,
+      "Major": 1,
+      "MajorFault": false,
+      "Minor": 1,
+      "Name": "Embedded_IQ16",
+      "ParentModPortId": 1,
+      "ParentModule": "Local",
+      "ProductCode": 217,
+      "ProductType": 7,
+      "Vendor": 1447,
+      "EKey": "CompatibleModule",
+      "Ports": [
+        {
+          "Address": "1",
+          "Id": 1,
+          "Type": "PointIO",
+          "Upstream": true
+        }
+      ],
+      "Communications": {
+        "CommMethod": 536870913,
+        "Connections": [
+          {
+            "Name": "InputData",
+            "RPI": 20000,
+            "Type": "Input",
+            "EventID": 0,
+            "ProgrammaticallySendEventTrigger": false,
+            "Unicast": true,
+            "InputTag": {
+              "ExternalAccess": 0,
+              "DataType": "ICON:ICD_DI16:I:0",
+              "Data": [
+                0,
+                0
+              ]
+            }
+          }
+        ],
+        "ConfigTag": {
+          "ConfigSize": 68,
+          "ExternalAccess": 0,
+          "Data": [
+            72,
+            103,
+            1,
+            1000,
+            1000,
+            1000,
+            1000,
+            1000,
+            1000,
+            1000,
+            1000,
+            1000,
+            1000,
+            1000,
+            1000,
+            1000,
+            1000,
+            1000,
+            1000,
+            1000,
+            1000,
+            1000,
+            1000,
+            1000,
+            1000,
+            1000,
+            1000,
+            1000,
+            1000,
+            1000,
+            1000,
+            1000,
+            1000,
+            1000,
+            1000
+          ],
+          "DataType": "ICON:ICD_DI16:C:0"
+        }
+      },
+      "ExtendedProperties": {
+        "Public": {
+          "CatNum": "Embedded-IQ16",
+          "ConfigID": "300"
+        }
+      }
+    },
+    {
+      "CatalogNumber": "Embedded-OB16/A",
+      "Inhibited": false,
+      "Major": 1,
+      "MajorFault": false,
+      "Minor": 1,
+      "Name": "Embedded_OB16",
+      "ParentModPortId": 1,
+      "ParentModule": "Local",
+      "ProductCode": 232,
+      "ProductType": 7,
+      "Vendor": 5,
+      "EKey": "CompatibleModule",
+      "Ports": [
+        {
+          "Address": "2",
+          "Id": 1,
+          "Type": "PointIO",
+          "Upstream": true
+        }
+      ],
+      "Communications": {
+        "CommMethod": 536870913,
+        "Connections": [
+          {
+            "Name": "OutputData",
+            "RPI": 20000,
+            "Type": "Output",
+            "EventID": 0,
+            "ProgrammaticallySendEventTrigger": false,
+            "Unicast": true,
+            "InputTag": {
+              "ExternalAccess": 0,
+              "DataType": "ICON:ICD_DO16:I:0",
+              "Data": [
+                0,
+                0
+              ]
+            },
+            "OutputTag": {
+              "ExternalAccess": 0,
+              "DataType": "ICON:ICD_DO16:O:0",
+              "Data": [
+                0
+              ]
+            }
+          }
+        ],
+        "ConfigTag": {
+          "ConfigSize": 12,
+          "ExternalAccess": 0,
+          "Data": [
+            16,
+            123,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "DataType": "ICON:ICD_DO16_NoDiag:C:0"
+        }
+      },
+      "ExtendedProperties": {
+        "Public": {
+          "CatNum": "Embedded-OB16",
+          "ConfigID": "600"
+        }
+      }
+    }
+  ],
+  "Name": "#ProjectName#",
+  "Description": "#ProjectDescription#",
+  "EtherNetIPMode": "A1/A2: Linear/DLR",
+  "Programs": [
+    {
+      "Inhibited": false,
+      "MainRoutineName": "MainRoutine",
+      "Name": "MainProgram",
+      "Routines": [
+        {
+          "CodeText": [
+            ""
+          ],
+          "Name": "MainRoutine",
+          "Type": 4,
+          "Use": "Context"
+        }
+      ],
+      "Tags": [],
+      "UseAsFolder": false
+    }
+  ],
+  "ProjectCreationDate": "#ProjectCreationDate#",
+  "ProjectSN": "16#0000_0000",
+  "Tags": [],
+  "Tasks": [
+    {
+      "DisableUpdateOutputs": false,
+      "InhibitTask": false,
+      "Name": "MainTask",
+      "Priority": 10,
+      "SchededPrograms": [
+        "MainProgram"
+      ],
+      "Type": 3,
+      "Watchdog": 500
+    }
+  ],
+  "TimeSlice": "20",
+  "TimeSynchronize": {
+    "Priority1": 128,
+    "Priority2": 128,
+    "PTPEnable": false
+  },
+  "Trends": [],
+  "Use": "Target"
+}

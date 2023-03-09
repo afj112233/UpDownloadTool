@@ -1,0 +1,216 @@
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.AboutBoxPackage.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.CommunicationsPackage.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.ControllerOverviewPackage.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.EditorPackage.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.ErrorOutputPackage.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.LanguageElement.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.OrganizerPackage.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.OutputWindowPackage.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.ParserPackage.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.QuickWatchPackage.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.SearchPackage.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.ToolBarPackage.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.ToolBoxPackage.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.ToolsPackage.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.UIServicesPackage.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\extension.vsixmanifest
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.MultiLanguage.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.UIInterfaces.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\Newtonsoft.Json.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\NLog.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.Interfaces.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.SimpleServices.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.Utils.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.Gui.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\Antlr4.Runtime.Standard.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.Cip.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.SourceProtection.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\GalaSoft.MvvmLight.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.DeviceProfiles.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.CipConnection.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.Database.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\AutoMapper.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\NPOI.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\MessagePack.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\NPOI.OOXML.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\Crc32C.NET.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\Xceed.Wpf.Toolkit.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\Imagin.Common.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\Imagin.Controls.Extended.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\System.Windows.Interactivity.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\System.Data.SQLite.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\Dapper.StrongName.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\System.ValueTuple.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSharpCode.SharpZipLib.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\BouncyCastle.Crypto.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\System.Threading.Tasks.Extensions.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\NPOI.OpenXml4Net.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\NPOI.OpenXmlFormats.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\Imagin.Controls.Common.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\AttachedCommandBehavior.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\CommonServiceLocator.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\GalaSoft.MvvmLight.Platform.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSGateway.Cip.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSGateway.CipConnection.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSGateway.CommonView.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSGateway.Components.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSGateway.Database.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSGateway.Interfaces.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSgateway.Log.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSGateway.Utils.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.Dialogs.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\log4net.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\NDde.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\Xceed.Wpf.AvalonDock.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\DotNetProjects.Input.Toolkit.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.Components.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\OxyPlot.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.Descriptor.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.AvalonEdit.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.DeviceProperties.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.Diagram.Viewer.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.Diagrams.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.FBD.Viewer.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.FileConverter.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.Ladder.Viewer.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.OxyPlot.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.OxyPlot.Wpf.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.StxEditor.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\SharpVectors.Converters.Wpf.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\SharpVectors.Core.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\SharpVectors.Css.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\SharpVectors.Dom.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\SharpVectors.Model.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\SharpVectors.Rendering.Gdi.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\SharpVectors.Rendering.Wpf.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\SharpVectors.Runtime.Wpf.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\System.Windows.Controls.Layout.Toolkit.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\WPFToolkit.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\Microsoft.VisualStudio.Shell.UI.Internal.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\Microsoft.VisualStudio.RemoteControl.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\Microsoft.VisualStudio.Language.NavigateTo.Interfaces.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\Microsoft.VisualStudio.Utilities.Internal.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\MaterialDesignColors.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\MaterialDesignThemes.Wpf.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.DownloadChange.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.DownloadOptions.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.JsonDiffPatch.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\DiffPlex.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\DiffPlex.Wpf.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.AboutBoxPackage.pkgdef
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.CommunicationsPackage.pkgdef
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.ControllerOverviewPackage.pkgdef
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.EditorPackage.pkgdef
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.ErrorOutputPackage.pkgdef
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.LanguageElement.pkgdef
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.OrganizerPackage.pkgdef
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.OutputWindowPackage.pkgdef
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.ParserPackage.pkgdef
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.QuickWatchPackage.pkgdef
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.SearchPackage.pkgdef
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.ToolBarPackage.pkgdef
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.ToolBoxPackage.pkgdef
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.ToolsPackage.pkgdef
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.UIServicesPackage.pkgdef
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\database.db
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\DIO Analog\ICD-IF4.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\DIO Analog\ICD-IR4.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\DIO Analog\ICD-OF4.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\DIO Analog\ICON_PS1734CO_Analog.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\DIO Analog\ICON_PS1734HD_Analog.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\DIO Analog\ICON_PS1734_Analog.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\DIO Discrete\1734-IB4.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\DIO Discrete\1734-IB8.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\DIO Discrete\1734-OB4.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\DIO Discrete\1734-OB8.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\DIO Discrete\1734-OB8E.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\DIO Discrete\Embedded-IQ16.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\DIO Discrete\Embedded-OB16.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\DIO Discrete\ICD-IB16.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\DIO Discrete\ICD-IQ16.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\DIO Discrete\ICD-OB16.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\DIO Discrete\ICD-OV16.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\DIO Discrete\PS1734_Discrete.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\DIO Discrete\PSICD_Discrete.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\DIO Discrete\PSICD_Embedded.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\DIO Enet Adapter\1734-AENTR.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\DIO Enet Adapter\ICD-AENTR.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\Embedded\Embedded_DiscreteIO.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\Embedded\PS1769_L1YEmbedded.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\Generic\ETHERNET-MODULE.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\motion.db
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\2198-D006-ERS3.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\2198-D012-ERS3.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\2198-D020-ERS3.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\2198-D032-ERS3.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\2198-D057-ERS3.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\2198-H003-ERS.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\2198-H003-ERS2.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\2198-H008-ERS.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\2198-H008-ERS2.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\2198-H015-ERS.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\2198-H015-ERS2.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\2198-H025-ERS.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\2198-H025-ERS2.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\2198-H040-ERS.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\2198-H040-ERS2.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\2198-H070-ERS.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\2198-H070-ERS2.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\2198-S086-ERS3.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\ICM-D1S11.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\ICM-D1S15.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\ICM-D1S18.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\ICM-D1S30.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\ICM-D1S70.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\ICM-D3D05.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\ICM-D3D08.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\ICM-D3D11.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\ICM-D3D18.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\ICM-D3D28.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\ICM-D3D38.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\ICM-D5D03.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\ICM-D5D05.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\ICM-D5D08.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\ICM-D5D11.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\ICM-D5D18.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\ICM-D5D28.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\ICM-D5D38.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\ICM-D5S08.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\ICM-D5S100.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\ICM-D5S130.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\ICM-D5S160.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\ICM-D5S50.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\ICM-D5S70.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\PSICM-D5.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ModuleProfiles\MotionDrive\PSKinetix5500Drive.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\Toolchains\include\ivmbytecodeimpl.h
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\Toolchains\include\ivmexport.h
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\Toolchains\include\module.aarch64.lds
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\Toolchains\include\module.lds
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\Toolchains\include\module.x64.lds
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ResetHotkey
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\Template\ICC-B010ERM_Template.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\Template\ICC-P0100ERM_Template.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\Template\ICC-P010ERM_Template.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\Template\ICC-P020ERM_Template.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\Template\ICC-T0100ERM_Template.json
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.AboutBoxPackage.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.CommunicationsPackage.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.ControllerOverviewPackage.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.EditorPackage.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.ErrorOutputPackage.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.LanguageElement.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.OrganizerPackage.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.OutputWindowPackage.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.ParserPackage.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.QuickWatchPackage.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.SearchPackage.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.ToolBarPackage.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.ToolBoxPackage.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.ToolsPackage.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\Release\Extensions\Application\\ICSStudio.UIServicesPackage.pdb

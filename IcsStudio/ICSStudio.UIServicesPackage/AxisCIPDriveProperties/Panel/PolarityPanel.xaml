@@ -1,0 +1,137 @@
+﻿<UserControl x:Class="ICSStudio.UIServicesPackage.AxisCIPDriveProperties.Panel.PolarityPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:converters="clr-namespace:ICSStudio.Gui.Converters;assembly=ICSStudio.Gui"
+             xmlns:enums="clr-namespace:ICSStudio.Cip.Objects;assembly=ICSStudio.Cip"
+             mc:Ignorable="d"
+             d:DesignHeight="600" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <converters:EnumBooleanConverter x:Key="PolarityTypesConverter" />
+        </ResourceDictionary>
+
+    </UserControl.Resources>
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0" 
+              IsEnabled="{Binding IsPolarityEnabled}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="140" />
+                    <ColumnDefinition Width="160" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="{DynamicResource Motion Polarity:}"></TextBlock>
+                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+                    <RadioButton
+                        IsChecked="{Binding MotionPolarity,
+                Converter={StaticResource PolarityTypesConverter},
+                ConverterParameter={x:Static enums:PolarityType.Normal}}" Content="{DynamicResource Motion Polarity Normal}"></RadioButton>
+                    <TextBlock Width="10" />
+                    <RadioButton
+                        IsChecked="{Binding MotionPolarity,
+                Converter={StaticResource PolarityTypesConverter},
+                ConverterParameter={x:Static enums:PolarityType.Inverted}}" Content="{DynamicResource Motion Polarity Inverted}"></RadioButton>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="1" Visibility="{Binding MotorPolarityVisibility}" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="140" />
+                    <ColumnDefinition Width="160" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Text="{DynamicResource Motor Polarity:}"></TextBlock>
+                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                    <RadioButton
+                        IsChecked="{Binding MotorPolarity,
+                Converter={StaticResource PolarityTypesConverter},
+                ConverterParameter={x:Static enums:PolarityType.Normal}}" Content="{DynamicResource Motor Polarity Normal}">
+                    </RadioButton>
+                    <TextBlock Width="10" />
+                    <RadioButton
+                        IsChecked="{Binding MotorPolarity,
+                Converter={StaticResource PolarityTypesConverter},
+                ConverterParameter={x:Static enums:PolarityType.Inverted}}" Content="{DynamicResource Motor Polarity Inverted}">
+                    </RadioButton>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="2" Visibility="{Binding Feedback1PolarityVisibility}" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="140" />
+                    <ColumnDefinition Width="160" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="{DynamicResource Feedback 1 Polarity:}"></TextBlock>
+                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+                    <RadioButton
+                        IsChecked="{Binding Feedback1Polarity,
+                Converter={StaticResource PolarityTypesConverter},
+                ConverterParameter={x:Static enums:PolarityType.Normal}}" Content="{DynamicResource Normal}">
+                    </RadioButton>
+                    <TextBlock Width="10" />
+                    <RadioButton
+                        IsChecked="{Binding Feedback1Polarity,
+                Converter={StaticResource PolarityTypesConverter},
+                ConverterParameter={x:Static enums:PolarityType.Inverted}}" Content="{DynamicResource Inverted}">
+                    </RadioButton>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="3" Visibility="{Binding Feedback2PolarityVisibility}" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="140" />
+                    <ColumnDefinition Width="160" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="{DynamicResource Feedback 2 Polarity:}"></TextBlock>
+                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+                    <RadioButton
+                        IsChecked="{Binding Feedback2Polarity,
+                Converter={StaticResource PolarityTypesConverter},
+                ConverterParameter={x:Static enums:PolarityType.Normal}}" Content="{DynamicResource Normal}">
+                    </RadioButton>
+                    <TextBlock Width="10" />
+                    <RadioButton
+                        IsChecked="{Binding Feedback2Polarity,
+                Converter={StaticResource PolarityTypesConverter},
+                ConverterParameter={x:Static enums:PolarityType.Inverted}}"  Content="{DynamicResource Inverted}">
+                    </RadioButton>
+                </StackPanel>
+            </Grid>
+
+        </Grid>
+
+        <Button Grid.Row="0" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{DynamicResource Test Polarity...}"></Button>
+
+        <DockPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+            <Image />
+            <TextBlock Text="{DynamicResource DANGER: Modifying polarity setting may cause unexpected motion.}"></TextBlock>
+        </DockPanel>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,120 @@
+﻿<UserControl x:Class="ICSStudio.UIServicesPackage.ProgramProperties.Panel.Monitor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ICSStudio.UIServicesPackage.ProgramProperties.Panel"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock
+            Grid.Row="0" 
+            Grid.Column="0"
+            Grid.ColumnSpan="5" 
+            Text="{DynamicResource ScanTime(Execution Time)}"/>
+        <TextBlock 
+            Grid.Row="1"
+            Grid.Column="1" 
+            Text="{DynamicResource Max}"/>
+        <TextBox 
+            Grid.Row="1" 
+            Grid.Column="2" 
+            Width="50" 
+            Text="{Binding MaxScanTime, Mode=OneWay}" 
+            IsEnabled="{Binding IsOnline}" 
+            IsReadOnly="True"/>
+        <TextBlock 
+            Grid.Row="1" 
+            Grid.Column="3" 
+            Text="{DynamicResource us}"/>
+        <TextBlock 
+            Grid.Row="2" 
+            Grid.Column="1" 
+            Text="{DynamicResource Last}"/>
+        <TextBox
+            Grid.Row="2" 
+            Grid.Column="2" 
+            Width="50" 
+            Text="{Binding LastScanTime, Mode=OneWay}" 
+            IsEnabled="{Binding IsOnline}"
+            IsReadOnly="True"/>
+        <TextBlock 
+            Grid.Row="2" 
+            Grid.Column="3"
+            Text="{DynamicResource us}"/>
+        <Button 
+            Grid.Row="1"
+            Grid.Column="4" 
+            Content="{DynamicResource ResetMax}" 
+            Command="{Binding ResetCommand}">
+            <Button.Margin>
+                <Thickness Left="25"/>
+            </Button.Margin>
+        </Button>
+        <TextBlock 
+            Grid.Row="3"
+            Grid.Column="0" 
+            Grid.ColumnSpan="5" 
+            Text="{DynamicResource State:}" 
+            Visibility="{Binding Type2Visibility}"/>
+        <TextBlock 
+            Grid.Row="4"
+            Grid.Column="0" 
+            Grid.ColumnSpan="5" 
+            Text="{DynamicResource Substate:}" 
+            Visibility="{Binding Type2Visibility}"/>
+        <TextBlock 
+            Grid.Row="5" 
+            Grid.Column="0" 
+            Grid.ColumnSpan="5" 
+            Text="{DynamicResource Mode:}"
+            Visibility="{Binding Type3Visibility}"/>
+
+        <TextBlock 
+            Grid.Row="7"
+            Grid.Column="0"
+            Grid.ColumnSpan="5" 
+            Text="{DynamicResource Owners:}" 
+            Visibility="{Binding Type2Visibility}"/>
+        <TextBlock 
+            Grid.Row="8" 
+            Grid.Column="0" 
+            Grid.ColumnSpan="5" 
+            Text="{DynamicResource Unit ID:}" 
+            Visibility="{Binding Type3Visibility}"/>
+        <TextBlock
+            Grid.Row="9"
+            Grid.Column="0"
+            Grid.ColumnSpan="5" 
+            Text="{DynamicResource Sequence ID:}"
+            Visibility="{Binding Type3Visibility}"/>
+
+    </Grid>
+</UserControl>

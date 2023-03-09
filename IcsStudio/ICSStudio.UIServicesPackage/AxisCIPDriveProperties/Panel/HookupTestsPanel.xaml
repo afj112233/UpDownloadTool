@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="ICSStudio.UIServicesPackage.AxisCIPDriveProperties.Panel.HookupTestsPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="500" d:DesignWidth="600">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <TabControl x:Name="MainTabControl">
+            <TabItem Visibility="{Binding MotorAndFeedbackVisibility}">
+                <TabItem.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{DynamicResource Motor and Feedback}"></TextBlock>
+                    </DataTemplate>
+                </TabItem.HeaderTemplate>
+            </TabItem>
+
+            <TabItem Visibility="{Binding MotorFeedbackVisibility}">
+                <TabItem.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{DynamicResource Motor Feedback}"></TextBlock>
+                    </DataTemplate>
+                </TabItem.HeaderTemplate>
+            </TabItem>
+
+            <TabItem Visibility="{Binding MasterFeedbackVisibility}">
+                <TabItem.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{DynamicResource Master Feedback}"></TextBlock>
+                    </DataTemplate>
+                </TabItem.HeaderTemplate>
+            </TabItem>
+
+            <TabItem Visibility="{Binding MarkerVisibility}">
+                <TabItem.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{DynamicResource Marker}"></TextBlock>
+                    </DataTemplate>
+                </TabItem.HeaderTemplate>
+            </TabItem>
+
+        </TabControl>
+    </Grid>
+</UserControl>

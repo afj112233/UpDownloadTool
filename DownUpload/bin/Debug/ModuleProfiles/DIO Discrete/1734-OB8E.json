@@ -1,0 +1,32 @@
+{
+    "VendorID": 1,
+    "ProductType": 7,
+    "ProductCode": 218,
+    "CatalogNumber": "1734-OB8E",
+    "Descriptions": [
+        {
+            "LCID": 1033,
+            "Text": "8 Point 10V-28V DC Electronically Fused Output, Source"
+        },
+        {
+            "LCID": 2052,
+            "Text": "8 点 10V-28V 直流电熔断输出，灌电流"
+        }
+    ],
+    "MajorRevs": [
+        {
+            "MajorRev": 3,
+            "Series": "C"
+        }
+    ],
+    "Ports": [
+        {
+            "Number": 1,
+            "Type": "PointIO",
+            "Label": "Chassis",
+            "Width": 1,
+            "ConnectorOffset": 0
+        }
+    ],
+    "PSFile": "PS1734_Discrete.json"
+}

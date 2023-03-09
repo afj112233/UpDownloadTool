@@ -1,0 +1,103 @@
+﻿<UserControl x:Class="ICSStudio.Components.Controls.SingleClickEditControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:converters="clr-namespace:ICSStudio.Gui.Converters;assembly=ICSStudio.Gui"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             Loaded="HandleLoaded" Unloaded="HandleUnloaded" 
+             MouseEnter="HandleMouseEnter" MouseLeave="HandleMouseLeave" 
+             GotFocus="HandleGotFocus" x:Name="Root" Focusable="true">
+    <FrameworkElement.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Resources\CommonGridDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <converters:DescriptionConverter x:Key="StringSquisher"/>
+            <!-- ReSharper disable once Xaml.RedundantResource -->
+            <DoubleAnimationUsingKeyFrames x:Key="InvisibilityAnimationDropDisabled" Storyboard.TargetProperty="Opacity"
+                                           Storyboard.Target="{x:Null}">
+                <EasingDoubleKeyFrame KeyTime="00:00:00.20" Value="1.0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <SineEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <!-- ReSharper disable once Xaml.RedundantResource -->
+            <ObjectAnimationUsingKeyFrames x:Key="InvisibilityAnimationDropEnabled" Storyboard.TargetProperty="IsInvisible"
+                                           Storyboard.Target="{x:Null}">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00.00">
+                    <ObjectKeyFrame.Value>
+                        <system:Boolean>False</system:Boolean>
+                    </ObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <Storyboard x:Key="MakeVisibleStoryboard">
+                <DoubleAnimationUsingKeyFrames x:Name="ReadOnlyTextBlockAnimation" Storyboard.TargetName="ReadOnlyTextBlock"
+                                               Storyboard.TargetProperty="Opacity">
+                    <DiscreteDoubleKeyFrame KeyTime="00:00:00.01" Value="0.0"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <RoutedCommand x:Key="CommitEdit"/>
+            <RoutedCommand x:Key="CancelEdit"/>
+        </ResourceDictionary>
+    </FrameworkElement.Resources>
+    <UIElement.CommandBindings>
+        <CommandBinding CanExecute="CanExecuteDelete" Command="ApplicationCommands.Delete"/>
+        <CommandBinding Executed="ExecuteCommitEdit" Command="{StaticResource CommitEdit}"/>
+        <CommandBinding Executed="ExecuteCancelEdit" Command="{StaticResource CancelEdit}"/>
+    </UIElement.CommandBindings>
+    <UIElement.InputBindings>
+        <KeyBinding Command="{StaticResource CancelEdit}" Key="Escape"/>
+        <KeyBinding Command="{StaticResource CommitEdit}" Key="F2"/>
+        <KeyBinding Command="{StaticResource CommitEdit}" Key="Enter" Modifiers="Ctrl"/>
+        <KeyBinding Command="{StaticResource CommitEdit}" Key="Tab" Modifiers="Shift"/>
+    </UIElement.InputBindings>
+    <Grid x:Name="LayoutGrid">
+    <DockPanel x:Name="EditableControlPlaceholder" Background="Transparent" HorizontalAlignment="Stretch"
+               VerticalAlignment="Top" Margin="0"/>
+    <Rectangle x:Name="ReadOnlyBackgroundFill" Fill="Transparent" IsHitTestVisible="false"/>
+    <TextBlock x:Name="ReadOnlyTextBlock" Grid.Column="0" IsHitTestVisible="false"
+               TextTrimming="CharacterEllipsis" Margin="0" Foreground="{Binding Foreground, ElementName=Root}"
+               Padding="{Binding ReadOnlyTextPadding, ElementName=Root}"
+               Text="{Binding ReadOnlyText, ElementName=Root, Converter={StaticResource StringSquisher}}"
+               Style="{Binding ReadOnlyTextBlockStyle, ElementName=Root}"/>
+    </Grid>
+    <VisualStateManager.VisualStateGroups>
+    <VisualStateGroup x:Name="CommonStates">
+      <VisualState x:Name="Normal"/>
+      <VisualState x:Name="Parent_Cell_Focused" Storyboard="{StaticResource MakeVisibleStoryboard}"/>
+      <VisualState x:Name="Unfocused_MouseOver" Storyboard="{StaticResource MakeVisibleStoryboard}"/>
+      <VisualState x:Name="Focused_MouseOver" Storyboard="{StaticResource MakeVisibleStoryboard}"/>
+      <VisualState x:Name="Focused_MouseNotOver" Storyboard="{StaticResource MakeVisibleStoryboard}"/>
+      <VisualState x:Name="ReadOnly_RowUnselected">
+        <Storyboard>
+          <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ReadOnlyBackgroundFill" Storyboard.TargetProperty="Fill">
+            <DiscreteObjectKeyFrame KeyTime="00:00:00.00" Value="{StaticResource ReadOnlyCellBackgroundBrush}"/>
+          </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+      </VisualState>
+      <VisualState x:Name="ReadOnly_RowSelected_FocusNotInGrid">
+        <Storyboard>
+          <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ReadOnlyBackgroundFill" Storyboard.TargetProperty="Fill">
+            <DiscreteObjectKeyFrame KeyTime="00:00:00.00" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+          </ObjectAnimationUsingKeyFrames>
+          <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ReadOnlyTextBlock" Storyboard.TargetProperty="Foreground">
+            <DiscreteObjectKeyFrame KeyTime="00:00:00.00" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+          </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+      </VisualState>
+      <VisualState x:Name="ReadOnly_RowSelected_FocusInGrid">
+        <Storyboard>
+          <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ReadOnlyBackgroundFill" Storyboard.TargetProperty="Fill">
+            <DiscreteObjectKeyFrame KeyTime="00:00:00.00" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+          </ObjectAnimationUsingKeyFrames>
+          <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ReadOnlyTextBlock" Storyboard.TargetProperty="Foreground">
+            <DiscreteObjectKeyFrame KeyTime="00:00:00.00" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+          </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+      </VisualState>
+    </VisualStateGroup>
+  </VisualStateManager.VisualStateGroups>
+</UserControl>

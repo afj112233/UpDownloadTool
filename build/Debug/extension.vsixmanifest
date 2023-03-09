@@ -1,0 +1,30 @@
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
+  <Metadata>
+    <Identity Id="3e3387b9-f1c2-4050-a297-5cbdba02dbdd" Version="1.0" Language="en-US" Publisher="My Company" />
+    <DisplayName>Shell VSIX manifest</DisplayName>
+    <Description>Core extensions for ICSStudio</Description>
+  </Metadata>
+  <Installation InstalledByMsi="true" SystemComponent="true">
+    <InstallationTarget Id="ICSStudio" Version="[1.0]" />
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" Version="[4.5,)" />
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="ICSStudio.UIServicesPackage.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="ICSStudio.OrganizerPackage.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="ICSStudio.EditorPackage.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="ICSStudio.CommunicationsPackage.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="ICSStudio.OutputWindowPackage.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="ICSStudio.ControllerOverviewPackage.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="ICSStudio.SearchPackage.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="ICSStudio.ErrorOutputPackage.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="ICSStudio.ToolsPackage.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="ICSStudio.QuickWatchPackage.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="ICSStudio.AboutBoxPackage.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="ICSStudio.ToolBoxPackage.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="ICSStudio.LanguageElement.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="ICSStudio.ParserPackage.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="ICSStudio.ToolBarPackage.pkgdef" />
+  </Assets>
+</PackageManifest>

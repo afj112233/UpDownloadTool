@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--  This is the file that defines the actual layout and type of the commands.
+        It is divided in different sections (e.g. command definition, command
+        placement, ...), with each defining a specific set of properties.
+        See the comment before each section for more details about how to
+        use it. -->
+
+  <!--  The VSCT compiler (the tool that translates this file into the binary
+        format that VisualStudio will consume) has the ability to run a preprocessor
+        on the vsct file; this preprocessor is (usually) the C++ preprocessor, so
+        it is possible to define includes and macros with the same syntax used
+        in C++ files. Using this ability of the compiler here, we include some files
+        defining some of the constants that we will use inside the file. -->
+
+  <!--This is the file that defines the IDs for all the commands exposed by VisualStudio. -->
+  <Extern href="stdidcmd.h"/>
+
+  <!--This header contains the command ids for the menus provided by the shell. -->
+  <Extern href="vsshlids.h"/>
+
+  <!--The Commands section is where commands, menus, and menu groups are defined.
+      This section uses a Guid to identify the package that provides the command defined inside it. -->
+  <Commands package="guidSearchPackage">
+    <Menus>
+      <Menu guid="searchCommandPackageCmdSet" id ="searchMenu" type="Menu">
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <CommandName>Search</CommandName>
+          <ButtonText>Search</ButtonText>
+        </Strings>
+      </Menu>
+    </Menus>
+    <!-- Inside this section we have different sub-sections: one for the menus, another
+    for the menu groups, one for the buttons (the actual commands), one for the combos
+    and the last one for the bitmaps used. Each element is identified by a command id that
+    is a unique pair of guid and numeric identifier; the guid part of the identifier is usually
+    called "command set" and is used to group different command inside a logically related
+    group; your package should define its own command set in order to avoid collisions
+    with command ids defined by other packages. -->
+
+    <!-- In this section you can define new menu groups. A menu group is a container for
+         other menus or buttons (commands); from a visual point of view you can see the
+         group as the part of a menu contained between two lines. The parent of a group
+         must be a menu. -->
+    <Groups>
+      <Group guid="searchCommandPackageCmdSet" id="group0"></Group>
+      <Group guid="searchCommandPackageCmdSet" id="group1"></Group>
+      <Group guid="searchCommandPackageCmdSet" id="group2"></Group>
+      <Group guid="searchCommandPackageCmdSet" id="group3"></Group>
+      <Group guid="searchCommandPackageCmdSet" id="group4"></Group>
+      <Group guid="searchCommandPackageCmdSet" id="CommandGroupId"/>
+    </Groups>
+
+    <!--Buttons section. -->
+    <!--This section defines the elements the user can interact with, like a menu command or a button
+        or combo box in a toolbar. -->
+    <Buttons>
+      <!--To define a menu group you have to specify its ID, the parent menu and its display priority.
+          The command is visible and enabled by default. If you need to change the visibility, status, etc, you can use
+          the CommandFlag node.
+          You can add more than one CommandFlag node e.g.:
+              <CommandFlag>DefaultInvisible</CommandFlag>
+              <CommandFlag>DynamicVisibility</CommandFlag>
+          If you do not want an image next to your command, remove the Icon node /> -->
+      <Button guid="searchCommandPackageCmdSet" id="SearchResultCommandId" priority="0x0100" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Search Result</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="searchCommandPackageCmdSet" id="FindCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <Strings>
+          <ButtonText>Find...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="searchCommandPackageCmdSet" id="ReplaceCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Replace...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="searchCommandPackageCmdSet" id="GoToCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Go To...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="searchCommandPackageCmdSet" id="BrowseLogicCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Goto Logic...</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="searchCommandPackageCmdSet" id="CrossReferenceCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Cross Reference</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="searchCommandPackageCmdSet" id="FindNextCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Find Next</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="searchCommandPackageCmdSet" id="FindPreviousCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Find Previous</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="searchCommandPackageCmdSet" id="NextResultCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Next Result</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="searchCommandPackageCmdSet" id="PreviousResultCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Previous Result</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="searchCommandPackageCmdSet" id="MatchingKeywordCommand" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Matching Keyword</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+
+    <!--The bitmaps section is used to define the bitmaps that are used for the commands.-->
+    
+  </Commands>
+
+  <CommandPlacements>
+
+    <CommandPlacement guid="searchCommandPackageCmdSet" id="searchMenu" priority="773">
+      <Parent guid="guidSHLMainMenu" id="IDG_VS_MM_TOOLSADDINS"/>
+    </CommandPlacement>
+    <CommandPlacement guid="searchCommandPackageCmdSet" id="group0" priority="0x001">
+      <Parent guid="searchCommandPackageCmdSet" id="searchMenu"/>
+    </CommandPlacement>
+    <CommandPlacement guid="searchCommandPackageCmdSet" id="group1" priority="0x002">
+      <Parent guid="searchCommandPackageCmdSet" id="searchMenu"/>
+    </CommandPlacement>
+    <CommandPlacement guid="searchCommandPackageCmdSet" id="group2" priority="0x003">
+      <Parent guid="searchCommandPackageCmdSet" id="searchMenu"/>
+    </CommandPlacement>
+    <CommandPlacement guid="searchCommandPackageCmdSet" id="group3" priority="0x004">
+      <Parent guid="searchCommandPackageCmdSet" id="searchMenu"/>
+    </CommandPlacement>
+    <CommandPlacement guid="searchCommandPackageCmdSet" id="group4" priority="0x005">
+      <Parent guid="searchCommandPackageCmdSet" id="searchMenu"/>
+    </CommandPlacement>
+
+
+    <CommandPlacement guid="searchCommandPackageCmdSet" id="FindCommand" priority="0x001">
+      <Parent guid="searchCommandPackageCmdSet" id="group0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="searchCommandPackageCmdSet" id="ReplaceCommand" priority="0x002">
+      <Parent guid="searchCommandPackageCmdSet" id="group0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="searchCommandPackageCmdSet" id="GoToCommand" priority="0x003">
+      <Parent guid="searchCommandPackageCmdSet" id="group0"/>
+    </CommandPlacement>
+    <CommandPlacement guid="searchCommandPackageCmdSet" id="BrowseLogicCommand" priority="0x004">
+      <Parent guid="searchCommandPackageCmdSet" id="group0"/>
+    </CommandPlacement>
+
+    <CommandPlacement guid="searchCommandPackageCmdSet" id="CrossReferenceCommand" priority="0x001">
+      <Parent guid="searchCommandPackageCmdSet" id="group1"/>
+    </CommandPlacement>
+
+    <CommandPlacement guid="searchCommandPackageCmdSet" id="FindNextCommand" priority="0x001">
+      <Parent guid="searchCommandPackageCmdSet" id="group2"/>
+    </CommandPlacement>
+    <CommandPlacement guid="searchCommandPackageCmdSet" id="FindPreviousCommand" priority="0x002">
+      <Parent guid="searchCommandPackageCmdSet" id="group2"/>
+    </CommandPlacement>
+
+    <CommandPlacement guid="searchCommandPackageCmdSet" id="NextResultCommand" priority="0x001">
+      <Parent guid="searchCommandPackageCmdSet" id="group3"/>
+    </CommandPlacement>
+    <CommandPlacement guid="searchCommandPackageCmdSet" id="PreviousResultCommand" priority="0x002">
+      <Parent guid="searchCommandPackageCmdSet" id="group3"/>
+    </CommandPlacement>
+
+    <CommandPlacement guid="searchCommandPackageCmdSet" id="MatchingKeywordCommand" priority="0x001">
+      <Parent guid="searchCommandPackageCmdSet" id="group4"/>
+    </CommandPlacement>
+
+    <!--<CommandPlacement guid="searchCommandPackageCmdSet" id="SearchResultCommandId" priority="0x0005" >
+      <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_VIEW"/>
+    </CommandPlacement>-->
+    <CommandPlacement guid="searchCommandPackageCmdSet" id="CommandGroupId" priority="0x0002" >
+      <Parent guid="organizerPackageCmdSet" id="viewMenu"/>
+    </CommandPlacement>
+
+    <CommandPlacement guid="searchCommandPackageCmdSet" id="SearchResultCommandId" priority="0x0001" >
+      <Parent guid="searchCommandPackageCmdSet" id="CommandGroupId"/>
+    </CommandPlacement>
+  </CommandPlacements>
+
+  <Symbols>
+    <!-- This is the package guid. -->
+    <GuidSymbol name="guidSearchPackage" value="{8c4e99c9-cfec-45bd-afde-8437ee19239a}" />
+    <GuidSymbol name="organizerPackageCmdSet" value="{964dd943-7515-4353-9959-03e5792d62f3}">
+      <IDSymbol name="viewMenu" value="0x4000"/>
+    </GuidSymbol>
+    <!-- This is the guid used to group the menu commands together -->
+    <GuidSymbol name="searchCommandPackageCmdSet" value="{b7cdc69e-719c-4325-9d59-004d1fe46c10}">
+      <IDSymbol name="searchMenu" value="0x1000"/>
+      <IDSymbol name="group0" value="0x1100"/>
+      <IDSymbol name="group1" value="0x1200"/>
+      <IDSymbol name="group2" value="0x1300"/>
+      <IDSymbol name="group3" value="0x1400"/>
+      <IDSymbol name="group4" value="0x1500"/>
+      <IDSymbol name="FindCommand" value="0x1101" />
+      <IDSymbol name="ReplaceCommand" value="0x1102" />
+      <IDSymbol name="GoToCommand" value="0x1103" />
+      <IDSymbol name="BrowseLogicCommand" value="0x1104" />
+
+      <IDSymbol name="CrossReferenceCommand" value="0x1201" />
+
+      <IDSymbol name="FindNextCommand" value="0x1301" />
+      <IDSymbol name="FindPreviousCommand" value="0x1302" />
+
+      <IDSymbol name="NextResultCommand" value="0x1401" />
+      <IDSymbol name="PreviousResultCommand" value="0x1402" />
+
+      <IDSymbol name="MatchingKeywordCommand" value="0x1501" />
+      <IDSymbol name="CommandGroupId" value="0x1600" />
+      <IDSymbol name="SearchResultCommandId" value="0x1601" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>

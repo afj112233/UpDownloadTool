@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="ICSStudio.DeviceProperties.ServoDrives.Panel.NetworkPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300"
+             Width="660" HorizontalAlignment="Left">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Network Mode:" />
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Network Topology:" />
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Network Status:" />
+
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="Device Level Ring(DLR)" />
+
+        </Grid>
+
+        <DockPanel Grid.Row="2" HorizontalAlignment="Right">
+            <DockPanel.Resources>
+                <Style TargetType="{x:Type Button}" x:Key="ButtonStyle">
+                    <Setter Property="Margin" Value="5,5,15,5" />
+                    <Setter Property="MinWidth" Value="90" />
+                    <Setter Property="MinHeight" Value="30" />
+                </Style>
+            </DockPanel.Resources>
+            <Button Content="Refresh" Style="{StaticResource ButtonStyle}" 
+                    Command="{Binding RefreshCommand}"/>
+        </DockPanel>
+
+    </Grid>
+</UserControl>

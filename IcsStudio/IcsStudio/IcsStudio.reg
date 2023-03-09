@@ -1,0 +1,177 @@
+﻿This file contains information that should be merged into the registry
+from a setup program, or copied into a .reg file and merged into the
+registry for your own personal testing. If you are using a Visual Studio
+Setup Project, then simply copy the file starting below the the "CUT HERE"
+line until the end, and save it to a file with the extension .reg. Then open 
+the Registry editor for your setup program, right click on the Registry editor 
+window, select Import and then browse to the .reg file you have created. All 
+the correct settings have been made and you do not need to make any further 
+modifications. To test these settings on your computer, save the contents of 
+this file to a .reg file like you would for a Setup project, but also search 
+for the value $RootFolder$ and replace it with the directory path containing 
+your program (using double backslashes "\\" as the delimiter). 
+After saving these changes, double-click on the .reg file and merge the changes
+into the registry.
+
+--------------------------------  CUT HERE  --------------------------------
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\CLSID\{e3f80357-7ff8-40fa-97f7-1c66ae26c8fa}]
+@="ICSStudio DTE Object"
+
+[HKEY_CLASSES_ROOT\CLSID\{e3f80357-7ff8-40fa-97f7-1c66ae26c8fa}\LocalServer32]
+@="$RootFolder$\\ICSStudio.exe"
+
+[HKEY_CLASSES_ROOT\CLSID\{e3f80357-7ff8-40fa-97f7-1c66ae26c8fa}\ProgID]
+@="ICSStudio.DTE.1.0"
+
+[HKEY_CLASSES_ROOT\CLSID\{e3f80357-7ff8-40fa-97f7-1c66ae26c8fa}\VersionIndependentProgID]
+@="ICSStudio.DTE"
+
+[HKEY_CLASSES_ROOT\CLSID\{e3f80357-7ff8-40fa-97f7-1c66ae26c8fa}\Programmable]
+@=""
+
+[HKEY_CLASSES_ROOT\CLSID\{e3f80357-7ff8-40fa-97f7-1c66ae26c8fa}\TypeLib]
+@="{80cc9f66-e7d8-4ddd-85b6-d9e6cd0e93e2}"
+
+[HKEY_CLASSES_ROOT\CLSID\{e3f80357-7ff8-40fa-97f7-1c66ae26c8fa}\DefaultIcon]
+@="$RootFolder$\\ICSStudio.exe,1200"
+
+[HKEY_CLASSES_ROOT\CLSID\{e3f80357-7ff8-40fa-97f7-1c66ae26c8fa}\Version]
+@="1.0"
+
+[HKEY_CLASSES_ROOT\CLSID\{eb7b8c31-3d92-4863-a59c-14f986945242}]
+@="ICSStudio Solution Object"
+
+[HKEY_CLASSES_ROOT\CLSID\{eb7b8c31-3d92-4863-a59c-14f986945242}\LocalServer32]
+@="$RootFolder$\\ICSStudio.exe"
+
+[HKEY_CLASSES_ROOT\CLSID\{eb7b8c31-3d92-4863-a59c-14f986945242}\ProgID]
+@="ICSStudio.Solution.1.0"
+
+[HKEY_CLASSES_ROOT\CLSID\{eb7b8c31-3d92-4863-a59c-14f986945242}\VersionIndependentProgID]
+@="ICSStudio.Solution"
+
+[HKEY_CLASSES_ROOT\CLSID\{eb7b8c31-3d92-4863-a59c-14f986945242}\Programmable]
+@=""
+
+[HKEY_CLASSES_ROOT\CLSID\{eb7b8c31-3d92-4863-a59c-14f986945242}\TypeLib]
+@="{80cc9f66-e7d8-4ddd-85b6-d9e6cd0e93e2}"
+
+[HKEY_CLASSES_ROOT\CLSID\{eb7b8c31-3d92-4863-a59c-14f986945242}\DefaultIcon]
+@="$RootFolder$\\ICSStudio.exe,1200"
+
+[HKEY_CLASSES_ROOT\CLSID\{eb7b8c31-3d92-4863-a59c-14f986945242}\Version]
+@="1.0"
+
+[HKEY_CLASSES_ROOT\ICSStudio.DTE.1.0]
+@="ICSStudio DTE Object"
+
+[HKEY_CLASSES_ROOT\ICSStudio.DTE.1.0\CLSID]
+@="{e3f80357-7ff8-40fa-97f7-1c66ae26c8fa}"
+
+[HKEY_CLASSES_ROOT\ICSStudio.Solution.1.0]
+@="ICSStudio Solution Object"
+
+[HKEY_CLASSES_ROOT\ICSStudio.Solution.1.0\CLSID]
+@="{eb7b8c31-3d92-4863-a59c-14f986945242}"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\AppEnv\14.0\Apps\ICSStudio_1.0]
+"StubExePath"="$RootFolder$\\ICSStudio.exe"
+"AppName"="ICSStudio"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\ICSStudio.exe]
+@="$RootFolder$\\ICSStudio.exe"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\MAIN\FeatureControl\FEATURE_ENABLE_SCRIPT_PASTE_URLACTION_IF_PROMPT]
+"ICSStudio.exe"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\MAIN\FeatureControl\FEATURE_LOCALMACHINE_LOCKDOWN]
+"ICSStudio.exe"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\MAIN\FeatureControl\FEATURE_RESTRICT_ABOUT_PROTOCOL_IE7]
+"ICSStudio.exe"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\MAIN\FeatureControl\FEATURE_BLOCK_CROSS_PROTOCOL_FILE_NAVIGATION]
+"ICSStudio.exe"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\MAIN\FeatureControl\FEATURE_IFRAME_MAILTO_THRESHOLD]
+"ICSStudio.exe"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\MAIN\FeatureControl\FEATURE_SCRIPTURL_MITIGATION]
+"ICSStudio.exe"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\MAIN\FeatureControl\FEATURE_SHOW_APP_PROTOCOL_WARN_DIALOG]
+"ICSStudio.exe"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\MAIN\FeatureControl\FEATURE_VIEWLINKEDWEBOC_IS_UNSAFE]
+"ICSStudio.exe"=dword:00000001
+
+; Uncomment the entries below if you want to register a source file extension to work with Dynamic Data Exchange (DDE)
+
+;[HKEY_CLASSES_ROOT\Applications\ICSStudio.exe]
+
+;[HKEY_CLASSES_ROOT\Applications\ICSStudio.exe\shell]
+
+;[HKEY_CLASSES_ROOT\Applications\ICSStudio.exe\shell\Open]
+
+;[HKEY_CLASSES_ROOT\Applications\ICSStudio.exe\shell\Open\ddeexec]
+;@="Open(\"%1\")"
+
+;[HKEY_CLASSES_ROOT\Applications\ICSStudio.exe\shell\Open\ddeexec\Application]
+;@="ICSStudio.1.0"
+
+;[HKEY_CLASSES_ROOT\Applications\ICSStudio.exe\shell\Open\ddeexec\Topic]
+;@="system"
+
+;[HKEY_CLASSES_ROOT\Applications\ICSStudio.exe\shell\edit]
+
+;[HKEY_CLASSES_ROOT\Applications\ICSStudio.exe\shell\edit\Command]
+;@="\"$RootFolder$\\ICSStudio.exe\" /dde"
+
+;[HKEY_CLASSES_ROOT\Applications\ICSStudio.exe\shell\edit\ddeexec]
+;@="Open(\"%1\")"
+
+;[HKEY_CLASSES_ROOT\Applications\ICSStudio.exe\shell\edit\ddeexec\Application]
+;@="ICSStudio.1.0"
+
+;[HKEY_CLASSES_ROOT\Applications\ICSStudio.exe\shell\edit\ddeexec\Topic]
+;@="system"
+
+;[HKEY_CLASSES_ROOT\.ICSStudio_ext]
+;@="ICSStudio.ICSStudio_ext.1.0"
+
+;[HKEY_CLASSES_ROOT\ICSStudio.ICSStudio_ext.1.0]
+;"AlwaysShowExt"="1"
+;@="ICSStudio Source file"
+
+;[HKEY_CLASSES_ROOT\ICSStudio.ICSStudio_ext.1.0\DefaultIcon]
+;@="$RootFolder$\\ICSStudio.exe,1200"
+
+;[HKEY_CLASSES_ROOT\ICSStudio.ICSStudio_ext.1.0\shell]
+
+;[HKEY_CLASSES_ROOT\ICSStudio.ICSStudio_ext.1.0\shell\Open]
+
+;[HKEY_CLASSES_ROOT\ICSStudio.ICSStudio_ext.1.0\shell\Open\Command]
+;@="\"$RootFolder$\\ICSStudio.exe\" /dde"
+
+;[HKEY_CLASSES_ROOT\ICSStudio.ICSStudio_ext.1.0\shell\Open\ddeexec]
+;@="Open(\"%1\")"
+
+;[HKEY_CLASSES_ROOT\ICSStudio.ICSStudio_ext.1.0\shell\Open\ddeexec\Application]
+;@="ICSStudio.1.0"
+
+;[HKEY_CLASSES_ROOT\ICSStudio.ICSStudio_ext.1.0\shell\Open\ddeexec\Topic]
+;@="system"
+
+; Uncomment the entries below if you want to register your program for participation in Set Default Programs
+; for the file extension defined above.
+
+;[HKEY_LOCAL_MACHINE\SOFTWARE\RegisteredApplications]
+;"ICSStudio.1.0"="SOFTWARE\\Microsoft\\ICSStudio\\1.0\\Capabilities"
+
+;[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ICSStudio\1.0\Capabilities]
+;"ApplicationDescription"="Description of ICSStudio"
+
+;[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ICSStudio\1.0\Capabilities\FileAssociations]
+;".ICSStudio_ext"="ICSStudio.ICSStudio_ext.1.0"

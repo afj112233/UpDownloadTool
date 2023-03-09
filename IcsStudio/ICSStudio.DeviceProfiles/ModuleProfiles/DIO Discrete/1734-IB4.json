@@ -1,0 +1,32 @@
+{
+    "VendorID": 1,
+    "ProductType": 7,
+    "ProductCode": 130,
+    "CatalogNumber": "1734-IB4",
+    "Descriptions": [
+        {
+            "LCID": 1033,
+            "Text": "4 Point 10V-28V DC Input, Sink"
+        },
+        {
+            "LCID": 2052,
+            "Text": "4 点 10V-28V 直流输入，拉电流"
+        }
+    ],
+    "MajorRevs": [
+        {
+            "MajorRev": 3,
+            "Series": "C"
+        }
+    ],
+    "Ports": [
+        {
+            "Number": 1,
+            "Type": "PointIO",
+            "Label": "Chassis",
+            "Width": 1,
+            "ConnectorOffset": 0
+        }
+    ],
+    "PSFile": "PS1734_Discrete.json"
+}

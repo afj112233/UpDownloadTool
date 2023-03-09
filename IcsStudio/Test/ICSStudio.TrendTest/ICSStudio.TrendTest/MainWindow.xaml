@@ -1,0 +1,120 @@
+﻿<Window x:Class="ICSStudio.TrendTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:view="clr-namespace:ICSStudio.Gui.View;assembly=ICSStudio.Gui"
+        xmlns:oxy="http://oxyplot.org/wpf"
+        mc:Ignorable="d"
+        Title="Refresh by changing the Model property of the Plot control" Height="480" Width="640">
+    <Grid>
+        <Grid.Resources>
+            <view:BindingProxy Data="{Binding}" x:Key="Proxy"></view:BindingProxy>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <oxy:PlotTrendView Model="{Binding PlotModel}" x:Name="PlotView">
+            <oxy:PlotTrendView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Scroll" Click="MenuItem_OnClick"></MenuItem>
+                    <MenuItem Header="Active Value Bar"></MenuItem>
+                    <MenuItem Header="Show Value Bar"></MenuItem>
+                    <MenuItem Header="Undo Zoom/Pan"></MenuItem>
+                    <MenuItem Header="Print Trend" IsEnabled="False"></MenuItem>
+                    <MenuItem Header="Create Snapshot.." IsEnabled="False"></MenuItem>
+                    <Separator></Separator>
+                    <MenuItem Header="Chart Properties"></MenuItem>
+                </ContextMenu>
+            </oxy:PlotTrendView.ContextMenu>
+        </oxy:PlotTrendView>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Path}">
+                    <Setter Property="Fill" Value="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType=ToggleButton},Path=Foreground}"></Setter>
+                </Style>
+                <Style TargetType="{x:Type ToggleButton}">
+                    <Style.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Foreground" Value="White"></Setter>
+                            <Setter Property="Background" Value="Black"></Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ToggleButton">
+                                <Border Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"></ContentPresenter>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}">
+                                    <ContentPresenter ></ContentPresenter>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <EventTrigger RoutedEvent="PreviewMouseLeftButtonDown">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimationUsingKeyFrames  Storyboard.TargetProperty="Background.Color">
+                                        <EasingColorKeyFrame KeyTime="0" Value="Black"></EasingColorKeyFrame>
+                                    </ColorAnimationUsingKeyFrames>
+                                    <ColorAnimationUsingKeyFrames  Storyboard.TargetProperty="Foreground.Color">
+                                        <EasingColorKeyFrame KeyTime="0" Value="White"></EasingColorKeyFrame>
+                                    </ColorAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="PreviewMouseLeftButtonUp">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimationUsingKeyFrames  Storyboard.TargetProperty="Background.Color">
+                                        <EasingColorKeyFrame KeyTime="0" Value="#D3D3D3"></EasingColorKeyFrame>
+                                    </ColorAnimationUsingKeyFrames>
+                                    <ColorAnimationUsingKeyFrames  Storyboard.TargetProperty="Foreground.Color">
+                                        <EasingColorKeyFrame KeyTime="0" Value="Black"></EasingColorKeyFrame>
+                                    </ColorAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Resources>
+            <ToggleButton Height="20" Click="ButtonBase_OnClick" Width="20">
+                <ToggleButton.Content>
+                    <Path>
+                        <Path.Data>
+                            <PathGeometry>
+                                <PathFigure StartPoint="10,5" IsClosed="True">
+                                    <LineSegment Point="0,10"></LineSegment>
+                                    <LineSegment Point="0,0"></LineSegment>
+                                </PathFigure>
+                            </PathGeometry>
+                        </Path.Data>
+                    </Path>
+                </ToggleButton.Content>
+            </ToggleButton>
+            <Button Height="20" Content="Front" Click="ButtonBase_OnClick2"></Button>
+            <Button Height="20" Content="Back" Click="ButtonBase_OnClick3"></Button>
+            <Button Height="20" Content="HideX" Click="ButtonBase_OnClick4"></Button>
+            <Button Height="20" Content="HideY" Click="ButtonBase_OnClick5"></Button>
+            <Button Height="20" Content="UndoZoom" Click="ButtonBase_OnClick6"></Button>
+            <Button Height="20" Content="Print" Click="ButtonBase_OnClick7"></Button>
+            <Button Height="20" Content="HideTitle" Click="ButtonBase_OnClick8"></Button>
+            <Button Height="20" Content="DecimalPlaces" Click="ButtonBase_OnClick9"></Button>
+            <Button Height="20" Content="LineStyle" Click="ButtonBase_OnClick10"></Button>
+            <Button Height="20" Content="Independent Scale" Click="ButtonBase_OnClick11"></Button>
+            <Button Height="20" Content="ChangeScale" Click="ButtonBase_OnClick12"></Button>
+            
+        </StackPanel>
+    </Grid>
+</Window>

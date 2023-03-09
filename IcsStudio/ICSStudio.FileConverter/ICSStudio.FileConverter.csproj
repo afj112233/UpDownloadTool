@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{84743C84-6439-4773-823C-8FD07040E2FB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICSStudio.FileConverter</RootNamespace>
+    <AssemblyName>ICSStudio.FileConverter</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>$(SolutionDir)\build\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>$(SolutionDir)\build\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>ICSStudio.FileConverter.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.14.0, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="JsonToL5X\Converter.cs" />
+    <Compile Include="JsonToL5X\Converter_Aoi.cs" />
+    <Compile Include="JsonToL5X\Converter_ExportL5X.cs" />
+    <Compile Include="JsonToL5X\Converter_Modules.cs" />
+    <Compile Include="JsonToL5X\Converter_Routines.cs" />
+    <Compile Include="JsonToL5X\Converter_Tags.cs" />
+    <Compile Include="JsonToL5X\Converter_DataTypes.cs" />
+    <Compile Include="JsonToL5X\JsonToL5XSerializer.cs" />
+    <Compile Include="JsonToL5X\Model\AOIDefinitionCollection.cs" />
+    <Compile Include="JsonToL5X\Model\AOIDefinitionType.cs" />
+    <Compile Include="JsonToL5X\Model\AOILocalTagType.cs" />
+    <Compile Include="JsonToL5X\Model\AOIParameterType.cs" />
+    <Compile Include="JsonToL5X\Model\AxisType.cs" />
+    <Compile Include="JsonToL5X\Model\BoolEnum.cs" />
+    <Compile Include="JsonToL5X\Model\BusType.cs" />
+    <Compile Include="JsonToL5X\Model\CommunicationsType.cs" />
+    <Compile Include="JsonToL5X\Model\ConfigDataType.cs" />
+    <Compile Include="JsonToL5X\Model\ConfigScriptType.cs" />
+    <Compile Include="JsonToL5X\Model\ConfigTagType.cs" />
+    <Compile Include="JsonToL5X\Model\ConnectionCollection.cs" />
+    <Compile Include="JsonToL5X\Model\ConnectionType.cs" />
+    <Compile Include="JsonToL5X\Model\ControllerType.cs" />
+    <Compile Include="JsonToL5X\Model\CSTType.cs" />
+    <Compile Include="JsonToL5X\Model\Data.cs" />
+    <Compile Include="JsonToL5X\Model\DataArray.cs" />
+    <Compile Include="JsonToL5X\Model\DataTypeCollection.cs" />
+    <Compile Include="JsonToL5X\Model\DataTypeMemberDefinition.cs" />
+    <Compile Include="JsonToL5X\Model\DataTypeMemberType.cs" />
+    <Compile Include="JsonToL5X\Model\DataTypeType.cs" />
+    <Compile Include="JsonToL5X\Model\DataValue.cs" />
+    <Compile Include="JsonToL5X\Model\DescriptionType.cs" />
+    <Compile Include="JsonToL5X\Model\EncodedAOIDefinitionType.cs" />
+    <Compile Include="JsonToL5X\Model\EncodedRoutineType.cs" />
+    <Compile Include="JsonToL5X\Model\InputTagType.cs" />
+    <Compile Include="JsonToL5X\Model\MessageType.cs" />
+    <Compile Include="JsonToL5X\Model\ModuleCollection.cs" />
+    <Compile Include="JsonToL5X\Model\ModuleEKeyType.cs" />
+    <Compile Include="JsonToL5X\Model\ModuleType.cs" />
+    <Compile Include="JsonToL5X\Model\MotionGroupType.cs" />
+    <Compile Include="JsonToL5X\Model\OutputTagType.cs" />
+    <Compile Include="JsonToL5X\Model\PortType.cs" />
+    <Compile Include="JsonToL5X\Model\ProgramCollection.cs" />
+    <Compile Include="JsonToL5X\Model\ProgramType.cs" />
+    <Compile Include="JsonToL5X\Model\RedundancyInfoType.cs" />
+    <Compile Include="JsonToL5X\Model\RLLContentType.cs" />
+    <Compile Include="JsonToL5X\Model\RoutineCollection.cs" />
+    <Compile Include="JsonToL5X\Model\RoutineType.cs" />
+    <Compile Include="JsonToL5X\Model\RoutineTypeEnum.cs" />
+    <Compile Include="JsonToL5X\Model\RSLogix5000ContentType.cs" />
+    <Compile Include="JsonToL5X\Model\RungCommentType.cs" />
+    <Compile Include="JsonToL5X\Model\RungType.cs" />
+    <Compile Include="JsonToL5X\Model\SafetyInfoType.cs" />
+    <Compile Include="JsonToL5X\Model\SafetyScriptType.cs" />
+    <Compile Include="JsonToL5X\Model\ScheduledProgramType.cs" />
+    <Compile Include="JsonToL5X\Model\SecurityInfoType.cs" />
+    <Compile Include="JsonToL5X\Model\STContentType.cs" />
+    <Compile Include="JsonToL5X\Model\STLineType.cs" />
+    <Compile Include="JsonToL5X\Model\TagCollection.cs" />
+    <Compile Include="JsonToL5X\Model\TagType.cs" />
+    <Compile Include="JsonToL5X\Model\TagTypeEnum.cs" />
+    <Compile Include="JsonToL5X\Model\TaskCollection.cs" />
+    <Compile Include="JsonToL5X\Model\TaskType.cs" />
+    <Compile Include="JsonToL5X\Model\TaskTypeEnum.cs" />
+    <Compile Include="JsonToL5X\Model\TimeSynchronizeType.cs" />
+    <Compile Include="JsonToL5X\Model\TrendCollection.cs" />
+    <Compile Include="JsonToL5X\Model\UseEnum.cs" />
+    <Compile Include="JsonToL5X\Model\WallClockTimeType.cs" />
+    <Compile Include="L5XToJson\Converter.cs" />
+    <Compile Include="L5XToJson\Converter_Modules.cs" />
+    <Compile Include="L5XToJson\Converter_SFC.cs" />
+    <Compile Include="L5XToJson\Converter_Trends.cs" />
+    <Compile Include="L5XToJson\DataParse.cs" />
+    <Compile Include="L5XToJson\JObjectHelper.cs" />
+    <Compile Include="L5XToJson\Objects\AB_CIP_Drive_C_2.cs" />
+    <Compile Include="L5XToJson\Objects\AxisParameters.cs" />
+    <Compile Include="L5XToJson\Objects\AxisVirtualParameters.cs" />
+    <Compile Include="L5XToJson\Objects\CAMProfile.cs" />
+    <Compile Include="L5XToJson\Objects\CIPMotionDriveConfigData.cs" />
+    <Compile Include="L5XToJson\Objects\DeviceModule.cs" />
+    <Compile Include="L5XToJson\Objects\MessageParameters.cs" />
+    <Compile Include="L5XToJson\Objects\Port.cs" />
+    <Compile Include="L5XToJson\Objects\RoutineInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ICSStudio.FileConverter.snk" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ICSStudio.Cip\ICSStudio.Cip.csproj">
+      <Project>{3d36bed6-c812-43f2-8753-88961cd2c41e}</Project>
+      <Name>ICSStudio.Cip</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.Database\ICSStudio.Database.csproj">
+      <Project>{803bed88-cd02-4760-87bb-e86dd19374ca}</Project>
+      <Name>ICSStudio.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.DeviceProfiles\ICSStudio.DeviceProfiles.csproj">
+      <Project>{6d244b3b-3525-49d3-a4c2-edc4ed0dec48}</Project>
+      <Name>ICSStudio.DeviceProfiles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.Interfaces\ICSStudio.Interfaces.csproj">
+      <Project>{2e7d4256-92d6-4e0e-a1a1-d819d4d71667}</Project>
+      <Name>ICSStudio.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.SimpleServices\ICSStudio.SimpleServices.csproj">
+      <Project>{dac846e0-39e9-46ea-86b5-a5b89571831e}</Project>
+      <Name>ICSStudio.SimpleServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.UIInterfaces\ICSStudio.UIInterfaces.csproj">
+      <Project>{1AE2B658-CF74-48EA-B88E-B2511FA4B041}</Project>
+      <Name>ICSStudio.UIInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.Utils\ICSStudio.Utils.csproj">
+      <Project>{f880d2c5-68d6-4b83-a89e-b3958a75428d}</Project>
+      <Name>ICSStudio.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

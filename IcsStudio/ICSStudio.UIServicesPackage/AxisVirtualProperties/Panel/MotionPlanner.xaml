@@ -1,0 +1,122 @@
+﻿<UserControl
+    x:Class="ICSStudio.UIServicesPackage.AxisVirtualProperties.Panel.MotionPlanner"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:util="clr-namespace:ICSStudio.Gui.Controls;assembly=ICSStudio.Gui"
+    xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+    Width="650"
+    Height="350"
+    d:DesignHeight="300"
+    d:DesignWidth="400"
+    Loaded="MotionPlanner_OnLoaded"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="130" />
+            <ColumnDefinition Width="40" />
+        </Grid.ColumnDefinitions>
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="0"
+            Text="{DynamicResource Output Cam Execution Targets:}" />
+        <xctk:IntegerUpDown
+            x:Name="IntegerUpDown"
+            Grid.Row="0"
+            Grid.Column="1"
+            Width="50"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            AllowSpin="True"
+            IsEnabled="{Binding IsEnable}"
+            Maximum="8"
+            Minimum="0"
+            ShowButtonSpinner="True"
+            TextAlignment="Left"
+            Value="{Binding OutputCamExecutionTargets, UpdateSourceTrigger=PropertyChanged}" />
+
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Text="{DynamicResource Program Stop Action:}" />
+        <ComboBox
+            Grid.Row="1"
+            Grid.Column="1"
+            Width="120"
+            Height="22"
+            Margin="2,2,2,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            DisplayMemberPath="DisplayName"
+            IsEnabled="{Binding IsEnable}"
+            ItemsSource="{Binding ProgramStopActionList}"
+            SelectedValue="{Binding Selected}"
+            SelectedValuePath="Value" />
+        <CheckBox
+            Grid.Row="2"
+            Grid.Column="0"
+            Content="{DynamicResource Master Delay Compensation}"
+            IsChecked="{Binding Check1}"
+            IsEnabled="{Binding IsEnable}">
+            <CheckBox.Margin>
+                <Thickness Top="7" />
+            </CheckBox.Margin>
+        </CheckBox>
+
+        <CheckBox
+            Grid.Row="3"
+            Grid.Column="0"
+            Content="{DynamicResource Enable Master Position Filter}"
+            IsChecked="{Binding Check2}"
+            IsEnabled="{Binding IsEnable}">
+            <CheckBox.Margin>
+                <Thickness Top="7" />
+            </CheckBox.Margin>
+        </CheckBox>
+        <Label
+            Grid.Row="4"
+            Grid.Column="0"
+            Content="{DynamicResource Master Position Filter Bandwidth}"
+            IsEnabled="{Binding Check2, UpdateSourceTrigger=PropertyChanged}">
+            <Label.Margin>
+                <Thickness Left="30" />
+            </Label.Margin>
+        </Label>
+
+        <util:SingleUpDownExtensions
+            Grid.Row="4"
+            Grid.Column="1"
+            Width="120"
+            Height="23"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            AllowSpin="False"
+            IsEnabled="{Binding MasterPositionFilterBandwidthIsEnable, UpdateSourceTrigger=PropertyChanged, Delay=30}"
+            ShowButtonSpinner="False"
+            TextAlignment="Left"
+            Value="{Binding MasterPositionFilterBandwidth, UpdateSourceTrigger=PropertyChanged, Delay=30}" />
+        <Label
+            Grid.Row="4"
+            Grid.Column="2"
+            Width="40"
+            Content="Hertz"
+            IsEnabled="{Binding MasterPositionFilterBandwidthIsEnable, UpdateSourceTrigger=PropertyChanged}" />
+    </Grid>
+</UserControl>

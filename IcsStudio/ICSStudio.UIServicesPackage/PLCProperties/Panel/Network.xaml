@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="ICSStudio.UIServicesPackage.PLCProperties.Panel.Network"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ICSStudio.UIServicesPackage.PLCProperties.Panel"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Style x:Key="AutoGray" TargetType="{x:Type CheckBox}">
+                <Style.Triggers>
+                    <Trigger Property="IsEnabled" Value="False">
+                        <Setter Property="Foreground" Value="#FFDDDDDD"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style x:Key="TextAutoGray" TargetType="{x:Type TextBlock}">
+                <Style.Triggers>
+                    <Trigger Property="IsEnabled" Value="False">
+                        <Setter Property="Foreground" Value="#FFDDDDDD"/>
+                    </Trigger>
+                </Style.Triggers>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="{DynamicResource Network Topology:}"></TextBlock>
+        <Button Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Width="100"  Content="{DynamicResource Advanced...}" IsEnabled="False" Height="25"></Button>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="{DynamicResource Network Status:}"></TextBlock>
+        
+        <StackPanel Grid.Row="2" Grid.Column="0">
+            <TextBlock Text="{DynamicResource Active Ring Supervisor:}" Foreground="LightGray"></TextBlock>
+            <TextBlock Text="{DynamicResource Active Supervisor Precedence:}" Foreground="LightGray"></TextBlock>
+        </StackPanel>
+
+        <CheckBox Grid.Row="3" Grid.Column="0" Content="{DynamicResource Enable Supervisor Mode}" IsEnabled="False" Style="{StaticResource AutoGray}">
+        </CheckBox>
+
+        <TextBlock Grid.Row="4" Grid.Column="0" Margin="25,0,0,0" Text="{DynamicResource Ring Faults Detected:}" IsEnabled="False" Style="{StaticResource TextAutoGray}"></TextBlock>
+        <Button Grid.Row="4" Grid.Column="0" Width="100" HorizontalAlignment="Right" Content="{DynamicResource Reset Counter}" IsEnabled="False"
+                Height="23"></Button>
+
+        <TextBlock Grid.Row="5" Grid.Column="0" Margin="25,0,0,0" Text="{DynamicResource Supervisor Status:}" IsEnabled="False" Style="{StaticResource TextAutoGray}"></TextBlock>
+
+        <GroupBox Grid.Row="6" Grid.Column="0" Height="138">
+            <GroupBox.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{DynamicResource Ring Fault}"/>
+                </DataTemplate>
+            </GroupBox.HeaderTemplate>
+        </GroupBox>
+    </Grid>
+</UserControl>

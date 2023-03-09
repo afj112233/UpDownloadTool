@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6D244B3B-3525-49D3-A4C2-EDC4ED0DEC48}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICSStudio.DeviceProfiles</RootNamespace>
+    <AssemblyName>ICSStudio.DeviceProfiles</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>$(SolutionDir)\build\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>$(SolutionDir)\build\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>ICSStudio.DeviceProfiles.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Description.cs" />
+    <Compile Include="Common\MajorWithSeries.cs" />
+    <Compile Include="DIOEnetAdapter\Common\AOPModuleTypes.cs" />
+    <Compile Include="DIOEnetAdapter\Common\Bus.cs" />
+    <Compile Include="DIOEnetAdapter\Common\CIPObject.cs" />
+    <Compile Include="DIOEnetAdapter\Common\ConfigTag.cs" />
+    <Compile Include="DIOEnetAdapter\Common\Connection.cs" />
+    <Compile Include="DIOEnetAdapter\Common\ConnectionConfigDefinition.cs" />
+    <Compile Include="DIOEnetAdapter\Common\ConnectionDefinition.cs" />
+    <Compile Include="Common\DataTypeDefinition.cs" />
+    <Compile Include="Common\DataValueDefinition.cs" />
+    <Compile Include="DIOEnetAdapter\Common\Downstream.cs" />
+    <Compile Include="DIOEnetAdapter\Common\Exclusions.cs" />
+    <Compile Include="DIOEnetAdapter\Common\Module.cs" />
+    <Compile Include="DIOEnetAdapter\Common\ModuleDefinition.cs" />
+    <Compile Include="DIOEnetAdapter\Common\ModuleType.cs" />
+    <Compile Include="Common\StringDefine.cs" />
+    <Compile Include="DIOEnetAdapter\DIOEnetAdapterProfiles.cs" />
+    <Compile Include="DIOModule\Common\IOConnectionConfigDefinition.cs" />
+    <Compile Include="DIOModule\Common\IOConnectionDefinition.cs" />
+    <Compile Include="DIOModule\Common\IOModule.cs" />
+    <Compile Include="DIOModule\Common\IOModuleDefinition.cs" />
+    <Compile Include="DIOModule\Common\IOModuleType.cs" />
+    <Compile Include="DIOModule\DIOModuleTypes.cs" />
+    <Compile Include="DIOModule\DIOModuleProfiles.cs" />
+    <Compile Include="Generic\CommMethod.cs" />
+    <Compile Include="Generic\Config.cs" />
+    <Compile Include="Generic\ConfigOption.cs" />
+    <Compile Include="Generic\ConfigSize.cs" />
+    <Compile Include="Generic\EnetModuleType.cs" />
+    <Compile Include="Generic\GenericEnetModuleProfiles.cs" />
+    <Compile Include="MotionDrive2\AB_CIP_Drive_C_2.cs" />
+    <Compile Include="MotionDrive2\Common\Attributes.cs" />
+    <Compile Include="MotionDrive2\Common\Axis.cs" />
+    <Compile Include="MotionDrive2\Common\EnumDefine.cs" />
+    <Compile Include="MotionDrive2\Common\ExtendedProperties.cs" />
+    <Compile Include="MotionDrive2\Common\Feedback.cs" />
+    <Compile Include="MotionDrive2\Common\Identity.cs" />
+    <Compile Include="MotionDrive2\Common\Module.cs" />
+    <Compile Include="MotionDrive2\Common\ModuleConnectionConfigDefinition.cs" />
+    <Compile Include="MotionDrive2\Common\ModuleConnectionDefinition.cs" />
+    <Compile Include="MotionDrive2\Common\ModuleDefinition.cs" />
+    <Compile Include="MotionDrive2\Common\ModuleType.cs" />
+    <Compile Include="MotionDrive2\Common\PowerStructure.cs" />
+    <Compile Include="MotionDrive2\Common\Schema.cs" />
+    <Compile Include="MotionDrive2\Common\SupportedAttribute.cs" />
+    <Compile Include="MotionDrive2\Common\SupportedExceptions.cs" />
+    <Compile Include="MotionDrive2\Common\SupportedValue.cs" />
+    <Compile Include="MotionDrive2\MotionDriveModuleTypes.cs" />
+    <Compile Include="Common\DrivePort.cs" />
+    <Compile Include="MotionDrive2\MotionDriveProfiles.cs" />
+    <Compile Include="ProfilesExtension.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ICSStudio.Cip\ICSStudio.Cip.csproj">
+      <Project>{3d36bed6-c812-43f2-8753-88961cd2c41e}</Project>
+      <Name>ICSStudio.Cip</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.Interfaces\ICSStudio.Interfaces.csproj">
+      <Project>{2E7D4256-92D6-4E0E-A1A1-D819D4D71667}</Project>
+      <Name>ICSStudio.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.Utils\ICSStudio.Utils.csproj">
+      <Project>{f880d2c5-68d6-4b83-a89e-b3958a75428d}</Project>
+      <Name>ICSStudio.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="icon.pfx" />
+    <None Include="ICSStudio.DeviceProfiles.snk" />
+    <None Include="ModuleProfiles\database.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\DIO Analog\ICD-IF4.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\DIO Analog\ICD-IR4.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\DIO Analog\ICD-OF4.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\DIO Analog\ICON_PS1734CO_Analog.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\DIO Analog\ICON_PS1734HD_Analog.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\DIO Analog\ICON_PS1734_Analog.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\DIO Discrete\1734-IB4.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\DIO Discrete\1734-IB8.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\DIO Discrete\1734-OB4.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\DIO Discrete\1734-OB8.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\DIO Discrete\1734-OB8E.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\DIO Discrete\Embedded-IQ16.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\DIO Discrete\Embedded-OB16.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\DIO Discrete\ICD-IB16.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\DIO Discrete\ICD-IQ16.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\DIO Discrete\ICD-OB16.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\DIO Discrete\ICD-OV16.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\DIO Discrete\PS1734_Discrete.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\DIO Discrete\PSICD_Discrete.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\DIO Discrete\PSICD_Embedded.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\DIO Enet Adapter\1734-AENTR.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\DIO Enet Adapter\ICD-AENTR.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\Embedded\Embedded_DiscreteIO.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\Embedded\PS1769_L1YEmbedded.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\Generic\ETHERNET-MODULE.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\motion.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\2198-D006-ERS3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\2198-D012-ERS3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\2198-D020-ERS3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\2198-D032-ERS3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\2198-D057-ERS3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\2198-H003-ERS.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\2198-H003-ERS2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\2198-H008-ERS.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\2198-H008-ERS2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\2198-H015-ERS.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\2198-H015-ERS2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\2198-H025-ERS.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\2198-H025-ERS2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\2198-H040-ERS.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\2198-H040-ERS2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\2198-H070-ERS.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\2198-H070-ERS2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\2198-S086-ERS3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\ICM-D1S11.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\ICM-D1S15.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\ICM-D1S18.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\ICM-D1S30.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\ICM-D1S70.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\ICM-D3D05.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\ICM-D3D08.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\ICM-D3D11.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\ICM-D3D18.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\ICM-D3D28.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\ICM-D3D38.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\ICM-D5D03.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\ICM-D5D05.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\ICM-D5D08.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\ICM-D5D11.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\ICM-D5D18.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\ICM-D5D28.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\ICM-D5D38.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\ICM-D5S08.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\ICM-D5S100.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\ICM-D5S130.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\ICM-D5S160.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\ICM-D5S50.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\ICM-D5S70.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\PSICM-D5.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ModuleProfiles\MotionDrive\PSKinetix5500Drive.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,63 @@
+﻿body 
+{
+    font-family:arial,sans-serif; 
+    font-size:smaller; 
+    margin:5px 5px 5px 5px;
+}
+h2
+{
+    margin-bottom:-10px;
+}
+h3
+{
+    background-color: LightGrey;
+    margin-top:20px;
+    margin-bottom:-15px;
+}
+code 
+{
+    font-size:larger; 
+}
+table
+{
+    table-layout: automatic;
+} 
+tbody 
+{
+    font-size:smaller; 
+    text-align:left; 
+    vertical-align:top;
+}		
+th 
+{
+    vertical-align:bottom;
+    border-bottom:1pt solid black; 
+    padding-right:10pt; 
+}		
+td
+{
+    padding-right:10pt; 
+}
+
+.comment,.description
+{
+}
+.vendor 
+{
+    font-weight:bolder; 
+    font-size:normal; 
+    margin-bottom:-15px;
+}
+.message 
+{ 
+    font-style:italic; 
+}
+.class 
+{
+    font-weight:bolder; 
+    font-size:normal; 
+}
+.example 
+{
+    margin-bottom:20px;
+}

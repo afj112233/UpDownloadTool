@@ -1,0 +1,158 @@
+﻿<Window
+    x:Class="ICSStudio.DeviceProperties.ModuleDefinition.DIOModuleDefinitionDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:gui="clr-namespace:ICSStudio.Gui;assembly=ICSStudio.Gui"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+    Title="{Binding Title}"
+    Width="380"
+    Height="280"
+    d:DesignHeight="300"
+    d:DesignWidth="300"
+    gui:DialogCloser.DialogResult="{Binding DialogResult}"
+    ResizeMode="NoResize"
+    ShowInTaskbar="False"
+    WindowStartupLocation="CenterOwner"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="0"
+            Text="{DynamicResource Series}"
+            Visibility="{Binding SeriesVisibility}" />
+        <ComboBox
+            Grid.Row="0"
+            Grid.Column="1"
+            Width="60"
+            HorizontalAlignment="Left"
+            ItemsSource="{Binding SeriesSource}"
+            SelectedValue="{Binding Series}"
+            Visibility="{Binding SeriesVisibility}" />
+
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="0"
+            Text="{DynamicResource Revision}" />
+        <StackPanel
+            Grid.Row="1"
+            Grid.Column="1"
+            Orientation="Horizontal">
+            <ComboBox
+                Width="60"
+                ItemsSource="{Binding MajorSource}"
+                SelectedValue="{Binding Major}" />
+            <TextBlock Width="10" />
+            <xctk:IntegerUpDown
+                Width="80"
+                AllowSpin="True"
+                Maximum="255"
+                Minimum="1"
+                ShowButtonSpinner="True"
+                Value="{Binding Minor}" />
+        </StackPanel>
+
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="0"
+            Text="{DynamicResource ElectronicKeying}" />
+        <ComboBox
+            Grid.Row="2"
+            Grid.Column="1"
+            DisplayMemberPath="DisplayName"
+            ItemsSource="{Binding EKeySource}"
+            SelectedValue="{Binding EKey}"
+            SelectedValuePath="Value" />
+
+        <Border
+            Grid.Row="3"
+            Grid.Column="0"
+            BorderBrush="DarkGray"
+            BorderThickness="1,1,0,0">
+            <TextBlock Margin="0" Text="{DynamicResource Connection}" />
+        </Border>
+        <Border
+            Grid.Row="3"
+            Grid.Column="1"
+            BorderBrush="DarkGray"
+            BorderThickness="1,1,1,0">
+            <ComboBox
+                Margin="0"
+                DisplayMemberPath="DisplayName"
+                ItemsSource="{Binding ConnectionSource}"
+                SelectedValue="{Binding ConnectionConfigID}"
+                SelectedValuePath="Value" />
+        </Border>
+
+
+        <Border
+            Grid.Row="4"
+            Grid.Column="0"
+            BorderBrush="DarkGray"
+            BorderThickness="1,1,0,1">
+            <TextBlock
+                Margin="0"
+                Text="{DynamicResource DataFormat}"
+                Visibility="{Binding DataFormatVisibility}" />
+        </Border>
+        <Border
+            Grid.Row="4"
+            Grid.Column="1"
+            BorderBrush="DarkGray"
+            BorderThickness="1,1,1,1">
+            <ComboBox
+                Margin="0"
+                ItemsSource="{Binding DataFormatSource}"
+                SelectedValue="{Binding DataFormat}"
+                Visibility="{Binding DataFormatVisibility}" />
+        </Border>
+
+
+        <Separator
+            Grid.Row="6"
+            Grid.Column="0"
+            Grid.ColumnSpan="2" />
+
+        <StackPanel
+            Grid.Row="8"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Orientation="Horizontal">
+            <Button
+                Command="{Binding OkCommand}"
+                Content="{DynamicResource OK}"
+                IsDefault="True" />
+            <Button
+                Command="{Binding CancelCommand}"
+                Content="{DynamicResource Cancel}"
+                IsCancel="True" />
+            <Button Content="{DynamicResource Help}" />
+        </StackPanel>
+    </Grid>
+</Window>

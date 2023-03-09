@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="ICSStudio.UIServicesPackage.PLCProperties.Panel.AlarmLog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ICSStudio.UIServicesPackage.PLCProperties.Panel"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Grid.Row="0" Content="{DynamicResource Clear Alarm Log}" Width="123" HorizontalAlignment="Left" Height="23" IsEnabled="{Binding IsOnline}"></Button>
+        <StackPanel
+            Grid.Row="0"
+            Grid.Column="1"
+            Visibility="{Binding IsVisibly}"
+            Orientation="Horizontal">
+            <Image
+                Width="15"
+                Height="15"
+                Margin="25,10,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Source="Images/Alert.png" />
+            <TextBlock Foreground="DodgerBlue" Text="{DynamicResource Clear log causes undelivered alarm log messages to not be delivered to subscribers of the alarm log}" />
+        </StackPanel>
+        <TextBlock Grid.Row="1" Text="{DynamicResource Last Clear State:}" VerticalAlignment="Top" Margin="0,30,0,0"></TextBlock>
+    </Grid>
+</UserControl>

@@ -1,0 +1,2131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\Microsoft.VSSDK.BuildTools.14.3.25407\build\Microsoft.VSSDK.BuildTools.props" Condition="Exists('..\..\packages\Microsoft.VSSDK.BuildTools.14.3.25407\build\Microsoft.VSSDK.BuildTools.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <UseCodebase>true</UseCodebase>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>ICSStudio.UIServicesPackage.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectTypeGuids>{82b43b9b-a64c-4715-b499-d71e9ca2bd60};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{0D62E596-E6A4-4A20-93D0-C284776ACE04}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICSStudio.UIServicesPackage</RootNamespace>
+    <AssemblyName>ICSStudio.UIServicesPackage</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <GeneratePkgDefFile>true</GeneratePkgDefFile>
+    <IncludeAssemblyInVSIXContainer>true</IncludeAssemblyInVSIXContainer>
+    <IncludeDebugSymbolsInVSIXContainer>true</IncludeDebugSymbolsInVSIXContainer>
+    <IncludeDebugSymbolsInLocalVSIXDeployment>true</IncludeDebugSymbolsInLocalVSIXDeployment>
+    <CopyBuildOutputToOutputDirectory>true</CopyBuildOutputToOutputDirectory>
+    <CopyOutputSymbolsToOutputDirectory>false</CopyOutputSymbolsToOutputDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>$(SolutionDir)\build\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>3</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>$(SolutionDir)\build\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AddOnInstruction\AddOnInstructionVM.cs" />
+    <Compile Include="AddOnInstruction\ExtendDialog\CheckDialog.xaml.cs">
+      <DependentUpon>CheckDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddOnInstruction\ExtendDialog\CheckDialogViewModel.cs" />
+    <Compile Include="AddOnInstruction\Panel\AoiContextMenu.cs" />
+    <Compile Include="AddOnInstruction\Panel\BaseTagRow.cs" />
+    <Compile Include="AddOnInstruction\Panel\ChangeHistory.xaml.cs">
+      <DependentUpon>ChangeHistory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddOnInstruction\Panel\ChangeHistoryViewModel.cs" />
+    <Compile Include="AddOnInstruction\Panel\General.xaml.cs">
+      <DependentUpon>General.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddOnInstruction\Panel\GeneralViewModel.cs" />
+    <Compile Include="AddOnInstruction\Panel\Help.xaml.cs">
+      <DependentUpon>Help.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddOnInstruction\Panel\HelpViewModel.cs" />
+    <Compile Include="AddOnInstruction\Panel\LocalTags.xaml.cs">
+      <DependentUpon>LocalTags.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddOnInstruction\Panel\LocalTagsViewModel.cs" />
+    <Compile Include="AddOnInstruction\Panel\Parameters.xaml.cs">
+      <DependentUpon>Parameters.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddOnInstruction\Panel\ParametersViewModel.cs" />
+    <Compile Include="AddOnInstruction\Panel\ScanModes.xaml.cs">
+      <DependentUpon>ScanModes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddOnInstruction\Panel\ScanModesViewModel.cs" />
+    <Compile Include="AddOnInstruction\Panel\Signature.xaml.cs">
+      <DependentUpon>Signature.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddOnInstruction\Panel\SignatureViewModel.cs" />
+    <Compile Include="AddOnInstruction\Panel\TagRowCompare.cs" />
+    <Compile Include="AddOnInstruction\Panel\Validate\DataTypeValidate.cs" />
+    <Compile Include="AddOnInstruction\Panel\Validate\DataTypeValidateParam.cs" />
+    <Compile Include="AddOnInstruction\Panel\Validate\DefaultValidate.cs" />
+    <Compile Include="AddOnInstruction\Panel\Validate\TextInputBehavior.cs" />
+    <Compile Include="AxisCIPDriveProperties\AxisCIPDrivePropertiesDialog.xaml.cs">
+      <DependentUpon>AxisCIPDrivePropertiesDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\AxisCIPDrivePropertiesViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\AxisDefaultSetting.cs" />
+    <Compile Include="AxisCIPDriveProperties\Controls\AutotuneLeft.xaml.cs">
+      <DependentUpon>AutotuneLeft.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Controls\AutotuneRight.xaml.cs">
+      <DependentUpon>AutotuneRight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Controls\LinearPMModel.xaml.cs">
+      <DependentUpon>LinearPMModel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Controls\LinearPMParameters.xaml.cs">
+      <DependentUpon>LinearPMParameters.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Controls\RotaryInductionModel.xaml.cs">
+      <DependentUpon>RotaryInductionModel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Controls\RotaryInductionParameters.xaml.cs">
+      <DependentUpon>RotaryInductionParameters.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Controls\RotaryPMModel.xaml.cs">
+      <DependentUpon>RotaryPMModel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Controls\RotaryPMParameters.xaml.cs">
+      <DependentUpon>RotaryPMParameters.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Controls\ValueTemplateSelector.cs" />
+    <Compile Include="AxisCIPDriveProperties\Models\AxisCIPParameters.cs" />
+    <Compile Include="AxisCIPDriveProperties\Models\BaseRule.cs" />
+    <Compile Include="AxisCIPDriveProperties\Models\ParameterItem.cs" />
+    <Compile Include="AxisCIPDriveProperties\Models\ParameterItemCollection.cs" />
+    <Compile Include="AxisCIPDriveProperties\Models\Parameter_accelerationloop.cs" />
+    <Compile Include="AxisCIPDriveProperties\Models\Parameter_actions.cs" />
+    <Compile Include="AxisCIPDriveProperties\Models\Parameter_backlash.cs" />
+    <Compile Include="AxisCIPDriveProperties\Models\Parameter_compliance.cs" />
+    <Compile Include="AxisCIPDriveProperties\Models\Parameter_exceptions.cs" />
+    <Compile Include="AxisCIPDriveProperties\Models\Parameter_frequencycontrol.cs" />
+    <Compile Include="AxisCIPDriveProperties\Models\Parameter_friction.cs" />
+    <Compile Include="AxisCIPDriveProperties\Models\Parameter_homing.cs" />
+    <Compile Include="AxisCIPDriveProperties\Models\Parameter_load.cs" />
+    <Compile Include="AxisCIPDriveProperties\Models\Parameter_loadfeedback.cs" />
+    <Compile Include="AxisCIPDriveProperties\Models\Parameter_model.cs" />
+    <Compile Include="AxisCIPDriveProperties\Models\Parameter_motor.cs" />
+    <Compile Include="AxisCIPDriveProperties\Models\Parameter_motorfeedback.cs" />
+    <Compile Include="AxisCIPDriveProperties\Models\Parameter_observer.cs" />
+    <Compile Include="AxisCIPDriveProperties\Models\Parameter_planner.cs" />
+    <Compile Include="AxisCIPDriveProperties\Models\Parameter_polarity.cs" />
+    <Compile Include="AxisCIPDriveProperties\Models\Parameter_positionloop.cs" />
+    <Compile Include="AxisCIPDriveProperties\Models\Parameter_scaling.cs" />
+    <Compile Include="AxisCIPDriveProperties\Models\Parameter_torquecurrentloop.cs" />
+    <Compile Include="AxisCIPDriveProperties\Models\Parameter_velocityloop.cs" />
+    <Compile Include="AxisCIPDriveProperties\Models\PropertySetting.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\AccelerationLoopPanel.xaml.cs">
+      <DependentUpon>AccelerationLoopPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Panel\AccelerationLoopViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\ActionsPanel.xaml.cs">
+      <DependentUpon>ActionsPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Panel\ActionsViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\AnalyzerPanel.xaml.cs">
+      <DependentUpon>AnalyzerPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Panel\AnalyzerViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\AutotunePanel.xaml.cs">
+      <DependentUpon>AutotunePanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Panel\AutotuneViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\BacklashPanel.xaml.cs">
+      <DependentUpon>BacklashPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Panel\BacklashViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\CompliancePanel.xaml.cs">
+      <DependentUpon>CompliancePanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Panel\ComplianceViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\DefaultViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\CyclicParametersPanel.xaml.cs">
+      <DependentUpon>CyclicParametersPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Panel\CyclicParametersViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\ExceptionsPanel.xaml.cs">
+      <DependentUpon>ExceptionsPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Panel\ExceptionsViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\FaultsAlarmsPanel.xaml.cs">
+      <DependentUpon>FaultsAlarmsPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Panel\FaultsAlarmsViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\FrequencyControlPanel.xaml.cs">
+      <DependentUpon>FrequencyControlPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Panel\FrequencyControlViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\FrictionPanel.xaml.cs">
+      <DependentUpon>FrictionPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Panel\FrictionViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\GeneralPanel.xaml.cs">
+      <DependentUpon>GeneralPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Panel\GeneralViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\HomingPanel.xaml.cs">
+      <DependentUpon>HomingPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Panel\HomingViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\HookupTestsPanel.xaml.cs">
+      <DependentUpon>HookupTestsPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Panel\HookupTestsViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\IAxisCIPDrivePanel.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\LoadFeedbackPanel.xaml.cs">
+      <DependentUpon>LoadFeedbackPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Panel\LoadFeedbackViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\LoadPanel.xaml.cs">
+      <DependentUpon>LoadPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Panel\LoadViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\MasterFeedbackPanel.xaml.cs">
+      <DependentUpon>MasterFeedbackPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Panel\MasterFeedbackViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\ModelPanel.xaml.cs">
+      <DependentUpon>ModelPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Panel\ModelViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\MotorFeedbackPanel.xaml.cs">
+      <DependentUpon>MotorFeedbackPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Panel\MotorFeedbackViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\MotorPanel.xaml.cs">
+      <DependentUpon>MotorPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Panel\MotorViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\ObserverPanel.xaml.cs">
+      <DependentUpon>ObserverPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Panel\ObserverViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\ParameterListPanel.xaml.cs">
+      <DependentUpon>ParameterListPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Panel\ParameterListViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\ParameterListViewModel_CheckParameters.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\PlannerPanel.xaml.cs">
+      <DependentUpon>PlannerPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Panel\PlannerViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\PolarityPanel.xaml.cs">
+      <DependentUpon>PolarityPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Panel\PolarityViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\PositionLoopPanel.xaml.cs">
+      <DependentUpon>PositionLoopPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Panel\PositionLoopViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\ScalingPanel.xaml.cs">
+      <DependentUpon>ScalingPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Panel\ScalingViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\StatusPanel.xaml.cs">
+      <DependentUpon>StatusPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Panel\StatusViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\TagPanel.xaml.cs">
+      <DependentUpon>TagPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Panel\TagViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\TorqueCurrentLoopPanel.xaml.cs">
+      <DependentUpon>TorqueCurrentLoopPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Panel\TorqueCurrentLoopViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\Panel\VelocityLoopPanel.xaml.cs">
+      <DependentUpon>VelocityLoopPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisCIPDriveProperties\Panel\VelocityLoopViewModel.cs" />
+    <Compile Include="AxisCIPDriveProperties\PropertiesCalculation.cs" />
+    <Compile Include="AxisCIPDriveProperties\Resources\GridLineDecorator.cs" />
+    <Compile Include="AxisCIPDriveProperties\Resources\GridViewColumnHelper.cs" />
+    <Compile Include="AxisCIPDriveProperties\Resources\VisualService.cs" />
+    <Compile Include="AxisCIPDriveProperties\StringListEqual.cs" />
+    <Compile Include="AxisCIPDriveProperties\ViewModel_Command.cs" />
+    <Compile Include="AxisCIPDriveProperties\ViewModel_EventHandle.cs" />
+    <Compile Include="AxisVirtualProperties\AxisVirtualPropertiesViewModel.cs" />
+    <Compile Include="AxisVirtualProperties\Panel\Conversion.xaml.cs">
+      <DependentUpon>Conversion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisVirtualProperties\Panel\ConversionViewModel.cs" />
+    <Compile Include="AxisVirtualProperties\Panel\Dynamics.xaml.cs">
+      <DependentUpon>Dynamics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisVirtualProperties\Panel\DynamicsViewModel.cs" />
+    <Compile Include="AxisVirtualProperties\Panel\General.xaml.cs">
+      <DependentUpon>General.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisVirtualProperties\Panel\GeneralViewModel.cs" />
+    <Compile Include="AxisVirtualProperties\Panel\Homing.xaml.cs">
+      <DependentUpon>Homing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisVirtualProperties\Panel\HomingViewModel.cs" />
+    <Compile Include="AxisVirtualProperties\Panel\MotionPlanner.xaml.cs">
+      <DependentUpon>MotionPlanner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisVirtualProperties\Panel\MotionPlannerViewModel.cs" />
+    <Compile Include="AxisVirtualProperties\Panel\SingleUpDownPasteBehavior.cs" />
+    <Compile Include="AxisVirtualProperties\Panel\Tag.xaml.cs">
+      <DependentUpon>Tag.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisVirtualProperties\Panel\TagViewModel.cs" />
+    <Compile Include="AxisVirtualProperties\Panel\Units.xaml.cs">
+      <DependentUpon>Units.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AxisVirtualProperties\Panel\UnitsViewModel.cs" />
+    <Compile Include="Checking.cs" />
+    <Compile Include="ConnectedTo\ConnectedToViewModel_MajorFault.cs" />
+    <Compile Include="ConnectedTo\ConnectedToViewModel_Options.cs" />
+    <Compile Include="ConnectedTo\View\OptionsControl.xaml.cs">
+      <DependentUpon>OptionsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DownloadCompareTool\ViewModel\CompareResultViewModel.cs" />
+    <Compile Include="DownloadCompareTool\ViewModel\Item\AOIDefinitionsItem.cs" />
+    <Compile Include="DownloadCompareTool\ViewModel\Item\CompareItem.cs" />
+    <Compile Include="DownloadCompareTool\ViewModel\Item\ControllerItem.cs" />
+    <Compile Include="DownloadCompareTool\ViewModel\Item\DataTypesItem.cs" />
+    <Compile Include="DownloadCompareTool\ViewModel\Item\ModifiedProgramItem.cs" />
+    <Compile Include="DownloadCompareTool\ViewModel\Item\ModulesItem.cs" />
+    <Compile Include="DownloadCompareTool\ViewModel\Item\ProgramsItem.cs" />
+    <Compile Include="DownloadCompareTool\ViewModel\Item\TasksItem.cs" />
+    <Compile Include="DownloadCompareTool\View\CompareResultView.xaml.cs">
+      <DependentUpon>CompareResultView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImportConfiguration\CommonPanel\ConnectionsPanel.xaml.cs">
+      <DependentUpon>ConnectionsPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImportConfiguration\CommonPanel\ConnectionsViewModel.cs" />
+    <Compile Include="ImportConfiguration\CommonPanel\ErrorsOrWarningsPanel.xaml.cs">
+      <DependentUpon>ErrorsOrWarningsPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImportConfiguration\CommonPanel\ErrorsOrWarningsViewModel.cs" />
+    <Compile Include="ImportConfiguration\Dialog\FindReplaceDialog.xaml.cs">
+      <DependentUpon>FindReplaceDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImportConfiguration\Dialog\ImportDialogVM.cs" />
+    <Compile Include="ImportConfiguration\Dialog\ImportingDialog.xaml.cs">
+      <DependentUpon>ImportingDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImportConfiguration\Dialog\ImportingViewModel.cs" />
+    <Compile Include="ImportConfiguration\Dialog\Panel\Data.xaml.cs">
+      <DependentUpon>Data.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImportConfiguration\Dialog\Panel\DataCompare.xaml.cs">
+      <DependentUpon>DataCompare.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImportConfiguration\Dialog\Panel\DataCompareViewModel.cs" />
+    <Compile Include="ImportConfiguration\Dialog\Panel\DataNode.cs" />
+    <Compile Include="ImportConfiguration\Dialog\Panel\DataViewModel.cs" />
+    <Compile Include="ImportConfiguration\Dialog\Panel\ProjectReferences.xaml.cs">
+      <DependentUpon>ProjectReferences.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImportConfiguration\Dialog\Panel\ProjectReferencesViewModel.cs" />
+    <Compile Include="ImportConfiguration\Dialog\Panel\Properties.xaml.cs">
+      <DependentUpon>Properties.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImportConfiguration\Dialog\Panel\PropertiesViewModel.cs" />
+    <Compile Include="ImportConfiguration\Dialog\Panel\PropertyCompare.xaml.cs">
+      <DependentUpon>PropertyCompare.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImportConfiguration\Dialog\Panel\PropertyCompareViewModel.cs" />
+    <Compile Include="ImportConfiguration\ImportDialog.xaml.cs">
+      <DependentUpon>ImportDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImportConfiguration\ImportDialogViewModel.cs" />
+    <Compile Include="ImportConfiguration\Model\DataListItem.cs" />
+    <Compile Include="ImportConfiguration\Model\Enums.cs" />
+    <Compile Include="ImportConfiguration\MultiplePanel\DataListPanel.xaml.cs">
+      <DependentUpon>DataListPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImportConfiguration\MultiplePanel\DataListPanelViewModel.cs" />
+    <Compile Include="ImportConfiguration\MultiplePanel\MultipleItemsPanel.xaml.cs">
+      <DependentUpon>MultipleItemsPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImportConfiguration\MultiplePanel\MultipleItemsViewModel.cs" />
+    <Compile Include="ImportConfiguration\Panel\Confirmation.xaml.cs">
+      <DependentUpon>Confirmation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImportConfiguration\Panel\ConfirmationViewModel.cs" />
+    <Compile Include="ImportConfiguration\Panel\Reference.xaml.cs">
+      <DependentUpon>Reference.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImportConfiguration\Panel\ReferenceViewModel.cs" />
+    <Compile Include="ImportConfiguration\Panel\Rung\RungPane.xaml.cs">
+      <DependentUpon>RungPane.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImportConfiguration\Panel\Rung\RungViewModel.cs" />
+    <Compile Include="ImportConfiguration\Panel\Validate\FinalNameValidate.cs" />
+    <Compile Include="ImportConfiguration\Panel\Validate\IVerity.cs" />
+    <Compile Include="ManualTune\DataTypes\MAJParam.cs" />
+    <Compile Include="ManualTune\DataTypes\MAMParam.cs" />
+    <Compile Include="ManualTune\DataTypes\MASParam.cs" />
+    <Compile Include="ManualTune\DataTypes\MDSParam.cs" />
+    <Compile Include="ManualTune\DataTypes\ParamBase.cs" />
+    <Compile Include="ManualTune\Panel\DefaultPanel.xaml.cs">
+      <DependentUpon>DefaultPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManualTune\Panel\MotionMove\MAHPanel.xaml.cs">
+      <DependentUpon>MAHPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManualTune\Panel\MotionMove\MAHViewModel.cs" />
+    <Compile Include="ManualTune\Panel\MotionMove\MAJPanel.xaml.cs">
+      <DependentUpon>MAJPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManualTune\Panel\MotionMove\MAJViewModel.cs" />
+    <Compile Include="ManualTune\Panel\MotionMove\MAMPanel.xaml.cs">
+      <DependentUpon>MAMPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManualTune\Panel\MotionMove\MAMViewModel.cs" />
+    <Compile Include="ManualTune\Panel\MotionMove\MASPanel.xaml.cs">
+      <DependentUpon>MASPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManualTune\Panel\MotionMove\MASViewModel.cs" />
+    <Compile Include="ManualTune\Panel\MotionState\MAFRPanel.xaml.cs">
+      <DependentUpon>MAFRPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManualTune\Panel\MotionState\MAFRViewModel.cs" />
+    <Compile Include="ManualTune\Panel\MotionState\MDSPanel.xaml.cs">
+      <DependentUpon>MDSPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManualTune\Panel\MotionState\MDSViewModel.cs" />
+    <Compile Include="ManualTune\Panel\MotionState\MSFPanel.xaml.cs">
+      <DependentUpon>MSFPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManualTune\Panel\MotionState\MSFViewModel.cs" />
+    <Compile Include="ManualTune\Panel\MotionState\MSOPanel.xaml.cs">
+      <DependentUpon>MSOPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManualTune\Panel\MotionState\MSOViewModel.cs" />
+    <Compile Include="ManualTune\ViewModel\AxisViewModel.cs" />
+    <Compile Include="ManualTune\Controls\Compensation.xaml.cs">
+      <DependentUpon>Compensation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManualTune\Controls\Feedforward.xaml.cs">
+      <DependentUpon>Feedforward.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManualTune\Controls\Filters.xaml.cs">
+      <DependentUpon>Filters.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManualTune\Controls\Limits.xaml.cs">
+      <DependentUpon>Limits.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManualTune\Controls\ManualTuning.xaml.cs">
+      <DependentUpon>ManualTuning.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManualTune\Controls\MotionGenerator.xaml.cs">
+      <DependentUpon>MotionGenerator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManualTune\Controls\Planner.xaml.cs">
+      <DependentUpon>Planner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManualTune\ManualTuneDialog.xaml.cs">
+      <DependentUpon>ManualTuneDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManualTune\ManualTuneViewModel.cs" />
+    <Compile Include="ManualTune\ViewModel\AdditionalTuneViewModel.cs" />
+    <Compile Include="ManualTune\ViewModel\DefaultViewModel.cs" />
+    <Compile Include="ManualTune\ViewModel\ManualTuningViewModel.cs" />
+    <Compile Include="ManualTune\ViewModel\MotionGeneratorViewModel.cs" />
+    <Compile Include="ManualTune\ViewModel\ViewModel_Command.cs" />
+    <Compile Include="ManualTune\ViewModel\ViewModel_OptionPanelNode.cs" />
+    <Compile Include="MotionDirectCommands\DataTypes\MAGParam.cs" />
+    <Compile Include="MotionDirectCommands\DataTypes\MAJParam.cs" />
+    <Compile Include="MotionDirectCommands\DataTypes\MAMParam.cs" />
+    <Compile Include="MotionDirectCommands\DataTypes\MARParam.cs" />
+    <Compile Include="MotionDirectCommands\DataTypes\MASParam.cs" />
+    <Compile Include="MotionDirectCommands\DataTypes\MAWParam.cs" />
+    <Compile Include="MotionDirectCommands\DataTypes\MCDParam.cs" />
+    <Compile Include="MotionDirectCommands\DataTypes\MDOParam.cs" />
+    <Compile Include="MotionDirectCommands\DataTypes\MDRParam.cs" />
+    <Compile Include="MotionDirectCommands\DataTypes\MDSParam.cs" />
+    <Compile Include="MotionDirectCommands\DataTypes\MGSParam.cs" />
+    <Compile Include="MotionDirectCommands\DataTypes\MRPParam.cs" />
+    <Compile Include="MotionDirectCommands\DataTypes\ParamBase.cs" />
+    <Compile Include="MotionDirectCommands\MotionDirectCommandsDialog.xaml.cs">
+      <DependentUpon>MotionDirectCommandsDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MotionDirectCommands\MotionDirectCommandsViewModel.cs" />
+    <Compile Include="MotionDirectCommands\Panel\AxisViewModel.cs" />
+    <Compile Include="MotionDirectCommands\Panel\DefaultPanel.xaml.cs">
+      <DependentUpon>DefaultPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MotionDirectCommands\Panel\DefaultViewModel.cs" />
+    <Compile Include="ManualTune\Panel\IMotionGeneratorPanel.cs" />
+    <Compile Include="MotionDirectCommands\Panel\IMotionDirectCommandPanel.cs" />
+    <Compile Include="MotionDirectCommands\Panel\MotionEvent\MARPanel.xaml.cs">
+      <DependentUpon>MARPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MotionDirectCommands\Panel\MotionEvent\MARViewModel.cs" />
+    <Compile Include="MotionDirectCommands\Panel\MotionEvent\MAWPanel.xaml.cs">
+      <DependentUpon>MAWPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MotionDirectCommands\Panel\MotionEvent\MAWViewModel.cs" />
+    <Compile Include="MotionDirectCommands\Panel\MotionEvent\MDRPanel.xaml.cs">
+      <DependentUpon>MDRPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MotionDirectCommands\Panel\MotionEvent\MDRViewModel.cs" />
+    <Compile Include="MotionDirectCommands\Panel\MotionEvent\MDWPanel.xaml.cs">
+      <DependentUpon>MDWPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MotionDirectCommands\Panel\MotionEvent\MDWViewModel.cs" />
+    <Compile Include="MotionDirectCommands\Panel\MotionGroupViewModel.cs" />
+    <Compile Include="MotionDirectCommands\Panel\MotionGroup\MGSDPanel.xaml.cs">
+      <DependentUpon>MGSDPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MotionDirectCommands\Panel\MotionGroup\MGSDViewModel.cs" />
+    <Compile Include="MotionDirectCommands\Panel\MotionGroup\MGSPanel.xaml.cs">
+      <DependentUpon>MGSPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MotionDirectCommands\Panel\MotionGroup\MGSPPanel.xaml.cs">
+      <DependentUpon>MGSPPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MotionDirectCommands\Panel\MotionGroup\MGSPViewModel.cs" />
+    <Compile Include="MotionDirectCommands\Panel\MotionGroup\MGSRPanel.xaml.cs">
+      <DependentUpon>MGSRPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MotionDirectCommands\Panel\MotionGroup\MGSRViewModel.cs" />
+    <Compile Include="MotionDirectCommands\Panel\MotionGroup\MGSViewModel.cs" />
+    <Compile Include="MotionDirectCommands\Panel\MotionMove\MAGPanel.xaml.cs">
+      <DependentUpon>MAGPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MotionDirectCommands\Panel\MotionMove\MAGViewModel.cs" />
+    <Compile Include="MotionDirectCommands\Panel\MotionMove\MAHPanel.xaml.cs">
+      <DependentUpon>MAHPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MotionDirectCommands\Panel\MotionMove\MAHViewModel.cs" />
+    <Compile Include="MotionDirectCommands\Panel\MotionMove\MAJPanel.xaml.cs">
+      <DependentUpon>MAJPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MotionDirectCommands\Panel\MotionMove\MAJViewModel.cs" />
+    <Compile Include="MotionDirectCommands\Panel\MotionMove\MAMPanel.xaml.cs">
+      <DependentUpon>MAMPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MotionDirectCommands\Panel\MotionMove\MAMViewModel.cs" />
+    <Compile Include="MotionDirectCommands\Panel\MotionMove\MASPanel.xaml.cs">
+      <DependentUpon>MASPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MotionDirectCommands\Panel\MotionMove\MASViewModel.cs" />
+    <Compile Include="MotionDirectCommands\Panel\MotionMove\MCDPanel.xaml.cs">
+      <DependentUpon>MCDPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MotionDirectCommands\Panel\MotionMove\MCDViewModel.cs" />
+    <Compile Include="MotionDirectCommands\Panel\MotionMove\MRPPanel.xaml.cs">
+      <DependentUpon>MRPPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MotionDirectCommands\Panel\MotionMove\MRPViewModel.cs" />
+    <Compile Include="MotionDirectCommands\Panel\MotionState\MAFRPanel.xaml.cs">
+      <DependentUpon>MAFRPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MotionDirectCommands\Panel\MotionState\MAFRViewModel.cs" />
+    <Compile Include="MotionDirectCommands\Panel\MotionState\MASDPanel.xaml.cs">
+      <DependentUpon>MASDPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MotionDirectCommands\Panel\MotionState\MASDViewModel.cs" />
+    <Compile Include="MotionDirectCommands\Panel\MotionState\MASRPanel.xaml.cs">
+      <DependentUpon>MASRPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MotionDirectCommands\Panel\MotionState\MASRViewModel.cs" />
+    <Compile Include="MotionDirectCommands\Panel\MotionState\MDFPanel.xaml.cs">
+      <DependentUpon>MDFPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MotionDirectCommands\Panel\MotionState\MDFViewModel.cs" />
+    <Compile Include="MotionDirectCommands\Panel\MotionState\MDOPanel.xaml.cs">
+      <DependentUpon>MDOPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MotionDirectCommands\Panel\MotionState\MDOViewModel.cs" />
+    <Compile Include="MotionDirectCommands\Panel\MotionState\MDSPanel.xaml.cs">
+      <DependentUpon>MDSPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MotionDirectCommands\Panel\MotionState\MDSViewModel.cs" />
+    <Compile Include="MotionDirectCommands\Panel\MotionState\MSFPanel.xaml.cs">
+      <DependentUpon>MSFPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MotionDirectCommands\Panel\MotionState\MSFViewModel.cs" />
+    <Compile Include="MotionDirectCommands\Panel\MotionState\MSOPanel.xaml.cs">
+      <DependentUpon>MSOPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MotionDirectCommands\Panel\MotionState\MSOViewModel.cs" />
+    <Compile Include="MotionDirectCommands\ViewModel_Command.cs" />
+    <Compile Include="MotionDirectCommands\ViewModel_OptionPanelNode.cs" />
+    <Compile Include="MotionGroupProperties\Panel\AttributePanel.xaml.cs">
+      <DependentUpon>AttributePanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MotionGroupProperties\MotionGroupPropertiesViewModel.cs" />
+    <Compile Include="MotionGroupProperties\Panel\AttributePanelViewModel.cs" />
+    <Compile Include="MotionGroupProperties\Panel\AxisAssignmentPanel.xaml.cs">
+      <DependentUpon>AxisAssignmentPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MotionGroupProperties\Panel\AxisAssignmentPanelViewModel.cs" />
+    <Compile Include="MotionGroupProperties\Panel\TagPanel.xaml.cs">
+      <DependentUpon>TagPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MotionGroupProperties\Panel\TagPanelViewModel.cs" />
+    <Compile Include="PLCProperties\Panel\Advanced.xaml.cs">
+      <DependentUpon>Advanced.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PLCProperties\Panel\AdvancedViewModel.cs" />
+    <Compile Include="PLCProperties\Panel\AlarmLog.xaml.cs">
+      <DependentUpon>AlarmLog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PLCProperties\Panel\AlarmLogViewModel.cs" />
+    <Compile Include="PLCProperties\Panel\Capacity.xaml.cs">
+      <DependentUpon>Capacity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PLCProperties\Panel\CapacityViewModel.cs" />
+    <Compile Include="PLCProperties\Panel\DateTime.xaml.cs">
+      <DependentUpon>DateTime.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PLCProperties\Panel\DateTimeViewModel.cs" />
+    <Compile Include="PLCProperties\Panel\General.xaml.cs">
+      <DependentUpon>General.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PLCProperties\Panel\GeneralViewModel.cs" />
+    <Compile Include="PLCProperties\Panel\InternetProtocol.xaml.cs">
+      <DependentUpon>InternetProtocol.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PLCProperties\Panel\InternetProtocolViewModel.cs" />
+    <Compile Include="PLCProperties\Panel\MajorFaults.xaml.cs">
+      <DependentUpon>MajorFaults.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PLCProperties\Panel\MajorFaultsViewModel.cs" />
+    <Compile Include="PLCProperties\Panel\MinorFaults.xaml.cs">
+      <DependentUpon>MinorFaults.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PLCProperties\Panel\MinorFaultsViewModel.cs" />
+    <Compile Include="PLCProperties\Panel\Network.xaml.cs">
+      <DependentUpon>Network.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PLCProperties\Panel\NetworkViewModel.cs" />
+    <Compile Include="PLCProperties\Panel\NonvolatileMemory.xaml.cs">
+      <DependentUpon>NonvolatileMemory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PLCProperties\Panel\NonvolatileMemoryViewModel.cs" />
+    <Compile Include="PLCProperties\Panel\PortConfiguration.xaml.cs">
+      <DependentUpon>PortConfiguration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PLCProperties\Panel\PortConfigurationViewModel.cs" />
+    <Compile Include="PLCProperties\Panel\Project.xaml.cs">
+      <DependentUpon>Project.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PLCProperties\Panel\ProjectViewModel.cs" />
+    <Compile Include="PLCProperties\Panel\Security.xaml.cs">
+      <DependentUpon>Security.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PLCProperties\Panel\SecurityViewModel.cs" />
+    <Compile Include="PLCProperties\Panel\SFCExecution.xaml.cs">
+      <DependentUpon>SFCExecution.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PLCProperties\Panel\SFCExecutionViewModel.cs" />
+    <Compile Include="PLCProperties\Panel\Warn\ChangeWarnDialog.xaml.cs">
+      <DependentUpon>ChangeWarnDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PLCProperties\Panel\Warn\ChangeWarnViewModel.cs" />
+    <Compile Include="PLCProperties\PLCPropertiesViewModel.cs" />
+    <Compile Include="ProgramProperties\Panel\Configuration.xaml.cs">
+      <DependentUpon>Configuration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramProperties\Panel\ConfigurationViewModel.cs" />
+    <Compile Include="ProgramProperties\Panel\EPConfiguration.xaml.cs">
+      <DependentUpon>EPConfiguration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramProperties\Panel\ESConfiguration.xaml.cs">
+      <DependentUpon>ESConfiguration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramProperties\Panel\ESGeneral.xaml.cs">
+      <DependentUpon>ESGeneral.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramProperties\Panel\General.xaml.cs">
+      <DependentUpon>General.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramProperties\Panel\GeneralViewModel.cs" />
+    <Compile Include="ProgramProperties\Panel\Monitor.xaml.cs">
+      <DependentUpon>Monitor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramProperties\Panel\MonitorViewModel.cs" />
+    <Compile Include="ProgramProperties\Panel\ParameterCompare.cs" />
+    <Compile Include="ProgramProperties\Panel\Parameters.xaml.cs">
+      <DependentUpon>Parameters.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramProperties\Panel\ParametersViewModel.cs" />
+    <Compile Include="ProgramProperties\Panel\ParametersViewModel_Item.cs" />
+    <Compile Include="ProgramProperties\ProgramPropertiesViewModel.cs" />
+    <Compile Include="RoutineProperties\Panel\AutoNaming.xaml.cs">
+      <DependentUpon>AutoNaming.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RoutineProperties\Panel\AutoNamingViewModel.cs" />
+    <Compile Include="RoutineProperties\Panel\General.xaml.cs">
+      <DependentUpon>General.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RoutineProperties\Panel\GeneralViewModel.cs" />
+    <Compile Include="RoutineProperties\Panel\SheetLayout.xaml.cs">
+      <DependentUpon>SheetLayout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RoutineProperties\Panel\SheetLayoutViewModel.cs" />
+    <Compile Include="RoutineProperties\RoutinePropertiesVM.cs" />
+    <Compile Include="RSTrendXProperties\Controls\ButtonWithColorDialog.cs" />
+    <Compile Include="RSTrendXProperties\Converters\ColorToSolidColorBrushConverter.cs" />
+    <Compile Include="RSTrendXProperties\Panel\Display.xaml.cs">
+      <DependentUpon>Display.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RSTrendXProperties\Panel\DisplayViewModel.cs" />
+    <Compile Include="RSTrendXProperties\Panel\General.xaml.cs">
+      <DependentUpon>General.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RSTrendXProperties\Panel\GeneralViewModel.cs" />
+    <Compile Include="RSTrendXProperties\Panel\Name.xaml.cs">
+      <DependentUpon>Name.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RSTrendXProperties\Panel\NameViewModel.cs" />
+    <Compile Include="RSTrendXProperties\Panel\Pens.xaml.cs">
+      <DependentUpon>Pens.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RSTrendXProperties\Panel\PensViewModel.cs" />
+    <Compile Include="RSTrendXProperties\Panel\Sampling.xaml.cs">
+      <DependentUpon>Sampling.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RSTrendXProperties\Panel\SamplingViewModel.cs" />
+    <Compile Include="RSTrendXProperties\Panel\StartTrigger.xaml.cs">
+      <DependentUpon>StartTrigger.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RSTrendXProperties\Panel\StartTriggerViewModel.cs" />
+    <Compile Include="RSTrendXProperties\Panel\StopTrigger.xaml.cs">
+      <DependentUpon>StopTrigger.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RSTrendXProperties\Panel\StopTriggerViewModel.cs" />
+    <Compile Include="RSTrendXProperties\Panel\Template.xaml.cs">
+      <DependentUpon>Template.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RSTrendXProperties\Panel\TemplateViewModel.cs" />
+    <Compile Include="RSTrendXProperties\Panel\X_Axis.xaml.cs">
+      <DependentUpon>X_Axis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RSTrendXProperties\Panel\X_AxisViewModel.cs" />
+    <Compile Include="RSTrendXProperties\Panel\Y_Axis.xaml.cs">
+      <DependentUpon>Y_Axis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RSTrendXProperties\Panel\Y_AxisViewModel.cs" />
+    <Compile Include="RSTrendXProperties\RSTrendXPropertiesVM.cs" />
+    <Compile Include="SelectModuleType\Common\DisplayModuleItem.cs" />
+    <Compile Include="SelectModuleType\Common\FilterItem.cs" />
+    <Compile Include="SelectModuleType\NewDeviceModuleDialog.xaml.cs">
+      <DependentUpon>NewDeviceModuleDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelectModuleType\Panel\CatalogPanel.xaml.cs">
+      <DependentUpon>CatalogPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelectModuleType\SelectModuleTypeViewModel.cs" />
+    <Compile Include="Services\ApplicationOptions.cs" />
+    <Compile Include="Services\CommandService.cs" />
+    <Compile Include="Services\CreateDialogService.cs" />
+    <Compile Include="Services\Project.cs" />
+    <Compile Include="Services\Project_PropertyChanged.cs" />
+    <Compile Include="Services\StudioUIService.cs" />
+    <Compile Include="Services\VersionService.cs" />
+    <Compile Include="TagProperties\Panel\AoiGeneral.xaml.cs">
+      <DependentUpon>AoiGeneral.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TagProperties\Panel\AoiGeneralViewModel.cs" />
+    <Compile Include="TagProperties\Panel\General.xaml.cs">
+      <DependentUpon>General.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TagProperties\Panel\GeneralViewModel.cs" />
+    <Compile Include="TagProperties\TagPropertiesViewModel.cs" />
+    <Compile Include="TaskProperties\panel\Configuration.xaml.cs">
+      <DependentUpon>Configuration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TaskProperties\panel\ConfigurationViewModel.cs" />
+    <Compile Include="TaskProperties\panel\General.xaml.cs">
+      <DependentUpon>General.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TaskProperties\panel\GeneralViewModel.cs" />
+    <Compile Include="TaskProperties\panel\Monitor.xaml.cs">
+      <DependentUpon>Monitor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TaskProperties\panel\MonitorViewModel.cs" />
+    <Compile Include="TaskProperties\panel\ProgramSchedule.xaml.cs">
+      <DependentUpon>ProgramSchedule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TaskProperties\panel\ProgramScheduleViewModel.cs" />
+    <Compile Include="TaskProperties\TaskPropertiesViewModel.cs" />
+    <Compile Include="ViewModel\AddOrConfigureTagViewModel.cs" />
+    <Compile Include="ViewModel\AdvancedTimeSyncViewModel.cs" />
+    <Compile Include="ViewModel\AutotuneProgressViewModel.cs" />
+    <Compile Include="ViewModel\AxisScheduleViewModel.cs" />
+    <Compile Include="ViewModel\CalculateJerkViewModel.cs" />
+    <Compile Include="ViewModel\ChangeControllerViewModel.cs" />
+    <Compile Include="ViewModel\ChangeTypeViewModel.cs" />
+    <Compile Include="ViewModel\ComparingViewModel.cs" />
+    <Compile Include="ViewModel\ConfigureDetectViewModel.cs" />
+    <Compile Include="ConnectedTo\ConnectedToViewModel.cs" />
+    <Compile Include="ViewModel\ConnectingViewModel.cs" />
+    <Compile Include="ViewModel\DateTimeBrowserViewModel.cs" />
+    <Compile Include="ViewModel\DownloadChangeViewModel.cs" />
+    <Compile Include="ViewModel\DownloadingViewModel.cs" />
+    <Compile Include="ViewModel\DownloadViewModel.cs" />
+    <Compile Include="ViewModel\DynamicsViewModel.cs" />
+    <Compile Include="ViewModel\FindInRoutinesVM.cs" />
+    <Compile Include="ViewModel\GrapgTitleViewModel.cs" />
+    <Compile Include="ViewModel\ManualAdjustViewModel.cs" />
+    <Compile Include="ViewModel\ManualAdjustVM.cs" />
+    <Compile Include="ViewModel\NewAddOnInstructionDialogViewModel.cs" />
+    <Compile Include="ViewModel\NewPhaseStateDialogViewModel.cs" />
+    <Compile Include="ViewModel\NewProgramDialogViewModel.cs" />
+    <Compile Include="ViewModel\NewProjectDialogViewModel.cs" />
+    <Compile Include="ViewModel\NewRoutineDialogViewModel.cs" />
+    <Compile Include="ViewModel\NewScanModeRoutineViewModel.cs" />
+    <Compile Include="ViewModel\NewTaskViewModel.cs" />
+    <Compile Include="ViewModel\NewTrendViewModel.cs" />
+    <Compile Include="ViewModel\OnliningViewModel.cs" />
+    <Compile Include="ViewModel\ParameterConnectionsViewModel.cs" />
+    <Compile Include="ViewModel\SavingToControllerViewModel.cs" />
+    <Compile Include="ViewModel\SearchItemBrowserVM.cs" />
+    <Compile Include="ViewModel\UploadAndCompareViewModel.cs" />
+    <Compile Include="ViewModel\UploadingViewModel.cs" />
+    <Compile Include="ViewModel\VerifyViewModel.cs" />
+    <Compile Include="View\AddOrConfigureTag.xaml.cs">
+      <DependentUpon>AddOrConfigureTag.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdvancedTimeSync.xaml.cs">
+      <DependentUpon>AdvancedTimeSync.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AutotuneProgressDialog.xaml.cs">
+      <DependentUpon>AutotuneProgressDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AxisScheduleDialog.xaml.cs">
+      <DependentUpon>AxisScheduleDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CalculateJerkDialog.xaml.cs">
+      <DependentUpon>CalculateJerkDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChangeControllerDialog.xaml.cs">
+      <DependentUpon>ChangeControllerDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChangeType.xaml.cs">
+      <DependentUpon>ChangeType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ComparingDialog.xaml.cs">
+      <DependentUpon>ComparingDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ConfigureDetect.xaml.cs">
+      <DependentUpon>ConfigureDetect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectedTo\ConnectedToDialog.xaml.cs">
+      <DependentUpon>ConnectedToDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ConnectingDialog.xaml.cs">
+      <DependentUpon>ConnectingDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DateTimeBrowser.xaml.cs">
+      <DependentUpon>DateTimeBrowser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DownloadChangeDialog.xaml.cs">
+      <DependentUpon>DownloadChangeDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DownloadDialog.xaml.cs">
+      <DependentUpon>DownloadDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DownloadingDialog.xaml.cs">
+      <DependentUpon>DownloadingDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DynamicsDialog.xaml.cs">
+      <DependentUpon>DynamicsDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FindInRoutines.xaml.cs">
+      <DependentUpon>FindInRoutines.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\GraphTitle.xaml.cs">
+      <DependentUpon>GraphTitle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManualAdjust.xaml.cs">
+      <DependentUpon>ManualAdjust.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NewAddOnInstructionDialog.xaml.cs">
+      <DependentUpon>NewAddOnInstructionDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NewPhaseStateDialog.xaml.cs">
+      <DependentUpon>NewPhaseStateDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NewProgramDialog.xaml.cs">
+      <DependentUpon>NewProgramDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NewProjectDialog.xaml.cs">
+      <DependentUpon>NewProjectDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NewRoutineDialog.xaml.cs">
+      <DependentUpon>NewRoutineDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NewScanModeRoutine.xaml.cs">
+      <DependentUpon>NewScanModeRoutine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NewTaskDialog.xaml.cs">
+      <DependentUpon>NewTaskDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Services\ProjectInfoService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UIServicesPackage.cs" />
+    <Compile Include="SelectModuleType\SelectModuleTypeDialog.xaml.cs">
+      <DependentUpon>SelectModuleTypeDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NewTrend.xaml.cs">
+      <DependentUpon>NewTrend.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OnliningDialog.xaml.cs">
+      <DependentUpon>OnliningDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ParameterConnectionsDialog.xaml.cs">
+      <DependentUpon>ParameterConnectionsDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SavingToControllerDialog.xaml.cs">
+      <DependentUpon>SavingToControllerDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SearchItemBrowser.xaml.cs">
+      <DependentUpon>SearchItemBrowser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UploadAndCompareDialog.xaml.cs">
+      <DependentUpon>UploadAndCompareDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UploadingDialog.xaml.cs">
+      <DependentUpon>UploadingDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VerifyDialog.xaml.cs">
+      <DependentUpon>VerifyDialog.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ICSStudio.UIServicesPackage.snk" />
+    <None Include="Key.snk" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="source.extension.vsixmanifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Template\ICC-B010ERM_Template.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Template\ICC-P0100ERM_Template.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Template\ICC-P010ERM_Template.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Template\ICC-P020ERM_Template.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Template\ICC-T0100ERM_Template.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImportConfiguration\images\AOI.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImportConfiguration\images\BottomArrow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImportConfiguration\images\compare.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImportConfiguration\images\DataType.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImportConfiguration\images\Different.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImportConfiguration\images\Eip.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImportConfiguration\images\Error.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImportConfiguration\images\Folder_Close.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImportConfiguration\images\Folder_Open.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImportConfiguration\images\LeftArrow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImportConfiguration\images\LeftFindNext.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImportConfiguration\images\Program.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImportConfiguration\images\RightArrow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImportConfiguration\images\RightFindNext.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImportConfiguration\images\Routine_ST.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImportConfiguration\images\Tag.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImportConfiguration\images\Tool.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="AddOnInstruction\Images\Tag.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ImportConfiguration\images\Routine_LD.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="AxisCIPDriveProperties\Image\Mark1.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="AxisCIPDriveProperties\Image\Search.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="DiffPlex.ico" />
+    <Resource Include="ImportConfiguration\images\connections.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="index.html" />
+    <Resource Include="View\Image\Search.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="PLCProperties\Panel\Images\Alert.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="PLCProperties\Panel\Images\AlertError.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ProgramProperties\Panel\Images\Star.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ProgramProperties\Panel\Images\Task_Continuous.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ProgramProperties\Panel\Images\Task_Event.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ProgramProperties\Panel\Images\Task_Periodic.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Page Include="ConnectedTo\View\OptionsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DownloadCompareTool\View\CompareResultView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImportConfiguration\Panel\Rung\RungPane.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManualTune\Panel\DefaultPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ManualTune\Panel\MotionMove\MAHPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ManualTune\Panel\MotionMove\MAJPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ManualTune\Panel\MotionMove\MAMPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ManualTune\Panel\MotionMove\MASPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ManualTune\Panel\MotionState\MAFRPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ManualTune\Panel\MotionState\MDSPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ManualTune\Panel\MotionState\MSFPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ManualTune\Panel\MotionState\MSOPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RSTrendXProperties\Resources\ButtonWithColorDialogDefaultStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Content Include="stylesheet.css" />
+    <Resource Include="View\Image\Mark1.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="AttachedCommandBehavior, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AttachedCommandBehavior.2.0.0.0\lib\net35\AttachedCommandBehavior.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CommonServiceLocator.2.0.4\lib\net45\CommonServiceLocator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DiffPlex, Version=1.7.1.0, Culture=neutral, PublicKeyToken=1d35e91d1bd7bc0f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DiffPlex.1.7.1\lib\net40\DiffPlex.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DiffPlex.Wpf, Version=1.3.2.0, Culture=neutral, PublicKeyToken=1d35e91d1bd7bc0f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DiffPlex.Wpf.1.3.2\lib\net452\DiffPlex.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DotNetProjects.Input.Toolkit, Version=6.1.91.0, Culture=neutral, PublicKeyToken=79778c5f2eed289b, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DotNetProjects.WpfToolkit.Input.6.1.91\lib\net40\DotNetProjects.Input.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="EnvDTE100, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="EnvDTE80, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="EnvDTE90, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.4.1.0, Culture=neutral, PublicKeyToken=0ffbc31322e9d308, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmLightLibsStd10.5.4.1.1\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmLightLibsStd10.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Imagin.Common, Version=3.1.0.0, Culture=neutral, PublicKeyToken=fd3ef6834d7c49b9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ICSStudio.Gui\lib\Imagin.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.2.6.1513, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MaterialDesignColors.1.2.6\lib\net45\MaterialDesignColors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=3.1.3.1513, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MaterialDesignThemes.3.1.3\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualStudio.CommandBars, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Imaging, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Imaging.14.3.25407\lib\net45\Microsoft.VisualStudio.Imaging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.OLE.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.OLE.Interop.7.10.6070\lib\Microsoft.VisualStudio.OLE.Interop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.14.0, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Shell.14.0.14.3.25407\lib\Microsoft.VisualStudio.Shell.14.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Immutable.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Shell.Immutable.10.0.10.0.30319\lib\net40\Microsoft.VisualStudio.Shell.Immutable.10.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Immutable.11.0, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Shell.Immutable.11.0.11.0.50727\lib\net45\Microsoft.VisualStudio.Shell.Immutable.11.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Immutable.12.0, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Shell.Immutable.12.0.12.0.21003\lib\net45\Microsoft.VisualStudio.Shell.Immutable.12.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Immutable.14.0, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Shell.Immutable.14.0.14.3.25407\lib\net45\Microsoft.VisualStudio.Shell.Immutable.14.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Shell.Interop.7.10.6071\lib\Microsoft.VisualStudio.Shell.Interop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Shell.Interop.10.0.10.0.30319\lib\Microsoft.VisualStudio.Shell.Interop.10.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.11.0, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Shell.Interop.11.0.11.0.61030\lib\Microsoft.VisualStudio.Shell.Interop.11.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.12.0, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Shell.Interop.12.0.12.0.30110\lib\Microsoft.VisualStudio.Shell.Interop.12.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Shell.Interop.8.0.8.0.50727\lib\Microsoft.VisualStudio.Shell.Interop.8.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Shell.Interop.9.0.9.0.30729\lib\Microsoft.VisualStudio.Shell.Interop.9.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.TextManager.Interop.7.10.6070\lib\Microsoft.VisualStudio.TextManager.Interop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.TextManager.Interop.8.0.8.0.50727\lib\Microsoft.VisualStudio.TextManager.Interop.8.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Threading, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Threading.14.1.111\lib\net45\Microsoft.VisualStudio.Threading.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Utilities, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Utilities.14.3.25407\lib\net45\Microsoft.VisualStudio.Utilities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Validation, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Validation.14.1.111\lib\net45\Microsoft.VisualStudio.Validation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NLog.4.7.10\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmLightLibsStd10.5.4.1.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Extended.Wpf.Toolkit.4.2.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Extended.Wpf.Toolkit.4.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Extended.Wpf.Toolkit.4.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Extended.Wpf.Toolkit.4.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Extended.Wpf.Toolkit.4.2.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="VSPackage.resx">
+      <MergeWithCTO>true</MergeWithCTO>
+      <ManifestResourceName>VSPackage</ManifestResourceName>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ICSStudio.CipConnection\ICSStudio.CipConnection.csproj">
+      <Project>{203372F2-17E7-490E-8AE3-104005887B05}</Project>
+      <Name>ICSStudio.CipConnection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.Cip\ICSStudio.Cip.csproj">
+      <Project>{3d36bed6-c812-43f2-8753-88961cd2c41e}</Project>
+      <Name>ICSStudio.Cip</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.Components\ICSStudio.Components.csproj">
+      <Project>{d44093ae-669c-43e7-9676-c1661d8e6dea}</Project>
+      <Name>ICSStudio.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.Database\ICSStudio.Database.csproj">
+      <Project>{803BED88-CD02-4760-87BB-E86DD19374CA}</Project>
+      <Name>ICSStudio.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.DeviceProfiles\ICSStudio.DeviceProfiles.csproj">
+      <Project>{6d244b3b-3525-49d3-a4c2-edc4ed0dec48}</Project>
+      <Name>ICSStudio.DeviceProfiles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.DeviceProperties\ICSStudio.DeviceProperties.csproj">
+      <Project>{088F2E1F-91E2-4D20-8DB0-F5A0C72218A0}</Project>
+      <Name>ICSStudio.DeviceProperties</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.Dialogs\ICSStudio.Dialogs.csproj">
+      <Project>{c9ab4df1-dedd-4011-b408-91b6fdcf6814}</Project>
+      <Name>ICSStudio.Dialogs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.DownloadChange\ICSStudio.DownloadChange.csproj">
+      <Project>{8523eb29-deb8-48fa-9aa8-4d71f7f16403}</Project>
+      <Name>ICSStudio.DownloadChange</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.DownloadOptions\ICSStudio.DownloadOptions.csproj">
+      <Project>{6d138f87-7dbb-4037-b27a-10f0fd5b222f}</Project>
+      <Name>ICSStudio.DownloadOptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.EditorPackage\ICSStudio.EditorPackage.csproj">
+      <Project>{f5ef2179-9856-40d7-bf8e-697b5f942496}</Project>
+      <Name>ICSStudio.EditorPackage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.FileConverter\ICSStudio.FileConverter.csproj">
+      <Project>{84743c84-6439-4773-823c-8fd07040e2fb}</Project>
+      <Name>ICSStudio.FileConverter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.Gui\ICSStudio.Gui.csproj">
+      <Project>{4576440d-1a48-487a-8dfa-f94751abae38}</Project>
+      <Name>ICSStudio.Gui</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.Interfaces\ICSStudio.Interfaces.csproj">
+      <Project>{2e7d4256-92d6-4e0e-a1a1-d819d4d71667}</Project>
+      <Name>ICSStudio.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.MultiLanguage\ICSStudio.MultiLanguage.csproj">
+      <Project>{06AFD655-2AAC-4268-B609-64A649A3746D}</Project>
+      <Name>ICSStudio.MultiLanguage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.SimpleServices\ICSStudio.SimpleServices.csproj">
+      <Project>{dac846e0-39e9-46ea-86b5-a5b89571831e}</Project>
+      <Name>ICSStudio.SimpleServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.StxEditor\ICSStudio.StxEditor.csproj">
+      <Project>{3EF59595-004B-4F22-9AD0-6FEF55EA1020}</Project>
+      <Name>ICSStudio.StxEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.UIInterfaces\ICSStudio.UIInterfaces.csproj">
+      <Project>{1ae2b658-cf74-48ea-b88e-b2511fa4b041}</Project>
+      <Name>ICSStudio.UIInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSStudio.Utils\ICSStudio.Utils.csproj">
+      <Project>{f880d2c5-68d6-4b83-a89e-b3958a75428d}</Project>
+      <Name>ICSStudio.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\ICSStudio.AvalonEdit\ICSStudio.AvalonEdit.csproj">
+      <Project>{34D16959-8351-4C67-B8AA-CEFA87C747CB}</Project>
+      <Name>ICSStudio.AvalonEdit</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="AddOnInstruction\ExtendDialog\CheckDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddOnInstruction\Panel\ChangeHistory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddOnInstruction\Panel\General.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddOnInstruction\Panel\Help.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddOnInstruction\Panel\LocalTags.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddOnInstruction\Panel\Parameters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddOnInstruction\Panel\ScanModes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddOnInstruction\Panel\Signature.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\AxisCIPDrivePropertiesDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Controls\AutotuneLeft.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Controls\AutotuneRight.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Controls\LinearPMModel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Controls\LinearPMParameters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Controls\RotaryInductionModel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Controls\RotaryInductionParameters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Controls\RotaryPMModel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Controls\RotaryPMParameters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Panel\AccelerationLoopPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Panel\ActionsPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Panel\AnalyzerPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Panel\AutotunePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Panel\BacklashPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Panel\CompliancePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Panel\CyclicParametersPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Panel\ExceptionsPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Panel\FaultsAlarmsPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Panel\FrequencyControlPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Panel\FrictionPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Panel\GeneralPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Panel\HomingPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Panel\HookupTestsPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Panel\LoadFeedbackPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Panel\LoadPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Panel\MasterFeedbackPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Panel\ModelPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Panel\MotorFeedbackPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Panel\MotorPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Panel\ObserverPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Panel\ParameterListPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Panel\PlannerPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Panel\PolarityPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Panel\PositionLoopPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Panel\ScalingPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Panel\StatusPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Panel\TagPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Panel\TorqueCurrentLoopPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisCIPDriveProperties\Panel\VelocityLoopPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisVirtualProperties\Panel\Conversion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisVirtualProperties\Panel\Dynamics.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisVirtualProperties\Panel\General.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisVirtualProperties\Panel\Homing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisVirtualProperties\Panel\MotionPlanner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisVirtualProperties\Panel\Tag.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AxisVirtualProperties\Panel\Units.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImportConfiguration\CommonPanel\ConnectionsPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ImportConfiguration\CommonPanel\ErrorsOrWarningsPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ImportConfiguration\Dialog\FindReplaceDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ImportConfiguration\Dialog\ImportingDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ImportConfiguration\Dialog\Panel\Data.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImportConfiguration\Dialog\Panel\DataCompare.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImportConfiguration\Dialog\Panel\ProjectReferences.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImportConfiguration\Dialog\Panel\Properties.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImportConfiguration\Dialog\Panel\PropertyCompare.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImportConfiguration\ImportDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImportConfiguration\MultiplePanel\DataListPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ImportConfiguration\MultiplePanel\MultipleItemsPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ImportConfiguration\Panel\Confirmation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImportConfiguration\Panel\Reference.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManualTune\Controls\Compensation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManualTune\Controls\Feedforward.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManualTune\Controls\Filters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManualTune\Controls\Limits.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManualTune\Controls\ManualTuning.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManualTune\Controls\MotionGenerator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManualTune\Controls\Planner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManualTune\ManualTuneDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MotionDirectCommands\MotionDirectCommandsDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MotionDirectCommands\Panel\DefaultPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MotionDirectCommands\Panel\MotionEvent\MARPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MotionDirectCommands\Panel\MotionEvent\MAWPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MotionDirectCommands\Panel\MotionEvent\MDRPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MotionDirectCommands\Panel\MotionEvent\MDWPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MotionDirectCommands\Panel\MotionGroup\MGSDPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MotionDirectCommands\Panel\MotionGroup\MGSPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MotionDirectCommands\Panel\MotionGroup\MGSPPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MotionDirectCommands\Panel\MotionGroup\MGSRPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MotionDirectCommands\Panel\MotionMove\MAGPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MotionDirectCommands\Panel\MotionMove\MAHPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MotionDirectCommands\Panel\MotionMove\MAJPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MotionDirectCommands\Panel\MotionMove\MAMPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MotionDirectCommands\Panel\MotionMove\MASPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MotionDirectCommands\Panel\MotionMove\MCDPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MotionDirectCommands\Panel\MotionMove\MRPPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MotionDirectCommands\Panel\MotionState\MAFRPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MotionDirectCommands\Panel\MotionState\MASDPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MotionDirectCommands\Panel\MotionState\MASRPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MotionDirectCommands\Panel\MotionState\MDFPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MotionDirectCommands\Panel\MotionState\MDOPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MotionDirectCommands\Panel\MotionState\MDSPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MotionDirectCommands\Panel\MotionState\MSFPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MotionDirectCommands\Panel\MotionState\MSOPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MotionGroupProperties\Panel\AttributePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MotionGroupProperties\Panel\AxisAssignmentPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MotionGroupProperties\Panel\TagPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PLCProperties\Panel\Advanced.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PLCProperties\Panel\AlarmLog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PLCProperties\Panel\Capacity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PLCProperties\Panel\DateTime.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PLCProperties\Panel\General.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PLCProperties\Panel\InternetProtocol.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PLCProperties\Panel\MajorFaults.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PLCProperties\Panel\MinorFaults.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PLCProperties\Panel\Network.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PLCProperties\Panel\NonvolatileMemory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PLCProperties\Panel\PortConfiguration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PLCProperties\Panel\Project.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PLCProperties\Panel\Security.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PLCProperties\Panel\SFCExecution.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PLCProperties\Panel\Warn\ChangeWarnDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProgramProperties\Panel\Configuration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProgramProperties\Panel\EPConfiguration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProgramProperties\Panel\ESConfiguration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProgramProperties\Panel\ESGeneral.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProgramProperties\Panel\General.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProgramProperties\Panel\Monitor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProgramProperties\Panel\Parameters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RoutineProperties\Panel\AutoNaming.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RoutineProperties\Panel\General.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RoutineProperties\Panel\SheetLayout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RSTrendXProperties\Panel\Display.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RSTrendXProperties\Panel\General.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RSTrendXProperties\Panel\Name.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RSTrendXProperties\Panel\Pens.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RSTrendXProperties\Panel\Sampling.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RSTrendXProperties\Panel\StartTrigger.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RSTrendXProperties\Panel\StopTrigger.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RSTrendXProperties\Panel\Template.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RSTrendXProperties\Panel\X_Axis.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RSTrendXProperties\Panel\Y_Axis.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SelectModuleType\NewDeviceModuleDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SelectModuleType\Panel\CatalogPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TagProperties\Panel\AoiGeneral.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TagProperties\Panel\General.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TaskProperties\panel\Configuration.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TaskProperties\panel\General.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TaskProperties\panel\Monitor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TaskProperties\panel\ProgramSchedule.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AddOrConfigureTag.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AdvancedTimeSync.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AutotuneProgressDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AxisScheduleDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CalculateJerkDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ChangeControllerDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ChangeType.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ComparingDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ConfigureDetect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ConnectedTo\ConnectedToDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ConnectingDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DateTimeBrowser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DownloadChangeDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DownloadDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DownloadingDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DynamicsDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\FindInRoutines.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\GraphTitle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManualAdjust.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NewAddOnInstructionDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NewPhaseStateDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NewProgramDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NewProjectDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NewRoutineDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NewScanModeRoutine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NewTaskDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SelectModuleType\SelectModuleTypeDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NewTrend.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OnliningDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ParameterConnectionsDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SavingToControllerDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SearchItemBrowser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UploadAndCompareDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UploadingDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VerifyDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DownloadCompareTool\Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\packages\Microsoft.VisualStudio.SDK.Analyzers.15.8.36\analyzers\cs\Microsoft.VisualStudio.SDK.Analyzers.dll" />
+    <Analyzer Include="..\..\packages\Microsoft.VisualStudio.Threading.Analyzers.15.8.168\analyzers\cs\Microsoft.VisualStudio.Threading.Analyzers.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Microsoft.VSSDK.BuildTools.14.3.25407\build\Microsoft.VSSDK.BuildTools.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.VSSDK.BuildTools.14.3.25407\build\Microsoft.VSSDK.BuildTools.props'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.VSSDK.BuildTools.14.3.25407\build\Microsoft.VSSDK.BuildTools.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.VSSDK.BuildTools.14.3.25407\build\Microsoft.VSSDK.BuildTools.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.VisualStudio.Threading.Analyzers.15.8.168\build\Microsoft.VisualStudio.Threading.Analyzers.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.VisualStudio.Threading.Analyzers.15.8.168\build\Microsoft.VisualStudio.Threading.Analyzers.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.VisualStudio.SDK.Analyzers.15.8.36\build\Microsoft.VisualStudio.SDK.Analyzers.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.VisualStudio.SDK.Analyzers.15.8.36\build\Microsoft.VisualStudio.SDK.Analyzers.targets'))" />
+    <Error Condition="!Exists('..\..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets'))" />
+  </Target>
+  <Import Project="..\..\packages\Microsoft.VSSDK.BuildTools.14.3.25407\build\Microsoft.VSSDK.BuildTools.targets" Condition="Exists('..\..\packages\Microsoft.VSSDK.BuildTools.14.3.25407\build\Microsoft.VSSDK.BuildTools.targets')" />
+  <Import Project="..\..\packages\Microsoft.VisualStudio.Threading.Analyzers.15.8.168\build\Microsoft.VisualStudio.Threading.Analyzers.targets" Condition="Exists('..\..\packages\Microsoft.VisualStudio.Threading.Analyzers.15.8.168\build\Microsoft.VisualStudio.Threading.Analyzers.targets')" />
+  <Import Project="..\..\packages\Microsoft.VisualStudio.SDK.Analyzers.15.8.36\build\Microsoft.VisualStudio.SDK.Analyzers.targets" Condition="Exists('..\..\packages\Microsoft.VisualStudio.SDK.Analyzers.15.8.36\build\Microsoft.VisualStudio.SDK.Analyzers.targets')" />
+  <Import Project="..\..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets" Condition="Exists('..\..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,198 @@
+﻿<UserControl
+    x:Class="ICSStudio.UIServicesPackage.TagProperties.Panel.AoiGeneral"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls1="clr-namespace:ICSStudio.Components.Controls;assembly=ICSStudio.Components"
+    d:DesignHeight="400" d:DesignWidth="350"
+    mc:Ignorable="d" IsEnabled="{Binding IsAoiGeneralEnabled}"
+    Loaded="OnLoaded">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="60" />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="30" />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock
+                Grid.Row="0"
+                Grid.Column="0"
+                Text="{DynamicResource New Tag Name:}"  />
+        <TextBlock
+                Grid.Row="1"
+                Grid.Column="0"
+                VerticalAlignment="Top"
+                Text="{DynamicResource New Tag Description:}" />
+        <TextBlock
+                Grid.Row="2"
+                Grid.Column="0"
+                Text="{DynamicResource Usage:}" />
+        <TextBlock
+                Grid.Row="3"
+                Grid.Column="0"
+                Text="{DynamicResource New Tag Type:}" />
+        <TextBlock
+                Grid.Row="4"
+                Grid.Column="0"
+                Text="{DynamicResource Alias For:}" />
+        <TextBlock
+                Grid.Row="5"
+                Grid.Column="0"
+                Text="{DynamicResource Data Type:}" />
+        <TextBlock
+                Grid.Row="6"
+                Grid.Column="0"
+                Text="{DynamicResource Instruction:}"
+                TextWrapping="Wrap" />
+        <TextBlock
+                Grid.Row="7"
+                Grid.Column="0"
+                Height="30"
+                Text="{DynamicResource External Access:}"
+                TextWrapping="Wrap" />
+        <TextBlock
+                Grid.Row="8"
+                Grid.Column="0"
+                Text="{DynamicResource Style:}" />
+
+        <controls1:ValidateNameControl
+                Grid.Row="0"
+                Grid.Column="1"
+                x:Name="NameBox"
+                Height="22"
+                Width="188"
+                HorizontalAlignment="Left"
+                IsEnabled="{Binding IsNameEnabled}"
+                PreviewKeyDown="TextBox_OnPreviewKeyDown"
+                Text="{Binding Name, 
+                UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox
+                Grid.Row="1"
+                Grid.Column="1"
+                AcceptsReturn="True"
+                Width="188"
+                HorizontalAlignment="Left"
+                Text="{Binding Description, UpdateSourceTrigger=PropertyChanged, Delay=30}"
+                TextWrapping="Wrap"
+                VerticalScrollBarVisibility="Visible" />
+        <ComboBox
+                Grid.Row="2"
+                Grid.Column="1"
+                Height="22"
+                Width="188"
+                HorizontalAlignment="Left"
+                DisplayMemberPath="DisplayName"
+                IsEnabled="{Binding IsUsagesEnabled}"
+                ItemsSource="{Binding Usages}"
+                SelectedValue="{Binding Usage}"
+                SelectedValuePath="Value" />
+        <ComboBox
+                Grid.Row="3"
+                Grid.Column="1"
+                Height="22"
+                Width="188"
+                HorizontalAlignment="Left"
+                IsEnabled="{Binding IsTagTypeEnabled}"
+                ItemsSource="{Binding TagTypes}"
+                SelectedItem="{Binding TagType}" />
+        <ComboBox
+                Grid.Row="4"
+                Grid.Column="1"
+                Height="22"
+                Width="188"
+                HorizontalAlignment="Left"
+                IsEnabled="False" />
+        <DockPanel
+                Grid.Row="5"
+                Grid.Column="1"
+                Width="188"
+                HorizontalAlignment="Left">
+            <controls1:FastAutoCompleteTextBox
+                    Width="154"
+                    Height="22"
+                    IsTextCompletionEnabled="True"
+                    ItemsSource="{Binding AllDataTypeNames}"
+                    MaxDropDownHeight="0"
+                    IsEnabled="{Binding IsDataTypeEnabled}"
+                    Text="{Binding DataType, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Delay=30}" />
+            <Button
+                    Height="22"
+                    MinWidth="30"
+                    HorizontalAlignment="Right"
+                    Command="{Binding SelectDataTypeCommand}"
+                    Content="..." />
+        </DockPanel>
+        <TextBlock
+                Grid.Row="6"
+                Grid.Column="1"
+                HorizontalAlignment="Left"
+                Text="{Binding AoiCollectionContainer, UpdateSourceTrigger=PropertyChanged}" />
+        <ComboBox
+                Grid.Row="7"
+                Grid.Column="1"
+                Height="22"
+                Width="188"
+                HorizontalAlignment="Left"
+                DisplayMemberPath="DisplayName"
+                IsEnabled="{Binding IsExternalAccessEnabled}"
+                ItemsSource="{Binding ExternalAccessSource}"
+                SelectedValue="{Binding ExternalAccess}"
+                SelectedValuePath="Value" />
+        <ComboBox
+                Grid.Row="8"
+                Grid.Column="1"
+                Height="22"
+                Width="188"
+                HorizontalAlignment="Left"
+                DisplayMemberPath="DisplayName"
+                IsEnabled="{Binding IsDisplayStyleEnabled}"
+                ItemsSource="{Binding DisplayStyleSource}"
+                SelectedValue="{Binding DisplayStyle}"
+                SelectedValuePath="Value" />
+        <CheckBox
+                Grid.Row="9"
+                Grid.Column="0"
+                VerticalAlignment="Center"
+                Content="{DynamicResource Required}"
+                IsChecked="{Binding IsRequiredChecked}"
+                IsEnabled="{Binding IsRequiredEnabled}"
+                Style="{StaticResource DisableCheckBoxStyle}" />
+        <CheckBox
+                Grid.Row="9"
+                Grid.Column="1"
+                VerticalAlignment="Center"
+                Content="{DynamicResource Visible}"
+                IsChecked="{Binding IsVisibleChecked}"
+                IsEnabled="{Binding IsVisibleEnabled}"
+                Style="{StaticResource DisableCheckBoxStyle}" />
+        <CheckBox
+                Grid.Row="10"
+                Grid.Column="0"
+                VerticalAlignment="Center"
+                Content="{DynamicResource New Tag Constant}"
+                IsChecked="{Binding IsConstantChecked}"
+                IsEnabled="{Binding IsConstantEnabled}"
+                Style="{StaticResource DisableCheckBoxStyle}" />
+    </Grid>
+</UserControl>

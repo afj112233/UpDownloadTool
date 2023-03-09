@@ -1,0 +1,12 @@
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ICSStudio.Cip.dll.config
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ICSStudio.Cip.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ICSStudio.Cip.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\ICSStudio\ICSStudio.Cip\obj\Release\ICSStudio.Cip.csprojResolveAssemblyReference.cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\ICSStudio\ICSStudio.Cip\obj\Release\ICSStudio.Cip.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\ICSStudio\ICSStudio.Cip\obj\Release\ICSStudio.Cip.pdb
+C:\Users\11584\Documents\Visual Studio 2015\Projects\DownUpload\build\Release\ICSStudio.Cip.dll.config
+C:\Users\11584\Documents\Visual Studio 2015\Projects\DownUpload\build\Release\ICSStudio.Cip.dll
+C:\Users\11584\Documents\Visual Studio 2015\Projects\DownUpload\build\Release\ICSStudio.Cip.pdb
+C:\Users\11584\Documents\Visual Studio 2015\Projects\DownUpload\IcsStudio\ICSStudio.Cip\obj\Release\ICSStudio.Cip.csprojResolveAssemblyReference.cache
+C:\Users\11584\Documents\Visual Studio 2015\Projects\DownUpload\IcsStudio\ICSStudio.Cip\obj\Release\ICSStudio.Cip.dll
+C:\Users\11584\Documents\Visual Studio 2015\Projects\DownUpload\IcsStudio\ICSStudio.Cip\obj\Release\ICSStudio.Cip.pdb

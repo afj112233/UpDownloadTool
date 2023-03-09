@@ -1,0 +1,57 @@
+﻿<Window x:Class="ICSStudio.Dialogs.STDialogs.AcceptedProgramEditsDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ICSStudio.Dialogs.STDialogs"
+             xmlns:gui="clr-namespace:ICSStudio.Gui;assembly=ICSStudio.Gui"
+             mc:Ignorable="d" 
+             d:DesignHeight="280" d:DesignWidth="400" ResizeMode="NoResize"
+             gui:DialogCloser.DialogResult="{Binding DialogResult}"
+             Height="250" Width="400" Title="ICS Studio">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="Margin" Value="5"></Setter>
+            </Style>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Image Source="Images/Exclamation.PNG" Width="32" Height="32" HorizontalAlignment="Left"></Image>
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Line0}"></TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="The following routines (in this program) contain edits:"></TextBlock>
+        <ListBox Grid.Row="2" Grid.Column="1" Height="85" Width="330" HorizontalAlignment="Left" ItemsSource="{Binding EditedRoutines}"
+                 SelectionMode="Single" Margin="5">
+            <ListBox.Resources>
+                <Style TargetType="{x:Type ListBoxItem}">
+                    <Setter Property="Focusable" Value="False"></Setter>
+                </Style>
+            </ListBox.Resources>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"></TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Line3}"></TextBlock>
+        <Button Grid.Row="4" Grid.Column="1" Content="Yes" IsDefault="True" HorizontalAlignment="Center" Margin="-150,5,0,0" Command="{Binding YesCommand}"></Button>
+        <Button Grid.Row="4" Grid.Column="1" Content="No" IsCancel="True" HorizontalAlignment="Center" Margin="100,5,0,0" Command="{Binding NoCommand}"></Button>
+    </Grid>
+</Window>

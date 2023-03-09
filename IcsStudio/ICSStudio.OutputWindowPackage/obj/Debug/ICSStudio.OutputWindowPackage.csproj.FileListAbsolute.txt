@@ -1,0 +1,13 @@
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.OutputWindowPackage.dll.config
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.OutputWindowPackage.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.OutputWindowPackage.pkgdef
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.OutputWindowPackage.vsix
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\extension.vsixmanifest
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.OutputWindowPackage\obj\Debug\ICSStudio.OutputWindowPackage.csprojResolveAssemblyReference.cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.OutputWindowPackage\obj\Debug\VSPackage.resources
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.OutputWindowPackage\obj\Debug\ICSStudio.OutputWindowPackage.csproj.GenerateResource.Cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.OutputWindowPackage\obj\Debug\ICSStudio.OutputWindowPackage.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.OutputWindowPackage\obj\Debug\ICSStudio.OutputWindowPackage.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.OutputWindowPackage\obj\Debug\ICSStudio.OutputWindowPackage.pkgdef
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.OutputWindowPackage\obj\Debug\ICSStudio.OutputWindowPackage.latest.pkgdef
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.OutputWindowPackage\obj\Debug\extension.vsixmanifest

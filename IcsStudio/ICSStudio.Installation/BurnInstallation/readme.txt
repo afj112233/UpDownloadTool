@@ -1,0 +1,2 @@
+编译之前需要将vs_isoshell.exe添加到当前项目File文件夹下，文件名需要对应。
+工程需要生成release，生成以后编译icsstudio.setup ,最后再编译icsstudio.brunistallation。

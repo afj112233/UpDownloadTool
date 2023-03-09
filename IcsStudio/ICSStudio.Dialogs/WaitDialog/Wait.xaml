@@ -1,0 +1,27 @@
+﻿<Window
+    x:Class="ICSStudio.Dialogs.WaitDialog.Wait"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:gui="clr-namespace:ICSStudio.Gui;assembly=ICSStudio.Gui"
+    xmlns:local="clr-namespace:ICSStudio.Dialogs.WaitDialog"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="259"
+    Height="116"
+    d:DesignHeight="300"
+    d:DesignWidth="300"
+    gui:DialogCloser.DialogResult="{Binding DialogResult}"
+    ContentRendered="Wait_OnContentRendered"
+    ResizeMode="NoResize"
+    ShowInTaskbar="False"
+    WindowStartupLocation="CenterOwner"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Grid>
+        <TextBlock
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="20"
+            Text="please wait..." />
+    </Grid>
+</Window>

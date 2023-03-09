@@ -1,0 +1,140 @@
+﻿<Window x:Class="ICSStudio.Dialogs.SelectDataType.SelectDataTypeDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:gui="clr-namespace:ICSStudio.Gui;assembly=ICSStudio.Gui"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:selectDataType="clr-namespace:ICSStudio.Dialogs.SelectDataType"
+        xmlns:controls="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
+        mc:Ignorable="d"
+        d:DesignHeight="300" d:DesignWidth="300"
+        Title="{DynamicResource Select Data Type}"
+        Width="420" Height="330"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterOwner"
+        gui:DialogCloser.DialogResult="{Binding DialogResult}"
+        Loaded="OnLoaded">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="100" />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="Data Types:" />
+            <controls:AutoCompleteBox x:Name="NameBox"
+                Grid.Row="1" IsTextCompletionEnabled="True"
+                Text="{Binding DataType,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Delay=30}"
+                ItemsSource="{Binding AllDataTypeNames}" />
+
+            <TreeView Grid.Row="2" x:Name="TvwDataTypes"
+                      Visibility="{Binding TreeViewVisibility}"
+                      ItemsSource="{Binding TreeViewSource}"
+                      SelectedItemChanged="TvwDataTypes_OnSelectedItemChanged"
+                      IsVisibleChanged="TvwDataTypes_OnIsVisibleChanged">
+                <TreeView.ItemContainerStyle>
+                    <Style TargetType="{x:Type TreeViewItem}">
+                        <Setter Property="IsExpanded" Value="{Binding IsExpanded,Mode=TwoWay}" />
+                        <Setter Property="IsSelected" Value="{Binding IsSelected,Mode=TwoWay}" />
+                        <EventSetter Event="MouseDoubleClick" Handler="TreeViewItemDoubleClick" />
+                    </Style>
+
+                </TreeView.ItemContainerStyle>
+                <TreeView.ItemTemplate>
+                    <HierarchicalDataTemplate
+                        ItemsSource="{Binding Path=Items}"
+                        DataType="selectDataType:DataTypeItem">
+                        <StackPanel Orientation="Horizontal">
+                            <!--<Image Source="{Binding ImageUrl}" Margin="2" />-->
+                            <materialDesign:PackIcon Margin="2" Kind="{Binding IconKind}" />
+                            <TextBlock Text="{Binding Name}" Margin="2" />
+                        </StackPanel>
+                    </HierarchicalDataTemplate>
+                </TreeView.ItemTemplate>
+            </TreeView>
+            <ListBox Grid.Row="2" x:Name="LbxDataTypes"
+                     Visibility="{Binding ListBoxVisibility}"
+                     SelectionMode="Single"
+                     ItemsSource="{Binding ListBoxSource}"
+                     DisplayMemberPath="Name"
+                     SelectedItem="{Binding SelectedDataTypeItem}"
+                     SelectionChanged="LbxDataTypes_OnSelectionChanged"
+                     IsVisibleChanged="LbxDataTypes_OnIsVisibleChanged">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListBoxItem}">
+                        <EventSetter Event="MouseDoubleClick" Handler="ListBoxItemDoubleClick" />
+                    </Style>
+                </ListBox.ItemContainerStyle>
+            </ListBox>
+
+            <GroupBox Grid.Row="3" Header="{DynamicResource Array Dimensions}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Content="{DynamicResource Dim2}" IsEnabled="{Binding Dim2Enabled}" />
+                    <Label Grid.Row="0" Grid.Column="1" Content="{DynamicResource Dim1}" IsEnabled="{Binding Dim1Enabled}" />
+                    <Label Grid.Row="0" Grid.Column="2" Content="{DynamicResource Dim0}" IsEnabled="{Binding Dim0Enabled}" />
+
+                    <xctk:IntegerUpDown Grid.Row="1" Grid.Column="0"
+                                        IsEnabled="{Binding Dim2Enabled}"
+                                        Value="{Binding Dim2}"
+                                        Minimum="0" />
+                    <xctk:IntegerUpDown Grid.Row="1" Grid.Column="1"
+                                        IsEnabled="{Binding Dim1Enabled}"
+                                        Value="{Binding Dim1}"
+                                        Minimum="0" />
+                    <xctk:IntegerUpDown Grid.Row="1" Grid.Column="2"
+                                        IsEnabled="{Binding Dim0Enabled}"
+                                        Value="{Binding Dim0}"
+                                        Minimum="0" />
+
+                </Grid>
+            </GroupBox>
+
+            <CheckBox Grid.Row="4"
+                      Content="{DynamicResource Show Data Types By Groups}"
+                      IsChecked="{Binding BeShowByGroups}" />
+
+        </Grid>
+
+
+        <StackPanel Grid.Column="1"
+                    Orientation="Vertical" VerticalAlignment="Top">
+            <Button Content="{DynamicResource OK}" Margin="2 4 2 4"
+                    Command="{Binding OkCommand}" IsDefault="True"/>
+            <Button Content="{DynamicResource Cancel}" Margin="2 4 2 4"
+                    Command="{Binding CancelCommand}" IsCancel="True" />
+            <Button Content="{DynamicResource Help}" Margin="2 4 2 4"
+                    Command="{Binding HelpCommand}" />
+        </StackPanel>
+
+    </Grid>
+</Window>

@@ -1,0 +1,282 @@
+﻿<UserControl
+    x:Class="ICSStudio.UIServicesPackage.ImportConfiguration.Panel.Confirmation"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ICSStudio.UIServicesPackage.ImportConfiguration.Panel"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:validate="clr-namespace:ICSStudio.UIServicesPackage.ImportConfiguration.Panel.Validate"
+    xmlns:view="clr-namespace:ICSStudio.Gui.View;assembly=ICSStudio.Gui"
+    d:DesignHeight="300"
+    d:DesignWidth="300"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="{x:Type ComboBox}">
+                <Setter Property="Width" Value="200" />
+                <Setter Property="Height" Value="22" />
+                <Setter Property="HorizontalAlignment" Value="Left" />
+            </Style>
+            <Style TargetType="{x:Type TextBox}">
+                <Setter Property="Width" Value="200" />
+                <Setter Property="Height" Value="25" />
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" MinWidth="100" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="{DynamicResource Import Name:}" />
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="1"
+            HorizontalAlignment="Left"
+            Text="{Binding Name}" />
+
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="0"
+            Text="{DynamicResource Operation:}" />
+        <ComboBox
+            Grid.Row="1"
+            Grid.Column="1"
+            HorizontalAlignment="Left"
+            ItemsSource="{Binding Operations}"
+            SelectedValue="{Binding SelectedOperation}" />
+
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="0"
+            Text="{DynamicResource Final Name:}" />
+        <StackPanel
+            Grid.Row="2"
+            Grid.Column="1"
+            HorizontalAlignment="Left"
+            Orientation="Horizontal">
+            <TextBox>
+                <TextBox.Resources>
+                    <view:BindingProxy x:Key="Proxy1" Data="{Binding}" />
+                </TextBox.Resources>
+                <TextBox.Text>
+                    <Binding Path="FinalName" UpdateSourceTrigger="LostFocus">
+                        <Binding.ValidationRules>
+                            <validate:FinalNameValidate>
+                                <validate:FinalNameValidate.Param>
+                                    <validate:FinalNameValidateParam
+                                        Source="{Binding Data, Source={StaticResource Proxy1}}"
+                                        Target="{Binding Data.Config, Source={StaticResource Proxy1}}"
+                                        Type="{Binding Data.ProjectItemType, Source={StaticResource Proxy1}}" />
+                                </validate:FinalNameValidate.Param>
+                            </validate:FinalNameValidate>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <Button
+                Margin="5,3"
+                Background="#FFEAEAEA"
+                Command="{Binding PropertiesCommand}"
+                Content="{Binding CommandContent}" />
+        </StackPanel>
+
+        <TextBlock
+            Grid.Row="3"
+            Grid.Column="0"
+            Text="{DynamicResource Description:}" />
+        <TextBox
+            Grid.Row="3"
+            Grid.Column="1"
+            Height="80"
+            HorizontalAlignment="Left"
+            IsReadOnly="{Binding DescriptionReadOnly}"
+            Text="{Binding Description}"
+            TextWrapping="WrapWithOverflow"
+            VerticalScrollBarVisibility="Visible" />
+
+        <TextBlock
+            Grid.Row="4"
+            Grid.Column="0"
+            Text="{DynamicResource Revision:}"
+            Visibility="{Binding AoiVisibility}" />
+        <TextBlock
+            Grid.Row="4"
+            Grid.Column="1"
+            Visibility="{Binding AoiVisibility}" />
+
+        <TextBlock
+            Grid.Row="5"
+            Grid.Column="0"
+            Text="{DynamicResource Revision Note:}"
+            Visibility="{Binding AoiVisibility}" />
+        <TextBlock
+            Grid.Row="5"
+            Grid.Column="1"
+            Visibility="{Binding AoiVisibility}" />
+
+        <TextBlock
+            Grid.Row="6"
+            Grid.Column="0"
+            Text="{DynamicResource Vendor:}"
+            Visibility="{Binding AoiVisibility}" />
+        <TextBlock
+            Grid.Row="6"
+            Grid.Column="1"
+            Visibility="{Binding AoiVisibility}" />
+
+        <TextBlock
+            Grid.Row="7"
+            Grid.Column="0"
+            Text="{DynamicResource Schedule In:}"
+            Visibility="{Binding ProgramPropertiesVisibility}" />
+        <ComboBox
+            Grid.Row="7"
+            Grid.Column="1"
+            Margin="0,3"
+            ItemsSource="{Binding Tasks}"
+            SelectedItem="{Binding SelectedTask}"
+            Visibility="{Binding ProgramPropertiesVisibility}" />
+
+        <CheckBox
+            Grid.Row="8"
+            Grid.Column="1"
+            Margin="0,5"
+            HorizontalAlignment="Left"
+            VerticalContentAlignment="Center"
+            Content="{DynamicResource Preserve}"
+            IsChecked="True"
+            IsEnabled="False"
+            Visibility="{Binding ProgramPropertiesVisibility}" />
+
+        <TextBlock
+            Grid.Row="9"
+            Grid.Column="0"
+            Text="{DynamicResource Parent:}"
+            Visibility="{Binding ProgramPropertiesVisibility}" />
+        <ComboBox
+            Grid.Row="9"
+            Grid.Column="1"
+            Margin="0,3"
+            ItemsSource="{Binding Parents}"
+            SelectedItem="{Binding SelectedParent}"
+            Visibility="{Binding ProgramPropertiesVisibility}" />
+
+        <CheckBox
+            Grid.Row="10"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Content="{DynamicResource Inhibit Program}"
+            IsChecked="{Binding Inhibit}"
+            Visibility="{Binding ProgramPropertiesVisibility}" />
+
+        <TextBlock
+            Grid.Row="11"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Margin="0,5"
+            FontWeight="Bold"
+            Text="{DynamicResource Assigned Routines}"
+            Visibility="{Binding ProgramPropertiesVisibility}" />
+
+        <TextBlock
+            Grid.Row="12"
+            Grid.Column="0"
+            HorizontalAlignment="Center"
+            Text="{DynamicResource Main:}"
+            Visibility="{Binding ProgramPropertiesVisibility}" />
+        <TextBlock
+            Grid.Row="12"
+            Grid.Column="1"
+            Text="{Binding MainRoutine}"
+            Visibility="{Binding ProgramPropertiesVisibility}" />
+
+        <TextBlock
+            Grid.Row="13"
+            Grid.Column="0"
+            HorizontalAlignment="Center"
+            Text="{DynamicResource Fault:}"
+            Visibility="{Binding ProgramPropertiesVisibility}" />
+        <TextBlock
+            Grid.Row="13"
+            Grid.Column="1"
+            Text="{Binding FaultRoutine}"
+            Visibility="{Binding ProgramPropertiesVisibility}" />
+
+        <TextBlock
+            Grid.Row="14"
+            Grid.Column="0"
+            Text="{DynamicResource Type:}"
+            Visibility="{Binding RoutinePropertiesVisibility}" />
+        <TextBlock
+            Grid.Row="14"
+            Grid.Column="1"
+            Margin="0,3"
+            Text="{Binding Type}"
+            Visibility="{Binding RoutinePropertiesVisibility}" />
+
+        <TextBlock
+            Grid.Row="15"
+            Grid.Column="0"
+            Text="{DynamicResource In Program:}"
+            Visibility="{Binding RoutinePropertiesVisibility}" />
+        <ComboBox
+            Grid.Row="15"
+            Grid.Column="1"
+            Margin="0,3"
+            ItemsSource="{Binding Programs}"
+            SelectedItem="{Binding SelectedProgram}"
+            Visibility="{Binding RoutinePropertiesVisibility}" />
+
+        <TextBlock
+            Grid.Row="16"
+            Grid.Column="0"
+            Text="{DynamicResource Number of Lines:}"
+            Visibility="{Binding RoutinePropertiesVisibility}" />
+        <TextBlock
+            Grid.Row="16"
+            Grid.Column="1"
+            Text="{Binding Lines}"
+            Visibility="{Binding RoutinePropertiesVisibility}" />
+
+        <TextBlock
+            Grid.Row="17"
+            Grid.Column="0"
+            Text="{DynamicResource Parent:}"
+            Visibility="{Binding ModuleVisibility}" />
+        <TextBlock
+            Grid.Row="17"
+            Grid.Column="1"
+            Text="{Binding ParentModule}"
+            Visibility="{Binding ModuleVisibility}" />
+    </Grid>
+</UserControl>

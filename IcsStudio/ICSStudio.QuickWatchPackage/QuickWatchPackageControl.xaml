@@ -1,0 +1,117 @@
+﻿<UserControl
+    x:Class="ICSStudio.QuickWatchPackage.QuickWatchPackageControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:view="clr-namespace:ICSStudio.QuickWatchPackage.View"
+    d:DesignHeight="300"
+    d:DesignWidth="900"
+    mc:Ignorable="d" IsEnabled="{Binding IsEnabled}"
+    Loaded="QuickWatchPackageControl_OnLoaded" IsVisibleChanged="QuickWatchPackageControl_OnIsVisibleChanged">
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="ComboBox">
+                <Setter Property="Margin" Value="5" />
+            </Style>
+
+            <Style TargetType="TextBox">
+                <Setter Property="Margin" Value="5" />
+            </Style>
+
+            <Style TargetType="Button">
+                <Setter Property="Margin" Value="5" />
+            </Style>
+
+            <Style TargetType="DataGrid">
+                <Setter Property="Margin" Value="5" />
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <ComboBox
+                Grid.Column="0"
+                Width="300"
+                Height="25"
+                Margin="5"
+                DisplayMemberPath="Name"
+                ItemsSource="{Binding WatchListCollectionView}"
+                SelectedItem="{Binding SelectedItem}">
+                <ComboBox.GroupStyle>
+                    <GroupStyle>
+                        <GroupStyle.HeaderTemplate>
+                            <DataTemplate>
+                                <Grid Height="1" Background="Black" />
+                            </DataTemplate>
+                        </GroupStyle.HeaderTemplate>
+                    </GroupStyle>
+                </ComboBox.GroupStyle>
+            </ComboBox>
+            <TextBox
+                Grid.Column="1"
+                Width="190"
+                Height="25"
+                Margin="5"
+                PreviewKeyDown="TextBox_OnPreviewKeyDown"
+                Text="{Binding ListName, UpdateSourceTrigger=LostFocus}"
+                Visibility="{Binding RemoveCommandVisibility}">
+                <TextBox.Resources>
+                    <VisualBrush
+                        x:Key="HelpBrush"
+                        AlignmentX="Left"
+                        Opacity="0.3"
+                        Stretch="None"
+                        TileMode="None">
+                        <VisualBrush.Visual>
+                            <TextBlock FontStyle="Italic" Text="{DynamicResource EnterQuickWatchListName}"/>
+                        </VisualBrush.Visual>
+                    </VisualBrush>
+                </TextBox.Resources>
+                <TextBox.Style>
+                    <Style TargetType="TextBox">
+                        <Style.Triggers>
+                            <Trigger Property="Text" Value="{x:Null}">
+                                <Setter Property="Background" Value="{StaticResource HelpBrush}" />
+                            </Trigger>
+                            <Trigger Property="Text" Value="">
+                                <Setter Property="Background" Value="{StaticResource HelpBrush}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+
+            <Button
+                Grid.Column="2"
+                Width="25"
+                Height="25"
+                Margin="5"
+                Command="{Binding RefreshCommand}"
+                Visibility="{Binding RefreshCommandVisibility}">
+                <Button.Content>
+                    <Image RenderOptions.BitmapScalingMode="Fant" Source="Resources/refresh.png" />
+                </Button.Content>
+            </Button>
+            <Button
+                Grid.Column="2"
+                Width="25"
+                Height="25"
+                Margin="5"
+                Command="{Binding RemoveCommand}"
+                Visibility="{Binding RemoveCommandVisibility}">
+                <Button.Content>
+                    <Image RenderOptions.BitmapScalingMode="Fant" Source="Resources/delete.png" />
+                </Button.Content>
+            </Button>
+        </StackPanel>
+
+        <view:MonitorControl
+            x:Name="MonitorControl"
+            Grid.Row="1"
+            Grid.ColumnSpan="3"
+            DataContext="{Binding MonitorTagsViewModel}" />
+    </Grid>
+</UserControl>

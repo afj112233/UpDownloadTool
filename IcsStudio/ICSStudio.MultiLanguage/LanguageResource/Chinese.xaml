@@ -1,0 +1,2861 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="Name">名称</system:String>
+    <system:String x:Key="Description">说明</system:String>
+    <system:String x:Key="Parent">父项</system:String>
+    <system:String x:Key="UseAsFolder">作用文件夹</system:String>
+    <system:String x:Key="Schedule">规划</system:String>
+    <system:String x:Key="AssignedRoutines">分配的例程</system:String>
+    <system:String x:Key="Main">主要</system:String>
+    <system:String x:Key="Fault">故障</system:String>
+    <system:String x:Key="InhibitProgram">禁用程序</system:String>
+    <system:String x:Key="General">常规</system:String>
+    <system:String x:Key="Configuration">配置</system:String>
+    <system:String x:Key="Parameters">参数</system:String>
+    <system:String x:Key="Monitor">监控</system:String>
+    <system:String x:Key="DataType">数据类型</system:String>
+    <system:String x:Key="AliasFor">别名</system:String>
+    <system:String x:Key="Default">缺省值</system:String>
+    <system:String x:Key="Usage">用途</system:String>
+    <system:String x:Key="BaseTag">基础类型</system:String>
+    <system:String x:Key="ExternalAccess">外部访问</system:String>
+    <system:String x:Key="Constant">常量</system:String>
+    <system:String x:Key="Connections">连接</system:String>
+    <system:String x:Key="Max">最大值</system:String>
+    <system:String x:Key="Last">上次</system:String>
+    <system:String x:Key="ScanTime(Execution Time)">扫描时间（执行时间）</system:String>
+    <system:String x:Key="ResetMax">重置最大值</system:String>
+    <system:String x:Key="Watch">观察</system:String>
+    <system:String x:Key="QuickWatch">快速观察</system:String>
+    <system:String x:Key="Scope">作用域</system:String>
+    <system:String x:Key="Value">值</system:String>
+    <system:String x:Key="ForceMask">强制掩码</system:String>
+    <system:String x:Key="EnterQuickWatchListName">输入快速观察列表名称...</system:String>
+    <system:String x:Key="SaveFile">保存文件</system:String>
+    <system:String x:Key="SearchResults">搜索结果</system:String>
+
+    <!--  时间单位  -->
+    <system:String x:Key="us">微秒</system:String>
+
+    <!--  Menu  -->
+    <system:String x:Key="MenuFile">文件(_F)</system:String>
+    <system:String x:Key="MenuEdit">编辑(_E)</system:String>
+    <system:String x:Key="MenuView">查看(_V)</system:String>
+    <system:String x:Key="MenuCommunications">通信(_C)</system:String>
+    <system:String x:Key="MenuTools">工具(_T)</system:String>
+    <system:String x:Key="MenuSearch">搜索(_S)</system:String>
+    <system:String x:Key="MenuHelp">帮助(_H)</system:String>
+    <system:String x:Key="MenuOperation">操作(_O)</system:String>
+
+    <!--  按钮  -->
+    <system:String x:Key="Cancel">取消</system:String>
+    <system:String x:Key="Apply">应用</system:String>
+    <system:String x:Key="OK">确定</system:String>
+    <system:String x:Key="Help">帮助</system:String>
+    <system:String x:Key="Back">上一步</system:String>
+    <system:String x:Key="Next">下一页</system:String>
+    <system:String x:Key="Add">添加</system:String>
+    <system:String x:Key="Remove">移除</system:String>
+
+
+
+    <!--  下拉框  -->
+    <system:String x:Key="None">&lt;无&gt;</system:String>
+
+    <!--  adapter - general  -->
+    <system:String x:Key="Offline">脱机</system:String>
+    <system:String x:Key="Connection">连接</system:String>
+    <system:String x:Key="ModuleInfo">模块信息</system:String>
+    <system:String x:Key="InternetProtocol">以太网协议</system:String>
+    <system:String x:Key="PortConfiguration">端口配置</system:String>
+    <system:String x:Key="Network">网络</system:String>
+    <system:String x:Key="ChassisSize">机架大小</system:String>
+    <system:String x:Key="Type">类型</system:String>
+    <system:String x:Key="Vendor">供应商：</system:String>
+
+    <system:String x:Key="EthernetAddress">以太网地址</system:String>
+    <system:String x:Key="PrivateNetwork">私有网络：</system:String>
+    <system:String x:Key="IPAddress">IP 地址：</system:String>
+    <system:String x:Key="HostName">主机名：</system:String>
+
+    <system:String x:Key="ModuleDefinition">模块定义</system:String>
+    <system:String x:Key="ModuleDefinition*">模块定义*</system:String>
+    <system:String x:Key="Series">系列：</system:String>
+    <system:String x:Key="Revision">版本</system:String>
+    <system:String x:Key="ElectronicKeying">电子密钥：</system:String>
+    <system:String x:Key="Change">更改</system:String>
+    <system:String x:Key="Slot">槽号：</system:String>
+    <system:String x:Key="DataFormat">数据格式：</system:String>
+    <system:String x:Key="CommFormat">通信格式：</system:String>
+    <system:String x:Key="AddressHostName">地址/主机名</system:String>
+    <system:String x:Key="ConnectionParameters">连接参数</system:String>
+    <system:String x:Key="Input">输入：</system:String>
+    <system:String x:Key="Output">输出：</system:String>
+    <system:String x:Key="StatusInput">状态输入：</system:String>
+    <system:String x:Key="StatusOutput">状态输出：</system:String>
+    <system:String x:Key="AssemblyInstance">汇编实例：</system:String>
+    <system:String x:Key="Size">大小：</system:String>
+
+    <!--  adapter - connection  -->
+    <system:String x:Key="RequestedPacketInterval">请求的信息包间隔(RPI)：</system:String>
+    <system:String x:Key="InhibitModule">禁用模块</system:String>
+    <system:String x:Key="MajorFaultOnControllerIfConnectionFailsWhileInRunMode">如果在“运行模式”下连接失败，则控制器将产生严重故障</system:String>
+    <system:String x:Key="UseUnicastConnectionOverEthernetIP">使用以太网/IP 单播连接</system:String>
+    <system:String x:Key="ModuleFault">模块故障</system:String>
+
+    <!--  adapter - module info  -->
+    <system:String x:Key="Identification">标识</system:String>
+    <system:String x:Key="ProductType">产品类型：</system:String>
+    <system:String x:Key="ProductCode">产品代码：</system:String>
+    <system:String x:Key="SerialNumber">序列号：</system:String>
+    <system:String x:Key="ProductName">产品名称：</system:String>
+    <system:String x:Key="Status">状态</system:String>
+    <system:String x:Key="MajorFault">严重故障：</system:String>
+    <system:String x:Key="MinorFault">一般故障：</system:String>
+    <system:String x:Key="InternalState">内部状态：</system:String>
+    <system:String x:Key="Configured">配置：</system:String>
+    <system:String x:Key="Owned">宿主：</system:String>
+    <system:String x:Key="ModuleIdentity">模块标识：</system:String>
+    <system:String x:Key="ProtectionMode">保护模式：</system:String>
+    <system:String x:Key="Refresh">刷新</system:String>
+    <system:String x:Key="ResetModule">重置模块</system:String>
+
+    <!--  adapter - internet protocol  -->
+    <system:String x:Key="ManuallyConfigureIPSettings">手动配置IP设置</system:String>
+    <system:String x:Key="ObtainIPSettingsAutomaticallyUsingDHCP">使用DHCP自动获取IP设置</system:String>
+    <system:String x:Key="IPSettingsSetBySwitchesOnTheModule">IP设置由模块上的开关进行设置</system:String>
+    <system:String x:Key="PhysicalModuleIPAddress">物理模块 IP 地址：</system:String>
+    <system:String x:Key="SubnetMask">子网掩码：</system:String>
+    <system:String x:Key="GatewayAddress">网关地址：</system:String>
+    <system:String x:Key="DomainName">域名</system:String>
+    <system:String x:Key="PrimaryDNSServerAddress">主DNS服务器地址：</system:String>
+    <system:String x:Key="SecondaryDNSServerAddress">次DNS服务地址：</system:String>
+    <system:String x:Key="RefreshCommunication">刷新通信</system:String>
+    <system:String x:Key="Set">设置</system:String>
+
+    <!--  adapter - port configuration  -->
+    <system:String x:Key="Port">端口</system:String>
+    <system:String x:Key="Enable">启用</system:String>
+    <system:String x:Key="LinkStatus">链接状态</system:String>
+    <system:String x:Key="AutoNegotiate">自动协商</system:String>
+    <system:String x:Key="Speed">速度</system:String>
+    <system:String x:Key="Selected">已选定</system:String>
+    <system:String x:Key="Current">当前</system:String>
+    <system:String x:Key="Duplex">双工</system:String>
+    <system:String x:Key="PortDiagnostics">端口诊断</system:String>
+
+    <!--  adapter - network  -->
+    <system:String x:Key="NetworkMode">网络模式：</system:String>
+    <system:String x:Key="DeviceLevelRing">设备级环网</system:String>
+    <system:String x:Key="NetworkTopology">网络拓扑：</system:String>
+    <system:String x:Key="NetworkStatus">网络状态：</system:String>
+
+    <!--  adapter - chassis size  -->
+    <system:String x:Key="ChassisSizeFromGeneralTab">常规选项中的机架大小：</system:String>
+    <system:String x:Key="ChassisSizeInModule">模块中的机架大小：</system:String>
+    <system:String x:Key="SetChassisSizeInModule">在模块中设置机架大小</system:String>
+
+    <!--  adapter - module definition  -->
+    <system:String x:Key="ExactMatch">精确匹配</system:String>
+
+    <system:String x:Key="CompatibleModule">兼容模块</system:String>
+    <system:String x:Key="DisableKeying">禁用密钥</system:String>
+    <system:String x:Key="ListenOnlyRackOptimization">只听-机架优化</system:String>
+    <system:String x:Key="RackOptimization">机架优化</system:String>
+
+    <!--  servo drivers  -->
+    <system:String x:Key="TimeSync">时间同步</system:String>
+    <system:String x:Key="Motion">运动</system:String>
+
+    <system:String x:Key="AssociatedAxes">映射轴</system:String>
+    <system:String x:Key="Power">功率</system:String>
+    <system:String x:Key="DigitalInput">数字输入</system:String>
+    <system:String x:Key="MotionDiagnostics">运动诊断</system:String>
+
+    <!--  servo drivers general  -->
+    <system:String x:Key="PowerStructure">电源结构：</system:String>
+
+    <!--  servo drivers time sync  -->
+    <system:String x:Key="CIPSyncTimeSynchronization">CIP 同步时间同步：</system:String>
+    <system:String x:Key="UTCSystemTime">UTC 系统时间：</system:String>
+    <system:String x:Key="GrandmasterClock">全局主时钟</system:String>
+    <system:String x:Key="UserName">用户名：</system:String>
+    <system:String x:Key="UserLocation">用户位置：</system:String>
+    <system:String x:Key="ProtocolAddress">协议地址：</system:String>
+    <system:String x:Key="PhysicalAddress">物理地址：</system:String>
+    <system:String x:Key="ClockType">时钟类型：</system:String>
+    <system:String x:Key="ManufacturerName">制造商名称：</system:String>
+    <system:String x:Key="Model">模式：</system:String>
+    <system:String x:Key="HardwareRevision">硬件版本：</system:String>
+    <system:String x:Key="FirmwareRevision">固件版本：</system:String>
+    <system:String x:Key="SoftwareRevision">软件版本：</system:String>
+    <system:String x:Key="ProfileIdentity">配置文件标识：</system:String>
+    <system:String x:Key="PhysicalProtocol">物理协议：</system:String>
+    <system:String x:Key="NetworkProtocol">网络协议：</system:String>
+    <system:String x:Key="PortNumber">端口号：</system:String>
+    <system:String x:Key="LocalClock">本地时钟</system:String>
+    <system:String x:Key="SynchronizationStatus">同步状态：</system:String>
+
+    <system:String x:Key="OffsetToMaster">主轴偏移：</system:String>
+    <system:String x:Key="Ethernet">以太网：</system:String>
+    <system:String x:Key="Identity">标识：</system:String>
+    <system:String x:Key="Class">类别：</system:String>
+
+    <system:String x:Key="Accuracy">精度：</system:String>
+    <system:String x:Key="Variance">差异：</system:String>
+    <system:String x:Key="Source">源：</system:String>
+    <system:String x:Key="Priority1">优先级 1：</system:String>
+    <system:String x:Key="Priority2">优先级 2：</system:String>
+
+    <!--  servo drivers associated axes  -->
+
+    <system:String x:Key="NewAxis">新建 轴...</system:String>
+    <system:String x:Key="MotorFeedbackDevice">电机侧反馈设备：</system:String>
+    <system:String x:Key="LoadFeedbackDevice">负载侧反馈设备：</system:String>
+    <system:String x:Key="MasterFeedbackDevice">主反馈设备：</system:String>
+
+    <system:String x:Key="Axis1">轴 1 (1)：</system:String>
+    <system:String x:Key="Axis2">轴 2 (辅助轴)：</system:String>
+    <system:String x:Key="Axis3">轴 3 (3)：</system:String>
+    <system:String x:Key="Axis4">轴 4 (辅助轴)：</system:String>
+
+    <!--  servo drivers power  -->
+    <system:String x:Key="Advanced">高级...</system:String>
+    <system:String x:Key="Voltage">电压：</system:String>
+
+    <system:String x:Key="ACInputPhasing">交流输入相数：</system:String>
+    <system:String x:Key="BusConfiguration">母线配置：</system:String>
+    <system:String x:Key="BusSharingGroup">母线分组：</system:String>
+    <system:String x:Key="BusRegulatorAction">母线制动动作：</system:String>
+    <system:String x:Key="ShuntRegulatorResistorType">分流制动电阻类型：</system:String>
+    <system:String x:Key="External">外部</system:String>
+    <system:String x:Key="Internal">内部</system:String>
+
+    <system:String x:Key="ExternalShunt">外部分流设备：</system:String>
+
+    <!--  servo drivers digital input  -->
+    <system:String x:Key="Axis:">轴：</system:String>
+    <system:String x:Key="AxisName">轴 名称：</system:String>
+    <system:String x:Key="DigitalInput1">数字输入 1：</system:String>
+    <system:String x:Key="DigitalInput2">数字输入 2：</system:String>
+    <system:String x:Key="DigitalInput3">数字输入 3：</system:String>
+    <system:String x:Key="DigitalInput4">数字输入 4：</system:String>
+
+    <!--  servo drivers diagnostics  -->
+    <system:String x:Key="CoarseUpdatePeriod">近似更新周期：</system:String>
+
+    <system:String x:Key="ConnectionSize">通信数据大小</system:String>
+    <system:String x:Key="ControllerToDrive">从控制器到驱动器：</system:String>
+    <system:String x:Key="DriveToController">从驱动器到控制器：</system:String>
+    <system:String x:Key="LostTransmissions">丢失的传输</system:String>
+    <system:String x:Key="LateTransmissions">延迟的传输</system:String>
+    <system:String x:Key="EnableTransmissionTimingStatistics">启用传输定时统计</system:String>
+    <system:String x:Key="Average">平均</system:String>
+    <system:String x:Key="Maximum">最大值</system:String>
+    <system:String x:Key="Nominal">额定值</system:String>
+    <system:String x:Key="SystemClockJitter">系统时钟抖动：</system:String>
+    <system:String x:Key="ResetTransmissionStatistics">重置传输统计</system:String>
+
+    <!--  servo module definition  -->
+    <system:String x:Key="VerifyPowerRatingOnConnection">验证连接的额定功率(V)</system:String>
+
+    <!--  discrete ios Fault/Program Action  -->
+    <system:String x:Key="Fault/Program Action">故障/程序行为</system:String>
+    <system:String x:Key="OutStateDuring">输出状态时间段</system:String>
+    <system:String x:Key="ProgramMode">程序模式</system:String>
+    <system:String x:Key="FaultMode">故障模式</system:String>
+    <system:String x:Key="Off">关闭</system:String>
+    <system:String x:Key="On">开启</system:String>
+    <system:String x:Key="Hold">保持</system:String>
+
+    <!--  discrete ios input configuration  -->
+    <system:String x:Key="Point">点</system:String>
+    <system:String x:Key="EnableChangeOfState">启用状态更改</system:String>
+    <system:String x:Key="InputFitterTime">输入滤波器时间（毫秒）</system:String>
+    <system:String x:Key="OffOn">关-&gt;开</system:String>
+    <system:String x:Key="OnOff">开-&gt;关</system:String>
+
+    <!--  advanced user limits  -->
+    <system:String x:Key="AdvancedUserLimits">高级用户限制</system:String>
+
+    <system:String x:Key="ConverterThermalOverloadLimit">整流器热过载极限：</system:String>
+    <system:String x:Key="BusRegulatorThermalOverloadLimit">母线过载极限：</system:String>
+    <system:String x:Key="BusUnderVoltageLimit">母线低压极限：</system:String>
+
+    <!--  AnalogIOs  -->
+    <system:String x:Key="Alarm Configuration">报警配置</system:String>
+    <system:String x:Key="Process Alarms:">过程报警：</system:String>
+    <system:String x:Key="High High:">极大值：</system:String>
+    <system:String x:Key="High:">最大值：</system:String>
+    <system:String x:Key="Low:">最小值：</system:String>
+    <system:String x:Key="Low Low:">极小值：</system:String>
+    <system:String x:Key="Disable All Alarms">禁用全部警报</system:String>
+    <system:String x:Key="Latch Process Alarms">锁定过程警报</system:String>
+    <system:String x:Key="Unlatch">锁定</system:String>
+    <system:String x:Key="Unlatch All">全部锁定</system:String>
+    <system:String x:Key="Latch Limit Alarms">锁定极限警报</system:String>
+
+    <system:String x:Key="Limits Configuration">极限配置</system:String>
+    <system:String x:Key="Digital Filter">数字滤波(ms)</system:String>
+    <system:String x:Key="High Engineering">最大测量值</system:String>
+    <system:String x:Key="Low Engineering">最小测量值</system:String>
+    <system:String x:Key="Clamp Limits:">夹钳极限：</system:String>
+
+    <system:String x:Key="Calibration">校准</system:String>
+    <system:String x:Key="Apply power to the module for at least 10 minutes before calibrating the module.">在实施校准前确保模块上电时间不少于10分钟。</system:String>
+    <system:String x:Key="Channel">通道</system:String>
+    <system:String x:Key="Calibrate">校准</system:String>
+    <system:String x:Key="Sensor Type">传感器类型</system:String>
+    <system:String x:Key="Calibration Points">校准点</system:String>
+    <system:String x:Key="Calibrate Channels:">校准通道：</system:String>
+    <system:String x:Key="In Groups">按组别</system:String>
+    <system:String x:Key="One At a Time">依次单个</system:String>
+    <system:String x:Key="Start Calibration...">开始校准...</system:String>
+    <system:String x:Key="Calibration Range">校准范围</system:String>
+
+    <system:String x:Key="Fault Value">故障值</system:String>
+    <system:String x:Key="Program Value">程序值</system:String>
+    <system:String x:Key="Current Range">当前范围</system:String>
+    <system:String x:Key="Real Time Sample(RTS):">实时样本(RTS)：</system:String>
+    <system:String x:Key="Notch Filter:">陷波滤波：</system:String>
+
+    <system:String x:Key="Temperature Units">温度单位</system:String>
+    <system:String x:Key="Output Range">输出范围</system:String>
+
+    <!--  STEditor ToolTip offline  -->
+    <system:String x:Key="StartPendingRoutineEditsCtrlShiftS">开始待定例程编辑（Ctrl+Shift+S）</system:String>
+    <system:String x:Key="StartPendingRoutineEdits">开始待定例程编辑</system:String>
+
+    <system:String x:Key="AcceptPendingRoutineEdits">接受待定例程编辑</system:String>
+    <system:String x:Key="AcceptAllPendingEditsInTheRoutine">接受例程中的所有待定编辑</system:String>
+
+    <system:String x:Key="CancelPendingRoutineEdits">取消待定例程编辑</system:String>
+    <system:String x:Key="CancelAllPendingEditsInTheRoutine">取消例程中的所有待定编辑</system:String>
+
+    <system:String x:Key="AssembleAcceptedRoutineEditsOfflineOnly">集合已接受的例程编辑（仅脱机）</system:String>
+    <system:String x:Key="AssembleAllAcceptedEditsInTheRoutineOfflineOnly">集合例程中所有已接受的编辑（仅脱机）</system:String>
+
+    <system:String x:Key="CancelAcceptedRoutineEditsOfflineOnly">取消已接受的例程编辑（仅脱机）</system:String>
+    <system:String x:Key="CancelAllAcceptedEditsInTheRoutineOfflineOnly">取消例程中所有已接受的编辑（仅脱机）</system:String>
+
+    <system:String x:Key="AcceptPendingProgramEdits">接受待定程序编辑</system:String>
+    <system:String x:Key="AcceptAllPendingEditsInTheProgram">接受程序中所有待定编辑</system:String>
+
+    <system:String x:Key="CancelPendingProgramEdits">取消待定程序编辑</system:String>
+    <system:String x:Key="CancelAllPendingEditsInTheProgram">取消所有程序中所有待定编辑</system:String>
+
+    <system:String x:Key="TestAcceptedProgramEdits">测试已接受的程序编辑</system:String>
+    <system:String x:Key="TestAllEditsInTheProgram">测试程序中的所有编辑</system:String>
+
+    <system:String x:Key="UntestAcceptedProgramEdits">不测试已接受的程序编辑</system:String>
+    <system:String x:Key="UntestAllEditsInTheProgram">不测试程序中的所有编辑</system:String>
+
+    <system:String x:Key="AssembleAcceptedProgramEdits">集合已接受的程序编辑</system:String>
+    <system:String x:Key="AssembleAllAcceptedEditsInTheProgram">集合程序中的所有已接受的编辑</system:String>
+
+    <system:String x:Key="CancelAcceptedProgramEdits">取消已接受的程序编辑</system:String>
+    <system:String x:Key="CancelAllAcceptedEditsInTheProgram">取消程序中所有已接受的编辑</system:String>
+
+    <system:String x:Key="FinalizeAllEditsInProgramCtrlShiftF">最终确定程序中的所有编辑（Ctrl+Shift+F）</system:String>
+    <system:String x:Key="FinalizeAllEditsInTheProgram">最终确定程序中的所有编辑</system:String>
+
+    <!--  STEditor ToolTip  general  -->
+    <system:String x:Key="OriginalViewCtrl1">原始视图（Ctrl+1）</system:String>
+    <system:String x:Key="SelectOriginalOnlineEditView">选择原始联机编辑视图</system:String>
+
+    <system:String x:Key="TestEditsViewCtrl3">测试编辑视图（Ctrl+3）</system:String>
+    <system:String x:Key="SelectTestEditsView">选择测试编辑视图</system:String>
+
+    <system:String x:Key="PendingEditsViewCtrl2">待定编辑视图（Ctrl+2）</system:String>
+    <system:String x:Key="SelectPendingEditsView">选择待定编辑视图</system:String>
+
+    <system:String x:Key="IncreaseIndentTab">增加缩进量  Tab</system:String>
+    <system:String x:Key="IncreaseIndent">增加缩进量</system:String>
+
+    <system:String x:Key="DecreaseIndentShiftTab">减少缩进量 Shift+Tab</system:String>
+    <system:String x:Key="DecreaseIndent">减少缩进量</system:String>
+
+    <system:String x:Key="UncommentTextBlock">取消注释文本块</system:String>
+    <system:String x:Key="UncommentTheSelectedText">取消注释所选文本</system:String>
+
+    <system:String x:Key="CommentTextBlock">注释文本块</system:String>
+    <system:String x:Key="AddCommentBasedOnCaretTheSelectedText">基于脱字符号或所选文本添加注释</system:String>
+
+    <system:String x:Key="ZoomInShiftAltZ">放大（Shift+Alt+Z）</system:String>
+    <system:String x:Key="MakeObjectsInTheViewLarger">使视图中的对象更大</system:String>
+
+    <system:String x:Key="ZoomOutAltZ">缩小（Alt+Z）</system:String>
+    <system:String x:Key="MakeObjectsInTheViewSmaller">使视图中的对象更小</system:String>
+
+    <system:String x:Key="ToggleTabsWhitespace">切换制表符/空白</system:String>
+    <system:String x:Key="ToggleTheTabAndWhiteSpaceDisplay">切换制表符和空白的显示</system:String>
+
+    <system:String x:Key="ToggleInlineValueDisplay">切换内联值显示</system:String>
+    <system:String x:Key="ManuallyToggleTheInlineTagValueDisplay">手动切换内联tag值显示</system:String>
+
+
+    <!--  STEditor ContextMenu  -->
+    <system:String x:Key="Watch Tags">监控变量</system:String>
+    <system:String x:Key="Browse Tags">浏览变量</system:String>
+    <system:String x:Key="Configure">配置</system:String>
+    <system:String x:Key="_Configure">_配置</system:String>
+    <system:String x:Key="_Edit">_编辑</system:String>
+    <system:String x:Key="_New Tag">_新建变量</system:String>
+    <system:String x:Key="_Monitor">_监控</system:String>
+    <system:String x:Key="_Trend Tag">_趋势图变量</system:String>
+    <system:String x:Key="_Go To">_转至</system:String>
+    <system:String x:Key="Cross Reference For">的交叉引用</system:String>
+    <system:String x:Key="Browse Enumerations">浏览枚举</system:String>
+    <system:String x:Key="Create instruction Tag...">创建指令变量...</system:String>
+    <system:String x:Key="Argument List...">参数列表...</system:String>
+    <system:String x:Key="Add ST Element...">添加ST元素...</system:String>
+    <system:String x:Key="Close Routine">关闭例程</system:String>
+    <system:String x:Key="_Find All">_查找所有</system:String>
+    <system:String x:Key="Browse Program">浏览程序</system:String>
+    <system:String x:Key="Insert Instruction Default">插入指令默认值</system:String>
+    <system:String x:Key="Save Instruction Default">保存指令默认值</system:String>
+    <system:String x:Key="Clear Instruction Default">清理指令默认值</system:String>
+    <system:String x:Key="Open Instruction Logic">打开指令逻辑</system:String>
+    <system:String x:Key="Open Instruction Definition">打开指令定义</system:String>
+    <system:String x:Key="New Local Tag...">新建本地变量...</system:String>
+    <system:String x:Key="_New Parameter">_新建参数</system:String>
+    <system:String x:Key="_New Local Tag">_新建本地变量</system:String>
+    <system:String x:Key="Online Edits">联机编辑</system:String>
+    <system:String x:Key="Start Pending Routine Edits">开始待定例程编辑</system:String>
+    <system:String x:Key="Accept Pending Routine Edits">接受待定例程编辑</system:String>
+    <system:String x:Key="Cancel Pending Routine Edits">取消待定例程编辑</system:String>
+    <system:String x:Key="Assemble Accepted Routine Edits">集合已接受的例程编辑</system:String>
+    <system:String x:Key="Cancel Accepted Routine Edits">取消已接受的例程编辑</system:String>
+    <system:String x:Key="Edit">编辑</system:String>
+    <system:String x:Key="Browse Routines">浏览例程</system:String>
+    <system:String x:Key="JsrInstruction">JSR指令 - 自变量列表</system:String>
+    <system:String x:Key="JsrRoutine">例程：</system:String>
+
+
+    <!--  Go To  -->
+    <system:String x:Key="Go to what:">转至内容：</system:String>
+    <system:String x:Key="Place the caret on line:">在行上放置脱字符号：</system:String>
+    <system:String x:Key="Enter a line number or the word End">输入行号或字"结束"。</system:String>
+    <system:String x:Key="Called Routines">调用的例程</system:String>
+    <system:String x:Key="Calling Routines">调用例程</system:String>
+    <system:String x:Key="Line">行</system:String>
+    <system:String x:Key="Edit routine:">编辑例程：</system:String>
+    <system:String x:Key="Show cross reference for:">显示以下内容的交叉引用：</system:String>
+    <system:String x:Key="Edit properties of:">编辑属性：</system:String>
+
+
+    <!--  Add ST Element  -->
+    <system:String x:Key="Add Structured Text Element">添加结构化文本元素</system:String>
+    <system:String x:Key="ST Element:">ST元素：</system:String>
+    <system:String x:Key="Show Language Elements By Groups">按组显示语言元素</system:String>
+    <system:String x:Key="New UD Function Block...">新建自定义功能块...</system:String>
+    <system:String x:Key="Process">过程控制</system:String>
+    <system:String x:Key="Drives">驱动相关</system:String>
+    <system:String x:Key="Select/Limit">选择/限幅</system:String>
+    <system:String x:Key="Statistical">统计</system:String>
+    <system:String x:Key="Timer/Counter">计时器/计数器</system:String>
+    <system:String x:Key="Compute/Math">数学运算</system:String>
+    <system:String x:Key="Move/Logical">数据交换</system:String>
+    <system:String x:Key="Math Conversion">数学转换</system:String>
+    <system:String x:Key="File/Misc.">数据杂项</system:String>
+    <system:String x:Key="Input/Output">输入/输出</system:String>
+    <system:String x:Key="Add-On">自定义功能块</system:String>
+
+    <system:String x:Key="Scale">标定</system:String>
+    <system:String x:Key="Proportional Integral Derivative">PID控制器</system:String>
+    <system:String x:Key="Enhanced PID">增强型PID</system:String>
+    <system:String x:Key="Internal Model Control">内部模型控制</system:String>
+    <system:String x:Key="Coordinated Control">协调控制</system:String>
+    <system:String x:Key="Modular Multivariable Control">多变量控制</system:String>
+    <system:String x:Key="Ramp/Soak">斜坡控制</system:String>
+    <system:String x:Key="Position Proportional">位置脉宽控制</system:String>
+    <system:String x:Key="Split Range Time Proportional">时间脉宽控制</system:String>
+    <system:String x:Key="Lead-Lag">超期滞后滤波</system:String>
+    <system:String x:Key="Function Generator">函数发生器</system:String>
+    <system:String x:Key="Totalizer">定时累加器</system:String>
+    <system:String x:Key="Deadtime">死区延时</system:String>
+    <system:String x:Key="Discrete 2-State Device">双态控制</system:String>
+    <system:String x:Key="Discrete 3-State Device">三态控制</system:String>
+    <system:String x:Key="Pulse Mulitiplier">脉冲乘法器</system:String>
+    <system:String x:Key="S-Curve">S 曲线</system:String>
+    <system:String x:Key="Proportional+Integral">PI控制器</system:String>
+    <system:String x:Key="Integrator">积分器</system:String>
+    <system:String x:Key="Second-Order Controller">二阶控制器</system:String>
+    <system:String x:Key="Up/Down Accumulator">累加/减器</system:String>
+    <system:String x:Key="High-Pass Filter">高通滤波器</system:String>
+    <system:String x:Key="Low-Pass Filter">低通滤波器</system:String>
+    <system:String x:Key="Notch Filter">陷波滤波器</system:String>
+    <system:String x:Key="Second-Order Lead-Lag">二阶超期滞后滤波器</system:String>
+    <system:String x:Key="Derivative">微分</system:String>
+    <system:String x:Key="Enhanced Select">增强型多选器</system:String>
+    <system:String x:Key="Selected Summer">选择加法器</system:String>
+    <system:String x:Key="Selectable Negate">选择取反</system:String>
+    <system:String x:Key="High/Low Limit">可控限幅</system:String>
+    <system:String x:Key="Rate Limiter">速率限幅</system:String>
+    <system:String x:Key="Moving Average">滑动平均值</system:String>
+    <system:String x:Key="Moving Standard Deviation">标准偏差值</system:String>
+    <system:String x:Key="Minimum Capture">最小值捕捉</system:String>
+    <system:String x:Key="Maximum Capture">最大值捕捉</system:String>
+    <system:String x:Key="Digital Alarm">数字量报警</system:String>
+    <system:String x:Key="Analog Alarm">模拟量报警</system:String>
+    <system:String x:Key="One Shot Rising with Input">上升沿检测</system:String>
+    <system:String x:Key="One Shot Falling with Input">下降沿检测</system:String>
+    <system:String x:Key="Timer On Delay with Reset">导通延时定时器</system:String>
+    <system:String x:Key="Timer Off Delay with Reset">关断延时定时器</system:String>
+    <system:String x:Key="Retentive Timer On with Reset">保持定时器</system:String>
+    <system:String x:Key="Count Up/Down">双向计数器</system:String>
+    <system:String x:Key="Square Root">平方根</system:String>
+    <system:String x:Key="Absolute value">绝对值</system:String>
+    <system:String x:Key="Masked Move with Target">目标掩码移动</system:String>
+    <system:String x:Key="Swap Byte">交换字节</system:String>
+    <system:String x:Key="Bit Field Distribute with Target">位字段目标分布</system:String>
+    <system:String x:Key="D Flip Flop">D触发器</system:String>
+    <system:String x:Key="JK Flip Flop">JK触发器</system:String>
+    <system:String x:Key="Set Dominant">设置支配</system:String>
+    <system:String x:Key="Reset Dominant">重置支配</system:String>
+    <system:String x:Key="HMI Button Control">人机界面按钮控制</system:String>
+    <system:String x:Key="Sine">正弦</system:String>
+    <system:String x:Key="Cosine">余弦</system:String>
+    <system:String x:Key="Tangent">正切</system:String>
+    <system:String x:Key="Arcsine">反正弦</system:String>
+    <system:String x:Key="Arccosine">反余弦</system:String>
+    <system:String x:Key="Arctangent">反正切</system:String>
+    <system:String x:Key="Natural Log">自然对数</system:String>
+    <system:String x:Key="Log Base 10">对数</system:String>
+    <system:String x:Key="Radians To Degrees">弧度转换角度</system:String>
+    <system:String x:Key="Degrees To Radians">角度转换弧度</system:String>
+    <system:String x:Key="Truncate">整数截取</system:String>
+    <system:String x:Key="Cop File">数据复制</system:String>
+    <system:String x:Key="Sort File">数据排序</system:String>
+    <system:String x:Key="Size in Elements">计算数据长度</system:String>
+    <system:String x:Key="Synchronous Copy File">同步数据复制</system:String>
+    <system:String x:Key="Equipment Phase State Complete">设备相位状态完成</system:String>
+    <system:String x:Key="Equipment Phase Failure">设备相位故障</system:String>
+    <system:String x:Key="Equipment Phase Command">设备相位命令</system:String>
+    <system:String x:Key="Equipment Phase Clear Failure">设备相位清除故障</system:String>
+    <system:String x:Key="Equipment Phase External Request">设备相位外部请求</system:String>
+    <system:String x:Key="Equipment Phase Pause">设备相位暂停</system:String>
+    <system:String x:Key="Equipment Phase New Parameters">设备相位新建参数</system:String>
+    <system:String x:Key="Attach to Equipment Phase">附加到设备相位</system:String>
+    <system:String x:Key="Detach from Equipment Phase">与设备相位拆离</system:String>
+    <system:String x:Key="Equipment Phase Override Command">设备相位覆盖命令</system:String>
+    <system:String x:Key="Attach to Sequence">附加到顺序</system:String>
+    <system:String x:Key="Detach from Sequence">与顺序拆离</system:String>
+    <system:String x:Key="Sequence Command">顺序命令</system:String>
+    <system:String x:Key="Sequence Clear Failure">顺序清除故障</system:String>
+    <system:String x:Key="Sequence Override Command">顺序覆盖命令</system:String>
+    <system:String x:Key="Sequence Assign Sequence Id">顺序分配顺序ID</system:String>
+    <system:String x:Key="Jump to Subroutine">跳转至子例程</system:String>
+    <system:String x:Key="Return from Subroutine">从子例程返回</system:String>
+    <system:String x:Key="Subroutine">子例程</system:String>
+    <system:String x:Key="Temporary End">暂停</system:String>
+    <system:String x:Key="User Interrupt Disable">用户中断禁用</system:String>
+    <system:String x:Key="User Interrupt">用户中断启用</system:String>
+    <system:String x:Key="SFC Reset">SFC重置</system:String>
+    <system:String x:Key="SFC Phase">SFC暂停</system:String>
+    <system:String x:Key="End Of Transition">转换结束</system:String>
+    <system:String x:Key="Trigger Event Task">触发事件任务</system:String>
+    <system:String x:Key="Message">消息</system:String>
+    <system:String x:Key="Get System Value">获取系统值</system:String>
+    <system:String x:Key="Set System Value">设置系统值</system:String>
+    <system:String x:Key="Immediate Output">立即输出</system:String>
+    <system:String x:Key="Motion Axis Shutdown">轴禁用</system:String>
+    <system:String x:Key="Motion Axis Shutdown Reset">轴启用</system:String>
+    <system:String x:Key="Motion Direct Drive On">模拟量轴输出</system:String>
+    <system:String x:Key="Motion Direct Drive Off">模拟量轴关闭</system:String>
+    <system:String x:Key="Motion Direct Start">设定轴速度</system:String>
+    <system:String x:Key="Motion Axis Gear">齿轮同步</system:String>
+    <system:String x:Key="Motion Change Dynamics">修改运动数据</system:String>
+    <system:String x:Key="Motion Redefine Position">修改轴位置</system:String>
+    <system:String x:Key="Motion Calculate Cam Profile">运动计算凸轮轮廓线</system:String>
+    <system:String x:Key="Motion Calculate Slave Values">运动计算从属值</system:String>
+    <system:String x:Key="Motion Axis Position Cam">运动轴位置凸轮</system:String>
+    <system:String x:Key="Motion Axis Time Cam">运动轴时间凸轮</system:String>
+    <system:String x:Key="Motion Master Driven Axis Control">运动主驱动轴控制</system:String>
+    <system:String x:Key="Motion Group Stop">轴组停止运行</system:String>
+    <system:String x:Key="Motion Group Shutdown">轴组禁用</system:String>
+    <system:String x:Key="Motion Group Shutdown Reset">轴组使用</system:String>
+    <system:String x:Key="Motion Group Strobe Position">轴组位置快照</system:String>
+    <system:String x:Key="Motion Arm Watch">位置触发启动</system:String>
+    <system:String x:Key="Motion Disarm Watch">位置触发停止</system:String>
+    <system:String x:Key="Motion Arm Registration">位置捕捉启动</system:String>
+    <system:String x:Key="Motion Disarm Registration">位置捕捉停止</system:String>
+    <system:String x:Key="Motion Arm Output Cam">凸轮输出启动</system:String>
+    <system:String x:Key="Motion Disarm Output Cam">凸轮输出停止</system:String>
+    <system:String x:Key="Motion Apply Axis Tuning">设定整定参数</system:String>
+    <system:String x:Key="Motion Run Axis Tuning">轴参数整定</system:String>
+    <system:String x:Key="Motion Apply Hookup Diagnostics">设定方向参数</system:String>
+    <system:String x:Key="Motion Run Hookup Diagnostics">轴方向参数检测</system:String>
+    <system:String x:Key="Motion Coordinated Stop">插补停止</system:String>
+    <system:String x:Key="Motion Coordinated Linear Move">直线插补</system:String>
+    <system:String x:Key="Motion Coordinated Circular Move">圆弧插补</system:String>
+    <system:String x:Key="Motion Coordinated Transform">坐标运动</system:String>
+    <system:String x:Key="Motion Calculate Transition Position">坐标转换</system:String>
+    <system:String x:Key="Motion Coordinated Shutdown">坐标系统关闭</system:String>
+    <system:String x:Key="Motion Coordinated Shutdown Reset">坐标系统复位</system:String>
+    <system:String x:Key="Motion Master Driven Coordinated Control">主轴坐标控制</system:String>
+    <system:String x:Key="Find String">查找字符串</system:String>
+    <system:String x:Key="Insert String">插入字符串</system:String>
+    <system:String x:Key="String Concatenate">字符串连接</system:String>
+    <system:String x:Key="Middle String">中间字符串</system:String>
+    <system:String x:Key="String Delete">字符串删除</system:String>
+    <system:String x:Key="DINT to String">DINT到字符串</system:String>
+    <system:String x:Key="String to DINT">字符串到DINT</system:String>
+    <system:String x:Key="Real to String">实数到字符串</system:String>
+    <system:String x:Key="String to Real">字符串到实数</system:String>
+    <system:String x:Key="Upper Case">大写</system:String>
+    <system:String x:Key="Lower Case">小写</system:String>
+
+
+    <!--  MessageBox  -->
+    <system:String x:Key="Set Chassis Size">设置机架大小</system:String>
+    <system:String x:Key="Modify Chassis Size">修改机架大小</system:String>
+    <system:String x:Key="Adapter.ModuleInfo">
+        危险！ 连接中断。
+        不应在当前用于控制的模块上执行复位。
+        与模块的连接将断开，控制可能会中断。
+        继续重置？
+    </system:String>
+    <system:String x:Key="AnalogIOs.DIOAnalog">
+        此模块的配置已从外部更改。
+        应用此更改将导致外部更改被丢弃。
+        应用更改？
+    </system:String>
+    <system:String x:Key="High High Alarm must be greater than High Alarm.">极大值必须大于最大值。</system:String>
+    <system:String x:Key="High Alarm must be greater than Low Alarm.">最大值必须大于最小值。</system:String>
+    <system:String x:Key="Low Alarm must be greater than Low Low Alarm.">最小值必须大于极小值。</system:String>
+    <system:String x:Key="Failed to modify properties.">修改属性失败。</system:String>
+    <system:String x:Key="Slot out of range for current chassis size.">插槽超出当前机箱尺寸的范围。</system:String>
+    <system:String x:Key="Slot number in use by another module.">另一个模块正在使用的插槽号。</system:String>
+    <system:String x:Key="Invalid Name.">名称无效。</system:String>
+    <system:String x:Key="Duplicate Name.">重复名称。</system:String>
+    <system:String x:Key="Invalid IP Address.">IP 地址无效。</system:String>
+    <system:String x:Key="Duplicate IP Address.">重复的 IP 地址。</system:String>
+    <system:String x:Key="Begin refresh......">开始刷新......</system:String>
+    <system:String x:Key="Connect time out!">连接超时！</system:String>
+    <system:String x:Key="Requested message timed out.">请求的消息超时。</system:String>
+    <system:String x:Key="Begin reset......">开始重置......</system:String>
+    <system:String x:Key="Failed to perform required operation!">无法执行所需的操作！</system:String>
+    <system:String x:Key="Failed to perform required operation.Unable to perform service due to current module mode.">
+        无法执行所需的操作。
+        由于当前模块模式无法执行服务。
+    </system:String>
+    <system:String x:Key="DiscreteIOs.DIODiscrete">
+        此模块的配置已从外部更改。
+        应用此更改将导致外部更改被丢弃。
+
+        应用更改？
+    </system:String>
+    <system:String x:Key="ModuleDefinition.DIOEnetAdapter">
+        这些更改将导致模块数据类型和属性发生变化。
+        数据将被设置为默认值，除非它可以从现有模块属性中恢复。
+        在应用更改之前验证模块属性。
+
+        更改模块定义？
+    </system:String>
+    <system:String x:Key="Failed to set the 'MotionModule' property(Axis has be assigned to other drive or drive channel.)">
+        无法设置“MotionModule”属性（轴已分配给其他驱动器或驱动器通道。）
+    </system:String>
+    <system:String x:Key="Failed to set the 'MotionModule' property(Same axis cannot be assigned to more than one drive or drive channel.)">
+        未能设置“MotionModule”属性（同一轴不能分配给多个驱动器或驱动器通道。）
+    </system:String>
+    <system:String x:Key="Feedback Device Invalid.">反馈设备无效。</system:String>
+    <system:String x:Key="Duplicate Feedback Devices.">重复的反馈设备。</system:String>
+    <system:String x:Key="Single phase is not valid for the current voltage setting.">单相对于当前电压设置无效。</system:String>
+    <system:String x:Key="AC Converter Phasing must be Three Phase when Bus Configuration is not Standalone.">
+        当总线配置不是独立的时，交流转换器相位必须是三相。
+    </system:String>
+
+
+    <!--  AxisVirtualProperties  -->
+    <system:String x:Key="Axis Virtual Properties">虚轴属性</system:String>
+    <system:String x:Key="Motion Group:">运动组：</system:String>
+    <system:String x:Key="Update Period:">更新周期：</system:String>
+    <system:String x:Key="New Group">新建组...</system:String>
+    <system:String x:Key="Motion Planner">运动规划器</system:String>
+    <system:String x:Key="Output Cam Execution Targets:">输出凸轮激活数量：</system:String>
+    <system:String x:Key="Program Stop Action:">可编程停止方式：</system:String>
+    <system:String x:Key="Master Delay Compensation">主延迟补偿</system:String>
+    <system:String x:Key="Enable Master Position Filter">启用主位置滤波器</system:String>
+    <system:String x:Key="Master Position Filter Bandwidth">主位置滤波器带宽：</system:String>
+    <system:String x:Key="Hertz">赫兹</system:String>
+
+    <system:String x:Key="Units">单位</system:String>
+    <system:String x:Key="Position Units:">位置单位：</system:String>
+    <system:String x:Key="Average Velocity Timebase:">平均速度采样周期：</system:String>
+    <system:String x:Key="Seconds">秒</system:String>
+
+    <system:String x:Key="Conversion">转换</system:String>
+    <system:String x:Key="Positioning Mode:">定位模式：</system:String>
+    <system:String x:Key="Conversion Constant:">转换常数：</system:String>
+    <system:String x:Key="Feedback Counts">反馈计数</system:String>
+    <system:String x:Key="Position Unwind:">模长原位：</system:String>
+    <system:String x:Key="Feedback Counts/Unwind">反馈计数/模长</system:String>
+
+    <system:String x:Key="Homing">回零</system:String>
+    <system:String x:Key="Active">主动</system:String>
+    <system:String x:Key="Position:">位置：</system:String>
+    <system:String x:Key="Position Units">Position Units</system:String>
+    <system:String x:Key="Sequence:">顺序：</system:String>
+    <system:String x:Key="Immediate">立即</system:String>
+
+    <system:String x:Key="Dynamics">动态参数</system:String>
+    <system:String x:Key="Maximum Speed:">最大速度：</system:String>
+    <system:String x:Key="Position Units/s">Position Units/s</system:String>
+    <system:String x:Key="Maximum Acceleration:">最大加速度：</system:String>
+    <system:String x:Key="Position Units/s^2">Position Units/s^2</system:String>
+    <system:String x:Key="Maximum Deceleration:">最大减速度：</system:String>
+    <system:String x:Key="Maximum Acceleration Jerk:">最大加速度率：</system:String>
+    <system:String x:Key="Maximum Deceleration Jerk:">最大减速度率：</system:String>
+    <system:String x:Key="Maximum Acceleration Jerk">最大加速度率</system:String>
+    <system:String x:Key="Maximum Deceleration Jerk">最大减速度率</system:String>
+    <system:String x:Key="Position Units/s^3">Position Units/s^3</system:String>
+    <system:String x:Key="of Max Accel Time">最大加速度时间</system:String>
+    <system:String x:Key="of Max Decel Time">最大减速度时间</system:String>
+    <system:String x:Key="Manual Adjust...">手动调整...</system:String>
+    <system:String x:Key="Manual Adjust">手动调整</system:String>
+    <system:String x:Key="Calculate...">计算...</system:String>
+    <system:String x:Key="Calculate">计算</system:String>
+
+    <system:String x:Key="Tag">Tag</system:String>
+    <system:String x:Key="Base">基本</system:String>
+    <system:String x:Key="Data Type:">数据类型：</system:String>
+    <system:String x:Key="External:">外部访问：</system:String>
+    <system:String x:Key="ReadWrite">读写</system:String>
+    <system:String x:Key="Access">访问</system:String>
+
+
+    <!--  AxisScheduleDialog  -->
+    <system:String x:Key="Update Period and Schedule">更新周期和规划</system:String>
+    <system:String x:Key="Base:">基本：</system:String>
+    <system:String x:Key="Alternate 1:">组 1：</system:String>
+    <system:String x:Key="Alternate 2:">组 2：</system:String>
+    <system:String x:Key="ms(in 0.5 increments)">ms(增量为0.5)</system:String>
+    <system:String x:Key="Estimated Utilization - Motion">估计的利用率 - 运动</system:String>
+    <system:String x:Key="Actual Utilization - Motion">实际利用率 - 运动</system:String>
+    <system:String x:Key="Controller:">控制器：</system:String>
+    <system:String x:Key="Task I/O Cycle:">任务 I/O 循环：</system:String>
+    <system:String x:Key="Connection I/O Cycle:">连接 I/O 循环：</system:String>
+    <system:String x:Key="Communications:">通信：</system:String>
+    <system:String x:Key="Ethernet Media:">以太网介质：</system:String>
+    <system:String x:Key="Motion Connections Using:">运动连接正在使用：</system:String>
+    <system:String x:Key="Ethernet Control Link Data Rate:">以太网控制线路数据速率：</system:String>
+
+
+    <!--  dynamics calculate  -->
+    <system:String x:Key="Dynamics Calculate">运动学计算</system:String>
+    <system:String x:Key="Indirect by Acceleration Time">间接</system:String>
+    <system:String x:Key="Maximum Velocity(V max):">最大速度(V max)：</system:String>
+    <system:String x:Key="Acceleration Time:">加速时间：</system:String>
+    <system:String x:Key="Deceleration Time:">减速时间：</system:String>
+    <system:String x:Key="Acceleration Characteristic">加速特性</system:String>
+    <system:String x:Key="Deceleration Characteristic">减速特性</system:String>
+    <system:String x:Key="Direct">直接</system:String>
+    <system:String x:Key="Deceleration:">减速度：</system:String>
+    <system:String x:Key="as above">如上</system:String>
+    <system:String x:Key="smooth">平滑</system:String>
+    <system:String x:Key="stiff">僵硬</system:String>
+
+
+    <!--  Download  -->
+    <system:String x:Key="Download">下载</system:String>
+    <system:String x:Key="DownloadOfflineProject">将脱机项目"</system:String>
+    <system:String x:Key="ToTheController">"下载至控制器</system:String>
+    <system:String x:Key="Options">选项</system:String>
+    <system:String x:Key="ConnectedController">连接的控制器：</system:String>
+    <system:String x:Key="Name:">名称：</system:String>
+    <system:String x:Key="Type:">类型：</system:String>
+    <system:String x:Key="Path:">路径：</system:String>
+    <system:String x:Key="Serial Number:">序列号：</system:String>
+    <system:String x:Key="Security:">保密：</system:String>
+    <system:String x:Key="TimeSynchronization">在正在下载的项目中禁用时间同步。</system:String>
+    <system:String x:Key="AxesInTheMotion">运动组中的轴将不起作用。</system:String>
+    <system:String x:Key="EnableTimeSynchronization">启用时间同步</system:String>
+    <system:String x:Key="PreserveOnline">保留在线 Tag 值</system:String>
+    <system:String x:Key="Backup">备份到文件</system:String>
+    <system:String x:Key="Restore">从文件恢复在线 Tag 值</system:String>
+    <system:String x:Key="Browse...">浏览...</system:String>
+    <system:String x:Key="RecentFaults">最近故障</system:String>
+    <system:String x:Key="ClearMajors">清除严重故障</system:String>
+    <system:String x:Key="No major faults since last cleared.">自从上次清除后未发生严重故障。</system:String>
+    <system:String x:Key="The code has changed since the last download. What do you want to do?">最后一次下载后，代码已改变。想要如何做？</system:String>
+    <system:String x:Key="Log in after online modification">在线修改后登录</system:String>
+    <system:String x:Key="Sign in and download">登录并下载</system:String>
+    <system:String x:Key="Chosen configuration requires path for backup file. Please correct it before downloading.">所选配置需要备份文件的路径，请在下载前更正。</system:String>
+    <system:String x:Key="Chosen configuration requires path for restore file. Please correct it before downloading.">所选配置需要还原文件的路径，请在下载前更正。</system:String>
+
+    <!--  Verify  -->
+    <system:String x:Key="VerifyingController">验证控制器...</system:String>
+    <system:String x:Key="BaseUpdatePeriodError">运动组：“基本刷新周期”为0.5ms的整数倍</system:String>
+    <system:String x:Key="VerifyError1">错误：用户数据类型</system:String>
+    <system:String x:Key="ContainUnsignedDataType">包含无符号类型。控制器不支持无符号数据类型。</system:String>
+    <system:String x:Key="VerifyError2">错误：变量</system:String>
+    <system:String x:Key="NameLengthLimits">名称长度超出限制。</system:String>
+    <system:String x:Key="VerifyProgramError">：程序没有关联的主例程。</system:String>
+    <system:String x:Key="VerifyError3">警告：</system:String>
+    <system:String x:Key="Verifying">验证</system:String>
+    <system:String x:Key="RoutineCannotBeReached">主例程无法访问例程：</system:String>
+    <system:String x:Key="OfProgram">位于程序</system:String>
+    <system:String x:Key="VerifyingRoutine">验证例程</system:String>
+    <system:String x:Key="SyntaxError">语法错误。</system:String>
+    <system:String x:Key="UnknownError">未知错误。</system:String>
+    <system:String x:Key="OfAoi">位于自定义功能块</system:String>
+    <system:String x:Key="VerifyingTag">验证变量</system:String>
+    <system:String x:Key="VerifyingAxis">验证轴</system:String>
+    <system:String x:Key="VerifyError">验证错误</system:String>
+    <system:String x:Key="ReferenceValidObject">：变量不引用有效的对象或目标。</system:String>
+    <system:String x:Key="BaseVariableIsNotVerified">:Base tag is not verified.</system:String>
+
+    <!--  Who Active  -->
+    <system:String x:Key="Select Recent Communications Path">选择最近访问的通信路径</system:String>
+    <system:String x:Key="Close">关闭</system:String>
+    <system:String x:Key="Who Active">通信路径选择</system:String>
+    <system:String x:Key="Upload...">上传...</system:String>
+    <system:String x:Key="SetProjectPath">设置项目路径</system:String>
+    <system:String x:Key="ClearProjectPath">清除项目路径</system:String>
+    <system:String x:Key="ResetPathList">重置路径列表</system:String>
+    <system:String x:Key="ShowOnlyPath">仅显示与项目中的序列号匹配的路径</system:String>
+    <system:String x:Key="NetSerialNumber">项目中的序列号：</system:String>
+    <system:String x:Key="PathinProject:">项目中的路径：</system:String>
+    <system:String x:Key="NetNone">&lt;无&gt;</system:String>
+
+    <!--  Go Online  -->
+    <system:String x:Key="DateTime">日期/时间</system:String>
+    <system:String x:Key="MajorFaults">严重故障</system:String>
+
+    <system:String x:Key="MinorFaults">一般故障</system:String>
+    <system:String x:Key="Project">项目</system:String>
+    <system:String x:Key="NonvolatileMemory">非易失性内存</system:String>
+    <system:String x:Key="Go Online">联机</system:String>
+    <system:String x:Key="GoOnline">联机</system:String>
+    <system:String x:Key="Upload">上载</system:String>
+    <system:String x:Key="SelectFile">选择文件...</system:String>
+
+    <!--  ImportDialog  -->
+    <system:String x:Key="Data Type Size(bytes):">数据类型大小(字节)：</system:String>
+    <system:String x:Key="Engineering Unit:">工程单位：</system:String>
+    <system:String x:Key="Data Type is a string:">数据类型是否是字符串：</system:String>
+    <system:String x:Key="Maximum number of characters:">最大字符数：</system:String>
+    <system:String x:Key="Structure is different:">结构是否不同：</system:String>
+    <system:String x:Key="Member comments are different:">成员注释是否不同：</system:String>
+    <system:String x:Key="Member extended properties are different:">成员扩展属性是否不同：</system:String>
+    <system:String x:Key="Member style are different:">成员格式是否不同：</system:String>
+    <system:String x:Key="Member external access are different:">成员外部访问是否不同：</system:String>
+    <system:String x:Key="Create Date:">创建日期：</system:String>
+    <system:String x:Key="Create By:">创建者：</system:String>
+    <system:String x:Key="Editor Date:">编辑日期：</system:String>
+    <system:String x:Key="Editor By:">编辑人：</system:String>
+    <system:String x:Key="Execute Prescan:">执行预扫描：</system:String>
+    <system:String x:Key="Execute Postscan:">执行后扫描：</system:String>
+    <system:String x:Key="Execute Enable In False">执行使能为假</system:String>
+    <system:String x:Key="Software Revision">软件版本</system:String>
+    <system:String x:Key="Additional Help Text:">附加帮助文本：</system:String>
+    <system:String x:Key="Logic is different:">逻辑是否不同：</system:String>
+    <system:String x:Key="Number of LocalTags:">本地变量的数量：</system:String>
+    <system:String x:Key="New LocalTags:">创建的本地变量：</system:String>
+    <system:String x:Key="Modified LocalTags:">修改过的本地变量：</system:String>
+    <system:String x:Key="Deleted LocalTags:">删除的本地变量：</system:String>
+    <system:String x:Key="Existing routine has pending edits:">现有例程的未决编辑：</system:String>
+    <system:String x:Key="Test Edits:">测试编辑：</system:String>
+    <system:String x:Key="Product Type:">产品类型：</system:String>
+    <system:String x:Key="Product Code:">产品代码：</system:String>
+    <system:String x:Key="Major:">主要的：</system:String>
+    <system:String x:Key="Minor:">轻微的：</system:String>
+    <system:String x:Key="Parent Module:">父模块：</system:String>
+    <system:String x:Key="Parent Mod Port Id:">父 Mod 端口 Id：</system:String>
+    <system:String x:Key="Major Fault:">严重故障：</system:String>
+    <system:String x:Key="Extended Properties:">扩展属性：</system:String>
+    <system:String x:Key="Constant:">常量：</system:String>
+    <system:String x:Key="Data is different:">数据是否不同：</system:String>
+    <system:String x:Key="Comments are different:">注释是否不同：</system:String>
+    <system:String x:Key="Extended properties are different:">扩展属性是否不同：</system:String>
+    <system:String x:Key="Alarm conditions are different:">报警条件是否不同：</system:String>
+    <system:String x:Key="Imported Programs:">导入的程序：</system:String>
+    <system:String x:Key="Parent Program">父程序</system:String>
+    <system:String x:Key="Program Type">程序类型</system:String>
+    <system:String x:Key="Inhibit">禁用</system:String>
+    <system:String x:Key="Do not change scheduling of existing programs">不更改现有程序的隶属</system:String>
+    <system:String x:Key="Do not change parent of existing target programs">不更改现有程序的父级</system:String>
+    <system:String x:Key="Imported Instructions:">导入的功能块：</system:String>
+    <system:String x:Key="Instructions and other references will be imported as configured in the References folders">
+        功能块和其它引用将按照参考文件夹中的配置导入
+    </system:String>
+    <system:String x:Key="Imported Type:">导入的类型：</system:String>
+    <system:String x:Key="Data Types and other references will be imported as configured in the References folders">
+        类型和其它引用将按照参考文件夹中的配置导入
+    </system:String>
+    <system:String x:Key="target programs, 0 child program(s)">个目标程序，0个子程序</system:String>
+    <system:String x:Key="selected, 0 others as references">个被选中，0个作为引用</system:String>
+
+    <system:String x:Key="Multiple Data Types">多个数据类型</system:String>
+    <system:String x:Key="Multiple Instructions">多个功能块</system:String>
+    <system:String x:Key="Multiple Programs">多个程序</system:String>
+    <system:String x:Key="UD Function Block">自定义功能块</system:String>
+    <system:String x:Key="Import Content:">导入内容：</system:String>
+    <system:String x:Key="Find:">查找：</system:String>
+    <system:String x:Key="Find/Replace...">查找/替换...</system:String>
+    <system:String x:Key="Find Within: Final Name">查找范围：最终名称</system:String>
+    <system:String x:Key="Preserve existing tag values in offline project.">保留离线项目中现有的变量值</system:String>
+    <system:String x:Key="Configure Data Type Properties">配置数据类型属性</system:String>
+    <system:String x:Key="Configure Add-On-Instruction References">配置自定义功能块引用</system:String>
+    <system:String x:Key="Configure Data Type References">配置数据类型引用</system:String>
+    <system:String x:Key="Preserve existing tag values in offline project">保留离线项目中的现有标签值</system:String>
+    <system:String x:Key="Configure Program Properties">配置程序属性</system:String>
+    <system:String x:Key="Configure Routine Properties">配置例程属性</system:String>
+    <system:String x:Key="Configure Rung Properties">配置梯级属性</system:String>
+    <system:String x:Key="Configure Add-On Instruction Properties">配置自定义功能块属性</system:String>
+    <system:String x:Key="Configure Module Properties">配置模型属性</system:String>
+    <system:String x:Key="Configure Connections">配置连接</system:String>
+    <system:String x:Key="Parameters and Local Variable">参数和本地变量</system:String>
+    <system:String x:Key="Routines">例程</system:String>
+    <system:String x:Key="Programs">程序</system:String>
+    <system:String x:Key="References">引用</system:String>
+    <system:String x:Key="Other Components">其它组件</system:String>
+    <system:String x:Key="Errors/Warnings">错误/警告</system:String>
+
+    <system:String x:Key="Import Name">导入名称</system:String>
+    <system:String x:Key="Import Value">导入值</system:String>
+    <system:String x:Key="Existing Value">已存在的值</system:String>
+    <system:String x:Key="Final Name">最终名称</system:String>
+    <system:String x:Key="Parent Module">父模块</system:String>
+    <system:String x:Key="Data">数据</system:String>
+    <system:String x:Key="Class Name">类名</system:String>
+
+    <system:String x:Key="Import and Existing data structures are different can not be determined.">
+        无法确定导入和已存在的数据结构是否不同。
+    </system:String>
+    <system:String x:Key="Show Import Data">显示导入数据</system:String>
+    <system:String x:Key="Show Existing Data">显示已存在数据</system:String>
+    <system:String x:Key="Failed to Import file.The import was aborted due to errors.">无法导入文件。导入因错误而中止。</system:String>
+    <system:String x:Key="Imported Rungs:">导入的梯级：</system:String>
+    <system:String x:Key="Routine Properties">例程属性</system:String>
+    <system:String x:Key="Reference will be imported configured in the References folders">引用将被导入配置在引用文件夹中</system:String>
+
+    <!--  Confirmation  -->
+    <system:String x:Key="Import Name:">导入名称：</system:String>
+    <system:String x:Key="Operation:">操作：</system:String>
+    <system:String x:Key="Final Name:">最终名称：</system:String>
+    <system:String x:Key="Description:">说明：</system:String>
+    <system:String x:Key="Schedule In:">调度：</system:String>
+    <system:String x:Key="Parent:">父项：</system:String>
+    <system:String x:Key="Inhibit Program">禁用程序</system:String>
+    <system:String x:Key="Assigned Routines">分配的例程</system:String>
+    <system:String x:Key="Main:">主要：</system:String>
+    <system:String x:Key="Fault:">故障：</system:String>
+    <system:String x:Key="Collision Detail...">冲突详细信息...</system:String>
+    <system:String x:Key="Properties...">属性...</system:String>
+    <system:String x:Key="Number of Lines:">行数：</system:String>
+    <system:String x:Key="Preserve">保留已存在的子程序的调度</system:String>
+    <system:String x:Key="Overwrite">覆盖</system:String>
+    <system:String x:Key="Use Existing">使用现有的</system:String>
+    <system:String x:Key="Create">创建</system:String>
+    <system:String x:Key="Discard">废弃</system:String>
+    <system:String x:Key="Import Configuration">导入配置</system:String>
+
+    <!--  Controller Organizer  -->
+    <system:String x:Key="Controller">控制器</system:String>
+    <system:String x:Key="Controller Organizer">控制器管理器</system:String>
+    <system:String x:Key="Global Variables">全局变量</system:String>
+    <system:String x:Key="Controller Tags">全局变量</system:String>
+    <system:String x:Key="Controller Fault Handler">控制器故障处理任务</system:String>
+    <system:String x:Key="Power-Up Handler">初始化任务</system:String>
+    <system:String x:Key="Tasks">任务</system:String>
+    <system:String x:Key="Parameters And Local Tag">参数和变量</system:String>
+    <system:String x:Key="Unscheduled">未规划</system:String>
+    <system:String x:Key="Motion Groups">运动组</system:String>
+    <system:String x:Key="Ungrouped Axes">未分配轴</system:String>
+    <system:String x:Key="Assets">库</system:String>
+    <system:String x:Key="Add-On Instructions">自定义功能块</system:String>
+    <system:String x:Key="Ud Function Block">自定义功能块</system:String>
+    <system:String x:Key="Data Types">数据类型</system:String>
+    <system:String x:Key="User-Defined">自定义</system:String>
+    <system:String x:Key="Strings">字符串</system:String>
+    <system:String x:Key="AddOnDefined">功能块</system:String>
+    <system:String x:Key="Predefined">系统预定义</system:String>
+    <system:String x:Key="Module-Defined">模块</system:String>
+    <system:String x:Key="Trends">趋势图</system:String>
+    <system:String x:Key="Logical Model">逻辑模式</system:String>
+    <system:String x:Key="I/O Configuration">输入/输出配置</system:String>
+    <system:String x:Key="Embedded I/O">嵌入式 I/O</system:String>
+    <system:String x:Key="Expansion">扩展</system:String>
+    <system:String x:Key="Ethernet:">以太网</system:String>
+    <system:String x:Key="Major Fault">严重故障</system:String>
+    <system:String x:Key="Minor Fault">一般故障</system:String>
+    <system:String x:Key="Max Scan">最大扫描</system:String>
+    <system:String x:Key="Last Scan">上次扫描</system:String>
+    <system:String x:Key="Priority">优先级</system:String>
+    <system:String x:Key="Number Of Routines">例程数</system:String>
+    <system:String x:Key="Main Routine">主例程</system:String>
+    <system:String x:Key="Fault Routine">故障处理例程</system:String>
+    <system:String x:Key="Scheduled In">规划</system:String>
+    <system:String x:Key="Number of Steps">步数</system:String>
+    <system:String x:Key="Number of Sheets">表单数</system:String>
+    <system:String x:Key="Number of Lines">行数</system:String>
+    <system:String x:Key="Number of Rungs">梯级数</system:String>
+    <system:String x:Key="Axis State">轴状态</system:String>
+    <system:String x:Key="Update Period">更新周期</system:String>
+    <system:String x:Key="Axis Fault">轴故障</system:String>
+    <system:String x:Key="Module Faults">模块故障</system:String>
+    <system:String x:Key="Group Fault">组故障</system:String>
+    <system:String x:Key="Motion Fault">运动故障</system:String>
+    <system:String x:Key="Initialization Fault">初始化故障</system:String>
+    <system:String x:Key="APR Fault">绝对位置故障</system:String>
+    <system:String x:Key="Attribute Error">属性错误</system:String>
+    <system:String x:Key="Guard Fault">轴防护故障</system:String>
+    <system:String x:Key="Start Inhibited">启动禁用</system:String>
+    <system:String x:Key="Motor Catalog">电机目录</system:String>
+    <system:String x:Key="Revision Note">版本注释</system:String>
+    <system:String x:Key="Data Type Size">数据类型大小</system:String>
+    <system:String x:Key="Created">创建时间</system:String>
+    <system:String x:Key="Created By">创建人</system:String>
+    <system:String x:Key="Edited">编辑时间</system:String>
+    <system:String x:Key="Edited By">编辑人</system:String>
+    <system:String x:Key="Coarse Update Period">近似更新周期</system:String>
+    <system:String x:Key="Timing Model">计时模型</system:String>
+    <system:String x:Key="Group Status">组状态</system:String>
+    <system:String x:Key="Number Of Pens">曲线数量</system:String>
+    <system:String x:Key="Bus Size">母排大小</system:String>
+    <system:String x:Key="Basic I/O">I/O 模块</system:String>
+    <system:String x:Key="ControllerSlot">槽号</system:String>
+    <system:String x:Key="NumberOfRoutines">例程数目</system:String>
+    <system:String x:Key="Prestate Routine">预状态例程</system:String>
+    <system:String x:Key="State">状态</system:String>
+    <system:String x:Key="Substate">子状态</system:String>
+    <system:String x:Key="Owner">宿主</system:String>
+    <system:String x:Key="Failure">故障</system:String>
+    <system:String x:Key="Mode">模式</system:String>
+    <system:String x:Key="Unit Id">单位 ID</system:String>
+    <system:String x:Key="Sequence Id">顺序 ID</system:String>
+    <system:String x:Key="Phase Failure">设备故障</system:String>
+    <system:String x:Key="AoiVendor">供应商</system:String>
+    <system:String x:Key="DataSize">大小</system:String>
+    <system:String x:Key="Power Structure">电源结构</system:String>
+    <system:String x:Key="ModuleDefinedVariables">模块定义变量</system:String>
+
+
+    <!--  RSTrendX Properties  -->
+    <system:String x:Key="Trace">趋势图</system:String>
+    <system:String x:Key="NewTrendGeneral">新建趋势图 - 常规</system:String>
+    <system:String x:Key="NewTrendAddOrConfigureVariable">新建趋势图 - 添加/配置变量</system:String>
+    <system:String x:Key="Sample Period:">采样周期：</system:String>
+    <system:String x:Key="Number Of Captures:">捕获次数：</system:String>
+    <system:String x:Key="Samples:">采样：</system:String>
+    <system:String x:Key="Time Period:">时间期：</system:String>
+    <system:String x:Key="No Limit:">无限制：</system:String>
+    <system:String x:Key="Sampling Stops When">在硬盘的利用率大约达到 80% 或剩余空间低于 100MB 时采样停止。</system:String>
+    <system:String x:Key="Estimated Trend Capture Size:">预估趋势图捕获大小：</system:String>
+    <system:String x:Key="Estimated Trend Log Size:">预估趋势图日志大小：</system:String>
+    <system:String x:Key="No Trigger">无触发器</system:String>
+    <system:String x:Key="Tag Trigger Condition">Tag 触发条件</system:String>
+    <system:String x:Key="Target Value:">目标值：</system:String>
+    <system:String x:Key="Target Tag:">目标 Tag：</system:String>
+    <system:String x:Key="Pre-Sampling">预采样</system:String>
+    <system:String x:Key="Scope:">范围：</system:String>
+    <system:String x:Key="SelectVariable">选择变量：</system:String>
+    <system:String x:Key="VariableToTrend">趋势图变量：</system:String>
+    <system:String x:Key="Show:">显示：</system:String>
+    <system:String x:Key="Show Controller Variable" xml:space="preserve">显示 控制器 变量</system:String>
+    <system:String x:Key="FilterProgram">程序</system:String>
+    <system:String x:Key="Show">显示</system:String>
+    <system:String x:Key="Run">运行</system:String>
+    <system:String x:Key="Stop">停止</system:String>
+    <system:String x:Key="Errors...">错误...</system:String>
+    <system:String x:Key="Logging Stopped">日志已停止</system:String>
+    <system:String x:Key="Logging">日志</system:String>
+    <system:String x:Key="Period">周期</system:String>
+    <system:String x:Key="Ms">毫秒</system:String>
+    <system:String x:Key="Capture:">捕获：</system:String>
+    <system:String x:Key="SaveTrend Log As...">将趋势图日志另存为...</system:String>
+    <system:String x:Key="Delete Capture">删除捕获</system:String>
+    <system:String x:Key="ShowParametersFromOtherProgram">显示其他程序的参数：</system:String>
+    <system:String x:Key="DisplayChartTitle">显示图表标题</system:String>
+    <system:String x:Key="DisplayProgressBar">加载历史数据时显示进度条</system:String>
+    <system:String x:Key="ChartStyle">图表类型</system:String>
+    <system:String x:Key="Standard">标准</system:String>
+    <system:String x:Key="XyPlot">XY二维</system:String>
+    <system:String x:Key="XAxisData">X轴数据</system:String>
+    <system:String x:Key="ChartDisplayOptions">图表显示选项</system:String>
+    <system:String x:Key="TimeFormat">时间格式</system:String>
+    <system:String x:Key="DisplayMilliseconds">显示毫秒</system:String>
+    <system:String x:Key="ChartRadix">图表基数</system:String>
+    <system:String x:Key="DisplayValueBar">显示数值栏</system:String>
+    <system:String x:Key="BackgroundColor">背景颜色</system:String>
+    <system:String x:Key="DataPointConnection">数据点连接</system:String>
+    <system:String x:Key="TextColor">文本颜色</system:String>
+    <system:String x:Key="Font">字体...</system:String>
+    <system:String x:Key="CurrentValueLegend">当前数值图例</system:String>
+    <system:String x:Key="DisplayCurveValues">显示曲线数值</system:String>
+    <system:String x:Key="DisplayTime">显示时间</system:String>
+    <system:String x:Key="DisplayCurveIcons">显示曲线图标</system:String>
+    <system:String x:Key="LineLegend">行图例</system:String>
+    <system:String x:Key="DisplayLineLegend">显示行图例</system:String>
+    <system:String x:Key="Position">位置</system:String>
+    <system:String x:Key="MaxViewable">最大视图</system:String>
+    <system:String x:Key="DisplayMinOrMaxValues">显示最小/最大数值</system:String>
+    <system:String x:Key="CurveCaption">曲线标题</system:String>
+    <system:String x:Key="MaximumCurveCaptionLength">最长曲线标题长度</system:String>
+    <system:String x:Key="Scrolling">滚动</system:String>
+    <system:String x:Key="AllowScrolling">允许滚动</system:String>
+    <system:String x:Key="ScrollMode">滚动模式</system:String>
+    <system:String x:Key="DisplayScrollingMechanism">显示滚动机制</system:String>
+    <system:String x:Key="BufferForExtraData">用于额外数据的缓冲区</system:String>
+    <system:String x:Key="RecordsPerCurve">每条曲线的记录</system:String>
+    <system:String x:Key="Curve">曲线</system:String>
+    <system:String x:Key="CurveAttributes">曲线属性</system:String>
+    <system:String x:Key="VariableOrExpr">变量</system:String>
+    <system:String x:Key="Color">颜色</system:String>
+    <system:String x:Key="CurveVisible">可视度</system:String>
+    <system:String x:Key="Width">宽度</system:String>
+    <system:String x:Key="CurveType">类型</system:String>
+    <system:String x:Key="CurveStyle">样式</system:String>
+    <system:String x:Key="CurveMarker">标记</system:String>
+    <system:String x:Key="Min">最小值</system:String>
+    <system:String x:Key="EngUnits">单位</system:String>
+    <system:String x:Key="Lower">下限</system:String>
+    <system:String x:Key="Upper">上限</system:String>
+    <system:String x:Key="AddConfigureVariable">添加/配置变量</system:String>
+    <system:String x:Key="DeleteVariable">删除变量</system:String>
+    <system:String x:Key="MultipleCurveEdits">多重曲线编辑</system:String>
+    <system:String x:Key="ClearSelections">清除全部选择</system:String>
+    <system:String x:Key="ApplyToSelectedCurve">应用于所选曲线</system:String>
+    <system:String x:Key="X-Axis">横轴</system:String>
+    <system:String x:Key="Y-Axis">竖轴</system:String>
+    <system:String x:Key="Display">显示</system:String>
+    <system:String x:Key="ChartTomeRange">图表分册范围</system:String>
+    <system:String x:Key="StartTime">开始时间</system:String>
+    <system:String x:Key="StartDate">开始日期</system:String>
+    <system:String x:Key="StartDateAndStartTime" xml:space="preserve">允许滚动时，&#13;“开始日期”和&#13;“开始时间”不&#13;可用。要清除&#13;“允许滚动”，&#13;请使用“显示”&#13;选项卡</system:String>
+    <system:String x:Key="TimeSpan">时间间隔</system:String>
+    <system:String x:Key="DisplayOptions">显示选项</system:String>
+    <system:String x:Key="DisplayScale">显示比例</system:String>
+    <system:String x:Key="MajorGridLines">主要网络线</system:String>
+    <system:String x:Key="MinorGridLines">次要网络线</system:String>
+    <system:String x:Key="GridColor">表格颜色</system:String>
+    <system:String x:Key="DisplayDateOnScale">按比例显示日期</system:String>
+    <system:String x:Key="DisplayGridLines">显示网格线</system:String>
+    <system:String x:Key="MinimumOrMaximumValueOptions">最小/最大值选项</system:String>
+    <system:String x:Key="AutomaticBestFitBasedOnActualData">自动(根据实际数据进行最佳拟合)</system:String>
+    <system:String x:Key="PresetUseMinOrMaxSettingFromCurveTab">预设(使用曲线标签中的最小/最大设置)</system:String>
+    <system:String x:Key="Custom">自定义</system:String>
+    <system:String x:Key="MinimumValue">最小值</system:String>
+    <system:String x:Key="ActualMinimumValue">实际最小值</system:String>
+    <system:String x:Key="MaximumValue">最大值e</system:String>
+    <system:String x:Key="ActualMaximumValue">实际最大值</system:String>
+    <system:String x:Key="DisplayOption">显示选项</system:String>
+    <system:String x:Key="IsolatedGraphing">分离曲线</system:String>
+    <system:String x:Key="Isolation">%分离度</system:String>
+    <system:String x:Key="DecimalPlaces">小数点位数</system:String>
+    <system:String x:Key="ScaleOptions">刻度选项</system:String>
+    <system:String x:Key="AllCurveOnSameScale">所有曲线使用相同刻度</system:String>
+    <system:String x:Key="EachCurveOnIndependentScale">每条曲线使用独立刻度</system:String>
+    <system:String x:Key="ScaleUsingCurve">使用曲线刻度</system:String>
+    <system:String x:Key="ScaleAsPercentage">按百分比刻度</system:String>
+    <system:String x:Key="Template">模板</system:String>
+    <system:String x:Key="SelectTemplateOptions">选择模板选项</system:String>
+    <system:String x:Key="SaveTemplate">保存模板</system:String>
+    <system:String x:Key="LoadTemplate">加载模板</system:String>
+    <system:String x:Key="DeleteTemplate">删除模板</system:String>
+    <system:String x:Key="TemplateCommandsTakeEffect" xml:space="preserve">模板命令立即生效，&#13;不能取消。</system:String>
+    <system:String x:Key="AllOptions">所有选项:</system:String>
+    <system:String x:Key="CheckAll">全选</system:String>
+    <system:String x:Key="UncheckAll">不全选</system:String>
+    <system:String x:Key="Sampling">采样</system:String>
+    <system:String x:Key="NumberOfCaptures">捕获数量：</system:String>
+    <system:String x:Key="Add/Configure Variable">添加/配置变量</system:String>
+    <system:String x:Key="GraphTitle">图表标题</system:String>
+    <system:String x:Key="Log">日志</system:String>
+    <system:String x:Key="TrendCloseMessage">趋势图正在收集数据样本。关闭该窗口会
+停止趋势图操作，并导致趋势图数据丢失。
+
+继续关闭趋势图窗口？</system:String>
+
+    <system:String x:Key="Scroll">滚动</system:String>
+    <system:String x:Key="ActiveValueBar">启用数值提示条</system:String>
+    <system:String x:Key="ShowValueBar">显示数值提示条</system:String>
+    <system:String x:Key="UndoZoomOrPan">还原缩放</system:String>
+    <system:String x:Key="CreateSnapshot..">创建快照..</system:String>
+    <system:String x:Key="PrintTrend">打印趋势图</system:String>
+    <system:String x:Key="ChartProperties">图表属性</system:String>
+    <system:String x:Key="TrendValue">数值</system:String>
+    <system:String x:Key="Delta">差值</system:String>
+
+    <system:String x:Key="UnAbleToSetTheTrance" xml:space="preserve">由于趋势图中没有数据，无法根据数据范围设置趋势图位置。</system:String>
+    <system:String x:Key="FailedToCreateTrace">创建趋势图失败</system:String>
+    <system:String x:Key="NameIsInvalid">名称无效</system:String>
+    <system:String x:Key="AlreadyExists">已经存在</system:String>
+    <system:String x:Key="SamplePeriodShouldBe">采样周期应在(1毫秒 - 30分钟)的范围内</system:String>
+    <system:String x:Key="ThereAreNoCurve" xml:space="preserve">目前没有选定的曲线。&#13;在变量栏中点击 即可选择曲线。</system:String>
+    <system:String x:Key="PleaseEnterANumber.">请输入一个数。</system:String>
+    <system:String x:Key="PleaseEnterANumberBetween">请输入介于 -3.4e+038 和 3.4e+38 之间的数字。</system:String>
+    <system:String x:Key="MinimumValueExceedsTheMaximum" xml:space="preserve">最小值超过所选最大值，最大值已设置为最小值。</system:String>
+    <system:String x:Key="FailedToModifyTrendPropertiesSample" xml:space="preserve">修改趋势图失败。&#13;样本周期范围应该在</system:String>
+    <system:String x:Key="FailedToModifyTrendPropertiesTime" xml:space="preserve">修改趋势图失败。&#13;时间周期范围应该在</system:String>
+
+
+    <!--  Property Compare  -->
+    <system:String x:Key="Main Routine:">主例程：</system:String>
+    <system:String x:Key="Fault Routine:">故障例程：</system:String>
+    <system:String x:Key="Inhibited:">禁用：</system:String>
+    <system:String x:Key="Synchronize Redundancy Data After Execution:">执行后同步冗余数据：</system:String>
+    <system:String x:Key="Test Edit:">测试编辑：</system:String>
+    <system:String x:Key="Use As Folder:">用作文件夹：</system:String>
+    <system:String x:Key="Number of Tags:">变量数量：</system:String>
+    <system:String x:Key="New Tags:">新建变量：</system:String>
+    <system:String x:Key="Modified Tags:">已修改变量：</system:String>
+    <system:String x:Key="Deleted Tags:">已删除变量：</system:String>
+    <system:String x:Key="Number of Parameters:">参数数量：</system:String>
+    <system:String x:Key="New Parameters:">新建的参数：</system:String>
+    <system:String x:Key="Modified Parameters:">已修改的参数：</system:String>
+    <system:String x:Key="Deleted Parameters:">已删除的参数：</system:String>
+    <system:String x:Key="Number of Routines:">例程数量：</system:String>
+    <system:String x:Key="New Routines:">新建例程：</system:String>
+    <system:String x:Key="Modified Routines:">已修改的例程：</system:String>
+    <system:String x:Key="Deleted Routines:">已删除的例程：</system:String>
+    <system:String x:Key="Current Operation:">当前操作：</system:String>
+    <system:String x:Key="Collision">冲突</system:String>
+    <system:String x:Key="Property Compare">属性比较</system:String>
+    <system:String x:Key="Data Compare">数据比较</system:String>
+
+    <!--  Menu  -->
+    <system:String x:Key="Find...">查找...</system:String>
+    <system:String x:Key="Replace...">替换...</system:String>
+    <system:String x:Key="Go To...">转至...</system:String>
+
+    <system:String x:Key="Goto Logic...">转到逻辑程序...</system:String>
+    <system:String x:Key="Cross Reference">交叉引用</system:String>
+    <system:String x:Key="Find Next">查找下一个</system:String>
+    <system:String x:Key="Find Previous">查找上一个</system:String>
+    <system:String x:Key="Next Result">下一个结果</system:String>
+    <system:String x:Key="Previous Result">上一个结果</system:String>
+    <system:String x:Key="Matching Keyword">关键字匹配</system:String>
+    <system:String x:Key="Search Result">搜索结果</system:String>
+    <system:String x:Key="About">关于</system:String>
+    <system:String x:Key="Language">语言</system:String>
+    <system:String x:Key="Quick Monitor">快速监控</system:String>
+    <system:String x:Key="Errors">错误信息</system:String>
+    <system:String x:Key="Select Recent Path...">选择最近访问的路径</system:String>
+    <system:String x:Key="Go Offline">脱机</system:String>
+    <system:String x:Key="Program Mode">编程模式</system:String>
+    <system:String x:Key="Run Mode">运行模式</system:String>
+    <system:String x:Key="Test Mode">调试模式</system:String>
+
+    <system:String x:Key="Lock Controller">锁定控制器</system:String>
+    <system:String x:Key="Save To Controller">保存至控制器</system:String>
+    <system:String x:Key="Clear Faults">清除故障</system:String>
+    <system:String x:Key="Go To Faults">转至故障</system:String>
+    <system:String x:Key="Controller Overview">控制器状态</system:String>
+
+    <system:String x:Key="Program Instruction">编程指令</system:String>
+    <system:String x:Key="ToolBox">工具栏</system:String>
+    <system:String x:Key="Options...">选项...</system:String>
+    <system:String x:Key="Security">保密</system:String>
+    <system:String x:Key="Documentation Languages">文档语言</system:String>
+    <system:String x:Key="Import">导入</system:String>
+    <system:String x:Key="Export">导出</system:String>
+    <system:String x:Key="Log On...">登录...</system:String>
+    <system:String x:Key="Log Off">注销</system:String>
+
+    <system:String x:Key="Refresh Privileges">刷新权限</system:String>
+    <system:String x:Key="Lock All Unlocked Content">锁定所有未锁定内容</system:String>
+    <system:String x:Key="Lock Component">锁定组件</system:String>
+    <system:String x:Key="UnLock Component">解锁组件</system:String>
+
+    <system:String x:Key="Configure Source Protection">配置源码保护</system:String>
+    <system:String x:Key="Variables and Logic Comments...">变量和逻辑注释...</system:String>
+    <system:String x:Key="Component">组件</system:String>
+    <system:String x:Key="Open...">打开...</system:String>
+    <system:String x:Key="New...">新建...</system:String>
+    <system:String x:Key="Save">保存</system:String>
+    <system:String x:Key="Save As...">另存为...</system:String>
+    <system:String x:Key="Build Save">编译保存</system:String>
+    <system:String x:Key="Print">打印</system:String>
+    <system:String x:Key="Routine...">例程...</system:String>
+    <system:String x:Key="Tags...">变量...</system:String>
+    <system:String x:Key="DataType...">数据类型...</system:String>
+    <system:String x:Key="Program Properties...">程序属性...</system:String>
+    <system:String x:Key="Routine Properties...">例程属性...</system:String>
+    <system:String x:Key="Sequencing and Step Tags...">定序和 Step Tag...</system:String>
+    <system:String x:Key="Module Properties...">模块属性...</system:String>
+
+    <system:String x:Key="User Define Funciton Signatures...">用户自定义指令签名...</system:String>
+    <system:String x:Key="User Define Funciton...">用户自定义指令...</system:String>
+    <system:String x:Key="Cross Reference...">交叉引用...</system:String>
+
+    <system:String x:Key="Controller Organizer...">控制器管理器...</system:String>
+    <system:String x:Key="Controller Properties...">控制器属性...</system:String>
+    <system:String x:Key="Task Properties...">任务属性...</system:String>
+    <system:String x:Key="Equipment Sequences...">设备顺序...</system:String>
+    <system:String x:Key="Entire Project...">整个项目...</system:String>
+    <system:String x:Key="Logical Organizer">逻辑管理器</system:String>
+    <system:String x:Key="Operation">操作</system:String>
+    <system:String x:Key="Net Path">网络路径</system:String>
+    <system:String x:Key="Login">登入</system:String>
+    <system:String x:Key="Logout">登出</system:String>
+    <system:String x:Key="Cut">剪切</system:String>
+    <system:String x:Key="Paste">粘贴</system:String>
+    <system:String x:Key="Paste With Configuration...">粘贴(含配置)...</system:String>
+    <system:String x:Key="cannot be opened correctly.">无法正常启动。</system:String>
+
+    <system:String x:Key="Verify">验证</system:String>
+    <system:String x:Key="New Variable...">新建变量...</system:String>
+    <system:String x:Key="New Program...">新建程序...</system:String>
+    <system:String x:Key="New Task...">新建任务...</system:String>
+    <system:String x:Key="Browse Logic...">浏览逻辑...</system:String>
+    <system:String x:Key="New Axes Groups...">新建轴组...</system:String>
+    <system:String x:Key="New Module...">新建模块...</system:String>
+    <system:String x:Key="New Axis">新建轴</system:String>
+    <system:String x:Key="New Coordinate System...">新建坐标系统...</system:String>
+    <system:String x:Key="New Add-On Instruction...">新建自定义功能块...</system:String>
+    <system:String x:Key="New Data Type...">新建数据类型...</system:String>
+    <system:String x:Key="New String Type...">新建字符串类型...</system:String>
+    <system:String x:Key="New Trace...">新建趋势图...</system:String>
+    <system:String x:Key="Motion Direct Commands...">直接运动指令</system:String>
+    <system:String x:Key="Manual Tune..">手动整定..</system:String>
+    <system:String x:Key="Monitor Variable">监控变量</system:String>
+    <system:String x:Key="Edit Variable">编辑变量</system:String>
+    <system:String x:Key="Export Variable">导出变量</system:String>
+    <system:String x:Key="Import Program...">导入程序...</system:String>
+    <system:String x:Key="New Equipment Phase...">新建设备模式...</system:String>
+    <system:String x:Key="New Equipment Sequence...">新建设备顺序...</system:String>
+    <system:String x:Key="New Phase State Routine...">新建状态例程...</system:String>
+    <system:String x:Key="Import Routine...">导入例程...</system:String>
+    <system:String x:Key="New Routine...">新建例程...</system:String>
+    <system:String x:Key="New Local Variable...">新建本地变量...</system:String>
+    <system:String x:Key="New Parameter...">新建参数...</system:String>
+    <system:String x:Key="Export Program...">导出程序...</system:String>
+    <system:String x:Key="Import Add-On Instruction...">导入自定义功能块...</system:String>
+    <system:String x:Key="Monitor Axis Variable">监控轴变量</system:String>
+    <system:String x:Key="Monitor Group Variable">监控轴组变量</system:String>
+    <system:String x:Key="Goto Module">转至模块</system:String>
+    <system:String x:Key="Import Equipment Phase...">导入设备模式...</system:String>
+    <system:String x:Key="Import Equipment Sequence...">导入设备顺序...</system:String>
+    <system:String x:Key="Export Add-On Instruction...">导出自定义功能块...</system:String>
+    <system:String x:Key="Import Data Type...">导入数据类型...</system:String>
+    <system:String x:Key="Import String Type...">导入字符串类型...</system:String>
+    <system:String x:Key="Export String Type...">导出字符串类型...</system:String>
+    <system:String x:Key="Export Routine...">导出实例...</system:String>
+    <system:String x:Key="Export Module...">导出模块...</system:String>
+    <system:String x:Key="AxisCipDrive">实轴...</system:String>
+    <system:String x:Key="AxisVirtual">虚轴...</system:String>
+    <system:String x:Key="Export Data Type">导出数据类型</system:String>
+    <system:String x:Key="Import Trace...">导入趋势图...</system:String>
+    <system:String x:Key="Export Trace...">导出趋势图...</system:String>
+    <system:String x:Key="Open Trace Variable...">打开趋势图变量...</system:String>
+    <system:String x:Key="Import Module...">导入模块...</system:String>
+    <system:String x:Key="Change Language Type">更改语言类型</system:String>
+    <system:String x:Key="ChangingTypeWillRemoveAny">更改类型将删除所有现有逻辑，并将现有逻辑例程替换为新类型的空例程。</system:String>
+    <system:String x:Key="GeneratingASignature" xml:space="preserve">生成签名将密封指今并防止修改。&#13;是否生成指令签名?</system:String>
+    <system:String x:Key="Add To History">添加到历史记录</system:String>
+    <system:String x:Key="Enter Signature History Description:">输入历史签名描述:</system:String>
+    <system:String x:Key="Data Type...">数据类型...</system:String>
+    <system:String x:Key="HideControllerOrganizer">隐藏控制器管理器</system:String>
+    <system:String x:Key="CollapseAll">全部折叠</system:String>
+    <system:String x:Key="ExpandAll">全部展开</system:String>
+    <system:String x:Key="ShowQuickView">显示快速视图</system:String>
+    <system:String x:Key="HideQuickView">隐藏快速视图</system:String>
+
+
+    <!--  Routine  -->
+    <system:String x:Key="Ladder Diagram">梯形图</system:String>
+    <system:String x:Key="Sequential Function Chart">顺序功能图</system:String>
+    <system:String x:Key="Function Block Diagram">功能区块图</system:String>
+    <system:String x:Key="Structured Text">结构化文本</system:String>
+    <system:String x:Key="Equipment Sequence Diagram">设备顺序图</system:String>
+    <system:String x:Key="Number of Rungs:">梯级数：</system:String>
+    <system:String x:Key="Number of Steps:">Step 数：</system:String>
+    <system:String x:Key="Number of Sheets:">表单数：</system:String>
+    <system:String x:Key="In instruction:">在 instruction 中：</system:String>
+    <system:String x:Key="In Program:">隶属程序：</system:String>
+    <system:String x:Key="Failed to modify the properties for the routine '">未能修改例程“</system:String>
+    <system:String x:Key="'.">”的属性。</system:String>
+    <system:String x:Key="The name is empty.">名称为空。</system:String>
+    <system:String x:Key="The name is invalid.">名称无效。</system:String>
+    <system:String x:Key="Name can not be the same as an Equipment Phase State Routine name.">“名称”不能与“设备相态例程名称”相同。</system:String>
+    <system:String x:Key="Already exists.">已存在。</system:String>
+    <system:String x:Key="Apply changes?">是否应用更改？</system:String>
+    <system:String x:Key="SheetLayout">表单布局</system:String>
+    <system:String x:Key="Auto-Naming">自动命名</system:String>
+    <system:String x:Key="Properties">属性</system:String>
+    <system:String x:Key="Step:">步：</system:String>
+    <system:String x:Key="Transition:">跳转：</system:String>
+    <system:String x:Key="Action:">操作：</system:String>
+    <system:String x:Key="Stop:">停止：</system:String>
+
+    <!--  Routine SheetLayout  -->
+    <system:String x:Key="Sheet size:">表单大小：</system:String>
+    <system:String x:Key="Orientation">方向</system:String>
+    <system:String x:Key="Landscape">横向</system:String>
+    <system:String x:Key="Portrait">纵向</system:String>
+
+    <!--  New Routine -->
+    <system:String x:Key="New Routine">新建例程</system:String>
+    <system:String x:Key="In Program or Phase:" xml:space="preserve">程序或
+相位中：</system:String>
+    <system:String x:Key="Assignment:">分配：</system:String>
+    <system:String x:Key="Failed to create the routine...">未能创建例程 “</system:String>
+    <system:String x:Key="New Routine.'.">”。</system:String>
+    <system:String x:Key="This type of routine...">不能创建这种类型的例程！该类型尚未实现。</system:String>
+    <system:String x:Key="Name can not be the same...">名称不能与设备相位例程名称相同。</system:String>
+
+    <!--  Program  -->
+    <system:String x:Key="Program Properties">程序属性</system:String>
+    <system:String x:Key="Failed to save a new program.">无法修改属性。</system:String>
+    <system:String x:Key="program name is empty.">名称为空。</system:String>
+    <system:String x:Key="program name invalid.">名称无效。</system:String>
+    <system:String x:Key="Invalid name.">名称无效。</system:String>
+    <system:String x:Key="A Tag by the same name already exists in this collection.">此集合中已存在名称相同的变量。</system:String>
+    <system:String x:Key="Invalid data type.">数据类型无效。</system:String>
+    <system:String x:Key="Tag can only be created at the Controller scope or as Local Tag / Inout Parameter at Program scope.">
+        只能在控制器作用域创建变量或在程序作用域将其创建为本地 变量/InOut 参数。
+    </system:String>
+    <system:String x:Key="Assigned routines:">分配的例程：</system:String>
+    <system:String x:Key="Prestate:">预状态：</system:String>
+    <system:String x:Key="Inhibit equipment phase">禁用设备模式</system:String>
+    <system:String x:Key="Initial state:">初始状态：</system:String>
+    <system:String x:Key="Complete state immediately if not implement or empty">如果未实施或为空则立即完成状态</system:String>
+    <system:String x:Key="Initial step index:">初始步骤索引：</system:String>
+    <system:String x:Key="External sequencer loss of communication command:">外部序列器通信命令丢失：</system:String>
+    <system:String x:Key="External request hold action:">外部请求持有操作：</system:String>
+    <system:String x:Key="Automatically assign the values of sequence step inputs to phase inputs">自动为相位输入分配顺序 step 输入值</system:String>
+    <system:String x:Key="Automatically assign the values of phase outputs to sequence step outputs when the phase is:">在相位为以下状态时自动为顺序 step 输出分配相位输出值：</system:String>
+    <system:String x:Key="Complete">完成</system:String>
+    <system:String x:Key="Stopped">已停止</system:String>
+    <system:String x:Key="Aborted">已终止</system:String>
+    <system:String x:Key="Schedule in:">规划于：</system:String>
+    <system:String x:Key="Major">主要</system:String>
+    <system:String x:Key="Minor">次要</system:String>
+    <system:String x:Key="Extended text">已扩展文本</system:String>
+    <system:String x:Key="Revision:">版本：</system:String>
+    <system:String x:Key="Revision note:">版本注释：</system:String>
+    <system:String x:Key="State:">状态：</system:String>
+    <system:String x:Key="Substate:">子状态：</system:String>
+    <system:String x:Key="Owners:">宿主：</system:String>
+    <system:String x:Key="Unit ID:">单元 ID：</system:String>
+    <system:String x:Key="Sequence ID:">顺序图 ID：</system:String>
+    <system:String x:Key="Retain sequence ID when resetting sequence">保持顺序图程序ID当程序复位时</system:String>
+    <system:String x:Key="Generate sequence events">触发顺序事件</system:String>
+    <system:String x:Key="For parameters and step tags using initial value as the value source:">如下配置参数和每个单步内的变量：</system:String>
+    <system:String x:Key="When starting sequence:">当启动顺序图程序时：</system:String>
+    <system:String x:Key="Use initial value of tag">使用变量初始值</system:String>
+    <system:String x:Key="Use current value of tag">使用变量当前值</system:String>
+    <system:String x:Key="When resetting sequence:">当复位顺序图程序时：</system:String>
+    <system:String x:Key="Restore tag to its initial value">恢复变量初始值</system:String>
+    <system:String x:Key="Maintain current value of tag">保持变量当前值</system:String>
+
+    <!--  New Program -->
+    <system:String x:Key="Use as folder">用作文件夹</system:String>
+    <system:String x:Key="Inhibit equipment sequence">禁用设备相位</system:String>
+    <system:String x:Key="Open sequence diagram">打开顺序图</system:String>
+    <system:String x:Key="Open properties">打开属性</system:String>
+    <system:String x:Key="New Program">新建程序</system:String>
+    <system:String x:Key="New Equipment Phase">新建设备模式</system:String>
+    <system:String x:Key="New Equipment Sequence">新建设备顺序</system:String>
+    <system:String x:Key="Failed to create program.">创建程序失败。</system:String>
+    <system:String x:Key="Failed to create the program..." >未能创建程序 “</system:String>
+    <system:String x:Key="New Program.'." >”。</system:String>
+    <system:String x:Key="New Program.Inhibit program">禁用程序</system:String>
+
+    <!--  Task  -->
+    <system:String x:Key="Task Properties">任务属性</system:String>
+    <system:String x:Key="Priority:">优先级：</system:String>
+    <system:String x:Key="Watchdog:">看门狗：</system:String>
+    <system:String x:Key="Program Schedule">程序调度</system:String>
+    <system:String x:Key="Trigger:">触发器：</system:String>
+    <system:String x:Key="Execute task if no event occurs within">如果在此时间内未发生事件则执行任务</system:String>
+    <system:String x:Key="Disable automatic output processing to reduce task overhead">禁用自动输出处理以降低任务开销</system:String>
+    <system:String x:Key="Inhibit task">禁用任务</system:String>
+    <system:String x:Key="ms">毫秒</system:String>
+    <system:String x:Key="(Lower number yields higher priority)">（数字越小，优先级越高）</system:String>
+    <system:String x:Key="Period:">周期：</system:String>
+    <system:String x:Key="Invalid Watchdog.">看门狗无效。</system:String>
+    <system:String x:Key="Enter a watchdog in the range(0.100 - 2000000.000)ms.">请输入(0.100 - 2000000.000)毫秒范围内的看门狗。</system:String>
+    <system:String x:Key="Invalid Period.">周期无效。</system:String>
+    <system:String x:Key="Enter a period in the range(0.100 - 2000000.000)ms.">请输入(0.100 - 2000000.000)毫秒范围内的周期。</system:String>
+    <system:String x:Key="ICS Studio only supports one continuous task.">ICS Studio只支持一个连续任务。</system:String>
+    <system:String x:Key="Choose another type.">选择另一种类型。</system:String>
+    <system:String x:Key="Failed to save a new task '">无法修改任务&quot;</system:String>
+    <system:String x:Key="task name invalid.">名称无效。</system:String>
+    <system:String x:Key="Scan times(elapsed time):">扫描时间（已用时间）：</system:String>
+    <system:String x:Key="Max:">最大：</system:String>
+    <system:String x:Key="Reset">重置</system:String>
+    <system:String x:Key="Last:">上次：</system:String>
+    <system:String x:Key="Interval times(elapsed time between triggers):">间隔时间（两次触发器之间的已用时间）：</system:String>
+    <system:String x:Key="Min:">最小：</system:String>
+
+    <system:String x:Key="Task overlap count:">任务超时计数：</system:String>
+    <system:String x:Key="Unscheduled:">未规划：</system:String>
+    <system:String x:Key="Scheduled:">已规划：</system:String>
+    <system:String x:Key="Move">移动</system:String>
+
+    <!--  New Task -->
+    <system:String x:Key="New Task">新建任务</system:String>
+    <system:String x:Key="Tag:">变量：</system:String>
+    <system:String x:Key="Failed to create task.">未能创建任务。</system:String>
+    <system:String x:Key="Invalid Priority.">优先级无效。</system:String>
+    <system:String x:Key="Failed to create the task..." >未能创建任务 “</system:String>
+    <system:String x:Key="New Task.'.">”。</system:String>
+    <system:String x:Key="Currently not support">目前不支持</system:String>
+    <system:String x:Key=".">。</system:String>
+    <system:String x:Key="Enter a watchdog in the range">请输入</system:String>
+    <system:String x:Key="ms.">毫秒范围内的看门狗。</system:String>
+    <system:String x:Key="Enter a priority in the range">请输入</system:String>
+    <system:String x:Key="Priority.">范围内的优先级。</system:String>
+    <system:String x:Key="Enter a period in the range">请输入</system:String>
+    <system:String x:Key="Period.">范围内的周期。</system:String>
+
+    <!--  CommandService  -->
+    <system:String x:Key="Failed to go online with the controller.">控制器无法联机，</system:String>
+    <system:String x:Key="Communications timed out.">通信超时，</system:String>
+    <system:String x:Key="Done downloading. Change controller mode back to Remote Run?">下载完成。将控制器模式更改回远程运行？</system:String>
+    <system:String x:Key="Download failed!">下载失败！</system:String>
+    <system:String x:Key="Download change failed!">下载更改失败！</system:String>
+    <system:String x:Key="Can't download to faulted controller. Clear faults and try again.">无法下载到出现故障的控制器。清除故障，然后重试。</system:String>
+    <system:String x:Key="Compare failed!">比较失败！</system:String>
+    <system:String x:Key="Failed to go online with the controller!">控制器无法联机！</system:String>
+    <system:String x:Key="The actual controller type does not match the controller type for this project.">实际控制器类型与此项目的控制器类型不匹配。</system:String>
+    <system:String x:Key="Download failed! Clear error first!">下载失败！请先清除错误！</system:String>
+    <system:String x:Key="Upload failed!">上载失败！</system:String>
+    <system:String x:Key="Go online failed!">联机失败！</system:String>
+    <system:String x:Key="failed to go online with the controller.">控制器无法联机，</system:String>
+    <system:String x:Key="Communications path needed.">需要通信路径。</system:String>
+    <system:String x:Key="Error 701-8004280D">错误 701-8004280D</system:String>
+    <system:String x:Key="Save to controller successfully.">保存到控制器成功。</system:String>
+    <system:String x:Key="Save to controller unsuccessfully.">保存到控制器失败！</system:String>
+
+    <!--  Controller  -->
+
+    <system:String x:Key="Program">程序</system:String>
+    <system:String x:Key="Watchdog">看门狗</system:String>
+    <system:String x:Key="Controller Fault Task:">控制器故障处理任务：</system:String>
+    <system:String x:Key="StartUp Task:">初始化任务：</system:String>
+    <system:String x:Key="Match Project to Controller">将项目与控制器匹配</system:String>
+    <system:String x:Key="Allow Consumed Tags to Use RPI Provided by Producer">允许消费变量使用生产者提供的 RPI</system:String>
+
+    <system:String x:Key="System Background Task Time Percent:" xml:space="preserve">系统背景任务时间比例：</system:String>
+    <system:String x:Key="During Unused System Background Task Time Slice">剩余的系统开销任务时间</system:String>
+    <system:String x:Key="Run Continuous Task">运行连续任务</system:String>
+    <system:String x:Key="Reserve for System Tasks eg Communications">为系统任务保留，如通信</system:String>
+    <system:String x:Key="Clear Alarm Log">清除警报日志</system:String>
+    <system:String x:Key="Last Clear State:">上次清除状态：</system:String>
+    <system:String x:Key="The Date and Time displayed here is Controller local time" xml:space="preserve">此处显示的日期和时间是控制器本地时间，不是工作站本地时间。
+使用这些字段可以配置控制器的时间属性。
+    </system:String>
+    <system:String x:Key="Set Date Time and Zone from Workstation">从工作站设置日期、时间和时区</system:String>
+    <system:String x:Key="Date and Time:">日期和时间：</system:String>
+    <system:String x:Key="Change Date and Time...">更改日期和时间...</system:String>
+    <system:String x:Key="Time Zone:">时区:</system:String>
+    <system:String x:Key="Adjust for Daylight Saving(+00:00)">调整夏令时(+00:00)</system:String>
+    <system:String x:Key="Time Synchronize">时间同步</system:String>
+    <system:String x:Key="Is the system time master">系统主时钟</system:String>
+    <system:String x:Key="Is a synchronized time slave">同步从时钟</system:String>
+    <system:String x:Key="Duplicate CST master detected">检测到多重 CST</system:String>
+    <system:String x:Key="CST Mastership disabled">CST 主站功能禁用</system:String>
+    <system:String x:Key="No CST master">无 CST 主站</system:String>
+
+    <system:String x:Key="DANGER If time synchronization is" xml:space="preserve">危险！如果在联机状态下禁用时间同步，
+在该机架中任何控制器下处于激活状态
+下的轴或其它已同步设备可能出现意外
+运动。</system:String>
+    <system:String x:Key="Advanced...">高级...</system:String>
+    <system:String x:Key="Vendor:">供应商：</system:String>
+
+    <system:String x:Key="Change Controller">更换控制器</system:String>
+
+    <system:String x:Key="Failed to modify the controller properties.">无法修改控制器属性。</system:String>
+    <system:String x:Key="Name is invalid.">名称无效。</system:String>
+    <system:String x:Key="Recent Faults:">最近故障：</system:String>
+    <system:String x:Key="Clear Minors">清除一般故障</system:String>
+    <system:String x:Key="Fault Bit:">故障位：</system:String>
+    <system:String x:Key="Powerup">加电</system:String>
+    <system:String x:Key="Energy Storage">能量存储</system:String>
+    <system:String x:Key="Diagnostics">诊断</system:String>
+    <system:String x:Key="License">许可证</system:String>
+    <system:String x:Key="Alarm">报警</system:String>
+    <system:String x:Key="Image in Nonvolatile Memory">非易失性内存中的映像</system:String>
+    <system:String x:Key="Load Image:">载入映像：</system:String>
+    <system:String x:Key="Load Mode:">载入模式：</system:String>
+    <system:String x:Key="Image Note:">映像注释：</system:String>
+    <system:String x:Key="Stored:">存储时间：</system:String>
+    <system:String x:Key="Load Store...">载入/存储...</system:String>
+    <system:String x:Key="Inhibit Automatic Firmware Update">禁用自动固件更新</system:String>
+    <system:String x:Key="Created:">创建时间：</system:String>
+    <system:String x:Key="Edited:">编辑时间：</system:String>
+    <system:String x:Key="Download Project Documentation and Extended Properties">下载项目文档和扩展属性</system:String>
+    <system:String x:Key="Download Custom Properties">下载自定义属性</system:String>
+    <system:String x:Key="Pass-Through Display">传递显示</system:String>
+    <system:String x:Key="Show Pass-Through Properties">显示传递属性</system:String>
+    <system:String x:Key="Append To Base Tag Description">附加至基本变量说明</system:String>
+    <system:String x:Key="Security Authority:">安全授权：</system:String>
+    <system:String x:Key="Use only the selected Security Authority for Authentication and Authorization">仅使用选择的安全授权进行身份验证和授权</system:String>
+    <system:String x:Key="Logical Name">逻辑名称</system:String>
+    <system:String x:Key="Controller Name">&lt;控制器名称&gt;</system:String>
+    <system:String x:Key="Permission Set">权限集</system:String>
+    <system:String x:Key="Restrict Communications Except Through Selected Slots">限制不通过所选插槽的通信</system:String>
+    <system:String x:Key="Select Slots:">选择插槽：</system:String>
+    <system:String x:Key="Change Detection">更改检测</system:String>
+    <system:String x:Key="Changes To Detect:">要检测的更改：</system:String>
+    <system:String x:Key="Configure...">配置...</system:String>
+    <system:String x:Key="Audit Value:">审核值：</system:String>
+    <system:String x:Key="Tracked State Value:">跟踪状态值：</system:String>
+    <system:String x:Key="View Components...">查看组件...</system:String>
+    <system:String x:Key="Port:">端口号：</system:String>
+    <system:String x:Key="Manually configure IP settings">手动配置 IP 设置</system:String>
+    <system:String x:Key="Obtain IP settings automatically using DHCP">使用 DHCP 自动获取 IP 设置</system:String>
+    <system:String x:Key="IP Address:">IP 地址：</system:String>
+    <system:String x:Key="Subnet Mask:">子网掩码：</system:String>
+    <system:String x:Key="Gateway Address:">网关地址：</system:String>
+    <system:String x:Key="Domain Name:">域名：</system:String>
+    <system:String x:Key="Primary DNS Server Address:">主 DNS 服务器地址：</system:String>
+    <system:String x:Key="Host Name:">主机名：</system:String>
+    <system:String x:Key="Secondary DNS Server Address:">次 DNS 服务器地址：</system:String>
+    <system:String x:Key="Network Topology:">网络拓扑：</system:String>
+    <system:String x:Key="Network Status:">网络状态：</system:String>
+    <system:String x:Key="Active Ring Supervisor:">主动环管理程序：</system:String>
+    <system:String x:Key="Active Supervisor Precedence:" xml:space="preserve">主动管理程序优先：</system:String>
+    <system:String x:Key="Reset Counter">重置计数器</system:String>
+    <system:String x:Key="Enable Supervisor Mode">启动管理程序模式</system:String>
+    <system:String x:Key="Ring Fault">环故障</system:String>
+    <system:String x:Key="Ring Faults Detected:">检测到环故障：</system:String>
+    <system:String x:Key="Supervisor Status:">管理程序状态：</system:String>
+    <system:String x:Key="Link Status">链路状态</system:String>
+    <system:String x:Key="Auto">自动</system:String>
+    <system:String x:Key="Negotiate">协商</system:String>
+    <system:String x:Key="Execution Control:">执行控制：</system:String>
+    <system:String x:Key="Execute current active steps only">仅执行当前的活动步</system:String>
+
+    <system:String x:Key="Execute until FALSE transition">一直执行直到跳转条件为假</system:String>
+    <system:String x:Key="Restart Position">重新开始位置：</system:String>
+    <system:String x:Key="Restart at most recently">从最近执行的步骤重新开始</system:String>
+    <system:String x:Key="Restart at initial step">从第一步重新开始</system:String>
+
+    <system:String x:Key="Last Scan of Active Steps:">当前激活步的最后一次扫描：</system:String>
+    <system:String x:Key="Automatic reset">自动重置</system:String>
+    <system:String x:Key="Programmatic reset">计划重置</system:String>
+    <system:String x:Key="Do not reset">不重置</system:String>
+    <system:String x:Key="Changing the controller type will change">
+        更改控制器类型将更改和（或）删除那些对新控制器类型无效的控制器属性和其它项目数据，并（或）使他们失效。
+    </system:String>
+    <system:String x:Key="Changing the controller type from a">将控制器类型由</system:String>
+    <system:String x:Key="to a">更改为</system:String>
+    <system:String x:Key="will affect the project in a number of ways:">将在许多方面影响项目：</system:String>
+    <system:String x:Key="Change controller type?">是否更改控制器类型？</system:String>
+    <system:String x:Key="Offline.">脱机。</system:String>
+    <system:String x:Key="Port Configuration">端口配置</system:String>
+    <system:String x:Key="Advanced.">高级</system:String>
+    <system:String x:Key="Alarm Log">警报日志</system:String>
+    <system:String x:Key="SFC Execution">SFC 执行</system:String>
+    <system:String x:Key="Capacity">容量</system:String>
+    <system:String x:Key="Internet Protocol">Internet 协议</system:String>
+    <system:String x:Key="Yes">是</system:String>
+    <system:String x:Key="No">否</system:String>
+    <system:String x:Key="Secure With:">加密：</system:String>
+    <system:String x:Key="Clear log causes undelivered alarm log messages to not be delivered to subscribers of the alarm log">清除日志会导致未传递的警报日志消息无法传递到警报日志对应的用户。</system:String>
+    <system:String x:Key="Change controller">更换控制器</system:String>
+    <system:String x:Key="From">从</system:String>
+    <system:String x:Key="Changing the controller type" xml:space="preserve">更改控制器类型将会更改和（或）删除那些对新控制器类型无效的控制器属性和其他项目数据，并（或）使他们失效。</system:String>
+    <system:String x:Key="Software Version:" xml:space="preserve">软件
+版本：</system:String>
+    <system:String x:Key="To">至</system:String>
+    <system:String x:Key="Configure Changes to Detect">配置要检测的更改</system:String>
+    <system:String x:Key="Port configuration has been changed">端口配置已更改</system:String>
+    <system:String x:Key="Parameter Connection has been modified">参数连接已修改</system:String>
+    <system:String x:Key="Alarm Log values cleared">报警日志值已清除</system:String>
+    <system:String x:Key="Safety signature deleted allowed in Run mode">已在运行模式下允许安全签名删除</system:String>
+    <system:String x:Key="Safety signature delete inhibited in Run mode">已在运行模式下禁止安全签名删除</system:String>
+    <system:String x:Key="Correlation affected">相关性受影响</system:String>
+    <system:String x:Key="Custom Log Entry Added">自定义日志条目已添加</system:String>
+    <system:String x:Key="Constant Tag attribute set">常数变量属性已设置</system:String>
+    <system:String x:Key="Constant Tag attribute clear">常数变量属性已清除</system:String>
+    <system:String x:Key="Multiple constant Tag values changed">多个常数变量值已更改</system:String>
+    <system:String x:Key="Constant Tag value changed">常数变量值已更改</system:String>
+    <system:String x:Key="Safety unlock">安全解锁</system:String>
+    <system:String x:Key="Safety lock">安全锁定</system:String>
+    <system:String x:Key="Safety signature deleted">安全签名已删除</system:String>
+    <system:String x:Key="Safety signature created">安全签名已创建</system:String>
+    <system:String x:Key="Removable media inserted">可移动介质已插入</system:String>
+    <system:String x:Key="Removable media removed">可移动介质已移除</system:String>
+    <system:String x:Key="Controller time slice modified">控制器时间片已修改</system:String>
+    <system:String x:Key="Program properties modified">程序属性已修改</system:String>
+    <system:String x:Key="Task properties modified">任务属性已修改</system:String>
+    <system:String x:Key="All major faults cleared though keyswitch">已通过按键开关清除所有严重故障</system:String>
+    <system:String x:Key="All major faults cleared">所有严重故障已清除</system:String>
+    <system:String x:Key="A major fault occurred">发生严重故障</system:String>
+    <system:String x:Key="Keyswitch mode changed">按键开关模式更改</system:String>
+    <system:String x:Key="Remote mode changed">远程模式更改</system:String>
+    <system:String x:Key="Firmware update from removable media attempted">已尝试从可移动介质进行固件更新</system:String>
+    <system:String x:Key="Firmware update attempted">已尝试固件更新</system:String>
+    <system:String x:Key="I/O forces modified">I/O 强制已修改</system:String>
+    <system:String x:Key="I/O forces removed">I/O 强制已删除</system:String>
+    <system:String x:Key="I/O forces disabled">I/O 强制已禁用</system:String>
+    <system:String x:Key="I/O forces enabled">I/O 强制已启用</system:String>
+    <system:String x:Key="SFC element force value changed">SFC 元素强制值已更改</system:String>
+    <system:String x:Key="SFC forces removed">SFC 强制已删除</system:String>
+    <system:String x:Key="SFC forces disabled">SFC 强制已禁用</system:String>
+    <system:String x:Key="SFC forces enabled">SFC 强制已启用</system:String>
+    <system:String x:Key="Transaction committed">事务已提交</system:String>
+    <system:String x:Key="Online edits modified controller program">联机编辑修改了控制器程序</system:String>
+    <system:String x:Key="Project stored to removable media">项目已存储至可移动介质</system:String>
+
+    <!--  Find  -->
+    <system:String x:Key="Find in Routines">在例程中查找</system:String>
+    <system:String x:Key="Find What:">查找内容：</system:String>
+    <system:String x:Key="Limit To:">限于：</system:String>
+    <system:String x:Key="Replace With:">替换为：</system:String>
+    <system:String x:Key="Find Where:">查找位置：</system:String>
+    <system:String x:Key="Wrap">换行</system:String>
+    <system:String x:Key="Direction:" xml:space="preserve">方向：                  </system:String>
+    <system:String x:Key="Match Whole Word Only">全字匹配</system:String>
+    <system:String x:Key="Up">向上</system:String>
+    <system:String x:Key="Down">向下</system:String>
+    <system:String x:Key="Use Wildcards">使用通配符</system:String>
+    <system:String x:Key="Find Within" xml:space="preserve"> 查找范围 </system:String>
+    <system:String x:Key="Find All">查找全部</system:String>
+    <system:String x:Key="Replace">替换</system:String>
+    <system:String x:Key="Replace All">替换全部</system:String>
+    <system:String x:Key="Components:">组件：</system:String>
+    <system:String x:Key="Options:" xml:space="preserve">  选项：</system:String>
+    <system:String x:Key="Text Only">仅限文本</system:String>
+    <system:String x:Key="References to Exact Tag and its Members">引用精确变量及其成员</system:String>
+    <system:String x:Key="References to Tag">引用变量</system:String>
+    <system:String x:Key="Forces">强制</system:String>
+    <system:String x:Key="Edit Zones">编辑区</system:String>
+    <system:String x:Key="Active SFC Steps and Actions">活动 SFC Steps 和 Actions</system:String>
+    <system:String x:Key="Shorted Branches">短路分支</system:String>
+    <system:String x:Key="Function Block Diagrams">功能区块图</system:String>
+    <system:String x:Key="Ladder Diagrams">梯形图</system:String>
+    <system:String x:Key="Sequential Function Charts">顺序功能图</system:String>
+
+    <!--  Search Item Browser  -->
+    <system:String x:Key="Search Item Browser">搜索项浏览器</system:String>
+    <system:String x:Key="Item:">项目：</system:String>
+    <system:String x:Key="Item Type:">项目类型：</system:String>
+    <system:String x:Key="Language Elements">语言元素</system:String>
+    <system:String x:Key="Equipment Sequences">设备顺序</system:String>
+    <system:String x:Key="Find Within GtString">查找范围&gt;&gt;</system:String>
+    <system:String x:Key="LtString Find Within">&lt;&lt;查找范围</system:String>
+    <system:String x:Key="Replace in Routines">在例程中替换</system:String>
+    <system:String x:Key="Searching for">正在搜索</system:String>
+    <system:String x:Key="Replacing">正在将</system:String>
+    <system:String x:Key="with">替换为</system:String>
+    <!--<system:String x:Key="occurrence(s)">个</system:String>
+    <system:String x:Key="found">找到</system:String>
+    <system:String x:Key="searched">已搜索</system:String>-->
+    <system:String x:Key="Element Names">元素名</system:String>
+    <system:String x:Key="Tag Descriptions">变量描述</system:String>
+    <system:String x:Key="Tag Names">变量名称</system:String>
+    <system:String x:Key="Tag Parameter Expressions">变量参数表达式</system:String>
+    <system:String x:Key="Tag Types">变量类型</system:String>
+    <system:String x:Key="Transition Conditions">转换条件</system:String>
+    <system:String x:Key="Descriptions">说明</system:String>
+    <system:String x:Key="Element Contents">元素内容</system:String>
+    <system:String x:Key="Element Types">元素类型</system:String>
+    <system:String x:Key="TextBox Contents">文本框内容</system:String>
+    <system:String x:Key="Instruction Main Operand Comments">指令主操作数注释</system:String>
+    <system:String x:Key="Instruction Operands">指令操作数</system:String>
+    <system:String x:Key="Instructions">指令</system:String>
+    <system:String x:Key="Rung Comments">梯级注释</system:String>
+    <system:String x:Key="Rung Types">梯级类型</system:String>
+    <system:String x:Key="Entire Routine Except Descriptions and Text Boxes">除说明和文本框外的例程</system:String>
+    <system:String x:Key="Text Boxes">文本框</system:String>
+    <system:String x:Key="Comments">注释</system:String>
+    <system:String x:Key="Statements">语句</system:String>
+    <system:String x:Key="Error: Find Where command mismatch">“查找位置”字段必须与控制器管理器中选定项的上下文和类型相匹配。</system:String>
+    <system:String x:Key="Current Routine">当前例程</system:String>
+    <system:String x:Key="All Routines in Current Program / Equipment Phase">当前程序/设备模式中的所有例程</system:String>
+    <system:String x:Key="All Routines in Current Task">当前任务中的所有例程</system:String>
+    <system:String x:Key="All Routines">所有例程</system:String>
+
+    <!--  Cross Reference  -->
+    <system:String x:Key="Routine">例程</system:String>
+    <system:String x:Key="Element">元素</system:String>
+    <system:String x:Key="Location">位置</system:String>
+    <system:String x:Key="Reference">引用</system:String>
+    <system:String x:Key="Destructive">破坏性</system:String>
+    <system:String x:Key="By Logic">按逻辑</system:String>
+    <system:String x:Key="By Tag">按变量</system:String>
+    <system:String x:Key="By Hierarchy">变量层次结构</system:String>
+    <system:String x:Key="By Connection">通过连接</system:String>
+    <system:String x:Key="Alias For">别名</system:String>
+    <system:String x:Key="EndPoint">端点</system:String>
+    <system:String x:Key="READOrWRITE">读/写</system:String>
+    <system:String x:Key="BaseVariable">基变量</system:String>
+    <system:String x:Key="ReferencesCount">引用数目:</system:String>
+
+    <!--  Controller Overview  -->
+    <system:String x:Key="No Forces">无强制</system:String>
+    <system:String x:Key="No Edits">无编辑</system:String>
+    <system:String x:Key="Controller Properties">控制器属性</system:String>
+    <system:String x:Key="Battery Ok">能量存储正常</system:String>
+    <system:String x:Key="Bat">能量存储</system:String>
+    <system:String x:Key="I/O Not Present">I/O 不存在</system:String>
+    <system:String x:Key="IO Forcing">强制 I/O</system:String>
+    <system:String x:Key="SFC Forcing">强制 SFC</system:String>
+    <system:String x:Key="Enable All IO Forces">启用所有强制 I/O</system:String>
+    <system:String x:Key="Disable All IO Forces">禁用所有强制 I/O</system:String>
+    <system:String x:Key="Remove All IO Forces">去除所有强制 I/O</system:String>
+    <system:String x:Key="Enable All SFC Forces">启用所有强制 SFC</system:String>
+    <system:String x:Key="Disable All SFC Forces">禁用所有强制 SFC</system:String>
+    <system:String x:Key="Remove All SFC Forces">去除所有强制 SFC</system:String>
+    <system:String x:Key="Accept Pending Program Edits">接受待定程序编辑</system:String>
+    <system:String x:Key="Cancel Pending Program Edits">取消待定程序编辑</system:String>
+    <system:String x:Key="Test Accepted Program Edits">测试已接受程序编辑</system:String>
+    <system:String x:Key="Untest Accepted Program Edits">不测试已接受程序编辑</system:String>
+    <system:String x:Key="Assemble Accepted Program Edits">集合已接受程序编辑</system:String>
+    <system:String x:Key="Cancel Accepted Program Edits">取消已接受程序 编辑</system:String>
+    <system:String x:Key="Finalize All Edits in Program">最终确定程序中的所有编辑</system:String>
+    <system:String x:Key="Path">路径</system:String>
+
+
+    <!--  Errors  -->
+    <system:String x:Key="Warnings">警告</system:String>
+    <system:String x:Key="Information">消息</system:String>
+    <system:String x:Key="Search">搜索</system:String>
+    <system:String x:Key="Clear">清空</system:String>
+
+    <!--  Add-On Instruction  -->
+    <system:String x:Key="New Add-On Instruction">新建自定义功能块</system:String>
+    <system:String x:Key="Open Logic Routine">打开逻辑例程</system:String>
+    <system:String x:Key="Open Definition">打开定义</system:String>
+    <system:String x:Key=" Extended Text">扩展文本</system:String>
+    <system:String x:Key="Copy All Default Values">将所有缺省参数和本地变量值赋给所有声明为该指令类型的变量。</system:String>
+    <system:String x:Key="Logic">逻辑</system:String>
+    <system:String x:Key="Revision Note:">版本注释：</system:String>
+    <system:String x:Key="Change Type...">更改类型...</system:String>
+    <system:String x:Key="Req">必需</system:String>
+    <system:String x:Key="Vis">可视</system:String>
+    <system:String x:Key="External Access">外部访问</system:String>
+    <system:String x:Key="Move Up">上移</system:String>
+    <system:String x:Key="Move Down">下移</system:String>
+    <system:String x:Key="Go To">转至</system:String>
+    <system:String x:Key="The Controller Prescan  And">控制器可以预扫描和后扫描自定义功能块逻辑例程，但在 Enableln 为&quot;假&quot;时不会执行逻辑例程</system:String>
+    <system:String x:Key="Optional Prescan Postscan And">可选的预扫描、后扫描和 EnableInFalse.routine 可以在下面配置</system:String>
+    <system:String x:Key="Prescan Routine Executes">预扫描例程：在从程序转换为运行模式的第一次扫描前执行</system:String>
+    <system:String x:Key="Execute Prescan Routine After">在预扫描逻辑例程后执行预扫描例程</system:String>
+    <system:String x:Key="Postscan Routine Executes">后扫描例程：如果为自动重置配置了SFC，则在步骤的最后一次扫描时执行</system:String>
+    <system:String x:Key="Execute Postscan Routine After">在后扫描逻辑例程后执行后扫描例程</system:String>
+    <system:String x:Key="EnableInFalse Routine Executes">EnableInFalse 例程：当 EnableIn 参数为&quot;假&quot;时执行</system:String>
+    <system:String x:Key="Execute EnableInFalse Routine">执行 EnableInFalse 例程</system:String>
+    <system:String x:Key="Delete">删除</system:String>
+    <system:String x:Key="New Scan Mode Routine">新建扫描模式例程</system:String>
+    <system:String x:Key="Mode:">模式：</system:String>
+    <system:String x:Key="Instruction:">指令：</system:String>
+    <system:String x:Key="Open Routine">打开例程</system:String>
+    <system:String x:Key="Signature">签名</system:String>
+    <system:String x:Key="Generate A Signature To">生成签名以唯一标识该指令，防止被修改。</system:String>
+    <system:String x:Key="Generate...">生成...</system:String>
+    <system:String x:Key="Remove...">移除...</system:String>
+    <system:String x:Key="Copy">复制</system:String>
+    <system:String x:Key="Add To History...">添加到历史纪录...</system:String>
+    <system:String x:Key="User">用户</system:String>
+    <system:String x:Key="Signature Id">签名 ID</system:String>
+    <system:String x:Key="Timestamp">时戳</system:String>
+    <system:String x:Key="Clear Signature History...">清除签名历史纪录...</system:String>
+    <system:String x:Key="By Edit:">编辑人：</system:String>
+    <system:String x:Key="By:">创建人：</system:String>
+    <system:String x:Key="Clear Identities">清除标识</system:String>
+    <system:String x:Key="Local Tags">本地 Tag</system:String>
+    <system:String x:Key="Extended Description Text:">扩展说明文本：</system:String>
+    <system:String x:Key="Instruction Help Preview:">指令帮助预览：</system:String>
+    <system:String x:Key="Byte">字节</system:String>
+    <system:String x:Key="Extended Text">扩展文本</system:String>
+    <system:String x:Key="Scan Modes">扫描模式</system:String>
+    <system:String x:Key="Change History">更改历史记录</system:String>
+    <system:String x:Key="Categories:">类别：</system:String>
+    <system:String x:Key="Members:">成员：</system:String>
+    <system:String x:Key="Style">格式</system:String>
+    <system:String x:Key="Local Variables">本地变量</system:String>
+    <system:String x:Key="InstructionDefinition">用户自定义功能块</system:String>
+
+
+    <!--  Data Type UDT、Strings  -->
+    <system:String x:Key="Data Type">数据类型</system:String>
+    <system:String x:Key="Maximum Characters：">最大字符数(M)：</system:String>
+    <system:String x:Key="Enter A Value Between">请输入一个在 1至65535 之间的值</system:String>
+    <system:String x:Key="Select Data Type">选择数据类型</system:String>
+    <system:String x:Key="Array Dimensions">数组维数</system:String>
+    <system:String x:Key="Show Data Types By Groups">按组显示数据类型</system:String>
+    <system:String x:Key="Dim2">维2</system:String>
+    <system:String x:Key="Dim1">维1</system:String>
+    <system:String x:Key="Dim0">维0</system:String>
+    <system:String x:Key="AddMember">* 添加成员...</system:String>
+    <system:String x:Key="DataTypeSize">数据总长度</system:String>
+    <system:String x:Key="New">新建</system:String>
+    <system:String x:Key="String">字符串</system:String>
+    <system:String x:Key="Bytes">字节</system:String>
+    <system:String x:Key="DeleteMember">删除成员</system:String>
+    <system:String x:Key="InsertMember">插入成员</system:String>
+
+
+    <!--  WarningDialog  -->
+    <system:String x:Key="Warning">警告</system:String>
+    <system:String x:Key="MotorCatalogNumberSelected">所选电机目录号不在筛选列表中。</system:String>
+    <system:String x:Key="Tag name invalid.">Tag 名称无效。</system:String>
+    <system:String x:Key="Failed to create a new tag.">创建新变量失败。</system:String>
+    <system:String x:Key="Data type could not be found.">找不到数据类型。</system:String>
+    <system:String x:Key="Failed to interpret data type.">无法解释数据类型。</system:String>
+    <system:String x:Key="Tag data type string invalid.">变量数据类型字符串无效。</system:String>
+    <system:String x:Key="Enter a value between 1 and 65535 for Maximum Characters">输入的最大字符数在1 ~ 65535之间</system:String>
+    <system:String x:Key="Error in member data type:Data type is invalid.">成员数据类型错误：数据类型无效。</system:String>
+    <system:String x:Key="Error in member data type:The size of the array on the data type is invalid.">成员数据类型错误：数据类型上的数组大小无效。</system:String>
+    <system:String x:Key="Unable to modify data type:At least one member required.">无法修改数据类型：至少需要一个成员。</system:String>
+    <system:String x:Key="Entered source keys do not match.">输入的源密钥不匹配。</system:String>
+    <system:String x:Key="Source key is invalid.">源密钥无效。</system:String>
+    <system:String x:Key="Source key must be 1-40 characters in length.">源密钥长度为1-40个字符。</system:String>
+    <system:String x:Key="CIP Error: Keyswitch position invalid for this operation.">CIP错误：此操作的拨码开关位置无效。</system:String>
+    <system:String x:Key="Name is null.">名称为空。</system:String>
+    <system:String x:Key="Name too long.">名称过长。</system:String>
+    <system:String x:Key="Invalid string because it represents a reserved keyword.">由于字符串表示了保留的关键字，所以无效。</system:String>
+    <system:String x:Key="Failed to save the project as '">无法将项目保存为 '</system:String>
+    <system:String x:Key="Failed to modify the instruction.">无法修改指令。</system:String>
+    <system:String x:Key="A User-Defined Data Type By The Same Name Already Exists">名称相同，用户自定义数据类型已存在，这将与指令自定义功能块中定义的数据类型冲突。</system:String>
+    <system:String x:Key="This is a reserved instruction name.">这是保留的指令名称。</system:String>
+    <system:String x:Key="Value must be within 0 and 65535.">值必须在0到65535之间。</system:String>
+    <system:String x:Key="Invalid">无效的</system:String>
+    <system:String x:Key="Revision Value.">修改值。</system:String>
+    <system:String x:Key="String invalid.">字符串无效。</system:String>
+    <system:String x:Key="Signed value overflow.">符号值溢出。</system:String>
+    <system:String x:Key="A Parameter or Local Tag by the same name already exists in this Add-On-Instruction Defined.">此自定义功能块中已存在名称相同的参数或本地变量。</system:String>
+    <system:String x:Key="Failed to modify">无法更改</system:String>
+    <system:String x:Key="properties for.">的属性。</system:String>
+    <system:String x:Key="VariableNameInvalid">变量名称无效。</system:String>
+    <system:String x:Key="CompilingProject">编译项目</system:String>
+    <system:String x:Key="SaveToController">保存到控制器</system:String>
+    <system:String x:Key="ChangeControllerIntoProgramMode">改变控制器到程序模式</system:String>
+    <system:String x:Key="PreservingOnlineTagValues">保留在线变量值</system:String>
+    <system:String x:Key="DownloadingProject">下载项目</system:String>
+    <system:String x:Key="UpdateControllerState">更新控制器状态</system:String>
+    <system:String x:Key="SynchronizingDataForProject">同步项目数据</system:String>
+    <system:String x:Key="RestoringOnlineTagValues">恢复在线变量值</system:String>
+    <system:String x:Key="UploadingProject">上传项目</system:String>
+    <system:String x:Key="SavingProject">存储项目</system:String>
+    <system:String x:Key="Project file of">项目文件 “</system:String>
+    <system:String x:Key="has been changed.Save the changes ?">” 已更改。是否保存更改？</system:String>
+    <system:String x:Key="Array index invalid.">数组索引无效。</system:String>
+    <system:String x:Key="Input or output parameter must be BOOL,SINT,INT,DINT, or REAL data type.">输入或输出参数必须为BOOL、SINT、INT、DINT或REAL数据类型。</system:String>
+    <system:String x:Key="Invalid array.Input or output parameter must be BOOL,SINT,INT,DINT,or REAL with no dimensions.">无效的数组。输入或输出参数必须是BOOL,SINT,INT,DINT或REAL，没有维度。</system:String>
+    <system:String x:Key="Number ,size,or format of dimensions specified for this tag or type is invalid.">为此标记或类型指定的尺寸的数量、大小或格式无效。</system:String>
+    <system:String x:Key="Tag cannot be created with data type that directly or indirectly references itself.Recursion is not allowed.">标记不能使用直接或间接引用自身的数据类型创建。不允许递归。</system:String>
+    <system:String x:Key="Failed to set parameter">设置参数</system:String>
+    <system:String x:Key="default value.">默认值失败。</system:String>
+    <system:String x:Key="The">该</system:String>
+    <system:String x:Key="data type is not supported by this controller type.">数据类型此控制器类型不支持。</system:String>
+    <system:String x:Key="Number,size,or format of dimensions specified for this tag or type is invalid.">为此标记或类型指定的尺寸的数量、大小或格式无效。</system:String>
+    <system:String x:Key="Cannot create arrays of this data type.">无法创建此数据类型的数组。</system:String>
+    <system:String x:Key="Cannot create multi dimensional arrays of this data type.">无法创建此数据类型的多维数组。</system:String>
+    <system:String x:Key="Tag can only be created as InOut parameter in Add-On Instruction.">标签只能在附加组件指令中作为InOut参数创建。</system:String>
+    <system:String x:Key="Input or output parameter must be of supported elementary data type.">输入或输出参数必须是受支持的基本数据类型。</system:String>
+    <system:String x:Key="Invalid array. Input or output parameter must be of supported elementary data type with on dimensions.">无效的数组。输入或输出参数必须是受支持的基本数据类型，没有维度。</system:String>
+    <system:String x:Key="The array size exceeds 2MBytes.">数组大小超过2MBytes。</system:String>
+    <system:String x:Key="Tag name is empty.">标签名称为空。</system:String>
+
+
+    <!--  New Tag  -->
+    <system:String x:Key="New Tag">新建 变量</system:String>
+    <system:String x:Key="New Parameter or Tag">新建 参数 或 变量</system:String>
+    <system:String x:Key="New Tag Name:">名称(N)：</system:String>
+    <system:String x:Key="New Tag Description:">说明(D)：</system:String>
+    <system:String x:Key="Usage:">用途(U)：</system:String>
+    <system:String x:Key="New Tag Type:">类型(E)：</system:String>
+    <system:String x:Key="Alias For:">别名(F)：</system:String>
+    <system:String x:Key="Parameter Connection:">参数连接(M)：</system:String>
+    <system:String x:Key="New Tag Scope:">作用域(S)：</system:String>
+    <system:String x:Key="External Access:">外部访问(X)：</system:String>
+    <system:String x:Key="Style:">格式(Y)：</system:String>
+    <system:String x:Key="New Tag Constant">常数(C)</system:String>
+    <system:String x:Key="Sequencing">定序(Q)</system:String>
+    <system:String x:Key="Open Configuration">打开配置(O)</system:String>
+    <system:String x:Key="Open Parameter Connections">打开参数连接(P)</system:String>
+    <system:String x:Key="Connection...">连接(C)...</system:String>
+    <system:String x:Key="New AoiTag Constant">常数(C)</system:String>
+    <system:String x:Key="Open">打开</system:String>
+    <system:String x:Key="Aoi Tag Configuration">配置(O)</system:String>
+    <system:String x:Key="New Add-On Instruction Parameter or Local Tag">新建自定义功能块参数或本地变量</system:String>
+
+    <!-- PID -->
+    <system:String x:Key="Tuning">整定</system:String>
+    <system:String x:Key="Alarms">报警</system:String>
+    <system:String x:Key="Scaling">用户单位</system:String>
+    <system:String x:Key="Setpoint(SP):">设置点(SP)：</system:String>
+    <system:String x:Key="Set Output:">设置输出：</system:String>
+    <system:String x:Key="Output Bias:">输出偏差</system:String>
+    <system:String x:Key="Manual Modes">手动模式</system:String>
+    <system:String x:Key="Manual">手动</system:String>
+    <system:String x:Key="Software Manual">软件手动</system:String>
+    <system:String x:Key="Tuning Constants">整定常数</system:String>
+    <system:String x:Key="Proportional Gain(Kc):">比例增益(Kc)：</system:String>
+    <system:String x:Key="Proportional Gain(Kp):">比例增益(Kp)：</system:String>
+    <system:String x:Key="Reset Time(Ti):">重置时间(Ti)：</system:String>
+    <system:String x:Key="Integral Gain(Ki):">积分增益(Ki)：</system:String>
+    <system:String x:Key="Derivative Rate(Td):">微商速率(Td)：</system:String>
+    <system:String x:Key="Derivative Time(Kd):">微商时间(Kd)：</system:String>
+    <system:String x:Key="Reset Tuning">将"整定常数"重置为"PID
+设置"对话框中输入的数值
+    </system:String>
+    <system:String x:Key="Process Variable:">过程变量：</system:String>
+    <system:String x:Key="Error:">错误：</system:String>
+    <system:String x:Key="PV Alam:">PV 报警：</system:String>
+    <system:String x:Key="Output:">输出：</system:String>
+    <system:String x:Key="Tieback:">回接：</system:String>
+    <system:String x:Key="Deviation Alam:">偏差报警：</system:String>
+    <system:String x:Key="Output Limiting:">输出限制：</system:String>
+    <system:String x:Key="Error Within Deadband:">死区中的错误：</system:String>
+    <system:String x:Key="Setpoint Out of Range:">设置点超出范围：</system:String>
+    <system:String x:Key="PID Initialized">PID 初始化</system:String>
+    <system:String x:Key="PID Initialized:">PID 初始化：</system:String>
+    <system:String x:Key="PID Equation:">PID 等式：</system:String>
+    <system:String x:Key="Control Action:">控件操作：</system:String>
+    <system:String x:Key="Derivative Of:">微分：</system:String>
+    <system:String x:Key="Loop Update Time:">循环时间更新</system:String>
+    <system:String x:Key="CV High Limit:">CV 上限：</system:String>
+    <system:String x:Key="CV Low Limit:">CV 下限：</system:String>
+    <system:String x:Key="Deadband Value:">死区值：</system:String>
+    <system:String x:Key="No Derivative Smoothing">无导数平滑</system:String>
+    <system:String x:Key="No Bias Calculation">无偏差计算</system:String>
+    <system:String x:Key="No Zero Crossing for Deadband">死区不过零</system:String>
+    <system:String x:Key="PV Tracking">PV 跟踪</system:String>
+    <system:String x:Key="Cascade Loop">级联循环</system:String>
+    <system:String x:Key="Cascade Type:">级联类型：</system:String>
+    <system:String x:Key="Process Variable (PV) High:">过程变量(PV)上限：</system:String>
+    <system:String x:Key="Process Variable (PV) Low:">过程变量(PV)下限：</system:String>
+    <system:String x:Key="Process Variable (PV) Deadband:">过程变量(PV)死区：</system:String>
+    <system:String x:Key="Positive Deviation:">正偏差：</system:String>
+    <system:String x:Key="Negative Deviation:">负偏差：</system:String>
+    <system:String x:Key="Deviation Deadband:">偏差死区：</system:String>
+    <system:String x:Key="Process Variable(PV)">过程变量(PV)</system:String>
+    <system:String x:Key="Unscaled Max.:">未缩放的最大值：</system:String>
+    <system:String x:Key="Unscaled Min.:">未缩放的最小值：</system:String>
+    <system:String x:Key="Engineering Unit Max.:">工程单位最大值：</system:String>
+    <system:String x:Key="Engineering Unit Min.:">工程单位最小值：</system:String>
+    <system:String x:Key="Control Variable(CV)">控制变量(CV)</system:String>
+    <system:String x:Key="Max.(at 100 %):">最大值(100%)：</system:String>
+    <system:String x:Key="Min.(at 0 %):">最小值(0%)：</system:String>
+    <system:String x:Key="Tieback">回接</system:String>
+    <system:String x:Key="ExternalAccess:">外部访问：</system:String>
+    <system:String x:Key="Variable">变量</system:String>
+
+
+    <!-- Tag Properties -->
+    <system:String x:Key="Tag Properties -">变量 属性 -</system:String>
+    <system:String x:Key="Parameter/Local Tag Properties -">参数/本地 变量 属性 -</system:String>
+    
+    <!--AOI Tag Properties-->
+    <system:String x:Key="Required">需要(R)</system:String>
+    <system:String x:Key="Visible">可视(V)</system:String>
+
+    <!--Cam Editor-->
+    <system:String x:Key="Cam Editor -">凸轮编辑器 -</system:String>
+    <system:String x:Key="Master:">主轴：</system:String>
+    <system:String x:Key="Cam Editor Position:">从轴：</system:String>
+    <system:String x:Key="Velocity:">速度：</system:String>
+    <system:String x:Key="Acceleration:">加速度：</system:String>
+    <system:String x:Key="Jerk:">加速度率：</system:String>
+    <system:String x:Key="Master">主轴</system:String>
+    <system:String x:Key="Slave">从轴</system:String>
+    <system:String x:Key="Cam Editor Type">类型</system:String>
+    <system:String x:Key="Start Slope">开始斜率</system:String>
+    <system:String x:Key="End Slope">结束斜率</system:String>
+    <system:String x:Key="Apply(A)">应用(A)</system:String>
+    <system:String x:Key="Slave Position">从轴 位置</system:String>
+    <system:String x:Key="Slave Velocity">从轴 速度</system:String>
+    <system:String x:Key="Slave Acceleration">从轴 加速度</system:String>
+    <system:String x:Key="Slave Jerk">从轴 加速度率</system:String>
+    <system:String x:Key="Insert">插入</system:String>
+    <system:String x:Key="Linear">直线</system:String>
+    <system:String x:Key="Cubic">曲线</system:String>
+    <system:String x:Key="Undo">撤销</system:String>
+    <system:String x:Key="Redo">恢复</system:String>
+    <system:String x:Key="ZoomIn">放大</system:String>
+    <system:String x:Key="ZoomOut">缩小</system:String>
+    <system:String x:Key="ZoomToFit">缩放到适当大小</system:String>
+    <system:String x:Key="ScaleToGrid">缩放到网格</system:String>
+    <system:String x:Key="GraphProperties">图像属性</system:String>
+    <system:String x:Key="Pen">曲线</system:String>
+    <system:String x:Key="Grid">网格</system:String>
+    <system:String x:Key="Velocity">速度</system:String>
+    <system:String x:Key="MasterVelocity">主轴速度：</system:String>
+    <system:String x:Key="EnableGrid">启用网格</system:String>
+    <system:String x:Key="CAMGridColor">网格颜色</system:String>
+    <system:String x:Key="SlaveValue">从轴值</system:String>
+    <system:String x:Key="CAMVisible">可视</system:String>
+    <system:String x:Key="CAMStyle">样式</system:String>
+    <system:String x:Key="InsertCamSegments">插入</system:String>
+    <system:String x:Key="SetToLinear">直线</system:String>
+    <system:String x:Key="SetToCubic">曲线</system:String>
+    <system:String x:Key="UndoCamEdits">撤销</system:String>
+    <system:String x:Key="RedoCamEdits">恢复</system:String>
+    <system:String x:Key="SelectSlavePosition">选择位置为从轴</system:String>
+    <system:String x:Key="SelectSlaveVelocity">选择速度为从轴</system:String>
+    <system:String x:Key="SelectSlaveAcceleration">选择加速度为从轴</system:String>
+    <system:String x:Key="SelectSlaveJerk">选择加加速度为从轴</system:String>
+
+    <!-- Motion Group Properties -->
+    <system:String x:Key="Unassigned:">未分配：</system:String>
+    <system:String x:Key="Assigned:">已分配：</system:String>
+    <system:String x:Key="Add Right Arrow">添加-&gt;</system:String>
+    <system:String x:Key="Remove Left Arrow">&lt;-移除</system:String>
+    <system:String x:Key="Base Update Period:">基本更新周期：</system:String>
+    <system:String x:Key="Ms In Increments">(毫秒,增量为0.5)</system:String>
+    <system:String x:Key="Axis Schedule">轴规划</system:String>
+    <system:String x:Key="Alternate1Update:">组1更新：</system:String>
+    <system:String x:Key="Alternate2Update:">组2更新：</system:String>
+    <system:String x:Key="General Fault Type:">常见故障类型：</system:String>
+    <system:String x:Key="Timing Model:">计时模型：</system:String>
+    <system:String x:Key="One Cycle">一个周期</system:String>
+    <system:String x:Key="Scan Times Elapsed Time:">扫描时间 (已用时间)：</system:String>
+    <system:String x:Key="Average:">平均：</system:String>
+    <system:String x:Key="Us">(微秒)</system:String>
+    <system:String x:Key="Reset Max">重置最大值</system:String>
+    <system:String x:Key="MotionGroupProperties">运动组属性</system:String>
+    <system:String x:Key="Axis Assignment">轴分配</system:String>
+    <system:String x:Key="Attribute">属性</system:String>
+    <system:String x:Key="ms1">(毫秒)</system:String>
+
+    <!-- monitor/edit tag-->
+    <system:String x:Key="Monitor Tags">监控变量</system:String>
+    <system:String x:Key="Edit Tags">编辑变量</system:String>
+    <system:String x:Key="Base Tag">基本变量</system:String>
+    <system:String x:Key="All Tags">所有变量</system:String>
+    <system:String x:Key="Define Tag Filter">定义变量滤波器</system:String>
+    <system:String x:Key="Filter On:">滤波器位置：</system:String>
+    <system:String x:Key="Include Data Type:">包含数据类型：</system:String>
+    <system:String x:Key="Clear Filter">清除滤波器</system:String>
+    <system:String x:Key="Filter:None">滤波器：无</system:String>
+    <system:String x:Key="Filter:">滤波器：</system:String>
+    <system:String x:Key="or" xml:space="preserve"> 或 </system:String>
+    <system:String x:Key="and" xml:space="preserve"> 和 </system:String>
+    <system:String x:Key="Producer">生成者</system:String>
+    <system:String x:Key="Force Mask">强制掩码</system:String>
+    <system:String x:Key="monitor/edit tag.Type">类型</system:String>
+    <system:String x:Key="monitor/edit tag.Required">必需</system:String>
+    <system:String x:Key="monitor/edit tag.Visible">可视</system:String>
+    <system:String x:Key="Max Consumers">最大消费者数</system:String>
+    <system:String x:Key="Send Data State Change">发送数据状态更改</system:String>
+    <system:String x:Key="Unicast Connections">单播链接</system:String>
+    <system:String x:Key="Multicast">多点传送</system:String>
+    <system:String x:Key="Connection Status">连接状态</system:String>
+    <system:String x:Key="Specifies the name of the tag">指定变量的名称</system:String>
+    <system:String x:Key="Specifies up to 512 characters of the tag">为变量指定最多512个文档字符</system:String>
+    <system:String x:Key="Specifies the usage of the tag">指定变量的用法</system:String>
+    <system:String x:Key="Specifies whether the tag is an alias, base, produced or consumed tag">指定该变量是别名变量、基本变量、生产型变量还是消费变量</system:String>
+    <system:String x:Key="Specifies what the tag is an alias for">指定该变量是什么的别名</system:String>
+    <system:String x:Key="Specifies the ultimate base tag for the alias tag">指定别名变量的最终基本变量</system:String>
+    <system:String x:Key="Specifies the data type of the tag">指定变量的数据类型</system:String>
+    <system:String x:Key="Specifies the container and thus accessibility of the tag">指定容器并进而指定变量的可访问性</system:String>
+    <system:String x:Key="Specifies how the tag can be viewed and changed from application connected to the controller">指定如何通过连接到控制器的应用程序查看和更改变量</system:String>
+    <system:String x:Key="Specifies the display format for the value of the tag">指定变量值的显示格式</system:String>
+    <system:String x:Key="Specifies that the value of the tag can be changed">指定可以更改变量的值</system:String>
+    <system:String x:Key="Specifies that the parameter requires an argument.">指定参数需要自变量</system:String>
+    <system:String x:Key="Specifies that the parameter is visible.">指定参数是可见的</system:String>
+    <system:String x:Key="Specifies the value of the tag">指定变量的值</system:String>
+    <system:String x:Key="Specifies what bits within the value are forced;'1'indicates forced on; '0'indicates forces off; '.'indicates not forced">指定值中的哪些位是强制的；‘1’指示打开强制；‘0’指示关闭强制；‘.’指示无强制</system:String>
+    <system:String x:Key="Specifies the Max Consumers of tags that can consume this tag">指定可以消费此变量的最大变量数</system:String>
+    <system:String x:Key="Specifies to use IOT instruction to send event trigger information to consumers of the tag">指定使用IOT指令将事件触发器信息发送给变量的消费者</system:String>
+    <system:String x:Key="Specifies to enable multiple unicast consumers to consume from the tag">指定允许多个单播消费者从变量消费</system:String>
+    <system:String x:Key="Specifies a remote device containing a data to consume">指定包含要消费的数据的远程设备</system:String>
+    <system:String x:Key="Cell used to create onr additional Parameter Connection for the tag">用于为变量创建一个额外参数连接的单元格</system:String>
+    <system:String x:Key="Add-On-Defined">自定义功能块</system:String>
+    <system:String x:Key="Program Parameters and Local Variables">程序参数和局部变量</system:String>
+    <system:String x:Key="User Define Function BLOCK Parameters and Local Variables">用户自定义功能块参数和局部变量</system:String>
+    <system:String x:Key="Sort Column">列排序</system:String>
+    <system:String x:Key="Include Tag Members In Sorting">在排序中包含变量成员</system:String>
+    <system:String x:Key="MenuItem.Header.Monitor" xml:space="preserve">监控 </system:String>
+    <system:String x:Key="MenuItem.Header.Edit" xml:space="preserve">编辑 </system:String>
+    <system:String x:Key="MenuItem.Header.Properties" xml:space="preserve"> 属性</system:String>
+    <system:String x:Key="MenuItem.Header.Configure" xml:space="preserve">配置 </system:String>
+    <system:String x:Key="MenuItem.Header.DataType" xml:space="preserve"> 数据类型</system:String>
+    <system:String x:Key="MenuItem.Header.Description" xml:space="preserve"> 说明</system:String>
+    <system:String x:Key="MenuItem.Header.Goto" xml:space="preserve">转至 </system:String>
+    <system:String x:Key="MenuItem.Header.CrossReference" xml:space="preserve"> 的交叉引用</system:String>
+    <system:String x:Key="MenuItem.Header.Filteron" xml:space="preserve">查找全部 </system:String>
+    <system:String x:Key="Filter on Name">按名称过滤</system:String>
+    <system:String x:Key="Filter on Description">按说明过滤</system:String>
+    <system:String x:Key="Filter on Both">按两者过滤</system:String>
+
+    <!--CIP Axis Properties-->
+    <system:String x:Key="Axis Properties -">轴属性 -</system:String>
+    <system:String x:Key="Axis State:">轴状态</system:String>
+    <system:String x:Key="Manual Tune...">手动整定...</system:String>
+    
+    <system:String x:Key="Motor">电机</system:String>
+    <system:String x:Key="Motor Device Specification">电机设备规范</system:String>
+
+    <system:String x:Key="CIPTag Properties Model">模式</system:String>
+    <system:String x:Key="Motor model Phase to Phase Parameters">电机模型相参数</system:String>
+
+    <system:String x:Key="Motor Feedback">电机反馈</system:String>
+    <system:String x:Key="Motor Feedback Device Specification">电机反馈设备规范</system:String>
+
+    <system:String x:Key="AxisPropertiesScaling">比例</system:String>
+
+    <system:String x:Key="Scaling to Convert Motion from Controller Units to User Defined Units">位置缩放</system:String>
+
+    <system:String x:Key="Polarity">极性</system:String>
+    <system:String x:Key="Motion. Motor. and Feedback Polarity">运动、电机和反馈极性</system:String>
+
+    <system:String x:Key="Autotune">自整定</system:String>
+    <system:String x:Key="Tune Control Loop by Measuring Load Characteristics">通过测量负载特性整定控制回路</system:String>
+    
+    <system:String x:Key="Load">负载</system:String>
+    <system:String x:Key="Characteristics of Motor Load">电机负载特性</system:String>
+
+    <system:String x:Key="Backlash">机械回程</system:String>
+    <system:String x:Key="Backlash Compensation">回程补偿</system:String>
+
+    <system:String x:Key="Position Loop">位置环</system:String>
+
+    <system:String x:Key="Velocity Loop">速度环</system:String>
+    <system:String x:Key="Torque/Current Loop">转矩/电流环</system:String>
+    
+    <system:String x:Key="Planner">运动规划</system:String>
+    <system:String x:Key="Characteristics of Motion Planner">运动规划特性</system:String>
+
+    <system:String x:Key="CIPTag Properties Homing">回零</system:String>
+
+    <system:String x:Key="Actions">停车操作</system:String>
+    <system:String x:Key="Actions to Take Upon Conditions">停车操作</system:String>
+
+    <system:String x:Key="Exceptions">异常</system:String>
+    <system:String x:Key="Actions to Take Upon Exception Condition">根据异常情况采取的操作</system:String>
+
+    <system:String x:Key="Monitor Parameters">监控参数</system:String>
+    <system:String x:Key="Cyclic Read/Write Parameter List">循环读/写参数列表</system:String>
+
+    <system:String x:Key="Parameter List">参数列表</system:String>
+    <system:String x:Key="Motion Axis Parameters">运动 轴 参数</system:String>
+
+    <system:String x:Key="Motion Status">运动状态</system:String>
+    
+    <system:String x:Key="Faults Alarms">故障和警报</system:String>
+    <system:String x:Key="Faults and Alarms Log">故障和警报日志</system:String>
+
+    <system:String x:Key="AxisTag">变量</system:String>
+    <system:String x:Key="Axis Tag Properties">轴变量 属性</system:String>
+
+    <system:String x:Key="Analyzer">分析仪</system:String>
+    <system:String x:Key="Analyze Motor to Determine Motor Model">分析电机确定电机型号</system:String>
+
+    <system:String x:Key="Acceleration">加速度</system:String>
+
+    <system:String x:Key="Hookup Tests">连接测试</system:String>
+    <system:String x:Key="Test Motor and Feedback Device Wiring">测试电机和反馈装置接线</system:String>
+
+    <!--CIP Axis_Change Catalog Number-->
+    <system:String x:Key="ChangeCatalogNumber">更改目录号</system:String>
+    <system:String x:Key="CatalogNumber">目录号</system:String>
+    <system:String x:Key="Filters">滤波器</system:String>
+    <system:String x:Key="CIPAxisChangeCatalogNumberVoltage">电压</system:String>
+    <system:String x:Key="Family">父类</system:String>
+    <system:String x:Key="FeedbackType">反馈类型</system:String>
+
+
+    <!--CIP Axis _ General-->
+    <system:String x:Key="Axis Configuration:">轴配置(C)：</system:String>
+    <system:String x:Key="Feedback Configuration:">反馈配置(F)：</system:String>
+    <system:String x:Key="Application Type:">应用类型(T)：</system:String>
+    <system:String x:Key="Loop Response:">回路响应(L)：</system:String>
+    <system:String x:Key="Assigned Group">分配的组</system:String>
+    <system:String x:Key="Associated Module">映射轴</system:String>
+    <system:String x:Key="Module:">模块(M)：</system:String>
+    <system:String x:Key="Module Type:">模块 类型：</system:String>
+    <system:String x:Key="Power Structure:">电源结构：</system:String>
+    <system:String x:Key="Axis Number:">轴编号(N)：</system:String>
+    <system:String x:Key="CIPAxis New Group">新建组(W)</system:String>
+
+    <!--CIP Axis _ Motor-->
+    <system:String x:Key="Data Source:">数据来源(D)：</system:String>
+    <system:String x:Key="Catalog Number:">目录号：</system:String>
+    <system:String x:Key="Motor Type:">电机类型(M)：</system:String>
+    <system:String x:Key="Units:">单位：</system:String>
+    <system:String x:Key="Change Catalog...">更改目录(C)...</system:String>
+    <system:String x:Key="Parameters...">参数(P)...</system:String>
+    <system:String x:Key="NameplateDatasheetPhaseToPhaseParameters">铭牌/数据表 - 相位至相位参数</system:String>
+    <system:String x:Key="Rated Power:">额定功率(W)：</system:String>
+    <system:String x:Key="Rated Voltage:">额定电压(V)：</system:String>
+    <system:String x:Key="Volts(RMS)">伏特(RMS)</system:String>
+    <system:String x:Key="Rated Speed:">额定速度(S)：</system:String>
+    <system:String x:Key="RPM">转/分</system:String>
+    <system:String x:Key="Rated Current:">额定电流(T)：</system:String>
+    <system:String x:Key="Amps(RMS)">安培(RMS)</system:String>
+    <system:String x:Key="Rated Torque:">额定转矩(E)：</system:String>
+    <system:String x:Key="N-m">牛-米</system:String>
+    <system:String x:Key="Pole Count:">极数(O)：</system:String>
+    <system:String x:Key="Rated Frequency:">额定频率：</system:String>
+    <system:String x:Key="Max Speed:">最大速度(X)：</system:String>
+    <system:String x:Key="Peak Current:">峰值电流(K)：</system:String>
+    <system:String x:Key="Motor Overload Limit:">电机过载限制(L)：</system:String>
+
+    <!--CIP Axis _ Model-->
+    <system:String x:Key="Torque Constant(Kt):">转矩常数(Kt)(T)：</system:String>
+    <system:String x:Key="Voltage Constant(Ke):">反电势常数(Ke)(V)：</system:String>
+    <system:String x:Key="Resistance(Rs):">电阻(Rs)(R)：</system:String>
+    <system:String x:Key="Inductance(Ls):">电感(Ls)(I)：</system:String>
+    <system:String x:Key="N-m/Amps(RMS)">牛-米/安培(RMS)</system:String>
+    <system:String x:Key="Volts(RMS)/KRPM">伏特(RMS)/KRPM</system:String>
+    <system:String x:Key="Ohms">欧姆</system:String>
+    <system:String x:Key="Henries">亨利</system:String>
+    <system:String x:Key="Flux Saturation Profile">磁通饱和配置</system:String>
+    <system:String x:Key="Flux Saturation @ 12.5% of lp:">12.5% Ip 时磁通饱和(X)：</system:String>
+    <system:String x:Key="Flux Saturation @ 25.0% of lp:">25.0% Ip 时磁通饱和(X)：</system:String>
+    <system:String x:Key="Flux Saturation @ 37.5% of lp:">37.5% Ip 时磁通饱和(X)：</system:String>
+    <system:String x:Key="Flux Saturation @ 50.0% of lp:">50.0% Ip 时磁通饱和(X)：</system:String>
+    <system:String x:Key="Flux Saturation @ 62.5% of lp:">62.5% Ip 时磁通饱和(X)：</system:String>
+    <system:String x:Key="Flux Saturation @ 75.0% of lp:">75.0% Ip 时磁通饱和(X)：</system:String>
+    <system:String x:Key="Flux Saturation @ 87.5% of lp:">87.5% Ip 时磁通饱和(X)：</system:String>
+    <system:String x:Key="Flux Saturation @ 100% of lp:">100% Ip 时磁通饱和(X)：</system:String>
+    <system:String x:Key="% Nominal Inductance">标称电感量百分比</system:String>
+    <system:String x:Key="Torque Constant(Kf):">力常数(Kf)(E)：</system:String>
+    <system:String x:Key="N/Amps(RMS)">牛顿/安培(RMS)</system:String>
+    <system:String x:Key="Volts(RMS)/(m/s)">伏特(RMS)/(米/秒)</system:String>
+    <system:String x:Key="Rated Flux Current:">额定磁通电流(C)：</system:String>
+    <system:String x:Key="Rated Slip Speed:">额定转差率(D)：</system:String>
+    <system:String x:Key="Stator Leakage(X1):">定子漏抗(X1)(S)：</system:String>
+    <system:String x:Key="Rotor Leakage(X2):">定子漏抗(X2)(R)：</system:String>
+    <system:String x:Key="Stator Resistance(R1):">定子电阻(R1)(T)：</system:String>
+
+    <!--CIP Axis _ Motor Feedback-->
+    <system:String x:Key="Device Function:">设备功能：</system:String>
+    <system:String x:Key="Feedback Channel:">反馈通道：</system:String>
+    <system:String x:Key="CIPTag Motor Feedback Type:">类型(T)：</system:String>
+    <system:String x:Key="CIPTag Units:">单位(U)：</system:String>
+    <system:String x:Key="Motor Mounted Feedback">电机安装反馈</system:String>
+    <system:String x:Key="Feedback 1">反馈 1</system:String>
+    <system:String x:Key="Cycle Resolution:">单圈分辨率(C)：</system:String>
+    <system:String x:Key="Cycle Interpolation:">单圈插值(I)：</system:String>
+    <system:String x:Key="Effective Resolution:">有效分辨率：</system:String>
+    <system:String x:Key="Startup Method:">工作模式(S)：</system:String>
+    <system:String x:Key="Length:">长度：</system:String>
+    <system:String x:Key="Turns:">圈数(N)：</system:String>
+    <system:String x:Key="Feedback Cycles/Master">反馈循环/旋转</system:String>
+    <system:String x:Key="Feedback Counts per Cycle">每周期反馈计数</system:String>
+    <system:String x:Key="Feedback Counts per">每转速反馈计数</system:String>
+    <system:String x:Key="Commutation">换向</system:String>
+    <system:String x:Key="Alignment:">校准(G)：</system:String>
+    <system:String x:Key="Offset:">偏移量(O)：</system:String>
+    <system:String x:Key="Polarity:">极性：</system:String>
+    <system:String x:Key="Degrees">度</system:String>
+    <system:String x:Key="Test Commutation...">测试换向(M)</system:String>
+    <system:String x:Key="Feedback 2">反馈 2</system:String>
+    <system:String x:Key="Load-Side Feedback">电机安装反馈</system:String>
+
+    <!--CIP Axis _ Scaling-->
+    <system:String x:Key="Load Type:">负载类型(L)：</system:String>
+    <system:String x:Key="Transmission">传动比</system:String>
+    <system:String x:Key="Ratio I:O:">比率I:O(I)：</system:String>
+    <system:String x:Key="Rev">圈</system:String>
+    <system:String x:Key="Actuator">直线运动</system:String>
+    <system:String x:Key="CIPTag Scaling Type:">类型(Y)：</system:String>
+    <system:String x:Key="Lead:">导程(E)：</system:String>
+    <system:String x:Key="Diameter:">直径(D)：</system:String>
+    <system:String x:Key="Scaling:">缩放(S)：</system:String>
+    <system:String x:Key="Motor Rev per">每(R)</system:String>
+    <system:String x:Key="Cycle per">每(E)</system:String>
+    <system:String x:Key="Travel">行程</system:String>
+    <system:String x:Key="CIPTag Mode:">模式(O)：</system:String>
+    <system:String x:Key="Range:">范围(G)：</system:String>
+    <system:String x:Key="Unwind:">模值(W)：</system:String>
+    <system:String x:Key="Cycle">循环</system:String>
+    <system:String x:Key="Soft Travel Limits">软限位(T)：</system:String>
+    <system:String x:Key="Maximum Positive:">最大正值(M)：</system:String>
+    <!--  MessageBox  -->
+    <system:String x:Key="Error">错误代码：</system:String>
+    <system:String x:Key="Failed to modify properties for axis">轴属性修改失败：</system:String>
+    <system:String x:Key="The Enter range is:">输入区间范围是：</system:String>
+    <system:String x:Key="The Load Type in combination with the specified Actuator Type is invalid.">
+        负载类型与指定执行器类型的组合无效。
+    </system:String>
+    <system:String x:Key="The value entered for the Scaling Position Numerator or Scaling Position Denominator causes a loss in resolution When calculating Motion Resolution.">
+        在计算运动分辨率时，为缩放位置分子或缩放位置分母输入的值会导致分辨率下降。
+    </system:String>
+
+    <!--CIP Axis _ Hookup Tests-->
+    <system:String x:Key="Motor and Feedback">电机和反馈</system:String>
+    <system:String x:Key="Master Feedback">换向</system:String>
+    <system:String x:Key="Marker">标志</system:String>
+    
+    <!--CIP Axis _ Parameter List-->
+    <system:String x:Key="Parameter Group:">参数组(G)：</system:String>
+    <system:String x:Key="Associated Page...">关联页面(P)：</system:String>
+    <system:String x:Key="Unit">单位</system:String>
+    
+    <!--CIP Axis _ Polarity-->
+    <system:String x:Key="Motion Polarity:">运动极性：</system:String>
+    <system:String x:Key="Motion Polarity Inverted">反向(D)</system:String>
+    <system:String x:Key="Test Polarity...">测试极性...</system:String>
+    <system:String x:Key="DANGER: Modifying polarity setting may cause unexpected motion.">危险：修改极性设置可能会导致意外运动。</system:String>
+    <system:String x:Key="Motor Polarity:">电机极性：</system:String>
+    <system:String x:Key="Motion Polarity Normal">正向(L)</system:String>
+    <system:String x:Key="Motor Polarity Normal">正向(M)</system:String>
+    <system:String x:Key="Motor Polarity Inverted">反向(E)</system:String>
+    <system:String x:Key="Normal">正向</system:String>
+    <system:String x:Key="Inverted">反向</system:String>
+    <system:String x:Key="Feedback 1 Polarity:">反馈 1 极性</system:String>
+    <system:String x:Key="Feedback 2 Polarity:">反馈 2 极性</system:String>
+    
+    <!--CIP Axis _ Autotune Left-->
+    <system:String x:Key="CIPTag AutotuneLeft Application Type:">应用类型(Y)：</system:String>
+    <system:String x:Key="Load Coupling:">负载耦合(G)：</system:String>
+    <system:String x:Key="Customize Gains to Tune">自定义增益整定</system:String>
+    <system:String x:Key="Position Integrator Bandwidth">位置积分器带宽(B)</system:String>
+    <system:String x:Key="Velocity Integrator Bandwidth">速度积分器带宽(W)</system:String>
+    <system:String x:Key="Velocity Feedforward">速度前馈(V)</system:String>
+    <system:String x:Key="Acceleration Feedforward">加速度前馈(F)</system:String>
+    <system:String x:Key="Torque Low Pass Filter">转矩低通量滤波器(Q)</system:String>
+    <system:String x:Key="Measure Inertia using Tune Profile">使用整定配置文件测量惯量(M)</system:String>
+    <system:String x:Key="Motor with Load">带负载的电机(O)</system:String>
+    <system:String x:Key="Uncoupled Motor">空载电机</system:String>
+    <system:String x:Key="Travel Limit:">行程限制(I)：</system:String>
+    <system:String x:Key="Speed:">速度(P)：</system:String>
+    <system:String x:Key="Torque:">转矩(Q)：</system:String>
+    <system:String x:Key="CIPTag AutotuneLeft Direction:">方向(D)：</system:String>
+    <system:String x:Key="% Rated"> % (额定)</system:String>
+
+    <!--CIP Axis _ Autotune Right-->
+    <system:String x:Key="CIPCurrent">当前值</system:String>
+    <system:String x:Key="Perform Tune">执行整定</system:String>
+    <system:String x:Key="Start">启动(S)</system:String>
+    <system:String x:Key="CIPTag AutotuneRight Stop">停止(T)</system:String>
+    <system:String x:Key="Tune Status:">整定状态：</system:String>
+    <system:String x:Key="Loop Parameters Tuned">回路参数已整定</system:String>
+    <system:String x:Key="Tuned">整定值</system:String>
+    <system:String x:Key="Advanced Compensation">高级补偿</system:String>
+    <system:String x:Key="Compensate">补偿</system:String>
+    <system:String x:Key="Inertia:">惯量(N)：</system:String>
+    <system:String x:Key="Friction:">摩擦(R)：</system:String>
+    <system:String x:Key="Active Torque:">主动转矩(U)：</system:String>
+    <system:String x:Key="% Rate/(Rev/s^2)"> % 额定/(圈/s^2)</system:String>
+    <system:String x:Key="Calculate Compensation">计算补偿</system:String>
+    <system:String x:Key="Load Parameters Tuned">负载参数已整定</system:String>
+    <system:String x:Key="Accept Tuned Values">接受整定值(E)</system:String>
+
+    <!--CIP Axis _ Load-->
+    <system:String x:Key="Load Inertia/Mass">负载惯量/质量</system:String>
+    <system:String x:Key="CIPTag Load Load Coupling:">负载耦合(L)：</system:String>
+    <system:String x:Key="Use Load Ratio">使用负载惯量比(U)</system:String>
+    <system:String x:Key="Load Ratio:">负载惯量比(R)：</system:String>
+    <system:String x:Key="LoadInertia/MotorInertia">负载惯量/电机惯量</system:String>
+    <system:String x:Key="Inertia/Mass Compensation">惯量/质量补偿</system:String>
+    <system:String x:Key="System Inertia:">系统惯量(S)：</system:String>
+    <system:String x:Key="System Acceleration:">系统加速度：</system:String>
+    <system:String x:Key="Active Load Compensation">主动负载补偿</system:String>
+    <system:String x:Key="Torque Offset:">转矩偏移量(F)：</system:String>
+    <system:String x:Key="Rev/s^2@ 100%Rated"> 圈/s^2 @100 % 额定</system:String>
+    <system:String x:Key="Motor Mass:">电机惯量(M)：</system:String>
+    <system:String x:Key="Total Inertia:">总惯量(T)：</system:String>
+    <system:String x:Key="Total Mass:">总质量：</system:String>
+    <system:String x:Key="Motor Inertia:">电机惯量：</system:String>
+
+    <!--CIP Axis _ Backlash-->
+    <system:String x:Key="Reversal offset:">反向偏移量(O)：</system:String>
+    <system:String x:Key="Compensation Window:">补偿窗口(C)：</system:String>
+
+    <!--CIp Axis _ Compliance -->
+    <system:String x:Key="Compliance">柔性</system:String>
+    <system:String x:Key="Compliance Compensation">柔性补偿</system:String>
+    <system:String x:Key="Torque Low Pass Filter Bandwidth:">转矩低通滤波器带宽(F)：</system:String>
+    <system:String x:Key="Torque Notch Filters">转矩陷波滤波器</system:String>
+    <system:String x:Key="Torque Notch Filter Frequency:">转矩陷波滤波器频率(N)：</system:String>
+    <system:String x:Key="Adaptive Tuning">自适应整定</system:String>
+    <system:String x:Key="Adaptive Tuning Configuration:">自适应整定配置(D)：</system:String>
+    <system:String x:Key="Torque Notch Filter High Frequency Limit:">转矩陷波滤波器高频限制(H)：</system:String>
+    <system:String x:Key="Torque Notch Filter Low Frequency Limit:">转矩陷波滤波器低频限制(O)：</system:String>
+    <system:String x:Key="Torque Notch Filter Tuning Threshold:">转矩陷波滤波整定阈值(U)：</system:String>
+    <system:String x:Key="% Motor Rated">电机额定功率百分比</system:String>
+
+    <!--CIp Axis _ Friction -->
+    <system:String x:Key="Friction">摩擦力</system:String>
+    <system:String x:Key="Friction Compensation">摩擦补偿</system:String>
+    <system:String x:Key="Sliding Friction Compensation:">滑动摩擦补偿(S)：</system:String>
+
+    <!--CIp Axis _ Observer -->
+    <system:String x:Key="Observer">观测器</system:String>
+    <system:String x:Key="Load Observer">负载观测器</system:String>
+    <system:String x:Key="Configuration:">配置(C)：</system:String>
+    <system:String x:Key="Integrator Bandwidth:">积分器带宽(I)：</system:String>
+
+    <!--CIP Axis _ Position Loop-->
+    <system:String x:Key="Gains">增益</system:String>
+    <system:String x:Key="Bandwidth:">带宽(B)：</system:String>
+    <system:String x:Key="Integrator Hold:">积分保持(H)：</system:String>
+    <system:String x:Key="Velocity Feedforward:">速度前馈(F)：</system:String>
+    <system:String x:Key="Limits">限制</system:String>
+    <system:String x:Key="Error Tolerance:">速度误差(E)：</system:String>
+    <system:String x:Key="Lock Tolerance:">锁定误差(L)：</system:String>
+
+    <!--CIP Axis _ Velocity Loop-->
+    <system:String x:Key="Velocity Limit Positive:">最大速度(V)：</system:String>
+    <system:String x:Key="Velocity Limit Negative:">最小速度(O)：</system:String>
+
+    <!--CIP Axis _ Acceleration Loop-->
+    <system:String x:Key="Acceleration Limit:">加速度限制(L)：</system:String>
+    <system:String x:Key="Deceleration Limit:">减速度限制(D)：</system:String>
+
+    <!--CIP Axis _ Torque/Current Loop-->
+    <system:String x:Key="Peak Torque Limit Positive:">最大峰值转矩(Q)：</system:String>
+    <system:String x:Key="Peak Torque Limit Negative:">最小峰值转矩(U)：</system:String>
+
+    <!--CIP Axis _ Planner-->
+    <system:String x:Key="CIPTag Planner Maximum Acceleration:">最大加速度：</system:String>
+    <system:String x:Key="AccelCalculate...">计算(U)...</system:String>
+    <system:String x:Key="DecelCalculate...">计算(L)...</system:String>
+
+    <!--CIP Axis _ Homing-->
+    <system:String x:Key="CIPTag Homing Mode:">模式(M)：</system:String>
+    <system:String x:Key="Test Marker...">测试标记...</system:String>
+    <system:String x:Key="CIPTag Homing Offset:">偏移量(F)：</system:String>
+    <system:String x:Key="CIPTag Homing Sequence:">零位信号(S)：</system:String>
+    <system:String x:Key="Limit Switch-Normally:">限位开关 - 正常：</system:String>
+    <system:String x:Key="CIPTag Homing Open">打开(O)</system:String>
+    <system:String x:Key="Closed">关闭(C)</system:String>
+    <system:String x:Key="Active Home Sequence Group">主动回零设定</system:String>
+    <system:String x:Key="CIPTag Homing Speed:">速度(E)：</system:String>
+    <system:String x:Key="Return Speed:">返回速度(R)：</system:String>
+    <system:String x:Key="Motor Overload Action:">电机过载操作(M)：</system:String>
+    <system:String x:Key="Inverter Overload Action:">逆变器过载操作(I)：</system:String>
+
+    <!--CIP Axis _ Frequency Control-->
+    <system:String x:Key="VelocityLimits">Limits</system:String>
+
+    <!--CIP Axis _ Axtions-->
+    <system:String x:Key="Standard Actions">标准操作</system:String>
+    <system:String x:Key="Disable(MSF) Stopping Action:">去使能(MSF)操作(S)：</system:String>
+
+    <!--CIP Axis _ Exceptions-->
+    <system:String x:Key="Exception Condition">异常条件</system:String>
+    <system:String x:Key="ExceptionsAction">停车操作</system:String>
+    <system:String x:Key="CIPTag Exceptions Danger" xml:space="preserve">危险：修改异常操作设置需要通过编程方式停止或禁用轴，从而保护人员、机器和财产。
+        
+有关更多信息，请参阅用户手册。</system:String>
+
+    <!--CIP Axis _ Cyclic Parameters-->
+    <system:String x:Key="Parameters to be read each cycle:">读取参数，最多10个：</system:String>
+    <system:String x:Key="Parameters to be written each cycle:">写入参数，最多10个：</system:String>
+
+    <!--CIP Axis _ status-->
+    <system:String x:Key="Actual Position:">实际位置：</system:String>
+    <system:String x:Key="Command Position:">指令位置：</system:String>
+    <system:String x:Key="Actual Velocity:">实际速度：</system:String>
+    <system:String x:Key="Command Velocity:">指令速度：</system:String>
+    <system:String x:Key="Axis Status">轴状态</system:String>
+    <system:String x:Key="AC Line Power Loss">交流输入缺失</system:String>
+    <system:String x:Key="AC Line Phase Loss">交流输入缺相</system:String>
+    <system:String x:Key="AC Line Frequency Change">交流输入频率改变</system:String>
+    <system:String x:Key="AC Line Sync Loss">交流输入同步丢失</system:String>
+    <system:String x:Key="AC Line Sync">交流输入同步</system:String>
+    <system:String x:Key="AC Line Voltage Sag">交流输入电压下降</system:String>
+    <system:String x:Key="Regenerating">再生制动</system:String>
+    <system:String x:Key="Regenerative Power Limit">再升功率限幅</system:String>
+    <system:String x:Key="DC Bus Up">直流母线启动</system:String>
+    <system:String x:Key="DC Bus Unload">直流母线卸载</system:String>
+    <system:String x:Key="Power Loss">功率缺失</system:String>
+    <system:String x:Key="Ride Thru">穿越</system:String>
+    <system:String x:Key="Shutdown">关机</system:String>
+    <system:String x:Key="Reactive Power Limit">无功功率限幅</system:String>
+    <system:String x:Key="Motoring">电机驱动</system:String>
+    <system:String x:Key="Motoring Power Limit">电机功率限幅</system:String>
+    <system:String x:Key="Power Structure Enabled">电源单元使能</system:String>
+    <system:String x:Key="Tracking Command">跟踪指令</system:String>
+    <system:String x:Key="Feedback Integrity">反馈完整</system:String>
+    <system:String x:Key="Position Lock">位置锁定</system:String>
+    <system:String x:Key="Velocity Lock">速度锁定</system:String>
+    <system:String x:Key="Velocity Standstill">速度静止</system:String>
+    <system:String x:Key="Bus Voltage Lock">母排电压锁定</system:String>
+    <system:String x:Key="Active Current Limit">有功功率限幅</system:String>
+    <system:String x:Key="Velocity Threshold">速度阀值</system:String>
+    <system:String x:Key="Velocity Limit">速度限幅</system:String>
+    <system:String x:Key="Torque Threshold">转矩阈值</system:String>
+    <system:String x:Key="Torque Limit">转矩限幅</system:String>
+    <system:String x:Key="Current Limit">电流限幅</system:String>
+    <system:String x:Key="Thermal Limit">热功率限幅</system:String>
+    <system:String x:Key="Bus Voltage Limit">母排电压限幅</system:String>
+    <system:String x:Key="Reactive Current Limit">无功电流限幅幅</system:String>
+    <system:String x:Key="Digital I/O">数字 I/O</system:String>
+    <system:String x:Key="StatusEnable">使能</system:String>
+    <system:String x:Key="Home">原点</system:String>
+    <system:String x:Key="Registration 1">标志位1</system:String>
+    <system:String x:Key="Registration 2">标志位2</system:String>
+    <system:String x:Key="Contactor Enable Out">接触器使能输出</system:String>
+    <system:String x:Key="Pre-Charge OK">预充电正常</system:String>
+    <system:String x:Key="Positive Overtravel">正限位</system:String>
+    <system:String x:Key="Negative Overtravel">负限位</system:String>
+    <system:String x:Key="Feedback Thermostat OK">反馈温度正常</system:String>
+    <system:String x:Key="AC Line Contactor OK">AC 线路接触器正常</system:String>
+    <system:String x:Key="Regenerative Power OK In">再生功率正常输入</system:String>
+    <system:String x:Key="Converter OK In">转换器正常输入</system:String>
+    <system:String x:Key="Bus Capacitor OK">母排电容正常</system:String>
+    <system:String x:Key="Motor Thermostat OK">电机温度正常</system:String>
+    <system:String x:Key="Mechanical Brake">机械制动</system:String>
+    <system:String x:Key="Regenerative Power OK Out">再升功率正常输出</system:String>
+    <system:String x:Key="Converter OK Out">转换器正常输出</system:String>
+    <system:String x:Key="Bus Conditioner Module OK">母线调节模块正常</system:String>
+    <system:String x:Key="Shunt Thermal Switch OK">分流热开关正常</system:String>
+
+    <!--CIP Axis _ Faults & Alarms-->
+    <system:String x:Key="CIPTag FaultsAlarms Source">源</system:String>
+    <system:String x:Key="Condition">条件</system:String>
+    <system:String x:Key="Sub Code">子代码</system:String>
+    <system:String x:Key="Action">操作</system:String>
+    <system:String x:Key="End State">结束状态</system:String>
+    <system:String x:Key="Faults">故障(P)</system:String>
+    <system:String x:Key="CIPTag FaultsAlarms Alarms">警报(L)</system:String>
+    <system:String x:Key="Resets">重置(R)</system:String>
+    <system:String x:Key="Clear Log">清除日志(C)</system:String>
+
+    <!--CIP Axis _ Tag-->
+    <system:String x:Key="CIPTag Tag Base">基本</system:String>
+
+    <!--CIPTag _ Status _ Motion Console _ Manual Tuning-->
+    <system:String x:Key="Motion Console -">运动控制台</system:String>
+    <system:String x:Key="Manual Tuning">手动整定</system:String>
+    <system:String x:Key="System Bandwidth:">系统带宽(S)：</system:String>
+    <system:String x:Key="System Damping:">系统阻尼(D)：</system:String>
+    <system:String x:Key="MotionConsole Reset">重置(R)</system:String>
+    <system:String x:Key="Tuning Configuration">整定配置</system:String>
+    <system:String x:Key="MotionConsole Application Type:">应用类型：</system:String>
+    <system:String x:Key="Coupling">耦合：</system:String>
+    <system:String x:Key="Gains To Tune">增益整定</system:String>
+    <system:String x:Key="MotionConsole Position Integrator Bandwidth">位置积分器带宽</system:String>
+    <system:String x:Key="Velocity Integrator bandwidth">速度积分器带宽</system:String>
+    
+    <!--<system:String x:Key="Position Loop">速度回路</system:String>-->
+    <system:String x:Key="Loop Bandwidth:">回路带宽(B)：</system:String>
+    <system:String x:Key="MotionConsole Integrator Bandwidth:">积分器带宽(W)：</system:String>
+    <system:String x:Key="MotionConsole Integrator Hold:">积分保持(G)：</system:String>
+    <system:String x:Key="MotionConsole Error Tolerance:">跟踪误差(T)：</system:String>
+
+    <!--CIPTag _ Status _ Motion Console _ Motion Generator-->
+    <system:String x:Key="Motion Generator">运动发生器</system:String>
+    <system:String x:Key="More Commands...">更多命令...</system:String>
+    <system:String x:Key="Commands:">命令</system:String>
+    <system:String x:Key="Motion Servo On">轴使能</system:String>
+    <system:String x:Key="Motion Servo Off">轴去使能</system:String>
+    <system:String x:Key="Motion Axis Home">轴回零</system:String>
+    <system:String x:Key="Motion Axis Jog">轴点动</system:String>
+    <system:String x:Key="Motion Axis Move">轴定位</system:String>
+    <system:String x:Key="Motion Axis Stop">轴停止运行</system:String>
+    <system:String x:Key="Motion Drive Start">运动驱动启动</system:String>
+    <system:String x:Key="Motion Axis Fault Reset">轴故障复位</system:String>
+    <system:String x:Key="MotionConsole Axis State:">轴状态：</system:String>
+    <system:String x:Key="Axis Fault:">轴故障：</system:String>
+    <system:String x:Key="Start Inhibited:">启动禁用：</system:String>
+    <system:String x:Key="Execute">执行(U)：</system:String>
+    <system:String x:Key="Disable Axis">轴去使能(X)</system:String>
+    <system:String x:Key="Feedforward">前馈</system:String>
+    <system:String x:Key="Compensation">补偿</system:String>
+
+    <!--CIPTag_Status _ Manual Tuning _ Additional Tune-->
+    <system:String x:Key="AdditionalTune">附加整定</system:String>
+    <system:String x:Key="AdditionalTuneFilters">转矩</system:String>
+
+    <system:String x:Key="ManualTune">手动整定</system:String>
+    
+    <!--CIPTag_Status _ Manual Tuning _ Additional Tune _ Feedforward-->
+    <system:String x:Key="Acceleration Feedforward:">加速度前馈(A)：</system:String>
+
+    <!--CIPTag_Status _ Manual Tuning _ Additional Tune _ Compensation-->
+    <system:String x:Key="Compensation System Inertia:">系统惯量(Y)：</system:String>
+    <system:String x:Key="Compensation Torque Offset:">转矩偏移量(Q)：</system:String>
+    <system:String x:Key="Friction Compensation:">摩擦补偿(F)：</system:String>
+    <system:String x:Key="Friction Compensation Window:">摩擦补偿窗口(A)：</system:String>
+    <system:String x:Key="Backlash Compensation Window:">回程补偿窗口(K)：</system:String>
+    <system:String x:Key="Load Observer Configuration:">负载观测器配置：</system:String>
+    <system:String x:Key="Load Observer Bandwidth:">负载观测器带宽(V)：</system:String>
+    <system:String x:Key="Load Observer Integrator Bandwidth:">负载观测器积分器带宽(N)：</system:String>
+
+    <!--CIPTag_Status _ Manual Tuning _ Additional Tune _ Filters-->
+    <system:String x:Key="Filters Torque Low Pass Filter Bandwidth:">转矩低通滤波器带宽：</system:String>
+    <system:String x:Key="Filters Torque Notch Filter Frequency:">转矩陷波滤波器频率：</system:String>
+    <system:String x:Key="Torque Lag Filter Gain:">转矩滞后滤波器增益(Q)：</system:String>
+    <system:String x:Key="Torque Lag Filter Bandwidth:">转矩滞后滤波器带宽(A)：</system:String>
+    <system:String x:Key="Filters Adaptive Tuning Configuration:">自适应整定配置(V)：</system:String>
+    <system:String x:Key="Filters Torque Notch Filter High Frequency Limit:">转矩陷波滤波器高频限制(R)：</system:String>
+    <system:String x:Key="Filters Torque Notch Filter Low Frequency Limit:">转矩陷波滤波器低频限制(L)：</system:String>
+    <system:String x:Key="Filters Torque Notch Filter Tuning Threshold:">转矩陷波滤波器整定阈值(U)：</system:String>
+    <system:String x:Key="%Motor Rated">电机额定功率百分比</system:String>
+
+    <!--CIPTag_Status _ Manual Tuning _ Additional Tune _ Limits-->
+    <system:String x:Key="Limits Peak Torque Limit Positive:">正向峰值转矩限幅(K)：</system:String>
+    <system:String x:Key="Limits Peak Torque Limit Negative:">反向峰值转矩限幅(Q)：</system:String>
+    <system:String x:Key="Limits Acceleration Limit:">加速度限幅(A)：</system:String>
+    <system:String x:Key="Limits Deceleration Limit:">减速度限幅(L)：</system:String>
+    <system:String x:Key="Limits Velocity Limit Positive:">正向速度限幅(V)：</system:String>
+    <system:String x:Key="Limits Velocity Limit Negative:">反向速度限幅(N)：</system:String>
+
+    <!--CIPTag_Status _ Manual Tuning _ Additional Tune _ Planner-->
+    <system:String x:Key="Planner Maximum Speed:">最大速度(A)：</system:String>
+    <system:String x:Key="Planner Maximum Acceleration:">最大加速度(L)：</system:String>
+    <system:String x:Key="Planner Maximum Deceleration:">最大减速度(N)：</system:String>
+    <system:String x:Key="Planner Maximum Acceleration Jerk:">最大加速度率(J)：</system:String>
+    <system:String x:Key="Planner Maximum Deceleration Jerk:">最大减速度率(K)：</system:String>
+
+    <!--Motion Direct Commands:-->
+    <system:String x:Key="MotionDirectCommands:">指令</system:String>
+    <system:String x:Key="MotionGroupShutdown">运动组关闭</system:String>
+    <system:String x:Key="MotionDirectCommandsExecute">执行</system:String>
+
+    <!--Message Configure-->
+    <system:String x:Key="Message Type:">Message 类型：</system:String>
+    <system:String x:Key="Number Of Elements:">Number Of Elements:</system:String>
+    <system:String x:Key="Destination Element:">目标数据：</system:String>
+    <system:String x:Key="Source Element:">数据源：</system:String>
+    <system:String x:Key="Source Length:">源数据长度：</system:String>
+    <system:String x:Key="Service Type:">服务类型：</system:String>
+    <system:String x:Key="Service Code:">服务代码：</system:String>
+    <system:String x:Key="Instance:">实例：</system:String>
+    <system:String x:Key="Class:">类：</system:String>
+    <system:String x:Key="Attribute:">属性：</system:String>
+
+    <!--Message Configure Communication-->
+    <system:String x:Key="Communication">通信</system:String>
+    <system:String x:Key="Broadcast:">广播：</system:String>
+    <system:String x:Key="Communication Method">通信方式：</system:String>
+    <system:String x:Key="Channel:">通道：</system:String>
+    <system:String x:Key="Destination Link:">目标链接：</system:String>
+    <system:String x:Key="Source Link:">源链接：</system:String>
+    <system:String x:Key="Destination Node:">目标节点：</system:String>
+    <system:String x:Key="CIP With Source ID">源 ID CIP</system:String>
+    <system:String x:Key="Module Address">模块地址</system:String>
+    <system:String x:Key="Connected">已连接</system:String>
+    <system:String x:Key="Cache Connections">缓存连接</system:String>
+    <system:String x:Key="Large Connection">长连接</system:String>
+
+    <!--Message Configure Tag-->
+    <system:String x:Key="Read/Write">读/写</system:String>
+
+    <!--Message Configure bottom part-->
+    <system:String x:Key="Enable Waiting">允许等待</system:String>
+    <system:String x:Key="StatusStart">开始</system:String>
+    <system:String x:Key="Done">完成</system:String>
+    <system:String x:Key="Done Length:">已传输长度：</system:String>
+    <system:String x:Key="Error Code:">错误码：</system:String>
+    <system:String x:Key="Extended Error Code:">扩展错误码：</system:String>
+    <system:String x:Key="Timed Out">超时</system:String>
+    <system:String x:Key="Error Path:">错误路径：</system:String>
+    <system:String x:Key="Error Text:">错误信息：</system:String>
+
+    <!--  ToolBox  -->
+    <system:String x:Key="Rung">梯级</system:String>
+    <system:String x:Key="Branch">分支</system:String>
+    <system:String x:Key="Branch Level">分支等级</system:String>
+    <system:String x:Key="Advanced Math">高等数学</system:String>
+    <system:String x:Key="ASCII Conversion">ASCII 转化</system:String>
+    <system:String x:Key="ASCII String">ASCII 字符串</system:String>
+    <system:String x:Key="ToolBit">位操作</system:String>
+    <system:String x:Key="Bit">边沿检测</system:String>
+    <system:String x:Key="Compare">比较</system:String>
+    <system:String x:Key="Compute Math">数学计算</system:String>
+    <system:String x:Key="Equipment Phase">设备阶段</system:String>
+    <system:String x:Key="Equipment Sequence">设备顺序</system:String>
+    <system:String x:Key="File Misc">数据杂项</system:String>
+    <system:String x:Key="File Shift">数据结构操作</system:String>
+    <system:String x:Key="For Break">For循环</system:String>
+    <system:String x:Key="HMI">人机界面</system:String>
+    <system:String x:Key="Input Output">输入输出</system:String>
+    <system:String x:Key="Math Conversions">数制转换</system:String>
+    <system:String x:Key="Motion Config">运动配置</system:String>
+    <system:String x:Key="Motion Coordinated">运动坐标</system:String>
+    <system:String x:Key="Motion Event">位置凸轮</system:String>
+    <system:String x:Key="Motion Group">运动组</system:String>
+    <system:String x:Key="Motion Move">轴运行</system:String>
+    <system:String x:Key="Motion State">轴状态</system:String>
+    <system:String x:Key="ToolMotion Move">运动位移</system:String>
+    <system:String x:Key="ToolMotion State">运动状态</system:String>
+    <system:String x:Key="Move Logical">逻辑操作</system:String>
+    <system:String x:Key="Program Control">程序控制</system:String>
+    <system:String x:Key="Sequencer">顺序图指令</system:String>
+    <system:String x:Key="Special">特殊指令</system:String>
+    <system:String x:Key="Timer Counter">定时器计数器</system:String>
+    <system:String x:Key="Trigonometry">三角函数</system:String>
+
+    <!--  Select Module Type  -->
+    <system:String x:Key="Select Module Type">选择模块类型</system:String>
+    <system:String x:Key="Catalog">目录</system:String>
+    <system:String x:Key="Module Discovery">模块发现</system:String>
+    <system:String x:Key="Favorites">收藏夹</system:String>
+    <system:String x:Key="Close on Create">创建时关闭</system:String>
+    <system:String x:Key="Enter Search Text for Module Type...">输入模块类型的搜索文本...</system:String>
+    <system:String x:Key="Clear Filters">清除过滤器</system:String>
+    <system:String x:Key="Module Type Category Filters">模块类型类别过滤器</system:String>
+    <system:String x:Key="Module Type Vendor Filters">模块类型供应商过滤器</system:String>
+    <system:String x:Key="Catalog Number">目录号</system:String>
+    <system:String x:Key="Add to Favorites">添加到收藏夹</system:String>
+    <system:String x:Key="Module.Vendor">供应商</system:String>
+    <system:String x:Key="Category">类别</system:String>
+    <system:String x:Key="Show Filters">显示过滤器</system:String>
+    <system:String x:Key="Hide Filters">隐藏过滤器</system:String>
+    <system:String x:Key="Module Types Found">模块类型已找到</system:String>
+    <system:String x:Key="New Module">新建模块</system:String>
+
+    <!--SourceProtect-->
+    <system:String x:Key="SourceVendor">供应商</system:String>
+    <system:String x:Key="SourceProtection">源码</system:String>
+    <system:String x:Key="SourceContainer">来源</system:String>
+    <system:String x:Key="Browse Source Key">浏览源密钥</system:String>
+    <system:String x:Key="SourceProtect">保护...</system:String>
+    <system:String x:Key="Unprotect">取消保护</system:String>
+    <system:String x:Key="SourceProtectionConfiguration">源码保护</system:String>
+    <system:String x:Key="SourceOrganize">组织方式：</system:String>
+    <system:String x:Key="SourceKey">源密钥配置...</system:String>
+    <system:String x:Key="SourceKeyConfiguration">源密钥配置</system:String>
+    <system:String x:Key="SourceKeyProvider">源密钥提供商</system:String>
+    <system:String x:Key="SourceSpecify">指定...</system:String>
+    <system:String x:Key="SourceView">查看</system:String>
+    <system:String x:Key="SpecifySourceKey">指定源密钥文件位置</system:String>
+    <system:String x:Key="SourceKeyFile">源密钥文件位置：</system:String>
+    <system:String x:Key="SourceProtectionType">保护类型</system:String>
+    <system:String x:Key="Source Key">源密钥</system:String>
+    <system:String x:Key="SourceKeyToApply">要应用于选定组件的源密钥(s)：</system:String>
+    <system:String x:Key="ShowSourceKey">显示源密钥</system:String>
+    <system:String x:Key="ConfirmNewSourceKey">确认新的源密钥：</system:String>
+    <system:String x:Key="SourceKeyName">源密钥名称：</system:String>
+    <system:String x:Key="SourceAllow">运行查看组件</system:String>
+    <system:String x:Key="DoesNotExist">&lt;不存在&gt;</system:String>
+    <system:String x:Key="SourceProvieder">源密钥提供者：</system:String>
+    <system:String x:Key="UnknownProtection">未知源码</system:String>
+    <system:String x:Key="SourceUnProtected">{未保护}</system:String>
+
+    <!-- RLLEditor -->
+    <system:String x:Key="Cut Rung">剪切梯级</system:String>
+    <system:String x:Key="Copy Rung">复制梯级</system:String>
+    <system:String x:Key="Delete Rung">删除梯级</system:String>
+    <system:String x:Key="Add Rung">添加梯级</system:String>
+    <system:String x:Key="Edit Rung">编辑梯级</system:String>
+    <system:String x:Key="Edit Rung Comment">编辑梯级注释</system:String>
+    <system:String x:Key="Import Rungs...">导入梯级...</system:String>
+    <system:String x:Key="Export Rungs...">导出梯级...</system:String>
+    <system:String x:Key="Verify Rung">验证梯级</system:String>
+    <system:String x:Key="RLLEditor.Edit">编辑</system:String>
+    <system:String x:Key="RLLEditor.Properties">属性</system:String>
+    <system:String x:Key="RLLEditor.Goto" >转至</system:String>
+    <system:String x:Key="RLLEditor.CrossReference">的交叉引用</system:String>
+    <system:String x:Key="RLLEditor.Monitor">监控</system:String>
+    <system:String x:Key="RLLEditor.New">新建</system:String>
+    <system:String x:Key="Cut Instruction">剪切指令</system:String>
+    <system:String x:Key="Copy Instruction">复制指令</system:String>
+    <system:String x:Key="Edit Main Operand Description">编辑主操作数说明</system:String>
+    <system:String x:Key="Toggle Bit">切换位</system:String>
+    <system:String x:Key="Test">测试</system:String>
+    <system:String x:Key="RLLEditor.Data" xml:space="preserve">测试     </system:String>
+    <system:String x:Key="Online Edit">在线编辑</system:String>
+    <system:String x:Key="Accept Edit">接受编辑</system:String>
+    <system:String x:Key="Cancel Edit">取消编辑</system:String>
+    <system:String x:Key="Finalize Edit">完成编辑</system:String>
+    <system:String x:Key="Undo(Ctrl+Z)">撤销(Ctrl+Z)</system:String>
+    <system:String x:Key="Redo(Ctrl+Y)">重做(Ctrl+Y)</system:String>
+
+    <!--ICSStudio.UIServicesPackage.AddOnInstruction.ExtendDialog.CheckDialog-->
+    <system:String x:Key="Container">容器</system:String>
+    <system:String x:Key="Parameter">参数</system:String>
+    <system:String x:Key="Argument">自变量</system:String>
+    <system:String x:Key="CheckDialogHint1">需要更新功能块 ‘{0}’ 的待定更改至其各处调用位置。</system:String>
+    <system:String x:Key="CheckDialogHint2">如果您选择将更改应用于此功能块，请检查所有调用 ‘{0}’ 的位置，以确保它们在更新后能正确执行。</system:String>
+    <system:String x:Key="CheckDialogHint3">您将编辑每处调用，以确保传递给参数的自变量是正确的。</system:String>
+    <system:String x:Key="CheckDialogHint4">调用此功能块的位置：</system:String>
+    <system:String x:Key="CheckDialogHint5">选择调用的自变量：</system:String>
+    <system:String x:Key="CheckDialogHint6">仅显示已更改的参数</system:String>
+    <system:String x:Key="CheckDialogHint7">此操作无法撤销。</system:String>
+    <system:String x:Key="CheckDialogHint8">是否将更改应用于功能块并编辑每个调用的自变量？</system:String>
+    <system:String x:Key="CheckDialogHint9">打开交叉引用</system:String>
+    
+</ResourceDictionary>

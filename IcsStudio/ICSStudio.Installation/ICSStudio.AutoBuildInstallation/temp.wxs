@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="ICSStudio" Language="1033" Version="1.0.0.0" Manufacturer="ICON" UpgradeCode="8c6e25e4-7249-4326-928a-66e002452530">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate />
+	  <WixVariable Id="WixUILicenseRtf" Value="{2}" />
+		<Feature Id="ProductFeature" Title="ICSStudio" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	  <UI>
+	    <UIRef Id="WixUI_InstallDir"/>
+	  </UI>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+		  <Directory Id="ProgramMenuFolder">
+		    <Directory Id="ApplicationProgramsFolder" Name="ICS Studio" />
+		  </Directory>
+		  <Directory Id="DesktopFolder" Name="ICS Studio" />
+		  <Directory Id="ProgramFilesFolder">
+				<Directory Id="TESTFILEPRODUCTDIR" Name="ICS Studio">
+				{0}
+				</Directory>	
+			</Directory>
+		</Directory>
+
+    <Property Id="WIXUI_INSTALLDIR" Value="TESTFILEPRODUCTDIR">
+    </Property>
+    
+	  <UIRef Id="WixUI_InstallDir" />
+	  <!--<Property Id="ISOSHELLSFX">
+	    <RegistrySearch Id="IsoShellSfx" Root="HKLM"
+	                    Key="Software\Microsoft\DevDiv\vs\Servicing\\$(var.ShellVersion)\IsoShell\$(var.ProductLanguage)"
+	                    Name="Install" Type="raw" />
+	  </Property>
+	  <Condition Message="This application requires $(var.IsoShellName). Please install $(var.IsoShellName) then
+run this installer again.">
+	    <![CDATA[Installed OR ISOSHELLSFX]]>
+	  </Condition>-->
+	  <DirectoryRef Id="ApplicationProgramsFolder">
+	    <Component Id="ApplicationShortcut" Guid="68485251-0D3B-4EFC-8792-A721D4AE8AB7">
+	      <Shortcut Id="StartMenuShortcut"
+	                Name="ICSStudio"
+	                Target="[TESTFILEPRODUCTDIR]ICSStudio.exe"
+	                WorkingDirectory="TESTFILEPRODUCTDIR" />
+	      <Shortcut Id="UninstallICSStudio"
+	                Name="Uninstall"
+	                Target="[SystemFolder]msiexec.exe"
+	                Arguments="/x [ProductCode]"
+	                Description="Uninstall" Directory="TESTFILEPRODUCTDIR"
+	                WorkingDirectory="TESTFILEPRODUCTDIR"/>
+	      <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall" />
+	      <RegistryValue Root="HKCU" Key="Software\Microsoft\ICSStudio\StartMenu"
+	                     Name="StartMenuShortcut" Type="integer" Value="1" KeyPath="yes" />
+	    </Component>
+	  </DirectoryRef>
+
+	  <DirectoryRef Id="DesktopFolder">
+	    <Component Id="DesktopFolderShortcut" Guid="5A254682-DD1F-453D-8333-144457282026">
+	      <Shortcut Id="DesktopShortcut" Directory="DesktopFolder"   Name="ICS Studio" Target="[TESTFILEPRODUCTDIR]ICSStudio.exe"  WorkingDirectory="TESTFILEPRODUCTDIR">
+	      </Shortcut>
+	      <RegistryValue Root="HKCU" Key="Software\Microsoft\ICSStudio\Desktop" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+	    </Component>
+	  </DirectoryRef>
+
+	</Fragment>
+
+	<Fragment>
+	  <ComponentGroup Id="ProductComponents">
+	    <!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+			<!-- <Component Id="ProductComponent"> -->
+				<!-- TODO: Insert files, registry keys, and other resources here. -->
+			<!-- </Component> -->
+      <ComponentRef Id="DesktopFolderShortcut"/>
+	    <ComponentRef Id="ApplicationShortcut" />
+    {1}
+
+		</ComponentGroup>
+  
+	</Fragment>
+</Wix>

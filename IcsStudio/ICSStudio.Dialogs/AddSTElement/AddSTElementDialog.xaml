@@ -1,0 +1,174 @@
+﻿<Window
+    x:Class="ICSStudio.Dialogs.AddSTElement.AddSTElementDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
+    xmlns:converter="clr-namespace:ICSStudio.Dialogs.GoTo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:gui="clr-namespace:ICSStudio.Gui;assembly=ICSStudio.Gui"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:view="clr-namespace:ICSStudio.Gui.View;assembly=ICSStudio.Gui"
+    Title="{DynamicResource Add Structured Text Element}"
+    Width="360"
+    Height="360"
+    MinWidth="360"
+    MinHeight="360"
+    d:DesignHeight="360"
+    d:DesignWidth="360"
+    gui:DialogCloser.DialogResult="{Binding DialogResult}"
+    Background="#FFF0F0F0"
+    ResizeMode="CanResizeWithGrip"
+    ShowInTaskbar="False"
+    SizeChanged="AddSTElementDialog_OnSizeChanged"
+    WindowStartupLocation="CenterOwner"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <ResourceDictionary>
+            <view:BindingProxy x:Key="Proxy" Data="{Binding}" />
+            <converter:LanguageConverter x:Key="LanguageConverter" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="{x:Type TreeView}">
+                <Setter Property="Margin" Value="2.5" />
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="20" />
+            <RowDefinition />
+            <RowDefinition Height="70" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="0"
+            Text="{DynamicResource ST Element:}" />
+        <controls:AutoCompleteBox
+            Grid.Row="0"
+            Grid.Column="1"
+            Margin="3"
+            IsTextCompletionEnabled="True"
+            ItemsSource="{Binding AllST}"
+            MaxDropDownHeight="160"
+            Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=30}" />
+        <TreeView
+            Grid.Row="2"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            ItemsSource="{Binding ListViewTree}"
+            Visibility="{Binding TreeViewVisibility}">
+            <TreeView.ItemContainerStyle>
+                <Style TargetType="{x:Type TreeViewItem}">
+                    <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
+                    <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+                    <EventSetter Event="Selected" Handler="EventSetter_OnHandler" />
+                    <EventSetter Event="MouseDoubleClick" Handler="EventSetter_OnHandler2" />
+                </Style>
+            </TreeView.ItemContainerStyle>
+
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate ItemsSource="{Binding Path=Items}">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Margin="2" Kind="{Binding IconKind}" />
+                            <TextBlock Margin="2" Text="{Binding Name, Converter={StaticResource LanguageConverter}}" />
+                        </StackPanel>
+                        <TextBlock
+                            Width="{Binding Data.DescriptionTextTreeWidth, Source={StaticResource Proxy}}"
+                            Margin="{Binding Data.DescriptionMargin, Source={StaticResource Proxy}}"
+                            HorizontalAlignment="Left"
+                            Text="{Binding Description,Converter={StaticResource LanguageConverter}}"
+                            TextTrimming="WordEllipsis" />
+                    </Grid>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+        <TreeView
+            Grid.Row="2"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            ItemsSource="{Binding ListView}"
+            Visibility="{Binding ListViewVisibility}">
+            <TreeView.ItemContainerStyle>
+                <Style TargetType="{x:Type TreeViewItem}">
+                    <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+                    <EventSetter Event="MouseDoubleClick" Handler="EventSetter_OnHandler2" />
+                    <EventSetter Event="Selected" Handler="EventSetter_OnHandler" />
+                </Style>
+            </TreeView.ItemContainerStyle>
+            <TreeView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Margin="2" Kind="{Binding IconKind}" />
+                            <TextBlock Margin="2" Text="{Binding Name}" />
+                        </StackPanel>
+                        <TextBlock
+                            Width="{Binding Data.DescriptionTextWidth, Source={StaticResource Proxy}}"
+                            Margin="{Binding Data.DescriptionListMargin, Source={StaticResource Proxy}}"
+                            HorizontalAlignment="Left"
+                            Text="{Binding Description}"
+                            TextTrimming="WordEllipsis" />
+                    </Grid>
+                </DataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+        <ListView
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Panel.ZIndex="-1">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Width="{Binding NameWidth, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Header="{DynamicResource Name}" />
+                        <GridViewColumn Width="{Binding DescriptionWidth}" Header="{DynamicResource Description}" />
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <CheckBox
+            Grid.Row="3"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Content="{DynamicResource Show Language Elements By Groups}"
+            IsChecked="{Binding ShowTreeView}" />
+        <StackPanel
+            Grid.Row="3"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Height="auto"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom">
+            <Button
+                Command="{Binding OkCommand}"
+                Content="{DynamicResource OK}"
+                IsDefault="True" />
+            <Button
+                Command="{Binding CancelCommand}"
+                Content="{DynamicResource Cancel}"
+                IsCancel="True" />
+            <Button Content="{DynamicResource Help}" />
+        </StackPanel>
+        <Button
+            Grid.Row="3"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Height="20"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Command="{Binding NewAOICommand}"
+            Content="{DynamicResource New UD Function Block...}" />
+    </Grid>
+
+</Window>

@@ -1,0 +1,122 @@
+﻿<Window
+    x:Class="ICSStudio.DeviceProperties.AdvancedUserLimits.AdvancedUserLimitsDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:gui="clr-namespace:ICSStudio.Gui;assembly=ICSStudio.Gui"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+    Title="{Binding Title}"
+    Width="400"
+    Height="400"
+    d:DesignHeight="300"
+    d:DesignWidth="300"
+    gui:DialogCloser.DialogResult="{Binding DialogResult}"
+    ResizeMode="NoResize"
+    ShowInTaskbar="False"
+    WindowStartupLocation="CenterOwner"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="230" />
+            <ColumnDefinition Width="120" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="0"
+            Text="{DynamicResource ConverterThermalOverloadLimit}" />
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="0"
+            Text="{DynamicResource BusRegulatorThermalOverloadLimit}" />
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="0"
+            Text="{DynamicResource BusUnderVoltageLimit}" />
+
+        <xctk:SingleUpDown
+            Grid.Row="0"
+            Grid.Column="1"
+            VerticalAlignment="Center"
+            AllowSpin="False"
+            FormatString="######0.0######"
+            Minimum="0"
+            ShowButtonSpinner="False"
+            Value="{Binding ConverterThermalOverloadUserLimit, Delay=100}" />
+
+        <xctk:SingleUpDown
+            Grid.Row="1"
+            Grid.Column="1"
+            VerticalAlignment="Center"
+            AllowSpin="False"
+            FormatString="######0.0######"
+            Minimum="0"
+            ShowButtonSpinner="False"
+            Value="{Binding BusRegulatorThermalOverloadUserLimit, Delay=100}" />
+
+        <xctk:SingleUpDown
+            Grid.Row="2"
+            Grid.Column="1"
+            VerticalAlignment="Center"
+            AllowSpin="False"
+            FormatString="######0.0######"
+            Maximum="100"
+            Minimum="0"
+            ShowButtonSpinner="False"
+            Value="{Binding BusUndervoltageUserLimit, Delay=100}" />
+
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="2"
+            Text="%" />
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="2"
+            Text="%" />
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="2"
+            Text="%" />
+
+        <Separator
+            Grid.Row="4"
+            Grid.Column="0"
+            Grid.ColumnSpan="3" />
+
+        <StackPanel
+            Grid.Row="5"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Orientation="Horizontal">
+            <Button
+                Command="{Binding OkCommand}"
+                Content="{DynamicResource OK}"
+                IsDefault="True" />
+            <Button
+                Command="{Binding CancelCommand}"
+                Content="{DynamicResource Cancel}"
+                IsCancel="True" />
+            <Button Content="{DynamicResource Help}" />
+        </StackPanel>
+
+    </Grid>
+</Window>

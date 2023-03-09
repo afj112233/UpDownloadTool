@@ -1,0 +1,15 @@
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.ComponentTest.exe.config
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.ComponentTest.exe
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Debug\ICSStudio.ComponentTest.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ComponentTest\obj\Debug\ICSStudio.ComponentTest.csprojResolveAssemblyReference.cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ComponentTest\obj\Debug\MainWindow.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ComponentTest\obj\Debug\MainWindow.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ComponentTest\obj\Debug\App.g.cs
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ComponentTest\obj\Debug\ICSStudio.ComponentTest_MarkupCompile.cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ComponentTest\obj\Debug\ICSStudio.ComponentTest_MarkupCompile.lref
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ComponentTest\obj\Debug\App.baml
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ComponentTest\obj\Debug\ICSStudio.ComponentTest.g.resources
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ComponentTest\obj\Debug\ICSStudio.ComponentTest.Properties.Resources.resources
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ComponentTest\obj\Debug\ICSStudio.ComponentTest.csproj.GenerateResource.Cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ComponentTest\obj\Debug\ICSStudio.ComponentTest.exe
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\Test\ICSStudio.ComponentTest\obj\Debug\ICSStudio.ComponentTest.pdb

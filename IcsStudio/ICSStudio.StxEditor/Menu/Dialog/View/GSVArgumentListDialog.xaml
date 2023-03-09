@@ -1,0 +1,164 @@
+﻿<Window
+    x:Class="ICSStudio.StxEditor.Menu.Dialog.View.GSVArgumentListDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
+    xmlns:controls1="clr-namespace:ICSStudio.Components.Controls;assembly=ICSStudio.Components"
+    xmlns:gui="clr-namespace:ICSStudio.Gui;assembly=ICSStudio.Gui"
+    Title="{Binding Title}"
+    Width="370"
+    Height="230"
+    gui:DialogCloser.DialogResult="{Binding DialogResult}"
+    ResizeMode="NoResize">
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style TargetType="TextBox">
+                <Setter Property="Height" Value="25" />
+                <Setter Property="Width" Value="200" />
+            </Style>
+            <Style x:Key="ComboboxStyle" TargetType="ComboBox">
+                <Setter Property="Height" Value="25" />
+                <Setter Property="Width" Value="200" />
+                <Setter Property="DisplayMemberPath" Value="DisplayName" />
+                <Setter Property="SelectedValuePath" Value="Value" />
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="Height" Value="23" />
+                <Setter Property="MinWidth" Value="75" />
+                <Setter Property="Margin" Value="5" />
+            </Style>
+            <Style TargetType="controls:AutoCompleteBox">
+                <Setter Property="Width" Value="200" />
+                <Setter Property="Height" Value="25" />
+            </Style>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="0"
+            Text="Class Name:" />
+        <ComboBox
+            Grid.Row="0"
+            Grid.Column="1"
+            ItemsSource="{Binding ClassList}"
+            SelectedValue="{Binding SelectedClass, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+            Style="{StaticResource ComboboxStyle}" />
+
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="0"
+            Text="Instance Name:" />
+        <!--  aoi  -->
+        <ComboBox
+            Grid.Row="1"
+            Grid.Column="1"
+            Width="200"
+            Height="25"
+            IsEditable="True"
+            ItemsSource="{Binding InstanceCollection}"
+            Text="{Binding SelectedInstanceCollection}"
+            Visibility="{Binding InstanceComboboxVisibility}" />
+        <!--  axis  -->
+        <Grid
+            Grid.Row="1"
+            Grid.Column="1"
+            Width="200"
+            Visibility="{Binding TagFilterVisibility}">
+            <controls1:FastAutoCompleteTextBox
+                Padding="0,0,20,0"
+                Data="{Binding InstanceNameList}"
+                IsTextCompletionEnabled="True"
+                MaxDropDownHeight="0"
+                Text="{Binding InstanceName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+            <Button
+                Width="18"
+                Height="18"
+                MinWidth="18"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Background="Transparent"
+                BorderBrush="Transparent"
+                Command="{Binding NameFilterCommand}"
+                CommandParameter="{Binding RelativeSource={RelativeSource Self}}">
+                <Button.Content>
+                    <Path Data="M0,4L5,9L10,4" Stroke="Black" />
+                </Button.Content>
+            </Button>
+        </Grid>
+
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="0"
+            Text="Attribute Name:" />
+        <ComboBox
+            Grid.Row="2"
+            Grid.Column="1"
+            Width="200"
+            Height="25"
+            ItemsSource="{Binding AttributeList, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+            SelectedValue="{Binding SelectedAttribute, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+        <TextBlock
+            Grid.Row="3"
+            Grid.Column="0"
+            Text="Destination:" />
+        <Grid
+            Grid.Row="3"
+            Grid.Column="1"
+            Width="200">
+            <controls1:FastAutoCompleteTextBox
+                Padding="0,0,20,0"
+                Data="{Binding DestinationNameList}"
+                IsTextCompletionEnabled="True"
+                MaxDropDownHeight="0"
+                Text="{Binding DestinationName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                Visibility="{Binding FilterVisibility}" />
+            <Button
+                Width="18"
+                Height="18"
+                MinWidth="18"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Background="Transparent"
+                BorderBrush="Transparent"
+                Command="{Binding NameFilterCommand2}"
+                CommandParameter="{Binding RelativeSource={RelativeSource Self}}">
+                <Button.Content>
+                    <Path Data="M0,4L5,9L10,4" Stroke="Black" />
+                </Button.Content>
+            </Button>
+        </Grid>
+
+        <StackPanel
+            Grid.Row="4"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Orientation="Horizontal">
+            <Button
+                Command="{Binding OKCommand}"
+                Content="OK"
+                IsDefault="True" />
+            <Button
+                Command="{Binding CancelCommand}"
+                Content="Cancel"
+                IsCancel="True" />
+            <Button Command="{Binding ApplyCommand}" Content="Apply" />
+            <Button Content="Help" />
+        </StackPanel>
+    </Grid>
+</Window>

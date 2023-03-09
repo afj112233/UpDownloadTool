@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="ICSStudio.UIServicesPackage.AddOnInstruction.ScanModes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ICSStudio.UIServicesPackage.AddOnInstruction"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="560" IsEnabled="{Binding IsAllEnabled}">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <Style TargetType="DataGridColumnHeader">
+                <Setter Property="Background" Value="#b0c4de"></Setter>
+                <Setter Property="BorderThickness" Value="0"></Setter>
+            </Style>
+            <Style TargetType="DataGridRow">
+                <Setter Property="BorderThickness" Value="0"></Setter>
+                <Style.Triggers>
+                    <Trigger Property="AlternationIndex" Value="0">
+                        <Setter Property="Background" Value="LightGray"></Setter>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style TargetType="TextBox">
+                <Setter Property="IsEnabled" Value="{Binding IsEnabled}"></Setter>
+            </Style>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="550"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Text="{DynamicResource The Controller Prescan  And}" TextWrapping="Wrap"></TextBlock>
+        <TextBlock Grid.Row="1" Text="{DynamicResource Optional Prescan Postscan And}"></TextBlock>
+        <TextBlock Grid.Row="2" Text="{DynamicResource Prescan Routine Executes}"></TextBlock>
+        <DockPanel Grid.Row="3" VerticalAlignment="Stretch" LastChildFill="False">
+            <CheckBox Content="{DynamicResource Execute Prescan Routine After}" DockPanel.Dock="Left" 
+                      IsChecked="{Binding CheckBox1,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                      IsEnabled="{Binding CheckBoxEnable1,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></CheckBox>
+            <Button Content="{DynamicResource Go To}" DockPanel.Dock="Right"  Width="53" Command="{Binding GoToCommand1}"></Button>
+            <Button Content="{Binding ButtonName1,UpdateSourceTrigger=PropertyChanged,Mode=OneWay}" DockPanel.Dock="Right" Width="53"
+                    Command="{Binding DeleteOrNewCommand1}" IsDefault="True"></Button>
+        </DockPanel>
+        <TextBlock Grid.Row="4" Text="{DynamicResource Postscan Routine Executes}"></TextBlock>
+        <DockPanel Grid.Row="5" VerticalAlignment="Stretch" LastChildFill="False">
+            <CheckBox Content="{DynamicResource Execute Postscan Routine After}" DockPanel.Dock="Left"
+                      IsChecked="{Binding CheckBox2,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                      IsEnabled="{Binding CheckBoxEnable2,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></CheckBox>
+            <Button Content="{DynamicResource Go To}" DockPanel.Dock="Right"  Width="53" Command="{Binding GoToCommand2}"></Button>
+            <Button Content="{Binding ButtonName2,UpdateSourceTrigger=PropertyChanged,Mode=OneWay}" DockPanel.Dock="Right" Width="53"
+                    Command="{Binding DeleteOrNewCommand2}"></Button>
+        </DockPanel>
+        <TextBlock Grid.Row="6" Text="{DynamicResource EnableInFalse Routine Executes}"></TextBlock>
+        <DockPanel Grid.Row="7"  VerticalAlignment="Stretch" LastChildFill="False">
+            <CheckBox Content="{DynamicResource Execute EnableInFalse Routine}" DockPanel.Dock="Left"
+                      IsChecked="{Binding CheckBox3,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                      IsEnabled="{Binding CheckBoxEnable3,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></CheckBox>
+            <Button Content="{DynamicResource Go To}" DockPanel.Dock="Right"  Width="53" Command="{Binding GoToCommand3}"></Button>
+            <Button Content="{Binding ButtonName3,UpdateSourceTrigger=PropertyChanged,Mode=OneWay}" DockPanel.Dock="Right" Width="53"
+                    Command="{Binding DeleteOrNewCommand3}"></Button>
+        </DockPanel>
+    </Grid>
+</UserControl>

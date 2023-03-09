@@ -1,0 +1,10 @@
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\Toolchains\include\ivmbytecodeimpl.h
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\Toolchains\include\ivmexport.h
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\Toolchains\include\module.aarch64.lds
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\Toolchains\include\module.lds
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\Toolchains\include\module.x64.lds
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ICSStudio.Toolchains.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\build\Release\ICSStudio.Toolchains.pdb
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.Toolchains\obj\Release\ICSStudio.Toolchains.csprojResolveAssemblyReference.cache
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.Toolchains\obj\Release\ICSStudio.Toolchains.dll
+C:\Users\11584\Desktop\Git\ICS2\icsstudio\IcsStudio\ICSStudio.Toolchains\obj\Release\ICSStudio.Toolchains.pdb

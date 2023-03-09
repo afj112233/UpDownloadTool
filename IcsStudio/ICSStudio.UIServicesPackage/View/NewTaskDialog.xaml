@@ -1,0 +1,213 @@
+﻿<Window x:Class="ICSStudio.UIServicesPackage.View.NewTaskDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:gui="clr-namespace:ICSStudio.Gui;assembly=ICSStudio.Gui"
+        xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore"
+        xmlns:controls="clr-namespace:ICSStudio.Components.Controls;assembly=ICSStudio.Components"
+        mc:Ignorable="d"
+        d:DesignHeight="300" d:DesignWidth="300"
+        Title="{DynamicResource New Task}"
+        Width="467" Height="360"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False" WindowStartupLocation="CenterOwner"
+        gui:DialogCloser.DialogResult="{Binding DialogResult}"
+        FocusManager.FocusedElement="{Binding ElementName=NameBox}">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary 
+                    Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock 
+            Grid.Row="0" 
+            Grid.Column="0" 
+            Text="{DynamicResource Name:}"/>
+        <controls:ValidateNameControl 
+            Grid.Row="0"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            x:Name="NameBox"
+            MaxLength="40"
+            Margin="2"
+            input:InputMethod.IsInputMethodEnabled="False"
+            Text="{Binding Name,UpdateSourceTrigger=PropertyChanged,Delay=30}" />
+
+        <TextBlock 
+            Grid.Row="1" 
+            Grid.Column="0" 
+            Grid.RowSpan="2" 
+            VerticalAlignment="Top"
+            Text="{DynamicResource Description:}"/>
+        <TextBox 
+            Grid.Row="1"
+            Grid.Column="1"
+            Grid.ColumnSpan="2" 
+            Grid.RowSpan="2"
+            VerticalScrollBarVisibility="Visible"
+            TextWrapping="Wrap" 
+            AcceptsReturn="True"
+            Text="{Binding Description,UpdateSourceTrigger=PropertyChanged,Delay=30}" />
+
+        <TextBlock 
+            Grid.Row="3"
+            Grid.Column="0" 
+            Text="{DynamicResource Type:}"/>
+        <ComboBox 
+            Grid.Row="3" 
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            ItemsSource="{Binding TaskTypeSource}"
+            SelectedValuePath="Value"
+            DisplayMemberPath="DisplayName"
+            SelectedValue="{Binding TaskType}" />
+
+        <TextBlock 
+            Grid.Row="4" 
+            Grid.Column="0"
+            Visibility="{Binding EventTypeVisibility}" 
+            Text="{DynamicResource Trigger:}"/>
+        <ComboBox 
+            Grid.Row="4"
+            Grid.Column="1"
+            Grid.ColumnSpan="2" 
+            Visibility="{Binding EventTypeVisibility}" />
+
+        <TextBlock 
+            Grid.Row="5" 
+            Grid.Column="0" 
+            Visibility="{Binding EventTypeVisibility}" 
+            Text="{DynamicResource Tag:}"/>
+        <ComboBox 
+            Grid.Row="5" 
+            Grid.Column="1"
+            Grid.ColumnSpan="2" 
+            Visibility="{Binding EventTypeVisibility}" />
+
+        <DockPanel 
+            Grid.Row="6"
+            Grid.Column="0" 
+            Grid.ColumnSpan="3"
+            Visibility="{Binding EventTypeVisibility}">
+            <CheckBox 
+                Content="{DynamicResource Execute task if no event occurs within}" />
+            <TextBox DockPanel.Dock="Right" />
+        </DockPanel>
+        <TextBlock 
+            Grid.Row="6" 
+            Grid.Column="3" 
+            Visibility="{Binding EventTypeVisibility}" 
+            Text="{DynamicResource ms}" />
+
+        <TextBlock 
+            Grid.Row="7" 
+            Grid.Column="0" 
+            Visibility="{Binding PeriodTypeVisibility}" 
+            Text="{DynamicResource Period:}" />
+        <TextBox 
+            Grid.Row="7" 
+            Grid.Column="1" 
+            Visibility="{Binding PeriodTypeVisibility}"
+            Text="{Binding Period,Mode=TwoWay,
+            UpdateSourceTrigger=PropertyChanged,Delay=30,
+            StringFormat=######0.0######}" />
+        <TextBlock 
+            Grid.Row="7"
+            Grid.Column="2" 
+            Visibility="{Binding PeriodTypeVisibility}"
+            Text="{DynamicResource ms}" />
+
+        <TextBlock 
+            Grid.Row="8" 
+            Grid.Column="0"
+            Visibility="{Binding PriorityVisibility}"
+            Text="{DynamicResource Priority:}"/>
+        <TextBox
+            Grid.Row="8"
+            Grid.Column="1"
+            Visibility="{Binding PriorityVisibility}"
+            Text="{Binding Priority,Mode=TwoWay,
+            UpdateSourceTrigger=PropertyChanged,Delay=30,StringFormat=D}" />
+        <TextBlock 
+            Grid.Row="8" 
+            Grid.Column="2" 
+            Grid.ColumnSpan="2" 
+            Visibility="{Binding PriorityVisibility}"
+            Text="{DynamicResource (Lower number yields higher priority)}"/>
+
+        <TextBlock 
+            Grid.Row="9" 
+            Grid.Column="0" 
+            Text="{DynamicResource Watchdog:}"/>
+        <TextBox 
+            Grid.Row="9" 
+            Grid.Column="1"
+            Text="{Binding Watchdog, Mode=TwoWay,
+            UpdateSourceTrigger=PropertyChanged,Delay=30,
+            StringFormat=######0.0######}"/>
+        <TextBlock 
+            Grid.Row="9"
+            Grid.Column="2"
+            Text="{DynamicResource ms}"/>
+
+        <CheckBox 
+            Grid.Row="10" 
+            Grid.Column="0" 
+            Grid.ColumnSpan="4"
+            Content="{DynamicResource Disable automatic output processing to reduce task overhead}" 
+            IsChecked="{Binding DisableUpdateOutputs}"/>
+        <CheckBox 
+            Grid.Row="11" 
+            Grid.Column="0" 
+            Grid.ColumnSpan="4"
+            Content="{DynamicResource Inhibit task}" 
+            IsChecked="{Binding IsInhibited}"/>
+
+        <Grid Grid.Row="0" Grid.Column="3" Grid.RowSpan="4">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Button 
+                Grid.Row="0" 
+                Command="{Binding OkCommand}" 
+                IsDefault="True"
+                Content="{DynamicResource OK}"/>
+            <Button 
+                Grid.Row="1" 
+                Command="{Binding CancelCommand}" 
+                IsCancel="True"
+                Content="{DynamicResource Cancel}"/>
+            <Button 
+                Grid.Row="2"
+                Content="{DynamicResource Help}"/>
+        </Grid>
+
+    </Grid>
+</Window>

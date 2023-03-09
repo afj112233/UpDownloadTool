@@ -1,0 +1,783 @@
+﻿<!--  ReSharper disable Xaml.BindingWithContextNotResolved  -->
+<!--  ReSharper disable Xaml.RedundantResource  -->
+<!--  ReSharper disable UnusedMember.Global  -->
+<UserControl
+    x:Class="ICSStudio.EditorPackage.MonitorEditTags.Controls.EditTagsControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:command="http://www.galasoft.ch/mvvmlight"
+    xmlns:commands="clr-namespace:ICSStudio.EditorPackage.MonitorEditTags.Commands"
+    xmlns:controls="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
+    xmlns:controls1="clr-namespace:ICSStudio.Components.Controls;assembly=ICSStudio.Components"
+    xmlns:controls2="clr-namespace:ICSStudio.Gui.Controls;assembly=ICSStudio.Gui"
+    xmlns:converters="clr-namespace:ICSStudio.Gui.Converters;assembly=ICSStudio.Gui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="clr-namespace:ICSStudio.EditorPackage.MonitorEditTags.UI"
+    xmlns:view="clr-namespace:ICSStudio.Gui.View;assembly=ICSStudio.Gui"
+    d:DesignHeight="600"
+    d:DesignWidth="800"
+    IsVisibleChanged="OnIsVisibleChanged"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Resources/Styles/ToggleStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <BitmapImage x:Key="PencilImage" UriSource="pack://application:,,,/ICSStudio.Gui;component/Resources/image/Pencil_16x16.png" />
+
+            <converters:IsVisibleConverter x:Key="IsVisibleConverter" />
+            <converters:EnumToDisplayNameConverter x:Key="EnumToDisplayNameConverter" />
+
+            <view:BindingProxy x:Key="MainScopeProxy" Data="{Binding Scope}" />
+            <view:BindingProxy x:Key="MainControllerProxy" Data="{Binding Controller}" />
+            <view:BindingProxy x:Key="UsageVisibilityProxy" Data="{Binding UsageVisibility, FallbackValue=Collapsed}" />
+            <view:BindingProxy x:Key="IsDataTypeReadOnlyProxy" Data="{Binding IsDataTypeReadOnly}" />
+
+            <ui:ConfigureVisibilityConverter x:Key="ConfigureVisibilityConverter" />
+            <ui:PropertiesVisibilityConverter x:Key="PropertiesVisibilityConverter" />
+            <ui:DataTypeVisibilityConverter x:Key="DataTypeVisibilityConverter" />
+            <ui:DescriptionVisibilityConverter x:Key="DescriptionVisibilityConverter" />
+            <ui:CrossReferenceVisibilityConverter x:Key="CrossReferenceVisibilityConverter" />
+            <ui:DeleteVisibilityConverter x:Key="DeleteVisibilityConverter" />
+            <ui:ToolTipVisibilityConverter x:Key="ToolTipVisibilityConverter"/>
+
+            <view:BindableCommand x:Key="CopyCommand" Command="{Binding CopyCommand}" />
+            <view:BindableCommand x:Key="CutCommand" Command="{Binding CutCommand}" />
+            <view:BindableCommand x:Key="PasteCommand" Command="{Binding PasteCommand}" />
+            <view:BindableCommand x:Key="DeleteCommand" Command="{Binding DeleteCommand}" />
+
+            <Style x:Key="WrapToolTip" TargetType="ToolTip">
+                <Setter Property="ContentTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock Text="{TemplateBinding Content}" 
+                                           Width="350" Padding="50 0 50 0"  
+                                           TextWrapping="Wrap" TextAlignment="Center"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!--  RowHeaderTemplate  -->
+            <DataTemplate x:Key="AsteriskTemplate">
+                <TextBlock
+                    Width="11"
+                    Height="11"
+                    Margin="0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Text="*"
+                    ToolTip="New" />
+            </DataTemplate>
+
+            <DataTemplate x:Key="PencilTemplate">
+                <Image
+                    Width="11"
+                    Height="11"
+                    Margin="0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Source="{StaticResource PencilImage}" />
+            </DataTemplate>
+
+            <!--  Name  -->
+            <DataTemplate x:Key="EmptyNameTemplate" />
+            <DataTemplate x:Key="ReadonlyNameTemplate">
+                <DockPanel x:Name="MyPanel"
+                    Margin="-1"
+                    Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+                    <TextBlock DockPanel.Dock="Left"
+                        Margin="0" Text="{Binding Placeholder, Mode=OneWay}" />
+                    <ToggleButton DockPanel.Dock="Left"
+                        IsChecked="{Binding IsExpanded, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Style="{StaticResource ExpandCollapseToggleStyle}"
+                        Visibility="{Binding HasChildren, Mode=OneWay, Converter={StaticResource IsVisibleConverter}, UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBlock
+                        Margin="2"
+                        VerticalAlignment="Center"
+                        TextTrimming="CharacterEllipsis"
+                        Text="{Binding Name, Mode=OneWay}" 
+                        ToolTip="{Binding Text,Mode=OneWay,RelativeSource={RelativeSource Self}}"/>
+                </DockPanel>
+                <DataTemplate.Triggers>
+                    <DataTrigger Value="true" Binding="{Binding IsSelected,RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type DataGridRow}}}">
+                        <Setter TargetName="MyPanel" Property="Background" Value="Transparent"/>
+                    </DataTrigger>
+                </DataTemplate.Triggers>
+            </DataTemplate>
+            <DataTemplate x:Key="EditableNameTemplate">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Left"
+                        Margin="0" Text="{Binding Placeholder, Mode=OneWay}" />
+                    <ToggleButton DockPanel.Dock="Left"
+                        IsChecked="{Binding IsExpanded, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Style="{StaticResource ExpandCollapseToggleStyle}"
+                        Visibility="{Binding HasChildren, Mode=OneWay, Converter={StaticResource IsVisibleConverter}, UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBlock
+                        Margin="2"
+                        VerticalAlignment="Center"
+                        TextTrimming="CharacterEllipsis"
+                        Text="{Binding Name, Mode=OneWay}" 
+                        ToolTip="{Binding Text,Mode=OneWay,RelativeSource={RelativeSource Self}}"/>
+                </DockPanel>
+            </DataTemplate>
+            <DataTemplate x:Key="EditingNameTemplate">
+                <DockPanel>
+                    <TextBlock
+                        Margin="0"
+                        DockPanel.Dock="Left"
+                        Text="{Binding Placeholder, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <ToggleButton
+                        DockPanel.Dock="Left"
+                        IsChecked="{Binding IsExpanded, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Style="{StaticResource ExpandCollapseToggleStyle}"
+                        Visibility="{Binding HasChildren, Mode=OneWay, Converter={StaticResource IsVisibleConverter}, UpdateSourceTrigger=PropertyChanged}" />
+                    <controls1:ValidateNameControl
+                        Margin="2,0,0,0"
+                        VerticalAlignment="Center"
+                        input:InputMethod.IsInputMethodEnabled="False"
+                        MaxLength="40"
+                        Validation.Error="Validation_OnError"
+                        Loaded="ValueControl_OnLoaded">
+                        <TextBox.Resources>
+                            <view:BindingProxy x:Key="Proxy" Data="{Binding}" />
+                        </TextBox.Resources>
+                        <TextBox.Text >
+                            <Binding
+                                Mode="TwoWay"
+                                Path="Name"
+                                UpdateSourceTrigger="LostFocus"
+                                ValidatesOnDataErrors="True" NotifyOnValidationError="True">
+                                <Binding.ValidationRules>
+                                    <ExceptionValidationRule />
+                                    <ui:TagNameValidationRule>
+                                        <ui:TagNameValidationRule.Param>
+                                            <ui:ValidationParam
+                                                Controller="{Binding Data, Source={StaticResource MainControllerProxy}}"
+                                                Scope="{Binding Data, Source={StaticResource MainScopeProxy}}"
+                                                TagItem="{Binding Data, Source={StaticResource Proxy}}"/>
+                                        </ui:TagNameValidationRule.Param>
+                                    </ui:TagNameValidationRule>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </controls1:ValidateNameControl>
+                </DockPanel>
+            </DataTemplate>
+
+            <!--  Usage  -->
+            <DataTemplate x:Key="ReadonlyUsageTemplate">
+                <Grid x:Name="MyGrid" Margin="-1" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+                    <TextBlock
+                        Text="{Binding Usage, Converter={StaticResource EnumToDisplayNameConverter}}"
+                        Visibility="{Binding UsageVisibility}" 
+                        TextTrimming="CharacterEllipsis"
+                        ToolTip="{Binding Text,Mode=OneWay,RelativeSource={RelativeSource Self}}"/>
+                </Grid>
+                <DataTemplate.Triggers>
+                    <DataTrigger Value="true" Binding="{Binding IsSelected,RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type DataGridRow}}}">
+                        <Setter TargetName="MyGrid" Property="Background" Value="Transparent"/>
+                    </DataTrigger>
+                </DataTemplate.Triggers>
+            </DataTemplate>
+            <DataTemplate x:Key="EditableUsageTemplate">
+                <TextBlock Text="{Binding Usage, Converter={StaticResource EnumToDisplayNameConverter}}" Visibility="{Binding UsageVisibility}" 
+                           TextTrimming="CharacterEllipsis"
+                           ToolTip="{Binding Text,Mode=OneWay,RelativeSource={RelativeSource Self}}"/>
+            </DataTemplate>
+            <DataTemplate x:Key="EditingUsageTemplate">
+                <ComboBox
+                    DisplayMemberPath="DisplayName"
+                    ItemsSource="{Binding UsageSource}"
+                    SelectedValuePath="Value">
+                    <ComboBox.Resources>
+                        <view:BindingProxy x:Key="Proxy" Data="{Binding}" />
+                    </ComboBox.Resources>
+                    <ComboBox.SelectedValue>
+                        <Binding Path="Usage" ValidatesOnDataErrors="True">
+                            <Binding.ValidationRules>
+                                <ExceptionValidationRule />
+                                <ui:UsageValidationRule ValidatesOnTargetUpdated="True">
+                                    <ui:UsageValidationRule.Param>
+                                        <ui:ValidationParam
+                                            Controller="{Binding Data, Source={StaticResource MainControllerProxy}}"
+                                            Scope="{Binding Data, Source={StaticResource MainScopeProxy}}"
+                                            TagItem="{Binding Data, Source={StaticResource Proxy}}" />
+                                    </ui:UsageValidationRule.Param>
+                                </ui:UsageValidationRule>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </ComboBox.SelectedValue>
+                </ComboBox>
+            </DataTemplate>
+
+
+            <!--  DisplayStyle  -->
+            <DataTemplate x:Key="NullDisplayStyleTemplate">
+                <StackPanel x:Name="MyPanel"
+                    Margin="-1"
+                    Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"
+                    Orientation="Horizontal" />
+                <DataTemplate.Triggers>
+                    <DataTrigger Value="true" Binding="{Binding IsSelected,RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type DataGridRow}}}">
+                        <Setter TargetName="MyPanel" Property="Background" Value="Transparent"/>
+                    </DataTrigger>
+                </DataTemplate.Triggers>
+            </DataTemplate>
+            <DataTemplate x:Key="ReadonlyDisplayStyleTemplate">
+                <StackPanel x:Name="MyPanel"
+                    Margin="-1"
+                    Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"
+                    Orientation="Horizontal">
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        Text="{Binding DisplayStyle, Mode=OneWay}" 
+                        TextTrimming="CharacterEllipsis"
+                        ToolTip="{Binding Text,Mode=OneWay,RelativeSource={RelativeSource Self}}"/>
+                </StackPanel>
+                <DataTemplate.Triggers>
+                    <DataTrigger Value="true" Binding="{Binding IsSelected,RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type DataGridRow}}}">
+                        <Setter TargetName="MyPanel" Property="Background" Value="Transparent"/>
+                    </DataTrigger>
+                </DataTemplate.Triggers>
+            </DataTemplate>
+            <DataTemplate x:Key="EditableDisplayStyleTemplate">
+                <TextBlock VerticalAlignment="Center" Text="{Binding DisplayStyle, Mode=OneWay}" 
+                           TextTrimming="CharacterEllipsis"
+                           ToolTip="{Binding Text,Mode=OneWay,RelativeSource={RelativeSource Self}}"/>
+            </DataTemplate>
+            <DataTemplate x:Key="EditingDisplayStyleNormalTemplate">
+                <ComboBox ItemsSource="{Binding DisplayStyleSource}" SelectedValue="{Binding DisplayStyle, UpdateSourceTrigger=PropertyChanged}" />
+            </DataTemplate>
+
+            <!--  DataType  -->
+            <DataTemplate x:Key="ReadonlyDataTypeTemplate">
+                <StackPanel x:Name="MyPanel"
+                    Margin="-1" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        Text="{Binding DataType, Mode=OneWay}" 
+                        TextTrimming="CharacterEllipsis"
+                        ToolTip="{Binding Text,Mode=OneWay,RelativeSource={RelativeSource Self}}"/>
+                </StackPanel>
+                <DataTemplate.Triggers>
+                    <DataTrigger Value="true" Binding="{Binding IsSelected,RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type DataGridRow}}}">
+                        <Setter TargetName="MyPanel" Property="Background" Value="Transparent"/>
+                    </DataTrigger>
+                </DataTemplate.Triggers>
+            </DataTemplate>
+            <DataTemplate x:Key="EditableDataTypeTemplate">
+                <TextBlock VerticalAlignment="Center" Text="{Binding DataType, Mode=OneWay}" 
+                           TextTrimming="CharacterEllipsis"
+                           ToolTip="{Binding Text,Mode=OneWay,RelativeSource={RelativeSource Self}}"/>
+            </DataTemplate>
+            <DataTemplate x:Key="EditingDataTypeTemplate">
+                <DockPanel>
+                    <Button
+                        Width="30"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Command="{Binding ChangeDataTypeCommand}"
+                        Content="..."
+                        DockPanel.Dock="Right" />
+                    <controls1:FastAutoCompleteTextBox
+                        VerticalAlignment="Center"
+                        IsTextCompletionEnabled="True"
+                        ItemsSource="{Binding DataContext.AllDataTypeNames, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
+                        Validation="ProgramScopedOperand"
+                        Loaded="ValueControl_OnLoaded">
+                        <controls:AutoCompleteBox.Resources>
+                            <view:BindingProxy x:Key="Proxy" Data="{Binding}" />
+                        </controls:AutoCompleteBox.Resources>
+                        <controls:AutoCompleteBox.Text>
+                            <Binding
+                                Mode="TwoWay"
+                                Path="DataType"
+                                ValidatesOnDataErrors="True">
+                                <Binding.ValidationRules>
+                                    <ExceptionValidationRule />
+                                    <ui:DataTypeValidationRule ValidatesOnTargetUpdated="True">
+                                        <ui:DataTypeValidationRule.Param>
+                                            <ui:ValidationParam
+                                                Controller="{Binding Data, Source={StaticResource MainControllerProxy}}"
+                                                Scope="{Binding Data, Source={StaticResource MainScopeProxy}}"
+                                                TagItem="{Binding Data, Source={StaticResource Proxy}}" />
+                                        </ui:DataTypeValidationRule.Param>
+                                    </ui:DataTypeValidationRule>
+                                </Binding.ValidationRules>
+                            </Binding>
+
+                        </controls:AutoCompleteBox.Text>
+                    </controls1:FastAutoCompleteTextBox>
+                </DockPanel>
+            </DataTemplate>
+
+            <!--  description  -->
+            <DataTemplate x:Key="ReadOnlyDescriptionTemplate">
+                <StackPanel x:Name="MyPanel" 
+                    Margin="-1" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        Text="{Binding Description, Mode=OneWay}" 
+                        TextTrimming="CharacterEllipsis">
+                        <TextBlock.ToolTip>
+                            <ToolTip 
+                                Visibility="{Binding Path=PlacementTarget.Text,RelativeSource={x:Static RelativeSource.Self}, Converter={StaticResource ToolTipVisibilityConverter}, Mode=OneWay}" 
+                                Style="{StaticResource WrapToolTip}"
+                                Content="{Binding Path=PlacementTarget.Text,RelativeSource={x:Static RelativeSource.Self}}"/>
+                        </TextBlock.ToolTip>
+                    </TextBlock>
+                </StackPanel>
+                <DataTemplate.Triggers>
+                    <DataTrigger Value="true" Binding="{Binding IsSelected,RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type DataGridRow}}}">
+                        <Setter TargetName="MyPanel" Property="Background" Value="Transparent"/>
+                    </DataTrigger>
+                </DataTemplate.Triggers>
+            </DataTemplate>
+            <DataTemplate x:Key="EditableDescriptionTemplate">
+                <TextBlock VerticalAlignment="Center" Text="{Binding Description, Mode=OneWay}" 
+                           TextTrimming="CharacterEllipsis">
+                    <TextBlock.ToolTip>
+                        <ToolTip 
+                            Visibility="{Binding Path=PlacementTarget.Text,RelativeSource={x:Static RelativeSource.Self}, Converter={StaticResource ToolTipVisibilityConverter}, Mode=OneWay}" 
+                            Style="{StaticResource WrapToolTip}"
+                            Content="{Binding Path=PlacementTarget.Text,RelativeSource={x:Static RelativeSource.Self}}"/>
+                    </TextBlock.ToolTip>
+                </TextBlock>
+            </DataTemplate>
+            <DataTemplate x:Key="EditingDescriptionTemplate">
+                <controls2:ExtensionTextBox Text="{Binding Description, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+            </DataTemplate>
+
+
+            <!--  External Access  -->
+            <DataTemplate x:Key="ReadonlyExternalAccessTemplate">
+                <StackPanel x:Name="MyPanel"
+                    Margin="-1" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+                    <TextBlock Text="{Binding ExternalAccess, Converter={StaticResource EnumToDisplayNameConverter}}" 
+                               TextTrimming="CharacterEllipsis"
+                               ToolTip="{Binding Text,Mode=OneWay,RelativeSource={RelativeSource Self}}"/>
+                </StackPanel>
+                <DataTemplate.Triggers>
+                    <DataTrigger Value="true" Binding="{Binding IsSelected,RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type DataGridRow}}}">
+                        <Setter TargetName="MyPanel" Property="Background" Value="Transparent"/>
+                    </DataTrigger>
+                </DataTemplate.Triggers>
+            </DataTemplate>
+            <DataTemplate x:Key="EditableExternalAccessTemplate">
+                <TextBlock Text="{Binding ExternalAccess, Converter={StaticResource EnumToDisplayNameConverter}}" 
+                           TextTrimming="CharacterEllipsis"
+                           ToolTip="{Binding Text,Mode=OneWay,RelativeSource={RelativeSource Self}}"/>
+            </DataTemplate>
+            <DataTemplate x:Key="EditingExternalAccessTemplate">
+                <ComboBox
+                    DisplayMemberPath="DisplayName"
+                    ItemsSource="{Binding ExternalAccessSource}"
+                    SelectedValue="{Binding ExternalAccess}"
+                    SelectedValuePath="Value" />
+            </DataTemplate>
+
+            <ui:ExternalAccessSelector
+                x:Key="ExternalAccessSelector"
+                EditableTemplate="{StaticResource EditableExternalAccessTemplate}"
+                ReadonlyTemplate="{StaticResource ReadonlyExternalAccessTemplate}" />
+            <ui:ExternalAccessSelector
+                x:Key="ExternalAccessEditingSelector"
+                EditableTemplate="{StaticResource EditingExternalAccessTemplate}"
+                ReadonlyTemplate="{StaticResource ReadonlyExternalAccessTemplate}" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid x:Name="MainGrid">
+        <DataGrid
+            x:Name="MainDataGrid"
+            MaxWidth="2560"
+            MaxHeight="1600"
+            AddingNewItem="DataGrid_AddingNewItem"
+            AutoGenerateColumns="False"
+            BeginningEdit="DataGrid_OnBeginningEdit"
+            CanUserAddRows="{Binding CanAddRows}"
+            CanUserDeleteRows="True"
+            CanUserResizeRows="False"
+            CellEditEnding="DataGrid_OnCellEditEnding"
+            ContextMenuOpening="MainDataGrid_OnContextMenuOpening"
+            CurrentCellChanged="DataGrid_OnCurrentCellChanged"
+            FrozenColumnCount="1"
+            InitializingNewItem="DataGrid_OnInitializingNewItem"
+            IsSynchronizedWithCurrentItem="True"
+            ItemsSource="{Binding EditTagCollection, Mode=TwoWay}"
+            LoadingRow="DataGrid_OnLoadingRow"
+            RowHeight="24"
+            RowEditEnding="DataGrid_OnRowEditEnding"
+            SelectedItem="{Binding SelectedEditTagItem, TargetNullValue={x:Static CollectionView.NewItemPlaceholder}}"
+            SelectionMode="Extended"
+            UnloadingRow="DataGrid_OnUnloadingRow"
+            PreviewKeyDown="MainDataGrid_OnPreviewKeyDown"
+            TextInput="MainDataGrid_OnTextInput">
+
+            <DataGrid.Resources>
+                <view:BindingProxy x:Key="Proxy" Data="{Binding}" />
+                <ContextMenu x:Key="NameHeaderMenu" DataContext="{Binding Data, Source={StaticResource Proxy}}">
+                    <MenuItem
+                        Command="{Binding SortCommand}"
+                        CommandParameter="Name"
+                        Header="{DynamicResource Sort Column}" />
+                    <MenuItem
+                        Command="{Binding SortIncludeTagMembersCommand}"
+                        CommandParameter="Name"
+                        Header="{DynamicResource Include Tag Members In Sorting}"
+                        IsChecked="{Binding IncludeTagMembersInSorting, Mode=OneWay}" />
+                </ContextMenu>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="FontWeight" Value="Bold" />
+                </Style>
+                <Style TargetType="{x:Type DataGridRowHeader}">
+                    <Setter Property="MinWidth" Value="21" />
+                    <Style.Triggers>
+                        <Trigger Property="IsRowSelected" Value="True">
+                            <Setter Property="Background" Value="#0078D7"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+                <!--  DataGridRow template for displaying the error  -->
+                <Style TargetType="{x:Type DataGridRow}">
+                    <Style.Triggers>
+                        <Trigger Property="Validation.HasError" Value="true">
+                            <Setter Property="BorderBrush" Value="Red" />
+                            <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+                <ContextMenu
+                    x:Key="RowMenu"
+                    DataContext="{Binding Data, Source={StaticResource Proxy}}"
+                    Opened="RowMenu_OnOpened"
+                    Visibility="Visible">
+                    <MenuItem Command="{Binding MonitorCommand}" CommandParameter="{Binding SelectedEditTagItem}">
+                        <MenuItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{DynamicResource Monitor}"/>
+                                <TextBlock Text="{Binding SelectedEditTagItem.Name, StringFormat=\&quot;{0}\&quot;}" />
+                            </StackPanel>
+                        </MenuItem.Header>
+                    </MenuItem>
+                    <MenuItem
+                        Command="commands:EditCommands.PropertiesCommand"
+                        CommandParameter="{Binding SelectedEditTagItem}"
+                        Visibility="{Binding SelectedEditTagItem, Converter={StaticResource PropertiesVisibilityConverter}}">
+                        <MenuItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{DynamicResource MenuItem.Header.Edit}"/>
+                                <TextBlock Text="{Binding SelectedEditTagItem.Name, StringFormat=\&quot;{0}\&quot; }" />
+                                <TextBlock Text="{DynamicResource MenuItem.Header.Properties}"/>
+                            </StackPanel>
+                        </MenuItem.Header>
+                    </MenuItem>
+                    <MenuItem
+                        Command="commands:EditCommands.ConfigCommand"
+                        CommandParameter="{Binding SelectedEditTagItem}"
+                        Visibility="{Binding SelectedEditTagItem, Converter={StaticResource ConfigureVisibilityConverter}}">
+                        <MenuItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{DynamicResource MenuItem.Header.Configure}"/>
+                                <TextBlock Text="{Binding SelectedEditTagItem.Tag.Name, StringFormat=\&quot;{0}\&quot;}">
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Style.Triggers>
+                                                <Trigger Property="IsEnabled" Value="False">
+                                                    <Setter Property="Foreground" Value="Gray" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </StackPanel>
+                        </MenuItem.Header>
+                    </MenuItem>
+                    <MenuItem
+                        Command="commands:EditCommands.DataTypeCommand"
+                        CommandParameter="{Binding SelectedEditTagItem}"
+                        Visibility="{Binding SelectedEditTagItem, Converter={StaticResource DataTypeVisibilityConverter}}">
+                        <MenuItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{DynamicResource MenuItem.Header.Edit}"/>
+                                <TextBlock Text="{Binding SelectedEditTagItem.DataType, StringFormat=\&quot;{0}\&quot;}" />
+                                <TextBlock Text="{DynamicResource MenuItem.Header.DataType}"/>
+                            </StackPanel>
+                        </MenuItem.Header>
+                    </MenuItem>
+                    <MenuItem
+                        Command="commands:EditCommands.DescriptionCommand"
+                        CommandParameter="{Binding SelectedEditTagItem}"
+                        Visibility="{Binding SelectedEditTagItem, Converter={StaticResource DescriptionVisibilityConverter}}">
+                        <MenuItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{DynamicResource MenuItem.Header.Edit}"/>
+                                <TextBlock Text="{Binding SelectedEditTagItem.Name, StringFormat=\&quot;{0}\&quot;}" />
+                                <TextBlock Text="{DynamicResource MenuItem.Header.Description}"/>
+                            </StackPanel>
+                        </MenuItem.Header>
+                    </MenuItem>
+                    <MenuItem
+                        Command="commands:EditCommands.CrossReferenceCommand"
+                        CommandParameter="{Binding SelectedEditTagItem}"
+                        Visibility="{Binding SelectedEditTagItem, Converter={StaticResource CrossReferenceVisibilityConverter}}">
+                        <MenuItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{DynamicResource MenuItem.Header.Goto}"/>
+                                <TextBlock Text="{Binding SelectedEditTagItem.Name, StringFormat=\&quot;{0}\&quot;}" />
+                                <TextBlock Text="{DynamicResource MenuItem.Header.CrossReference}"/>
+                            </StackPanel>
+                        </MenuItem.Header>
+                    </MenuItem>
+                    <Separator />
+
+                    <MenuItem Command="Cut" Header="{DynamicResource Cut}" />
+                    <MenuItem Command="Copy" Header="{DynamicResource Copy}" />
+                    <MenuItem Command="Paste" Header="{DynamicResource Paste}" />
+
+                    <Separator Visibility="{Binding SelectedEditTagItem, Converter={StaticResource DeleteVisibilityConverter}}"/>
+                    <MenuItem
+                        Command="Delete"
+                        Header="{DynamicResource Delete}"
+                        Visibility="{Binding SelectedEditTagItem, Converter={StaticResource DeleteVisibilityConverter}}" />
+
+                </ContextMenu>
+            </DataGrid.Resources>
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Setter Property="ContextMenu" Value="{StaticResource RowMenu}" />
+                </Style>
+            </DataGrid.RowStyle>
+
+            <DataGrid.Columns>
+                <!--  Name  -->
+                <DataGridTemplateColumn
+                    Width="250"
+                    SortMemberPath="Name">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{DynamicResource Name}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.HeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="ContextMenu" Value="{StaticResource NameHeaderMenu}"/>
+                        </Style>
+                    </DataGridTemplateColumn.HeaderStyle>
+
+                    <DataGridTemplateColumn.CellTemplateSelector>
+                        <ui:NameSelector
+                            EditableTemplate="{StaticResource EditableNameTemplate}"
+                            NewItemPlaceholderTemplate="{StaticResource EmptyNameTemplate}"
+                            ReadonlyTemplate="{StaticResource ReadonlyNameTemplate}" />
+                    </DataGridTemplateColumn.CellTemplateSelector>
+                    <DataGridTemplateColumn.CellEditingTemplateSelector>
+                        <ui:NameSelector EditableTemplate="{StaticResource EditingNameTemplate}" ReadonlyTemplate="{StaticResource ReadonlyNameTemplate}" />
+                    </DataGridTemplateColumn.CellEditingTemplateSelector>
+                </DataGridTemplateColumn>
+
+                <!--  Usage  -->
+                <DataGridTemplateColumn
+                    Width="90"
+                    SortMemberPath="Usage"
+                    Visibility="{Binding Data, Source={StaticResource UsageVisibilityProxy}, FallbackValue=Collapsed}">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{DynamicResource Usage}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplateSelector>
+                        <ui:UsageSelector EditableTemplate="{StaticResource EditableUsageTemplate}" ReadonlyTemplate="{StaticResource ReadonlyUsageTemplate}" />
+                    </DataGridTemplateColumn.CellTemplateSelector>
+                    <DataGridTemplateColumn.CellEditingTemplateSelector>
+                        <ui:UsageSelector EditableTemplate="{StaticResource EditingUsageTemplate}" ReadonlyTemplate="{StaticResource ReadonlyUsageTemplate}" />
+                    </DataGridTemplateColumn.CellEditingTemplateSelector>
+                </DataGridTemplateColumn>
+
+
+                <!--  Alias For  -->
+                <DataGridTemplateColumn
+                    Width="150"
+                    SortMemberPath="AliasFor">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{DynamicResource Alias For}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel x:Name="MyPanel" 
+                                Margin="-1" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+                                <TextBlock Text="{Binding AliasFor}" />
+                            </StackPanel>
+                            <DataTemplate.Triggers>
+                                <DataTrigger Value="true" Binding="{Binding IsSelected,RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type DataGridRow}}}">
+                                    <Setter TargetName="MyPanel" Property="Background" Value="Transparent"/>
+                                </DataTrigger>
+                            </DataTemplate.Triggers>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <!--  Base Tag  -->
+                <DataGridTemplateColumn
+                    Width="150"
+                    SortMemberPath="BaseTag">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{DynamicResource Base Tag}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel x:Name="MyPanel" Margin="-1" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+                                <TextBlock Text="{Binding BaseTag}" />
+                            </StackPanel>
+                            <DataTemplate.Triggers>
+                                <DataTrigger Value="true" Binding="{Binding IsSelected,RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type DataGridRow}}}">
+                                    <Setter TargetName="MyPanel" Property="Background" Value="Transparent"/>
+                                </DataTrigger>
+                            </DataTemplate.Triggers>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <!--  Data Type  -->
+                <DataGridTemplateColumn
+                    Width="128"
+                    IsReadOnly="{Binding Data, Source={StaticResource IsDataTypeReadOnlyProxy}}"
+                    SortMemberPath="DataType">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{DynamicResource Data Type}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplateSelector>
+                        <ui:DataTypeSelector EditableTemplate="{StaticResource EditableDataTypeTemplate}" ReadonlyTemplate="{StaticResource ReadonlyDataTypeTemplate}" />
+                    </DataGridTemplateColumn.CellTemplateSelector>
+                    <DataGridTemplateColumn.CellEditingTemplateSelector>
+                        <ui:DataTypeSelector EditableTemplate="{StaticResource EditingDataTypeTemplate}" ReadonlyTemplate="{StaticResource ReadonlyDataTypeTemplate}" />
+                    </DataGridTemplateColumn.CellEditingTemplateSelector>
+                </DataGridTemplateColumn>
+
+                <!--  Description  -->
+                <DataGridTemplateColumn
+                    Width="128"
+                    SortMemberPath="Description">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{DynamicResource Description}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplateSelector>
+                        <ui:DescriptionSelector EditableTemplate="{StaticResource EditableDescriptionTemplate}" ReadonlyTemplate="{StaticResource ReadOnlyDescriptionTemplate}" />
+                    </DataGridTemplateColumn.CellTemplateSelector>
+                    <DataGridTemplateColumn.CellEditingTemplateSelector>
+                        <ui:DescriptionSelector EditableTemplate="{StaticResource EditingDescriptionTemplate}" ReadonlyTemplate="{StaticResource ReadOnlyDescriptionTemplate}" />
+                    </DataGridTemplateColumn.CellEditingTemplateSelector>
+                </DataGridTemplateColumn>
+
+                <!--  External Access  -->
+                <DataGridTemplateColumn
+                    Width="128"
+                    SortMemberPath="ExternalAccess">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{DynamicResource ExternalAccess}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ContentControl Content="{Binding SelfProperty}" ContentTemplateSelector="{StaticResource ExternalAccessSelector}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <ContentControl Content="{Binding SelfProperty}" ContentTemplateSelector="{StaticResource ExternalAccessEditingSelector}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+
+                <!--  Constant  -->
+                <DataGridTemplateColumn Width="80">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{DynamicResource Constant}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid x:Name="IsConstantGrid" Margin="-1">
+                                <CheckBox
+                                    x:Name="IsConstantCheckBox"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    IsChecked="{Binding IsConstant, UpdateSourceTrigger=PropertyChanged}"
+                                    IsEnabled="{Binding IsConstantEnabled}"
+                                    Visibility="{Binding IsConstantVisibility}" />
+                            </Grid>
+                            <DataTemplate.Triggers>
+                                <Trigger SourceName="IsConstantCheckBox" Property="Visibility" Value="Collapsed">
+                                    <Setter TargetName="IsConstantGrid" Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />
+                                </Trigger>
+                                <Trigger SourceName="IsConstantCheckBox" Property="IsEnabled" Value="False">
+                                    <Setter TargetName="IsConstantGrid" Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />
+                                </Trigger>
+                                <DataTrigger Value="true" Binding="{Binding IsSelected,RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type DataGridRow}}}">
+                                    <Setter TargetName="IsConstantGrid" Property="Background" Value="Transparent"/>
+                                </DataTrigger>
+                            </DataTemplate.Triggers>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+                <!--  Style  -->
+                <DataGridTemplateColumn
+                    Width="130"
+                    Header="Style"
+                    SortMemberPath="DisplayStyle">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{DynamicResource Style}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplateSelector>
+                        <ui:EditDisplayStyleSelector
+                            EditableTemplate="{StaticResource EditableDisplayStyleTemplate}"
+                            NullStyleTemplate="{StaticResource NullDisplayStyleTemplate}"
+                            ReadonlyTemplate="{StaticResource ReadonlyDisplayStyleTemplate}" />
+                    </DataGridTemplateColumn.CellTemplateSelector>
+                    <DataGridTemplateColumn.CellEditingTemplateSelector>
+                        <ui:EditDisplayStyleSelector
+                            EditableTemplate="{StaticResource EditingDisplayStyleNormalTemplate}"
+                            NullStyleTemplate="{StaticResource NullDisplayStyleTemplate}"
+                            ReadonlyTemplate="{StaticResource ReadonlyDisplayStyleTemplate}" />
+                    </DataGridTemplateColumn.CellEditingTemplateSelector>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+
+            <DataGrid.CommandBindings>
+                <view:RelayCommandBinding Command="{x:Static ApplicationCommands.Copy}" RelayCommand="{StaticResource CopyCommand}" />
+                <view:RelayCommandBinding Command="{x:Static ApplicationCommands.Cut}" RelayCommand="{StaticResource CutCommand}" />
+                <view:RelayCommandBinding Command="{x:Static ApplicationCommands.Paste}" RelayCommand="{StaticResource PasteCommand}" />
+
+                <view:RelayCommandBinding Command="{x:Static ApplicationCommands.Delete}" RelayCommand="{StaticResource DeleteCommand}" />
+            </DataGrid.CommandBindings>
+
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <command:EventToCommand Command="{Binding SelectionChangedCommand}" CommandParameter="{Binding ElementName=MainDataGrid, Path=SelectedItems}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+
+        </DataGrid>
+    </Grid>
+</UserControl>

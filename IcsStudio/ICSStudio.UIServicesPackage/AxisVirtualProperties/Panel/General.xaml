@@ -1,0 +1,75 @@
+﻿<UserControl
+    x:Class="ICSStudio.UIServicesPackage.AxisVirtualProperties.Panel.General"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ICSStudio.UIServicesPackage.AxisVirtualProperties.Panel"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="650"
+    Height="350"
+    d:DesignHeight="300"
+    d:DesignWidth="300"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ICSStudio.Gui;component/Resources/styles/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="140" />
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="60" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="0"
+            Text="{DynamicResource Motion Group:}" />
+        <ComboBox
+            Grid.Row="0"
+            Grid.Column="1"
+            DisplayMemberPath="Name"
+            IsEnabled="{Binding IsEnable}"
+            ItemsSource="{Binding MotionGroup}"
+            SelectedValue="{Binding Selected}"
+            SelectedValuePath="Value" />
+        <Button
+            Grid.Row="0"
+            Grid.Column="2"
+            Width="30"
+            Height="22"
+            MinWidth="30"
+            VerticalAlignment="Top"
+            Command="{Binding MGCommandRelayCommand}"
+            Content="..." />
+        <Button
+            Grid.Row="0"
+            Grid.Column="3"
+            Content="{DynamicResource New Group}"
+            IsEnabled="False" />
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="0"
+            Text="{DynamicResource Update Period:}" />
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="1"
+            Text="{Binding UpdatePeriod}" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="2"
+            Width="30"
+            MinWidth="30"
+            Command="{Binding UPCommandRelayCommand}"
+            Content="..." />
+    </Grid>
+</UserControl>
